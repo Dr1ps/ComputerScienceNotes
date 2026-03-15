@@ -1,0 +1,1367 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{} 
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Programmazione e algoritmica}     % Center
+\fancyhead[R]{2025/2026}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+\geometry{margin=2.5cm}
+
+\title{Programmazione e Algoritmica}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\section{Concetti Iniziali}
+
+Uno dei primi scopi dell’algoritmica è utilizzare al meglio le informazioni che si hanno.
+\begin{itemize}
+  \item \textbf{Algoritmo}: sequenza di istruzioni non ambigua che, dati in input, produce un output corretto.
+  \item \textbf{Programma}: implementazione di un algoritmo in un linguaggio preciso, non ambiguo e formalmente definito. Eseguibile da una macchina
+  \item \textbf{Tipo}: insieme dei valori assumibili da una variabile.
+\end{itemize}
+Per ogni problema esistono infiniti algoritmi per risolverlo e quindi infiniti programmi.\\\\
+La maggior parte degli algoritmi assume una forma astratta per adattarsi a varie situazioni che possono essere risolte con metodologie simili.
+
+\paragraph{Obiettivi della programmazione:}
+\begin{itemize}
+  \item Efficienza
+  \item Correttezza
+  \item Velocità di coding (efficienza nel tempo impiegato dai developer)
+  \item Manutenibilità
+\end{itemize}
+
+\section{Strutture Dati}
+
+\begin{itemize}
+  \item \textbf{Variabile}: casella singola.
+  \item \textbf{Array}: sequenza di caselle numerate a cui si può accedere direttamente tramite indici.
+\end{itemize}
+
+\section{Linguaggi formali}
+
+Un linguaggio detto \textbf{formale} ha:
+\begin{itemize}
+  \item \textbf{Sintassi}: struttura grammaticale (correttezza grammaticale).
+  \item \textbf{Semantica}: significato (correttezza logica).
+\end{itemize}
+
+Ogni linguaggio di programmazione è un linguaggio formale.
+
+\section{Storia degli Algoritmi}
+
+Fibonacci scoprì che sui sistemi numerici posizionali possono essere applicati algoritmi per il calcolo, al contrario dei numeri romani.  
+Il più antico linguaggio formale è il DNA.
+\section{Alfabeti}
+
+\subsection{Definizione di alfabeto}
+
+Un \textbf{alfabeto} è un insieme finito di simboli.\\
+Una \textbf{stringa} è una sequenza di simboli di uno specifico alfabeto (anche con ripetizioni) e ha lunghezza finita.  
+Può anche essere vuota, con lunghezza 0, indicata con $\varepsilon$.
+
+\[
+|baco| = 4 \quad \text{se} \quad a = \text{"baco"}
+\]
+Un linguaggio $L$ su un alfabeto $A$ è sottoinsieme di $A^*$ (tutte le possibili combinazioni dell’alfabeto).\\
+Descrivere un linguaggio di programmazione significa descrivere quali frasi sono ammissibili.\\
+Si usano le regole di una grammatica e un metodo riconoscitivo per la semantica.
+
+\subsection{Grammatica di un alfabeto}
+
+La grammatica è una tripla $(T, N, P)$ dove:
+\begin{itemize}
+  \item $T$ = simboli terminali (alfabeto di riferimento)
+  \item $N$ = simboli non terminali
+  \item $P \subseteq S \times S^*$ = insieme delle produzioni, con $S = T \cup N$
+\end{itemize}
+
+\subsection{Derivativo immediato}
+
+Data una grammatica $G(T, N, P)$, si dice che $\beta_1$ è \textbf{derivativo immediato} di $\beta$ se è possibile ottenere $\beta_1$ da $\beta$ applicando una produzione.
+
+\[
+\beta = \beta_1 X \beta_2, \quad X \in N
+\]
+Esempio:
+\[
+\beta = Exp + Exp\, Op\, 2
+\]
+Produzione: $Exp ::= Num$
+\[
+\Rightarrow \beta_1 = Num + Exp\, Op\, 2
+\]
+
+\subsection{Derivativo}
+
+È come il derivativo immediato, ma ottenuto tramite $N$ sostituzioni.
+
+\subsection{Linguaggio generato}
+
+Data $G(T,N,P)$ e $X \in N$, il linguaggio di $X$, scritto $L(X)$, è l’insieme di tutti e soli i derivativi $\beta \in T^*$ di $X$.
+
+\[
+L(X) = \{w \mid w \in T^*, X \Rightarrow^* w\}
+\]
+Esempio:
+\[
+B ::= 1 \;|\; 0B \;|\; 1B
+\]
+Stringhe che finiscono con 1.
+
+\[
+B \Rightarrow 1B \Rightarrow 10B \Rightarrow 100B \Rightarrow 1001
+\]
+“1001” appartiene al linguaggio, “1000” no.
+
+\subsection{Derivazioni canoniche}
+
+\begin{itemize}
+  \item \textbf{Sinistra}: si sostituisce sempre il simbolo più a sinistra.
+  \item \textbf{Destra}: si sostituisce sempre quello più a destra.
+\end{itemize}
+
+\subsection{Alberi di derivazione (Parse Trees)}
+
+Rappresentano tutti i possibili percorsi per effettuare una derivazione (insiemi $N$ e $E$: nodi e archi).  
+Non possono esserci due o più archi verso lo stesso nodo e il nodo radice non ha archi entranti.
+
+\section{Regole di Inferenza}
+
+Per definire la semantica del linguaggio MAO si usano \textbf{regole di inferenza}.
+
+\[
+\frac{P_1, \dots, P_n}{Q}
+\]
+Se tutte le premesse $P_i$ sono vere, $Q$ è vero.\\  
+Se non ci sono premesse, abbiamo un \textbf{assioma} (sempre vero).\\\\
+Un sistema logico è un insieme di regole di inferenza per dimostrare la validità di formule.\\
+La derivazione nel sistema logico è una sequenza di passaggi che parte dagli assiomi e giustifica una conclusione.
+\[
+D \vdash G
+\]
+\textbf{Condizioni laterali}: condizioni aggiuntive che devono essere soddisfatte oltre alle premesse.\\
+In un linguaggio logico, ogni produzione grammaticale ha una regola di inferenza collegata.
+
+\section{Efficienza e costo computazionale}
+
+Si misura in base a:
+\begin{itemize}
+  \item Costo in tempo d’esecuzione (numero di operazioni elementari, ovvero non affette dal variare dell'input)
+  \item Costo in memoria (celle utilizzate)
+\end{itemize}
+Il costo (tempo/spazio) si esprime in \textbf{ordine di grandezza}, considerando solo il termine dominante.\\
+La somma di due costi costanti, ovvero legati ad operazioni elementari, è un costo costante.\\\\
+Il costo totale di un algoritmo / programma può essere rappresentato sotto forma di funzione su piano cartesiano in cui l'incognita corrisponde all'input.\\\\
+La complessità è una \textbf{funzione di n}, con n come input variabile.\\
+Per vedere se una funzione / algoritmo è più \textbf{veloce} si applicano le operazioni degli infinitesimi tipiche dell'analisi matematica.
+\subsection{O, $\Omega$, $\Theta$}
+\paragraph{O grande: } si usa per indicare il limite asintotico superiore della funzione della complessità (non può mai essere maggiore).\\
+La definizione di O grande significa che per un valore abbastanza grande di $n$ (input) esiste un $c$ per cui la funzione della complessità si troverà sempre al di sotto di O grande.
+\paragraph{$\Omega$ grande: } si usa per indicare il limite asintotico inferiore della funzione della complessità (non può scendere al di sotto).
+La definizione di $\Omega$ grande significa che per un valore abbastanza grande di $n$ esiste un $c$ per cui la funzione della complessità si troverà sempre al di sopra di $\Omega$ grande. 
+\paragraph{$\Theta$ grande: } quando limite superiore e inferiore coincidono, si ha $\Theta$ grande. Ciò vuol dire che la funzione della complessità si trova schiacciata tra il limite superiore e inferiore (\textbf{Teorema dei carabinieri}). Attenzione, ciò non vuol dire che le $c$ delle due condizioni siano uguali.\\\\
+Con "$c$" intendiamo una costante moltiplicata al limite inferiore o superiore.
+
+$\Gamma_1[\Gamma_2]$
+
+\paragraph{Esempio: } dimostrare:
+\[
+3n^2 - 2n - 1 \in \Theta(n^2)
+\]
+Bisogna trovare il valore delle $c$ che soddisfano entrambi le condizioni:
+\[
+C_1 (n^2) \le 3n^2 - 2n - 1 \le C_2 (n^2)
+\]
+\textbf{C1 = } 2.\\
+\textbf{C2 = } 3, dato che la funzione è simile, escluso il fatto che viene anche sottratto qualcosa (- 2n - 1).
+
+\subsection{Teorema Principale (Master Theorem)}
+
+Si consideri una ricorrenza della forma
+\[
+T(n) = a\,T\!\left(\frac{n}{b}\right) + f(n),
+\]
+dove $a \ge 1$ (numero chiamate ricorsive), $b > 1$ (indice di riduzione del problema) e $f(n)$ è una funzione asintoticamente positiva (complessità di ogni chiamata).
+Sia
+\[
+n^{\log_b a}
+\]
+il costo indotto dalla parte ricorsiva dell'algoritmo.\\
+Il Teorema Principale permette di determinare l'ordine di crescita di $T(n)$
+confrontando $f(n)$ con $n^{\log_b a}$. Sono possibili tre casi.
+
+\subsection{Caso 1: $\;f(n)$ cresce meno della ricorsione}
+Se esiste $\epsilon > 0$ tale che
+\[
+f(n) = O\!\left(n^{\log_b a - \epsilon}\right),
+\]
+allora
+\[
+T(n) = \Theta\!\left(n^{\log_b a}\right).
+\]
+
+\subsection{Caso 2: $\;f(n)$ cresce come la ricorsione}
+Se esiste $k \ge 0$ tale che
+\[
+f(n) = \Theta\!\left(n^{\log_b a}\,\log^{k} n\right),
+\]
+allora
+\[
+T(n) = \Theta\!\left(n^{\log_b a}\,\log^{k+1} n\right).
+\]
+
+\subsection{Caso 3: $\;f(n)$ cresce più della ricorsione}
+Se esiste $\epsilon > 0$ tale che
+\[
+f(n) = \Omega\!\left(n^{\log_b a + \epsilon}\right),
+\]
+e se vale la condizione di regolarità
+\[
+a\, f\!\left(\frac{n}{b}\right) \le c\, f(n)
+\qquad \text{per qualche } c < 1,
+\]
+allora
+\[
+T(n) = \Theta\!\left(f(n)\right).
+\]
+
+\bigskip
+
+\noindent
+In sintesi, il Teorema Principale permette di risolvere molte ricorrenze
+della forma $T(n) = a T(n/b) + f(n)$ confrontando il costo ricorsivo
+$n^{\log_b a}$ con il costo non ricorsivo $f(n)$.
+
+\subsection{Metodo iterativo}
+Quando non si riesce ad applicare il teorema principale si può usare il \textbf{metodo iterativo}.\\
+Col metodo iterativo bisogna proseguire come per induzione:
+\begin{center}
+  \begin{align*}
+    T(n) &= T(n-1) + C_1\\
+    T(n) &= T(n-2) + C_1 + C_2\\
+    T(n) &= T(n-3) + C_1 + C_2 + C_3\\
+    ...
+  \end{align*}
+\end{center}
+Si termina con il caso base, ovvero $n-1 = 1 = C_0$
+
+
+\subsection{Alberi di ricorsione}
+Quando non si riesce ad applicare il teorema principale si possono usare gli \textbf{alberi di ricorsione}.\\
+Si svolge comunque la ricorsione ma si disegna una specie di albero discendente laterale, indicando ogni volta $f(n)$ per ogni step.\\
+Il valore finale, se l'esempio è uguale a quello del metodo iterativo, sarà $f(n) \cdot $ numero di chiamate iterative.
+
+\paragraph{Fooling argument: }un algoritmo deve leggere tutti gli input per svolgere u bel lavoro, infatti se abbiamo $n$ input si ha una complessita minima di $n$ ($\Omega n$)\\
+Questo vale solo quando non ci sono ipotesi particolari sui dati in input, come ordinamento.
+
+\section{Programmazione dinamica}
+La \textbf{programmazione dinamica} (PD) è una tecnica di progettazione di algoritmi. Come il divide-et-impera, è una tecnica che si applica nei casi in cui
+la soluzione del problema può essere definita ricorsivamente.\\
+A differenza del divide-et-impera però, che opera in maniera top-down fino a ridursi a sottoproblemi via via più piccoli, la PD risolve prima i sottoproblemi e poi in maniera \textbf{bottom-up} a partire dalla loro soluzione costruisce via via soluzioni a sottoproblemi più grandi fino al problema originale.\\
+Vediamo un esempio con il calcolo dell'n-esimo numero di fibonacci.
+\[
+f(0) = 0
+\]
+\[
+f(1) = 1
+\]
+\[
+f(n) = f(n-1) + f(n-2)
+\]
+\begin{lstlisting}
+    fibRec(n) { //Versione ricorsiva
+        if (n = 0): return 0
+        if (n = 1): return 1
+        return fibRec(n-1) + fibRec(n-2)
+    }
+\end{lstlisting}
+Lo stesso problema in PD svolge i casi base e \textbf{ricorsivamente} risolve i casi superiori fino ad arrivare ad n.
+\begin{lstlisting}
+    fibPD(n) {
+        f = []
+        f[0] = 0
+        f[1] = 1
+        for (i = 2, i <= n, i++):
+            f[i] = f[i-1] + f[i-2]
+        return f[n]
+    }
+\end{lstlisting}
+Vediamo adesso un'altro problema: abbiamo una corda lunga $n$ cm e una tabella di prezzi, ogni prezzo è relativo a una lunghezza specifica. Calcolare il ricavo massimo ottenibile tagliando la corda.\\
+Nel caso avessimo una corda di $4$ cm, e questi prezzi:
+\[
+\begin{bmatrix}
+    1cm = 1\\
+    2cm = 5\\
+    3cm = 8\\
+    4cm = 9\\
+\end{bmatrix}
+\]
+La corda può essere tagliata in $2^{n-1}$ modi.\\
+La \textbf{soluzione ottima} è due sotto-corde da $10cm$, vediamo come trovarlo tramite un programma:\\
+Soluzione ricorsiva:
+\begin{lstlisting}
+    ropeCut(p,n)  {\\prezzi e lunghezza corda
+        if(n=0): return 0
+        q = -infty
+        for (i=1,i<=n,i++):
+            q = max(q,p[i] + ropeCut(p,n-1))
+        return q
+    }
+\end{lstlisting}
+Soluzione PD:
+\begin{lstlisting}
+    ropeCut(p,n):
+        r = []
+        r[0] = 0
+        for (j = 1 to n):
+            q = -inf
+            for (i = 1 to j):
+                if (q < p[i] + r[j-1]):
+                    q = p[i] + r[j-1]
+            r[j] = q
+        return r[n]
+\end{lstlisting}
+
+
+\section{Algoritmi di Ordinamento (Sort)}
+
+\subsection{Insertion Sort}
+Video YouTube: \textit{Insertion Sort Visualisation}.\\
+L'\textbf{Insertion Sort} è un algoritmo di ordinamento di array o sequenze che funziona in questo modo:
+\begin{itemize}
+  \item Parti dal secondo elemento.
+  \item Confrontalo con quelli precedenti.
+  \item Spostalo indietro fino a quando non incontri un elemento minore.
+  \item Ripeti con gli elementi successivi.
+\end{itemize}
+Il comportamento dell'algoritmo dipende dall'input.
+
+\paragraph{Caso Ottimo:} L'array è già ordinato.\\
+Complessità: $O(n)$
+
+\paragraph{Caso Medio:} L'array è casuale.\\
+Complessità: $O(n^2)$
+
+\paragraph{Caso Pessimo:} L'array è ordinato in modo inverso.\\
+Complessità: $O(n^2)$
+
+\begin{lstlisting}
+for j = 2 to n do
+    key = A[j]
+    i = j - 1
+    while i > 0 and A[i] > key do
+        A[i + 1] = A[i]
+        i = i - 1
+    A[i + 1] = key
+\end{lstlisting}
+
+
+\subsection{Selection Sort}
+Il \textbf{Selection Sort} ordina un array trovando di volta in volta il minimo tra gli elementi non ancora ordinati e scambiandolo con l’elemento corrente.
+
+\begin{itemize}
+  \item Trova il minimo nell'intero array.
+  \item Scambialo con il primo elemento.
+  \item Ripeti sull’array rimanente.
+\end{itemize}
+
+\paragraph{Caso Ottimo, Medio e Pessimo:} Sempre $O(n^2)$
+
+\begin{lstlisting}
+for i = 0 to n - 2 do
+    min = i
+    for j = i + 1 to n - 1 do
+        if A[j] < A[min] then
+            min = j
+    swap(A[i], A[min])
+\end{lstlisting}
+
+
+\subsection{Bubble Sort}
+Il \textbf{Bubble Sort} confronta coppie di elementi adiacenti e li scambia se sono nell’ordine sbagliato, “spingendo” gradualmente i valori maggiori verso la fine.
+
+\paragraph{Caso Ottimo:} Array già ordinato, $O(n)$\\
+\paragraph{Caso Medio e Pessimo:} $O(n^2)$
+
+\begin{lstlisting}
+for i = 0 to n - 2 do
+    for j = 0 to n - i - 2 do
+        if A[j] > A[j + 1] then
+            swap(A[j], A[j + 1])
+\end{lstlisting}
+
+
+\subsection{Merge Sort}
+Il \textbf{Merge Sort} utilizza il paradigma \textit{divide et impera}. Divide ricorsivamente l’array in due parti, le ordina e poi le unisce.
+
+\paragraph{Tutti i casi:} $O(n \log n)$
+
+\begin{lstlisting}
+function mergeSort(A):
+    if length(A) > 1:
+        mid = length(A) / 2
+        L = A[0..mid-1]
+        R = A[mid..end]
+        mergeSort(L)
+        mergeSort(R)
+        merge(L, R, A)
+\end{lstlisting}
+
+
+\subsection{Quick Sort}
+Il \textbf{Quick Sort} sceglie un elemento detto \textit{pivot} e divide l’array in due sottoarray:
+gli elementi minori del pivot e quelli maggiori, ordinandoli ricorsivamente.
+
+\paragraph{Caso Ottimo e Medio:} $O(n \log n)$\\
+\paragraph{Caso Pessimo:} $O(n^2)$ (se il pivot è sempre il minimo o massimo)
+
+\begin{lstlisting}
+function quickSort(A, low, high):
+    if low < high:
+        p = partition(A, low, high)
+        quickSort(A, low, p - 1)
+        quickSort(A, p + 1, high)
+\end{lstlisting}
+
+
+\subsection{Heap Sort}
+Il \textbf{Heap Sort} costruisce un heap (albero binario quasi completo senza puntatori) e ripete:
+estrae il massimo (radice) e lo pone in fondo all’array.
+Quindi i passi sono questi:
+\begin{itemize}
+  \item Crea un heap $A$ da un array (funzione inserimento nodi)
+  \item Scambia A[i] con A[n-1-i]
+  \item Aggiusta l'heap non considerando la radice che è stata spostata in fondo all'array (funzione change key).
+  \item Ripete i due passi precedenti.
+\end{itemize}
+\begin{itemize}
+  \item \textbf{Heap implicito: }albero completo da sinistra, viene riempito sempre a partire da sinistra.
+  \begin{itemize}
+    \item \textbf{Min-heap: }il padre contiene un elemento $\leq$ di quelli dei figli.
+    \item \textbf{Max-heap: }il padre contiene un elemento $\geq$ di quelli dei figli.
+  \end{itemize}
+\end{itemize}
+Esiste una regola matematica implicita per usare solo l'array: si numerano i nodi con gli indici dell'array e notiamo:
+\[
+index = 3
+\]
+\[
+sx(i) = 2i+1
+\]
+\[
+dx(i) = 2i+2
+\]
+\[
+dx = sx + 1
+\]
+\[
+sx = dx - 1
+\]
+\[
+padre(i) = [(i-1)/2]
+\]
+\[
+\forall i
+\]
+Bisogna, nel codice, verificare che ogni elemento $i$ dell'array sia $\leq$ o $\geq$ (dipende dall'heap) dei suoi figli (indici dei figli indicati sopra).\\
+Più semplicemente basterebbe controllare l'opposto, la condizione dei figli rispetto al padre ad esclusione dell'indice $0$ (root).\\
+Per l'inserimento di nuovi nodi, se il valore è già piu piccolo del valore del padre a cui verrà assegnato allora si aggiunge tranquillamente, altrimenti si scambiano il nuovo valore e il padre, continuando cosi fino a che è giusto.\\
+Questa operazione si chiama \textbf{Heapify}.
+\paragraph{Altezza di un heap implicito:} $\log n$ con $n = $nodi dell'heap.\\
+$A[n-1]$ ha sicuramente distanza dalla radice $=$ altezza heap.
+\paragraph{Eliminazione della radice:} si elimina la radice dall'array, il buco viene riempito dall'ultimo elemento spostandolo in cima al posto della radice,
+si scambia la nuova radice con un figlio fino a che non si riforma un heap.
+\paragraph{Aggiornamento del valore di un nodo:} sostituiamo inizialmente il valore di un nodo a $x$, se $x$ è già maggiore dei figli e minore del padre basta sostituire il valore, altrimenti:
+\begin{itemize}
+  \item \textbf{X < almeno 1 figlio:} si scambia il nodo con valore $x$ con quello del figlio maggiore di $x$.
+  \item \textbf{X > almeno 1 figlio:} si scambia il nodo con valore $x$ con il padre.
+\end{itemize}
+
+\paragraph{Tutti i casi:} $O(n \log n)$
+\begin{lstlisting}
+isMaxHeap(A):
+    for i=1 to n do:
+      if (A[i]>A[parent(i)]) return false
+    return true
+
+maxHeapify(i):
+    if(i==0) return //siamo alla radice
+    if(A[i] > A[parent(i)]):
+        swap(A[i],A[parent(i)])
+        maxHeapify(parent(i))
+
+buildHeap(A):
+    for i=1 to |A|-1
+        maxHeapify(i)
+
+heapChangeKey(A,i,k):
+    A[i] = k
+    temp1 = 0
+    temp2 = 0
+    while(temp1 = temp2):
+        temp1 = i
+        if (left(i) < A.size && A[i] < A[2*i + 1]):
+            swap(A[i], A[2*i+1])
+            i = 2*i + 1
+        if(right(i) < A.size && A[i] < A[2*i + 2]):
+            swap(A[i], A[2*i + 2])
+            i = 2*i + 2
+        if(i > 0 && A[i] > A[parteIntera((i-1)/2)]):
+            swap(A[i], A[parteIntera((i-1)/2)])
+            i = parteIntera((i-1)/2)
+        temp2=i
+
+heapSort(Arr):
+    
+\end{lstlisting}
+
+
+\subsection{Counting Sort}
+Il \textbf{Counting Sort} non confronta elementi ma conta le occorrenze di ciascun valore, adatto a numeri interi di piccolo intervallo.
+
+\paragraph{Tutti i casi:} $O(n + k)$ dove $k$ è il range dei valori.
+
+\begin{lstlisting}
+countingSort(A, k):
+    C = array[0..k] of 0
+    for i = 1 to n:
+        C[A[i]] = C[A[i]] + 1
+    for i = 1 to k:
+        C[i] = C[i] + C[i - 1]
+    for j = n downto 1:
+        B[C[A[j]]] = A[j]
+        C[A[j]] = C[A[j]] - 1
+\end{lstlisting}
+
+
+\subsection{Radix Sort}
+Il \textbf{Radix Sort} ordina numeri digit per digit (es. per cifra decimale), partendo dalla cifra meno significativa, usando un algoritmo stabile come il Counting Sort.
+
+\paragraph{Tutti i casi:} $O(d(n + k))$, dove $d$ è il numero di cifre.
+
+\begin{lstlisting}
+radixSort(A, d):
+    for i = 1 to d:
+        countingSortByDigit(A, i)
+\end{lstlisting}
+
+
+\subsection{Bucket Sort}
+Il \textbf{Bucket Sort} divide gli elementi in “secchi” (bucket) in base al valore, li ordina singolarmente (es. con Insertion Sort) e poi li concatena.
+
+\paragraph{Caso Ottimo e Medio:} $O(n + k)$\\
+\paragraph{Caso Pessimo:} $O(n^2)$ (tutti gli elementi nello stesso bucket)
+
+\begin{lstlisting}
+bucketSort(A):
+    n = length(A)
+    create n empty buckets B[0..n-1]
+    for i = 0 to n - 1:
+        index = floor(n * A[i])
+        insert A[i] into B[index]
+    for i = 0 to n - 1:
+        insertionSort(B[i])
+    concatenate(B[0..n-1])
+\end{lstlisting}
+
+\section{Linguaggio di MAO / MiniMAO}
+\subsection{Espressioni semantiche collaterali e pure}
+\textbf{Espressione con effetto collaterale:} cambia lo stato.  
+\[
+\langle E, \rho, \sigma \rangle \Downarrow \langle \rho_1, \sigma_1 \rangle
+\]
+\textbf{Espressione pura:} mantiene lo stato e restituisce un valore.
+\[
+\langle E, \rho, \sigma \rangle \Downarrow V
+\]
+
+\subsection{Controllo dei tipi (Type Checking)}
+Nonostante aver definito una grammatica per MiniMAO, ci sono comandi che sono sintatticamente corretti ma che potrebbero essere scartati a priori.\\
+Per esempio:
+\begin{align*}
+  \text{int x} = true + 3 \rightarrow \text{ sintatticamente giusto, ma non ha senso e da errore.}
+\end{align*}
+Ecco alcuni tipi di errori:
+\begin{itemize}
+  \item Variabile utilizzata prima della sua dichiarazione.
+  \item Variabile non inizializzata (Ogni variabile quando viene dichiarata deve assumere un valore in Mao).
+  \item Operazioni non definite, come dividere per 0 o accedere a degli indici inesistenti.
+\end{itemize}
+\subsubsection{Analisi statica}
+L'analisi statica di un programma viene effettuata al momento di generazione / compilazione e rileva possibili errori, evidenziandoli nell'IDE.\\
+Lo svolgimento dell'analisi NON esegue il programma.\\
+Questa analisi si limita al controllo dei tipi (\textbf{type checking}), che permette di rilevare molti problemi legati alla mancanza di coerenza tra tipi delle variabili.\\
+Diversi linguaggi attuano questa analisi in modo diverso.
+
+\paragraph{Sistema di tipi: } in Mao, definiamo il controllo dei tipi in modo formale attraverso un sistema logico mediante le cosidette
+\textbf{regole di tipo} che stabiliscono le condizioni necessarie affinchè un'espressione o un comando siano considerati ben tipati.\\
+Il controllo è fatto in maniera \textbf{composizionale}, ogni espressione e comando deve forzare dei tipi in ogni loro elemento di composizione.
+
+\paragraph{Ambiente di tipo: } funziona parziale $\Gamma: I \rightarrow T$ che assegna un tipo ad un espressione o comando.
+
+\paragraph{Variabili libere: } identificatori ancora non definiti.\\
+Si definisce la funzione \textbf{free variables}: $fv: E \rightarrow I$.
+\begin{itemize}
+  \item $fv(V) = \emptyset$
+  \item $fv(Id) = {Id}$
+  \item $fv(E_1 \text{ bop } E_2) = fv(E_1) \cup fv(E_2)$
+  \item $\cdots$
+\end{itemize}
+Per esempio:
+\[
+fv(x + 3) = fv(x) \cup fv(3) = fv(x) = {x}
+\]
+La funzione può lavorare anche su C: $fv: C \rightarrow I$.
+\begin{itemize}
+  \item $fv(C_1 C_2) = fv(C_1) \cup (fv(C_2) \setminus dv(C_1))$
+  \item $fv(T Id = E) = fv(E)$
+\end{itemize}
+
+\paragraph{Variabili dichiarate: } identificatori gia dichiarati pronti all'uso.\\
+Si definisce la funzione: $dv: C \rightarrow I$.\\
+
+\paragraph{Giudizio di tipo per le espressioni: } dato un ambiente $\Gamma$ e un'espressione $E$:
+\[
+\Gamma \vdash E : T
+\]
+Si legge che E, nell'ambiente $\Gamma$, è ben tipata.\\
+Esempio:
+\[
+\Gamma = {x: int} \vdash x+3 : int
+\]
+
+\paragraph{Giudizio di tipo per comandi: } dato un ambiente $\Gamma$ e un comando $C$:
+\[
+\Gamma \vdash C : \Gamma^1
+\]
+Si legge che C, in un ambiente $\Gamma$, rende disponibile l'ambiente $\Gamma^1$
+
+\subsection{Grammatica e linguaggio di MAO}
+In MAO il linguaggio viene esteso includendo i tipi:
+\begin{itemize}
+  \item \textbf{char:} per rappresentare simboli, lettere e altri caratteri alfanumerici, esistono caratteri speciali rappresentati da una \textbf{sequenza di escape}, come '$\backslash$ n' e '$\backslash$ t'.
+  \item \textbf{string: } rappresentate come array di char.
+\end{itemize}
+Nel linguaggio di MAO viene introdotto anche l'assegnamento multiplo, ecco un esempio:
+\[
+let x,y,z = 3,4,5;
+\]
+Un altro strumento introdotto in MAO è la direttiva \textbf{return}, assieme alle \textbf{funzioni}.
+
+\subsection{Funzioni in MAO}
+\paragraph{Principio di astrazione: } le funzioni assumono una forma astratta in modo da risolvere molteplici problemi con lo stesso codice.\\
+Le funzioni servono quindi per ridurre al minimo le duplicazioni di codice nel programma.
+\paragraph{Principio di corrispondenza: } parti di un programma che hanno effetti simili devono avere una sintassi simile. Facilita l'apprendimento e l'interpretazione del programma.\\\\
+Ogni funzione ha:
+\begin{itemize}
+  \item Nome
+  \item Definizione con parametri in input (\textbf{formali})
+  \item Tipo di return
+  \item Corpo di definizione
+  \item Eventuali chiamate (con parametri \textbf{attuali})
+\end{itemize}
+Le variabili libere di una funzione sono quelle che non hanno una definizione ne' dentro ne' fuori al corpo della funzione stessa. Per evitare errori, se non dichiarata all'interno del corpo ma utilizzata comunque, una variabile deve essere dichiarata all'esterno del corpo, per esempio globalmente.
+\paragraph{Scoping statico: } le locazioni (non i valori) delle variabili libere delle variabili e le variabili gia definite fuori dal corpo sono salvate al momento della dichiarazione della funzione.\\
+Questo viene garantito costruendo delle \textbf{chiusure}.
+\paragraph{Scoping dinamico: } non si può applicare lo scoping statico.\\\\
+Dopo aver effettuato una chiamata con un parametro attuale, ecco cosa succede:
+\begin{center}
+  formalParameter = actualParameter\\
+  $\forall parameters$
+\end{center}
+
+\subsection{Record di attivazione (stack frame)}
+Contiene le informazioni necessarie all'esecuzione del blocco della funzione, ha due puntatori:
+\begin{itemize}
+  \item \textbf{Catena dinamica: } rappresenta la sequenza di chiamate e serve a garantire il corretto ordine di esecuzione, stato del Program Counter.
+  \item \textbf{Catena statica: } implementa scoping statico e garantisce che i nomi siano referenziati rispettando la visibilità di variabili e funzioni.
+\end{itemize}
+Altre cose che contiene:
+\begin{itemize}
+  \item \textbf{Indirizzo di ritorno:} indirizzo dell'istruzione da eseguire al termine della funzione / blocco corrente.
+  \item \textbf{Indirizzo risultato:} indirizzo all'interno del record di attivazione del chiamante dove si va a scrivere il risultato.
+  \item \textbf{Parametri:} spazio riservato alla associazione parametri formali - parametri attuali.
+  \item \textbf{Variabili locali:} spazio riservato alla allocazione delle variabili locali al blocco
+  \item \textbf{Risultati temporanei:} spazio riservato alla allocazione delle variabili temporanee generate dal compilatore.
+\end{itemize}
+Ogni volta che si chiama una funzione si crea un nuovo record di attivazione.\\
+Questo implica che usare funzioni costa di più che usare un semplice pezzo di codice, a meno che non ci sia duplicazione di codice.\\
+I record di attivazione sono organizzati come una \textbf{pila}, ovvero seguono la politica \textbf{LIFO} (Last In First Out).\\
+Per l'appunto, gli stack frame compongono lo \textbf{stack}. Se chiamiamo troppe funzioni (anche  tramite ricorsione infinita) si va incontro ad uno \textbf{stack overflow}.\\
+L'indirizzo del top dello stack si chiama \textbf{Stack Pointer}.
+\paragraph{Heap: } parte di memoria in cui si memorizzano dati dinamici, come liste. Si tratta di una memoria frammentata, se richiediamo troppe risorse si ottiene \textbf{heap overflow}.
+
+\subsection{Ricorsione}
+Una funzione ricorsiva si chiama da sola, esistono chiamate annidate della stessa funzione.\\
+In una funzione ricorsiva è ammessa una variabile libera a patto che corrisponda al nome della funzione stessa.\\
+Molto utile per strutture di dati e algoritmi.
+\paragraph{Ricorsione in coda: } la chiamata ricorsiva è l'ultimo comando della funzione e quindi ogni stack frame varia solo nei parametri, per questo si evita di duplicarli.
+\paragraph{Mutua ricorsione: } una funziona è definita in termini dell'altra e viceversa.
+\paragraph{Ricorsione diretta: } la chiamata ricorsiva si trova nel blocco della funzione stessa.
+\paragraph{Ricorsione indiretta: } mutua ricorsione.
+
+\section{Strutture Dati}
+\subsection{Alberi}
+\paragraph{Albero binario:} albero in cui ogni nodo ha al massimo 2 figli, uno sinistro e uno destro.
+\paragraph{Simbologia:}
+\begin{itemize}
+  \item $u$ = nodo
+  \item $u.key$ = valore nodo
+  \item $u.right$ = figlio destro (nodo)
+  \item $u.left$ = figlio sinistro (nodo)
+\end{itemize}
+Una \textbf{visita} è un algoritmo che lavora su tutti i nodi in sequenza, se ogni nodo impiega un tempo costante, la complessità della visita è $n$.
+\paragraph{Tipi di visite:}
+\begin{itemize}
+  \item Visita anticipata = si lavora prima sulla radice.
+  \item Visita posticipata = prima si lavora sulla parte sinistra, poi la destra e poi la radice.
+  \item Visita simmetrica = si lavora prima sulla parte sinistra, poi sulla radice e poi sulla parte destra.
+\end{itemize}
+\paragraph{ABCB} = Albero binario completamente bilanciato: completo e tutti i nodi hanno lo stesso albero a destra e sinistra (forma). I nodi di un albero binario completo o hanno due figli o sono foglie.\\
+Un ABCB ha numero massimo di foglie $= 2^h$ con $h = $altezza dell'albero, inoltre ha $2^h -1$ nodi interni e $2^{h+1} - 1$ nodi totali.\\
+Al contrario, l'altezza $h = log(n+1) - 1$.\\
+Un albero binario è 1-bilanciato se e solo se per ogni nodo il valore assoluto della differenza delle altezze dei suoi sottoalberi è $\leq 1$.
+\paragraph{Nodi cardine:} nodo di cui la profondità corrisponde all'altezza.
+\paragraph{Nodi centrali:} nodo la cui sommatoria con i nodi soprastanti corrisponde al numero di nodi del sottoalbero radicato in se stesso.
+\begin{lstlisting}
+raddoppiaPari(u): //Raddoppia il valore di ogni nodo
+  if (u != nul):
+      u.key = u.key * 2
+      raddoppiaPari(u.left)
+      raddoppiaPari(u.right)
+
+visitaSimmetrica(u):
+  if (u != nul):
+      visitaSimmetrica(u.left)
+      analisiNodo(u)
+      visitaSimmetrica(u.right)
+
+dimensione(u):
+  if (u == nul):
+      return 0
+  else:
+      return 1 + dimensione(u.left) + dimensione(u.right)
+
+altezza(u):
+  if (u == nul):
+      return -1
+  else:
+      hs = altezza(u.left)
+      hd = altezza(u.right)
+      return 1 + max(hs,hd)
+
+\\Complessita costante se decomp e ricomb hanno complessita costante.
+\\deconmponibile: valore da calcolare per sottoalbero radicato in u
+decomp(u): 
+  if (u == nul):
+      return decomponibile($\lambda$) 
+  else:
+      risSx = decomp(u.left)
+      risDx = decomp(u.right)
+      return ricombina(risSx,risDx)
+
+nodiCardine(u,p): \\p = profondita, 0 nella radice
+    if (u == nul):
+        return
+    if (p == altezza(u)):
+        console.log(u)
+    nodiCardine(u.left,p+1)
+    nodiCardine(u.right,p+1)
+
+nodiCentrali(u,sum): \\sum = sommatoria nodi u e soprastanti
+    if (u == nul):
+        return 0
+    else:
+        dimS = nodiCentrali(u.left, sum+u.key)
+        dimD = nodiCentrali(u.right, sum + key)
+        dim = dimS + dimD + 1
+        if (dim == sum + u.key):
+            printf u.key
+        return dim
+
+contaFoglie(u): \\u = un albero binario
+    if (u == nul):
+        return 0
+    if (u.left == nul && u.right == nul):
+        return 1
+    else:
+        sx = contaFoglie(u.left)
+        dx = contaFoglie(u.right)
+        return sx + dx
+    
+isCompleto(u):
+    if(u == nul):
+        return true
+    if(u.left == nul && u.right == nul):
+        return true
+    if(u.left != nul && u.right != nul):
+        return isCompleto(u.left) && isCompleto(u.right)
+    else:
+        return false
+
+\\restituisci quante foglie hanno la chiave doppia di quella del padre.
+foglieDoppio(u,fatherKey): 
+    if(u == nul):
+        return 0
+    if(u.left == nul && u.right == nul && (u.key / 2) == fatherKey):
+        return 1
+    else:
+        return foglieDoppio(u.left,u.key) + foglieDoppio(u.right,u.key)
+
+is1Bilanciato(u):
+    if(u == nul):
+        return true
+    return (is1Bilanciato(u.left) 
+    && is1Bilanciato(u.right) 
+    && Math.abs(altezza(u.left) - altezza(u.right)) <= 1)
+
+\\output: true se esistono due elementi che sono uno l'opposto dell'altro
+esistonoOpposti(a): \\array non ordinato a
+\\caso pessimo: scorrere tutto o ordinarlo e poi fare i check. Complessita nlogn (per ordinare ci metto tale tempo)
+\\caso medio: si usa una tabella hash, si riempie la tabella e poi si fa il search lineare
+
+\end{lstlisting}
+
+\subsection{Alberi binari di ricerca}
+Un \textbf{albero binario di ricerca} è un insieme dinamico su un albero binario.\\
+Per ogni nodo di valore $k$ dell'albero binario:
+\begin{itemize}
+    \item \textbf{Sottoalbero sinistro:} $< k$
+    \item \textbf{Sottoalbero destro:} $> k$
+\end{itemize}
+Ogni sottoalbero di un ABR è un ABR.\\
+In un ABR, la visita simmetrica ritorna sempre una sequenza crescente.\\
+Per eliminare un nodo si fa cosi:
+\begin{itemize}
+    \item Se è una foglia si elimina e basta
+    \item Se ha un solo figlio lo si elimina e si sostituisce con il suo sottoalbero
+    \item Se ha due figli si trova il successore y del nodo che ha al massimo un figlio e poi si mette y al posto di z ed elimino il vecchio y dall'albero.
+\end{itemize}
+\paragraph{Delete in ABR:} se è una foglia, il nodo si toglie, altrimenti si elimina e si sostituisce con il suo unico figlio, se ne ha due di figlia allora (cerca nelle slide).\\
+
+\begin{lstlisting}
+search(x,k): //Complessita O(h)
+    if((x == nul) || (x.key == k)):
+        return x
+    if(x.key > k):
+        return search(x.left,k) 
+    if(x.key < k):
+        return search(x.right,k) 
+
+abrMin(x):
+    if(x == nul):
+        return nul
+    while(x.left != nul) do:
+        x = x.left
+    return x
+
+abrMax(x):
+    if(x == nul):
+        return nul
+    while(x.right != nul) do:
+        x = x.right
+    return x
+
+successore(x): //Complessita O(n)
+    if(x == nul):
+        return nul
+    if(x.right != nul)
+        return abrMin(x.right)
+    y = x.p //padre
+    while((y != nul) && (x == y.right)) do:
+        x = y
+        y = y.p
+    return y
+    
+insert(u,z): //u = abr
+    y = nul //inseguitore
+    x = u
+    while(x |= nul) do:
+        y = x
+        if(z.key < x.key):
+            x = x.left
+        else
+            x = x.right
+    //Usciti dal while x = nul e y = il parent
+    //x va attaccato al parent
+    z.parent = y
+    if(y = nul):
+        u = z
+    else:
+        if(z.key < y.key):
+            y.left = z.key
+        else:
+            y.right = z.key
+
+delete(u,z):
+    if((z.left == nul) && (z.right == nul)):
+        y = z
+    else:
+        y = successore(z)
+    if(z.left != nul): 
+        x = y.left
+    else:
+        x = y.right
+    if(u != nul):
+        u.parent = y.parent \\cancello y
+    if(y.parent == nul): //y radice
+        u = x
+    else:
+        if(y == (y.parent).left):
+            (y.parent).left = x
+        else:
+            (y.parent).right = x
+    if(y != z):
+        z.key = y.key
+    return y
+
+isABR(u) {
+    if(u == nul) return true
+    if(!isABR(u.left)) return false
+    if(u.key < prec) return false
+    prec = u.key
+    return isABR(u.right)
+}
+
+swap(u) {//ABR dove sx = maggiore e viceversa,scambia sottoalberi
+        swap(u.left)
+        swap(u.right)
+        temp = u.left
+        u.left = u.right
+        u.right = t
+}
+
+arrayToABRBilanciato(arr,p,r) { //array ordinato
+    if(p > r): return nul
+    q = (p+r)/2
+    u = newNode()
+    u.key = A[q]\\meta 
+    u.left = arrayToABRBilanciato(A,p,q-1)
+    u.right = arrayToABRBilanciato(A,q+1,r)
+    return u 
+}
+\end{lstlisting}
+
+\subsection{Dizionari}
+Un \textbf{dizionario} è una struttura dati che memorizza un insieme dinamico di elementi e supporta le operazioni di:
+\begin{itemize}
+    \item Inserimento
+    \begin{itemize}
+        \item $Insert(S,v)$ con $s = dizionario$, $v = value$.
+    \end{itemize}
+    \item Cancellazione / rimozione
+    \begin{itemize}
+        \item $Delete(S,k)$ con $s = dizionario$, $k = key$, può rimuovere anche in base a valore.
+    \end{itemize}
+    \item Ricerca / verifica di esistenza degli elementi.
+    \begin{itemize}
+        \item $Search(s,k)$ con $s = dizionario$, $k = key$.
+        \item $Locate(s,v)$ con $s = dizionario$, $v = value$.
+    \end{itemize}
+\end{itemize}
+Se in un dizionario si può solo cercare elementi e verificare la loro esistenza allora si indica come \textbf{dizionario statico}, altrimenti è un \textbf{dizionario dinamico}.\\
+Ovviamente ci possono essere anche altri query, come $Min(s)$, $Max(s)$ ...
+
+\subsection{Tabella Hash}
+Le tabelle hash al caso pessimo si comporta come un array non ordinato riguardo le complessita dei metodi:
+\begin{itemize}
+    \item Search
+    \item Insert
+    \item Delete
+\end{itemize}
+Nel caso medio invece ha complessita lineare.\\
+Se la capacità della tabella hash è più piccola dei dati da rappresentare si utilizza il metodo hash che riduce notevolmente gli spazi necessari da usare per la memorizzazione, vediamo un esempio:
+\[
+S = {1032,787,424,18,636,321}
+\]
+\[
+hash(x \% m), m = 11
+\]
+\[
+hash(S) = {9,6,9,7,9,2} = \text{indici nella tabella in cui vengono salvati i numeri di S}
+\]
+Come possiamo vedere ci sono delle \textbf{collisioni}, problema ricorrente.\\
+Il costo computazionale del tempo è $ n / m$ e si chiama fattore di carico ($n$ è il numero degli elementi di $S$), corrisponde alla lungheza media dell'array $T[i]$ (indice).\\
+Per risolvere le collisioni si usano le \textbf{liste di trabocco} (cerca info) oppure:
+\begin{itemize}
+    \item \textbf{Tabelle Hash di concatenamento:} ogni posizione ha un puntatore ad una lista di valori.
+    \item \textbf{Tabelle Hash con indirizzamento aperto (Open Hash Tables:)} se un indice è vuoto allora si assegna normalemnte il valore, altrimenti cerco una posizione alternativa seguendo un ordine per esaminare le altre celle.\\
+    Anche l'ordine, oltre all'indice, dipende dal valore da immettere. Tale ordine si chiama \textbf{sequenza di ispezione}.\\
+    In generale, la sequenza di ispezione è diversa per ogni valore.\\
+    L'hash in una tabella del genere ha un parametro extra oltre al valore, ovvero il numero del tentativo corrente (ordine di ispezione):
+    \[
+    h: U(valori) X [0,m-1] \to [0,m-1]
+    \]
+    L'ordine di ispezione è minore della grandezza della tabella.
+    \[
+    h(k,0) \to h(k,1) \to h(k,2) \to \cdots
+    \] 
+\end{itemize}
+\paragraph{Esercizio di esempio di Hash Table aperte:}
+\[
+m = 11
+\]
+\[
+S = \{10,22,31,4,15,28,17,88,59,26\}
+\]
+\[
+h(k,i) = (k \mod 11 + i) \mod 11
+\]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/HashTableExercise.png}
+\end{figure}
+\paragraph{Doppio Hash:} uno dei metodi migliori e con le migliori prestazioni, ho due funzioni hash ausiliarie $h_1$ e $h_2$.
+\[
+h(k,i) = (h_1(k) + i \cdot h_2(k)) mod m
+\]
+\begin{lstlisting}
+    \\Ottimo: lineare, pessimo: n == m
+    insert(T,k): \\senza cancellazioni
+        i = 0
+        repeat:
+            j = h(k,i)
+            if(T[j] == nul):
+                T[j] = k
+                return k
+            else:
+                i++
+        until (i == m)
+        throw Error(overflow tabella)
+
+    \\Ottimo: lineare, pessimo: n == m
+    search(T,k):
+        i=0
+        repeat:
+            j = h(k,i)
+            if(T[j] == k):
+                return j
+            i++
+        until (T[j] == nul || i >= m)
+        return nil
+
+\end{lstlisting}
+\section{Altri algoritmi}
+\subsection{Array non ordinato}
+
+\subsubsection{Ricerca}
+Scansione lineare sequenziale fino a trovare l’elemento.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Inserimento in ultima posizione (se c’è spazio disponibile).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(1)$
+    \item Caso peggiore: $O(1)$ (oppure $O(n)$ se serve ridimensionamento)
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca dell’elemento e sostituzione con l’ultimo elemento.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Array ordinato}
+
+\subsubsection{Ricerca}
+Ricerca binaria.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(\log n)$
+    \item Caso peggiore: $O(\log n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Ricerca binaria per trovare la posizione + shift degli elementi successivi.
+\begin{itemize}
+    \item Caso migliore: $O(n)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca binaria + shift degli elementi successivi.
+\begin{itemize}
+    \item Caso migliore: $O(n)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Lista non ordinata (semplicemente concatenata)}
+
+\subsubsection{Ricerca}
+Scansione lineare nodo per nodo.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Inserimento in testa.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(1)$
+    \item Caso peggiore: $O(1)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca del nodo precedente + aggiornamento dei puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Lista ordinata (semplicemente concatenata)}
+
+\subsubsection{Ricerca}
+Scansione lineare fino al valore o superamento.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Ricerca posizione corretta + aggiornamento puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca nodo + aggiornamento puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Lista doppia non ordinata}
+
+\subsubsection{Ricerca}
+Scansione lineare (in avanti o bidirezionale).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Inserimento in testa (aggiornamento di due puntatori).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(1)$
+    \item Caso peggiore: $O(1)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca nodo + aggiornamento di entrambi i puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Lista doppia ordinata}
+
+\subsubsection{Ricerca}
+Scansione lineare fino al valore o superamento.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Ricerca posizione corretta + aggiornamento dei due puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca nodo + aggiornamento dei due puntatori.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Albero binario (generico)}
+
+\subsubsection{Ricerca}
+Visita completa dell’albero (DFS o BFS) senza proprietà di ordinamento.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Inserimento}
+Inserimento nel primo posto disponibile (ad esempio per livelli).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Ricerca del nodo + sostituzione con l’ultimo nodo (in visita per livelli).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(n)$
+    \item Caso peggiore: $O(n)$
+\end{itemize}
+
+
+\subsection{Albero binario di ricerca (BST)}
+
+\subsubsection{Ricerca}
+Confronto ricorsivo (o iterativo) partendo dalla radice:
+sinistra se minore, destra se maggiore.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(\log n)$ (bilanciato)
+    \item Caso peggiore: $O(n)$ (degenere)
+\end{itemize}
+
+\subsubsection{Inserimento}
+Ricerca della posizione corretta e inserimento come foglia.
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(\log n)$ (bilanciato)
+    \item Caso peggiore: $O(n)$ (degenere)
+\end{itemize}
+
+\subsubsection{Cancellazione}
+Gestione dei tre casi (foglia, un figlio, due figli con predecessore/successore).
+\begin{itemize}
+    \item Caso migliore: $O(1)$
+    \item Caso medio: $O(\log n)$ (bilanciato)
+    \item Caso peggiore: $O(n)$ (degenere)
+\end{itemize}
+
+
+\subsection{Tabella riassuntiva}
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Struttura & Ricerca & Inserimento & Cancellazione \\
+\hline
+Array non ordinato & $O(n)$ & $O(1)$ & $O(n)$ \\
+Array ordinato & $O(\log n)$ & $O(n)$ & $O(n)$ \\
+Lista non ordinata & $O(n)$ & $O(1)$ & $O(n)$ \\
+Lista ordinata & $O(n)$ & $O(n)$ & $O(n)$ \\
+Lista doppia non ordinata & $O(n)$ & $O(1)$ & $O(n)$ \\
+Lista doppia ordinata & $O(n)$ & $O(n)$ & $O(n)$ \\
+Albero binario & $O(n)$ & $O(n)$ & $O(n)$ \\
+BST & $O(\log n)$ & $O(\log n)$ & $O(\log n)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Cheat Sheet (MiniMAO e MAO)}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/MiniMao_Grammar.png} % replace with your file name
+    \caption{Grammatica di MiniMao}
+    \label{fig:GrammaticaMiniMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/MiniMao_TypeChecking.png} % replace with your file name
+    \caption{Type Checking di MiniMao}
+    \label{fig:TypeCheckingMiniMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/MiniMao_Semantics.png} % replace with your file name
+    \caption{Semantica delle espressioni di MiniMao}
+    \label{fig:SemanticaMiniMao1}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/MiniMao_Semantics_Commands.png} % replace with your file name
+    \caption{Semantica dei comandi di MiniMao}
+    \label{fig:SemanticaMiniMao2}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Mao_Grammar.png} % replace with your file name
+    \caption{Grammatica di Mao}
+    \label{fig:GrammaticaMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Mao_TypeChecking.png} % replace with your file name
+    \caption{Type Checking delle espressioni di Mao}
+    \label{fig:TypeCheckingExpressionsMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Mao_TypeChecking2.png} % replace with your file name
+    \caption{TypeChecking dei comandi di Mao}
+    \label{fig:TypeCheckingCommandsMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Mao_Semantics1.png} % replace with your file name
+    \caption{Semantica delle espressioni di Mao}
+    \label{fig:SemanticaEspressioniMao}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Mao_Semantics2.png} % replace with your file name
+    \caption{Semantica dei comandi di Mao}
+    \label{fig:SemanticaComandiMao}
+\end{figure}
+
+
+\section{Altro}
+La condizione da controllare nei comandi condizionali si chiama \textbf{guardia}.
+\end{document}

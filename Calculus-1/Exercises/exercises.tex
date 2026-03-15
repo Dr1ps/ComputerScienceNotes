@@ -1,0 +1,172 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, bm, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{} 
+
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+
+\title{Analisi Matematica 1 - Esercizi}
+\author{}
+\date{}
+
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Analisi 1 - Esercizi}    % Center
+\fancyhead[R]{2025/2026}               % Right side
+\fancyfoot[C]{\thepage}                % Page number in the center of footer
+
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Esercitazione 02-10-2025}
+
+\subsection*{Esercizio 1}
+La funzione $f : [-1,3] \rightarrow \mathbb{R}$ definita da $f(x) = \sin x + \cos^4 x$
+\begin{enumerate}
+  \item ha massimo ma non ha minimo
+  \item ha minimo ma non ha massimo
+  \item \textbf{ha sia massimo che minimo}
+  \item è limitata ma non ha né massimo né minimo\\
+\end{enumerate}
+Il teorema di Weierstrass ci assicura che questa funzione abbia massimo e minimo, in quanto è definita su un intervallo chiuso e limitato.
+
+\subsection*{Esercizio 2}
+Sia $A = \{x \in \mathbb{R} : \sin^2 x - 2\sin x < 0\}$. Allora:
+\begin{enumerate}
+  \item $\inf(A) = 0$
+  \item $\bm{ \inf(A) = -\infty}$
+  \item $\sup(A) = 2$
+  \item $\sup(A) = \sin 2$\\
+\end{enumerate}
+Partiamo subito col fare la disequazione:
+\begin{align*}
+  \sin^2 x - 2\sin x &< 0\\
+  \sin x (\sin x - 2) &< 0
+\end{align*}
+La parentesi è sempre negativa, quindi:
+\begin{align*}
+  \sin x &> 0
+\end{align*}
+In questo caso conviene aiutarsi con un grafico.\\
+Si ha quindi:
+\[
+A = {x \in \mathbb{R} : \forall k \in \mathbb{Z} \rightarrow 2k\pi < x < 2k\pi + \pi}
+\]
+Si intuisce che la funzione si estende infinitamente a destra e sinistra.
+
+\subsection*{Esercizio 3}
+Sia $f : \mathbb{R} \to \mathbb{R}$ definita da
+\[
+f(x) = 
+\begin{cases}
+\dfrac{e^x}{x^2}, & x \neq 0, \\
+0, & x = 0.
+\end{cases}
+\]
+Allora:
+\begin{enumerate}
+  \item $f$ è limitata in $\mathbb{R}$
+  \item $\bm{\min\{f(x) : x \in \mathbb{R}\} = 0}$
+  \item $f$ è crescente in $\mathbb{R}$
+  \item $f$ è dispari\\
+\end{enumerate}
+Quando $x \ne 0$ la funzione sarà sempre $>0$ in quanto $e^x$ non potrà mai risultare $0$.
+
+\subsection*{Esercizio 4}
+L’insieme $\{x \in \mathbb{R} : x^2 > |3x - 1|\}$:
+\begin{enumerate}
+  \item non è limitato né superiormente né inferiormente
+  \item è limitato superiormente ma non inferiormente
+  \item è limitato
+  \item è limitato inferiormente ma non superiormente
+\end{enumerate}
+
+\subsection*{Esercizio 5}
+L’insieme $\{x \in \mathbb{R} : x^2 - \tfrac{1}{x} < 0\}$:
+\begin{enumerate}
+  \item è limitato inferiormente ma non superiormente
+  \item è limitato
+  \item non è limitato né inferiormente né superiormente
+  \item è limitato superiormente ma non inferiormente
+\end{enumerate}
+
+\subsection*{Esercizio 6}
+L’insieme $\{x \in \mathbb{R} : \tfrac{1}{3} < \sin x \le \tfrac{1}{2}\}$:
+\begin{enumerate}
+  \item è limitato
+  \item è limitato superiormente ma non inferiormente
+  \item non è limitato né inferiormente né superiormente
+  \item è un intervallo
+\end{enumerate}
+
+\subsection*{Esercizio 7}
+Sia $A$ l’insieme di definizione della funzione $f(x) = \log(\log(x + 3))$. L’insieme $A$:
+\begin{enumerate}
+  \item è limitato
+  \item non è limitato né superiormente né inferiormente
+  \item è limitato superiormente ma non inferiormente
+  \item è limitato inferiormente ma non superiormente
+\end{enumerate}
+
+\subsection*{Esercizio 8}
+La funzione $f : (-2,2) \to \mathbb{R}$ definita da
+\[
+f(x) = 
+\begin{cases}
+x + 1, & -2 < x \le 0,\\
+x - 1, & 0 < x < 2
+\end{cases}
+\]
+\begin{enumerate}
+  \item ha minimo ma non ha massimo
+  \item non ha né massimo né minimo
+  \item ha sia massimo che minimo
+  \item ha massimo ma non ha minimo
+\end{enumerate}
+
+\subsection*{Esercizio 9}
+L’insieme di definizione della funzione $f(x) = \log(x^2 - 5x + 4 - x)$ è:
+\begin{enumerate}
+  \item $(-\infty, 4)$
+  \item $(-\infty, 0)$
+  \item $(-\infty, 0) \cup (4,5)$
+  \item $(4,5)$
+\end{enumerate}
+
+\subsection*{Esercizio 10}
+L’insieme $A = \{x \in \mathbb{R} : |x^2 - 2| > x - 1\}$:
+\begin{enumerate}
+  \item è limitato superiormente ma non inferiormente
+  \item è limitato inferiormente ma non superiormente
+  \item non è limitato né superiormente né inferiormente
+  \item è limitato
+\end{enumerate}
+
+\subsection*{Esercizio 11}
+La funzione $f : \mathbb{R} \to \mathbb{R}$ definita da
+\[
+f(x) = \arctan x + e^{\arctan x}
+\]
+\begin{enumerate}
+  \item è surgettiva ma non iniettiva
+  \item è bigettiva
+  \item non è né iniettiva né surgettiva
+  \item è iniettiva ma non surgettiva
+\end{enumerate}
+\end{document}

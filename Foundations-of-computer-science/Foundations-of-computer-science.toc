@@ -1,0 +1,149 @@
+\contentsline {section}{\numberline {1}Insiemi}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definizione}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Notazioni}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Descrizione e rappresentazione degli insiemi}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Diagrammi di Eulero-Venn}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Uguaglianza e inclusione tra insiemi}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Disgiunzione}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Insieme universo}{5}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Proprietà di uguaglianza e inclusione}{6}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Operazioni tra insiemi}{6}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Implicazioni logiche}{6}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Tipi di dimostrazione}{6}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Leggi degli insiemi}{6}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Cardinalità}{6}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Insiemi di insiemi}{6}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Insieme delle parti}{7}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Famiglie e partizioni di insiemi}{7}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}Prodotto cartesiano}{7}{subsection.1.17}%
+\contentsline {section}{\numberline {2}Relazioni tra insiemi}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definizione}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Relazione identità}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Composizione di relazioni}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Relazione opposta}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Proprietà delle relazioni (TUSI)}{8}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Relazioni totali}{8}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Relazioni univalenti}{9}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Relazioni suriettive (surgettive)}{9}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Relazioni iniettive}{9}{subsubsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.6}Risultati di dualità}{9}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Teorema di caratterizzazione}{9}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Composizione e proprietà}{9}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Funzioni}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definizione}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Composizione di funzioni}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Funzione parziale}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Biiezione (Bigezione)}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Teorema di categorizzazione delle biiezioni}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Proprietà delle biiezioni}{11}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Induzione}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Definizione induttiva di un insieme}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Definizione induttiva di una funzione}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Definizione induttiva di una proprietà}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Relazioni su un insieme}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Proprietà delle relazioni su un insieme (RATSO)}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Teorema di caratterizzazione}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Chiusure di una relazione}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Relazioni particolari}{15}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Grafi orientati}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Definizione}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Rappresentazione di grafi orientati}{16}{subsection.6.2}%
+\contentsline {paragraph}{Matrice di adiacenza:}{16}{subsection.6.2}%
+\contentsline {paragraph}{Liste di adiacenza:}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Varianti di grafi}{17}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Connettività}{17}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Ordinamento topologico su DAG}{18}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Grafi non orientati}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Definizione}{19}{subsection.7.1}%
+\contentsline {paragraph}{Proprietà}{19}{subsection.7.1}%
+\contentsline {paragraph}{Combinazione di circuiti:}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Grafo orientato associato a un grafo non orientato}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Rappresentazione di grafi non orientati}{20}{subsection.7.3}%
+\contentsline {paragraph}{Matrice di adiacenza:}{20}{subsection.7.3}%
+\contentsline {paragraph}{Liste di adiacenza:}{20}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Alberi}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Caratteristiche}{21}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Proprietà}{21}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Alberi importanti}{22}{subsection.8.3}%
+\contentsline {paragraph}{Albero radicato: }{22}{subsection.8.3}%
+\contentsline {paragraph}{Alberi ordinali: }{22}{subsection.8.3}%
+\contentsline {paragraph}{Alberi cardinali: }{22}{subsection.8.3}%
+\contentsline {paragraph}{Albero binario di ricerca: }{22}{subsection.8.3}%
+\contentsline {paragraph}{Red-Black Tree: }{22}{subsection.8.3}%
+\contentsline {paragraph}{Albero decisionale: }{22}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Cammini e cicli Euleriani e Hamiltoniani}{24}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Teorema di Eulero}{24}{subsection.9.1}%
+\contentsline {paragraph}{Circuito euleriano: }{24}{subsection.9.1}%
+\contentsline {paragraph}{Trail euleriano (o \emph {percorso euleriano}): }{24}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Teorema di Hamilton}{24}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Il problema dei sette ponti di Konigsberg}{25}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Problema del commesso viaggiatore}{25}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Altro sui grafi}{26}{section.10}%
+\contentsline {paragraph}{Diametro di un grafo: }{26}{section.10}%
+\contentsline {paragraph}{Profondità di un nodo: }{26}{section.10}%
+\contentsline {paragraph}{Altezza di un nodo: }{26}{section.10}%
+\contentsline {paragraph}{Altezza di un grafo: }{26}{section.10}%
+\contentsline {paragraph}{Uguaglianza tra grafi: }{26}{section.10}%
+\contentsline {paragraph}{Isomorfismo tra grafi: }{26}{section.10}%
+\contentsline {paragraph}{Grafo bipartito: }{26}{section.10}%
+\contentsline {paragraph}{Spanning Tree: }{26}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Distanze}{26}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Calcolo combinatorio}{27}{section.11}%
+\contentsline {paragraph}{Un utile lemma:}{27}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Cardinalità di operazioni su insiemi}{27}{subsection.11.1}%
+\contentsline {paragraph}{Prodotto cartesiano di n insiemi}{27}{subsection.11.1}%
+\contentsline {paragraph}{Unione di tre insiemi}{27}{subsection.11.1}%
+\contentsline {paragraph}{Principio di Inclusione-Esclusione}{27}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Cardinalità di relazioni}{27}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Cardinalità dell'insieme delle parti}{28}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Le targhe delle macchine italiane}{28}{subsection.11.4}%
+\contentsline {paragraph}{Formato: }{28}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Permutazioni, disposizioni e combinazioni}{28}{subsection.11.5}%
+\contentsline {subsubsection}{\numberline {11.5.1}Permutazione}{28}{subsubsection.11.5.1}%
+\contentsline {paragraph}{Anagrammi}{29}{subsubsection.11.5.1}%
+\contentsline {subsubsection}{\numberline {11.5.2}Disposizioni}{29}{subsubsection.11.5.2}%
+\contentsline {subsubsection}{\numberline {11.5.3}Combinazioni}{29}{subsubsection.11.5.3}%
+\contentsline {subsubsection}{\numberline {11.5.4}Cardinalità sfruttando regole di biiezione}{30}{subsubsection.11.5.4}%
+\contentsline {subsection}{\numberline {11.6}Calcolo combinatorio sui grafi}{30}{subsection.11.6}%
+\contentsline {paragraph}{Complemento di un grafo:}{30}{subsection.11.6}%
+\contentsline {paragraph}{Shortest path tra due nodi: }{31}{subsection.11.6}%
+\contentsline {section}{\numberline {12}Induzione strutturale}{32}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Liste}{32}{subsection.12.1}%
+\contentsline {paragraph}{Lunghezza di una lista: }{32}{subsection.12.1}%
+\contentsline {paragraph}{Somma di una lista: }{32}{subsection.12.1}%
+\contentsline {paragraph}{Appartenenza a una lista: }{32}{subsection.12.1}%
+\contentsline {paragraph}{Concatenazione tra liste: }{32}{subsection.12.1}%
+\contentsline {paragraph}{Principio di induzione delle liste: }{32}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Induzione strutturale su alberi binari}{33}{subsection.12.2}%
+\contentsline {paragraph}{Definizione induttiva degli alberi binari:}{33}{subsection.12.2}%
+\contentsline {paragraph}{Dimensione: }{33}{subsection.12.2}%
+\contentsline {paragraph}{Altezza: }{33}{subsection.12.2}%
+\contentsline {paragraph}{Appartenenza: }{33}{subsection.12.2}%
+\contentsline {paragraph}{Visita: }{33}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}F-Terms}{33}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Principio di induzione strutturale}{34}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Ricorsione}{35}{section.13}%
+\contentsline {paragraph}{Definizione di una funzione ricorsiva:}{35}{section.13}%
+\contentsline {section}{\numberline {14}Linguaggi Formali}{36}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Automa}{36}{subsection.14.1}%
+\contentsline {paragraph}{Stato di accettazione: }{37}{subsection.14.1}%
+\contentsline {paragraph}{Raggiungibilità: }{37}{subsection.14.1}%
+\contentsline {paragraph}{Linguaggio accettato da uno stato: }{37}{subsection.14.1}%
+\contentsline {paragraph}{Esercizio: }{37}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Automi deterministici e non deterministici}{37}{subsection.14.2}%
+\contentsline {paragraph}{Automa deterministico: }{37}{subsection.14.2}%
+\contentsline {paragraph}{Automa non deterministico: }{37}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Grammatiche}{37}{subsection.14.3}%
+\contentsline {paragraph}{Albero di derivazione sintattica (Parse Tree): }{38}{subsection.14.3}%
+\contentsline {section}{\numberline {15}Logica}{39}{section.15}%
+\contentsline {paragraph}{Proposizione: }{39}{section.15}%
+\contentsline {paragraph}{Tautologia: }{39}{section.15}%
+\contentsline {paragraph}{Contraddizione: }{39}{section.15}%
+\contentsline {paragraph}{Conseguenza logica: }{39}{section.15}%
+\contentsline {paragraph}{Principio di sostituzione: }{39}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Tecniche di dimostrazione}{40}{subsection.15.1}%
+\contentsline {paragraph}{Contronominale: }{40}{subsection.15.1}%
+\contentsline {paragraph}{Dimostrazione per assurdo: }{40}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Logica dei predicati}{40}{subsection.15.2}%
+\contentsline {paragraph}{Quantificatori:}{40}{subsection.15.2}%
+\contentsline {paragraph}{Alfabeti del primo ordine:}{40}{subsection.15.2}%

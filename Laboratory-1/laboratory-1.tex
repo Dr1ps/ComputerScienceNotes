@@ -1,0 +1,558 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{} 
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Laboratorio 1}     % Center
+\fancyhead[R]{2025/2026}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\title{Laboratorio 1}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\section{Risorse}
+\begin{itemize}
+  \item Libro di testo: \href{https://eloquentjavascript.net}{eloquentjavascript.net}
+  \item IDE online TypeScript: \href{https://www.typescriptlang.org/play}{typescriptlang.org/play}
+\end{itemize}
+
+\section{Concetti di base}
+
+\subsection{Compilatore}
+\begin{itemize}
+  \item Crea un file eseguibile a partire dal codice sorgente.
+  \item \textbf{Scanner}: analisi lessicale.
+  \item \textbf{Parser}: analisi sintattica.
+  \item \textbf{Type-checker}: analisi semantica.
+  \item \textbf{Linker}: collega librerie e file.
+\end{itemize}
+
+\subsection{Interprete}
+\begin{itemize}
+  \item Esegue il codice direttamente, istruzione per istruzione.
+  \item Usa il ciclo \textbf{fetch-execute}.
+\end{itemize}
+
+\subsection{Transpilatore}
+\begin{itemize}
+  \item Converte codice da un linguaggio a un altro.
+  \item Esempio: TypeScript viene convertito in JavaScript.
+\end{itemize}
+
+\section{Architettura di un computer}
+
+\begin{itemize}
+  \item \textbf{CPU} = processore:
+    \begin{itemize}
+      \item \textbf{ALU}: Arithmetic Logic Unit
+      \item \textbf{CU}: Control Unit
+    \end{itemize}
+  \item \textbf{System Bus}: canale di comunicazione
+  \item \textbf{I/O}: periferiche
+  \item \textbf{Memoria}: RAM, SSD, registri
+\end{itemize}
+
+\subsection{Ciclo fetch-execute}
+\begin{enumerate}
+  \item Recupera istruzione dalla RAM
+  \item Decodifica
+  \item Esecuzione
+  \item Ripeti
+\end{enumerate}
+
+\section{Rappresentazione binaria}
+Come la rappresentazione posizionale in base 10 permette questo:\\\\
+$\textbf{7456} = (7 \cdot 1000) + (4 \cdot 100) + ( 5 \cdot 10) + (6 \cdot 1 ) = (7 \cdot 10^3) + (4 \cdot 10^2) + (5 \cdot 10^1) + (6 \cdot 10^0)$\\
+Cifre = \{$0,1,\ldots,Base-1$ \}\\
+Base = 10\\\\
+La rappresentazione in base 2 (\textbf{binaria}) permette questo:\\\\
+$\textbf{1010} = (1 \cdot 2^3) + (1 \cdot 2^1) = 10$ (in base 10)\\
+Cifre = \{$0,1$\} = \{$0,2-1$\}\\
+
+\subsection{Da base 10 a base 2}
+\[
+\begin{array}{c|c|c}
+\textbf{Divisione per 2} & \textbf{Quoziente} & \textbf{Resto (bit)} \\ \hline
+154 \div 2 & 77  & 0 \\
+77 \div 2  & 38  & 1 \\
+38 \div 2  & 19  & 0 \\
+19 \div 2  & 9   & 1 \\
+9 \div 2   & 4   & 1 \\
+4 \div 2   & 2   & 0 \\
+2 \div 2   & 1   & 0 \\
+1 \div 2   & 0   & 1 \\ \hline
+\multicolumn{3}{c}{\textbf{Risultato: } 154_{10} = 10011010_2}
+\end{array}
+\]
+Per appunto trasformare un numero da base 10 a base 2 occorre fare il modulo più volte su di esso fino ad arrivare a 0.\\
+
+\subsection{Perché si usa}
+I computer lavorano più efficientemente in base 2, dato che utilizzano soltanto due valori \textbf{ON/OFF}, indicati da variazione
+di tensione 0v e +5v.\\
+
+\subsection{Overflow}
+Se abbiamo n bit a disposizione per rappresentare dei numeri ed effettuiamo un operazione tra due numeri il cui risultato non può essere rappresentato in n bit si ha un \textbf{overflow}.\\
+L'overflow è causa di errore di calcolo, in quanto, se non curato, esclude le cifre che non riescono a essere rappresentate.\\\\
+\textbf{$b_0$} = bit meno significativo (\textbf{Least Significant Bit}, LSb)\\
+\textbf{$b_{n-1}$} = bit più significativo (\textbf{Most Significant Bit}, MSb)
+
+\subsection{Rappresentazione con modulo e segno}
+Per rappresentare gli interi in base 2 bisogna riuscire a rappresentare anche il segno.\\
+Per farlo, si riserva un bit per il $+$ e il $-$, spesso il \textbf{MSb}.\\\\
+Con n bit, possiamo rappresentare gli interi $\in [-2^{(n-1)},2^{n-1}-1]$
+
+\subsection{Complemento a 1}
+Quando si esegue una somma si dovrebbero verificare i segni dei due numeri e, se risultano diversi, si dovrebbe eseguire una sottrazione. Ciò vuol dire che prima di ogni operazione il calcolatore deve fare una verifica in più.\\
+Per risolvere, si usa il \textbf{complemento a 1}, ovvero il NOT su ogni bit.\\
+Adesso la somma tra numeri negativi e positivi funziona, risultando però spesso con overflow che deve essere riaggiunto al numero.\\\\
+Il problema del complemento a 1 è che ha due rappresentazioni per lo 0:
+\[
+0^+ = 0000 0000
+\]
+\[
+0^- = 1111 1111
+\]
+
+\subsection{Complemento a 2}
+Il \textbf{complemento a 2} risolve il problema della doppia rappresentazione dello 0 del complemento a 1.\\
+Vantaggi complemento a 2:
+\begin{itemize}
+  \item Un solo 0 (0000 0000, non ho più $0^+,0^-$), se faccio il complemento a 2 di 0 è sempre 0000 0000.
+  \item L'operazione somma non ha bisogno di controllare il segno.
+  \item Scarta l'overflow.
+\end{itemize}
+La sottrazione $a-b$ è la somma $a + \overline{\overline{b}}$.\\
+Per trovare $\overline{\overline{b}}$ si deve prima fare il complemento a 1 di $b$ e poi aggiungere 1.\\
+  
+\subsection{Numeri reali in base 2 (IEEE 754)}
+\textbf{IEEE 754} è lo standard internazionale per la rappresentazione dei numeri in virgola mobile (\textbf{floating-point}), usato praticamente da tutti i computer e linguaggi di programmazione.
+
+\subsubsection{Campi dello standard IEEE 754}
+\begin{table}[h!]
+\centering
+\resizebox{\textwidth}{!} {
+  \begin{tabular}{|l|l|c|c|}
+\hline
+\textbf{Campo} & \textbf{Significato} & \textbf{Bit (32 bit)} & \textbf{Bit (64 bit)} \\ \hline
+\textbf{Sign (S)} & segno del numero & 1 & 1 \\ \hline
+\textbf{Exponent (E)} & esponente in base 2 & 8 & 11 \\ \hline
+\textbf{Mantissa / Fraction (M)} & parte frazionaria del numero normalizzato & 23 & 52 \\ \hline
+\end{tabular}
+}
+\caption{Struttura dei campi per i formati IEEE 754 a 32 e 64 bit}
+\end{table}
+
+\paragraph{Bit di segno (Sign bit)}
+
+Il bit di segno indica il segno del numero rappresentato:
+\begin{align*}
+S = 0 &\rightarrow S \geq 0 \\
+S = 1 &\rightarrow S < 0
+\end{align*}
+
+
+\paragraph{Esponente (Exponent)}
+L'esponente determina la potenza di 2 per cui va moltiplicata la mantissa, cioè sposta la virgola binaria a destra o a sinistra.  
+Per evitare di memorizzare esponenti negativi, lo standard IEEE 754 utilizza un valore chiamato \emph{bias} (o offset).  
+In pratica, l'esponente memorizzato in memoria non è quello reale, ma:
+
+\[
+E_{reale} = E_{memorizzato} - bias
+\]
+Il valore del bias dipende dal formato:
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+Tipo & Bit Esponente & Bias \\ \hline
+Float (32 bit) & 8 & 127 \\ \hline
+Double (64 bit) & 11 & 1023 \\ \hline
+\end{tabular}
+\end{center}
+Per esempio, nel formato float (32 bit):
+\[
+E_{memorizzato} = 10000001_2 = 129_{10}
+\]
+\[
+E_{reale} = 129 - 127 = 2
+\]
+Quindi l'esponente effettivo è 2, che equivale a moltiplicare la mantissa per \(2^2 = 4\).
+
+\paragraph{Mantissa (Fraction)}
+La mantissa rappresenta la parte frazionaria del numero normalizzato.  
+Nei numeri normalizzati, si assume sempre la presenza di un 1 implicito prima del punto binario, quindi il valore effettivo è:
+
+\[
+1.\,mantissa\ bits
+\]
+Esempio:
+\[
+Mantissa = 01000000000000000000000
+\]
+\[
+\Rightarrow 1.01_2 = 1 + 0.25 = 1.25
+\]
+In altre parole, la mantissa determina la precisione del numero, mentre l'esponente ne controlla la scala, cioè quanto grande o piccolo è il valore.
+
+\subsubsection{Valori speciali dell'esponente}
+\begin{table}[h!]
+\centering
+\resizebox{\textwidth}{!} {
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{Esponente} & \textbf{Mantissa} & \textbf{Significato} \\ \hline
+00000000 & 000...0 & \textbf{0} (positivo o negativo) \\ \hline
+00000000 & $\neq$0 & \textbf{Numero denormalizzato} (molto vicino a 0) \\ \hline
+11111111 & 000...0 & \textbf{$\infty$} (positivo o negativo) \\ \hline
+11111111 & $\neq$0 & \textbf{NaN} (Not a Number) \\ \hline
+\end{tabular}
+}
+\caption{Valori speciali dell'esponente nello standard IEEE 754}
+\end{table}
+\subsubsection{Intervalli di rappresentazione}
+\begin{itemize}
+    \item \textbf{DP (Double Precision)}: 64 bit totali, esponente 11 bit, mantissa 52 bit, bias 1023.
+    \item \textbf{SPS (Single Precision)}: 32 bit totali, esponente 8 bit, mantissa 23 bit, bias 127.
+    \item \textbf{QP (Quad Precision)}: 128 bit totali, esponente 15 bit, mantissa 112 bit, bias 16383.
+\end{itemize}
+L'intervallo dei numeri rappresentabili dipende dal valore massimo e minimo dell'esponente:
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Protocollo} & \textbf{Valore minimo positivo} & \textbf{Valore massimo} \\ \hline
+SPS (32 bit) & $\approx 1.175 \cdot 10^{-38}$ & $\approx 3.402 \cdot 10^{38}$ \\ \hline
+DP (64 bit) & $\approx 2.225 \cdot 10^{-308}$ & $\approx 1.798 \cdot 10^{308}$ \\ \hline
+QP (128 bit) & $\approx 3.362 \cdot 10^{-4932}$ & $\approx 1.189 \cdot 10^{4932}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Rappresentazione dei caratteri testuali in binario: ASCII e Unicode}
+
+I caratteri testuali nei computer sono rappresentati tramite codifiche standard, assegnando a ciascun simbolo un numero binario unico.
+
+\paragraph{ASCII (American Standard Code for Information Interchange)}
+\begin{itemize}
+    \item Codifica a 7 bit (128 caratteri).
+    \item Include lettere maiuscole e minuscole, numeri, simboli di punteggiatura e caratteri di controllo.
+\end{itemize}
+\paragraph{Unicode UTF-8}
+\begin{itemize}
+    \item Codifica variabile (1-4 byte), compatibile con ASCII.
+    \item Permette di rappresentare tutti i caratteri del mondo (simboli, lettere accentate, ideogrammi, emoji).
+\end{itemize}
+
+\subsection{Immagini raster (bitmap)}
+
+Le immagini raster, o bitmap, sono composte da \textbf{pixel}, ovvero piccoli punti che contengono informazioni sul colore e sulla luminosità.  
+Ogni pixel è rappresentato in binario, e il numero di bit determina la profondità di colore e la precisione dell'immagine.
+
+\paragraph{Bianco e nero}  
+\begin{itemize}
+  \item Ogni pixel occupa \textbf{1 bit}.  
+  \item Valori possibili:  
+  \begin{itemize}
+    \item 0 = bianco
+    \item 1 = nero
+  \end{itemize}  
+  \item È la rappresentazione più semplice, usata in fax, testi scansionati o icone.
+\end{itemize}
+
+
+\paragraph{Scala di grigio}  
+\begin{itemize}
+  \item Ogni pixel occupa \textbf{8 bit} (1 byte).  
+  \item Valori possibili: da 0 a 255, dove:  
+  \begin{itemize}
+    \item 0 = nero
+    \item 255 = bianco
+    \item valori intermedi = sfumature di grigio
+  \end{itemize}  
+  \item Utilizzata in fotografia in bianco e nero e immagini medicali.
+\end{itemize}
+
+\paragraph{Colori RGB} 
+\begin{itemize}
+  \item Ogni pixel occupa \textbf{24 bit} (3 byte), uno per ciascun canale dei colori primari:  
+  \begin{itemize}
+    \item Rosso (R)
+    \item Verde (G)
+    \item Blu (B)
+  \end{itemize}  
+  \item Ogni canale varia da 0 a 255, quindi i valori RGB combinati definiscono il colore finale del pixel.\\
+  Esempio:  
+  \begin{itemize}
+    \item RGB(255,0,0) = rosso pieno
+    \item RGB(0,255,0) = verde pieno
+    \item RGB(0,0,255) = blu pieno
+    \item RGB(255,255,255) = bianco
+    \item RGB(0,0,0) = nero
+  \end{itemize}
+\end{itemize} 
+
+
+\subsection{Campionamento dei suoni in binario}
+
+Il suono è un segnale analogico continuo, cioè varia nel tempo in modo costante. Per poter essere memorizzato ed elaborato da un computer, deve essere convertito in una forma digitale, cioè in una sequenza di numeri binari.  
+Questo processo si chiama \textbf{digitalizzazione del suono} e si compone di due fasi principali: \textbf{campionamento} e \textbf{quantizzazione}.
+
+\subsubsection{Campionamento}
+
+Il \textbf{campionamento} consiste nel misurare a intervalli regolari di tempo l’ampiezza del segnale sonoro.  
+Ogni misurazione è chiamata \textit{campione}.  
+La frequenza con cui vengono presi i campioni è detta \textbf{frequenza di campionamento} e si misura in Hertz (Hz).
+
+Ad esempio:
+\begin{itemize}
+    \item 8 kHz $\rightarrow$ qualità telefonica
+    \item 44.1 kHz $\rightarrow$ qualità CD audio
+    \item 48 kHz o superiore $\rightarrow$ qualità professionale
+\end{itemize}
+
+\subsubsection{Quantizzazione}
+
+Dopo il campionamento, ogni valore analogico viene trasformato in un numero digitale.  
+Il numero di \textbf{bit} usati per rappresentare ciascun campione determina la \textbf{profondità di bit} (bit depth).  
+Con $n$ bit, si possono rappresentare $2^n$ livelli di ampiezza.
+
+\[
+\text{Numero di livelli} = 2^n
+\]
+
+Ad esempio, con 16 bit si hanno $2^{16} = 65536$ livelli.
+
+\subsubsection{Esempio pratico}
+
+Supponiamo che un segnale sonoro vari tra $-1$ e $+1$ volt e che venga quantizzato con 3 bit.  
+Ogni livello di quantizzazione avrà un valore binario come in tabella:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Ampiezza (V)} & \textbf{Codice binario (3 bit)} \\
+\hline
++1.00 & 111 \\
++0.75 & 110 \\
++0.50 & 101 \\
++0.25 & 100 \\
+-0.25 & 011 \\
+-0.50 & 010 \\
+-0.75 & 001 \\
+-1.00 & 000 \\
+\hline
+\end{tabular}
+\caption{Esempio di quantizzazione di un segnale sonoro con 3 bit}
+\end{table}
+
+Ogni valore di ampiezza viene così trasformato in una sequenza binaria, che può essere memorizzata in un file audio (ad esempio, WAV o PCM).
+
+\subsubsection{Rappresentazione grafica}
+
+Il seguente schema mostra il processo di digitalizzazione del suono:
+
+\[
+\text{Segnale analogico} \xrightarrow[\text{campionamento}]{\text{a intervalli regolari}} \text{campioni discreti} \xrightarrow[\text{quantizzazione}]{\text{in bit}} \text{valori binari}
+\]
+
+
+\subsubsection{Esempio binario finale}
+
+Un breve estratto di campioni potrebbe risultare così:
+
+\[
+\text{Ampiezza} \rightarrow \{ -0.75, -0.25, +0.50, +1.00 \}
+\]
+\[
+\text{Codifica binaria} \rightarrow \{ 001, 011, 101, 111 \}
+\]
+
+Questa sequenza di bit rappresenta il suono originale in formato digitale.
+
+\subsection{Operatori binari logici e di scorrimento}
+
+In informatica, i dati binari possono essere manipolati tramite \textbf{operatori binari}, che agiscono direttamente sui singoli bit.  
+Questi operatori si dividono principalmente in due categorie: \textbf{operatori logici} e \textbf{operatori di scorrimento}.
+
+\subsubsection{Operatori logici}
+
+Gli \textbf{operatori logici bit a bit} confrontano i bit di due operandi e restituiscono un nuovo valore binario come risultato.  
+Di seguito sono mostrati i principali operatori logici binari:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Operatore} & \textbf{Nome} & \textbf{Simbolo} \\
+\hline
+AND & Conjunctione logica & \& \\
+OR & Disgiunzione logica & |\\
+XOR & Disgiunzione esclusiva & $\oplus$  \\
+NOT & Negazione logica & $\sim$ \\
+\hline
+\end{tabular}
+\caption{Operatori logici binari}
+\end{table}
+Ecco le \textbf{tabelle di verità} per ciascun operatore binario:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{A} & \textbf{B} & \textbf{A \& B} & \textbf{A | B} & \textbf{A $\oplus$ B} \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 \\
+1 & 1 & 1 & 1 & 0 \\
+\hline
+\end{tabular}
+\caption{Tabelle di verità per AND, OR e XOR}
+\end{table}
+Esempio pratico con numeri binari a 4 bit:
+
+\[
+\begin{array}{rl}
+A &= 1010 \\
+B &= 1100 \\
+\hline
+A \& B &= 1000 \\
+A | B &= 1110 \\
+A \oplus B &= 0110 \\
+\sim A &= 0101 \\
+\end{array}
+\]
+
+\subsubsection{Operatori di scorrimento (Bit shift)}
+
+Gli \textbf{operatori di scorrimento} spostano tutti i bit di un numero verso sinistra o verso destra.  
+Ogni spostamento equivale a una moltiplicazione o divisione per 2 (nelle rappresentazioni senza segno).
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!} {
+  \begin{tabular}{|c|c|c|}
+\hline
+\textbf{Operatore} & \textbf{Simbolo} & \textbf{Descrizione} \\
+\hline
+Shift a sinistra & \texttt{<<} & Sposta tutti i bit a sinistra, inserendo zeri a destra \\
+Shift a destra & \texttt{>>} & Sposta tutti i bit a destra, eliminando i bit a destra \\
+Shift a destra con inserimento di 0 & \texttt{>>>} & Come lo shift a destra, ma inserisce 0 a sinistra (non mantiene il segno) \\
+\hline
+\end{tabular}
+}
+\caption{Operatori binari di scorrimento}
+\end{table}
+Esempio:
+
+\[
+A = 00101100
+\]
+\[
+A << 2 = 10110000 \quad \text{(spostato a sinistra di 2, moltiplicato per 4)}
+\]
+\[
+A >> 2 = 00001011 \quad \text{(spostato a destra di 2, diviso per 4)}
+\]
+\[
+A >>> 2 = 00001011 \quad \text{(come sopra, ma con zeri inseriti a sinistra)}
+\]
+
+\section{JavaScript}
+
+\begin{itemize}
+  \item Nato nel 1995 per il browser Netscape.
+  \item Inizialmente client-side, ora anche server-side.
+  \item \textbf{Node.js}: ambiente per esecuzione di codice JavaScript.
+  \item \textbf{ECMAScript 2025}: ultima versione (settembre 2025).
+  \item Linguaggio interpretato, flessibile e poco tipizzato (\textit{weakly typed}).
+  \item Difficile trovare errori, ma adatto a soluzioni creative.
+\end{itemize}
+
+\subsection{Tipi di dati}
+\begin{itemize}
+  \item Numeri (Insiemi numerici, floating point...)
+  \item BigInt
+  \item Booleani (T,F)
+  \item Stringhe ("Ciao","X vale -X")
+  \item \texttt{undefined}
+  \item \texttt{null}
+  \item Oggetti
+  \item Array
+  \item Funzioni
+\end{itemize}
+
+\subsection{Numeri in JavaScript}
+\begin{itemize}
+  \item Interi e reali
+  \item Valori speciali: \texttt{NaN}, \texttt{Infinity}, \texttt{-Infinity}
+\end{itemize}
+
+\subsection{Costrutti}
+\begin{itemize}
+  \item If-Else 
+  \begin{itemize}
+    \item Si può svolgere anche cosi: "case ? trueCond : falseCond"
+  \end{itemize}
+  \item Switch
+  \item For, ForEach (sempre un "for")
+  \item While, Do-While
+\end{itemize}
+
+\subsection{Insiemi in JavaScript}
+Collezione di elementi distinti e non ordinati.\\
+\[
+\{mela, pera, banana\}, \{1,2,3,4\}
+\]
+Si rappresentano tramite l'utilizzo di oggetti.
+\[
+let A = \{\}\\
+\]
+
+\subsection{Semantica per riferimento}
+In JavaScript, la \textbf{semantica per riferimento} permette la condivisione di oggetti in memoria.
+\[
+var a = [1,2,3]
+\]
+\[
+var c = a
+\]
+In questo caso, se $a$ viene modificato, anche $c$ viene modificato, perchè hanno lo stesso riferimento in memoria.\\
+Un esempio con un grafo, per insistere che più nodi sono collegati al solito nodo, si usano i riferimenti e non i valori singoli.
+\[
+n1 = 1, n2 = 2, n3 = 3, n4 = 4
+\]
+\[
+nodo1 = [n2,n4]
+\]
+\[
+nodo2 = [n2,n4]
+\]
+\[
+nodo3 = [n1,n4]
+\]
+\[
+nodo4 = [n1]
+\]
+\[
+G = [n1,n2,n3,n4]
+\]
+
+\end{document}

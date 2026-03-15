@@ -1,0 +1,10 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Esercizio 1}{3}{section.1}%
+\contentsline {section}{\numberline {2}Esercizio 2}{4}{section.2}%
+\contentsline {section}{\numberline {3}Esercizio 3}{5}{section.3}%
+\contentsline {section}{\numberline {4}Esercizio 4}{6}{section.4}%
+\contentsline {section}{\numberline {5}Esercizio 5}{7}{section.5}%
+\contentsline {section}{\numberline {6}Esercizio 6}{8}{section.6}%
+\contentsline {section}{\numberline {7}Esercizio 7}{9}{section.7}%
+\contentsline {section}{\numberline {8}Esercizio 8}{10}{section.8}%

@@ -1,0 +1,45 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Risorse}{4}{section.1}%
+\contentsline {section}{\numberline {2}Concetti di base}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Compilatore}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Interprete}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Transpilatore}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Architettura di un computer}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ciclo fetch-execute}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Rappresentazione binaria}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Da base 10 a base 2}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Perché si usa}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Overflow}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Rappresentazione con modulo e segno}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Complemento a 1}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Complemento a 2}{8}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Numeri reali in base 2 (IEEE 754)}{9}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Campi dello standard IEEE 754}{9}{subsubsection.4.7.1}%
+\contentsline {paragraph}{Bit di segno (Sign bit)}{9}{table.1}%
+\contentsline {paragraph}{Esponente (Exponent)}{9}{table.1}%
+\contentsline {paragraph}{Mantissa (Fraction)}{10}{table.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Valori speciali dell'esponente}{10}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Intervalli di rappresentazione}{11}{subsubsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.8}Rappresentazione dei caratteri testuali in binario: ASCII e Unicode}{11}{subsection.4.8}%
+\contentsline {paragraph}{ASCII (American Standard Code for Information Interchange)}{11}{subsection.4.8}%
+\contentsline {paragraph}{Unicode UTF-8}{11}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Immagini raster (bitmap)}{12}{subsection.4.9}%
+\contentsline {paragraph}{Bianco e nero}{12}{subsection.4.9}%
+\contentsline {paragraph}{Scala di grigio}{12}{subsection.4.9}%
+\contentsline {paragraph}{Colori RGB}{12}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Campionamento dei suoni in binario}{13}{subsection.4.10}%
+\contentsline {subsubsection}{\numberline {4.10.1}Campionamento}{13}{subsubsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.2}Quantizzazione}{13}{subsubsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.3}Esempio pratico}{14}{subsubsection.4.10.3}%
+\contentsline {subsubsection}{\numberline {4.10.4}Rappresentazione grafica}{14}{subsubsection.4.10.4}%
+\contentsline {subsubsection}{\numberline {4.10.5}Esempio binario finale}{14}{subsubsection.4.10.5}%
+\contentsline {subsection}{\numberline {4.11}Operatori binari logici e di scorrimento}{15}{subsection.4.11}%
+\contentsline {subsubsection}{\numberline {4.11.1}Operatori logici}{15}{subsubsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.2}Operatori di scorrimento (Bit shift)}{16}{subsubsection.4.11.2}%
+\contentsline {section}{\numberline {5}JavaScript}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Tipi di dati}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Numeri in JavaScript}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Costrutti}{18}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Insiemi in JavaScript}{18}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Semantica per riferimento}{18}{subsection.5.5}%

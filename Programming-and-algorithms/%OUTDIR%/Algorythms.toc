@@ -1,0 +1,130 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Concetti Iniziali}{4}{section.1}%
+\contentsline {paragraph}{Obiettivi della programmazione:}{4}{section.1}%
+\contentsline {section}{\numberline {2}Strutture Dati}{5}{section.2}%
+\contentsline {section}{\numberline {3}Linguaggi formali}{6}{section.3}%
+\contentsline {section}{\numberline {4}Storia degli Algoritmi}{7}{section.4}%
+\contentsline {section}{\numberline {5}Alfabeti}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Definizione di alfabeto}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Grammatica di un alfabeto}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Derivativo immediato}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Derivativo}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Linguaggio generato}{8}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Derivazioni canoniche}{9}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Alberi di derivazione (Parse Trees)}{9}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Regole di Inferenza}{10}{section.6}%
+\contentsline {section}{\numberline {7}Efficienza e costo computazionale}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}O, $\Omega $, $\Theta $}{11}{subsection.7.1}%
+\contentsline {paragraph}{O grande: }{11}{subsection.7.1}%
+\contentsline {paragraph}{$\Omega $ grande: }{11}{subsection.7.1}%
+\contentsline {paragraph}{$\Theta $ grande: }{11}{subsection.7.1}%
+\contentsline {paragraph}{Esempio: }{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Teorema Principale (Master Theorem)}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Caso 1: $\tmspace +\thickmuskip {.2777em}f(n)$ cresce meno della ricorsione}{12}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Caso 2: $\tmspace +\thickmuskip {.2777em}f(n)$ cresce come la ricorsione}{12}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Caso 3: $\tmspace +\thickmuskip {.2777em}f(n)$ cresce più della ricorsione}{12}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Metodo iterativo}{13}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Alberi di ricorsione}{13}{subsection.7.7}%
+\contentsline {paragraph}{Fooling argument: }{13}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Programmazione dinamica}{14}{section.8}%
+\contentsline {section}{\numberline {9}Algoritmi di Ordinamento (Sort)}{15}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Insertion Sort}{15}{subsection.9.1}%
+\contentsline {paragraph}{Caso Ottimo:}{15}{subsection.9.1}%
+\contentsline {paragraph}{Caso Medio:}{15}{subsection.9.1}%
+\contentsline {paragraph}{Caso Pessimo:}{15}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Selection Sort}{15}{subsection.9.2}%
+\contentsline {paragraph}{Caso Ottimo, Medio e Pessimo:}{16}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Bubble Sort}{16}{subsection.9.3}%
+\contentsline {paragraph}{Caso Ottimo:}{16}{subsection.9.3}%
+\contentsline {paragraph}{Caso Medio e Pessimo:}{16}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Merge Sort}{16}{subsection.9.4}%
+\contentsline {paragraph}{Tutti i casi:}{16}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Quick Sort}{16}{subsection.9.5}%
+\contentsline {paragraph}{Caso Ottimo e Medio:}{16}{subsection.9.5}%
+\contentsline {paragraph}{Caso Pessimo:}{17}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Heap Sort}{17}{subsection.9.6}%
+\contentsline {paragraph}{Altezza di un heap implicito:}{17}{subsection.9.6}%
+\contentsline {paragraph}{Eliminazione della radice:}{18}{subsection.9.6}%
+\contentsline {paragraph}{Aggiornamento del valore di un nodo:}{18}{subsection.9.6}%
+\contentsline {paragraph}{Tutti i casi:}{18}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Counting Sort}{19}{subsection.9.7}%
+\contentsline {paragraph}{Tutti i casi:}{19}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Radix Sort}{19}{subsection.9.8}%
+\contentsline {paragraph}{Tutti i casi:}{19}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Bucket Sort}{19}{subsection.9.9}%
+\contentsline {paragraph}{Caso Ottimo e Medio:}{19}{subsection.9.9}%
+\contentsline {paragraph}{Caso Pessimo:}{19}{subsection.9.9}%
+\contentsline {section}{\numberline {10}Linguaggio di MAO / MiniMAO}{20}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Espressioni semantiche collaterali e pure}{20}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Controllo dei tipi (Type Checking)}{20}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Analisi statica}{20}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Sistema di tipi: }{20}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Ambiente di tipo: }{20}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Variabili libere: }{21}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Variabili dichiarate: }{21}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Giudizio di tipo per le espressioni: }{21}{subsubsection.10.2.1}%
+\contentsline {paragraph}{Giudizio di tipo per comandi: }{21}{subsubsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.3}Grammatica e linguaggio di MAO}{21}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Funzioni in MAO}{22}{subsection.10.4}%
+\contentsline {paragraph}{Principio di astrazione: }{22}{subsection.10.4}%
+\contentsline {paragraph}{Principio di corrispondenza: }{22}{subsection.10.4}%
+\contentsline {paragraph}{Scoping statico: }{22}{subsection.10.4}%
+\contentsline {paragraph}{Scoping dinamico: }{22}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Record di attivazione (stack frame)}{22}{subsection.10.5}%
+\contentsline {paragraph}{Heap: }{23}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Ricorsione}{23}{subsection.10.6}%
+\contentsline {paragraph}{Ricorsione in coda: }{23}{subsection.10.6}%
+\contentsline {paragraph}{Mutua ricorsione: }{23}{subsection.10.6}%
+\contentsline {paragraph}{Ricorsione diretta: }{23}{subsection.10.6}%
+\contentsline {paragraph}{Ricorsione indiretta: }{23}{subsection.10.6}%
+\contentsline {section}{\numberline {11}Strutture Dati}{24}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Alberi}{24}{subsection.11.1}%
+\contentsline {paragraph}{Albero binario:}{24}{subsection.11.1}%
+\contentsline {paragraph}{Simbologia:}{24}{subsection.11.1}%
+\contentsline {paragraph}{Tipi di visite:}{24}{subsection.11.1}%
+\contentsline {paragraph}{ABCB}{24}{subsection.11.1}%
+\contentsline {paragraph}{Nodi cardine:}{24}{subsection.11.1}%
+\contentsline {paragraph}{Nodi centrali:}{24}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Alberi binari di ricerca}{26}{subsection.11.2}%
+\contentsline {paragraph}{Delete in ABR:}{26}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Dizionari}{29}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Tabella Hash}{29}{subsection.11.4}%
+\contentsline {paragraph}{Esercizio di esempio di Hash Table aperte:}{30}{subsection.11.4}%
+\contentsline {paragraph}{Doppio Hash:}{30}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Altri algoritmi}{32}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Array non ordinato}{32}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Ricerca}{32}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Inserimento}{32}{subsubsection.12.1.2}%
+\contentsline {subsubsection}{\numberline {12.1.3}Cancellazione}{32}{subsubsection.12.1.3}%
+\contentsline {subsection}{\numberline {12.2}Array ordinato}{32}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Ricerca}{32}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Inserimento}{32}{subsubsection.12.2.2}%
+\contentsline {subsubsection}{\numberline {12.2.3}Cancellazione}{33}{subsubsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.3}Lista non ordinata (semplicemente concatenata)}{33}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Ricerca}{33}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Inserimento}{33}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Cancellazione}{33}{subsubsection.12.3.3}%
+\contentsline {subsection}{\numberline {12.4}Lista ordinata (semplicemente concatenata)}{33}{subsection.12.4}%
+\contentsline {subsubsection}{\numberline {12.4.1}Ricerca}{33}{subsubsection.12.4.1}%
+\contentsline {subsubsection}{\numberline {12.4.2}Inserimento}{34}{subsubsection.12.4.2}%
+\contentsline {subsubsection}{\numberline {12.4.3}Cancellazione}{34}{subsubsection.12.4.3}%
+\contentsline {subsection}{\numberline {12.5}Lista doppia non ordinata}{34}{subsection.12.5}%
+\contentsline {subsubsection}{\numberline {12.5.1}Ricerca}{34}{subsubsection.12.5.1}%
+\contentsline {subsubsection}{\numberline {12.5.2}Inserimento}{34}{subsubsection.12.5.2}%
+\contentsline {subsubsection}{\numberline {12.5.3}Cancellazione}{34}{subsubsection.12.5.3}%
+\contentsline {subsection}{\numberline {12.6}Lista doppia ordinata}{35}{subsection.12.6}%
+\contentsline {subsubsection}{\numberline {12.6.1}Ricerca}{35}{subsubsection.12.6.1}%
+\contentsline {subsubsection}{\numberline {12.6.2}Inserimento}{35}{subsubsection.12.6.2}%
+\contentsline {subsubsection}{\numberline {12.6.3}Cancellazione}{35}{subsubsection.12.6.3}%
+\contentsline {subsection}{\numberline {12.7}Albero binario (generico)}{35}{subsection.12.7}%
+\contentsline {subsubsection}{\numberline {12.7.1}Ricerca}{35}{subsubsection.12.7.1}%
+\contentsline {subsubsection}{\numberline {12.7.2}Inserimento}{35}{subsubsection.12.7.2}%
+\contentsline {subsubsection}{\numberline {12.7.3}Cancellazione}{36}{subsubsection.12.7.3}%
+\contentsline {subsection}{\numberline {12.8}Albero binario di ricerca (BST)}{36}{subsection.12.8}%
+\contentsline {subsubsection}{\numberline {12.8.1}Ricerca}{36}{subsubsection.12.8.1}%
+\contentsline {subsubsection}{\numberline {12.8.2}Inserimento}{36}{subsubsection.12.8.2}%
+\contentsline {subsubsection}{\numberline {12.8.3}Cancellazione}{36}{subsubsection.12.8.3}%
+\contentsline {subsection}{\numberline {12.9}Tabella riassuntiva}{36}{subsection.12.9}%
+\contentsline {section}{\numberline {13}Cheat Sheet (MiniMAO e MAO)}{37}{section.13}%
+\contentsline {section}{\numberline {14}Altro}{45}{section.14}%

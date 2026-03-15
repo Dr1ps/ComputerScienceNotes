@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{margin=2.5cm}
+
+\title{Esercitazione 1}
+\author{Gabriele Perna}
+\date{}
+
+\begin{document}
+
+\section{Esercizio 1}
+Mostrare le componenti fortemente connesse del seguente grafo orientato.
+
+\[
+\begin{aligned}
+V &= \{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q\} \\
+E &= \varnothing
+\end{aligned}
+\]
+
+Guardando l'immagine, $n$ non può fare parte della componente perché è sorgente.
+Non ci sono pozzi in questo grafo.
+
+Ogni coppia di $x$ e $y$ esiste un walk da $x$ a $y$.  
+Una componente non è componente se può essere espansa.
+
+Per trovare le componenti bisogna fare ad occhio.
+
+\section{Esercizio 2}
+Sia $G = (V,E)$ un DAG, e sia $H = (V,E^{op})$ il grafo ottenuto invertendo le direzioni degli archi di $G$.
+Per ognuno dei seguenti enunciati dire se è vero: in caso affermativo fornire una dimostrazione; in caso negativo fornire un controesempio.
+
+\begin{enumerate}
+    \item Ogni sorgente in $G$ è pozzo in $H$
+    \item Ogni pozzo in $G$ è sorgente in $H$
+    \item Esiste un walk da $x$ a $y$ in $G$ se e solo se esiste un walk da $x$ a $y$ in $H$
+    \item Esiste un walk da $x$ a $y$ in $G$ se e solo se esiste un walk da $y$ a $x$ in $H$
+    \item $H$ è un DAG
+\end{enumerate}
+
+\paragraph{Risposte:}
+
+Per sostenere le nostre risposte prenderemo questo grafo:
+\[
+G = \big(\{A,B\}, \{(A,B)\}\big)
+\]
+
+\begin{enumerate}
+    \item Vero, il ruolo delle sorgenti e dei pozzi si invertono.
+    \item Vero, come sopra.
+    \item Falso, gli archi si invertono e quindi\ldots
+    \item Vero, gli archi si invertono.
+    \item Vero, un ciclo se esiste si formerà di nuovo, ma al contrario. Analogamente, non si potranno formare cicli in un grafo opposto.
+\end{enumerate}
+
+\section{Esercizio 3}
+Per ognuno dei seguenti enunciati dire se è vero: in caso affermativo
+fornire una dimostrazione; in caso negativo fornire un controesempio.
+
+\begin{enumerate}
+    \item Per tutti i DAG $G = (V,E)$, $E \in Rel(V,V)$ è un ordinamento parziale.
+    \item Per tutti i DAG $G = (V,E)$, $E \cup id_V \in Rel(V,V)$ è un ordinamento parziale.
+    \item Per tutti i DAG $G = (V,E)$, $E^* \in Rel(V,V)$ è un ordinamento parziale.
+\end{enumerate}
+
+\paragraph{Risposte:}
+\begin{enumerate}
+    \item Falso, ogni insieme $E$ non contiene le coppie di nodi necessarie per essere riflessivo.
+    Per esempio se $V = \{a,b\}$ ed $E = \{(a,b)\}$, allora $E$ non è riflessiva e quindi non è un ordinamento parziale.
+    \item Falso, l'unione con l'identità di $V$ sicuramente risolve il problema della riflessività, ma non abbiamo ancora la transitività.
+    Per esempio, se $V = \{a,b,c\}$ e $E \cup id_V = \{(a,a),(b,b),(c,c),(a,b),(b,c)\}$, allora non è transitiva.
+    \item Vero, la stella di Kleene è una chiusura riflessiva e transitiva e un DAG non può mai avere coppie simmetriche o cicli e, dato che è stato chiuso riflessivamente, $E^*$ è un ordinamento parziale.
+\end{enumerate}
+
+\section{Esercizio 4}
+Dimostrare il Teorema di Caratterizzazione per le relazioni anti-simmetriche:
+
+Per tutti gli insiemi $A$, e tutte le relazioni $R \in Rel(A,A)$ vale che:
+\[
+R \text{ è anti-simmetrica se e solo se } R \cap R^{op} \subseteq id_A
+\]
+
+\paragraph{Risposta:}
+Ricordiamo il significato di anti-simmetria:
+una relazione è anti-simmetrica se per ogni coppia $(a,b)$ non esiste $(b,a)$ a meno che $b = a$.  
+L'insieme risultante di $R \cap R^{op}$ conterrà solo coppie riflessive, con $a = b$, nel caso $R$ sia anti-simmetrica.
+
+Nel caso $R$ non sia anti-simmetrica e quindi per almeno una coppia $(a,b)$ esiste una coppia $(b,a)$,in $R^{op}$ avremo:
+\[
+\begin{aligned}
+(a,b),(b,a) &\in R\\
+(b,a),(a,b) &\in R^{op}
+\end{aligned}
+\]
+
+Questi, come possiamo vedere, sono elementi uguali e quindi compariranno nell'insieme intersezione, non convalidando la condizione di anti-simmetria.
+
+\section{Esercizio 7}
+
+Definiamo la funzione $mult2: \mathbb{N} \rightarrow \mathbb{N}$ induttivamente come:
+\begin{itemize}
+    \item Clausola Base: $mult2(0) = 0;$
+    \item Clausola Induttiva: $mult2(n+1) = 2+mult2(n)$\\
+\end{itemize}
+
+Definiamo la sommatoria $\mathbb{N} \times Fun(\mathbb{N},\mathbb{N} \rightarrow \mathbb{N})$ induttivamente come:
+\begin{itemize}
+    \item Clausola Base: $sommatoria(0,f) = f(0) per ogni f \in fun(\mathbb{N},\mathbb{N})$
+    \item Clausola Induttiva: $sommatoria(n+1,f) = f(n+1) + sommatoria(n,f) per ogni f \in Fun(\mathbb{N},\mathbb{N})$\\
+\end{itemize}
+
+
+Dimostrare per induzione i seguenti due enunciati:
+\begin{enumerate}
+    \item Per ogni $n,m, \in \mathbb{N}, mult2(n+m) = mult2(n) + mult2(m)$
+    \item Per ogni $n \in \mathbb{N} e f \in Fun(\mathbb{N},\mathbb{N}), sommatoria (n,f;mult2) = mult2(sommatoria(n,f))$
+\end{enumerate}
+ 
+\textbf{Risposta:}
+
+\end{document}

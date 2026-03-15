@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{} 
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Programmazione e algoritmica}     % Center
+\fancyhead[R]{2025/2026}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+\geometry{margin=2.5cm}
+
+\title{Esercitazione 02-11-2025}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Esercizio 1}
+\textbf{Trova un minimo o massimo in un array.}\\
+\begin{itemize}
+    \item Array ordinato = $\theta(1)$
+    \item Array non ordinato = $\theta(n)$ (caso pessimo)
+\end{itemize}
+\textbf{Trova un elemento in un array.}
+\begin{itemize}
+    \item Array ordinato = $\theta(\log_2n)$
+    \begin{enumerate}
+        \item Si prende un elemento mediano e si analizza.
+        \item Se è uguale si è trovato l'elemento (caso ottimo), altrimenti si prosegue
+        \item Se l'elemento è maggiore di quello da trovare allora si analizzano gli elementi minori e viceversa.
+        \item Ripetere, prendendo un elemento mediano al nuovo subarray.
+    \end{enumerate}
+    \item Array non ordinato = $\theta(n)$ (caso pessimo)
+\end{itemize}
+
+
+\section{Esercizio 2}
+
+\section{Esercizio 3}
+
+\section{Esercizio 4}
+
+\section{Esercizio 5}
+
+\section{Esercizio 6}
+
+\section{Esercizio 7}
+
+\section{Esercizio 8}
+
+\end{document}
