@@ -1443,4 +1443,98 @@ Anche i piani si possono rappresentare in forma parametrica come una \textbf{bas
 \[
 \lambda(Q - P) + \mu(Q_2 - P)
 \]
+\subsection{Curve nel piano e nello spazio tridimensionale}
+Una \textbf{curva} in $\mathbb{R}^2$ è una funzione:
+\[
+\gamma : I \to \mathbb{R}^2
+\]
+Dove $I \subseteq \mathbb{R}$ è un intervallo.\\
+Al variare di $t \in I$ (che si pensa come il "tempo") il punto $\gamma(t)$ descrive una curva.\\
+Una funzione $\gamma: I \to \mathbb{R}^2$ è determinata da due funzioni:
+\begin{itemize}
+  \item $x(t): I \to \mathbb{R}$
+  \item $y(t): I \to \mathbb{R}$
+\end{itemize}
+E quindi:
+\[
+\gamma(t) = \gamma(x(t),y(t))
+\]
+Il \textbf{sostegno} di una curva è l'immagine di $\gamma$ come sottoinsieme di $\mathbb{R}^2$.
+\paragraph{Esempio:} $\gamma(t) = (cost(t),sin(t)), I = [0, 2\pi]$\\
+$\gamma$ è una curva il cui sostegno è esattamente la circonferenza unitaria (centro 0, raggio 1), percorsa 1 volta in senso antiorario.\\
+Se $I = [0,6\pi]$ la curva avrà lo stesso sostegno ma percorre la circonferenza tre volte.\\
+Intuitivamente, esistono infinite curve per un solo sostegno.\\
+Inoltre, ogni grafico di ogni funzione in 1 variabile è un sostegno di una curva di $\mathbb{R}^2$:
+\[
+f: I \to \mathbb{R} \implies \gamma(t) = (t,f(t))
+\]
+Quando una curva torna su se stessa si dice che è \textbf{chiusa} se i due estremi sono uguali (e quindi $I$ è della forma $[a,b]$) e \textbf{semplice} se non torna mai su se stessa ad esclusione degli estremi, ovvero $\gamma$ è iniettiva all'interno dell'intervallo $I$.\\
+Tutto questo è analogo per $\mathbb{R}^3$.
+\[
+\gamma(t) = (x(t),y(t),z(t))
+\]
+\paragraph{Osservazione:} per dire che un $\gamma$ è semplice o meno, basta che tra le funzioni delle coordinate ci sia almeno una funzione iniettiva, se non c'è potrebbe essere non semplice.\\\\
+Data una curva, il suo \textbf{vettore tangente} in $\gamma(t_0) = (x(t_0),y(t_0))$ è (gamma qui dovrebbe avere un pallino pieno sopra se stesso (il simbolo)):
+\[
+\gamma(t_o) = (x^|(t_0),y^|(t_0))
+\]
+Se questo esiste, la \textbf{retta tangente} a $\gamma$ per $t \to t_0$ è $\gamma(t_0)$ (con pallino).
+\subsection{Funzioni a più variabili}
+Una funzione in $\mathbb{R}^n$ è una tripla ($\Omega,B,f$), dove:
+\begin{itemize}
+  \item $\Omega \subseteq \mathbb{R}^n$ è il dominio
+  \item $B \subseteq \mathbb{R}$ è il codominio
+  \item $f$ è una "regola" (formula) che associa elementi del dominio a elementi del codominio.
+\end{itemize}
+Proprio come una funzione classica!\\
+Il \textbf{grafico} di tale funzione è:
+\[
+Graph(f) = \{(x_1,\ldots,x_n,x_{n+1}) : x_{n+1} = f(x_1,\ldots,x_n)\}
+\]
+Un \textbf{insieme di livello} $\lambda$ (tipicamente una curva) di una funzione è l'insieme di tutti i punti ad un certo livello.\\
+Per esempio, tutti i punti della funzione con $z = 5$.
+\subsection{Limiti di funzioni con più variabili}
+Il \textbf{limite} di una funzione con più variabili (vediamo 2 variabili) per ($x,y$) che tende a ($x_0,y_0$) è uguale a $l \in \overline{R}$ e si scrive:
+\[
+\lim_{(x,y) \to (x_0,y_0)} f(x,y) = l
+\]
+Se $\forall$ intorno di $l$ esiste un intorno $U$ di $(x_0,y_0) : (x,y) \in U \setminus \{x_0,y_0\} \implies f(x,y) \in V$.\\
+La definizione è praticamente la stessa dei limiti normali, ma adesso l'intorno è una palla aperta.\\
+Se $l \in \mathbb{R}$, la palla è $U = B_{\delta}(x_0,y_0)$\\
+Una funzione $f:\Omega \to \mathbb{R}$ è \textbf{continua} in $(x_0,y_0) \in \Omega$ se $\lim_{(x,y) \to (x_0,y_0)} f(x,y)$ esiste ed è uguale a $f(x_0,y_0)$.
+Tutti gli strumenti e teoremi affrontati nell'analisi dei limiti per funzioni ad una variabile valgono anche per le funzioni a più variabili, come il teorema dei carabinieri, del confronto, della permanenza del segno...\\
+\paragraph{Esempio di calcolo:} $\lim_{(x,y) \to (x_0,y_0)} \frac{xy}{x^2 + y^2}$\\
+Forma indeterminata, dominio $= \mathbb{R}^2 \setminus \{(0,0)\}$. Prima di tutto si prova a restringere la funzione a una retta passante per $(0,0)$ e calcolare il limite lungo quella retta.\\
+Per esempio, se $y = 0$ sempre allora è vincolata a stare sull'asse delle $x$. Il limite in questo caso fa $0$.\\
+Proviamo anche il contrario, ovvero con $x = 0$, il limite vale di nuovo $0$.\\
+Proviamo adesso con la bisettrice $y = x$, che in forma di curva è $(t,t)$:
+\[
+f((t,t)) = \frac{t^2}{t^2 + t^2} = \frac{t^2}{2t^2} = \frac{1}{2} 
+\]
+Questo è un limite diverso da quelli di prima, quindi il limite generale non esiste.\\\\
+Formalmente, il limite di una funzione a più variabili esiste se è uguale per tutti i modi in cui mi avvicino.\\
+Infatti, secondo un teorema, se il limite esiste allora per ogni curva che interseca ($x_0,y_0$) il limite è lo stesso (si usa per dimostrare la non esistenza).
+Purtroppo per concludere che il limite esiste non basta provare che ogni curva ha lo stesso limite.
+\subsubsection{Coordinate polari}
+Se ogni metodo per calcolare un limite fallisce (carabinieri e altro) allora si possono usare le \textbf{coordinate polari} ($\rho,\theta$):
+\begin{itemize}
+  \item $\rho = $ distanza dal centro del punto
+  \item $\theta = $ angolo che forma il punto con l'asse $x$ ($\theta \in [0,2\pi]$ con estremo superiore escluso)
+\end{itemize}
+Nell'origine $\theta$ non è definito, si indica con $\rho = 0$.\\
+Vediamo le formule di conversione ($\theta$ ci interessa poco):
+\[
+\begin{cases}
+  x = \rho cos(\theta)\\
+  y = \rho sin(\theta)\\
+  \rho = \sqrt{x^2 + y^2}\\
+  \theta = arcos(\frac{x}{\sqrt{x^2,y^2}}), y > 0\\
+  \theta = 2\pi - arcos(\frac{x}{\sqrt{x^2,y^2}}), y < 0
+\end{cases}
+\]
+Le coordinate polari sono utili per i limiti che tendono all'origine perche significa che $\rho \to 0$.\\
+Per risolvere esercizi, si sostituiscono i valori con le coordinate polari, se il risultato dipende da $\theta$ allora il limite non esiste, altrimenti esiste:
+\[
+\rho \to +\infty, \theta limitato, \rho \cdot \theta \implies \text{ limite esiste perche theta è limitato}
+\]
 \end{document}
