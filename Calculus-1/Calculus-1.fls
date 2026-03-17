@@ -1,6 +1,6 @@
-PWD c:\Users\gabri\Desktop\VSCode\Latex\University\Calculus-1
+PWD c:\Users\gabri\Desktop\VSCode\ComputerScienceNotes\Calculus-1
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\gabri\Desktop\VSCode\Latex\University\Calculus-1\Calculus-1.tex
+INPUT c:\Users\gabri\Desktop\VSCode\ComputerScienceNotes\Calculus-1\Calculus-1.tex
 OUTPUT Calculus-1.log
 INPUT C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
