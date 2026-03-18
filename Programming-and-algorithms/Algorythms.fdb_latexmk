@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1773228676.48675 "c:/Users/gabri/Desktop/VSCode/Latex/University/Programming-and-algorithms/Algorythms.tex" "Algorythms.pdf" "Algorythms" 1773228680.8351 0
-  "Algorythms.aux" 1773228680 18018 2fbff1cc2b605385bea23ca0432673cc "pdflatex"
-  "Algorythms.out" 1773228680 12475 7f3bdba7130ad975629d39afc3db504c "pdflatex"
-  "Algorythms.tex" 1773228675 49173 b1ffc7eb52ba58e1948aacbf7886f94c ""
-  "Algorythms.toc" 1773228680 10465 2245f10a4755a2e6aefa0499320b9743 "pdflatex"
+["pdflatex"] 1773831607.48578 "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" "Algorythms.pdf" "Algorythms" 1773831616.43665 0
+  "Algorythms.aux" 1773831615 18018 2fbff1cc2b605385bea23ca0432673cc "pdflatex"
+  "Algorythms.out" 1773831615 12475 7f3bdba7130ad975629d39afc3db504c "pdflatex"
+  "Algorythms.tex" 1773831603 49659 7dce9c2bd92ac7f801d514a5e4269495 ""
+  "Algorythms.toc" 1773831615 10465 2245f10a4755a2e6aefa0499320b9743 "pdflatex"
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765672160 159092 d2123be17b83f8fb14e421f617bfafc7 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760607885 13321623 bffe24b1a8ba5eb2b92a28adecd901aa ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -229,7 +229,7 @@
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/gabri/Desktop/VSCode/Latex/University/Programming-and-algorithms/Algorythms.tex" 1773228675 49173 b1ffc7eb52ba58e1948aacbf7886f94c ""
+  "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" 1773831603 49659 7dce9c2bd92ac7f801d514a5e4269495 ""
   "images/HashTableExercise.png" 1772015568 52619 75606245dda4a7c5011330a6a3d20926 ""
   "images/Mao_Grammar.png" 1762938048 205540 0b7161ea9c616e560b6501aeba028d11 ""
   "images/Mao_Semantics1.png" 1762938526 112745 9ee94d62bedd6f41c23de5fbd644b2ad ""

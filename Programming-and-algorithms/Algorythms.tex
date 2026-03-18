@@ -283,7 +283,14 @@ Questo vale solo quando non ci sono ipotesi particolari sui dati in input, come 
 \section{Programmazione dinamica}
 La \textbf{programmazione dinamica} (PD) è una tecnica di progettazione di algoritmi. Come il divide-et-impera, è una tecnica che si applica nei casi in cui
 la soluzione del problema può essere definita ricorsivamente.\\
-A differenza del divide-et-impera però, che opera in maniera top-down fino a ridursi a sottoproblemi via via più piccoli, la PD risolve prima i sottoproblemi e poi in maniera \textbf{bottom-up} a partire dalla loro soluzione costruisce via via soluzioni a sottoproblemi più grandi fino al problema originale.\\
+A differenza del divide-et-impera però, che opera in maniera top-down fino a ridursi a sottoproblemi via via più piccoli, la PD risolve prima i sottoproblemi e poi in maniera \textbf{bottom-up} a partire dalla loro soluzione costruisce via via soluzioni a sottoproblemi più grandi fino al problema originale.\\\\
+Ecco gli step da eseguire per sviluppare un algoritmo con la programmazione dinamica:
+\begin{itemize}
+    \item Identificare i sottoproblemi "interessanti".
+    \item Identificare e risolvere in modo \textbf{diretto} i sottoproblemi elementari.
+    \item Stabilire la regola ricorsiva per il calcolo della soluzione dei sottoproblemi e dei problemi soprastanti a partire dai valori gia calcolati.
+    \item Capire come restituire il valore del problema generale.
+\end{itemize}
 Vediamo un esempio con il calcolo dell'n-esimo numero di fibonacci.
 \[
 f(0) = 0

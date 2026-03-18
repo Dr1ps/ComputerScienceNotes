@@ -1529,6 +1529,12 @@ Questo definisce un isomorfismo tra $v \in V$ e le sue coordinate, dato che appu
 Questo vale sia per $\forall v \in V_1$ e $\forall v \in V_2$, si creano quindi due isomorfismi tra i loro nuclei e immagini.
 \paragraph{Rango di una matrice A:} è uguale alla dimensione dell'immagine dell'applicazione lineare a cui è associata.
 
+\subsection{Composizione di applicazioni lineari}
+Siano $varphi:V_1 \to V_2$ e $\varPsi:V_2 \to V_3$ applicazioni lineari, la loro \textbf{composizione} $\varPsi o \varphi$ è un'applicazione lineare.\\
+La matrice di tale composizione corrisponde proprio al prodotto delle matrici delle due applicazioni lineari che sono state composte.\\
+
+\section{Matrici}
+
 \subsection{Prodotto di due matrici}
 Sia $A$ una matrice $rxm$ e $B$ una matrice $mxn$, il loro \textbf{prodotto} è definito cosi:
 \[
@@ -1547,10 +1553,8 @@ A \cdot (B \cdot C) = (A \cdot B) \cdot C
 A^{-1} = inverso
 \]
 Il prodotto di $A$ con se stessa $n$ volte è $A^n$ se è d'identità, altrimenti no.\\
-\subsection{Composizione di applicazioni lineari}
-Siano $varphi:V_1 \to V_2$ e $\varPsi:V_2 \to V_3$ applicazioni lineari, la loro \textbf{composizione} $\varPsi o \varphi$ è un'applicazione lineare.\\
-La matrice di tale composizione corrisponde proprio al prodotto delle matrici delle due applicazioni lineari che sono state composte.\\
-\paragraph{Teorema:}
+
+\subsection{Teorema delle matrici simili}
 \[
 A^| = PAP^{-1}
 \]
@@ -1559,4 +1563,93 @@ Con:
 P = id
 \]
 E le matrici $A$ che sono basate sulle basi $B,B^|$. Si dicono \textbf{simili} se questo è vero. Questo si può dimostrare con la composizione di applicazioni lineari.
+
+\subsection{Riflessione rispetto all'origine}
+\[R_0: 
+\begin{bmatrix}
+  x\\
+  y
+\end{bmatrix} \to \begin{bmatrix}
+  -x\\
+  -y
+\end{bmatrix}
+\]
+Matrice di $R_0$ rispetto alla base standard in partenza e arrivo:
+\[
+\begin{bmatrix}
+  1\\
+  0
+\end{bmatrix} \to \begin{bmatrix}
+  -1\\
+  0
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  \\
+  1
+\end{bmatrix} \to \begin{bmatrix}
+  0\\
+  -1
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  -1 & 0\\
+  0 & -1
+\end{bmatrix}
+\]
+La matrice di $R_0$ o $R_0$ è:
+\[
+\begin{bmatrix}
+  1 & 0\\
+  0 & 1
+\end{bmatrix}
+\]
+Ovvero la matrice identità.
+
+\subsection{Riflessione rispetto all'asse x}
+\[R_0: 
+\begin{bmatrix}
+  x\\
+  y
+\end{bmatrix} \to \begin{bmatrix}
+  x\\
+  -y
+\end{bmatrix}
+\]
+Matrice rispetto alla base standard in partenza e in arrivo:
+\[
+\begin{bmatrix}
+  1\\
+  0
+\end{bmatrix} \to \begin{bmatrix}
+  1\\
+  0
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  \\
+  1
+\end{bmatrix} \to \begin{bmatrix}
+  0\\
+  -1
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  -1 & 0\\
+  0 & -1
+\end{bmatrix}
+\]
+La matrice di $R_0$ o $R_0$ è:
+\[
+\begin{bmatrix}
+  1 & 0\\
+  0 & 1
+\end{bmatrix}
+\]
+Ovvero la matrice identità.\\
+In pratica, quando una composizione risulta la matrice di identità allora le matrici composte sono una l'inversa dell'altra, in questo caso l'inverso della matrice di $R_0$ è se stessa.
 \end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  11 MAR 2026 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  18 MAR 2026 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/gabri/Desktop/VSCode/Latex/University/Programming-and-algorithms/Algorythms.tex
-(c:/Users/gabri/Desktop/VSCode/Latex/University/Programming-and-algorithms/Algorythms.tex
+**c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex
+(c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -965,6 +965,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
+Underfull \hbox (badness 10000) in paragraph at lines 284--289
+
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -996,12 +1001,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
@@ -1033,7 +1038,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 
  []
 
@@ -1058,12 +1063,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 646--648
+Underfull \hbox (badness 10000) in paragraph at lines 653--655
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--683
+Underfull \hbox (badness 10000) in paragraph at lines 687--690
 
  []
 
@@ -1077,7 +1082,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 692--694
+Underfull \hbox (badness 10000) in paragraph at lines 699--701
 
  []
 
@@ -1111,12 +1116,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [25
 
 ]
-Overfull \hbox (31.20294pt too wide) in paragraph at lines 779--780
+Overfull \hbox (31.20294pt too wide) in paragraph at lines 786--787
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.10303pt too wide) in paragraph at lines 780--781
+Overfull \hbox (17.10303pt too wide) in paragraph at lines 787--788
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1130,32 +1135,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Overfull \hbox (45.30286pt too wide) in paragraph at lines 828--829
+Overfull \hbox (45.30286pt too wide) in paragraph at lines 835--836
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.15298pt too wide) in paragraph at lines 832--833
+Overfull \hbox (24.15298pt too wide) in paragraph at lines 839--840
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.30286pt too wide) in paragraph at lines 835--837
+Overfull \hbox (45.30286pt too wide) in paragraph at lines 842--844
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (59.40277pt too wide) in paragraph at lines 844--845
+Overfull \hbox (59.40277pt too wide) in paragraph at lines 851--852
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (355.50098pt too wide) in paragraph at lines 846--847
+Overfull \hbox (355.50098pt too wide) in paragraph at lines 853--854
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (179.25204pt too wide) in paragraph at lines 847--849
+Overfull \hbox (179.25204pt too wide) in paragraph at lines 854--856
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1169,7 +1174,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 866--867
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
 
  []
 
@@ -1183,7 +1188,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-Overfull \hbox (3.00311pt too wide) in paragraph at lines 952--953
+Overfull \hbox (3.00311pt too wide) in paragraph at lines 959--960
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1209,7 +1214,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/HashTableExercise.png, id=873, 578.16pt x 325.215pt>
 File: images/HashTableExercise.png Graphic file (type png)
 <use images/HashTableExercise.png>
-Package pdftex.def Info: images/HashTableExercise.png  used on input line 1038.
+Package pdftex.def Info: images/HashTableExercise.png  used on input line 1045.
 (pdftex.def)             Requested size: 409.71692pt x 230.46262pt.
 
 
@@ -1284,12 +1289,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/MiniMao_Grammar.png, id=930, 464.23438pt x 333.245pt>
 File: images/MiniMao_Grammar.png Graphic file (type png)
 <use images/MiniMao_Grammar.png>
-Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 1310.
+Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 1317.
 (pdftex.def)             Requested size: 409.71692pt x 294.11584pt.
 <images/MiniMao_TypeChecking.png, id=931, 412.54124pt x 348.30125pt>
 File: images/MiniMao_TypeChecking.png Graphic file (type png)
 <use images/MiniMao_TypeChecking.png>
-Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 1316.
+Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 1323.
 (pdftex.def)             Requested size: 409.71692pt x 345.91943pt.
 
 
@@ -1298,7 +1303,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/MiniMao_Semantics.png, id=932, 408.52625pt x 146.04562pt>
 File: images/MiniMao_Semantics.png Graphic file (type png)
 <use images/MiniMao_Semantics.png>
-Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 1322.
+Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 1329.
 (pdftex.def)             Requested size: 409.71692pt x 146.47978pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1306,7 +1311,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/MiniMao_Semantics_Commands.png, id=933, 351.3125pt x 354.32375pt>
 File: images/MiniMao_Semantics_Commands.png Graphic file (type png)
 <use images/MiniMao_Semantics_Commands.png>
-Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 1328.
+Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 1335.
 (pdftex.def)             Requested size: 409.71692pt x 413.25954pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1314,7 +1319,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Grammar.png, id=934, 289.58188pt x 324.21124pt>
 File: images/Mao_Grammar.png Graphic file (type png)
 <use images/Mao_Grammar.png>
-Package pdftex.def Info: images/Mao_Grammar.png  used on input line 1335.
+Package pdftex.def Info: images/Mao_Grammar.png  used on input line 1342.
 (pdftex.def)             Requested size: 409.71692pt x 458.74075pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1322,7 +1327,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_TypeChecking.png, id=935, 346.29375pt x 351.3125pt>
 File: images/Mao_TypeChecking.png Graphic file (type png)
 <use images/Mao_TypeChecking.png>
-Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 1341.
+Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 1348.
 (pdftex.def)             Requested size: 409.71692pt x 415.66551pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1330,7 +1335,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_TypeChecking2.png, id=936, 292.59312pt x 335.75438pt>
 File: images/Mao_TypeChecking2.png Graphic file (type png)
 <use images/Mao_TypeChecking2.png>
-Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 1347.
+Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 1354.
 (pdftex.def)             Requested size: 409.71692pt x 470.20149pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1338,7 +1343,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Semantics1.png, id=937, 232.36812pt x 320.69812pt>
 File: images/Mao_Semantics1.png Graphic file (type png)
 <use images/Mao_Semantics1.png>
-Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 1353.
+Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 1360.
 (pdftex.def)             Requested size: 409.71692pt x 565.51677pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1346,7 +1351,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Semantics2.png, id=938, 233.87375pt x 329.73187pt>
 File: images/Mao_Semantics2.png Graphic file (type png)
 <use images/Mao_Semantics2.png>
-Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 1359.
+Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 1366.
 (pdftex.def)             Requested size: 409.71692pt x 577.71861pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1446,14 +1451,14 @@ Package rerunfilecheck Info: File `Algorythms.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  35294 strings out of 468081
- 798460 string characters out of 5425788
+ 798500 string characters out of 5425788
  1365228 words of memory out of 5000000
  62932 multiletter control sequences out of 15000+600000
  684731 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,101p,801b,1908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,101p,805b,1906s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Algorythms.pdf (46 pages, 1193126 bytes).
+Output written on Algorythms.pdf (46 pages, 1193481 bytes).
 PDF statistics:
  1153 PDF objects out of 1200 (max. 8388607)
  485 named destinations out of 1000 (max. 500000)

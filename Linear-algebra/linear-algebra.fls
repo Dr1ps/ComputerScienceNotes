@@ -1,6 +1,6 @@
-PWD c:\Users\gabri\Desktop\VSCode\Latex\University\Linear-algebra
+PWD c:\Users\gabri\Desktop\VSCode\ComputerScienceNotes\Linear-algebra
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\gabri\Desktop\VSCode\Latex\University\Linear-algebra\linear-algebra.tex
+INPUT c:\Users\gabri\Desktop\VSCode\ComputerScienceNotes\Linear-algebra\linear-algebra.tex
 OUTPUT linear-algebra.log
 INPUT C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
