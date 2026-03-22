@@ -7051,17 +7051,12 @@ endobj
 endobj
 915 0 obj
 <<
-/Producer (MiKTeX pdfTeX-1.40.29)
+/Producer (MiKTeX pdfTeX-1.40.27)
 /Author()/Title()/Subject()/Creator(LaTeX with hyperref)/Keywords()
-<<<<<<< HEAD
-/CreationDate (D:20260315214241+01'00')
-/ModDate (D:20260315214241+01'00')
-=======
-/CreationDate (D:20260316175331+01'00')
-/ModDate (D:20260316175331+01'00')
->>>>>>> a08fb1899e88238d222de36473dde89c36ec07c1
+/CreationDate (D:20260322074747+01'00')
+/ModDate (D:20260322074747+01'00')
 /Trapped /False
-/PTEX.Fullbanner (This is MiKTeX-pdfTeX 4.26.0 (1.40.29))
+/PTEX.Fullbanner (This is MiKTeX-pdfTeX 4.21.0 (1.40.27))
 >>
 endobj
 xref
@@ -7983,17 +7978,10 @@ xref
 0000382512 00000 n 
 0000382640 00000 n 
 trailer
-<<<<<<< HEAD
-<< /Size 881
-/Root 879 0 R
-/Info 880 0 R
-/ID [<805B6C79E3000379FB175AF4C4BB233D> <805B6C79E3000379FB175AF4C4BB233D>] >>
-=======
 << /Size 916
 /Root 914 0 R
 /Info 915 0 R
-/ID [<3534997B9387995BA4D4AEADB7D1C53B> <3534997B9387995BA4D4AEADB7D1C53B>] >>
->>>>>>> a08fb1899e88238d222de36473dde89c36ec07c1
+/ID [<96F64E30DF2ACF91962473F2E63D43B6> <96F64E30DF2ACF91962473F2E63D43B6>] >>
 startxref
 382914
 %%EOF
