@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1773880627.2951 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" "linear-algebra.pdf" "linear-algebra" 1773880631.46829 0
+["pdflatex"] 1774384508.3538 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" "linear-algebra.pdf" "linear-algebra" 1774384511.75174 0
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773676412 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1200.pk" 1773880625 15080 59666ca15c1b6df989f026b2f25e52aa ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773676418 14064 0755e81df0a3f44f7f1535cca21b2c26 ""
@@ -27,6 +27,7 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
@@ -35,6 +36,7 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
@@ -195,11 +197,11 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" 1773880601 53253 6677fb02706d8d1f69f62704d044cf74 ""
-  "linear-algebra.aux" 1773880630 10474 44a94469d38abbfdc81d870b3355c10d "pdflatex"
-  "linear-algebra.out" 1773880630 6547 1ca8138bc28c574ffed8ab24066b38d7 "pdflatex"
-  "linear-algebra.tex" 1773880601 53253 6677fb02706d8d1f69f62704d044cf74 ""
-  "linear-algebra.toc" 1773880630 6744 7d68c77b7fb2edf35c93fcb76a5f5ba4 "pdflatex"
+  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" 1774384503 68538 82d6b05dc14bc045fc4a66af24d2c345 ""
+  "linear-algebra.aux" 1774384511 13382 b642cf265ff9e3b594262f2cb47907ec "pdflatex"
+  "linear-algebra.out" 1774384511 8912 ebc0399a9bb8742599a9b16bca56b00f "pdflatex"
+  "linear-algebra.tex" 1774384503 68538 82d6b05dc14bc045fc4a66af24d2c345 ""
+  "linear-algebra.toc" 1774384511 8627 dca88c7abc479a822aa871fd9b7e124f "pdflatex"
   (generated)
   "linear-algebra.aux"
   "linear-algebra.log"

@@ -1537,4 +1537,110 @@ Per risolvere esercizi, si sostituiscono i valori con le coordinate polari, se i
 \[
 \rho \to +\infty, \theta limitato, \rho \cdot \theta \implies \text{ limite esiste perche theta è limitato}
 \]
+
+\subsection{Derivate in più variabili}
+\subsubsection{Derivate parziali}
+La derivata in più variabili si può trovare definendo prima le \textbf{derivate parziali}, derivando solo ad una variabile, lasciando le altre "fissate" (si trattano come costanti, ma senza attribuirgli uno specifico valore).\\
+\begin{tikzpicture}
+\draw[->] (-1,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-1) -- (0,5) node[above] {$y$};
+
+% horizontal line y = y_0
+\draw[blue] (-1,2) -- (5,2) node[right] {$y = y_0$};
+
+% point (x_0, y_0)
+\filldraw[red] (3,2) circle (2pt) node[above right] {$(x_0, y_0)$};
+\end{tikzpicture}
+Si vincola $y$ a $y_0$ e si fa la derivata con solo $x$ ($n=2$).\\
+Faccio muovere $(x,y)$ sulla retta $y = y_0$ e guardo la "\textbf{variazione istantanea} di $f(x,y_0)$ nel punto $x = x_0$.\\\\
+Una funzione $f:\Omega \to \mathbb{R}$, con $(x_0,y_0) \in \Omega \subseteq \mathbb{R}^2$, si dice che $f$ è \textbf{derivabile parzialmente} rispetto a $x$ in $(x_0,y_0)$ se esiste il limite:
+\[
+\lim_{h \to 0} \frac{f(x_0 + h, y_0) - f(x_0,y_0)}{h}
+\]
+Questo, se esiste, è la \textbf{derivata parziale} di $f$ rispetto a $x$ nel punto $(x_0,y_0)$, si indica cosi:
+\[
+\frac{\delta f}{\delta x} (x_0,y_0)
+\]
+\[
+f_x(x_0,y_0)
+\]
+\[
+D_x f(x_0,y_0)
+\]
+Il simbolo nella prima denotazione è sbagliato ma non c'erano alternative in latex (è simile ma con ciuffo a sinistra).\\
+La definizione è analoga per ogni altra variabile.\\
+Queste sono definite le \textbf{derivate solite} di una funzione:
+\[
+g(h) = f(x_0 + h, y_0)
+\]
+\[
+\lim_{h \to 0} \frac{f(x_0 + h, y_0) - f(x_0,y_0)}{h} = \lim_{h \to 0} \frac{g(h) - g(0)}{h} = g^|(h)
+\]
+In generale quindi, se $f:\Omega \to \mathbb{R}$ è una funzione e $x_0 \in \Omega \subseteq \mathbb{R}^n$, e quindi $x_0 = (x_1,\ldots,x_n)$, la derivata parziale di $f$ rispetto a $x_k$ nel punto $x_0$ è, se esiste:
+\[
+\lim_{h \to 0} \frac{f(x_0 + be_k, y_0) - f(x_0)}{h}
+\]
+Con $e_k = (0,\ldots,1,\ldots,0)$, muovo solo la variabile $k$.\\\\
+Ciascuna derivata parziale è a sua volta una funzione.\\\\
+Per calcolare le derivate parziali, si usano le solite regole per le derivate in 1 variabile facendo finta che le variabili che non stiamo derivando siamo delle costanti (ma senza un valore attribuito).
+\paragraph{Esempio:}
+\[
+f(x,y) = x^3 + 3xy + y^7
+\]
+Deriviamo per x, y diventa costante.
+\[
+\frac{\delta f}{\delta x} = 3x^2 + 3y + 0 = 3x^2 + 3y
+\]
+\subsubsection{Derivate direzionali}
+Per trovare una \textbf{derivata direzionale} si ripete quello che abbiamo fatto per $\frac{\delta f}{\delta x}$, ma con direzione arbitraria invece che $(1,0)$.\\
+Fisso $(x_0,y_0) \in \Omega$, $f:\Omega \to \mathbb{R}$ e un \textbf{vettore direzione} $v \ne 0$. Consideriamo la variazione istantanea della $f$ in $(x_0,y_0)$ in direzione $v$ il limite:
+\[
+\lim_{h \to 0} \frac{f((x_0, y_0) + hV) - f(x_0,y_0)}{h}
+\]
+\[
+h = (\alpha,\beta,\ldots)
+\]
+Si effettua un prodotto scalare:
+\[
+\lim_{h \to 0} \frac{f(x_0 \cdot \alpha, y_0 \cdot \beta) - f(x_0,y_0)}{h}
+\]
+Geometricamente, ci si muove lungo un vettore.\\
+Se tale limite esiste, è la derivata direzionale di $f$ per una direzione $v$ ed è $\frac{\delta f}{\delta v}(x_0,y_0)$.\\
+Muoversi sull-asse $x$ o $y$ è come avere $\alpha = 0$ o $\beta = 0$.\\
+Anche queste sono derivate di una funzione ad 1 variabile se:
+\[
+g(h) = f(x_0 + h\alpha, y_0 + h\beta)
+\]
+Per $n \geq 3$, la derivata direzionale di $f$ in $x_0$ in direzione $V$ è:
+\[
+\lim_{h \to 0} \frac{f(x_0 \cdot hV) - f(x_0)}{h}
+\]
+Con $x_0 \in \mathbb{R}^n$
+\subsubsection{Gradiente}
+Se $f:\mathbb{R}^n \to \mathbb{R}$ ammette tutte le derivate parziali in un punto $x_0$, si definisce il \textbf{gradiente} di $f$ in $x_0$ con:
+\[
+\nabla f(x_0) = (\frac{\delta f}{\delta x} (x_0),\ldots,\frac{\delta f}{\delta x_n} (x_0))
+\]
+A volte questo è definito come "derivata totale di $f$ in $x_0$" ($x_0 \in \mathbb{R}^n$)
+\subsubsection{Differenziabilità}
+Se $f: \mathbb{R}^2 \to \mathbb{R}$, $f$ si dice \textbf{differenziabile} in $(x_0,y_0)$ se:
+\[
+\exists \alpha,\beta \in \mathbb{R} : f(x_0 + h, y_0 + k) = f(x_0,y_0) + (\alpha \cdot h) + (\beta \cdot k) + o(||(h,k)||)
+\]
+Come si può vedere, c'è un errore di lunghezza del vettore.\\
+Se $f$ è differenziabile, esistono tutte le derivate parziali, ma non è vero il contrario.\\
+La condizione analoga per $f:\mathbb{R}^n \to \mathbb{R}$ è:
+\[
+\exists \alpha,\beta \in \mathbb{R}^n : f(x_0 + v) = f(x_0) + \alpha \cdot v
+\]
+Se $f$ è differenziabile allora:
+\begin{itemize}
+  \item $f$ è continua in $x_0$
+  \item Esistono tutte le derivate direzionali e quindi anche il gradiente
+  \item $\forall v \in \mathbb{R}^n \setminus \{0\}$, $\frac{\delta f}{\delta v}(x_0) = \nabla f(x_0) \cdot v$
+  \item l'$\alpha \in \mathbb{R}^n$ nella definizione di differenziale è a posteriori uguale a $\nabla f(x_0) \cdot v$, ovvero:
+  \[
+  f(x_0,v) = f(x_0) + \nabla f(x_0) \cdot v + o(||v||)
+  \]
+\end{itemize}
 \end{document}

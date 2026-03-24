@@ -1640,7 +1640,7 @@ Matrice rispetto alla base standard in partenza e in arrivo:
 \[
 \begin{bmatrix}
   -1 & 0\\
-  0 & -1
+  0 & -1 
 \end{bmatrix}
 \]
 La matrice di $R_0$ o $R_0$ è:
@@ -1652,4 +1652,475 @@ La matrice di $R_0$ o $R_0$ è:
 \]
 Ovvero la matrice identità.\\
 In pratica, quando una composizione risulta la matrice di identità allora le matrici composte sono una l'inversa dell'altra, in questo caso l'inverso della matrice di $R_0$ è se stessa.
+
+\subsection{Proiezione all'asse y}
+\[\Pi_y: 
+\begin{bmatrix}
+  x\\
+  y
+\end{bmatrix} \to \begin{bmatrix}
+  x\\
+  0
+\end{bmatrix}
+\]
+Matrice rispetto alla base standard in partenza e in arrivo:
+\[
+\begin{bmatrix}
+  1\\
+  0
+\end{bmatrix} \to \begin{bmatrix}
+  1\\
+  0
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  0\\
+  1
+\end{bmatrix} \to \begin{bmatrix}
+  0\\
+  0
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  1 & 0\\
+  0 & 0 
+\end{bmatrix}
+\]
+
+\subsection{Rotazione di angolo alfa intorno all'origine}
+(questo non è il simbolo corretto, è simile ma con la stanghetta a forma di s)
+\[\rho_{\alpha}:\]
+Questo sopra è la notazione.\\
+Matrice rispetto alla base standard in partenza e in arrivo:
+\[
+\begin{bmatrix}
+  1\\
+  0
+\end{bmatrix} \to \begin{bmatrix}
+  cos(\alpha)\\
+  sin(\alpha)
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  0\\
+  1
+\end{bmatrix} \to \begin{bmatrix}
+  -sin(\alpha)\\
+  cos(\alpha)
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+  cos(\alpha) & -sin(\alpha)\\
+  sin(\alpha) & cos(\alpha) 
+\end{bmatrix}
+\]
+$\rho_{\alpha}$ è un isomorfismo e la sua applicazione lineare inversa è $\rho_{-\alpha}$.
+\[
+\rho_{\alpha} o \rho_{\alpha} = id
+\]
+
+\subsection{Il determinante}
+Se $A \in M_{nxn}(\mathbb{R})$, definiamo il \textbf{determinante} di $A$ come $det(A) \in \mathbb{R}$ che ha le seguenti proprietà:
+\begin{itemize}
+  \item $det(A) = 0 \Leftrightarrow$ le colonne e le righe rispettivamente sono linearmente dipendenti.
+  \item $det(A) \ne 0 \Leftrightarrow$ le colonne e le righe rispettivamente sono linearmente indipendenti.
+\end{itemize}
+Se una matrice $A$ ha $det(A) \ne 0$, allora ammette una matrice inversa $A^{-1}$.\\
+Ecco come calcolare il determinante:
+\paragraph{n = 1}
+$A = [x]$, $det(A) = x$
+\paragraph{n = 2}
+\[
+A = \begin{bmatrix}
+  a & b\\
+  c & d
+\end{bmatrix}
+\]
+\[
+det(A) = ad - bc
+\]
+Ovvero l'area del parallelogramma associato con lati $(a,c)$ e $(b,d)$.
+\paragraph{n > 2}
+Il determinante di una matrice $A = [a_{ij}]$ si calcola riconducendosi al caso precedente.\\
+$A_{ij} = $matrice ottenuta cancellando la riga $i$ e la colonna $j$.\\
+\textbf{Fatto:} tutti questi valori (per ogni $i$) sono uguali e risultano il $det(A)$:
+\[
+\sum_{j=1}^{n} (-1)^{i+j} \cdot a_{ij} \cdot det(a_{ij})
+\]
+Per $i fisso$.
+\paragraph{Esempio:}
+\[
+A = \begin{bmatrix}
+  1 & 0 & -1\\
+  2 & 1 & 0\\
+  1 & 0 & 2
+\end{bmatrix}
+\]
+Sviluppiamo rispetto alla prima riga $i = 1$:
+\[
+1 \cdot det(\begin{bmatrix}
+  1 & 0\\
+  0 & 2
+\end{bmatrix}) - 0 \cdot det(\begin{bmatrix}
+  2 & 0\\
+  1 & 2\\
+\end{bmatrix}) - 1 \cdot det(\begin{bmatrix}
+  2 & 1\\
+  1 & 0
+\end{bmatrix})
+\]
+Ognuna di queste sottomatrici sono gli elementi rimasti dall'eliminazione della colonna e riga dove si trovava l'elemento selezionato ($j$).\\\\
+Le matrici dove è facile calcolare il determinante sono:
+\begin{itemize}
+  \item Matrici con almeno una colonna o riga $= 0$.
+  \item Se $A$ è una matrice triangolare superiore, ovvero che tutti gli elementi sotto la diagonale sono $= 0$ (ovvero con $i > j$), allora:
+  \[
+  det(A) = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn}
+  \]
+  Ovvero tutti i numeri sulla diagonale.\\
+  Vale lo stesso per le matrici diagonali inferiori.
+  \item Se $A$ è una matrice diagonale (di identità), $det(A) = 1$.
+\end{itemize}
+Se scambio due righe adiacenti, il determinante cambia segno.\\
+Lo scambiare due righe non adiacenti corrisponde a fare scambi adiacenti più volte, e quindi cambiare il segno più volte.\\
+Se le righe adiacenti scambiate sono uguali, il segno non cambia, questo perchè:
+\[
+\text{Almeno due righe uguali} \Leftrightarrow det(A) = 0
+\]
+Il segno in realtà cambia, ma rimane invariato perchè $det(A) = 0$.
+\subsection{Matrice aggiunta}
+La matrice aggiunta di $A$ è:
+\[
+\tilde{A} = [\tilde{a}_{ij}]
+\]
+Dove:
+\[
+\tilde{a}_{ij} = (-1)^{i+j} \cdot det(A_{ij})
+\]
+\subsection{Formula di Kramer:}
+\[
+A \cdot \tilde{A} = det(A) \cdot I = \begin{bmatrix}
+  det(A) & 0 & 0\\
+  0 & det(A) & 0\\
+  0 & 0 & det(A)
+\end{bmatrix}
+\]
+Se $det(A) \ne 0$ allora esiste una matrice inversa:
+\[
+A^{-1} = \frac{1}{det(A)} \cdot \tilde{A}
+\]
+\subsection{Dim di Cramer (non ho idea di cosa sia "dim")}
+\[
+\text{riga i di A} \cdot \text{colonna j di A} = det(A)
+\]
+Se $i = j$, altrimenti $= 0$.
+\subsection{Teorema di Binet o Cauchy}
+\[
+det(A \cdot B) = det(A) \cdot det(B)
+\]
+\subsection{Altro teorema}
+Per $A \in M_{nxn}(\mathbb{R})$ sono equivalenti (valgono tutte insieme):
+\begin{itemize}
+  \item $\exists A^{-1}$
+  \item $det(A) \ne 0$
+  \item colonne e righe di $A$ sono linearmente indipendenti
+\end{itemize}
+\subsection{Matrice trasposta}
+La matrice trasposta di $A = [a_{ij}]$ è:
+\[
+A^t = [a_{ji}]
+\]
+Ovvero riga $i$ di $A^t =$ colonna $i$ di $A$.\\
+Dato il teorema precedente si può dire:
+\[
+det(A^t) = det(A)
+\]
+\subsection{Altra proposizione}
+Se $\varphi: V \to V$ è un applicazione lineare, $B,B^|$ basi di $V$ (spazio vettoriale), $A =$ matrice di $\varphi$ rispetto a $B$ in partenza e arrivo e $A^|$ analogo, allora $det(A) = det(A^|)$.
+\paragraph{Dimostrazione:}
+\[
+A^| = PAP^{-1}
+\]
+\[
+det(A^|) = det(PAP^{-1})
+\]
+\[
+det(P) \cdot det(A) \cdot det(P^{-1}) = det(A)
+\]
+\[
+det(A^|) = det(A)
+\]
+
+\section{Autovalori e autovettori}
+Dato $V$ uno spazio vettoriale con $dim(V) < \infty$ e $\varphi:V \to V$ un'applicazione lineare, $\lambda \in \mathbb{R}$ è \textbf{autovalore} se:
+\[
+\exists v \in V \ne 0 : V: \varphi(v) = \lambda \cdot v
+\]
+Tale $v$ si chiama \textbf{autovettore} di $\varphi$ per $\lambda$.\\
+\begin{itemize}
+  \item Un $v \ne 0$ può essere autovettore di un solo $\lambda$ al massimo, infatti se:
+  \[
+  \varphi(v) = \lambda_1 \cdot v
+  \]
+  \[
+  \varphi(v) = \lambda_2 \cdot v
+  \]
+  \[
+  \lambda_1 \cdot v = \lambda_2 \cdot v
+  \]
+  \[
+  (\lambda_1 + \lambda_2) \cdot v = 0
+  \]
+  \[
+  v \ne 0 \implies \lambda_1 = \lambda_2
+  \]
+  \item Per $\lambda$ fisso, esistono molteplici autovettori per $\lambda$.
+  \[
+  \varphi = id
+  \]
+  \[
+  \forall v
+  \]
+  \[
+  \varphi(v) = 1 \cdot v
+  \]
+  \item Esiste un numero finito di autovalori ($\leq dim(V)$)
+\end{itemize}
+Se $\lambda$ è autovalore di $\varphi$, gli autovettori per $\lambda$ e il vettore $0$ formano un sottospazio di $V$ chiamato \textbf{autospazio} di $\lambda$ e si denota $V_{\lambda}$.
+\paragraph{Dimostrazione: }come sappiamo un sottospazio deve soddisfare due condizioni, ovvero che la somma di vettori e il prodotto scalare di un vettore fanno parte anchessi del sottospazio oltre i vettori usati.\\
+Dimostriamo gli autospazi:\\
+\[
+v_1,v_2 \in V_{\lambda} \Leftrightarrow \varphi(v_1) = \lambda \cdot v_1, \varphi(v_2) = \lambda \cdot v_2
+\]
+\[
+\varphi(v_1 + v_2) = \varphi(v_1) + \varphi(v_2) = \lambda \cdot v_1 + \lambda v_2 = \lambda(v_1 + v_2) \Leftrightarrow v_1, v_2 \in V_{\lambda}
+\]
+\[
+\varphi(\alpha \cdot v) = \alpha \cdot \varphi(v) = \alpha \cdot \lambda \cdot v = \lambda(\alpha \cdot v) \implies \alpha \cdot v \in V_{\lambda}
+\]
+
+\section{Diagonalizzabilità}
+$\varphi$ è diagonalizzabile se esiste una base di $V$ dove la matrice di $\varphi$ (in partenza e arrivo) è diagonale.\\
+$\varphi$ è diagonalizzabile se e solo se esiste una base di $V$ costituita da autovettori di $\varphi$.
+\paragraph{Dimostrazione:} $\varphi$ è diagonalizzabile se e solo se esiste una base $v_1,\ldots,v_n$ dove:\\
+\[
+A = \begin{bmatrix}
+  \lambda_1 & \ldots & 0\\
+  \ldots\\
+  0 & \ldots & \lambda_n
+\end{bmatrix}
+\]
+Se appunto esiste una base del genere con tale matrice, allora l'applicazione lineare è questa:
+\[
+\varphi(v_k) = \lambda_k \cdot v_k
+\]
+Ovvero le coordinate di un vettore sono la colonna $k$ della matrice, questo dimostra che ogni vettore è autovettore e se partiamo invece dall'applicazione lineare, se proviamo a ricostruire la matrice associata ritroviamo proprio questa riportata sopra.
+\paragraph{Proposizione:} $A \in M_{nxn}(\mathbb{R})$ è diagonalizzabile $\Leftrightarrow$ esiste $P$ invertibile tale che $PAP^{-1} = D$, con $D = $ matrice diagonale.
+\paragraph{Applicazione:} sia $A \in M_{nxn}(\mathbb{R})$, calcola $A^{2026}$.\\
+\begin{itemize}
+  \item Se $A$ è diagonale, allora:
+  \[
+  A^{2026} = \begin{bmatrix}
+    \lambda_1^{2026} & \ldots & 0\\
+    \ldots\\
+    0 & \ldots & \lambda_n^{2026}
+  \end{bmatrix}
+  \]
+  \item Se $A$ è diagonalizzabile, allora:
+  \[
+  PAP^{-1} = D \Leftrightarrow A = P^{-1}DP
+  \]
+  \[
+  A^{2026} = P^{-1}DP \cdot P^{-1}DP \cdot P^{-1}DP \cdot \ldots = P^{-1}D^{2026}P
+  \]
+\end{itemize}
+Quindi questo esempio di applicazione dimostra quanto questi teoremi facilitino tali calcoli enormi.\\\\
+Supponiamo $\lambda_1,\ldots,\lambda_r$ autovalori distinti di $\varphi$ e $v_i$ autovettore per $\lambda_i$ per ogni $i$ e $\varphi(v_i) = \lambda_i \cdot v_i$ allora $v_1,\ldots,v_r$ sono linearmente indipendenti.\\
+Se $\varphi$ ammette $n = dim(V)$ autovalori distinti allora $\varphi$ è diagonalizzabile (non sempre vero il contrario).
+\paragraph{Dimostrazione:}per definizione, i vettori sono linearmente indipendenti se l'unica combinazione lineare che dà il vettore nullo è quella con tutti i coefficienti nulli. \\
+Supponiamo quindi che esista una combinazione lineare nulla:
+\[
+a_1 v_1 + a_2 v_2 + \dots + a_k v_k = 0.
+\tag{1}
+\]
+Dobbiamo dimostrare che
+\[
+a_1 = a_2 = \dots = a_k = 0.
+\]
+Applichiamo l'applicazione lineare $\phi$ a entrambi i membri della (1):
+\[
+\phi(a_1 v_1 + a_2 v_2 + \dots + a_k v_k) = \phi(0).
+\]
+Poiché $\phi$ è lineare:
+\[
+a_1 \phi(v_1) + a_2 \phi(v_2) + \dots + a_k \phi(v_k) = 0.
+\]
+Poiché i vettori sono autovettori:
+\[
+\phi(v_i) = \lambda_i v_i,
+\]
+quindi otteniamo:
+\[
+a_1 \lambda_1 v_1 + a_2 \lambda_2 v_2 + \dots + a_k \lambda_k v_k = 0.
+\tag{2}
+\]
+Ora abbiamo le due equazioni:
+\[
+\begin{cases}
+a_1 v_1 + a_2 v_2 + \dots + a_k v_k = 0 \\
+a_1 \lambda_1 v_1 + a_2 \lambda_2 v_2 + \dots + a_k \lambda_k v_k = 0
+\end{cases}
+\]
+Moltiplichiamo la prima equazione per $\lambda_1$:
+\[
+a_1 \lambda_1 v_1 + a_2 \lambda_1 v_2 + \dots + a_k \lambda_1 v_k = 0.
+\tag{3}
+\]
+Ora sottraiamo la (3) dalla (2):
+\[
+(2) - (3).
+\]
+Otteniamo:
+\[
+(a_1 \lambda_1 v_1 - a_1 \lambda_1 v_1)
++ (a_2 \lambda_2 v_2 - a_2 \lambda_1 v_2)
++ \dots +
+(a_k \lambda_k v_k - a_k \lambda_1 v_k)
+= 0.
+\]
+Il primo termine si annulla:
+\[
+a_1 \lambda_1 v_1 - a_1 \lambda_1 v_1 = 0.
+\]
+Negli altri termini raccogliamo:
+\[
+a_2(\lambda_2 - \lambda_1)v_2 + a_3(\lambda_3 - \lambda_1)v_3 + \dots + a_k(\lambda_k - \lambda_1)v_k = 0.
+\tag{4}
+\]
+Poiché gli autovalori sono distinti:
+\[
+\lambda_i - \lambda_1 \neq 0 \quad \text{per } i \neq 1.
+\]
+Quindi la (4) è una combinazione lineare dei vettori
+$v_2, \dots, v_k$ uguale a zero.\\
+Ripetendo lo stesso procedimento, moltiplichiamo la (4) per
+$\lambda_2$ e sottraiamo l'equazione ottenuta applicando $\phi$
+alla (4), eliminando così $v_2$.\\
+Continuando questo procedimento si ottiene infine:
+\[
+a_k(\lambda_k - \lambda_{k-1}) v_k = 0.
+\]
+Poiché $v_k \neq 0$ e $\lambda_k \neq \lambda_{k-1}$, segue che
+\[
+a_k = 0.
+\]
+Sostituendo a ritroso nelle equazioni precedenti si ottiene:
+\[
+a_{k-1} = 0, \dots, a_1 = 0.
+\]
+Quindi:
+\[
+a_1 = a_2 = \dots = a_k = 0.
+\]
+Pertanto i vettori $v_1, \dots, v_k$ sono linearmente indipendenti.\hfill $\square$\\\\
+Supponiamo che gli autovalori di $\varphi$ sono $\lambda_1,\ldots,\lambda_n$, allora $\varphi$ è diagonalizzabile se e solo se:
+\[
+dim(V_{\lambda_1}) + dim(V_{\lambda_2}) + \ldots + dim(V_{\lambda_n}) = dim(V)
+\]
+\paragraph{Dimostrazione:}Sia $\phi : V \to V$ un'applicazione lineare e siano 
+$\lambda_1, \dots, \lambda_k$ gli autovalori distinti con i relativi autospazi 
+\[
+E_{\lambda_i} = \{ v \in V : \phi(v) = \lambda_i v \}.
+\]
+\textbf{Step 1: intersezione banale degli autospazi.}  
+Mostriamo che se $i \neq j$, allora 
+\[
+E_{\lambda_i} \cap E_{\lambda_j} = \{0\}.
+\] 
+Sia $v \in E_{\lambda_i} \cap E_{\lambda_j}$. Allora
+\[
+\phi(v) = \lambda_i v \quad \text{e} \quad \phi(v) = \lambda_j v.
+\]
+Sottraendo, otteniamo
+\[
+\lambda_i v - \lambda_j v = (\lambda_i - \lambda_j)v = 0.
+\]
+Poiché $\lambda_i \neq \lambda_j$, segue $v = 0$.  
+Quindi ogni coppia di autospazi con autovalori diversi si interseca solo nello zero.\\
+(In pratica, se moltiplichiamo un valore per due valori diversi, i risultati saranno uguali solo se il primo valore è nullo)\\
+\textbf{Step 2: linearmente indipendenti.}  
+Sia $\{v_{i1}, \dots, v_{in_i}\}$ una base di $E_{\lambda_i}$ per ogni $i$. Consideriamo l’unione di tutte le basi:
+\[
+\{v_{11},\dots,v_{1n_1},v_{21},\dots,v_{2n_2},\dots,v_{k1},\dots,v_{kn_k}\}.
+\] 
+Supponiamo che esista una combinazione lineare nulla:
+\[
+\sum_{i=1}^{k} \sum_{j=1}^{n_i} a_{ij} v_{ij} = 0.
+\] 
+Raggruppando i termini per autospazi, otteniamo
+\[
+w_1 + w_2 + \dots + w_k = 0, \quad w_i \in E_{\lambda_i}.
+\] 
+Poiché l’intersezione tra $E_{\lambda_i}$ e la somma degli altri autospazi è solo $\{0\}$, segue che
+\[
+w_1 = w_2 = \dots = w_k = 0.
+\] 
+Pertanto tutti i coefficienti $a_{ij} = 0$ e i vettori sono linearmente indipendenti.\\
+\textbf{Step 3: somma delle dimensioni.}  
+Abbiamo quindi $n_1 + \dots + n_k$ vettori linearmente indipendenti. Se questi riempiono lo spazio $V$, cioè
+\[
+n_1 + \dots + n_k = \dim V,
+\] 
+allora la somma degli autospazi è diretta e forma una base di $V$. In altre parole,
+\[
+V = E_{\lambda_1} \oplus \dots \oplus E_{\lambda_k},
+\]
+e la dimensione totale della somma degli autospazi è
+\[
+\dim E_{\lambda_1} + \dots + \dim E_{\lambda_k} = \dim V.
+\]
+\textbf{Conclusione.}  
+Questo mostra che un applicazione lineare è diagonalizzabile se e solo se la somma delle dimensioni degli autospazi è uguale alla dimensione dello spazio vettoriale, grazie all’indipendenza degli autovettori e all’intersezione banale degli autospazi relativi ad autovalori distinti. \\\\
+\subsection{Come trovare gli autovalori}
+Per capire se un applicazione lineare è diagonalizzabile, bisogna trovare gli autovalori e poi una base per ciascun autospazio.\\
+Per trovare gli autovalori teniamo a mente che:
+\[
+\lambda \text{ è autovalore} \Leftrightarrow \exists v \ne 0 : \varphi(v) = \lambda \cdot v
+\]
+Parte di questo si riscrive come:
+\[
+\varphi(v) - \lambda \cdot v
+\]
+Consideriamo l'applicazione lineare $\varphi - \lambda \cdot id$, la sua matrice sarà:
+\[
+A = \begin{bmatrix}
+  a_{11} - \lambda & \ldots & a_{1n}\\
+  \ldots\\
+  a_{n1} & \ldots & a_{nn} - \lambda
+\end{bmatrix}
+\]
+Ovvero viene sottratto $\lambda$ ai valori sulla diagonale identità.\\
+Adesso diciamo che $v$ è autovettore di $\varphi$ per $\lambda$ se e solo se:
+\begin{itemize}
+  \item $Ker(\varphi - \lambda \cdot id) \ne 0$ (contiene $v = 0$)
+  \item $det(\varphi - \lambda \cdot id)$ = 0
+\end{itemize}
+\paragraph{Esempio:}
+\[ A = 
+\begin{bmatrix}
+  1 & 1\\
+  0 & 1
+\end{bmatrix}
+\]
+\[
+A - \lambda = \begin{bmatrix}
+  1 - \lambda & 1\\
+  0 & 1 - \lambda
+\end{bmatrix}
+\]
+Il determinante è $(1-\lambda)^2$, deve essere nullo per fare in modo che $\lambda$ sia autovalore, in questo caso l'unico autovalore è $0$.
 \end{document}
