@@ -1527,7 +1527,6 @@ v = \lambda_1 \cdot v_1 + \cdots + \lambda_n \cdot v_n
 \]
 Questo definisce un isomorfismo tra $v \in V$ e le sue coordinate, dato che appunto se $\varphi$ è un isomorfismo $\forall v_2 \in V_2 \exists^| v_1 : \varphi(v_1) = v_2$.\\
 Questo vale sia per $\forall v \in V_1$ e $\forall v \in V_2$, si creano quindi due isomorfismi tra i loro nuclei e immagini.
-\paragraph{Rango di una matrice A:} è uguale alla dimensione dell'immagine dell'applicazione lineare a cui è associata.
 
 \subsection{Composizione di applicazioni lineari}
 Siano $varphi:V_1 \to V_2$ e $\varPsi:V_2 \to V_3$ applicazioni lineari, la loro \textbf{composizione} $\varPsi o \varphi$ è un'applicazione lineare.\\
@@ -1553,6 +1552,11 @@ A \cdot (B \cdot C) = (A \cdot B) \cdot C
 A^{-1} = inverso
 \]
 Il prodotto di $A$ con se stessa $n$ volte è $A^n$ se è d'identità, altrimenti no.\\
+
+\subsection{Rango di una matrice}
+Il \textbf{rango} di una matrice $A$ è uguale alla dimensione dell'immagine dell'applicazione lineare a cui è associata.\\
+Il rango corrisponde al numero di \textbf{righe non nulle} o de \textbf{pivot} di una matrice una volta portata in forma a scalini.\\
+Di conseguenza, corrisponde anche al numero di colonne linearmente indipendenti della matrice.
 
 \subsection{Teorema delle matrici simili}
 \[
@@ -1854,6 +1858,12 @@ det(P) \cdot det(A) \cdot det(P^{-1}) = det(A)
 \[
 det(A^|) = det(A)
 \]
+\subsection{Teorema rango-nullità}
+Il teorema specifica questo per una matrice $A$:
+\[
+dim(Ker(A)) = n - rango(A)
+\]
+Dove $n$ è il numero di variabili distinte dello spazio vettoriale / applicazione lineare associati.
 
 \section{Autovalori e autovettori}
 Dato $V$ uno spazio vettoriale con $dim(V) < \infty$ e $\varphi:V \to V$ un'applicazione lineare, $\lambda \in \mathbb{R}$ è \textbf{autovalore} se:
@@ -1938,9 +1948,11 @@ Ovvero le coordinate di un vettore sono la colonna $k$ della matrice, questo dim
   A^{2026} = P^{-1}DP \cdot P^{-1}DP \cdot P^{-1}DP \cdot \ldots = P^{-1}D^{2026}P
   \]
 \end{itemize}
-Quindi questo esempio di applicazione dimostra quanto questi teoremi facilitino tali calcoli enormi.\\\\
+Quindi questo esempio di applicazione dimostra quanto questi teoremi facilitino tali calcoli enormi.
+\subsection{Indipendenza lineare di autovettori}
 Supponiamo $\lambda_1,\ldots,\lambda_r$ autovalori distinti di $\varphi$ e $v_i$ autovettore per $\lambda_i$ per ogni $i$ e $\varphi(v_i) = \lambda_i \cdot v_i$ allora $v_1,\ldots,v_r$ sono linearmente indipendenti.\\
-Se $\varphi$ ammette $n = dim(V)$ autovalori distinti allora $\varphi$ è diagonalizzabile (non sempre vero il contrario).
+Se $\varphi$ ammette $n = dim(V)$ autovalori distinti allora $\varphi$ è diagonalizzabile (non sempre vero il contrario).\\
+In breve, autovettori per autovalori distinti sono sempre linearmente indipendenti.
 \paragraph{Dimostrazione:}per definizione, i vettori sono linearmente indipendenti se l'unica combinazione lineare che dà il vettore nullo è quella con tutti i coefficienti nulli. \\
 Supponiamo quindi che esista una combinazione lineare nulla:
 \[
@@ -2026,7 +2038,8 @@ Quindi:
 \[
 a_1 = a_2 = \dots = a_k = 0.
 \]
-Pertanto i vettori $v_1, \dots, v_k$ sono linearmente indipendenti.\hfill $\square$\\\\
+Pertanto i vettori $v_1, \dots, v_k$ sono linearmente indipendenti.\hfill $\square$
+\subsection{Proposizione delle dimensioni degli autospazi}
 Supponiamo che gli autovalori di $\varphi$ sono $\lambda_1,\ldots,\lambda_n$, allora $\varphi$ è diagonalizzabile se e solo se:
 \[
 dim(V_{\lambda_1}) + dim(V_{\lambda_2}) + \ldots + dim(V_{\lambda_n}) = dim(V)
@@ -2084,7 +2097,7 @@ e la dimensione totale della somma degli autospazi è
 \dim E_{\lambda_1} + \dots + \dim E_{\lambda_k} = \dim V.
 \]
 \textbf{Conclusione.}  
-Questo mostra che un applicazione lineare è diagonalizzabile se e solo se la somma delle dimensioni degli autospazi è uguale alla dimensione dello spazio vettoriale, grazie all’indipendenza degli autovettori e all’intersezione banale degli autospazi relativi ad autovalori distinti. \\\\
+Questo mostra che un applicazione lineare è diagonalizzabile se e solo se la somma delle dimensioni degli autospazi è uguale alla dimensione dello spazio vettoriale, grazie all’indipendenza degli autovettori e all’intersezione banale degli autospazi relativi ad autovalori distinti.
 \subsection{Come trovare gli autovalori}
 Per capire se un applicazione lineare è diagonalizzabile, bisogna trovare gli autovalori e poi una base per ciascun autospazio.\\
 Per trovare gli autovalori teniamo a mente che:
@@ -2107,7 +2120,7 @@ Ovvero viene sottratto $\lambda$ ai valori sulla diagonale identità.\\
 Adesso diciamo che $v$ è autovettore di $\varphi$ per $\lambda$ se e solo se:
 \begin{itemize}
   \item $Ker(\varphi - \lambda \cdot id) \ne 0$ (contiene $v = 0$)
-  \item $det(\varphi - \lambda \cdot id)$ = 0
+  \item $det(\varphi - \lambda \cdot id) = det(A - \lambda \cdot I) = 0$ ($I$ è matrice identità) 
 \end{itemize}
 \paragraph{Esempio:}
 \[ A = 
@@ -2123,4 +2136,134 @@ A - \lambda = \begin{bmatrix}
 \end{bmatrix}
 \]
 Il determinante è $(1-\lambda)^2$, deve essere nullo per fare in modo che $\lambda$ sia autovalore, in questo caso l'unico autovalore è $0$.
+\subsection{Polinomio caratteristico}
+Il \textbf{polinomio caratteristico} di $A$ è:
+\[
+det(A - \lambda \cdot I) \in \mathbb{R}[t]
+\]
+Gli autovalori sono le radici del polinomio caratteristico, ovvero i valori per cui il polinomio è nullo.\\
+Se $A$ è la matrice di $\varphi:V \to V$ applicazione lineare rispetto ad una base allora il polinomio caratteristico non dipende dalla base se e solo se da un altra base si ottiene lo stesso polinomio.
+\paragraph{Dimostrazione:} Se $B$ è la matrice di $\varphi$ rispetto ad'un altra base, sappiamo che:
+\[
+B = PAP^{-1}
+\]
+Per un certo $P$.
+\[
+det(B - \lambda \cdot I) = det(PAP^{-1} - \lambda \cdot I) = det(PAP^{-1} - \lambda \cdot P \cdot P^{-1}) = \ldots
+\]
+\[
+\ldots = det(P(A - \lambda(A - \lambda \cdot I)P^{-1})) = det(P) \cdot det(A-\lambda \cdot I) \cdot det(P^{-1})
+\]
+\subsection{Come trovare gli autovettori}
+Una volta trovati i nostri autovalori, per trovare gli autovettori per ogni autovalore bisogna:
+\begin{enumerate}
+  \item Scegliere un autovalore ($\lambda  = k$)
+  \item Impostare questa equazione:
+  \[
+  (A - \lambda \cdot I) \cdot \begin{bmatrix}
+    x_1\\
+    x_2\\
+    \ldots\\
+    x_n
+  \end{bmatrix} = \lambda \cdot \begin{bmatrix}
+    x_1\\
+    x_2\\
+    \ldots\\
+    x_n
+  \end{bmatrix} 
+  \]
+  \item Svolgere il sistema associato
+\end{enumerate}
+Una volta trovate le soluzioni, bisogna guardare la base standard delle soluzioni, quelli sono gli autovettori.\\
+Ricordiamo che le dimensioni di tutti gli autospazi deve risultare la dimensione dello spazio vettoriale $V$.\\
+Per trovare le dimensioni degli autospazi bisogna proprio effettuare il teorema del rango-nullità:
+\[
+dim(V_{\lambda}) = dim(Ker(A_{\lambda})) = nVar - rango(A_{\lambda})
+\]
+Dove $A_{\lambda}$ è la matrice associata al sistema risultante del passaggio sopra.\\\\
+Una volta trovati gli autovettori, se la somma delle dimensioni di tutti gli autospazi corrisponde alla dimensione totale e quindi $A$ / $\varphi$ è diagonalizzabile allora possiamo stabilire una matrice simile secondo la base generata dagli autovettori trovati:
+\[
+A^| = \begin{bmatrix}
+  \lambda_1 & \ldots & 0\\
+  \ldots\\
+  0 & \ldots & \lambda_n
+\end{bmatrix}
+\]
+Dove $\lambda_i$ è autovalore.
+\subsection{Esempi di esercizi}
+\paragraph{Esempio 1}
+\[
+A = \begin{bmatrix}
+  1 & 1 & 0\\
+  0 & 0 & 1\\
+  0 & 0 & -1
+\end{bmatrix}
+\]
+\[
+\varphi:\mathbb{R}^3 \to \mathbb{R}^3
+\]
+Troviamo gli autovalori, essi corrispondono alle \textbf{radici} del polinomio caratteristico.\\
+\[
+det(A - \lambda \cdot I) = \begin{bmatrix}
+  1-\lambda & 1 & 0\\
+  0 & -\lambda & 1\\
+  0 & 0 & -1 - \lambda
+\end{bmatrix}
+\]
+Questa è una matrice triangolare superiore, quindi il determinante è uguale al prodotto di tutti gli elementi sulla diagonale:
+\[
+(1-\lambda)(-\lambda)(-1-\lambda)
+\]
+I valori che annullano questo polinomio (e quindi gli autovalori), sono:
+\[
+\lambda = \{1,0,-1\}
+\]
+Per determinare se $A$ è diagonalizzabile, bisogna controllare se, come dice il teorema, tutti gli autovettori per tutti gli autovalori sono tanti quanti la dimensione dello spazio vettoriale.\\
+Quindi, la somma delle dimensioni degli autospazi deve risultare la dimensione di $\mathbb{R}^3$ in questo caso, ovvero $3$.
+\paragraph{Autospazio per 1}
+\[
+\begin{bmatrix}
+  1 & 1 & 0\\
+  0 & 0 & 1\\
+  0 & 0 & -1
+\end{bmatrix} \cdot \begin{bmatrix}
+  x\\
+  y\\
+  z
+\end{bmatrix} = 1 \cdot \begin{bmatrix}
+  x\\
+  y\\
+  z
+\end{bmatrix}
+\]
+\[
+\begin{cases}
+  x + y = x\\
+  z = y\\
+  -z = z
+\end{cases}
+\]
+\[
+\begin{cases}
+  x = \text{ qualsiasi}\\
+  y = 0\\
+  z = 0
+\end{cases}
+\]
+Questo è nella forma:
+\[
+\begin{bmatrix}
+  x\\
+  0\\
+  0
+\end{bmatrix} \text{ multiplo di: } \begin{bmatrix}
+  1\\
+  0\\
+  0
+\end{bmatrix}
+\]
+Quest'ultimo è un autovettore, l'unico per $\lambda = 1$.\\
+La dimensione dell'autospazio $V_{\lambda_1}$ è quindi $1$.\\
+Se svolgiamo anche gli altri autovalori, troviamo altri 2 autovettori, per un totale di 3, questo ci conferma che la matrice è diagonalizzabile.
+Se invece gli autovettori fossero stati di meno, allora no.
 \end{document}
