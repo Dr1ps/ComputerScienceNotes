@@ -1076,9 +1076,102 @@ h(k,i) = (h_1(k) + i \cdot h_2(k)) mod m
 \end{lstlisting}
 
 \section{Grafi}
-\subsection{Grafi come liste di adiacenza}
-Un grafo può essere rappresentato come una lista di liste, si dice in tal caso che è rappresentato con \textbf{liste di adiacenza}.\\
-La lista principale contiene gli stati, le liste associate agli stati invece elencano gli stati vicini (queste liste non sono ordinate).\\
+I grafi sono un tipo di struttura dati e sono rappresentati da una coppia:
+\[
+G = (V,E)
+\]
+\[
+V = nodi/vertici
+\]
+\[
+E = archi (u,v): u,v \in V
+\]
+Esistono grafi:
+\begin{itemize}
+    \item \textbf{Orientati:} composti da coppie ordinate, un arco ha una direzione specifica, ha al massimo $n^2$ archi.
+    \[(u,v) \ne (v,u)\]
+    \item \textbf{Non orientati:} un arco è bidirezionale, ha al massimo $\frac{n(n+1)}{2}$ archi.
+    \[
+    (u,v) \equiv (v,u)
+    \]
+\end{itemize}
+L'\textbf{ordine} di $G$ è il numero di vertici, ovvero $|V|$.\\
+La \textbf{dimensione} di un grafo è:
+\[
+dim(G) = |V| + |E|
+\]
+Se $(u,v) \in E$ allora:
+\begin{itemize}
+    \item $u$ e $v$ sono \textbf{adiacenti} (o vicini).
+    \item $(u,v)$ è \textbf{incidente} su $u$ e $v$.
+    \item $\forall v$, il \textbf{grado} di $v$, indicato con $\delta(v)$, corrisponde al numero di archi incidenti su $v$.
+    \item $v$ è \textbf{isolato} $\Leftrightarrow \delta(v) = 0$.
+    \item $u \leadsto v$ è il \textbf{cammino} tra tali nodi ed è una sequenza di nodi a due a due adiacenti che parte da $u$ e finisce in $v$.
+    \item Un cammino è un \textbf{ciclo} se torna al nodo di partenza.
+    \item Un cammino è \textbf{semplice} se ha tutti nodi distinti e quindi non contiene cicli.
+    \item $\delta(u,v)$ è la \textbf{distanza} tra due nodi, che corrisponde alla lunghezza del cammino minimo tra i due.
+\end{itemize}
+Un grafo può essere anche:
+\begin{itemize}
+    \item \textbf{Sparso:}
+    \[
+    |E| = O(n) 
+    \]
+    (al massimo n)
+    \item \textbf{Denso:}
+    \[
+    |E| = \Theta(n^2)
+    \]
+    \item \textbf{Completo (o Clique / Cricca)}: ogni coppia di vertici distinti è adiacente, massimo numero di archi possibile.
+    \item \textbf{Connesso:} se ogni coppia di nodi è connessa, ovvero esiste un cammino che li connette.
+    \item \textbf{Aciclico(DAG):} è senza cicli.
+\end{itemize}
+Un grafo $G^| = (V^|,E^|)$ è \textbf{sottografo} di $G = (V,E)$ se:
+\[
+V^| \subseteq V
+\]
+\[
+E^| \subseteq E
+\]
+Una \textbf{componente connessa} di un grafo è un sottografo massimale di tale grafo.\\\\
+I grafi possono essere rappresentati come:
+\begin{itemize}
+    \item \textbf{Matrici di adiacenza:} le righe e le colonne rappresentano i nodi, le celle indicano se esiste l'arco tra quella coppia di nodi o meno e occasionalmente anche un \textbf{valore} se il grafo è \textbf{pesato}.
+    \item \textbf{Liste di adiacenza:} rappresentato da una lista di liste, ogni indice della lista contiene una lista di nodi adiacenti al nodo $k$.
+\end{itemize}
+
+\subsection{Grafi non orientati}
+Nei grafi non orientati vale questo lemma:
+\[
+\sum_{v \in V} \delta(v) = 2|E|
+\]
+\subsection{Grafi orientati}
+Nei grafi orientati vale questo lemma:
+\[
+\sum_{v \in V} \delta(v) = |E|
+\]
+In questo tipo di grafo, i nodi hanno:
+\begin{itemize}
+    \item \textbf{Grado in entrata:} $\delta^+(u)$
+    \item \textbf{Grado in uscita:} $\delta^-(u)$
+\end{itemize}
+Il grado di un nodo corrisponde alla somma di questi due.\\
+Un grafo ordinato è \textbf{fortemente connesso} se ogni coppia di nodi è connessa.\\
+La definizione è analoga per \textbf{componente fortemente connessa}.
+
+\subsection{Complessita delle operazioni (Matrice di adiacenza)}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Operazione & Grafo orientato & Grafo non orientato & Note\\
+\hline
+adiacenti(u,v) & $\Theta(1)$ & $\Theta(1)$ & return[u,v]\\
+grado(n) & $\Theta(n)$ & $\Theta(n)$ & scansiono la riga $u$ di $M$\\
+aggiungiArco(u,v) & $\Theta(1)$ & $\Theta(1)$ & M[u,v] = 1 (M[v,u] = 1)\\
+rimuoviArco(u,v) & $\Theta(1)$ & $\Theta(1)$ & analogo con "0"\\
+\hline
+\end{tabular}
+\end{center}
 
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
