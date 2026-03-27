@@ -1634,14 +1634,46 @@ La condizione analoga per $f:\mathbb{R}^n \to \mathbb{R}$ è:
 \exists \alpha,\beta \in \mathbb{R}^n : f(x_0 + v) = f(x_0) + \alpha \cdot v
 \]
 Se $f$ è differenziabile allora:
-\begin{itemize}
+\begin{enumerate}
   \item $f$ è continua in $x_0$
   \item Esistono tutte le derivate direzionali e quindi anche il gradiente
-  \item $\forall v \in \mathbb{R}^n \setminus \{0\}$, $\frac{\delta f}{\delta v}(x_0) = \nabla f(x_0) \cdot v$
+  \item $\forall v \in \mathbb{R}^n \setminus \{0\}$, $\frac{\delta f}{\delta v}(x_0) = \nabla f(x_0) \cdot v$ (ovvero esiste il gradiente)
   \item l'$\alpha \in \mathbb{R}^n$ nella definizione di differenziale è a posteriori uguale a $\nabla f(x_0) \cdot v$, ovvero:
   \[
   f(x_0,v) = f(x_0) + \nabla f(x_0) \cdot v + o(||v||)
   \]
-\end{itemize}
+\end{enumerate}
+\paragraph{Dimostrazione punto 2 e 3:}
+Calcoliamo:
+\[
+\frac{\delta f}{\delta w}(x_0)
+\]
+\[
+v \in \mathbb{R}^n
+\]
+\[
+w \ne 0 \text{ fissato}
+\]
+\[
+\frac{\delta f}{\delta w}(x_0) = \lim_{t \to 0} \frac{f(x_0 + tw) - f(x_0)}{t} = \ldots
+\]
+(Definizione di Differenziabilità con $v = tw$)
+\[
+\ldots = \lim_{t \to 0} \frac{f(x_0) + \alpha \cdot (tw) + o(||tw||) - f(x_0)}{t}  = \ldots
+\]
+\[
+\ldots = \lim_{t \to 0} \frac{(tw) \cdot \alpha}{t} = \lim_{t \to 0} w \cdot \alpha
+\]
+\[
+\frac{\delta f}{\delta w}(x_0) = w \cdot \alpha
+\]
+Questa uguaglianza vale sempre.\\
+Se $w = e_k$ della forma $(0, \ldots, 1, \ldots, 0)$ ("1" nel posto $k$) allora troviamo:
+\[
+\frac{\delta f}{\delta w}(x_k) = \frac{\delta f}{\delta e_k}(x_0) = e_k \cdot \alpha = \alpha_k
+\]
+Si vede proprio che la derivata direzionale per $e_k$ è proprio la derivata parziale con $x_k$.\\
+Segue che $\alpha$ è il gradiente di $f$.\\
+\subsection{Geometria del vettore gradiente}
 
 \end{document}

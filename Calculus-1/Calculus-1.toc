@@ -147,3 +147,5 @@
 \contentsline {subsubsection}{\numberline {22.10.2}Derivate direzionali}{51}{subsubsection.22.10.2}%
 \contentsline {subsubsection}{\numberline {22.10.3}Gradiente}{52}{subsubsection.22.10.3}%
 \contentsline {subsubsection}{\numberline {22.10.4}Differenziabilità}{52}{subsubsection.22.10.4}%
+\contentsline {paragraph}{Dimostrazione punto 2 e 3:}{52}{Item.7}%
+\contentsline {subsection}{\numberline {22.11}Geometria del vettore gradiente}{53}{subsection.22.11}%
