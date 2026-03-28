@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  27 MAR 2026 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  28 MAR 2026 21:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -852,12 +852,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--509
 
  []
 
-<images/rettasecantederivata.png, id=717, 250.9375pt x 202.7575pt>
+<images/rettasecantederivata.png, id=727, 250.9375pt x 202.7575pt>
 File: images/rettasecantederivata.png Graphic file (type png)
 <use images/rettasecantederivata.png>
 Package pdftex.def Info: images/rettasecantederivata.png  used on input line 520.
 (pdftex.def)             Requested size: 227.62206pt x 183.92796pt.
-<images/rettatangentederivata.png, id=718, 731.73375pt x 481.8pt>
+<images/rettatangentederivata.png, id=728, 731.73375pt x 481.8pt>
 File: images/rettatangentederivata.png Graphic file (type png)
 <use images/rettatangentederivata.png>
 Package pdftex.def Info: images/rettatangentederivata.png  used on input line 524.
@@ -1236,32 +1236,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 1674--1677
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1685--1688
+
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53] (Calculus-1.aux)
+[53]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[54]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55] (Calculus-1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Calculus-1.out' has not changed.
-(rerunfilecheck)             Checksum: 875C99432BE30C2F29097A9B0A293CEA;21163.
+(rerunfilecheck)             Checksum: C24CE36DD240AB60191D91F82D5B26EA;21539.
  ) 
 Here is how much of TeX's memory you used:
- 32104 strings out of 467867
- 753789 string characters out of 5418334
+ 32110 strings out of 467867
+ 753871 string characters out of 5418334
  1273870 words of memory out of 5000000
- 60335 multiletter control sequences out of 15000+600000
+ 60337 multiletter control sequences out of 15000+600000
  637845 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,118p,808b,1961s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Perna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Calculus-1.pdf (53 pages, 417275 bytes).
+Output written on Calculus-1.pdf (55 pages, 423771 bytes).
 PDF statistics:
- 964 PDF objects out of 1000 (max. 8388607)
- 182 named destinations out of 1000 (max. 500000)
- 991 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 983 PDF objects out of 1000 (max. 8388607)
+ 186 named destinations out of 1000 (max. 500000)
+ 1007 words of extra memory for PDF output out of 10000 (max. 10000000)
 

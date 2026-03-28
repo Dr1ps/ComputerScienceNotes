@@ -149,3 +149,6 @@
 \contentsline {subsubsection}{\numberline {22.10.4}Differenziabilità}{52}{subsubsection.22.10.4}%
 \contentsline {paragraph}{Dimostrazione punto 2 e 3:}{52}{Item.7}%
 \contentsline {subsection}{\numberline {22.11}Geometria del vettore gradiente}{53}{subsection.22.11}%
+\contentsline {subsection}{\numberline {22.12}Piano Tangente}{54}{subsection.22.12}%
+\contentsline {paragraph}{Esempio:}{54}{subsection.22.12}%
+\contentsline {subsection}{\numberline {22.13}Teorema del differenziabile totale}{55}{subsection.22.13}%
