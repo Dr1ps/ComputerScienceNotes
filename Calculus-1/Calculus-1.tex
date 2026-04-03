@@ -1674,6 +1674,21 @@ Se $w = e_k$ della forma $(0, \ldots, 1, \ldots, 0)$ ("1" nel posto $k$) allora 
 \]
 Si vede proprio che la derivata direzionale per $e_k$ è proprio la derivata parziale con $x_k$.\\
 Segue che $\alpha$ è il gradiente di $f$.\\
+\subsubsection{Massimi e minimi}
+Ricordiamo il teorema di \textbf{Weierstrass} per le funzioni ad 1 variabile:\\
+Se $f[a,b] \to \mathbb{R}$ è continuam allora $f$ ha sicuramente massimo e minimo.\\
+Per trovare massimi e minimi in tali funzioni si controllano:
+\begin{itemize}
+  \item Punti stazionari interni (Fermat, derivata prima è 0)
+  \item Punti singolari interni (ovvero per cui la derivata prima non esiste, come $x=0$ per $f(x) = |x|$).
+  \item Punti di bordo, ovvero $a$ e $b$.
+\end{itemize}
+In una funzione a più variabili la cosa è la stessa e si analizzano:
+\begin{itemize}
+  \item Punti stazionari interni (come un punto "sella")(Le derivate parziali sono tutte 0).
+  \item Punti singolari interni (almeno una delle derivate parziali non esiste)
+  \item Punti di bordo, come quelli su una circonferenza (infiniti per $n \geq 2$)
+\end{itemize}
 \subsection{Geometria del vettore gradiente}
 Consideriamo le derivate direzionali di una funzione $f$ come se fossero determinate da quelle fatte rispetto ai vettori di norma $1$:
 \[
@@ -1704,6 +1719,33 @@ Questo si dimostra con la formula del prodotto scalare:
 \]
 Questo raggiunge il massimo quando $cos\Theta = 1$, e quindi $\Theta = 0$, il minimo invece analogamente ($\Theta = \frac{\pi}{2}$).\\
 Se invece il tutto è $= 0$ allora la direzione è tangente alla curva di livellodi $f$ in $x_0$.
+\paragraph{Esempio:}
+\[
+f(x,y) = x^2 + y^2
+\]
+Quale è la curva di livello per cui:
+\[
+f(x,y) = \lambda
+\]
+\[
+x^2 + y^2 = \lambda
+\]
+In questo caso $\lambda \geq 0$.\\
+La curva di livello è una circonferenza centrata in $(0,0)$ con raggio $\sqrt{\lambda}$.\\
+Nel piano tridimensionale corrisponde ad un grafico che sembra un vaso che cresce sempre di piu.\\
+Il vettore per cui questo grafico cresce di più come sappiamo è il vettore gradiente:
+\[
+\nabla f(2x,2y)
+\]
+Dato che:
+\[
+\frac{\delta f}{\delta x} = 2x
+\]
+\[
+\frac{\delta f}{\delta y} = 2y
+\]
+\subsection{Campo di vettori}
+Il vettore gradiente va da $\mathbb{R}^n$ a $\mathbb{R}^n$ e associa ad ogni punto del grafico un vettore.
 \subsection{Piano Tangente}
 Ricordiamo che in 1 variabile se $f$ è differenziabile allora:
 \[
@@ -1766,4 +1808,5 @@ Nella pratica, per verificare che una funzione data sia differenziabile, bisogna
   \item Verificare che siano definite in un intorno di $x_0$
   \item Verificare che siano continue (se sono composte solo da funzioni elementari / solite allora sono continue)
 \end{itemize}
+
 \end{document}

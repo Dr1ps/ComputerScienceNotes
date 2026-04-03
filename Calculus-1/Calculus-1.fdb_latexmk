@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774731382.65651 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Calculus-1/Calculus-1.tex" "Calculus-1.pdf" "Calculus-1" 1774731386.83824 0
+["pdflatex"] 1775224874.87438 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Calculus-1/Calculus-1.tex" "Calculus-1.pdf" "Calculus-1" 1775224879.5482 0
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773676412 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773676418 14064 0755e81df0a3f44f7f1535cca21b2c26 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773675697 13333849 f127fb83bdd447a9c976cfbfaa462a32 ""
@@ -198,11 +198,11 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Calculus-1.aux" 1774731386 19643 cb1f708ac0680ad5288c480d0696943f "pdflatex"
-  "Calculus-1.out" 1774731386 21539 c24ce36dd240ab60191d91f82d5b26ea "pdflatex"
-  "Calculus-1.tex" 1774731377 74848 11fd473d3fb37ead5dd28e436a63a85c ""
-  "Calculus-1.toc" 1774731386 13165 8b4b881bacafe27f4ed76d35bb7ffd8a "pdflatex"
-  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Calculus-1/Calculus-1.tex" 1774731377 74848 11fd473d3fb37ead5dd28e436a63a85c ""
+  "Calculus-1.aux" 1775224878 20011 fd4ef8c22479d026870b01680b92fd95 "pdflatex"
+  "Calculus-1.out" 1775224878 21846 6f119ddf0b68f2ec02334a48936c2099 "pdflatex"
+  "Calculus-1.tex" 1775224868 76443 5996e735e1477bb6f1f37a8057d6396d ""
+  "Calculus-1.toc" 1775224878 13410 bb19cc159129b8cff3434baaf2cdcdd2 "pdflatex"
+  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Calculus-1/Calculus-1.tex" 1775224868 76443 5996e735e1477bb6f1f37a8057d6396d ""
   "images/rettasecantederivata.png" 1773670725 3347 de77f9e039395ec62143748dba08d2e6 ""
   "images/rettatangentederivata.png" 1773670725 30406 fc3cb7706d5a80ecea8bc26f9419ace9 ""
   (generated)
