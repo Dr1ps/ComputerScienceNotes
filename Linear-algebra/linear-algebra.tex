@@ -2266,4 +2266,130 @@ Quest'ultimo è un autovettore, l'unico per $\lambda = 1$.\\
 La dimensione dell'autospazio $V_{\lambda_1}$ è quindi $1$.\\
 Se svolgiamo anche gli altri autovalori, troviamo altri 2 autovettori, per un totale di 3, questo ci conferma che la matrice è diagonalizzabile.
 Se invece gli autovettori fossero stati di meno, allora no.
+\subsection{Molteplicità}
+Prima di spiegare la molteplicità introduciamo una proposizione.\\
+Se $f \ne 0$, $a$ è radice di $f$ se:
+\[
+f = (t - a) \cdot g
+\] 
+\[
+deg(g) = deg(f) - 1
+\]
+\paragraph{Esempio:}
+\[
+f = t^2 + t
+\]
+\[
+f(0) = 0
+\]
+\[
+f = (t - 0)(t + 1)
+\]
+Quindi possiamo dire:
+\[
+f(a) = 0 \implies \exists m > 0 : f = (t - a)^m \cdot g
+\]
+Con $g(a) \ne 0$ (a non è radice in g).
+\paragraph{Dimostrazione:}
+\[
+f = (t - a) \cdot g_1
+\]
+\begin{itemize}
+  \item Se $g_1(a) \ne 0$ allora tutto è dimostrato.
+  \item $g_1(a) = 0$ allora il teorema si riapplica a $g_1$ fino a che non si verifica il punto precedente. Ricordiamo che il grado di $g$ diminuisce sempre di 1 e quindi non ce ne sono infiniti.
+\end{itemize}
+Questo $m$ quan sopra è la \textbf{molteplicita} della radice $a$ di $f$.\\
+Supponiamo che $a_1$ è radice di $f = (t - a_1)^m \cdot g$ di molteplicita $m$ e $a_2$ un'altra radice di $f$, allora:
+\[
+g(a_2) = 0
+\]
+Perchè:
+\[
+0 = f(a_2) = (a_2 - a_1)^m \cdot g(a_2)
+\]
+E perche in tale equazione $a_2 - a_1$.\\
+\subsubsection{Molteplicità algebrica e geometrica}
+Sia $\varphi: V \to V$ un'applicazione lineare e $\lambda$ come autovalore di $\varphi$, la \textbf{molteplicita algebrica} di $\lambda$ è la sua molteplicita come radice del polinomio caratteristico.\\
+La \textbf{molteplicita geometrica} di $\lambda$ è $dim(V_{\lambda})$.\\
+Per queste definizioni vale questo:
+\[
+moltAlg(\lambda) \geq moltGeom(\lambda)
+\]
+Questo è interessante perche se la molteplicita algebrica di un autovalore è $1$, allora anche la molteplicita geometrica sarà $1$.\\
+Inoltre, la somma di tutte le molteplicita algebriche di tutti gli autovalori è uguale a $n = dim(V)$.
+\subsection{Numeri complessi}
+Un \textbf{numero complesso} è un espressione $z = a + bi$ dove $a,b \in \mathbb{R}$, $i$ parametro della formula per cui:
+\[
+i^2 = -1
+\]
+Questi numeri servono per risolvere alcuni problemi.\\
+Per esempio, una matrice potrebbe non essere diagonalizzabile in $\mathbb{R}$, ma potrebbe esserlo in $\mathbb{C}$ (insieme dei numeri complessi).\\
+Per definizione, l'insieme $\mathbb{R}$ è sottoinsieme di $\mathbb{C}$.\\
+L'insieme $\mathbb{C}$ ammette queste operazioni:\\
+Se:
+\[
+z = a + bi
+\]
+\[
+z^| = a^| + b^|i
+\]
+Allora valgono queste operazioni:
+\begin{itemize}
+  \item Somma
+  \[
+  (z + z^|) = (a + a^|) + (b + b^|)i
+  \]
+  \item Prodotto per $\lambda \in \mathbb{R}$
+  \[
+  \lambda z = \lambda a + \lambda bi
+  \]
+\end{itemize}
+Da questo si deduce che $\mathbb{C}$ è uno spazio vettoriale e ha quindi una base di dimensione $2$:
+\[
+1 + i
+\]
+Inoltre si può svolgere il prodotto tra numeri complessi:
+\[
+z \cdot z^| = (a + bi)(a^| + b^|i) = (a \cdot a^| - b \cdot b^|)(ab^| + a^|b)i
+\]
+\paragraph{Esempio:}
+\[
+i^2 = (0 + i)(0 + i) = -1 + 0 \cdot i = -1
+\]
+\subsubsection{Coniugati}
+Se $z = a + bi$, il suo coniugato è:
+\[
+\overline{z} = a - bi
+\]
+Si osserva:
+\[
+z + \overline{z} = 2a \in \mathbb{R}
+\]
+\[
+z \cdot \overline{z} = a^2 + b^2 \in \mathbb{R}
+\]
+Se $z \ne 0$ allora:
+\[
+\frac{1}{z} = \frac{\overline{z}}{a^2 + b^2}
+\]
+E anche:
+\[
+\frac{z^|}{z} = \frac{z^| \cdot \overline{z}}{a^2 + b^2}
+\]
+Se $\Delta \in \mathbb{R}$, $\Delta < 0 \implies -\Delta > 0$ allora:
+\[
+\exists \sqrt{-\Delta}
+\]
+\[
+\sqrt{\Delta \cdot i}^2 = -\Delta \cdot (-1) = \Delta
+\]
+Possiamo dire che a questo punto ogni polinomio in $\mathbb{C}$ ammette radici.\\
+\subsection{Teorema fondamentale dell'algebra}
+Il teorema dice questo:
+\[
+f \in \mathbb{C}[t] \implies \exists z \in \mathbb{C} : f(z) = 0
+\]
+Questo significa che ogni polinomio in $\mathbb{C}[t]$ (e quindi anche in $\mathbb{R}[t]$) ha almeno una radice complessa.\\
+Se questo si avvera ed esiste una radice $z$ per cui $f(z) = 0$, allora anche $f(\overline{z}) = 0$.\\
+Il teorema di conseguenza indica che una funzione qualsiasi ha sempre almeno un autovalore in $\mathbb{C}$.
 \end{document}

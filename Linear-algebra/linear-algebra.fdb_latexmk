@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774536245.39287 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" "linear-algebra.pdf" "linear-algebra" 1774536249.84251 0
+["pdflatex"] 1775331111.46969 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" "linear-algebra.pdf" "linear-algebra" 1775331115.28187 0
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773676412 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1200.pk" 1773880625 15080 59666ca15c1b6df989f026b2f25e52aa ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773676418 14064 0755e81df0a3f44f7f1535cca21b2c26 ""
@@ -197,11 +197,11 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" 1774536235 73443 aada23b0d5137503417c0d0b7dad988f ""
-  "linear-algebra.aux" 1774536249 14561 691db88b9605f11d8f952c2c01f2e1f5 "pdflatex"
-  "linear-algebra.out" 1774536249 10343 76d3e25d2e33d27844bb942ed91b4f35 "pdflatex"
-  "linear-algebra.tex" 1774536235 73443 aada23b0d5137503417c0d0b7dad988f ""
-  "linear-algebra.toc" 1774536249 9437 bac42f3849232d857b00b1dcbc00e0f8 "pdflatex"
+  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Linear-algebra/linear-algebra.tex" 1775331106 77414 5e6436d45f270a97abf5b0eb01e5e622 ""
+  "linear-algebra.aux" 1775331114 15541 8fbf433f54ebd56fae26255cc4b61ca4 "pdflatex"
+  "linear-algebra.out" 1775331114 11212 49c8499c9b2abd32cc325f6d4ad58977 "pdflatex"
+  "linear-algebra.tex" 1775331106 77414 5e6436d45f270a97abf5b0eb01e5e622 ""
+  "linear-algebra.toc" 1775331114 10089 6812c2ccd34800fadaf078c999b8e7f2 "pdflatex"
   (generated)
   "linear-algebra.aux"
   "linear-algebra.log"
