@@ -1137,7 +1137,7 @@ Una \textbf{componente connessa} di un grafo è un sottografo massimale di tale 
 I grafi possono essere rappresentati come:
 \begin{itemize}
     \item \textbf{Matrici di adiacenza:} le righe e le colonne rappresentano i nodi, le celle indicano se esiste l'arco tra quella coppia di nodi o meno e occasionalmente anche un \textbf{valore} se il grafo è \textbf{pesato}.
-    \item \textbf{Liste di adiacenza:} rappresentato da una lista di liste, ogni indice della lista contiene una lista di nodi adiacenti al nodo $k$.
+    \item \textbf{Liste di adiacenza:} rappresentato da una lista di liste, ogni indice della lista principale contiene una lista dei nodi a cui il nodo contenente la lista è collegato. La lista è $nul$ se il grado del nodo è $0$.
 \end{itemize}
 
 \subsection{Grafi non orientati}
@@ -1172,6 +1172,86 @@ rimuoviArco(u,v) & $\Theta(1)$ & $\Theta(1)$ & analogo con "0"\\
 \hline
 \end{tabular}
 \end{center}
+
+\subsection{Complessita delle operazioni (Liste di adiacenza)}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Operazione & Grafo orientato & Grafo non orientato & Note\\
+\hline
+adiacenti(u,v) & $\Theta(\delta(u))$ & $\Theta(\delta^-(u))$ & find($adj(u),v$)\\
+grado(n) & $\Theta(\delta(u))$ & $\Theta(\delta^-(u))$ & adj(u).size\\
+aggiungiArco(u,v) & $\Theta(1)$ & $\Theta(1)$ & $\Theta(\delta(u))$ se liste ordinate\\
+rimuoviArco(u,v) & $\Theta(\delta(u))$ & $\Theta(\delta(u) + \delta(v))$ &\\
+\hline
+\end{tabular}
+\end{center}
+Ovviamente per aggiungiArco con liste ordinate e grafo non orientato la complessità è $\Theta(\delta(u) + \delta(v))$.
+
+\subsection{Visite sui grafi}
+Una visita su un grafo è un esame sistematico di tutti i vertici e di tutti gli archi di un grafo. (Oppure limitatamente di vertici e archi raggiungibili da una sorgente).\\
+\subsubsection{BFS}
+La visita \textbf{BFS (Breadth First Search)}, ovvero la \textbf{visita in ampiezza}, se $s \in V$ è nodo sorgente allora:
+\[
+bfs(G,s)
+\]
+scopre tutti i vertici raggiungibili da $s$ in ordine crescente rispetto alla distanza da $s$. Questo algoritmo utilizza una coda e visita tutto il grafo solo se è connesso.\\
+Vediamo un esempio, diciamo che:
+\begin{itemize}
+    \item $v.d =$ distanza da $s$ di $v$.
+    \item $v.status =$ può essere "A" (da visitare), "B" (Visitato), "C" (Visitato e visitati tutti gli archi uscenti).
+    \item $v.\pi =$ predecessore (vertice da cui si arriva in v)
+\end{itemize}
+\begin{lstlisting}
+    forEach v do:
+        v.d = +inf
+        v.pi = nul
+        v.status = A
+    s.status = B
+    s.d = 0
+    s.pi = nul
+    Q = nuovaCoda()
+    Enqueue(Q,s)
+    while(Q != empty) do:
+        u = dequeue(Q)
+        forEach v in adj[u] do:
+            if(v.status == A):
+                v.status = B
+                v.pi = u
+                v.d = u.d + 1
+            Enqueue(Q,v)
+        u.status = C
+\end{lstlisting}
+\paragraph{Spiegazione del codice:} si inizializza tutto come si deve, il nodo sorgente ovviamente non ha predecessori ed è il primo da visitare (primo nella coda).\\
+Dopo, si visita ogni nodo adiacente del primo nodo e li mette in coda (non è specificato nessun ordine specifico). Una volta visitati tutti i vicini, il nodo iniziale viene segnato col grado C e viene tolto dalla coda.\\
+Il nodo in testa adesso è il secondo della visita e si deve ripetere il procedimento.\\
+\paragraph{Complessità:} $\Theta(|V| + |E|) = \Theta(n + m)$ \\
+Vediamo adesso un metodo che stampa un percorso minimo dopo aver svolto una BFS:
+\begin{lstlisting}
+print-path(G,s,v):
+    if(v == s):
+        print "s"
+        return
+    if(v.pi == nul):
+        "v non e raggiungibile"
+    else:
+        print-path(G,s,v.pi)
+        print "v"
+\end{lstlisting}
+\paragraph{Complessità:} $\Theta(1)$ se il path non esiste, altrimenti $\Theta(d(s,v))$, ovvero la distanza tra i due nodi.\\\\
+Vediamo adesso questo lemma:
+\[
+G = (V,E), s \in V
+\]
+\[
+\forall (u,v) \in E, d(s,v) \leq d(s,u) + 1
+\]
+e, al termine di un BFS(G,s):
+\[
+\forall v \in V, v,d \geq d(s,v)
+\]
+\subsubsection{DFS}
+
 
 \section{Altri algoritmi}
 \subsection{Array non ordinato}

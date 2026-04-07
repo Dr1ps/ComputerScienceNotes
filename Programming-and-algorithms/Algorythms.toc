@@ -96,39 +96,46 @@
 \contentsline {subsection}{\numberline {12.1}Grafi non orientati}{35}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Grafi orientati}{35}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}Complessita delle operazioni (Matrice di adiacenza)}{35}{subsection.12.3}%
-\contentsline {section}{\numberline {13}Altri algoritmi}{36}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Array non ordinato}{36}{subsection.13.1}%
-\contentsline {subsubsection}{\numberline {13.1.1}Ricerca}{36}{subsubsection.13.1.1}%
-\contentsline {subsubsection}{\numberline {13.1.2}Inserimento}{36}{subsubsection.13.1.2}%
-\contentsline {subsubsection}{\numberline {13.1.3}Cancellazione}{36}{subsubsection.13.1.3}%
-\contentsline {subsection}{\numberline {13.2}Array ordinato}{36}{subsection.13.2}%
-\contentsline {subsubsection}{\numberline {13.2.1}Ricerca}{36}{subsubsection.13.2.1}%
-\contentsline {subsubsection}{\numberline {13.2.2}Inserimento}{36}{subsubsection.13.2.2}%
-\contentsline {subsubsection}{\numberline {13.2.3}Cancellazione}{37}{subsubsection.13.2.3}%
-\contentsline {subsection}{\numberline {13.3}Lista non ordinata (semplicemente concatenata)}{37}{subsection.13.3}%
-\contentsline {subsubsection}{\numberline {13.3.1}Ricerca}{37}{subsubsection.13.3.1}%
-\contentsline {subsubsection}{\numberline {13.3.2}Inserimento}{37}{subsubsection.13.3.2}%
-\contentsline {subsubsection}{\numberline {13.3.3}Cancellazione}{37}{subsubsection.13.3.3}%
-\contentsline {subsection}{\numberline {13.4}Lista ordinata (semplicemente concatenata)}{37}{subsection.13.4}%
-\contentsline {subsubsection}{\numberline {13.4.1}Ricerca}{37}{subsubsection.13.4.1}%
-\contentsline {subsubsection}{\numberline {13.4.2}Inserimento}{38}{subsubsection.13.4.2}%
-\contentsline {subsubsection}{\numberline {13.4.3}Cancellazione}{38}{subsubsection.13.4.3}%
-\contentsline {subsection}{\numberline {13.5}Lista doppia non ordinata}{38}{subsection.13.5}%
-\contentsline {subsubsection}{\numberline {13.5.1}Ricerca}{38}{subsubsection.13.5.1}%
-\contentsline {subsubsection}{\numberline {13.5.2}Inserimento}{38}{subsubsection.13.5.2}%
-\contentsline {subsubsection}{\numberline {13.5.3}Cancellazione}{38}{subsubsection.13.5.3}%
-\contentsline {subsection}{\numberline {13.6}Lista doppia ordinata}{39}{subsection.13.6}%
-\contentsline {subsubsection}{\numberline {13.6.1}Ricerca}{39}{subsubsection.13.6.1}%
-\contentsline {subsubsection}{\numberline {13.6.2}Inserimento}{39}{subsubsection.13.6.2}%
-\contentsline {subsubsection}{\numberline {13.6.3}Cancellazione}{39}{subsubsection.13.6.3}%
-\contentsline {subsection}{\numberline {13.7}Albero binario (generico)}{39}{subsection.13.7}%
-\contentsline {subsubsection}{\numberline {13.7.1}Ricerca}{39}{subsubsection.13.7.1}%
-\contentsline {subsubsection}{\numberline {13.7.2}Inserimento}{39}{subsubsection.13.7.2}%
-\contentsline {subsubsection}{\numberline {13.7.3}Cancellazione}{40}{subsubsection.13.7.3}%
-\contentsline {subsection}{\numberline {13.8}Albero binario di ricerca (BST)}{40}{subsection.13.8}%
-\contentsline {subsubsection}{\numberline {13.8.1}Ricerca}{40}{subsubsection.13.8.1}%
-\contentsline {subsubsection}{\numberline {13.8.2}Inserimento}{40}{subsubsection.13.8.2}%
-\contentsline {subsubsection}{\numberline {13.8.3}Cancellazione}{40}{subsubsection.13.8.3}%
-\contentsline {subsection}{\numberline {13.9}Tabella riassuntiva}{40}{subsection.13.9}%
-\contentsline {section}{\numberline {14}Cheat Sheet (MiniMAO e MAO)}{41}{section.14}%
-\contentsline {section}{\numberline {15}Altro}{49}{section.15}%
+\contentsline {subsection}{\numberline {12.4}Complessita delle operazioni (Liste di adiacenza)}{36}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Visite sui grafi}{36}{subsection.12.5}%
+\contentsline {subsubsection}{\numberline {12.5.1}BFS}{36}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Spiegazione del codice:}{37}{lstnumber.-17.18}%
+\contentsline {paragraph}{Complessità:}{37}{lstnumber.-17.18}%
+\contentsline {paragraph}{Complessità:}{37}{lstnumber.-18.9}%
+\contentsline {subsubsection}{\numberline {12.5.2}DFS}{37}{subsubsection.12.5.2}%
+\contentsline {section}{\numberline {13}Altri algoritmi}{38}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Array non ordinato}{38}{subsection.13.1}%
+\contentsline {subsubsection}{\numberline {13.1.1}Ricerca}{38}{subsubsection.13.1.1}%
+\contentsline {subsubsection}{\numberline {13.1.2}Inserimento}{38}{subsubsection.13.1.2}%
+\contentsline {subsubsection}{\numberline {13.1.3}Cancellazione}{38}{subsubsection.13.1.3}%
+\contentsline {subsection}{\numberline {13.2}Array ordinato}{38}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}Ricerca}{38}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}Inserimento}{38}{subsubsection.13.2.2}%
+\contentsline {subsubsection}{\numberline {13.2.3}Cancellazione}{39}{subsubsection.13.2.3}%
+\contentsline {subsection}{\numberline {13.3}Lista non ordinata (semplicemente concatenata)}{39}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Ricerca}{39}{subsubsection.13.3.1}%
+\contentsline {subsubsection}{\numberline {13.3.2}Inserimento}{39}{subsubsection.13.3.2}%
+\contentsline {subsubsection}{\numberline {13.3.3}Cancellazione}{39}{subsubsection.13.3.3}%
+\contentsline {subsection}{\numberline {13.4}Lista ordinata (semplicemente concatenata)}{39}{subsection.13.4}%
+\contentsline {subsubsection}{\numberline {13.4.1}Ricerca}{39}{subsubsection.13.4.1}%
+\contentsline {subsubsection}{\numberline {13.4.2}Inserimento}{40}{subsubsection.13.4.2}%
+\contentsline {subsubsection}{\numberline {13.4.3}Cancellazione}{40}{subsubsection.13.4.3}%
+\contentsline {subsection}{\numberline {13.5}Lista doppia non ordinata}{40}{subsection.13.5}%
+\contentsline {subsubsection}{\numberline {13.5.1}Ricerca}{40}{subsubsection.13.5.1}%
+\contentsline {subsubsection}{\numberline {13.5.2}Inserimento}{40}{subsubsection.13.5.2}%
+\contentsline {subsubsection}{\numberline {13.5.3}Cancellazione}{40}{subsubsection.13.5.3}%
+\contentsline {subsection}{\numberline {13.6}Lista doppia ordinata}{41}{subsection.13.6}%
+\contentsline {subsubsection}{\numberline {13.6.1}Ricerca}{41}{subsubsection.13.6.1}%
+\contentsline {subsubsection}{\numberline {13.6.2}Inserimento}{41}{subsubsection.13.6.2}%
+\contentsline {subsubsection}{\numberline {13.6.3}Cancellazione}{41}{subsubsection.13.6.3}%
+\contentsline {subsection}{\numberline {13.7}Albero binario (generico)}{41}{subsection.13.7}%
+\contentsline {subsubsection}{\numberline {13.7.1}Ricerca}{41}{subsubsection.13.7.1}%
+\contentsline {subsubsection}{\numberline {13.7.2}Inserimento}{41}{subsubsection.13.7.2}%
+\contentsline {subsubsection}{\numberline {13.7.3}Cancellazione}{42}{subsubsection.13.7.3}%
+\contentsline {subsection}{\numberline {13.8}Albero binario di ricerca (BST)}{42}{subsection.13.8}%
+\contentsline {subsubsection}{\numberline {13.8.1}Ricerca}{42}{subsubsection.13.8.1}%
+\contentsline {subsubsection}{\numberline {13.8.2}Inserimento}{42}{subsubsection.13.8.2}%
+\contentsline {subsubsection}{\numberline {13.8.3}Cancellazione}{42}{subsubsection.13.8.3}%
+\contentsline {subsection}{\numberline {13.9}Tabella riassuntiva}{42}{subsection.13.9}%
+\contentsline {section}{\numberline {14}Cheat Sheet (MiniMAO e MAO)}{43}{section.14}%
+\contentsline {section}{\numberline {15}Altro}{51}{section.15}%
