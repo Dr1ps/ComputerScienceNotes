@@ -1239,20 +1239,95 @@ print-path(G,s,v):
         print "v"
 \end{lstlisting}
 \paragraph{Complessità:} $\Theta(1)$ se il path non esiste, altrimenti $\Theta(d(s,v))$, ovvero la distanza tra i due nodi.\\\\
-Vediamo adesso questo lemma:
+Dimostriamo adesso una proprietà della visita BFS tramite alcuni lemmi.
+\paragraph{Proprietà:} la BFS calcola la distanza $\delta(s,v)$ di ogni nodo dalla sorgente e dopo l'esecuzione tale valore è salvato in $v.d$.\\
+\paragraph{Lemma 1}
 \[
 G = (V,E), s \in V
 \]
 \[
 \forall (u,v) \in E, d(s,v) \leq d(s,u) + 1
 \]
-e, al termine di un BFS(G,s):
+Un cammino da $s$ a $v$ può esistere più breve di quello passando da $u$, ma se ne esistesse uno più lungo non verrebbe attribuito a $v.d$.
+\paragraph{Lemma 2:} al termine di un BFS(G,s):
 \[
 \forall v \in V, v,d \geq d(s,v)
 \]
+\paragraph{Dimostrazione Lemma 2:} vediamo prima il caso base:
+\[
+s.d = 0 = \delta(s,s)
+\]
+\[
+\forall v \in V \ne s, v.d = +\infty \geq d(s,v)
+\]
+Quindi dopo il primo Enqueue, tutti i nodi tranne $s$ hanno sempre la distanza settata a infinito.\\
+Vediamo adesso il caso induttivo con l'ipotesi induttiva: $u.d \geq \delta(s,u)$ e sapendo che il nodo $v$ viene scoperto da $u$.
+\[
+v.d = u.d + 1 \geq \delta(s,u) + 1
+\]
+Questa sopra è l'ipotesi induttiva applicata a cosa avviene nel ramo "then".
+\[
+\delta(s,u) + 1 \geq \delta(s,v)
+\]
+Questo sopra è il Lemma 1, dimostrazione completata dato che questo valore non verrà più modificato.
+\paragraph{Lemma 3:} dopo l'esecuzione di un BFS, se:
+\[
+Q = \{v_1,v_2,\ldots,v_r\}
+\]
+Allora:
+\[
+v_r.d \leq v_1.d + 1
+\]
+\[
+v_i.d \leq v_{i+1}.d
+\]
+\[
+\forall i = 1,\ldots,r-1
+\]  
+Ricordiamo che con $v_r$ si intende l'ultimo elemento della coda in uno specifico momento, non l'ultimo nodo in assoluto da visitare.\\
+Tutto questo si può dimostrare dal concetto di BFS, ovvero il fatto che tale algoritmo procede a "livelli" e una volta superato un livello ne dimentica un altro.
+\paragraph{Corollario 4:} anche questo serve a dimostrare la proprietà. I valori delle distanze da $s$ dei vertici inseriti nella Queue sono monotoni crescenti (debolmente crescenti o strettamente crescenti) e quindi:
+\[
+v_i.d \leq v_j.d
+\]
+Se $v_i$ viene inserito prima di $v_j$ nella Queue.
+\paragraph{Teorema di correttezza di BFS:} ricapitolando, un BFS scopre tutti i vertici che sono raggiungibili da $s$ sorgente e alla fine della sua esecuzione si avverano queste cose:
+\begin{enumerate}
+    \item $\forall v \in V, v.d = \delta(s,v)$.
+    \item $\forall v \ne s$, con $v$ raggiungibile da $s$, uno dei cammini minimi da $s$ a $v$ è un cammino minimo da $s$ a $v.\pi$ seguito da $(v.\pi,v)$.
+\end{enumerate}
+\paragraph{Dimostrazione per assurdo punto 1:} supponiamo che:
+\[
+\exists v : v.d \ne \delta(s,v)
+\]
+Dato il Lemma 2 però, viene implicato questo:
+\[
+v.d > \delta(s,v)
+\]
+Consideriamo anche che $\delta(s,v)$ sia la distanza minima tra quelle dei vertici che soddisfano la condizione assurda e che un nodo $u$ precede $v$ in un cammino minimo da $s$ a $v$ e quindi:
+\[
+\delta(s,v) = \delta(s,u) + 1
+\]
+Siccome abbiamo detto che $v$ è il primo "errore" che si incontra allora $u$ è corretto:
+\[
+u.d = \delta(s,u)
+\]
+A questo punto la BFS esplora i vicini di $u$ e quindi, se non è stato ancora visitato, anche $v$ e succede questo:
+\[
+v.d = u.d + 1 = \delta(s,u) + 1 = \delta(s,v)
+\]
+In un altro caso, $v$ non può essere gia stato scoperto perchè $v$ può essere scoperto solo da un nodo con distanza $\delta(s,v) - 1$, quindi proprio $u$, nessun altro. (Corollario 4)\\
+Dimostrazione completata.
 \subsubsection{DFS}
 
-
+\subsubsection{Ordinamento topologico e DAG}
+Un \textbf{DAG} è un \textbf{Directed Acyclic Graph}, ovvero un grafo direzionato aciclico.\\
+Un algoritmo per un ordinamento topologico prende in input un DAG e ritorna appunto un ordinamento topologico, ovvero una sequenza di nodi di $G$ tale che:
+\[
+\forall (u,v) \in E, u \text{ precede } v
+\]
+L'ordinamento topologico di un DAG non è unico.\\
+Può essere applicato per stabilire un ordine di eventi.\\
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
 
