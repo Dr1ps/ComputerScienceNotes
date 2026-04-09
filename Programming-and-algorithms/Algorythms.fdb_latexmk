@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1775640434.6987 "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" "Algorythms.pdf" "Algorythms" 1775640439.51844 0
-  "Algorythms.aux" 1775640438 20395 67a8c55d2599df7494a7faf2d90f0179 "pdflatex"
-  "Algorythms.out" 1775640438 14041 024c48fa81c8f36be536fb8a69af8d5d "pdflatex"
-  "Algorythms.tex" 1775640432 60295 42722553d51c608d2d1b13620e27ee89 ""
-  "Algorythms.toc" 1775640438 12022 041c4272468b752a15b6ed4d4e4491f4 "pdflatex"
+["pdflatex"] 1775764774.90888 "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" "Algorythms.pdf" "Algorythms" 1775764782.43919 0
+  "Algorythms.aux" 1775764780 20614 5264bf58a932b91261b6586d8f842ddf "pdflatex"
+  "Algorythms.out" 1775764780 14041 024c48fa81c8f36be536fb8a69af8d5d "pdflatex"
+  "Algorythms.tex" 1775764766 61778 5baa167b915f4c9b2ad3d400d2dd2ea3 ""
+  "Algorythms.toc" 1775764781 12159 cbae825e04f8a4e574e2fc64c96bf931 "pdflatex"
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765672160 159092 d2123be17b83f8fb14e421f617bfafc7 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760607885 13321623 bffe24b1a8ba5eb2b92a28adecd901aa ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -230,7 +230,7 @@
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" 1775640432 60295 42722553d51c608d2d1b13620e27ee89 ""
+  "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Programming-and-algorithms/Algorythms.tex" 1775764766 61778 5baa167b915f4c9b2ad3d400d2dd2ea3 ""
   "images/HashTableExercise.png" 1772015568 52619 75606245dda4a7c5011330a6a3d20926 ""
   "images/Mao_Grammar.png" 1762938048 205540 0b7161ea9c616e560b6501aeba028d11 ""
   "images/Mao_Semantics1.png" 1762938526 112745 9ee94d62bedd6f41c23de5fbd644b2ad ""

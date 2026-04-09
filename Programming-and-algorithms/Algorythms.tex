@@ -1319,6 +1319,47 @@ v.d = u.d + 1 = \delta(s,u) + 1 = \delta(s,v)
 In un altro caso, $v$ non può essere gia stato scoperto perchè $v$ può essere scoperto solo da un nodo con distanza $\delta(s,v) - 1$, quindi proprio $u$, nessun altro. (Corollario 4)\\
 Dimostrazione completata.
 \subsubsection{DFS}
+La \textbf{DFS (Depth First Search)} sceglie un $v \in V$ e visita tutta la porzione del grafo raggiungibile da $v$ seguendo percorsi il più \textbf{profondi} possibile e seguendo solo archi non ancora esplorati.\\
+Ovviamente gli archi vengono visitati partendo dall'ultimo vertice visitato che contiene archi uscenti non visitati.\\
+Prima di vedere il codice, stabiliamo che:
+\begin{itemize}
+    \item $v.d = $ (la d sta per discovery) registra il momento in cui si incontra $v$ per la prima volta.
+    \item $v.F = $ (la F sta per fine visita) registra il momento in cui termina la visita di $v$ (visitati tutti gli elementi di adj(v))
+    \item $v.\pi = $ predecessore del nodo
+    \item $v.status =$ può essere "A" (da visitare), "B" (Visitato), "C" (Visitato e visitati tutti gli archi uscenti).
+    \item time = variabile globale
+\end{itemize}
+\begin{lstlisting}
+DFS(G):
+    forall v in V do:
+        v.status = A
+        v.pi = nul
+    time = 0
+    forall v in V do:
+        if(v.status == A):
+            DFS-VISIT(G,v)
+
+DFS-VISIT(G,u):
+    time++
+    u.d = time
+    u.status = B
+    forall v in adj(u) do:
+        if(v.status == A):
+            v.pi = u
+        DFS-VISIT(G,v)
+    u.status = C
+    time++
+    u.f = time
+\end{lstlisting}
+\paragraph{Spiegazione del codice:} si svolge la visita DFS per ogni sorgente, dato che un grafo può avere componenti connesse distinte.
+\paragraph{Complessita:} $\sum_{u \in V}^{\delta(u)} = |E| = m$.\\
+Ogni sottografo generato dalla DFS è detta \textbf{Foresta DFS}.\\
+\paragraph{Teorema delle parentesi:} se $u,v \in V$ e $I_u = [u.d,u.f]$ e $I_v = [v.d,v.f]$ allora sono una di queste è vera:
+\begin{itemize}
+    \item $I_u \cap I_v = \emptyset$ (i nodi sono distinti e nessuno è discendente dell'altro.) (un discendente di un nodo fa parte dei suoi adiacenti)
+    \item $I_u \subset I_v$ (u è discendente di v)
+    \item $I_v \subset I_u$ (v è discendente di u)
+\end{itemize}
 
 \subsubsection{Ordinamento topologico e DAG}
 Un \textbf{DAG} è un \textbf{Directed Acyclic Graph}, ovvero un grafo direzionato aciclico.\\
