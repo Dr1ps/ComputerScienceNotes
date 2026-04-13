@@ -1360,7 +1360,33 @@ Ogni sottografo generato dalla DFS è detta \textbf{Foresta DFS}.\\
     \item $I_u \subset I_v$ (u è discendente di v)
     \item $I_v \subset I_u$ (v è discendente di u)
 \end{itemize}
-
+\paragraph{Classificazione degli archi su grafi orientati:}
+\begin{itemize}
+    \item \textbf{Archi d'albero:} $(u,v) \in E$ è un arco d'albero se $u = v.\pi$ (v è A quando si ispeziona)
+    \item \textbf{Archi all'indietro:} se $v$ è antenato di $u$ (v è B quando si ispeziona)
+    \item \textbf{Archi in avanti:} archi che non sono d'albero e v è discendente di u (v è C quando viene ispezionato)
+    \item \textbf{Archi trasversali:} se u e v non sono discendenti uno dell'altro.
+    \item 
+\end{itemize}
+\paragraph{Teorema del cammino bianco:} v è discendente di u se e solo se, al momento in cui u viene scoperto (u.d), esiste un cammino di soli nodi bianchi da u a v.\\
+\paragraph{Dimostrazione:}
+\begin{itemize}
+    \item $u == v \implies$ il cammino è formato solo da u che è bianco al momento.
+    \item $u \ne u \implies$ se v è discendente di u allora il suo intervallo è sottoinsieme dell'intervallo di u. Siccome v viene scoperto dopo u, è bianco all'istante u.d (v.d > u.d).
+\end{itemize}
+\paragraph{Classificazione degli archi su grafi non orientati}
+In questo caso gli archi possono essere solo d'albero o all'indietro.\\
+Ogni arco viene ispezionato due volte e la classificazione si fa la prima volta che si analizza.\\
+\paragraph{Dimostrazione:}
+\begin{itemize}
+    \item Caso 1: $(u,v)$ esplorato la prima volta da u verso v, in questo caso v è A e l'arco è d'albero.
+    \item Caso 2: $(u,v)$ esplorato la prima volta da v verso u, in tal caso è all'indietro.
+\end{itemize}
+\paragraph{Teorema:} un grafo è ciclico se e solo se contiene un arco all'indietro.\\
+\paragraph{Dimostrazione:} la definizione di un arco $(u,v)$ all'indietro dice che $u$ è antenato di $v$ e quindi da $u$ si può raggiungere $v$. Se uniamo il cammino da $u$ a $v$ con l'arco all'indietro $(v,u)$ allora si forma un ciclo.\\
+Inoltre, gli archi di un ciclo non possono essere tutti d'albero, ce ne deve essere almeno uno all'indietro.\\
+Se il grafo invece è orientato supponiamo che v sia il primo vertice di un ciclo ad essere scoperto e diventare grigio, gli altri vertici sul ciclo al momento sono bianchi.\\
+Sia u il vertice che precede v, tutti i vertici sul cammino da v a u sono bianchi e per il teorema del cammino bianco u è discendente di v e quindi v è antenato di u e $(u,v)$ è un arco all'indietro.
 \subsubsection{Ordinamento topologico e DAG}
 Un \textbf{DAG} è un \textbf{Directed Acyclic Graph}, ovvero un grafo direzionato aciclico.\\
 Un algoritmo per un ordinamento topologico prende in input un DAG e ritorna appunto un ordinamento topologico, ovvero una sequenza di nodi di $G$ tale che:
@@ -1369,6 +1395,19 @@ Un algoritmo per un ordinamento topologico prende in input un DAG e ritorna appu
 \]
 L'ordinamento topologico di un DAG non è unico.\\
 Può essere applicato per stabilire un ordine di eventi.\\
+\begin{lstlisting}
+OT(G):
+    DFS(G) //ma aggiungo in testa a L u quando faccio u.f = k
+    return L
+\end{lstlisting}
+Ha complessita quanto una DFS più gli inserimenti in L:
+\[
+\Theta(n+m) + \Theta(n) = \Theta(n+m)
+\]
+\paragraph{Teorema di correttezza dell'OT:} l'algoritmo di OT(G) produce un ordinamento topologico del DAG G.
+\paragraph{Lemma 1:} G è un DAG $\Leftrightarrow$ DFS(G) non ha archi all'indietro. (e quindi non ci sono cicli, già dimostrato secondo un teorema sopra)
+
+
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
 
