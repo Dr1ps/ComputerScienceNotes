@@ -1407,7 +1407,59 @@ Ha complessita quanto una DFS più gli inserimenti in L:
 \paragraph{Teorema di correttezza dell'OT:} l'algoritmo di OT(G) produce un ordinamento topologico del DAG G.
 \paragraph{Lemma 1:} G è un DAG $\Leftrightarrow$ DFS(G) non ha archi all'indietro. (e quindi non ci sono cicli, già dimostrato secondo un teorema sopra)
 
-
+\section{Calcolabilità}
+La \textbf{calcolabilità} si occupa delle questioni fondamentali circa la potenza e le limitazioni dei sistemi di calcolo.\\
+Nacque nella prima metà del ventesimo secolo quando si scoprì l'esistenza dei problemi \textbf{non decidibili}, ovvero senza algoritmo risolutivo.\\
+I problemi decidibili si suddividono in:
+\begin{itemize}
+    \item Trattabili (costo polinomiale)
+    \item Intrattabili (costo esponenziale)
+\end{itemize}
+La calcolabilità classifica gli algoritmi in decidibili e non.\\
+\subsection{Esistenza dei problemi indecidibili}
+Due insiemi A e B hanno lo stesson numero di elementi se e solo se esiste una biiezione tra di loro.\\
+Inoltre, cerchiamo di enumerare ogni possibile sequenza costruita su un alfabeto finito.\\
+Si stabilisce un ordine tra i caratteri dell'alfabeto e, a pari lunghezza, in ordine alfabetico, in tal modo si da un ordine a tutto e sapremo quanti passi ci vorranno per raggiungere tale stato.\\
+Ad una sequenza corrisponde quindi il suo numero di passi per raggiungerla.\\
+Non è possibile enumerare le sequenze di lunghezza infinita.\\
+Un \textbf{problema computazionale} può essere visto come una funzione matematica che associa ad ogni insieme di dati, espressi da $k$ numeri interi, il corrispondente risultato, indicato da $j$.\\
+\[
+f: N^k \to N^j
+\]
+Qualsiasi sia l'enumerazione di tali funzioni, questo insieme non è numerabile.\\\\
+L'insieme degli algoritmi è numerabile e:
+\[
+Algoritmi << Problemi
+\]
+In quanto esistono problemi non risolvibili tramite algoritmo.\\
+Un algoritmo dipende dal linguaggio utilizzato e consiste da una sequenza finita di operazioni.\\
+Per quanto infiniti possano essere gli algoritmi, essi sono numerabili.\\
+\subsection{Il problema dell'arresto}
+Non è facile trovare un algoritmo non calcolabile.\\
+Il problema dell'arresto è in forma decisionale:
+\[
+Arresto: \{Istanze\} \to \{0,1\}
+\]
+Preso un algoritmo A e dati di input D, decidere in tempo finito se l'esecuzione di A su D termina o no, quindi con A in input:
+\[
+Arresto(A,D) \to \{0,1\}
+\]
+Turing, ideatore di tale problema, riuscì a dimostrare che se un programma arbitrario si arresta e termina la sua esecuzione è una cosa impossibile e quindi è indecidibile.\\
+Questo è dimostrabile dal fatto che, se A non terminasse allora ARRESTO non ritornerebbe mai tale informazione.\\
+Quindi non può esistere un algoritmo che decida in tempo finito se un algoritmo arbitrario termina la sua esecuzione.\\
+Ci sono moltissimi altri esempi:
+\begin{itemize}
+    \item L'algoritmo per trovare l'equivalenza tra due programmi è indecidibile (se per ogni possibile input, producono lo stesso output)
+    \item L'algoritmo che determina se un programma è un malware è indecidibile (ovvero se compie azioni malevoli)
+    \item Il decimo problema di Hilbert è indecidibile (determinare se una soluzione polinomiale con coefficienti interi ha soluzioni intere (equazioni diofantee))
+\end{itemize}
+\paragraph{Algoritmo di GOLDBACH:} restituisce il primo numero intero pari che non è risultato di una somma di due numeri primi qualsiasi.
+\subsection{Tesi di Church-Turing}
+Ogni modello di calcolo risolve esattamente la stessa classe di problemi, dunque si equivalgono nella possibilità di risolverli, pur avendo diversa efficienza.\\
+Eventuali migliorie hardware o software servono solo a migliorare l'efficienza.
+\subsection{Problemi trattabili e intrattabili}
+Il problema della torre di Hanoi è intrattabile (cerca su internet).\\
+Un altro algoritmo non trattabile è quello che calcola ogni possibile permutazione per $n-1$ elementi ($\Theta((n)! \cdot$ costo di formulazione stringa))
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
 

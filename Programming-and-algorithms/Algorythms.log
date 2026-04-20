@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  13 APR 2026 10:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  20 APR 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1220,7 +1220,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-<images/HashTableExercise.png, id=923, 578.16pt x 325.215pt>
+<images/HashTableExercise.png, id=948, 578.16pt x 325.215pt>
 File: images/HashTableExercise.png Graphic file (type png)
 <use images/HashTableExercise.png>
 Package pdftex.def Info: images/HashTableExercise.png  used on input line 1045.
@@ -1372,6 +1372,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
+Underfull \hbox (badness 10000) in paragraph at lines 1418--1419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1437
+
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1400,7 +1420,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44]
+[44
+
+]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1419,72 +1441,90 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46]
-<images/MiniMao_Grammar.png, id=1069, 464.23438pt x 333.245pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48]
+<images/MiniMao_Grammar.png, id=1102, 464.23438pt x 333.245pt>
 File: images/MiniMao_Grammar.png Graphic file (type png)
 <use images/MiniMao_Grammar.png>
-Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 1651.
+Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 1703.
 (pdftex.def)             Requested size: 409.71692pt x 294.11584pt.
-<images/MiniMao_TypeChecking.png, id=1070, 412.54124pt x 348.30125pt>
+<images/MiniMao_TypeChecking.png, id=1103, 412.54124pt x 348.30125pt>
 File: images/MiniMao_TypeChecking.png Graphic file (type png)
 <use images/MiniMao_TypeChecking.png>
-Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 1657.
+Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 1709.
 (pdftex.def)             Requested size: 409.71692pt x 345.91943pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MiniMao_Semantics.png, id=1071, 408.52625pt x 146.04562pt>
+<images/MiniMao_Semantics.png, id=1104, 408.52625pt x 146.04562pt>
 File: images/MiniMao_Semantics.png Graphic file (type png)
 <use images/MiniMao_Semantics.png>
-Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 1663.
+Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 1715.
 (pdftex.def)             Requested size: 409.71692pt x 146.47978pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MiniMao_Semantics_Commands.png, id=1072, 351.3125pt x 354.32375pt>
+<images/MiniMao_Semantics_Commands.png, id=1105, 351.3125pt x 354.32375pt>
 File: images/MiniMao_Semantics_Commands.png Graphic file (type png)
 <use images/MiniMao_Semantics_Commands.png>
-Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 1669.
+Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 1721.
 (pdftex.def)             Requested size: 409.71692pt x 413.25954pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Mao_Grammar.png, id=1073, 289.58188pt x 324.21124pt>
+<images/Mao_Grammar.png, id=1106, 289.58188pt x 324.21124pt>
 File: images/Mao_Grammar.png Graphic file (type png)
 <use images/Mao_Grammar.png>
-Package pdftex.def Info: images/Mao_Grammar.png  used on input line 1676.
+Package pdftex.def Info: images/Mao_Grammar.png  used on input line 1728.
 (pdftex.def)             Requested size: 409.71692pt x 458.74075pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Mao_TypeChecking.png, id=1074, 346.29375pt x 351.3125pt>
+<images/Mao_TypeChecking.png, id=1107, 346.29375pt x 351.3125pt>
 File: images/Mao_TypeChecking.png Graphic file (type png)
 <use images/Mao_TypeChecking.png>
-Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 1682.
+Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 1734.
 (pdftex.def)             Requested size: 409.71692pt x 415.66551pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Mao_TypeChecking2.png, id=1075, 292.59312pt x 335.75438pt>
+<images/Mao_TypeChecking2.png, id=1108, 292.59312pt x 335.75438pt>
 File: images/Mao_TypeChecking2.png Graphic file (type png)
 <use images/Mao_TypeChecking2.png>
-Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 1688.
+Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 1740.
 (pdftex.def)             Requested size: 409.71692pt x 470.20149pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Mao_Semantics1.png, id=1076, 232.36812pt x 320.69812pt>
+<images/Mao_Semantics1.png, id=1109, 232.36812pt x 320.69812pt>
 File: images/Mao_Semantics1.png Graphic file (type png)
 <use images/Mao_Semantics1.png>
-Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 1694.
+Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 1746.
 (pdftex.def)             Requested size: 409.71692pt x 565.51677pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Mao_Semantics2.png, id=1077, 233.87375pt x 329.73187pt>
+<images/Mao_Semantics2.png, id=1110, 233.87375pt x 329.73187pt>
 File: images/Mao_Semantics2.png Graphic file (type png)
 <use images/Mao_Semantics2.png>
-Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 1700.
+Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 1752.
 (pdftex.def)             Requested size: 409.71692pt x 577.71861pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1498,7 +1538,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47
+[49
 
  <./images/MiniMao_Grammar.png>]
 
@@ -1509,7 +1549,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48 <./images/MiniMao_TypeChecking.png> <./images/MiniMao_Semantics.png>]
+[50 <./images/MiniMao_TypeChecking.png> <./images/MiniMao_Semantics.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1518,7 +1558,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49 <./images/MiniMao_Semantics_Commands.png>]
+[51 <./images/MiniMao_Semantics_Commands.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1527,7 +1567,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50 <./images/Mao_Grammar.png>]
+[52 <./images/Mao_Grammar.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1536,7 +1576,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51 <./images/Mao_TypeChecking.png>]
+[53 <./images/Mao_TypeChecking.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1545,7 +1585,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52 <./images/Mao_TypeChecking2.png>]
+[54 <./images/Mao_TypeChecking2.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1554,7 +1594,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53 <./images/Mao_Semantics1.png>]
+[55 <./images/Mao_Semantics1.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1563,7 +1603,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54 <./images/Mao_Semantics2.png>]
+[56 <./images/Mao_Semantics2.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1572,7 +1612,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55
+[57
 
 ] (Algorythms.aux)
  ***********
@@ -1580,20 +1620,20 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `Algorythms.out' has not changed.
-(rerunfilecheck)             Checksum: 024C48FA81C8F36BE536FB8A69AF8D5D;14041.
+(rerunfilecheck)             Checksum: BE28FBBD3A0AC3B7971C19FE45AF44A9;14994.
  ) 
 Here is how much of TeX's memory you used:
- 35381 strings out of 468081
- 799817 string characters out of 5425788
+ 35393 strings out of 468081
+ 799981 string characters out of 5425788
  1365228 words of memory out of 5000000
- 62945 multiletter control sequences out of 15000+600000
+ 62950 multiletter control sequences out of 15000+600000
  684731 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,101p,805b,1906s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Algorythms.pdf (55 pages, 1244178 bytes).
+Output written on Algorythms.pdf (57 pages, 1252528 bytes).
 PDF statistics:
- 1312 PDF objects out of 1440 (max. 8388607)
- 559 named destinations out of 1000 (max. 500000)
- 783 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1346 PDF objects out of 1440 (max. 8388607)
+ 566 named destinations out of 1000 (max. 500000)
+ 823 words of extra memory for PDF output out of 10000 (max. 10000000)
 
