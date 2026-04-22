@@ -1459,7 +1459,144 @@ Ogni modello di calcolo risolve esattamente la stessa classe di problemi, dunque
 Eventuali migliorie hardware o software servono solo a migliorare l'efficienza.
 \subsection{Problemi trattabili e intrattabili}
 Il problema della torre di Hanoi è intrattabile (cerca su internet).\\
-Un altro algoritmo non trattabile è quello che calcola ogni possibile permutazione per $n-1$ elementi ($\Theta((n)! \cdot$ costo di formulazione stringa))
+Un altro algoritmo non trattabile è quello che calcola ogni possibile permutazione$G$ contiene una \textbf{clique} (cricca) di almeno $k$ nodi.\\
+Un algoritmo per risolverlo è quello che considera tutti i sottinsiemi di vertici, in ordine decrescente di cardinalità, e verifica se formano una cricca di ordine k.\\
+Tale algoritmo non è ancora stato trovato e si sospetta che non esista.\\
+\paragraph{Cammino hamiltoniano:} cammino semplice che passa da tutti i vertici di G una volta sola.
+\paragraph{Ciclo hamiltoniano:} cammino hamiltoniano chiuso.
+Date queste due definizioni, un algoritmo per trovare un cammino hamiltoniano in un grafo non è noto, dovrebbe considerare tutte le permutazioni di vertici e verificare se sono consecutivi (a due a due adiacenti).
+
+\section{Complessità}
+\subsection{Differenza di potenza tra calcolatori}
+Alcuni calcolatori sono più veloci di altri, per esempio se $C_2$ è $k$ volte più veloce di $C_1$, allora usare $C_2$ per un tempo $t$ equivale ad usare $C_1$ per un tempo $k \cdot t$.
+\subsection{Categorizzazione dei problemi}
+La categorizzazione dei problemi è in base alla domanda che ci facciamo:
+\begin{itemize}
+    \item \textbf{Problema decisionale:} ci si chiede se vale o meno una certa proprietà. (isAbr)
+    \item \textbf{Problema di ricerca:} ricercare un qualcosa o restituire un oggetto dato un input. (ritorno di un cammino da un grafo)
+    \item \textbf{Problema di ottimizzazione:} si vuole trovare la migliore soluzione tra tutte le soluzioni possibili. (Algoritmi Greedy)
+\end{itemize}
+Molta della teoria della complessita in questa sezione è definita principalmente in termini dei problemi di decisione.\\
+Questo perchè non ci si deve preoccupare del tempo di formulazione dell'output, in quanto è soltanto un boolean. Inoltre, la complessita di ogni problema è riconducibile alla complessita del suo relativo problema decisionale.\\
+Per esempio, un problema di ottimizzazione può essere definito come problema decisionale:
+\begin{itemize}
+    \item Problema di ottimizzazione: voglio trovare la clique più grande in un grafo G
+    \item Problema decisionale associato: esiste una clique in G con almeno k vertici?
+\end{itemize}
+Il problema decisionale non è più difficile del problema di ottimizzazione: se sappiamo risolvere il problema di ottimizzazione, confrontiamo il risultato con k e quindi risolveremmo il problema decisionale di conseguenza.\\
+Si può dire quindi che la complessita del problema di ottimizzazione ha un limite inferiore pari alla complessita del problema decisionale annesso.
+\subsection{Time e Space}
+\paragraph{Time(f(n)):} insiemi dei problemi decisionali che possono essere risolti in tempo O(f(n))
+\paragraph{Space(f(n)):} insiemi dei problemi decisionali che possono essere risolti in spazio O(f(n))
+\subsection{Classi di problemi}
+\begin{itemize}
+    \item \textbf{classe P} è la classe dei problemi risolvibili in tempo polinomiale nella dimensione n dell'istanza di ingresso.
+    \item \textbf{classe PSPACE:} è la classe dei problemi risolvibili in spazio polinomiale nella dimensione n dell'istanza di ingresso.
+    \item \textbf{Classe EXP Time:} è la classe dei problemi risolvibili in tempo esponenziale nella dimensione n dell'istanza di ingresso.
+\end{itemize}
+Inoltre:
+\[
+P \subseteq PSPACE
+\]
+\[
+PSPACE \subseteq ExpTime \implies P \subseteq ExpTime
+\]
+Problemi in tempo esponenziale:
+\begin{itemize}
+    \item Commesso Viaggiatore
+    \item Clique
+    \item Cammino hamiltoniano
+    \item Soddisfacibilità di formule booleane (SAT)
+    \item Torre di Hanoi
+\end{itemize}
+\subsubsection{SAT}
+Insieme V di variabili booleane:
+\begin{itemize}
+    \item Letterale: variabile o sua negazione
+    \item Clausola: disgiunzione (OR) di letterali
+\end{itemize}
+Un espressione booleana su V si dice in \textbf{forma normale congiuntiva (FNC)} se è espressa come \textbf{congiunzione di clausole} (AND di OR letterali)\\
+Per i SAT si considerano tutti i $2^n$ assegnamenti possibili (possibili combinazioni) su $n$ variabili in input e si controlla se risulta vero il risultato o meno. Questo algoritmo non è noto in quanto non si sa se è risolvibile in tempo polinomiale e quindi si presume sia esponenziale (Tutti gli SAT).
+\subsection{Certificati}
+In un problema decisionale siamo interessati a verificare se un istanza del problema soddisfa una certa proprietà, ovvero saper rispondere ad una domanda per una qualsiasi istanza in input.\\
+Per alcuni problemi, per le \textbf{istanze accettabili} (Un input specifico accettabile) è possibile fornire un \textbf{certificato}, ovvero un \textbf{attestato breve di esistenza} di una soluzione ad un dato problema.\\
+Un certificato di non esistenza è facile da costruire ma sicuramente non breve.\\
+Vediamo un esempio di applicazione dove si applica il costo del certificato per determinare il costo del problema generale:\\
+PI è un problema in tempo polinomiale se:
+\begin{itemize}
+    \item Ogni istanza accettabile nel problema (ogni possibile input) di lunghezza n ammette un certificato y di lunghezza polinomiale in n
+    \item Esiste un algoritmo di verifica polinomiale in n e applicabile a ogni coppia <x,y> che permette di attestare che l'input è accettabile
+\end{itemize}
+La \textbf{classe NP} è la classe dei problemi decisionali verificabili in tempo polinomiale (NON polinomiali). Questa classe è l'insieme dei problemi risolvibili in tempo polinomiale non deterministico.\\
+\[
+P \subseteq NP
+\]
+Ogni problema P ammette un certificato verificabile in tempo polinomiale, basta seguire l'algoritmo che risolve il problema per costruire il certificato.\\
+In realtà non si sa se:
+\[
+P = NP
+\]
+o se:
+\[
+P \ne NP
+\]
+Si è certi che siano diversi, ma nessuno sa dimostrarlo.\\
+Ma è possibile individuare i problemi più difficili all'interno della classe NP, ovvero quelli che sono in NP / P se P fosse diverso da NP, sono i problemi \textbf{NP-Completi}.\\
+Tali problemi sono quelli provatamente più difficili della classe NP\\
+Se esistesse un algoritmo polinomiale in grado di risolvere uno di questi problemi allora tutti tali problemi lo sarebbero e quindi:
+\[
+P = NP
+\]
+Se invece si potesse dimostrare che almeno uno di questi problemi non offre un algoritmo risolutivo polinomiale allora:
+\[
+P \ne NP
+\]
+In realtà, o li risolvo tutti in tempo polinomiale, o non ne risolvo nessuno.
+\subsubsection{Riduzione polinomiale}
+Presi due problemi A e B decisionali e $I_1$ e $I_2$ insiemi delle istanze dei due problemi, A si riduce in tempo polinomiale a B:
+\[
+A \leq_p B
+\]
+Se esiste una funzione $f:I_1 \to I_2$ calcolabile in tempo polinomiale tale che per ogni istanza x di A:
+\begin{itemize}
+    \item x è istanza accettabile di A SE E SOLO SE f(x) lo è di B
+\end{itemize}
+Questo implica che se esiste un algoritmo polinomiale per risolvere B, allora esiste anche per risolvere A, ci si può ricondurre ad un problema più piccolo(?) e risolvere quello, quindi l'input viene prima tramutato in input di un problema secondario e poi viene risolto il problema secondario, questo equivale a risolvere il primo problema.\\
+Un problema decisionale C si dice NP-completo se:
+\begin{itemize}
+    \item $C in NP$
+    \item $\forall C^| \in NP, C^| \leq_p C$
+\end{itemize}
+Un problema C si dice \textbf{NP-Arduo} se:
+\[
+\forall C^| \in NP, C^| \leq_p C
+\]
+Quindi C non è necessariamente in NP.
+\subsubsection{Teorema di Cook (1971)}
+Ha dimostrato che ogni SAT è NP-Completo.\\
+Un problema A decisionale si dice NP-Completo se:
+\begin{itemize}
+    \item $A \in NP$
+    \item $SAT \leq_p A$
+\end{itemize}
+Per esempio, Clique è completo: per ogni clausola di SAT si tramutano i propri elementi in vertici:\\
+SAT = (a OR b) AND (c OR d) AND !a\\
+Vertici = (a,b,c,d,!a)\\
+Gli archi invece si connette ogni elemento di ogni clausola con elementi che:
+\begin{itemize}
+    \item Non sono della stessa clausola
+    \item Sono diversi dal negativo del vertice a cui collegarsi (per esempio a non verrà collegato con !a)
+\end{itemize}
+Archi = ((a,c),(a,d),(b,c)(b,d)(b,!a)(c,!a)(d,!a))\\
+In tale grafo esiste una cricca se SAT è soddisfacibile, infatti ogni cricca contiene elementi tutti di clausole diverse e la loro combinazione risolve la formula (ritornando vero per SAT).\\
+Questo vale anche al contrario, se SAT è soddisfacibile allora esiste una clique in G.\\\\
+I problemi \textbf{NP equivalenti} sono problemi che tra di loro sono appunto equivalenti...\\
+Per esempio, SAT e clique sono tra di loro equivalenti, ma anche tutti gli NP-Completi lo sono tra di loro.\\
+\paragraph{Altri prolemi importanti:}
+\begin{itemize}
+    \item Vertex cover per grafi
+    \item Graph Coloring (colorare con più k colori possibili tale che due vertici adiacenti non abbiano mai lo stesso colore), questo è per esempio connesso alla colorazione della cartina politica (divisione degli stati) del mondo.
+\end{itemize}
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
 
