@@ -124,59 +124,70 @@
 \contentsline {subsubsection}{\numberline {12.5.3}Ordinamento topologico e DAG}{41}{subsubsection.12.5.3}%
 \contentsline {paragraph}{Teorema di correttezza dell'OT:}{41}{lstnumber.-20.3}%
 \contentsline {paragraph}{Lemma 1:}{41}{lstnumber.-20.3}%
-\contentsline {section}{\numberline {13}Calcolabilità}{42}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Esistenza dei problemi indecidibili}{42}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Il problema dell'arresto}{42}{subsection.13.2}%
-\contentsline {paragraph}{Algoritmo di GOLDBACH:}{43}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Tesi di Church-Turing}{43}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Problemi trattabili e intrattabili}{43}{subsection.13.4}%
-\contentsline {paragraph}{Cammino hamiltoniano:}{43}{subsection.13.4}%
-\contentsline {paragraph}{Ciclo hamiltoniano:}{43}{subsection.13.4}%
-\contentsline {section}{\numberline {14}Complessità}{44}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Differenza di potenza tra calcolatori}{44}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Categorizzazione dei problemi}{44}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Time e Space}{44}{subsection.14.3}%
-\contentsline {paragraph}{Time(f(n)):}{44}{subsection.14.3}%
-\contentsline {paragraph}{Space(f(n)):}{44}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Classi di problemi}{44}{subsection.14.4}%
-\contentsline {subsubsection}{\numberline {14.4.1}SAT}{45}{subsubsection.14.4.1}%
-\contentsline {subsection}{\numberline {14.5}Certificati}{45}{subsection.14.5}%
-\contentsline {subsubsection}{\numberline {14.5.1}Riduzione polinomiale}{46}{subsubsection.14.5.1}%
-\contentsline {subsubsection}{\numberline {14.5.2}Teorema di Cook (1971)}{47}{subsubsection.14.5.2}%
-\contentsline {paragraph}{Altri prolemi importanti:}{47}{subsubsection.14.5.2}%
-\contentsline {section}{\numberline {15}Altri algoritmi}{48}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Array non ordinato}{48}{subsection.15.1}%
-\contentsline {subsubsection}{\numberline {15.1.1}Ricerca}{48}{subsubsection.15.1.1}%
-\contentsline {subsubsection}{\numberline {15.1.2}Inserimento}{48}{subsubsection.15.1.2}%
-\contentsline {subsubsection}{\numberline {15.1.3}Cancellazione}{48}{subsubsection.15.1.3}%
-\contentsline {subsection}{\numberline {15.2}Array ordinato}{48}{subsection.15.2}%
-\contentsline {subsubsection}{\numberline {15.2.1}Ricerca}{48}{subsubsection.15.2.1}%
-\contentsline {subsubsection}{\numberline {15.2.2}Inserimento}{48}{subsubsection.15.2.2}%
-\contentsline {subsubsection}{\numberline {15.2.3}Cancellazione}{49}{subsubsection.15.2.3}%
-\contentsline {subsection}{\numberline {15.3}Lista non ordinata (semplicemente concatenata)}{49}{subsection.15.3}%
-\contentsline {subsubsection}{\numberline {15.3.1}Ricerca}{49}{subsubsection.15.3.1}%
-\contentsline {subsubsection}{\numberline {15.3.2}Inserimento}{49}{subsubsection.15.3.2}%
-\contentsline {subsubsection}{\numberline {15.3.3}Cancellazione}{49}{subsubsection.15.3.3}%
-\contentsline {subsection}{\numberline {15.4}Lista ordinata (semplicemente concatenata)}{49}{subsection.15.4}%
-\contentsline {subsubsection}{\numberline {15.4.1}Ricerca}{49}{subsubsection.15.4.1}%
-\contentsline {subsubsection}{\numberline {15.4.2}Inserimento}{50}{subsubsection.15.4.2}%
-\contentsline {subsubsection}{\numberline {15.4.3}Cancellazione}{50}{subsubsection.15.4.3}%
-\contentsline {subsection}{\numberline {15.5}Lista doppia non ordinata}{50}{subsection.15.5}%
-\contentsline {subsubsection}{\numberline {15.5.1}Ricerca}{50}{subsubsection.15.5.1}%
-\contentsline {subsubsection}{\numberline {15.5.2}Inserimento}{50}{subsubsection.15.5.2}%
-\contentsline {subsubsection}{\numberline {15.5.3}Cancellazione}{50}{subsubsection.15.5.3}%
-\contentsline {subsection}{\numberline {15.6}Lista doppia ordinata}{51}{subsection.15.6}%
-\contentsline {subsubsection}{\numberline {15.6.1}Ricerca}{51}{subsubsection.15.6.1}%
-\contentsline {subsubsection}{\numberline {15.6.2}Inserimento}{51}{subsubsection.15.6.2}%
-\contentsline {subsubsection}{\numberline {15.6.3}Cancellazione}{51}{subsubsection.15.6.3}%
-\contentsline {subsection}{\numberline {15.7}Albero binario (generico)}{51}{subsection.15.7}%
-\contentsline {subsubsection}{\numberline {15.7.1}Ricerca}{51}{subsubsection.15.7.1}%
-\contentsline {subsubsection}{\numberline {15.7.2}Inserimento}{51}{subsubsection.15.7.2}%
-\contentsline {subsubsection}{\numberline {15.7.3}Cancellazione}{52}{subsubsection.15.7.3}%
-\contentsline {subsection}{\numberline {15.8}Albero binario di ricerca (BST)}{52}{subsection.15.8}%
-\contentsline {subsubsection}{\numberline {15.8.1}Ricerca}{52}{subsubsection.15.8.1}%
-\contentsline {subsubsection}{\numberline {15.8.2}Inserimento}{52}{subsubsection.15.8.2}%
-\contentsline {subsubsection}{\numberline {15.8.3}Cancellazione}{52}{subsubsection.15.8.3}%
-\contentsline {subsection}{\numberline {15.9}Tabella riassuntiva}{52}{subsection.15.9}%
-\contentsline {section}{\numberline {16}Cheat Sheet (MiniMAO e MAO)}{53}{section.16}%
-\contentsline {section}{\numberline {17}Altro}{61}{section.17}%
+\contentsline {subsection}{\numberline {12.6}Algoritmo di Dijkstra}{42}{subsection.12.6}%
+\contentsline {subsubsection}{\numberline {12.6.1}Variante dei cammini con sorgente unica}{42}{subsubsection.12.6.1}%
+\contentsline {subsubsection}{\numberline {12.6.2}Proprietà dei cammini minimi}{42}{subsubsection.12.6.2}%
+\contentsline {paragraph}{Sottostruttura ottima:}{42}{subsubsection.12.6.2}%
+\contentsline {paragraph}{Lemma 1:}{43}{subsubsection.12.6.2}%
+\contentsline {paragraph}{Dimostrazione Lemma 1:}{43}{subsubsection.12.6.2}%
+\contentsline {subsubsection}{\numberline {12.6.3}Funzionamento dell'algoritmo di Dijkstra}{43}{subsubsection.12.6.3}%
+\contentsline {paragraph}{PQ è un array:}{44}{lstnumber.-21.18}%
+\contentsline {paragraph}{PQ è un MIN-heap binario:}{44}{lstnumber.-21.18}%
+\contentsline {subsubsection}{\numberline {12.6.4}Teorema di correttezza}{44}{subsubsection.12.6.4}%
+\contentsline {paragraph}{Dimostrazione per induzione:}{45}{subsubsection.12.6.4}%
+\contentsline {section}{\numberline {13}Calcolabilità}{46}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Esistenza dei problemi indecidibili}{46}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Il problema dell'arresto}{46}{subsection.13.2}%
+\contentsline {paragraph}{Algoritmo di GOLDBACH:}{47}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Tesi di Church-Turing}{47}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Problemi trattabili e intrattabili}{47}{subsection.13.4}%
+\contentsline {paragraph}{Cammino hamiltoniano:}{47}{subsection.13.4}%
+\contentsline {paragraph}{Ciclo hamiltoniano:}{47}{subsection.13.4}%
+\contentsline {section}{\numberline {14}Complessità}{48}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Differenza di potenza tra calcolatori}{48}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Categorizzazione dei problemi}{48}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Time e Space}{48}{subsection.14.3}%
+\contentsline {paragraph}{Time(f(n)):}{48}{subsection.14.3}%
+\contentsline {paragraph}{Space(f(n)):}{48}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Classi di problemi}{48}{subsection.14.4}%
+\contentsline {subsubsection}{\numberline {14.4.1}SAT}{49}{subsubsection.14.4.1}%
+\contentsline {subsection}{\numberline {14.5}Certificati}{49}{subsection.14.5}%
+\contentsline {subsubsection}{\numberline {14.5.1}Riduzione polinomiale}{50}{subsubsection.14.5.1}%
+\contentsline {subsubsection}{\numberline {14.5.2}Teorema di Cook (1971)}{51}{subsubsection.14.5.2}%
+\contentsline {paragraph}{Altri prolemi importanti:}{51}{subsubsection.14.5.2}%
+\contentsline {section}{\numberline {15}Altri algoritmi}{52}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Array non ordinato}{52}{subsection.15.1}%
+\contentsline {subsubsection}{\numberline {15.1.1}Ricerca}{52}{subsubsection.15.1.1}%
+\contentsline {subsubsection}{\numberline {15.1.2}Inserimento}{52}{subsubsection.15.1.2}%
+\contentsline {subsubsection}{\numberline {15.1.3}Cancellazione}{52}{subsubsection.15.1.3}%
+\contentsline {subsection}{\numberline {15.2}Array ordinato}{52}{subsection.15.2}%
+\contentsline {subsubsection}{\numberline {15.2.1}Ricerca}{52}{subsubsection.15.2.1}%
+\contentsline {subsubsection}{\numberline {15.2.2}Inserimento}{52}{subsubsection.15.2.2}%
+\contentsline {subsubsection}{\numberline {15.2.3}Cancellazione}{53}{subsubsection.15.2.3}%
+\contentsline {subsection}{\numberline {15.3}Lista non ordinata (semplicemente concatenata)}{53}{subsection.15.3}%
+\contentsline {subsubsection}{\numberline {15.3.1}Ricerca}{53}{subsubsection.15.3.1}%
+\contentsline {subsubsection}{\numberline {15.3.2}Inserimento}{53}{subsubsection.15.3.2}%
+\contentsline {subsubsection}{\numberline {15.3.3}Cancellazione}{53}{subsubsection.15.3.3}%
+\contentsline {subsection}{\numberline {15.4}Lista ordinata (semplicemente concatenata)}{53}{subsection.15.4}%
+\contentsline {subsubsection}{\numberline {15.4.1}Ricerca}{53}{subsubsection.15.4.1}%
+\contentsline {subsubsection}{\numberline {15.4.2}Inserimento}{54}{subsubsection.15.4.2}%
+\contentsline {subsubsection}{\numberline {15.4.3}Cancellazione}{54}{subsubsection.15.4.3}%
+\contentsline {subsection}{\numberline {15.5}Lista doppia non ordinata}{54}{subsection.15.5}%
+\contentsline {subsubsection}{\numberline {15.5.1}Ricerca}{54}{subsubsection.15.5.1}%
+\contentsline {subsubsection}{\numberline {15.5.2}Inserimento}{54}{subsubsection.15.5.2}%
+\contentsline {subsubsection}{\numberline {15.5.3}Cancellazione}{54}{subsubsection.15.5.3}%
+\contentsline {subsection}{\numberline {15.6}Lista doppia ordinata}{55}{subsection.15.6}%
+\contentsline {subsubsection}{\numberline {15.6.1}Ricerca}{55}{subsubsection.15.6.1}%
+\contentsline {subsubsection}{\numberline {15.6.2}Inserimento}{55}{subsubsection.15.6.2}%
+\contentsline {subsubsection}{\numberline {15.6.3}Cancellazione}{55}{subsubsection.15.6.3}%
+\contentsline {subsection}{\numberline {15.7}Albero binario (generico)}{55}{subsection.15.7}%
+\contentsline {subsubsection}{\numberline {15.7.1}Ricerca}{55}{subsubsection.15.7.1}%
+\contentsline {subsubsection}{\numberline {15.7.2}Inserimento}{55}{subsubsection.15.7.2}%
+\contentsline {subsubsection}{\numberline {15.7.3}Cancellazione}{56}{subsubsection.15.7.3}%
+\contentsline {subsection}{\numberline {15.8}Albero binario di ricerca (BST)}{56}{subsection.15.8}%
+\contentsline {subsubsection}{\numberline {15.8.1}Ricerca}{56}{subsubsection.15.8.1}%
+\contentsline {subsubsection}{\numberline {15.8.2}Inserimento}{56}{subsubsection.15.8.2}%
+\contentsline {subsubsection}{\numberline {15.8.3}Cancellazione}{56}{subsubsection.15.8.3}%
+\contentsline {subsection}{\numberline {15.9}Tabella riassuntiva}{56}{subsection.15.9}%
+\contentsline {section}{\numberline {16}Cheat Sheet (MiniMAO e MAO)}{57}{section.16}%
+\contentsline {section}{\numberline {17}Altro}{65}{section.17}%

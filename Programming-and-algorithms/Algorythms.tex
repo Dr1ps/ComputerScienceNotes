@@ -1406,6 +1406,138 @@ Ha complessita quanto una DFS più gli inserimenti in L:
 \]
 \paragraph{Teorema di correttezza dell'OT:} l'algoritmo di OT(G) produce un ordinamento topologico del DAG G.
 \paragraph{Lemma 1:} G è un DAG $\Leftrightarrow$ DFS(G) non ha archi all'indietro. (e quindi non ci sono cicli, già dimostrato secondo un teorema sopra)
+\subsection{Algoritmo di Dijkstra}
+Il problema che risolve l'\textbf{algoritmo di Dijkstra} è questo:\\
+"Data un'origine u e una destinazione v in un grafo orientato pesato con pesi non negativi, determinare il percorso più conveniente da seguire".\\
+Con "conveniente" spesso si intende il più efficiente, per esempio nei grafi con archi pesati, come per esempio l'instradamento di pacchetti (routing) o la ricerca del miglior percorso stradale su Google Maps.\\
+Intuitivamente, in un grafo non pesato il cammino minimo da u a v è proprio quello con il minimo numero di archi e si trova:
+\begin{itemize}
+    \item BFS(G,u)
+    \item Percorso da u a v seguendo gli archi $pi$.
+\end{itemize}
+Per i grafi pesati invece stabiliamo:
+\[
+G = (V,E)
+\]
+\[
+\omega: E \to \mathbb{R}
+\]
+Quest'ultima è una \textbf{funzione peso}.\\
+Tale funzione può calcolare anche il peso di un cammino:\\
+\[
+p = <v_0,\ldots,v_k>
+\]
+\[
+\omega(p) = \omega(v_0,v_1) + \omega(v_1,v_2) + \cdots + \omega(v_{k-1},v_k) = \sum_{i = 1}^{k} \omega(v_{i-1},v_i)
+\]
+Il peso di un cammino minimo è tale omega se esso esiste, infinito altrimenti.
+\subsubsection{Variante dei cammini con sorgente unica}
+Mettiamo caso che $s \in V$ sia una sorgente del grafo e bisogna calcolare il cammino di peso minimo da $s$ a ogni $v \in V$.\\
+\begin{itemize}
+    \item Si può invertire il problema, riconducendosi a cammini minimi con destinazione unica (ovvero la sorgente)
+    \item Si può sostituire s con u se il problema chiede di calcolare il cammino minimo da u a v fissati.
+    \item Se invece il problema ci chiede di calcolare il cammino minimo tra ogni coppia di nodi del grafo, basta sostituire la sorgente con ogni nodo e riusare sempre l'algoritmo per i cammini minimi.
+\end{itemize}
+\subsubsection{Proprietà dei cammini minimi}
+\paragraph{Sottostruttura ottima:} i sotto-cammini di cammini minimi sono cammini minimi di sotto-problemi.
+\paragraph{Lemma 1:} dato un grafo orientato $G  = (V,E)$ con la sua funzione peso $\omega : E \to \mathbb{R}$, sia $p = <v_1,\ldots,v_k>$ un cammino minimo da $v_1$ a $v_k$ e per qualsiasi $i$ e $j$ tali che $1 \leq i \leq j \leq k$ sia $P_{ij} = <v_i,\ldots,v_j>$ il sottocammino di p da $v_i$ a $v_j$, allora:
+\begin{center}
+    $p_{ij}$ è un cammino minimo da $v_i$ a $v_j$
+\end{center}
+\paragraph{Dimostrazione Lemma 1:} se appunto:
+\[
+\omega(p) = \omega(p_{1i}) + \omega(p_{ij}) + \omega(p_{jk})
+\]
+Supponiamo per assurdo che esista:
+\[
+p^|_{ij} : \omega(p^|_{1i}) < \omega(p_{ij})
+\]
+Questo significa che possiamo costruire un cammino $p^|$ tale che:
+\[
+\omega(p^|) = \omega(p_{1i}) + \omega(p^|_{ij}) + \omega(p_{jk}) < \omega(p)
+\]
+Questo però è falso per via della minimalità di $p$.\\\\
+Se tutti i pesi nel grafo sono non negativi, allora:
+\begin{itemize}
+    \item Tutti i cammini minimi sono semplici, ovvero non contengono cicli, in quanto aggiungerebbe solo peso, se ci fossero pesi negativi al contrario potrebbe essere vantaggioso fare un ciclo.
+    \item Ogni cammino contiene al massimo $|V|$ vertici e quindi $|V| - 1$ archi.
+\end{itemize}
+\subsubsection{Funzionamento dell'algoritmo di Dijkstra}
+L'algoritmo, per ogni vertice, mantiene:
+\begin{itemize}
+    \item $v.\pi$ = predecessore (rispetto al cammino minimo)
+    \item $v.d$ = stima del cammino minimo, limite superiore per il peso di un cammino minimo, è inizializzato a $\infty$
+\end{itemize}
+Tutti i vertici sono inseriti in una \textbf{coda PQ di Min-priorità} (con priorità $v.d$)\\
+L'algoritmo seleziona ripetutamente il vertice $u$ con la minor priorità / stima del cammino minimo (estraendolo da PQ) ed esamina gli archi uscenti da u.\\
+Per ogni vertice $v \in ADJ(u)$ controlla se passando da u si trova un cammino $s \to v$ meno costoso.\\
+In tal caso, aggiorna $v.\pi$ e $v.d$ ("rilassamento" dell'arco $(u,v)$).
+\begin{lstlisting}
+DIJKSTRA(G,w (funzione peso),s (sorgente)):
+    PQ = []
+    s.d = 0
+    s.pi = nul
+    INSERT(PQ, s) //con proprita s.d
+    for all v in V \ {s}:
+        v.d = inf
+        v.pi = nul
+        INSERT(PQ, v)
+    while (PQ != emptyset):
+        u = EXTRACT-MIN(PQ)
+        for all v in ADJ(u):
+            dnew = u.d + w(u,v)
+            if(dnew > v.d):
+                v.d = dnew
+                v.pi = u
+                DECREASE-KEY(PQ, v, dnew)
+
+\end{lstlisting}
+La complessità di questo algoritmo è:
+\[
+O(|V| \cdot costo(EXTRACT-MIN) + |E| \cdot costo(DECREASE-KEY))
+\]
+\begin{itemize}
+    \item Si eseguono $|V|$ operazioni $EXTRACT-MIN$
+    \item La lista di adiacenza di ciascun vertice viene esaminata esattamente una volta.
+    \item Ci sono in totale $|E|$ iterazioni del ciclo for (quello delle adiacenze) e quindi al più $|E|$ chiamate di DECREASE-KEY
+\end{itemize}
+In realtà esisterebbe anche un altro $+ \Theta(|V|)$ per l'inizializzazione, ma si omette.\\\\
+Si può vedere che la complessita dipende da come è implementata la PQ, vediamo assieme i vari casi:
+\paragraph{PQ è un array:}
+\begin{itemize}
+    \item Le operazioni INSERT e DECREASE-KEY hanno costo costante.
+    \item EXTRACT-MIN ha costo $O(|V|)$ (occorre ispezionare tutto l'array per trovare un minimo)
+    \item Il costo complessivo è $\Theta(|V|) + O(|V|^2 + |E|) = O(|V|^2)$
+\end{itemize}
+\paragraph{PQ è un MIN-heap binario:}
+\begin{itemize}
+    \item L'inizializzazione costa $\Theta(|V|)$
+    \item EXTRACT-MIN costa $O(log|V|)$
+    \item DECREASE-KEY costa $O(log|V|)$
+    \item Costo complessivo è $\Theta(|V|) + O(|V|log|V| + |E|log|V|) = O((|V| + |E|)log|V|)$
+\end{itemize}
+
+\subsubsection{Teorema di correttezza}
+Una volta che l'algoritmo è terminato:
+\[
+\forall v \in V : v.d = \delta(s,v)
+\]
+Ricordiamo che tale $\delta(s,v)$ è la lunghezza del cammino minimo tra s e v.\\
+\paragraph{Dimostrazione per induzione:}
+\begin{itemize}
+    \item Se $v = s$ allora $s.d = 0 = \delta(s,s)$
+    \item Se $v \ne s$ allora supponiamo che P sia un cammino minimo $(s,v)$ e che $(x,y) \in E$ sia il primo arco del cammino P dopo che si esce da $(s,x)$. Inoltre, x è gia stato aggiunto al cammino minimo mentre y è ancora in PQ.\\
+    Adesso osserviamo che quando x è stato estratto l'arco $(x,y)$ è stato rilassato e quindi:
+    \[
+    y.d \leq x.d è \omega(x,y) = \delta(s,x) + \omega(x,y) = \omega(s,y)
+    \]
+    Dato che è minore o uguale alla lunghezza del cammino minimo e data la definizione di cammino "minimo" allora:
+    \[
+    y.d = \delta(s.v)
+    \]
+\end{itemize}
+
+
 
 \section{Calcolabilità}
 La \textbf{calcolabilità} si occupa delle questioni fondamentali circa la potenza e le limitazioni dei sistemi di calcolo.\\
