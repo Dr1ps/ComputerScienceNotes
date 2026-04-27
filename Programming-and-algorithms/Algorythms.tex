@@ -354,6 +354,148 @@ Soluzione PD:
             r[j] = q
         return r[n]
 \end{lstlisting}
+\subsection{Esercizi}
+\subsubsection{Problema 1 (Dello zaino)}
+Si mostri la tabella per la risoluzione del problema zaino 0-1 per l'istanza:
+\[
+\begin{bmatrix}
+    Oggetto & Peso & Valore\\
+    a & 1 & 60\\
+    b & 2 & 100\\
+    c & 3 & 120
+\end{bmatrix}
+\]
+Lo spazio a disposizione è 5.\\
+Usiamo una matrice T$(n+1) X (w+1)$, ogni cella $T_{ij}$ corrisponde al peso totale trasportabile avendo $j$ come massimo peso totale e i primi $i$ oggetti.
+\[
+T[i,0] = T[0,j] = 0
+\]
+\[
+T[i,j] = \begin{cases}
+    T[i-1,j] \impliedby P[i] > j\\
+    max(T[i-1,j],v[i] + T[i-1,j - p[i]]) \impliedby P[i] \leq j
+\end{cases}
+\]
+Per esempio vediamo il caso per $w = 1$ e $n = 1$ (n indica quanti oggetti, a partire dal primo, sono disponibili):
+\[
+T[1,1] = 60
+\]
+Prende il secondo caso, perche rientra nel peso possibile.\\
+Vediamo la tabella completa:
+\[
+\begin{bmatrix}
+    N / W & 0 & 1 & 2 & 3 & 4 & 5\\
+    0 & 0 & 0 & 0 & 0 & 0 & 0\\
+    1 & 0 & 60 & 60 & 60 & 60 & 60 \\
+    2 & 0 & 60 & 100 & 160 & 160 & 160\\
+    3 & 0 & 60 & 100 & 160 & 180 & 220
+\end{bmatrix}
+\]
+L'output finale è $220$, con un peso massimo di $5$ e tale catalogo di oggetti posso portare dietro un massimo valore di $220$.
+\subsubsection{Problema 2 (Del viaggiatore)}
+Un viaggiatore ha una valigia di capacità C e un insieme di $n$ souvenir, il cui volume è $v[i]$. Qual'è il minimo numero di souvenir che riempiono la valigia esattamente?\\
+Osserviamo che il problema è simile al precedente, ma il valore non è da massimizzare, bensì da minimizzare.
+\[
+V = \begin{bmatrix}
+    2 & 2 & 4 & 3 & 1
+\end{bmatrix}
+\]
+\[
+N = 5
+\]
+\[
+W = 7
+\]
+L'output è ovviamente $V[3] + V[4] = 4 + 3$ e quindi $2$ oggetti, ma vediamo come progettare un algoritmo che risolve tale problema.\\
+Si opera proprio come nel problema dello zaino:
+\[
+\Pi_{n,w} = \text{problema iniziale}
+\]
+\[
+\Pi_{i,j} = \text{sottoproblema con i oggetti e capacità j, }0 \leq i \leq n, 0 \leq j \leq w
+\]
+Per sottostruttura ottima, il problema generale contiene la soluzione del sottoproblema.\\
+Vediamo la tabella di output generata:
+\[
+T[0,j] = +\infty
+\]
+Dato che non si hanno oggetti e quindi di default si mette tale valore, è impossibile riempire la valigia.
+\[
+T[i,0] = 0
+\]
+Dato che non si può riempire una valigia che non può contenere neanche un oggetto di peso minimo, è come se fosse "gia riempita"
+\[
+T[i,j] = \begin{cases}
+    M[i-1,j] \impliedby j < v[i]\\
+    min(T[i-1,j],1 + T[i-1,j-v[i]])
+\end{cases}
+\]
+\[
+\begin{bmatrix}
+    N / W & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+    0 & 0 & +\infty & +\infty & +\infty & +\infty & +\infty & +\infty & +\infty\\
+    1 & 0 & +\infty & 1 & +\infty & +\infty & +\infty & +\infty & +\infty\\ 
+    2 & 0 & +\infty & 1 & +\infty & 2 & +\infty & +\infty & +\infty\\  
+    3 & 0 & +\infty & 1 & +\infty & 1 & +\infty & 2 & +\infty\\ 
+    4 & 0 & +\infty & 1 & 1 & 1 & 2 & 2 & 2\\
+    5 & 0 & 1 & 1 & 1 & 1 & 2 & 2 & 2\\
+\end{bmatrix}
+\]
+\subsubsection{Problema 3 (Come passare l'esame)}
+Si consideri un esame con $n$ problemi, ognuno dei quali vale $P[i]$ punti e si richiede $t[i]$ minuti per essere svelto. L'obiettivo è passare l'esame con il minimo sforzo possibile (tempo).\\
+Si vuole quindi passare l'esame con il minor tempo possibile, il voto deve essere almeno sopra una soglia V quindi.\\
+Progettare e descrivere in pseudocodice un algoritmo PD che, dati i vettori P e t e la soglia V, trovi il sottoinsieme di problemi che richiede il minimo tempo totale che faccia passare l'esame.\\
+Inoltre, simulare l'algoritmo sui dati:
+\[
+P = \begin{bmatrix}
+    1 & 4 & 3 & 2
+\end{bmatrix}
+\]
+\[
+t = \begin{bmatrix}
+    5 & 30 & 15 & 20
+\end{bmatrix}
+\]
+\[
+V = 6
+\]
+Iniziamo definendo:
+\[
+\Pi_{n,v} = \text{problema iniziale}
+\]
+\[
+\Pi_{i,j} = \text{sottoproblema con i problemi e voto da raggiungere j, }0 \leq i \leq n, 0 \leq j \leq w
+\]
+Ogni cella contiene il tempo minimo usato per passare l'esame di tale voto minimo.
+\[
+T[i,0] = 0
+\]
+Perche si supera senza sforzo.
+\[
+T[0,j] = +\infty
+\]
+Perchè è impossibile superarlo.
+\[
+T[i,j] = \begin{cases}
+    min(T[i-1,j-P[i]] + t[i], T[i-1,j]) \impliedby P[i] \geq 0\\
+    min(T[i],T[i-1,j]) \impliedby P[i] < j
+\end{cases}
+\]
+\begin{lstlisting}
+tempoMinimo(P,t,V):
+    T = tabella[n+1][V+1]
+    for i=0 to n do:
+        T[i,0] = 0
+    for j=0 to V do:
+        T[0,j] = +inf
+    for i=1 to n do:
+        for j=1 to V do:
+            if(j-P[i] > 0) then:
+                T[i,j] = min(T[i-1,j-P[i]] + t[i], T[i-1,j])
+            else:
+                T[i,j] = min(T[i],T[i-1,j])
+\end{lstlisting}
+Vediamo adesso la tabella di output soddisfacendo il punto 2: (Non generata, vabe)
 
 
 \section{Algoritmi di Ordinamento (Sort)}
