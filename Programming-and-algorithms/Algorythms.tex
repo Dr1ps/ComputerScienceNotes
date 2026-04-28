@@ -1871,6 +1871,115 @@ Per esempio, SAT e clique sono tra di loro equivalenti, ma anche tutti gli NP-Co
     \item Vertex cover per grafi
     \item Graph Coloring (colorare con più k colori possibili tale che due vertici adiacenti non abbiano mai lo stesso colore), questo è per esempio connesso alla colorazione della cartina politica (divisione degli stati) del mondo.
 \end{itemize}
+\subsection{Esercizi}
+\subsubsection{Come risolvere esercizi}
+Se ti chiedono di controllare se la versione decisionale di un problema è in NP allora devi:
+\begin{itemize}
+    \item Capire il problema iniziale
+    \item Individuare il problema decisionale associato
+    \item Trovare un certificato
+    \item Trovare l'algoritmo che controlla il certificato
+    \begin{itemize}
+        \item In questo, prima si controlla che il certificato sia del formato giusto
+        \item Poi si controlla che il certificato sia valido o meno
+        \item Si calcola la complessita dell'algoritmo e si traggono le conclusioni.
+    \end{itemize}
+\end{itemize}
+Se invece ti chiedono di trasformare una SAT in una clique, sai gia come fare dalle sezioni precedenti.
+\subsubsection{Problema 1}
+Eseguire la riduzione polinomiale da SAT a Clique per:
+\[
+F = (x \lor y) \land (!x \lor z) \land y \land z
+\]
+Mostrando la k-clique e il relativo assegnamento positivo.\\
+Costruiamo il grafo intanto:
+\[
+Vertici = [x, y, !x, z, y_2, z_2]
+\]
+\[
+Archi = [(x,z),(x,y_2),(x,z_2),(y,!x),(y,z),(y,y_2),(y,z_2),(!x,y),(!x,y_2),(!x,z_2),(z,x),(z,y),(z,y_2),(z,z_2),(y_2,x),(y_2,y),(y_2,!x),(y_2,z),(y_2,z_2),(z_2,x),(z_2,y),(z_2, !x),(z_2,z)]
+\]
+La clique massima è di 4 nodi e ne esistono 2:
+\begin{itemize}
+    \item x = false, y = true, z = true
+    \item y = true, z = true
+\end{itemize}
+\subsubsection{Problema 2}
+G = (V,E) dove per ogni $u \in V$ voglio assegnare $C[u]$ colore. Dimostrare che la versione decisionale del problema 3-colorazione è in NP.\\
+Per ricordarsi, tale problema chiede se è possibile colorare ogni nodo con un massimo 3 colori in modo che due nodi adiacenti non siano mai dello stesso colore.\\
+Bisogna esibire un certificato C e una verifica di costo polinomiale.\\
+\begin{lstlisting}
+verifica3color(G,C[]): \\C = insieme di assegnazioni vertice-colore
+    D = array di n elementi
+    for i=1 to n do:
+        D[i] = C[i] \\copio C in D
+    sort(D)
+    d = 1 \\contatore di colori
+    for i=2 to n do:
+        if (d[i] != d[i-1]):
+            d++
+    if(d > 3):
+        return false
+    forall u in V do:
+        forall v in ADJ[u] do:
+            if(C[u] == C[v]):
+                return false
+    return true
+\end{lstlisting}
+Questo codice controlla se il certificato è valido.\\
+Per capire se rientra in NP, rimane da controllare che la complessita sia polinomiale:
+\begin{itemize}
+    \item $\Theta(n)$ per la copia dell'array
+    \item $\Theta(n \cdot log(n))$ per il sort (Merge Sort)
+    \item $\Theta(n)$ per il conteggio dei colori (confronto solo con l'elemento prima perche ho usato sort)
+    \item $\Theta(n \cdot |adj[u]|)$ scorro tutti i vicini di tutti i nodi e quindi $ = \Theta(|E|) = \Theta(m)$
+\end{itemize}
+Quindi la complessità è $\Theta(n + m)$, che è polinomiale. Si può dire che tale problema è in NP.
+
+\subsubsection{Problema 3}
+La versione decisionale del problema dello zaino 0-1 è in NP?\\
+Sappiamo che abbiamo:
+\[
+W = peso massimo da portare
+\]
+\[
+V = valore minimo da portare
+\]
+\[
+v[] = valori dei vari oggetti
+\]
+\[
+w[] = peso dei vari oggetti
+\]
+Ci serve un certificato e un algoritmo che lo controlli in tempo polinomiale.\\
+\textbf{Certificato:}
+Un vettore binario $C[1..n]$ tale che:
+\[
+C[i] =
+\begin{cases}
+1 & \text{se l'oggetto } i \text{ è scelto} \\
+0 & \text{altrimenti}
+\end{cases}
+\]
+\textbf{Verificatore:}
+\begin{lstlisting}
+verificaZaino(w[],v[],V,W,C[]):
+    for i=1 to n do:
+        if(C[i] != 0 AND C[i] != 1):
+            return false \\certificato errato
+    p = 0 \\peso totale
+    val = 0 \\valore totale
+    for i=1 to n do:
+        if(C[i] == 1):
+            p += w[C[i]]
+            val += v[C[i]]
+    if(val < V): return false
+    if(p > W): return false
+    return true
+\end{lstlisting}
+\textbf{Complessità:}
+Il verificatore esegue un singolo ciclo sugli $n$ oggetti, quindi ha complessità $O(n)$.
+
 \section{Altri algoritmi}
 \subsection{Array non ordinato}
 
