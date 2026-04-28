@@ -477,8 +477,8 @@ T[0,j] = +\infty
 Perchè è impossibile superarlo.
 \[
 T[i,j] = \begin{cases}
-    min(T[i-1,j-P[i]] + t[i], T[i-1,j]) \impliedby P[i] \geq 0\\
-    min(T[i],T[i-1,j]) \impliedby P[i] < j
+    min(t[i] + T[i-1,j-P[i]], T[i-1,j]) \impliedby P[i] \leq j\\
+    min(t[i],T[i-1,j]) \impliedby P[i] > j
 \end{cases}
 \]
 \begin{lstlisting}
