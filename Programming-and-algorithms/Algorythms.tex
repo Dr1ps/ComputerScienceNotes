@@ -1594,7 +1594,7 @@ DFS-VISIT(G,u):
     forall v in adj(u) do:
         if(v.status == A):
             v.pi = u
-        DFS-VISIT(G,v)
+            DFS-VISIT(G,v)
     u.status = C
     time++
     u.f = time
