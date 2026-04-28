@@ -496,7 +496,113 @@ tempoMinimo(P,t,V):
                 T[i,j] = min(T[i],T[i-1,j])
 \end{lstlisting}
 Vediamo adesso la tabella di output soddisfacendo il punto 2: (Non generata, vabe)
+\paragraph{Problema 4: Longest Common Subsequence}
+\[
+x = "albero"
+\]
+\[
+y = "binario"
+\]
+Trovare la \textbf{sottosequenza} (sequenza di elementi di x (in ordine) non necessariamente adiacenti) più lunga possibile che queste due stringhe hanno in comune.\\
+Per svolgere l'esercizio definiamo:
+\[
+dp[i][j] = LCS(x[i], y[j])
+\]
+Ovvero la LCS tra il prefisso di x e di y di rispettivamente i o j caratteri.\\
+Possiamo dire quindi che:
+\[
+dp[0][j] = 0
+\]
+\[
+dp[i][0] = 0
+\]
+\[
+dp[i][j] = \begin{cases}
+    dp[i-1][j-1] + 1 \impliedby x[i] == y[j]\\
+    max(dp[i-1][j],dp[i][j-1]) \impliedby x[i] != y[j]
+\end{cases}
+\]
+\[
+\begin{array}{c|cccccccc}
+   & 0 & b & i & n & a & r & i & o \\
+\hline
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ a & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+ l & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+ b & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+ e & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+ r & 0 & 1 & 1 & 1 & 1 & 2 & 2 & 2 \\
+ o & 0 & 1 & 1 & 1 & 1 & 2 & 2 & 3 \\
+\end{array}
+\]
 
+\section{Algoritmi Greedy}
+Un algoritmo greedy è un algoritmo che effettua ad ogni passo la scelta
+che in quel momento sembra la migliore (localmente ottima) nella
+speranza di ottenere una soluzione globalmente ottima. \\
+Un algoritmo Greedy segue sempre questi passi:
+\begin{itemize}
+    \item Scelta di un criterio di ordinamento (costo minimo, valore massimo...)
+    \item Ordinamento effettivo
+    \item Costruzione iterativa della soluzione
+\end{itemize}
+Tale tecnica algoritmica funziona solo se:
+\begin{itemize}
+    \item Il problema è \textbf{Greedy Choice Property}, ovvero una scelta locale ottima è parte di una soluzione globale ottima.
+    \item Il problema ha una sottostruttura ottima.
+\end{itemize}
+\subsection{Scheduling}
+Un'algoritmo di scheduling può dare priorità ai task che durano di meno (\textbf{Shortest Job First}), in tal caso infatti si parla di un algoritmo Greedy.
+\subsection{Zaino frazionario}
+Prendiamo come altro esempio il problema dello \textbf{zaino frazionario}:\\
+Abbiamo:
+\[
+A = [a_1,\ldots,a_n] = oggetti
+\]
+\[
+v[] = valori
+\]
+\[
+w[] = pesi
+\]
+\[
+W = maxPeso
+\]
+Trovare il carico più "prezioso" che non supera il peso massimo.\\
+In questo caso non serve creare una tabella perchè si può frazionare ogni oggetto.\\
+Per esempio:
+\[
+A = [a_1,a_2,a_3]
+\]
+\[
+v = [10,6,5]
+\]
+\[
+w = [5,4,4]
+\]
+\[
+W = 13
+\]
+Per trovare la soluzione si procede cosi:
+\begin{itemize}
+    \item Si calcola il rapporto valore/peso per ogni oggetto:
+    \[
+    r = [\frac{v[a_1]}{w[a_1]},\frac{v[a_2]}{w[a_2]},\frac{v[a_3]}{w[a_3]}]
+    \]
+    \item Ordina gli oggetti in ordine decrescente per tali valori, dal più "conveniente" al meno
+    \item Si scorrono gli oggetti in quest'ordine e si cerca di arrivare al peso massimo
+    \begin{itemize}
+        \item Si prende il primo oggetto, se troppo pesante si frammenta
+        \item Ripete con gli altri se il peso non è stato raggiunto.
+    \end{itemize}
+\end{itemize}
+La complessità di tale algoritmo sarebbe:
+\begin{itemize}
+    \item $\Theta(n)$ per il calcolo dei rapporti di ogni oggetto.
+    \item $\Theta(n \cdot log(n))$ per il sort (MergeSort)
+    \item $\Theta(n)$ per il carico dello zaino.
+\end{itemize}
+Quindi equivale a $\Theta(n \cdot log(n))$
 
 \section{Algoritmi di Ordinamento (Sort)}
 
