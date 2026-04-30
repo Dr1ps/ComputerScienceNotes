@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  28 APR 2026 23:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  30 APR 2026 21:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -834,7 +834,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 160--165
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
 
  []
 
@@ -848,41 +848,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 183.
+(hyperref)                removing `\Omega' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Theta' on input line 183.
+(hyperref)                removing `\Theta' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 211.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
 
  []
 
@@ -898,54 +898,54 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 219.
+(hyperref)                removing `math shift' on input line 247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 219.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.26286pt
-(hyperref)                removed on input line 219.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 219.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 229.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 229.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.26286pt
-(hyperref)                removed on input line 229.
+(hyperref)                removed on input line 247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 229.
+(hyperref)                removing `math shift' on input line 247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 239.
+(hyperref)                removing `math shift' on input line 257.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 239.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 257.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.26286pt
-(hyperref)                removed on input line 239.
+(hyperref)                removed on input line 257.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 239.
+(hyperref)                removing `math shift' on input line 257.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.26286pt
+(hyperref)                removed on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 267.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -963,7 +963,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 284--289
+Underfull \hbox (badness 10000) in paragraph at lines 312--317
 
  []
 
@@ -1037,12 +1037,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 696--697
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
 
  []
 
@@ -1070,7 +1070,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 833--834
+Underfull \hbox (badness 10000) in paragraph at lines 861--862
 
  []
 
@@ -1092,12 +1092,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [27
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 901--903
+Underfull \hbox (badness 10000) in paragraph at lines 929--931
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 935--938
+Underfull \hbox (badness 10000) in paragraph at lines 963--966
 
  []
 
@@ -1109,7 +1109,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 947--949
+Underfull \hbox (badness 10000) in paragraph at lines 975--977
 
  []
 
@@ -1139,12 +1139,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [31
 
 ]
-Overfull \hbox (31.20294pt too wide) in paragraph at lines 1034--1035
+Overfull \hbox (31.20294pt too wide) in paragraph at lines 1062--1063
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.10303pt too wide) in paragraph at lines 1035--1036
+Overfull \hbox (17.10303pt too wide) in paragraph at lines 1063--1064
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1156,32 +1156,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [32]
-Overfull \hbox (45.30286pt too wide) in paragraph at lines 1083--1084
+Overfull \hbox (45.30286pt too wide) in paragraph at lines 1111--1112
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (24.15298pt too wide) in paragraph at lines 1087--1088
+Overfull \hbox (24.15298pt too wide) in paragraph at lines 1115--1116
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.30286pt too wide) in paragraph at lines 1090--1092
+Overfull \hbox (45.30286pt too wide) in paragraph at lines 1118--1120
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (59.40277pt too wide) in paragraph at lines 1099--1100
+Overfull \hbox (59.40277pt too wide) in paragraph at lines 1127--1128
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (355.50098pt too wide) in paragraph at lines 1101--1102
+Overfull \hbox (355.50098pt too wide) in paragraph at lines 1129--1130
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (179.25204pt too wide) in paragraph at lines 1102--1104
+Overfull \hbox (179.25204pt too wide) in paragraph at lines 1130--1132
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1193,7 +1193,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1150
 
  []
 
@@ -1205,7 +1205,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34]
-Overfull \hbox (3.00311pt too wide) in paragraph at lines 1207--1208
+Overfull \hbox (3.00311pt too wide) in paragraph at lines 1235--1236
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1228,7 +1228,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/HashTableExercise.png, id=1111, 578.16pt x 325.215pt>
 File: images/HashTableExercise.png Graphic file (type png)
 <use images/HashTableExercise.png>
-Package pdftex.def Info: images/HashTableExercise.png  used on input line 1293.
+Package pdftex.def Info: images/HashTableExercise.png  used on input line 1321.
 (pdftex.def)             Requested size: 409.71692pt x 230.46262pt.
 
 
@@ -1260,7 +1260,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [39
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1387
+Underfull \hbox (badness 10000) in paragraph at lines 1411--1415
 
  []
 
@@ -1272,12 +1272,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1440--1441
+Underfull \hbox (badness 10000) in paragraph at lines 1468--1469
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1473--1476
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1504
 
  []
 
@@ -1289,12 +1289,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1489--1491
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1519
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1491--1492
+Underfull \hbox (badness 10000) in paragraph at lines 1519--1520
 
  []
 
@@ -1322,17 +1322,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 1603--1605
+Underfull \hbox (badness 10000) in paragraph at lines 1631--1633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1620
+Underfull \hbox (badness 10000) in paragraph at lines 1647--1648
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1626--1628
+Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
 
  []
 
@@ -1344,12 +1344,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 1633--1634
+Underfull \hbox (badness 10000) in paragraph at lines 1661--1662
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1643--1646
+Underfull \hbox (badness 10000) in paragraph at lines 1671--1674
 
  []
 
@@ -1361,12 +1361,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1675
+Underfull \hbox (badness 10000) in paragraph at lines 1700--1703
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1683--1685
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1713
 
  []
 
@@ -1378,7 +1378,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1710
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1738
 
  []
 
@@ -1390,12 +1390,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 1752--1754
+Underfull \hbox (badness 10000) in paragraph at lines 1780--1782
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1772--1774
+Underfull \hbox (badness 10000) in paragraph at lines 1800--1802
 
  []
 
@@ -1408,7 +1408,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [49]
 
-LaTeX Warning: Command \` invalid in math mode on input line 1780.
+LaTeX Warning: Command \` invalid in math mode on input line 1808.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1418,22 +1418,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1798--1799
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1800--1806
+Underfull \hbox (badness 10000) in paragraph at lines 1828--1834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1811
+Underfull \hbox (badness 10000) in paragraph at lines 1836--1839
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1813--1817
+Underfull \hbox (badness 10000) in paragraph at lines 1841--1845
 
  []
 
@@ -1447,7 +1447,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [51
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1841--1845
+Underfull \hbox (badness 10000) in paragraph at lines 1869--1873
 
  []
 
@@ -1469,7 +1469,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [53
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1910--1911
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1939
 
  []
 
@@ -1489,12 +1489,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 1970--1975
+Underfull \hbox (badness 10000) in paragraph at lines 1998--2003
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1970--1975
+Underfull \hbox (badness 10000) in paragraph at lines 1998--2003
 
  []
 
@@ -1506,17 +1506,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56]
-Overfull \hbox (427.5951pt too wide) detected at line 2007
+Overfull \hbox (427.5951pt too wide) detected at line 2035
 \OML/lmm/m/it/12 Archi \OT1/lmr/m/n/12 = [(\OML/lmm/m/it/12 x; z\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; z[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y; \OT1/lmr/m/n/12 !\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y; z\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y; z[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (!\OML/lmm/m/it/12 x; y\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (!\OML/lmm/m/it/12 x; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (!\OML/lmm/m/it/12 x; z[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z; x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z; y\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z; z[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y[]; x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y[]; y\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y[]; \OT1/lmr/m/n/12 !\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y[]; z\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 y[]; z[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z[]; x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z[]; y\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z[]; \OT1/lmr/m/n/12 !\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z[]; z\OT1/lmr/m/n/12 )]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2017
+Underfull \hbox (badness 10000) in paragraph at lines 2042--2045
 
  []
 
 
-Overfull \hbox (17.10303pt too wide) in paragraph at lines 2018--2019
+Overfull \hbox (17.10303pt too wide) in paragraph at lines 2046--2047
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1581,12 +1581,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/MiniMao_Grammar.png, id=1358, 464.23438pt x 333.245pt>
 File: images/MiniMao_Grammar.png Graphic file (type png)
 <use images/MiniMao_Grammar.png>
-Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 2329.
+Package pdftex.def Info: images/MiniMao_Grammar.png  used on input line 2357.
 (pdftex.def)             Requested size: 409.71692pt x 294.11584pt.
 <images/MiniMao_TypeChecking.png, id=1359, 412.54124pt x 348.30125pt>
 File: images/MiniMao_TypeChecking.png Graphic file (type png)
 <use images/MiniMao_TypeChecking.png>
-Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 2335.
+Package pdftex.def Info: images/MiniMao_TypeChecking.png  used on input line 2363.
 (pdftex.def)             Requested size: 409.71692pt x 345.91943pt.
 
 
@@ -1595,7 +1595,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/MiniMao_Semantics.png, id=1360, 408.52625pt x 146.04562pt>
 File: images/MiniMao_Semantics.png Graphic file (type png)
 <use images/MiniMao_Semantics.png>
-Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 2341.
+Package pdftex.def Info: images/MiniMao_Semantics.png  used on input line 2369.
 (pdftex.def)             Requested size: 409.71692pt x 146.47978pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1603,7 +1603,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/MiniMao_Semantics_Commands.png, id=1361, 351.3125pt x 354.32375pt>
 File: images/MiniMao_Semantics_Commands.png Graphic file (type png)
 <use images/MiniMao_Semantics_Commands.png>
-Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 2347.
+Package pdftex.def Info: images/MiniMao_Semantics_Commands.png  used on input line 2375.
 (pdftex.def)             Requested size: 409.71692pt x 413.25954pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1611,7 +1611,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Grammar.png, id=1362, 289.58188pt x 324.21124pt>
 File: images/Mao_Grammar.png Graphic file (type png)
 <use images/Mao_Grammar.png>
-Package pdftex.def Info: images/Mao_Grammar.png  used on input line 2354.
+Package pdftex.def Info: images/Mao_Grammar.png  used on input line 2382.
 (pdftex.def)             Requested size: 409.71692pt x 458.74075pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1619,7 +1619,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_TypeChecking.png, id=1363, 346.29375pt x 351.3125pt>
 File: images/Mao_TypeChecking.png Graphic file (type png)
 <use images/Mao_TypeChecking.png>
-Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 2360.
+Package pdftex.def Info: images/Mao_TypeChecking.png  used on input line 2388.
 (pdftex.def)             Requested size: 409.71692pt x 415.66551pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1627,7 +1627,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_TypeChecking2.png, id=1364, 292.59312pt x 335.75438pt>
 File: images/Mao_TypeChecking2.png Graphic file (type png)
 <use images/Mao_TypeChecking2.png>
-Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 2366.
+Package pdftex.def Info: images/Mao_TypeChecking2.png  used on input line 2394.
 (pdftex.def)             Requested size: 409.71692pt x 470.20149pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1635,7 +1635,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Semantics1.png, id=1365, 232.36812pt x 320.69812pt>
 File: images/Mao_Semantics1.png Graphic file (type png)
 <use images/Mao_Semantics1.png>
-Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 2372.
+Package pdftex.def Info: images/Mao_Semantics1.png  used on input line 2400.
 (pdftex.def)             Requested size: 409.71692pt x 565.51677pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1643,7 +1643,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/Mao_Semantics2.png, id=1366, 233.87375pt x 329.73187pt>
 File: images/Mao_Semantics2.png Graphic file (type png)
 <use images/Mao_Semantics2.png>
-Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 2378.
+Package pdftex.def Info: images/Mao_Semantics2.png  used on input line 2406.
 (pdftex.def)             Requested size: 409.71692pt x 577.71861pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1740,7 +1740,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,12n,108p,824b,1912s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Algorythms.pdf (72 pages, 1327436 bytes).
+Output written on Algorythms.pdf (72 pages, 1330595 bytes).
 PDF statistics:
  1626 PDF objects out of 1728 (max. 8388607)
  669 named destinations out of 1000 (max. 500000)
