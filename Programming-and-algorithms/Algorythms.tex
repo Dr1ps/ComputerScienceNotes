@@ -664,14 +664,22 @@ for j = 2 to n+1 do
     A[i + 1] = key
 \end{lstlisting}
 \subsubsection{Teorema di correttezza}
-All'inizio di ogni ciclo con $j$, l'array:
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di ciclo: all'inizio di ogni iterazione $i$, il sottoarray
 \[
-A = [0 \ldots j-1]
+A[0 \ldots i-1]
 \]
-è gia ordinato ed è composto dagli stessi elementi iniziali ma in ordine crescente.\\
+è ordinato in ordine non decrescente.
+
 \begin{itemize}
-    \item Nella prima iterazione con $j = 2$, l'array A contiene un elemento e quindi è già ordinato.
-    \item Nelle altre iterazioni si aggiunge l'elemento $A[j]$ al sub-array precedente, formando un nuovo array di $j$ elementi ordinato.
+    \item \textbf{Caso base:} per $i = 1$, il sottoarray $A[0]$ è costituito da un solo elemento, quindi è ordinato.
+
+    \item \textbf{Passo induttivo:} supponiamo che $A[0 \ldots i-1]$ sia ordinato.\\
+    L'algoritmo prende l'elemento $A[i]$ e lo inserisce nella posizione corretta all'interno del sottoarray ordinato, spostando a destra gli elementi maggiori.\\
+    Dopo l'inserimento, il sottoarray $A[0 \ldots i]$ risulta ordinato.
+
+    \item \textbf{Conclusione:} dopo $n$ iterazioni, l'intero array è ordinato in ordine non decrescente.
 \end{itemize}
 \subsection{Selection Sort}
 Il \textbf{Selection Sort} ordina un array trovando di volta in volta il minimo tra gli elementi non ancora ordinati e scambiandolo con l’elemento corrente.
@@ -692,7 +700,23 @@ for i = 0 to n - 2 do
             min = j
     swap(A[i], A[min])
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di ciclo: all'inizio di ogni iterazione $i$, il sottoarray
+\[
+A[0 \ldots i-1]
+\]
+contiene i $i$ elementi più piccoli dell'array originale, ordinati.
+\begin{itemize}
+    \item \textbf{Caso base:} per $i = 0$, il sottoarray è vuoto e quindi banalmente ordinato.
 
+    \item \textbf{Passo induttivo:} supponiamo che l'invariante valga per $i$.\\
+    L'algoritmo cerca il minimo tra gli elementi $A[i \ldots n-1]$ e lo scambia con $A[i]$.\\
+    Poiché tale elemento è il più piccolo tra quelli rimanenti, il sottoarray $A[0 \ldots i]$ risulta ordinato e contiene i $i+1$ elementi più piccoli.
+
+    \item \textbf{Conclusione:} dopo $n$ iterazioni, l'intero array è ordinato in ordine non decrescente.
+\end{itemize}
 
 \subsection{Bubble Sort}
 Il \textbf{Bubble Sort} confronta coppie di elementi adiacenti e li scambia se sono nell’ordine sbagliato, “spingendo” gradualmente i valori maggiori verso la fine.
@@ -706,10 +730,24 @@ for i = 0 to n - 2 do
         if A[j] > A[j + 1] then
             swap(A[j], A[j + 1])
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di ciclo: alla fine di ogni iterazione esterna $i$, gli ultimi $i$ elementi dell'array sono ordinati e sono i più grandi dell'array.
 
+\begin{itemize}
+    \item \textbf{Caso base:} all'inizio ($i = 0$) non esiste alcun elemento ordinato nella parte finale dell'array, quindi l'invariante è banalmente vera.
+    
+    \item \textbf{Passo induttivo:} supponiamo che dopo $i$ iterazioni gli ultimi $i$ elementi siano ordinati e siano i $i$ elementi più grandi.\\
+    Durante l'iterazione successiva, il ciclo interno confronta coppie adiacenti e scambia gli elementi se sono fuori ordine. In questo modo, il massimo tra gli elementi non ancora ordinati "galleggia" fino alla posizione corretta $A[n - i - 1]$.
+    
+    Poiché ogni confronto locale garantisce che gli elementi più grandi si spostino verso destra, al termine dell'iterazione $i+1$ anche il $(i+1)$-esimo elemento più grande viene posizionato correttamente.
+    
+    \item \textbf{Conclusione:} dopo $n-1$ iterazioni, tutti gli elementi risultano ordinati e l'array è quindi ordinato in ordine non decrescente.
+\end{itemize}
 
 \subsection{Merge Sort}
-Il \textbf{Merge Sort} utilizza il paradigma \textit{divide et impera}. Divide ricorsivamente l’array in due parti, le ordina e poi le unisce.
+Il \textbf{Merge Sort} utilizza il paradigma \textit{divide et impera}. Divide ricorsivamente l’array in due parti, le ordina e poi le unisce. Utilizza una funzione \textbf{merge} di appoggio che restituisce un array ordinato dati altri due in input (e in questo caso lo salva in un nuovo array A).
 
 \paragraph{Tutti i casi:} $O(n \log n)$
 
@@ -723,7 +761,23 @@ function mergeSort(A):
         mergeSort(R)
         merge(L, R, A)
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+\paragraph{Dimostrazione:}
+Consideriamo la correttezza tramite induzione sulla lunghezza dell'array.
 
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato.
+
+    \item \textbf{Passo induttivo:} supponiamo che MergeSort ordini correttamente due array $L$ e $R$ di dimensione minore.\\
+    L'algoritmo divide l'array in due metà, applica ricorsivamente MergeSort su entrambe e ottiene due sottoarray ordinati.
+
+    La funzione \texttt{merge} combina due array ordinati $L$ e $R$ in un unico array $A$ ordinato, confrontando ripetutamente gli elementi minimi rimanenti.
+
+    Poiché ogni elemento viene scelto in ordine crescente tra $L$ e $R$, il risultato finale è ordinato.
+
+    \item \textbf{Conclusione:} per induzione sulla dimensione dell'array, MergeSort produce un array ordinato in ordine non decrescente.
+\end{itemize}
 
 \subsection{Quick Sort}
 Il \textbf{Quick Sort} sceglie un elemento detto \textit{pivot} e divide l’array in due sottoarray:
@@ -738,8 +792,44 @@ function quickSort(A, low, high):
         p = partition(A, low, high)
         quickSort(A, low, p - 1)
         quickSort(A, p + 1, high)
-\end{lstlisting}
 
+
+partition(A, low, high):
+    pivot = A[high]
+    i = low - 1
+
+    for j = low to high - 1:
+        if A[j] <= pivot:
+            i = i + 1
+            swap(A[i], A[j])
+
+    swap(A[i + 1], A[high])
+    return i + 1
+\end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di correttezza basato sulla partizione.
+
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato.
+
+    \item \textbf{Passo induttivo:} supponiamo che QuickSort ordini correttamente sottoproblemi più piccoli.\\
+    L'algoritmo sceglie un pivot e partiziona l'array in tre parti:
+    \begin{itemize}
+        \item elementi minori del pivot
+        \item pivot
+        \item elementi maggiori del pivot
+    \end{itemize}
+
+    Dopo la partizione, tutti gli elementi a sinistra del pivot sono minori o uguali, e quelli a destra sono maggiori o uguali.
+
+    Applicando ricorsivamente QuickSort alle due sottoparti, per ipotesi induttiva, entrambe vengono ordinate correttamente.
+
+    Unendo le tre parti si ottiene un array completamente ordinato.
+
+    \item \textbf{Conclusione:} per induzione sulla dimensione dell'array, QuickSort è corretto.
+\end{itemize}
 
 \subsection{Heap Sort}
 Il \textbf{Heap Sort} costruisce un heap (albero binario quasi completo senza puntatori) e ripete:
