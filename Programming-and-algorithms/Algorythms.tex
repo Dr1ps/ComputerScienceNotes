@@ -655,7 +655,7 @@ Complessità: $O(n^2)$
 Complessità: $O(n^2)$
 
 \begin{lstlisting}
-for j = 2 to n do
+for j = 2 to n+1 do
     key = A[j]
     i = j - 1
     while i > 0 and A[i] > key do
@@ -663,8 +663,16 @@ for j = 2 to n do
         i = i - 1
     A[i + 1] = key
 \end{lstlisting}
-
-
+\subsubsection{Teorema di correttezza}
+All'inizio di ogni ciclo con $j$, l'array:
+\[
+A = [0 \ldots j-1]
+\]
+è gia ordinato ed è composto dagli stessi elementi iniziali ma in ordine crescente.\\
+\begin{itemize}
+    \item Nella prima iterazione con $j = 2$, l'array A contiene un elemento e quindi è già ordinato.
+    \item Nelle altre iterazioni si aggiunge l'elemento $A[j]$ al sub-array precedente, formando un nuovo array di $j$ elementi ordinato.
+\end{itemize}
 \subsection{Selection Sort}
 Il \textbf{Selection Sort} ordina un array trovando di volta in volta il minimo tra gli elementi non ancora ordinati e scambiandolo con l’elemento corrente.
 
