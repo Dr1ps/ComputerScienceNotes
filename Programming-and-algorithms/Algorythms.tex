@@ -176,9 +176,10 @@ B \Rightarrow 1B \Rightarrow 10B \Rightarrow 100B \Rightarrow 1001
 
 \subsection{Alberi di derivazione (Parse Trees)}
 
-Rappresentano tutti i possibili percorsi per effettuare una derivazione (insiemi $N$ e $E$: nodi e archi).  
-Non possono esserci due o più archi verso lo stesso nodo e il nodo radice non ha archi entranti.
-
+Rappresentano tutti i passaggi per effettuare una derivazione (insiemi $N$ e $E$: nodi e archi).  
+Non possono esserci due o più archi verso lo stesso nodo e il nodo radice non ha archi entranti.\\
+I nodi interni sono costituiti da simboli non terminali, invece le foglie da simboli terminali e rappresentano la stringa finale.\\
+Ogni livello dell'albero rappresenta una produzione sintattica.
 \section{Regole di Inferenza}
 
 Per definire la semantica del linguaggio MAO si usano \textbf{regole di inferenza}.
@@ -233,7 +234,7 @@ C_1 (n^2) \le 3n^2 - 2n - 1 \le C_2 (n^2)
 
 Si consideri una ricorrenza della forma
 \[
-T(n) = a\,T\!\left(\frac{n}{b}\right) + f(n),
+T(n) = a\,T\!\left(\frac{n}{b}\right) + f(n)
 \]
 dove $a \ge 1$ (numero chiamate ricorsive), $b > 1$ (indice di riduzione del problema) e $f(n)$ è una funzione asintoticamente positiva (complessità di ogni chiamata).
 Sia
@@ -308,6 +309,26 @@ Il valore finale, se l'esempio è uguale a quello del metodo iterativo, sarà $f
 \paragraph{Fooling argument: }un algoritmo deve leggere tutti gli input per svolgere u bel lavoro, infatti se abbiamo $n$ input si ha una complessita minima di $n$ ($\Omega n$)\\
 Questo vale solo quando non ci sono ipotesi particolari sui dati in input, come ordinamento.
 
+\subsection{Dimostrazione del teorema con alberi di ricorsione}
+Ora che abbiamo visto cosa sono gli alberi di ricorsione, dimostriamo il Master Theorem e la sua complessità.\\
+Un algoritmo ha complessità $f(n)$, ma utilizza $a$ chiamate ricorsive con $b$ come indice di riduzione, le chiamate si ripetono fino a quando la riduzione non diventa costante (ovvero 1 perche si fa f(1) e le chiamate ricorsive non esistono piu).\\
+In pratica, ad ogni livello le chiamate si moltiplicano per $a$.\\
+Il livello $log_b(n)$ è quello finale, dove stanno le foglie. Basta pensare che con "livello finale" delle chiamate ricorsive (dove poi si fermano) intendiamo il livello dove ogni chiamata ha complessità costante e quindi $n$ è ridotto al massimo. Il valore di tale livello è questo perchè è l'esponente da dare a $b$ per ridurre completamente $n$ (o il valore da dare a tale esponente per far avvicinare $b$ di più ad $n$).\\\\
+Dato che ogni chiamata dell'ultimo livello ha complessità costante, basta contare quante foglie ci sono per determinare la complessità di tale livello:
+\[
+nFoglie = a^{log_b(n)}
+\] 
+Il quale equivale a:
+\[
+n^{log_b(a)}
+\]
+Questo numero è la complessità del livello $log_b(n)$.\\
+Possiamo adesso dire quindi che:
+\[
+T(n) = \sum_{i = 0}^{log_b(n) - 1} a^i \cdot \,T\!\left(\frac{n}{b^i}\right) + \Theta(n^{log_b(a)})
+\]
+
+
 \section{Programmazione dinamica}
 La \textbf{programmazione dinamica} (PD) è una tecnica di progettazione di algoritmi. Come il divide-et-impera, è una tecnica che si applica nei casi in cui
 la soluzione del problema può essere definita ricorsivamente.\\
@@ -377,8 +398,8 @@ Soluzione PD:
         for (j = 1 to n):
             q = -inf
             for (i = 1 to j):
-                if (q < p[i] + r[j-1]):
-                    q = p[i] + r[j-1]
+                if (q < p[i] + r[j-i]):
+                    q = p[i] + r[j-i]
             r[j] = q
         return r[n]
 \end{lstlisting}
@@ -655,13 +676,13 @@ Complessità: $O(n^2)$
 Complessità: $O(n^2)$
 
 \begin{lstlisting}
-for j = 2 to n+1 do
-    key = A[j]
-    i = j - 1
-    while i > 0 and A[i] > key do
-        A[i + 1] = A[i]
-        i = i - 1
-    A[i + 1] = key
+insertionSort(A):
+    n = size(A)
+    for i = 1 to n-1:
+        j = i
+        while (j > 0 AND A[j] < A[j-1]):
+            swap(A[j], A[j-1])
+            j--
 \end{lstlisting}
 \subsubsection{Teorema di correttezza}
 Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
@@ -693,12 +714,14 @@ Il \textbf{Selection Sort} ordina un array trovando di volta in volta il minimo 
 \paragraph{Caso Ottimo, Medio e Pessimo:} Sempre $O(n^2)$
 
 \begin{lstlisting}
-for i = 0 to n - 2 do
-    min = i
-    for j = i + 1 to n - 1 do
-        if A[j] < A[min] then
-            min = j
-    swap(A[i], A[min])
+selectionSort(A):
+	n = size(A)
+	for i=0 to n-2:
+		min = i
+		for j=i+1 to n-1:
+			if(A[j] < A[min]):
+				min = j
+		swap(A[i],A[min])
 \end{lstlisting}
 \subsubsection{Teorema di correttezza}
 Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
@@ -725,10 +748,11 @@ Il \textbf{Bubble Sort} confronta coppie di elementi adiacenti e li scambia se s
 \paragraph{Caso Medio e Pessimo:} $O(n^2)$
 
 \begin{lstlisting}
-for i = 0 to n - 2 do
-    for j = 0 to n - i - 2 do
-        if A[j] > A[j + 1] then
-            swap(A[j], A[j + 1])
+bubbleSort(A):
+    for i = 0 to n - 2:
+        for j = 0 to n - i - 2:
+            if (A[j] > A[j + 1]):
+                swap(A[j], A[j + 1])
 \end{lstlisting}
 \subsubsection{Teorema di correttezza}
 Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
@@ -760,6 +784,29 @@ function mergeSort(A):
         mergeSort(L)
         mergeSort(R)
         merge(L, R, A)
+
+merge(A, inf, mid, sup):
+    i = inf        // inizio parte sinistra
+    j = mid + 1    // inizio parte destra
+    temp = []
+
+    while i <= mid AND j <= sup:
+        if A[i] <= A[j]:
+            append A[i] to temp
+            i++
+        else:
+            append A[j] to temp
+            j++
+
+    while i <= mid:
+        append A[i] to temp
+        i++
+
+    while j <= sup:
+        append A[j] to temp
+        j++
+
+    copy temp back into A[inf..sup]
 \end{lstlisting}
 \subsubsection{Teorema di correttezza}
 Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
@@ -886,60 +933,149 @@ si scambia la nuova radice con un figlio fino a che non si riforma un heap.
 
 \paragraph{Tutti i casi:} $O(n \log n)$
 \begin{lstlisting}
+parent(i) = (i-1) // 2
+left(i) = 2*i + 1
+right(i) = 2*i + 2
+
 isMaxHeap(A):
-    for i=1 to n do:
-      if (A[i]>A[parent(i)]) return false
+    for i = 1 to |A|-1:
+        if A[i] > A[parent(i)]:
+            return false
     return true
 
-maxHeapify(i):
-    if(i==0) return //siamo alla radice
-    if(A[i] > A[parent(i)]):
-        swap(A[i],A[parent(i)])
-        maxHeapify(parent(i))
+maxHeapify(A, n, i):
+    largest = i
+    l = 2*i + 1
+    r = 2*i + 2
+
+    if l < n and A[l] > A[largest]:
+        largest = l
+
+    if r < n and A[r] > A[largest]:
+        largest = r
+
+    if largest != i:
+        swap(A[i], A[largest])
+        maxHeapify(A, n, largest)
 
 buildHeap(A):
-    for i=1 to |A|-1
-        maxHeapify(i)
+    n = |A|
+    for i = (n // 2) - 1 downto 0:
+        maxHeapify(A, n, i)
 
-heapChangeKey(A,i,k):
+heapIncreaseKey(A, i, k):
     A[i] = k
-    temp1 = 0
-    temp2 = 0
-    while(temp1 = temp2):
-        temp1 = i
-        if (left(i) < A.size && A[i] < A[2*i + 1]):
-            swap(A[i], A[2*i+1])
-            i = 2*i + 1
-        if(right(i) < A.size && A[i] < A[2*i + 2]):
-            swap(A[i], A[2*i + 2])
-            i = 2*i + 2
-        if(i > 0 && A[i] > A[parteIntera((i-1)/2)]):
-            swap(A[i], A[parteIntera((i-1)/2)])
-            i = parteIntera((i-1)/2)
-        temp2=i
+    while i > 0 and A[i] > A[parent(i)]:
+        swap(A[i], A[parent(i)])
+        i = parent(i)
 
-heapSort(Arr):
+heapDecreaseKey(A, i, k):
+    A[i] = k
+    maxHeapify(A, |A|, i)
+
+heapSort(A):
+    n = |A|
+    buildHeap(A)
+    for i = n-1 downto 1:
+        swap(A[0], A[i])
+        maxHeapify(A, i, 0)
     
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
 
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di correttezza basato sulla proprietà di heap e sulla fase di estrazione.
+
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato e l'algoritmo non esegue operazioni significative.
+
+    \item \textbf{Fase 1 (costruzione dell'heap):}
+    l'algoritmo trasforma l'array in un \textit{max-heap}.  
+    Per costruzione, ogni nodo interno soddisfa la proprietà:
+    \[
+    A[i] \ge A[\text{figli di } i]
+    \]
+    quindi il massimo elemento si trova sempre alla radice dell'heap.
+
+    \item \textbf{Fase 2 (estrazione del massimo):}
+    ad ogni iterazione:
+    \begin{itemize}
+        \item la radice (massimo elemento) viene scambiata con l'ultimo elemento dell'heap;
+        \item la dimensione dell'heap viene ridotta di uno;
+        \item si esegue \textit{heapify} per ristabilire la proprietà di max-heap.
+    \end{itemize}
+
+    Dopo ogni estrazione, l'elemento massimo non viene più modificato e si trova nella posizione corretta finale dell'array.
+
+    \item \textbf{Invariante:}
+    dopo $k$ estrazioni, gli ultimi $k$ elementi dell'array sono ordinati e contengono i $k$ valori massimi dell'array iniziale, in ordine crescente da sinistra verso destra.
+
+    \item \textbf{Fase 3 (terminazione):}
+    ripetendo il processo fino allo svuotamento dell'heap, tutti gli elementi vengono posizionati correttamente nell'array finale.
+
+    \item \textbf{Conclusione:}
+    per induzione sul numero di estrazioni, l'array risultante è ordinato in modo non decrescente. Quindi Heap Sort è corretto.
+\end{itemize}
 
 \subsection{Counting Sort}
-Il \textbf{Counting Sort} non confronta elementi ma conta le occorrenze di ciascun valore, adatto a numeri interi di piccolo intervallo.
-
+Il \textbf{Counting Sort} non confronta elementi ma conta le occorrenze di ciascun valore, adatto a numeri interi di piccolo intervallo.\\
+L'algoritmo una un'array chiamato \textbf{frequency array}, il quale indica quante volte occorre un valore in un array specifico (il valore corrisponde all'indice, infatti tale array ha tanti indici quanto il valore massimo dell'array da ordinare).\\
+Dopo aver costruito il frequency array, si effettua la somma cumulativa su di esso e poi, uno ad uno, si prendono gli elementi dall'array iniziale e si mettono nell'array secondario di return all'indice di valore:
+\[
+frequencyArray[A[i]] - 1
+\]
+Questo perche ogni valore, dopo la somma cumulativa, indica praticamente quanti elementi minori del valore estratto esistono nell'array di partenza.
 \paragraph{Tutti i casi:} $O(n + k)$ dove $k$ è il range dei valori.
 
 \begin{lstlisting}
-countingSort(A, k):
-    C = array[0..k] of 0
-    for i = 1 to n:
+countingSort(A):
+    n = A.length
+    k = maxValue(A)
+    B = array di dimensione n (da restituire)
+    C = array di dimensione k+1
+    C = [0,0,...,0]
+    for i = 0 to n-1:
         C[A[i]] = C[A[i]] + 1
-    for i = 1 to k:
-        C[i] = C[i] + C[i - 1]
-    for j = n downto 1:
-        B[C[A[j]]] = A[j]
-        C[A[j]] = C[A[j]] - 1
+    for i = 1 to k
+        C[i] = C[i] + C[i-1]
+    for i = n-1 downto 0:
+        B[C[A[i] - 1]] = A[i]
+        C[A[i]] = C[A[i]] - 1
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array risultante $B$ è ordinato in ordine non decrescente ed è una permutazione dell'array di input $A$.
 
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di correttezza basato sulle tre fasi dell'algoritmo.
+
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato e l'algoritmo non modifica la struttura dei dati.
+
+    \item \textbf{Fase 1 (conteggio delle occorrenze):} 
+    dopo la prima scansione, per ogni valore $i$ nell'intervallo considerato, l'array $C$ contiene il numero di occorrenze di $i$ in $A$.  
+    Ogni elemento contribuisce esattamente una volta al conteggio, quindi nessuna informazione viene persa.
+
+    \item \textbf{Fase 2 (somma cumulativa):}
+    dopo la trasformazione:
+    \[
+    C[i] = C[i] + C[i-1]
+    \]
+    si ottiene che $C[i]$ rappresenta il numero di elementi $\le i$.  
+    Questo implica che $C[i]$ indica la posizione finale massima occupata dagli elementi con valore $i$ nell'array ordinato.
+
+    \item \textbf{Fase 3 (costruzione dell'output):}
+    si percorre l'array $A$ da destra verso sinistra e ogni elemento $A[j]$ viene inserito in $B[C[A[j]]]$, dopo aver decrementato $C[A[j]]$.
+
+    A questo punto:
+    \begin{itemize}
+        \item ogni elemento viene inserito esattamente una volta in una posizione corretta;
+        \item le posizioni sono rispettate in modo crescente;
+        \item la scansione da destra garantisce la stabilità dell'algoritmo.
+    \end{itemize}
+
+    \item \textbf{Conclusione:} per induzione sulle fasi dell'algoritmo e sul numero di elementi inseriti, $B$ è una permutazione ordinata di $A$. Quindi Counting Sort è corretto.
+\end{itemize}
 
 \subsection{Radix Sort}
 Il \textbf{Radix Sort} ordina numeri digit per digit (es. per cifra decimale), partendo dalla cifra meno significativa, usando un algoritmo stabile come il Counting Sort.
@@ -951,6 +1087,35 @@ radixSort(A, d):
     for i = 1 to d:
         countingSortByDigit(A, i)
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di correttezza basato sull'ordinamento stabile delle cifre.
+
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato e l'algoritmo non esegue operazioni significative.
+
+    \item \textbf{Fase 1 (ordinamento per cifre):}
+    l'algoritmo ordina ripetutamente l'array rispetto alle singole cifre, partendo dalla cifra meno significativa (LSD) fino alla più significativa.
+
+    Ad ogni passo si utilizza un algoritmo di ordinamento stabile (ad esempio Counting Sort), quindi:
+    \[
+    \text{l'ordine relativo degli elementi con la stessa cifra viene preservato}
+    \]
+
+    \item \textbf{Fase 2 (propagazione dell'ordinamento):}
+    grazie alla stabilità, dopo aver ordinato rispetto alla cifra $i$-esima, l'array risulta ordinato rispetto alle $i$ cifre meno significative.
+
+    \item \textbf{Invariante:}
+    dopo aver processato le prime $k$ cifre (partendo dalla meno significativa), l'array è ordinato rispetto alle ultime $k$ cifre.
+
+    \item \textbf{Fase 3 (terminazione):}
+    dopo aver processato tutte le cifre del numero più lungo, ogni elemento è completamente ordinato rispetto a tutte le cifre.
+
+    \item \textbf{Conclusione:}
+    per induzione sul numero di cifre processate, l'array risultante è ordinato in modo non decrescente. Quindi Radix Sort è corretto.
+\end{itemize}
 
 
 \subsection{Bucket Sort}
@@ -960,16 +1125,52 @@ Il \textbf{Bucket Sort} divide gli elementi in “secchi” (bucket) in base al 
 \paragraph{Caso Pessimo:} $O(n^2)$ (tutti gli elementi nello stesso bucket)
 
 \begin{lstlisting}
-bucketSort(A):
-    n = length(A)
-    create n empty buckets B[0..n-1]
-    for i = 0 to n - 1:
-        index = floor(n * A[i])
-        insert A[i] into B[index]
-    for i = 0 to n - 1:
-        insertionSort(B[i])
-    concatenate(B[0..n-1])
+bucketSort(A):  
+    n = len(A)
+    if(n <= 1):
+        return A
+    max_val = max(A)
+    B = []
+    for i = 1 to n:
+        B.push([])
+    # B = [[],[],...,[]]
+    for num of A:
+        normalized = num / (max_val + 1)
+        bucketNumber = floor(normalized * n)
+        B[bucketNumber].push(num)
+    for bucket of B:
+        insertionSort(bucket) 
 \end{lstlisting}
+\subsubsection{Teorema di correttezza}
+Al termine dell'algoritmo, l'array sarà ordinato in ordine non decrescente.
+
+\paragraph{Dimostrazione:}
+Consideriamo l'invariante di correttezza basato sulla distribuzione negli intervalli (bucket) e sull'ordinamento locale.
+
+\begin{itemize}
+    \item \textbf{Caso base:} se l'array ha lunghezza $\le 1$, è già ordinato e l'algoritmo non esegue operazioni significative.
+
+    \item \textbf{Fase 1 (distribuzione nei bucket):}
+    gli elementi dell'array vengono distribuiti in $n$ bucket in base al loro valore.
+    Ogni bucket rappresenta un intervallo disgiunto del dominio dei valori.
+
+    Per costruzione:
+    \[
+    \text{se } x \text{ è in } B_i \text{ e } y \text{ è in } B_j \text{ con } i < j, \text{ allora } x \le y
+    \]
+
+    \item \textbf{Fase 2 (ordinamento locale):}
+    ogni bucket viene ordinato individualmente utilizzando un algoritmo corretto (ad esempio Insertion Sort).
+
+    \item \textbf{Invariante:}
+    dopo aver ordinato tutti i bucket, ogni bucket contiene elementi ordinati e tutti gli elementi di un bucket precedente sono minori o uguali a quelli dei bucket successivi.
+
+    \item \textbf{Fase 3 (concatenazione):}
+    concatenando i bucket in ordine crescente si ottiene un array globale ordinato.
+
+    \item \textbf{Conclusione:}
+    poiché ogni bucket è ordinato e i bucket rispettano l'ordine globale, l'array risultante è ordinato in modo non decrescente. Quindi Bucket Sort è corretto.
+\end{itemize}
 
 \section{Linguaggio di MAO / MiniMAO}
 \subsection{Espressioni semantiche collaterali e pure}
@@ -1593,7 +1794,7 @@ Vediamo un esempio, diciamo che:
                 v.status = B
                 v.pi = u
                 v.d = u.d + 1
-            Enqueue(Q,v)
+                Enqueue(Q,v)
         u.status = C
 \end{lstlisting}
 \paragraph{Spiegazione del codice:} si inizializza tutto come si deve, il nodo sorgente ovviamente non ha predecessori ed è il primo da visitare (primo nella coda).\\
