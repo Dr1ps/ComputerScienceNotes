@@ -2061,7 +2061,7 @@ DIJKSTRA(G,w (funzione peso),s (sorgente)):
         u = EXTRACT-MIN(PQ)
         for all v in ADJ(u):
             dnew = u.d + w(u,v)
-            if(dnew > v.d):
+            if(dnew < v.d):
                 v.d = dnew
                 v.pi = u
                 DECREASE-KEY(PQ, v, dnew)
