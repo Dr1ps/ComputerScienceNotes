@@ -6,6 +6,7 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{listings}
 
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
@@ -557,25 +558,107 @@ G = [n1,n2,n3,n4]
 \section{Domande da esame}
 \subsection{Qual'è la differenza tra var, let e const?}
 
-\subsection{Qual'è la differenza tra \_\_proto\_\_ e .prototype?}
+La prima differenza riguarda lo scoping:
+\begin{itemize}
+  \item \textbf{var:} visibile in tutta la funzione anche se dichiarato in un blocco più interno. (ma non esce mai fuori da una funzione). Se dichiarato in un costrutto non di funzione allora è visibile all'esterno di tale blocco.
+  \item \textbf{let e const:} scoping a blocchi, non visibili all'esterno del blocco in cui sono stati dichiarati.
+\end{itemize}
+Continuando, si ha differenza riguardo l'hoisting:
+\begin{itemize}
+  \item \textbf{var:} la variabile viene hoistata e può essere utilizzata prima della dichiarazione, ma non essendo ancora stata sottoposta ad assegnazioni il valore è "undefined"
+  \item \textbf{let e const:} la variabile viene hoistata ma non può essere usata finche non si effettua un'assegnazione. Lo stato in cui tale variabile esiste ma non può essere usata si chiama \textbf{Temporal Dead Zone (TDZ)}.
+\end{itemize}
+Quindi si può dire che:
+\begin{itemize}
+  \item \textbf{var:} function scope
+  \item \textbf{let e const:} block scope
+\end{itemize}
+Inoltre, const non può essere riassegnata al contrario delle altre due.\\
+Infine, solo var permette la ridichiarazione, ovvero dichiarare una variabile con lo stesso nome e la stessa keyword\\
+
+\subsection{Qual è la differenza tra \_\_proto\_\_ e .prototype?}
+In JavaScript esiste un sistema di ereditarietà prototipale basato sui prototipi.\\
+La proprietà \texttt{prototype} appartiene alle funzioni costruttrici e alle classi, e rappresenta l'oggetto che verrà utilizzato come prototipo delle istanze create tramite la keyword \texttt{new}.\\
+La proprietà \texttt{\_\_proto\_\_}, invece, appartiene alle singole istanze e rappresenta il riferimento al prototipo effettivo dell'oggetto.\\
+Le due proprietà sono strettamente collegate: quando viene creata un'istanza tramite una classe o una funzione costruttrice, il valore di \texttt{\_\_proto\_\_} dell'istanza coincide con il valore di \texttt{prototype} della classe o funzione utilizzata per crearla.\\
+In altre parole:
+\[
+\texttt{istanza.\_\_proto\_\_ === Classe.prototype}
+\]
+restituisce \texttt{true}.\\
+Per esempio:
+\begin{verbatim}
+class User {}
+const u = new User();
+console.log(u.__proto__ === User.prototype);
+\end{verbatim}
+In questo caso il risultato sarà \texttt{true}.\\
+Il meccanismo dei prototipi permette di condividere metodi e proprietà tra tutte le istanze senza duplicare il codice in memoria.\\
+È importante notare che \texttt{\_\_proto\_\_} è considerata una proprietà legacy; nelle applicazioni moderne si preferisce utilizzare metodi standard come:
+\begin{verbatim}
+Object.getPrototypeOf(obj)
+\end{verbatim}
+e
+\begin{verbatim}
+Object.setPrototypeOf(obj, proto)
+\end{verbatim}
 
 \subsection{Come funzionano gli access modifier e quali sono?}
 
-I modificatori d'accesso permettono appunto di modificare la visibilità di un attributo di una classe e sono:
+I modificatori d'accesso permettono appunto di modificare la visibilità di attributi e metodi di una classe e sono:
 \begin{itemize}
   \item \textbf{Private:} rende un attributo accessibile solo all'interno della classe.
   \item \textbf{Public:} rende un attributo accessibile anche al di fuori della classe.
   \item \textbf{Protected:} rende un attributo accessibile solo all'interno della classe e delle sottoclassi.
 \end{itemize}
+Questi possono essere utilizzati con le loro rispettive keyword da inserire prima dell'identificativo di un attributo o un metodo.
 \subsection{A cosa servono getter e setter?}
+I metodi getter servono per restituire i valori degli attributi di un istanza, i metodi setter invece servono per la modifica.\\
+L'esistenza di questi metodi garantisce l'information hiding e l'incapsulamento.\\
+Si crea un layer di controllo che permette di rendere più moderato il processo di restituzione valori e modifica.\\
+Per esempio, se vogliamo aggiornare un campo con un nuovo valore bisogna controllare che tale valore sia valido.\\
+Come ulteriore esempio, potremmo rifiutare di restituire un valore se si avvera una condizione, se per esempio non si possiedono le credenziali giuste.
+
 
 \subsection{Cosa significa che una classe è una sottoclasse o che una classe estende un’altra classe?}
 
 \subsection{Qual'è la differenza tra semantica per valore e semantica per riferimento?}
 
 \subsection{Cos’è l’hoisting?}
+L'hoisting consiste nel comportamento per cui le dichiarazioni di variabili e funzioni vengono "spostate" logicamente all'inizio del loro scope durante la fase di compilazione.\\
+Ogni dichiarazione è spostata all'inizio dello scope.\\
+Basta ricordare come le funzioni possono essere chiamate con una chiamata scritta "prima" della sua definizione.\\
+Facciamo un esempio di come l'hoisting "sposta" le dichiarazioni all'inizio dello scope:
+\begin{lstlisting}
+  console.log(x)
+  var x = 10
+\end{lstlisting}
+Questo al momento di compilazione / interpretazione diventa:
+\begin{lstlisting}
+  var x
+  console.log(x)
+  x = 10
+\end{lstlisting}
+Nel caso delle funzioni però non viene spostata solo la dichiarazione, ma TUTTA la definizione:
+\begin{lstlisting}
+  greet()
+  function greet() {
+    console.log("hi")
+  }
+\end{lstlisting}
+Diventa:
+\begin{lstlisting}
+  function greet() {
+    console.log("hi")
+  }
+  greet()
+\end{lstlisting}
 
 \subsection{Cosa sono le interfacce e a cosa servono?}
+Le interfacce sono \textbf{tipi astratti} che definiscono una struttura / logica che delle istanze devono seguire.\\
+In JavaScript non esistono le interfacce e al tempo di run tramite TS spariscono.\\
+le interfacce specificano le caratteristiche di tale struttura senza però implementarla, senza attribuire valori o implementare metodi.\\
+
 
 \subsection{Cosa sono i generics e a cosa servono?}
 
@@ -586,6 +669,11 @@ I modificatori d'accesso permettono appunto di modificare la visibilità di un a
 \subsection{Come si chiama il fatto che in TypeScript una variabile non possa cambiare tipo?}
 
 \subsection{Differenza tra any e unknown?}
+In TypeScript questi due tipi indicano che l'oggetto non ha un tipo specifico ma ci sono particolari differenze:
+\begin{itemize}
+  \item \textbf{Any:} accetta un qualsiasi tipo e quindi disabilita il type checking
+  \item \textbf{Unknown:} indica che non si conosce ancora quale tipo potrebbe assumere tale oggetto e servono quindi dei controlli sul tipo prima di eseguire una certa operazione.
+\end{itemize}
 
 \subsection{Cos’è un modulo e a cosa serve?}
 
@@ -599,8 +687,22 @@ I modificatori d'accesso permettono appunto di modificare la visibilità di un a
 
 \subsection{Cos’è una Map?}
 
-\subsection{Cosa sono le espressioni regolari (Regex)?}
+Map in TypeScript e JavaScript è una struttura dati / collezione che memorizza associazioni chiave-valore.\\
+Molto simile ad un oggetto, ma è flessibile e moderna.\\
+Una differenza sta nei tipi accettabili delle chiavi:
+\begin{itemize}
+  \item \textbf{Oggetto qualsiasi:} le chiavi possono essere solo di tipo string o symbol.
+  \item \textbf{Map:} le chiavi possono essere di qualsiasi tipo.
+\end{itemize}
 
 \subsection{Dove vengono salvati metodi e attributi ereditati di una classe?}
-
+Gli attributi vengono salvati direttamente nell'istanza, nel prototype vengono salvati solo i metodi, sia i propri che quelli ereditati.\\
+I metodi si possono accedere appunto da i due campi dei prototipi visti in precedenza e gli attributi dal metodo:
+\[
+Object.keys(obj)
+\]
+oppure:
+\[
+Object.getOwnPropertyNames(obj)
+\]
 \end{document}
