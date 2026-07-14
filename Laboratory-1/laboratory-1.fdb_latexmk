@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1779715695.26427 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Laboratory-1/laboratory-1.tex" "laboratory-1.pdf" "laboratory-1" 1779715702.50252 0
+["pdflatex"] 1784038448.64429 "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Laboratory-1/laboratory-1.tex" "laboratory-1.pdf" "laboratory-1" 1784038452.76259 0
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779203670 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1773676418 14064 0755e81df0a3f44f7f1535cca21b2c26 ""
   "C:/Users/Perna/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773675697 13333849 f127fb83bdd447a9c976cfbfaa462a32 ""
@@ -196,11 +196,11 @@
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Perna/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Laboratory-1/laboratory-1.tex" 1779715690 26978 d41caafcadb9d3f56002b03c4f32b18d ""
-  "laboratory-1.aux" 1779715701 10137 05bcbf5a185dd5536cd652331beffc61 "pdflatex"
-  "laboratory-1.out" 1779715701 13666 a1c8d2555afd6914cc82fd3d01d948a5 "pdflatex"
-  "laboratory-1.tex" 1779715690 26978 d41caafcadb9d3f56002b03c4f32b18d ""
-  "laboratory-1.toc" 1779715701 6355 9bf1b7e0d1b7c1d7667de9c296740e06 "pdflatex"
+  "c:/Users/Perna/OneDrive/Documenti/Desktop/VSCode/ComputerScienceNotes/Laboratory-1/laboratory-1.tex" 1784038442 28101 32a8ec5915ae0114018eaf0240762ba9 ""
+  "laboratory-1.aux" 1784038452 10137 b48e3affa05863099a757102ba032eb2 "pdflatex"
+  "laboratory-1.out" 1784038452 13666 a1c8d2555afd6914cc82fd3d01d948a5 "pdflatex"
+  "laboratory-1.tex" 1784038442 28101 32a8ec5915ae0114018eaf0240762ba9 ""
+  "laboratory-1.toc" 1784038452 6355 b27e92c3fe1f3ea489e673f01951974c "pdflatex"
   (generated)
   "laboratory-1.aux"
   "laboratory-1.log"

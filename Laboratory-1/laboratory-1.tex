@@ -621,8 +621,18 @@ Come ulteriore esempio, potremmo rifiutare di restituire un valore se si avvera 
 
 
 \subsection{Cosa significa che una classe è una sottoclasse o che una classe estende un’altra classe?}
+In JavaScript dire che una classe è una sottoclasse o che estende un'altra classe significa che la prima classe eredita proprietà e metodi della seconda.\\
+La classe da cui si eredita si chiama superclasse (o classe padre), mentre quella che eredita si chiama sottoclasse (o classe figlia).\\
+Il costruttore della sottoclasse richiama il costruttore della superclasse per evitare di riscrivere le stesse cose tramite il metodo super(...args).\\
+In pratica la parola chiave usata "extends" allunga la prototype chain collegando i prototype della superclasse e sottoclasse, si crea un riferimento nel prototype della sottoclasse che riporta a quello della superclasse. 
+
 
 \subsection{Qual'è la differenza tra semantica per valore e semantica per riferimento?}
+
+In JavaScript tutti i passaggi avvengono per valore, ma per gli oggetti il valore copiato è un riferimento.\\
+Quando si assegna una variabile ad un'altra le due variabili rimangono indipendenti e modificare la prima non significa modificare la seconda.\\
+Negli oggetti invece si crea un riferimento al secondo oggetto e se dovessimo modificare il campo che è stato assegnato ad un oggetto si andrebbe a modificare anche l'oggetto stesso.
+
 
 \subsection{Cos’è l’hoisting?}
 L'hoisting consiste nel comportamento per cui le dichiarazioni di variabili e funzioni vengono "spostate" logicamente all'inizio del loro scope durante la fase di compilazione.\\
