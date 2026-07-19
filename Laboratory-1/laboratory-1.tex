@@ -669,14 +669,23 @@ Le interfacce sono \textbf{tipi astratti} che definiscono una struttura / logica
 In JavaScript non esistono le interfacce e al tempo di run tramite TS spariscono.\\
 le interfacce specificano le caratteristiche di tale struttura senza però implementarla, senza attribuire valori o implementare metodi.\\
 
-
 \subsection{Cosa sono i generics e a cosa servono?}
+I Generics sono una funzionalità di TypeScript che permette di scrivere codice riutilizzabile e tipizzato, senza dover specificare in anticipo il tipo dei dati con cui lavorerà. In pratica, consentono di creare funzioni, classi e interfacce che possono operare su tipi diversi mantenendo comunque il controllo del tipo a compile-time.\\
+Il vantaggio principale è evitare duplicazioni di codice e aumentare la sicurezza del programma. Ad esempio, invece di scrivere una funzione per le stringhe e una per i numeri, si scrive una sola funzione generica che funziona con qualsiasi tipo.
 
 \subsection{Qual'è la differenza tra tipizzazione in JavaScript e TypeScript?}
+Le differenze principali sono queste:
+\begin{itemize}
+  \item \textbf{JavaScript:} tipizzazione dinamica, weakly typed, il tipo delle variabili è deciso durante il run-time e una variabile può assumere diversi tipi di valore nel corso dell'esecuzione.
+  \item \textbf{TypeScript:} tipizzazione statica, strongly typed, il tipo delle variabili è deciso al compile-time e c'è un type-checking precoce che segnala eventuali errori.
+\end{itemize}
+In pratica TypeScript offre maggiore sicurezza, JavaScript garantisce più flessibilità.
 
 \subsection{Se assegno una stringa a una variabile in JavaScript, posso poi assegnarle un numero?}
+Si, appunto per il discorso della tipizzazione dinamica.
 
 \subsection{Come si chiama il fatto che in TypeScript una variabile non possa cambiare tipo?}
+Tipizzazione statica. 
 
 \subsection{Differenza tra any e unknown?}
 In TypeScript questi due tipi indicano che l'oggetto non ha un tipo specifico ma ci sono particolari differenze:
@@ -686,13 +695,19 @@ In TypeScript questi due tipi indicano che l'oggetto non ha un tipo specifico ma
 \end{itemize}
 
 \subsection{Cos’è un modulo e a cosa serve?}
-
+Un file JS o TS può esportare il suo contenuto, come funzioni, costanti e altro, per renderlo disponibile ad altri file. Ogni volta che un file esporta qualcosa diventa un modulo.\\
+I moduli servono per rendere riutilizzabili parti di codice e organizzare il progetto in molte parti indipendenti. (Anche i file che importano solo moduli)
 \subsection{Quale parola chiave si usa per esportare una classe?}
-
+Export, import serve invece per importare.
 \subsection{Come si fa a fare in modo che una variabile possa assumere solo determinati valori specifici?}
-
+In tal caso si usa un \textbf{literal type}, ovvero una cosa del genere (TypeScript):
+\begin{lstlisting}
+  let temp = "hi" | 21 | true
+\end{lstlisting}
+Altrimenti si possono usare gli enum.
 \subsection{Qual'è la differenza tra interface extends interface e class extends class?}
-
+Interface extends interface serve solo per realizzare dei tipi, viene eliminata in fase di compilazione e non usa la prototype chain.\\
+Invece class extends class crea una vera e propria ereditarietà ed usa la prototype chain.
 \subsection{Se ho un oggetto di una classe Figlio che estende una classe che implementa un’interfaccia, che cosa si trova nel prototype?}
 
 \subsection{Cos’è una Map?}
@@ -704,6 +719,8 @@ Una differenza sta nei tipi accettabili delle chiavi:
   \item \textbf{Oggetto qualsiasi:} le chiavi possono essere solo di tipo string o symbol.
   \item \textbf{Map:} le chiavi possono essere di qualsiasi tipo.
 \end{itemize}
+In TypeScript si può specificare il tipo delle chiavi e dei valori di una Map tramite i suoi generics.\\
+I metodi principali sono set, get, has, delete.
 
 \subsection{Dove vengono salvati metodi e attributi ereditati di una classe?}
 Gli attributi vengono salvati direttamente nell'istanza, nel prototype vengono salvati solo i metodi, sia i propri che quelli ereditati.\\
@@ -715,4 +732,403 @@ oppure:
 \[
 Object.getOwnPropertyNames(obj)
 \]
+\subsection{Come modificare metodi e aggiungerne tramite prototype?}
+Per modificare un metodo (sovrascrivere) prima si salva il metodo precedente per evitare di ridefinirlo tutto e poi si fa cosi:
+\begin{lstlisting}
+  const vecchioSet = Map.prototype.set;
+  Map.prototype.set = function(key, value) {
+    console.log(`Inserisco ${key} = ${value}`);
+
+    return vecchioSet.call(this, key, value);
+  };
+\end{lstlisting}
+Invece, per aggiungere qualcosa basta fare cosi:
+\begin{lstlisting}
+  Map.prototype.print = function() {
+    for (const [key, value] of this) {
+        console.log(key, value);
+    }
+  };
+\end{lstlisting}
+
+\subsection{Qual è la differenza tra funzione normale e arrow function?}
+
+Entrambe rappresentano funzioni, ma hanno differenze importanti soprattutto riguardo al comportamento di \texttt{this}.
+
+Una funzione normale possiede un proprio \texttt{this}, il cui valore dipende da come viene chiamata la funzione.
+
+\begin{verbatim}
+const persona = {
+    nome: "Mario",
+    saluta: function() {
+        console.log(this.nome);
+    }
+};
+
+persona.saluta(); // Mario
+\end{verbatim}
+
+Una arrow function invece non crea un proprio \texttt{this}, ma eredita quello dello scope esterno (lexical this).
+
+\begin{verbatim}
+const saluta = () => {
+    console.log(this);
+};
+\end{verbatim}
+
+Differenze principali:
+
+\begin{itemize}
+    \item Le funzioni normali hanno un proprio \texttt{this}, le arrow function no.
+    \item Le funzioni normali possono essere usate come costruttori con \texttt{new}, le arrow function no.
+    \item Le funzioni normali possiedono un oggetto \texttt{prototype}, le arrow function no.
+\end{itemize}
+
+
+\subsection{Come funziona il this in JavaScript?}
+
+\texttt{this} rappresenta l'oggetto che sta eseguendo una funzione. Il suo valore dipende dal contesto di chiamata.
+
+Esempio come metodo di un oggetto:
+
+\begin{verbatim}
+const persona = {
+    nome: "Luca",
+    parla() {
+        console.log(this.nome);
+    }
+};
+
+persona.parla();
+\end{verbatim}
+
+In questo caso \texttt{this} indica l'oggetto \texttt{persona}.
+
+Nelle classi, \texttt{this} indica l'istanza corrente:
+
+\begin{verbatim}
+class Persona {
+    constructor(nome) {
+        this.nome = nome;
+    }
+}
+\end{verbatim}
+
+Il valore di \texttt{this} può essere modificato tramite:
+
+\begin{itemize}
+    \item \texttt{call()} esegue una funzione impostando manualmente \texttt{this};
+    \item \texttt{apply()} funziona come \texttt{call()} ma riceve gli argomenti come array;
+    \item \texttt{bind()} crea una nuova funzione con \texttt{this} fissato.
+\end{itemize}
+
+
+\subsection{Qual è la differenza tra shallow copy e deep copy?}
+
+La shallow copy è una copia superficiale di un oggetto: vengono copiati solo i valori del primo livello, mentre gli oggetti interni rimangono riferimenti condivisi.
+
+Esempio:
+
+\begin{verbatim}
+const a = {
+    nome: "Mario",
+    indirizzo: {
+        citta: "Roma"
+    }
+};
+
+const b = {...a};
+\end{verbatim}
+
+Modificando \texttt{b.indirizzo.citta} viene modificato anche \texttt{a.indirizzo.citta}.
+
+La deep copy invece crea una copia completa ricorsiva di tutti gli oggetti interni.
+
+Esempio:
+
+\begin{verbatim}
+const b = structuredClone(a);
+\end{verbatim}
+
+In questo caso gli oggetti interni non sono condivisi.
+
+
+\subsection{Qual è la differenza tra == e ===?}
+
+L'operatore \texttt{==} effettua un confronto debole e permette la conversione automatica dei tipi.
+
+Esempio:
+
+\begin{verbatim}
+5 == "5" // true
+\end{verbatim}
+
+L'operatore \texttt{===} effettua un confronto stretto e confronta sia valore che tipo.
+
+\begin{verbatim}
+5 === "5" // false
+\end{verbatim}
+
+Generalmente si preferisce utilizzare \texttt{===} perché evita conversioni automatiche.
+
+
+\subsection{Cos'è il type coercion in JavaScript?}
+
+Il type coercion è la conversione automatica dei tipi effettuata da JavaScript durante alcune operazioni.
+
+Esempio:
+
+\begin{verbatim}
+"5" + 2 // "52"
+"5" - 2 // 3
+\end{verbatim}
+
+Nel primo caso il numero viene convertito in stringa perché l'operatore \texttt{+} concatena stringhe.
+
+Nel secondo caso la stringa viene convertita in numero.
+
+
+\subsection{Qual è la differenza tra null e undefined?}
+
+Entrambi rappresentano un'assenza di valore, ma hanno significati diversi.
+
+\texttt{undefined} indica che una variabile esiste ma non ha ancora ricevuto un valore.
+
+\begin{verbatim}
+let x;
+console.log(x); // undefined
+\end{verbatim}
+
+\texttt{null} indica invece un valore vuoto assegnato intenzionalmente.
+
+\begin{verbatim}
+let persona = null;
+\end{verbatim}
+
+
+\subsection{Cosa sono i tipi union e intersection in TypeScript?}
+
+Un union type permette a una variabile di assumere più tipi diversi.
+
+\begin{verbatim}
+let valore: string | number;
+\end{verbatim}
+
+La variabile può contenere sia una stringa sia un numero.
+
+Un intersection type invece combina più tipi e richiede tutte le proprietà dei tipi uniti.
+
+\begin{verbatim}
+interface Persona {
+    nome: string;
+}
+
+interface Studente {
+    matricola: number;
+}
+
+type PersonaStudente = Persona & Studente;
+\end{verbatim}
+
+Il nuovo tipo deve contenere sia \texttt{nome} sia \texttt{matricola}.
+
+
+\subsection{Cos'è il type inference in TypeScript?}
+
+Il type inference è la capacità di TypeScript di dedurre automaticamente il tipo di una variabile senza dichiararlo esplicitamente.
+
+Esempio:
+
+\begin{verbatim}
+let numero = 10;
+\end{verbatim}
+
+TypeScript deduce automaticamente:
+
+\begin{verbatim}
+number
+\end{verbatim}
+
+equivalente a:
+
+\begin{verbatim}
+let numero: number = 10;
+\end{verbatim}
+
+
+\subsection{Qual è la differenza tra type e interface in TypeScript?}
+
+Entrambi permettono di definire nuovi tipi.
+
+Una interface è principalmente utilizzata per descrivere la struttura di oggetti.
+
+\begin{verbatim}
+interface Persona {
+    nome: string;
+}
+\end{verbatim}
+
+Un type alias è più generale e permette anche di creare union e altri tipi complessi.
+
+\begin{verbatim}
+type Risultato = string | number;
+\end{verbatim}
+
+Le interface possono essere estese e possono essere dichiarate più volte per essere unite automaticamente.
+
+
+\subsection{Cos'è una classe astratta (abstract class)?}
+
+Una classe astratta è una classe che non può essere istanziata direttamente.
+
+Serve come base per altre classi.
+
+\begin{verbatim}
+abstract class Animale {
+    abstract verso(): void;
+}
+\end{verbatim}
+
+Le classi figlie devono implementare i metodi astratti.
+
+\subsection{Cosa succede quando TypeScript viene compilato in JavaScript?}
+
+TypeScript viene trasformato in JavaScript tramite compilazione.
+
+Durante questo processo vengono eliminati tutti gli elementi che esistono solo a compile-time:
+
+\begin{itemize}
+    \item tipi;
+    \item interface;
+    \item generics;
+    \item type alias.
+\end{itemize}
+
+Questo processo viene chiamato \textbf{type erasure}.
+
+Le interface, ad esempio, non esistono a runtime.
+
+
+\subsection{Cos'è il runtime e cos'è il compile-time?}
+
+Il compile-time è il momento in cui il compilatore analizza il codice.
+
+TypeScript controlla:
+
+\begin{itemize}
+    \item correttezza dei tipi;
+    \item errori di assegnazione;
+    \item compatibilità tra interfacce.
+\end{itemize}
+
+Il runtime è invece il momento in cui il codice JavaScript viene eseguito.
+
+
+\subsection{Differenza tra Map e Object}
+
+Entrambi rappresentano strutture chiave-valore.
+
+Gli oggetti utilizzano principalmente stringhe e simboli come chiavi.
+
+Una Map permette invece di usare qualsiasi tipo come chiave.
+
+\begin{verbatim}
+const m = new Map();
+
+m.set(1, "Mario");
+m.set({}, "valore");
+\end{verbatim}
+
+Le Map inoltre:
+
+\begin{itemize}
+    \item mantengono l'ordine di inserimento;
+    \item possiedono metodi come \texttt{set()}, \texttt{get()} e \texttt{has()};
+    \item possiedono la proprietà \texttt{size}.
+\end{itemize}
+
+
+\subsection{Cos'è una Promise e come funziona l'asincronia in JavaScript?}
+
+Una Promise rappresenta un valore che sarà disponibile nel futuro.
+
+Possiede tre stati:
+
+\begin{itemize}
+    \item pending;
+    \item fulfilled;
+    \item rejected.
+\end{itemize}
+
+Esempio:
+
+\begin{verbatim}
+const p = new Promise((resolve, reject) => {
+    resolve("ok");
+});
+\end{verbatim}
+
+Le Promise vengono gestite tramite:
+
+\begin{verbatim}
+then()
+catch()
+\end{verbatim}
+
+oppure tramite la sintassi:
+
+\begin{verbatim}
+async/await
+\end{verbatim}
+
+
+\subsection{Cos'è l'event loop?}
+
+JavaScript è un linguaggio single-threaded, quindi possiede un solo call stack.
+
+L'event loop permette di gestire operazioni asincrone controllando quando il call stack è libero e inserendo le callback pronte per essere eseguite.
+
+Il meccanismo comprende:
+
+\begin{itemize}
+    \item Call Stack;
+    \item Web API;
+    \item Callback Queue;
+    \item Event Loop.
+\end{itemize}
+
+
+\subsection{Differenza tra stack, heap e garbage collector}
+
+Lo stack è una zona di memoria utilizzata per:
+
+\begin{itemize}
+    \item chiamate di funzione;
+    \item variabili primitive.
+\end{itemize}
+
+L'heap è utilizzato per memorizzare:
+
+\begin{itemize}
+    \item oggetti;
+    \item array;
+    \item strutture dati complesse.
+\end{itemize}
+
+Il garbage collector libera automaticamente la memoria occupata da oggetti non più raggiungibili.
+
+
+\subsection{Cosa sono i decorator in TypeScript?}
+
+I decorator sono funzioni speciali che permettono di modificare o aggiungere comportamento a classi, metodi o proprietà.
+
+Esempio:
+
+\begin{verbatim}
+@Log
+class Persona {}
+\end{verbatim}
+
+Sono utilizzati soprattutto in framework come Angular.
+
 \end{document}
