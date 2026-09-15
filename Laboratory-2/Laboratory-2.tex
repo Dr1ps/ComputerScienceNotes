@@ -1,0 +1,157 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{listing}
+\usepackage{listings}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{}
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\title{Laboratorio 2}
+\author{}
+\date{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Laboratorio 2}     % Center
+\fancyhead[R]{2026/2027}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduzione}
+In questo corso lavoreremo con programmi vicini al linguaggio macchina.\\
+Lavoreremo inoltre con:
+\begin{itemize}
+    \item UNIX
+    \item thread
+    \item processi
+    \item programmazione di sistema 
+\end{itemize}
+
+\section{Il terminale UNIX}
+Il \textbf{terminale} è una interfaccia testuale per dialogare con il sistema.\\
+Dentro il terminale gira una \textbf{shell}, ovvero il programma che interpreta i comandi.\\
+Il terminale mostra il \textbf{prompt}, riceve i comandi e visualizza l'output.
+\subsection{Comandi}
+\subsubsection{Struttura base comandi Linux}
+Esiste una struttura base per molti comandi, ovvero questa:
+\begin{center}
+    comando + opzione + argomento + (opzione + argomento)
+\end{center}
+per esempio:
+\begin{lstlisting}
+    $ gcc -Wall hello.c -o hello
+\end{lstlisting}
+\subsubsection{--help e man}
+\begin{lstlisting}
+    $ gcc --help
+    $ man gcc
+\end{lstlisting}
+Entrambi questi comandi aiutano a comprendere specifici comandi in modi diversi, --help è un aiuto generico mentre "man" è il manuale.
+\subsubsection{pwd}
+\begin{lstlisting}
+    $ pwd
+\end{lstlisting}
+Il simbolo $\$$ indica che la shell è pronta a ricevere un comando (potrebbe non essere $\$$ a volte).\\
+\textbf{pwd} è il comando "print working directory" e mostra la posizione della directory corrente all'interno del \textbf{file system}.\\
+Il file system inizia dalla \textbf{root} ("$/$") e si articola nella directory, formando un \textbf{path}, ovvero un percorso attraverso directory, dove ogni passaggio è separato da "$/$" (potrebbe variare in altri ambienti).\\
+Esistono due tipi di path:
+\begin{itemize}
+    \item \textbf{Assoluto:} parte dalla root.
+    \item \textbf{Relativo:} parte dalla directory corrente.
+\end{itemize}
+\subsubsection{ls}
+\begin{lstlisting}
+    $ ls
+\end{lstlisting}
+\textbf{ls} elenca tutto il contenuto della directory corrente, directory e file.\\
+Può essere usata con alcuni \textbf{attributi}, aggiungibili con un "dash" (-) come in questo caso:
+\begin{lstlisting}
+    $ ls -a
+\end{lstlisting}
+Ecco gli attributi:
+\begin{itemize}
+    \item \textbf{a}: include tutti gli elementi nascosti
+    \item \textbf{l}: include informazioni avanzate (data, grandezza...)
+\end{itemize}
+\subsubsection{cd}
+\begin{lstlisting}
+    $ cd esercizi
+    $ cd /users/gabri/esercizi
+\end{lstlisting}
+\textbf{cd} significa "change directory" e si sposta nella directory specificata da un path relativo o assoluto.\\
+Percorsi speciali:
+\begin{itemize}
+    \item \textbf{Directory corrente}: specificato da un punto, ha lo stesso valore di pwd.
+    \begin{lstlisting}
+       $ cd . 
+    \end{lstlisting}
+    \item \textbf{Directory padre}: specificato da un doppio punto.
+    \begin{lstlisting}
+       $ cd .. 
+    \end{lstlisting}
+\end{itemize}
+\subsubsection{mkdir}
+\begin{lstlisting}
+    $ mkdir esercizi
+\end{lstlisting}
+\textbf{mkdir} significa "make directory" e crea una directory del nome specificato nella cartella corrente.
+\section{Linguaggio C}
+Il linguaggio \textbf{C} è un linguaggio compilato, pertanto, prima di eseguire un file bisogna convertirlo in binario.\\
+Esistono diversi standard C: C89, C95, C99, C11, C17, C23.\\
+\subsection{Compilatore}
+Il compilatore più conosciuto e usato per C è \textbf{gcc}, ovvero "GNU C Compiler".
+\begin{lstlisting}
+    gcc hello.c -o hello
+\end{lstlisting}
+In questo caso, il comando:
+\begin{itemize}
+    \item compila il file "hello.c"
+    \item rinomina l'eseguibile come "hello"
+\end{itemize}
+Ogni programma eseguito ritorna un risultato per determinare se è terminato con successo o meno, si ottiene cosi:
+\begin{lstlisting}
+    $ gcc hello.c
+    $ hello.c
+    $ echo $?
+    0
+\end{lstlisting}
+\subsubsection{Warnings}
+I \textbf{warnings} sono importanti e non vanno ignorati, per compilare e stamparli tutti si fa cosi:
+\begin{lstlisting}
+    $ gcc -Wall hello.c
+\end{lstlisting}
+Ogni warning contiene un messaggio e la location (riga e carattere) di esso.
+\subsection{Librerie}
+Nei programmi in C è possibile utilizzare delle \textbf{direttive di preprocessazione} (o del preprocessore) che permettono di importare funzioni e strumenti utili allo svolgimento del programma:
+\begin{lstlisting}
+    #include <stdio.h>
+\end{lstlisting}
+\subsection{printf}
+\subsubsection{Placeholders}
+\subsection{Variabili}
+In C possiamo usare le \textbf{variabili}. Si possono inizializzare ad un valore di un tipo specifico, assegnato al momento della \textbf{dichiarazione}.
+\begin{lstlisting}
+    int x;
+    x = 32
+\end{lstlisting}
+\subsection{Commenti}
+I commenti in C possono essere inseriti in vari modi:
+\begin{itemize}
+    \item Commenti su una riga: aperti da "//", non vengono chiusi
+    \item Commenti su più righe: delimitati da "/*" e da "*/".
+\end{itemize}
+\end{document}
