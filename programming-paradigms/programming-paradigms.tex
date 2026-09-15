@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{listing}
+\usepackage{listings}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{}
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\title{Paradigmi di programmazione}
+\author{}
+\date{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Paradigmi di programmazione}     % Center
+\fancyhead[R]{2026/2027}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduzione}
+\paragraph{Email Docente:} \href{chiara.bodei@unipi.it}{chiara.bodei@unipi.it}
+\paragraph{E-Learning:} \href{https://elearning.di.unipi.it/course/view.php?id=1167}{https://elearning.di.unipi.it/course/view.php?id=1167}
+Il Teams è privato, non si può entrare. (Future notice)\\\\
+Lo scopo del corso è di facilitare l'apprendimento di nuovi linguaggi di programmazione attraverso lo studio dei paradigmi.
+
+\section{Il ruolo chiave dei tipi}
+I \textbf{tipi} nella programmazione sono molto importanti, in quanto dichiarano gli intenti di dati e funzioni.\\
+Il \textbf{Type Checking} (presente per esempio in TypeScript) assicura il corretto svolgimento delle operazioni.\\
+Inoltre, il type checking rende il programma più efficiente ed evita errori nelle operazioni.\\
+Si dice che il type checking offra una \textbf{correttezza parziale} (solo per alcuni tipi di errori) ed è un esempio di tecnica di analisi di programma (statica e dinamica).
+
+
+
+
+\end{document}
