@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{listing}
+\usepackage{listings}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
+  {\thesection}{1em}{}
+\pagestyle{fancy}
+\pgfplotsset{compat=1.18}
+\fancyhead{}
+\fancyfoot{}
+\title{Architetture e Sistemi Operativi}
+\author{}
+\date{}
+\fancyhead[L]{Gabriele Perna}          % Left side
+\fancyhead[C]{Architetture e Sistemi Operativi}     % Center
+\fancyhead[R]{2026/2027}             % Right side
+\fancyfoot[C]{\thepage}           % Page number in the center of footer
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduzione}
+In questo corso andremo a:
+\begin{itemize}
+    \item Capire come funziona un elaboratore.
+    \item Capire quali tipi di istruzioni è in grado di eseguire un elaboratore nativamente.
+    \item Come lo si può dotare di un sistema operativo.
+\end{itemize}
+Il corso utilizza Windows e Linux come esempi di sistemi operativi.
+\paragraph{Codice Teams:} 6uk5ntg
+\paragraph{Email Docente:} \href{marco.delutto@unipi.}{marco.delutto@unipi.}
+
+\section{Processore, memoria e istruzioni}
+Il \textbf{processore} è in grado di fare operazioni piccole.\\
+Il processore contiene i \textbf{registri}, memorie piccolissime, e il \textbf{Program Counter}, che conserva lo stato di esecuzione memorizzando l'indirizzo della prossima istruzione da eseguire..\\
+Il processore è unito ad una \textbf{memoria}, costituita da \textbf{celle}, è vista come un vettore:
+\[
+M[i] = k
+\]
+Ogni cella ha un valore e la sua capacità è 1 parola (32 o 64 bit).\\
+Una volta che il processore viene acceso, esso esegue:
+\begin{lstlisting}
+    while(true):
+        instr = getInstructionFrom(M)
+        decoded = decode(instr)
+        execute(decoded)
+        determineResults()
+        \dots
+\end{lstlisting}
+Il processore quindi:
+\begin{itemize}
+    \item Estrae istruzioni dalla memoria
+    \item Le decodifica
+    \item Le esegue
+    \item Calcola i risultati
+\end{itemize}
+
+\subsection{Tipi di istruzioni}
+Le istruzioni possono essere:
+\begin{itemize}
+    \item Operative
+    \begin{itemize}
+        \item ADD
+        \item SUB
+        \item MUL
+        \item DIV
+        \item AND
+        \item OR
+        \item NOT
+        \item SHIFT
+        \item ROT
+        \item \dots
+    \end{itemize}
+    \item Di Memoria
+    \begin{itemize}
+        \item LOAD
+        \begin{itemize}
+            \item Restituisce un valore da un indirizzo:\\
+            \begin{lstlisting}
+                LOAD val,addr
+            \end{lstlisting}
+        \end{itemize}
+        \item STORE
+        \begin{itemize}
+            \item Salva un valore in un indirizzo:\\
+            \begin{lstlisting}
+                STORE val,addr
+            \end{lstlisting}
+        \end{itemize}
+    \end{itemize}
+    \item di Salto
+    \begin{itemize}
+        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni.\\
+        \begin{lstlisting}
+            inizio:
+            \dots
+            jmp fine:
+            -skipped code-
+            fine:
+        \end{lstlisting}
+    \end{itemize}
+\end{itemize}
+
+\end{document}

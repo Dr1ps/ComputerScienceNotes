@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {paragraph}{Corso E-Learning:}{3}{section.1}%
+\contentsline {paragraph}{Ottimizzazione:}{3}{section.1}%
+\contentsline {section}{\numberline {2}Processo decisionale}{4}{section.2}%
+\contentsline {section}{\numberline {3}Modelli di ottimizzazione}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Programmazione lineare e lineare intera}{5}{subsection.3.1}%
+\contentsline {paragraph}{Programmazione lineare:}{5}{subsection.3.1}%
+\contentsline {paragraph}{Programmazione lineare intera:}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Pianificazione della produzione (esempio)}{5}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Descrizione del problema}{5}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Inizializzazione}{6}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Traduzione in grafico e soluzione}{6}{subsubsection.3.2.3}%

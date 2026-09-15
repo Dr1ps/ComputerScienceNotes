@@ -1,0 +1,5 @@
+15/09/2026 -------
+
+Add Program Counter and registers in Processor section of AEOS
+Add INSTRUCTION SUBTYPES IN AEOS SECTION (where ADD,SUB.... is)
+Join AEOS teams 
