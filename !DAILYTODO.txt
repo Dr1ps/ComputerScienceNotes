@@ -1,13 +1,2 @@
 15/09/2026 -------
-
-Add Program Counter and registers in Processor section of AEOS
-Add INSTRUCTION SUBTYPES IN AEOS SECTION (where ADD,SUB.... is)
-Join AESO teams 
-Join LAB2 teams
-add "gcc" info in lab file
-replace long dash with proper ones in lab2
-add placeholders in lab2 file (%d)
-add printf and empty paragraphs in lab2
-make C workplace work with missing stuff (files, compiler)
 Separate course info from introduction (All courses)
-revise inference rules (Proalgo), as much as you can actually like calcolability

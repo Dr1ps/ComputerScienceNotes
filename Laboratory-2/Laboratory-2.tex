@@ -114,7 +114,7 @@ Percorsi speciali:
 Il linguaggio \textbf{C} è un linguaggio compilato, pertanto, prima di eseguire un file bisogna convertirlo in binario.\\
 Esistono diversi standard C: C89, C95, C99, C11, C17, C23.\\
 \subsection{Compilatore}
-Il compilatore più conosciuto e usato per C è \textbf{gcc}, ovvero "GNU C Compiler".
+Il compilatore più conosciuto e usato per C è \textbf{gcc}, ovvero "GNU C Compiler", anche se adesso viene definito come "GNU Compiler Collection" perche diventato un progetto più ampio che include anche altri compilatori come quello di Fortran e C++. 
 \begin{lstlisting}
     gcc hello.c -o hello
 \end{lstlisting}
@@ -141,14 +141,41 @@ Nei programmi in C è possibile utilizzare delle \textbf{direttive di preprocess
 \begin{lstlisting}
     #include <stdio.h>
 \end{lstlisting}
-\subsection{printf}
-\subsubsection{Placeholders}
 \subsection{Variabili}
 In C possiamo usare le \textbf{variabili}. Si possono inizializzare ad un valore di un tipo specifico, assegnato al momento della \textbf{dichiarazione}.
 \begin{lstlisting}
     int x;
-    x = 32
+    x = 32;
 \end{lstlisting}
+\subsection{printf}
+Questo è un comando base per stampare qualcosa su console:
+\begin{lstlisting}
+    printf("Hello World");
+\end{lstlisting}
+\subsubsection{Placeholders}
+Per stampare le variabili bisogna utilizzare i \textbf{placeholders}:
+\begin{lstlisting}
+    int x = 10;
+    printf("%d",x)
+\end{lstlisting}
+Bisogna scegliere il placeholder corretto per riuscire a stampare una variabile; la scelta va in base al tipo:
+\begin{itemize}
+    \item \textbf{\%d}: numeri interi (int)
+    \item \textbf{\%i}: numeri interi (int)
+    \item \textbf{\%f}: numeri decimali (double)
+    \begin{itemize}
+        \item Per stampare uno specifico numero di cifre decimali si aggiunge un "." dopo "\%" e poi si specifica il numero:
+        \begin{lstlisting}
+            printf(%.2f,x)
+        \end{lstlisting}
+        Questa stampa mostrerà per esempio solo 2 cifre decimali. Usato sugli altri placeholder questo provoca l'ingrandimento di padding a destra (numero negativo) o sinistra (numero positivo) di ciò che viene stampato.
+    \end{itemize}
+    \item \textbf{\%c}: caratteri (char)
+    \item \textbf{\%s}: stringa
+    \item \textbf{\%u}: numeri interi senza segno (unsigned int)
+    \item \textbf{\%x}: numero intero in esadecimale
+    \item \textbf{\%p}: indirizzo di memoria, puntatore
+\end{itemize}
 \subsection{Commenti}
 I commenti in C possono essere inseriti in vari modi:
 \begin{itemize}

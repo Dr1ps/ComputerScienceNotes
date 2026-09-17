@@ -43,8 +43,16 @@ Il corso utilizza Windows e Linux come esempi di sistemi operativi.
 \paragraph{Email Docente:} \href{marco.delutto@unipi.}{marco.delutto@unipi.}
 
 \section{Processore, memoria e istruzioni}
+\subsection{Processore}
 Il \textbf{processore} è in grado di fare operazioni piccole.\\
-Il processore contiene i \textbf{registri}, memorie piccolissime, e il \textbf{Program Counter}, che conserva lo stato di esecuzione memorizzando l'indirizzo della prossima istruzione da eseguire..\\
+Il processore contiene i \textbf{registri}, memorie piccolissime e velocissime utilizzate per memorizzare dati temporanei legati alle istruzioni da eseguire.
+Ecco alcuni registri speciali:
+\begin{itemize}
+    \item \textbf{Program Counter (PC)}: un registro speciale che conserva lo stato di esecuzione memorizzando l'indirizzo della prossima istruzione da eseguire.
+    \item \textbf{Instruction Register (IR)}: contiene l'istruzione prelevata dalla memoria che deve essere eseguita.
+    \item \textbf{Stack Pointer (SP)}: contiene la posizione attuale dello stack.
+\end{itemize}
+\subsection{Memoria}
 Il processore è unito ad una \textbf{memoria}, costituita da \textbf{celle}, è vista come un vettore:
 \[
 M[i] = k
@@ -57,7 +65,7 @@ Una volta che il processore viene acceso, esso esegue:
         decoded = decode(instr)
         execute(decoded)
         determineResults()
-        \dots
+        ...
 \end{lstlisting}
 Il processore quindi:
 \begin{itemize}
@@ -72,15 +80,24 @@ Le istruzioni possono essere:
 \begin{itemize}
     \item Operative
     \begin{itemize}
-        \item ADD
-        \item SUB
-        \item MUL
-        \item DIV
-        \item AND
-        \item OR
-        \item NOT
-        \item SHIFT
-        \item ROT
+        \item Aritmetiche
+        \begin{itemize}
+            \item ADD
+            \item SUB
+            \item MUL
+            \item DIV
+        \end{itemize}
+        \item Logiche
+        \begin{itemize}
+            \item AND
+            \item OR
+            \item NOT
+        \end{itemize}
+        \item Shift / rotazione
+        \begin{itemize}
+            \item SHIFT
+            \item ROT
+        \end{itemize}
         \item \dots
     \end{itemize}
     \item Di Memoria
@@ -102,7 +119,7 @@ Le istruzioni possono essere:
     \end{itemize}
     \item di Salto
     \begin{itemize}
-        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni.\\
+        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni, aggiornando il PC alla corrispondente istruzione.\\
         \begin{lstlisting}
             inizio:
             \dots
