@@ -35,7 +35,25 @@
 \paragraph{Email Docente:} \href{chiara.bodei@unipi.it}{chiara.bodei@unipi.it}
 \paragraph{E-Learning:} \href{https://elearning.di.unipi.it/course/view.php?id=1167}{https://elearning.di.unipi.it/course/view.php?id=1167}
 Il Teams è privato, non si può entrare. (Future notice)\\\\
-Lo scopo del corso è di facilitare l'apprendimento di nuovi linguaggi di programmazione attraverso lo studio dei paradigmi.
+Lo scopo del corso è di facilitare l'apprendimento di nuovi linguaggi di programmazione attraverso lo studio dei paradigmi.\\
+
+\section{I primi paradigmi}
+Una volta i linguaggi di programmazione si programmavano in modo molto diverso dall'altro, ma oggi seguono appunto delle regole e design pattern comuni.\\\textbf{}
+Per esempio:
+\begin{itemize}
+  \item mancano altri
+  \item \textbf{Fortran} utilizzava un paradigma \textbf{imperativo} (verb-oriented): il programma è una successione di comandi di assegnamento, si basa su uno \textbf{stato} rappresentato da un insieme di variabili che si aggiornano fino ad uno stato finale in cui viene generato il risultato.
+\end{itemize}
+
+\section{Descrizione dei paradigmi}
+Non esiste un paradigma migliore degli altri, dipende dalla situazione.\\
+Molti programmi possono usare per sottoproblemi approcci diversi (\textbf{multiparadigma}).
+\subsection{Paradigma imperativo}
+Il \textbf{paradigma imperativo} prevede istruzioni dirette, senza funzioni.
+\subsection{Paradigma object-oriented}
+\subsection{Paradigma funzionale}
+\subsection{Programmazione concorrente}
+\subsection{Programmazione parallela}
 
 \section{Il ruolo chiave dei tipi}
 I \textbf{tipi} nella programmazione sono molto importanti, in quanto dichiarano gli intenti di dati e funzioni.\\
@@ -43,7 +61,124 @@ Il \textbf{Type Checking} (presente per esempio in TypeScript) assicura il corre
 Inoltre, il type checking rende il programma più efficiente ed evita errori nelle operazioni.\\
 Si dice che il type checking offra una \textbf{correttezza parziale} (solo per alcuni tipi di errori) ed è un esempio di tecnica di analisi di programma (statica e dinamica).
 
-\section{Programmazione funzionale}
+\section{Linguaggi}
+\subsection{Fortran}
+\textbf{Fortran} (FORMula TRANsfer) è uno dei linguaggi più antichi, realizzato da \textbf{John Backus} (1924-2007) negli anni 50 all'IBM, primo linguaggio di alto livello implementato efficacemente (memoria statica, senza annidamento).\\
+Ha introdotto le variabili come le conosciamo oggi, i cicli, le procedure, le etichette delle istruzioni e molto altro.\\
+Le prime versioni non supportavano la ricorsione e includevano caratteristiche oggi abbandonate.
+\subsection{ALGOL 60}
+\textbf{ALGOL} (ALGOrithmic Language) fu progettato nel 1958-1960 come linguaggio universale.\\
+Ha introdotto innovazioni fondamentali:
+\begin{itemize}
+  \item Sintassi formalmente specificata (BNF)
+  \item Scoping lessicale / blocchi
+  \item Procedure modulari
+  \item Passaggi per nome
+  \item Procedure ricorsive
+  \item Dichiarazioni di tipi di variabili
+  \item Allocazione dello stack e record di attivazione
+\end{itemize}
+\subsection{LISP}
+Il \textbf{LISP} (LISt Processor) è un linguaggio funzionale, sviluppato da \textbf{John McCarty} nel 1958 al MIT per la manipolazione di liste.\\
+Precursore di molti concetti, tra cui la gestione dinamica della memoria (heap e garbage collector).
+
+\subsection{SIMULA 67}
+\textbf{SIMULA 67} è stato sviluppato da \textbf{Ole-Johan} e \textbf{Kristen Nygaard}, è un estensione di ALGOL 60.\\
+Fu il primo linguaggio orientato agli oggetti, con classi, oggetti, ereditarietà e sottoclassi.\\
+Introdusse anche passaggi per valore e riferimento, puntatori e \textbf{co-routine} (simili ai thread).
+
+\subsection{C}
+Introdotto nei Bell Labs 1972 da \textbf{Ritchie}, il suo sviluppo è strettamente legato a \textbf{UNIX} e ai sistemi operativi.\\
+Maggiori possibilità di accessi alle funzionalità di basso livello della macchina.\\
+Gestione manuale della memoria (puntatori ma no garbage collection). Le funzioni non si possono annidare.\\
+Controllo dei tipi non forte.\\
+Linguaggio imperativo.
+
+\subsection{Pascal}
+progettato da \textbf{N. Wirth} agli inizi degli anni '70, prende il nome dal filosofo \textbf{Blaise Pascal}, inventore della \textbf{pascalina}, strumento di calcolo precursore della calcolatrice moderna.\\
+Rappresenta una versione più semplice di ALGOL 60.\\
+Linguaggio fortemente tipizzato, gestione dinamica della memoria e scoping statico.\\
+Offre molti tipi di dati (anche custom) coome array, record, file e set.\\
+Supporta le funzioni.
+
+\subsection{Smalltalk}
+Introdotto negli anni '70 da \textbf{Alan Kay} allo Xerox Palo Alto Research Center per supportare nozioni di incapsulamento e information hiding.\\
+Tutto è un oggetto tranne le variabili; la computazione avviene tramite uno scambio di messaggi.\\
+Utilizza il garbage collector ed è dotato di GUI e IDE integrati.
+
+\subsection{PROLOG}
+\textbf{PROLOG} (PROgrammation en LOGique) fu introdotto da \textbf{Robert Kowalski} (teoria), \textbf{Marten Van Emdem} (dimostrazione sperimentale) e implementato finalmente da \textbf{Alain Colmerauer} all'inizio degli anni '70.\\
+Linguaggio dichiarativo
+
+\subsection{C++}
+Introdotto nei Bell Labs nel 1986 da \textbf{Bjarne Stroustrup}.\\
+Gli oggetti sono una generalizzazione di "struct".\\
+Estende \textbf{C} con le classi ed un migliore sistema di tipi.\\
+Supporta concetti complessi come l'ereditarietà multipla, modelli / generici (template) e la gestione delle eccezioni.
+
+\subsection{Java}
+Introdotto alla SUN 1991-1995 dal gruppo di \textbf{James Gosling}, completamente orientato agli oggetti.\\
+Ha garbage collection e quindi la gestione della memoria non è esplicita; non c'è ereditarietà multipla e neanche generics.\\
+Si possono usare thread in maniera concorrente.\\
+Presta molto attenzione alla portabilità dato il suo aspetto ibrido tra linguaggio compilato e interpretato.
+
+\subsection{Altri linguaggi popolari}
+\begin{itemize}
+    \item \textbf{Imperativi:} Modula, Oberon, Ada
+    \item \textbf{Funzionali:} Miranda, Haskell, ML, Caml, OCaml, Scheme, Common LISP
+    \item \textbf{Orientati agli oggetti:} Objective-C, Eiffel, Modula-3, Self, C\#, CLOS
+    \item \textbf{Logici:} Gödel, LDL, ACL2, Isabelle, HOL
+    \item \textbf{Scripting:} (Text processing) Perl, Python; (Web programming) JavaScript, PHP
+    \item \textbf{Elaborazione dati e database:} Cobol, SQL, 4GL, XQuery
+    \item \textbf{Programmazione di sistemi:} PL/I, PL/M, BLISS
+    \item \textbf{Applicazioni specializzate:} APL, Forth, Icon, Logo, SNOBOL4, GPSS, Visual Basic
+    \item \textbf{Concorrenti:} Concurrent Pascal, Concurrent C, C*, SR, Occam, Erlang, Obliq
+\end{itemize}
+
+\subsection{Come crescono i linguaggi?}
+Ci sono diversi fattori che fanno crescere un linguaggio, eccone diversi:
+\begin{itemize}
+  \item \textbf{Killer App}: un linguaggio è la scelta gettonata per sviluppare app di successo (Java, PHP, R)
+  \item \textbf{Esclusività delle piattaforme}: alcuni linguaggi si impongono perchè vincolati a un ecosistema (Swift e iOS).
+  \item \textbf{Velocità dell'upgrade}: evoluzione rapida che mantiene la semplicità (Python)
+  \item \textbf{Grande slogan}: fa la differenza (Java: write once, run everywhere)
+  \item \textbf{Slow and steady}: crescita lenta ma stabile e duratura (C)
+  \item \textbf{Sintassi chiara}: abbassa la barriera d'ingresso (Python)
+  \item \textbf{Job market}: orienta le scelte (Java, JavaScript, Python)
+  \item \textbf{Community}: il contributo degli appassionati tramite numerosissime librerie (JavaScript, Python)
+\end{itemize}
+
+\section{Approccio scientifico}
+Per studiare i linguaggi di programmazione si attuerà un \textbf{metodo scientifico}:
+\begin{enumerate}
+  \item \textbf{Fatti:} la realtà che va studiata (osservazioni, esperimenti, dati...)
+  \item \textbf{Modello:} la rappresentazione tramite leggi matematiche.
+  \item \textbf{Ragionamento:} analisi della realtà attraverso il modello.
+\end{enumerate}
+Questo metodo viene applicato in tutti i campi della scienza e ricerca e lo applicheremo anche noi in questo modo:
+\begin{enumerate}
+  \item \textbf{Fatti:} linguaggi di programmazione.
+  \item \textbf{Modello:} semantica.
+  \item \textbf{Ragionamento:} comprensione e studio di proprietà.
+\end{enumerate}
+\section{Lambda Calculus}
+Il \textbf{lambda calcolo} può essere considerato il primo linguaggio di programmazione funzionale, utilizza questa segnatura:
+\[
+\lambda x.x
+\]
+\begin{itemize}
+  \item $\lambda$ = introduce la funzionale
+  \item $x$ = parametro formale (1); corpo (2)???
+\end{itemize}
+\subsection{Storia della calcolabilità}
+\subsection{Macchina di Turing}
+Con la macchina di Turing si possono rappresentare tutti gli algoritmi in esistenza.
+Modelli di calcolo meno potenti:
+\begin{itemize}
+  \item Espressioni regolari
+  \item Funzioni che terminano sempre (funzioni totali)
+\end{itemize}
+\subsection{Architettura di Von Neumann}
 
 
 \end{document}

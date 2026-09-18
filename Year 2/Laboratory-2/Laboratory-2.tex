@@ -428,4 +428,28 @@ I commenti in C possono essere inseriti in vari modi:
     \item Commenti su una riga: aperti da "//", non vengono chiusi
     \item Commenti su più righe: delimitati da "/*" e da "*/".
 \end{itemize}
+
+\section{Esercizi}
+\subsection{Esercizio 1}
+Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:
+\begin{enumerate}
+    \item Creare una directory lezione02
+    \item Entrarci
+    \item Creare tre file vuoti: "a.c", "b.c", "note.txt"
+    \item Visualizzare solamente i file con estensione ".c"
+    \item Salvare quell'elenco in "sorgenti.txt"
+    \item Aggiungere il contenuto di "sorgenti.txt" a "note.txt"
+    \item Contare quante righe contiene "note.txt"
+\end{enumerate}
+\textbf{Soluzione:}
+\begin{lstlisting}
+    $ cd ~
+    $ mkdir lezione02
+    $ cd lezione02
+    $ touch a.c b.c node.txt
+    $ ls *.c > sorgenti.txt
+    $ sorgenti.txt >> note.txt
+    $ qw -l note.txt
+\end{lstlisting}
+
 \end{document}

@@ -1,6 +1,7 @@
 \contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
 \contentsline {paragraph}{Corso E-Learning:}{3}{section.1}%
 \contentsline {paragraph}{Ottimizzazione:}{3}{section.1}%
+\contentsline {paragraph}{Nota importante:}{3}{section.1}%
 \contentsline {section}{\numberline {2}Processo decisionale}{4}{section.2}%
 \contentsline {section}{\numberline {3}Modelli di ottimizzazione}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Programmazione lineare e lineare intera}{5}{subsection.3.1}%
@@ -10,3 +11,14 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Descrizione del problema}{5}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Inizializzazione}{6}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Traduzione in grafico e soluzione}{6}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Possibili soluzioni dei problemi di ottimizzazione}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Tecniche di modellazione dei problemi}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Il problema della fonderia (esempio)}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Descrizione del problema}{7}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Inizializzazione}{7}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Un problema difficile: generalizzazioe}{8}{subsubsection.4.1.3}%
+\contentsline {section}{\numberline {5}Variabili binarie}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Problema dello zaino (Esempio)}{10}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Descrizione del problema}{10}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Inizializzazione}{10}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Rappresentazione relazioni logiche}{10}{subsubsection.5.1.3}%

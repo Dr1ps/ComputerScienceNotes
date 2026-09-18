@@ -1,2 +1,4 @@
 18/09/2026 ---------
-LAB2: do the exercise you have a picture of and create an exercises section.
+PARADIGMS: lambda calculus and paradigms description notes, check out elearning slides for that
+PARADIGMS: slides also on calcolability history and alan turing
+TRY HASTE DEMO ON STEAM

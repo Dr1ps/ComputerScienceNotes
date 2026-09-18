@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  18 SEP 2026 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  18 SEP 2026 22:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,11 +627,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Laboratory-2.toc)
-\tf@toc=\write5
-\openout5 = `Laboratory-2.toc'.
-
-
+{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Laboratory-2.toc
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -642,7 +638,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2
 
-]
+])
+\tf@toc=\write5
+\openout5 = `Laboratory-2.toc'.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -788,26 +788,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15] (Laboratory-2.aux)
+[15]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16
+
+] (Laboratory-2.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `Laboratory-2.out' has not changed.
-(rerunfilecheck)             Checksum: 625DBC533469846F0B3B5000726C95D8;4838.
+(rerunfilecheck)             Checksum: 3743E2012C6EC29D4955E4E19904148C;5038.
  ) 
 Here is how much of TeX's memory you used:
- 33096 strings out of 468081
- 759412 string characters out of 5425788
- 1274615 words of memory out of 5000000
- 61096 multiletter control sequences out of 15000+600000
+ 33118 strings out of 468081
+ 759692 string characters out of 5425788
+ 1273615 words of memory out of 5000000
+ 61100 multiletter control sequences out of 15000+600000
  636821 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,105p,802b,1258s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Laboratory-2.pdf (15 pages, 143582 bytes).
+Output written on Laboratory-2.pdf (16 pages, 148327 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 180 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 511 PDF objects out of 1000 (max. 8388607)
+ 198 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 
