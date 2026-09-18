@@ -2,3 +2,4 @@
 \contentsline {paragraph}{Email Docente:}{3}{section.1}%
 \contentsline {paragraph}{E-Learning:}{3}{section.1}%
 \contentsline {section}{\numberline {2}Il ruolo chiave dei tipi}{4}{section.2}%
+\contentsline {section}{\numberline {3}Programmazione funzionale}{5}{section.3}%

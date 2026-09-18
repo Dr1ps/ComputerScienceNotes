@@ -1,4 +1,2 @@
 18/09/2026 ---------
-
-Operational research: describe decisional process (section 2)
-OPTIONAL = Operational research: insert proper graphic and solution to first example (section 3)
+LAB2: do the exercise you have a picture of and create an exercises section.

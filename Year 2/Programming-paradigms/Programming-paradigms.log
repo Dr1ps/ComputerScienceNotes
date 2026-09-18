@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  15 SEP 2026 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  18 SEP 2026 14:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/programming-paradigms/programming-paradigms.tex
-(c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/programming-paradigms/programming-paradigms.tex
+**"c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex"
+(c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -533,8 +533,8 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count347
-) (programming-paradigms.aux)
-\openout1 = `programming-paradigms.aux'.
+) (Programming-paradigms.aux)
+\openout1 = `Programming-paradigms.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -590,9 +590,9 @@ LaTeX Font Info:    ... okay on input line 29.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 29.
-(programming-paradigms.out) (programming-paradigms.out)
+(Programming-paradigms.out) (Programming-paradigms.out)
 \@outlinefile=\write4
-\openout4 = `programming-paradigms.out'.
+\openout4 = `Programming-paradigms.out'.
 
  (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -627,9 +627,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (programming-paradigms.toc)
+{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Programming-paradigms.toc)
 \tf@toc=\write5
-\openout5 = `programming-paradigms.toc'.
+\openout5 = `Programming-paradigms.toc'.
 
 
 
@@ -674,26 +674,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4
 
-] (programming-paradigms.aux)
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5
+
+] (Programming-paradigms.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-Package rerunfilecheck Info: File `programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: 13C9B54346493DF9DECC52B5D233BA65;278.
+Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
+(rerunfilecheck)             Checksum: A00C75D9F27D1114B81EE3469C9FCA38;449.
  ) 
 Here is how much of TeX's memory you used:
- 32540 strings out of 468081
- 753064 string characters out of 5425788
+ 32543 strings out of 468081
+ 753166 string characters out of 5425788
  1254624 words of memory out of 5000000
- 60727 multiletter control sequences out of 15000+600000
+ 60728 multiletter control sequences out of 15000+600000
  631830 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,105p,811b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,105p,820b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on programming-paradigms.pdf (4 pages, 49841 bytes).
+Output written on Programming-paradigms.pdf (5 pages, 51999 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 65 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

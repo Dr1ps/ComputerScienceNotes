@@ -45,40 +45,37 @@ Lavoreremo inoltre con:
 \section{Il terminale UNIX}
 Il \textbf{terminale} è una interfaccia testuale per dialogare con il sistema.\\
 Dentro il terminale gira una \textbf{shell}, ovvero il programma che interpreta i comandi.\\
-Il terminale mostra il \textbf{prompt}, riceve i comandi e visualizza l'output.
+Il terminale mostra il \textbf{prompt}, riceve i comandi e visualizza l'output.\\
+Il simbolo $\$$ indica che la shell è pronta a ricevere un comando (potrebbe non essere $\$$ a volte).
 \subsection{Comandi}
 \subsubsection{Struttura base comandi Linux}
 Esiste una struttura base per molti comandi, ovvero questa:
 \begin{center}
     comando + opzione + argomento + (opzione + argomento)
 \end{center}
+La differenza principale tra opzione e argomento è che l'opzione è relativa alla \textbf{modalità} del comando e l'argomento \textbf{su cosa lavora} il comando. L'opzione + argomento invece è relativo all'argomento.
 per esempio:
 \begin{lstlisting}
     $ gcc -Wall hello.c -o hello
 \end{lstlisting}
 \subsubsection{--help e man}
+Entrambi questi comandi aiutano a comprendere specifici comandi in modi diversi, --help è un aiuto generico mentre "man" è il manuale.
 \begin{lstlisting}
+    $ [comando] --help
     $ gcc --help
+    $ man [comando]
     $ man gcc
 \end{lstlisting}
-Entrambi questi comandi aiutano a comprendere specifici comandi in modi diversi, --help è un aiuto generico mentre "man" è il manuale.
 \subsubsection{pwd}
+\textbf{pwd} è il comando "print working directory" e mostra la posizione della directory corrente all'interno del \textbf{file system}.
 \begin{lstlisting}
     $ pwd
 \end{lstlisting}
-Il simbolo $\$$ indica che la shell è pronta a ricevere un comando (potrebbe non essere $\$$ a volte).\\
-\textbf{pwd} è il comando "print working directory" e mostra la posizione della directory corrente all'interno del \textbf{file system}.\\
-Il file system inizia dalla \textbf{root} ("$/$") e si articola nella directory, formando un \textbf{path}, ovvero un percorso attraverso directory, dove ogni passaggio è separato da "$/$" (potrebbe variare in altri ambienti).\\
-Esistono due tipi di path:
-\begin{itemize}
-    \item \textbf{Assoluto:} parte dalla root.
-    \item \textbf{Relativo:} parte dalla directory corrente.
-\end{itemize}
 \subsubsection{ls}
+\textbf{ls}, ovvero "list", elenca tutto il contenuto della directory corrente, directory e file.
 \begin{lstlisting}
     $ ls
 \end{lstlisting}
-\textbf{ls} elenca tutto il contenuto della directory corrente, directory e file.\\
 Può essere usata con alcuni \textbf{attributi}, aggiungibili con un "dash" (-) come in questo caso:
 \begin{lstlisting}
     $ ls -a
@@ -89,11 +86,12 @@ Ecco gli attributi:
     \item \textbf{l}: include informazioni avanzate (data, grandezza...)
 \end{itemize}
 \subsubsection{cd}
+\textbf{cd} significa "change directory" e si sposta nella directory specificata da un path relativo o assoluto.
 \begin{lstlisting}
+    $ cd [path]
     $ cd esercizi
     $ cd /users/gabri/esercizi
 \end{lstlisting}
-\textbf{cd} significa "change directory" e si sposta nella directory specificata da un path relativo o assoluto.\\
 Percorsi speciali:
 \begin{itemize}
     \item \textbf{Directory corrente}: specificato da un punto, ha lo stesso valore di pwd.
@@ -104,12 +102,260 @@ Percorsi speciali:
     \begin{lstlisting}
        $ cd .. 
     \end{lstlisting}
+    \item \textbf{Home dell'utente}: specificato da una tilde, si sposta nella home dell'utente ovunque essa sia.
+    \begin{lstlisting}
+        $ cd ~
+    \end{lstlisting}
 \end{itemize}
 \subsubsection{mkdir}
+\textbf{mkdir} significa "make directory" e crea una directory del nome specificato nella cartella corrente.
 \begin{lstlisting}
+    $ mkdir [nomeDirectory]
     $ mkdir esercizi
 \end{lstlisting}
-\textbf{mkdir} significa "make directory" e crea una directory del nome specificato nella cartella corrente.
+\subsubsection{touch}
+Il comando \textbf{touch} nasce con l'intento di aggiornare l'ultimo accesso e l'ultima modifica di un file (marcatura temporale, timestamp).
+\begin{lstlisting}
+    $ touch [nomeFile]
+    $ touch log.txt
+\end{lstlisting}
+Se il file non esiste, lo crea.\\
+Tale comando senza attributi modifica:
+\begin{itemize}
+    \item Tempo di accesso (atime)
+    \item Tempo di modifica (mtime)
+\end{itemize}
+Se desideriamo poi modificare uno solo di questi timestamp allora si può introdurre un attributo:
+\begin{itemize}
+    \item \textbf{-a}: atime
+    \item \textbf{-m}: mtime
+\end{itemize}
+Il comando può essere usato anche sulle directory, ma non crea automaticamente una directory se assente, bensì solo file.
+\subsubsection{stat}
+Il comando \textbf{stat}, ovvero "status", mostra i metadati di un file o una directory, inclusi i timestamp.
+\begin{lstlisting}
+    $ stat [nome]
+    $ stat hello.c
+\end{lstlisting}
+Ecco i dati mostrati da tale comando:
+\begin{itemize}
+    \item Tipo di file
+    \item Dimensione
+    \item Inode
+    \item Permessi
+    \item Proprietario e Gruppo
+    \item Data di ultimo accesso (Access)
+    \item Data di ultima modifica (Modify)
+    \item Data di ultima modifica dei metadati (Change)
+\end{itemize}
+\subsubsection{cp}
+Il comando \textbf{cp}, ovvero "copy", copia il file passato come parametro e lo incolla nel path specificato dopo l'argomento, eventualmente rinominandolo.
+\begin{lstlisting}
+    $ cp [nomeFileDaCopiare] [Destinazione]\[NuovoNomeFile]
+    $ cp hello.c \esercizi\eserc.c
+\end{lstlisting}
+Questo esempio copia il file "hello.c", lo sposta nella sub-directory "esercizi" e lo rinomina.\\
+Il file originale rimane al suo posto.\\
+La rinomina della copia è omissibile.\\
+Questo comando, con l'aggiunta di un attributo "-r" (\textbf{recursive}) può essere applicato anche alle directory.
+\begin{lstlisting}
+    $ cp -r [nomeDirectory] [Destinazione]\[NuovoNomeDirectory]
+    $ cp -r cartella1 \esercizi\cartella2
+\end{lstlisting}
+\subsubsection{mv}
+Il comando \textbf{mv}, ovvero "move", sposta o/e rinomina un file:
+\begin{lstlisting}
+    $ mv [nomeVecchio] [destinazione]\[nomeNuovo]
+    $ mv hello.c ciao.c
+\end{lstlisting}
+Questo comando rinomina il file "hello.c" in "ciao.c", senza spostarlo.
+\subsubsection{rm}
+Il comando \textbf{rm}, ovvero "remove", elimina un file.
+\begin{lstlisting}
+    $ rm [nomeFile]
+    $ rm hello.c
+\end{lstlisting}
+La cancellazione da terminale non sposta nel cestino, è in genere definitiva.
+\subsubsection{rmdir}
+Il comando \textbf{rmdir}, ovvero "remove directory", elimina una directory vuota.
+\begin{lstlisting}
+    $ rmdir [nomeDirectory]
+    $ rmdir esercizi
+\end{lstlisting}
+Se vogliamo eliminare una cartella e il suo contenuto, si possono usare questi attributi:
+\begin{itemize}
+    \item \textbf{-r}: "recursive", applica la cancellazione anche ai contenuti.
+    \item \textbf{-f}: "forced", applica l'attributo recursive con forza, ignora le conferme di cancellazione.
+\end{itemize}
+\subsubsection{cat}
+Il comando \textbf{cat}, ovvero "concatenate", scrive il contenuto del file sullo standard output.
+\begin{lstlisting}
+    $ cat [nomeFile]
+    $ cat hello.txt
+\end{lstlisting}
+Si possono stampare più file in sequenza, concatenati:
+\begin{lstlisting}
+    $ cat [nomeFile1] [nomeFile2]
+    $ cat hello1.txt hello2.txt
+\end{lstlisting}
+Il comando usato da solo diventa interattivo e legge dallo standard input, ovvero il terminale: ogni volta che si scrive qualcosa a cat, lo stamperà direttamente sul terminale.
+\begin{lstlisting}
+    $ cat
+    $ ciao
+    ciao
+\end{lstlisting}
+Per uscire da questa modalità bisogna premere (\textbf{Ctrl + D}).
+\subsubsection{less}
+Il comando \textbf{less}, opera simile al comando \textbf{cat}, ma non carica tutto il file nel terminale e per leggere più contenuto bisogna scrollare.
+\begin{lstlisting}
+    $ less [nomeFile]
+    $ less hello.txt
+\end{lstlisting}
+Per uscire bisogna premere \textbf{Q}.
+\subsubsection{head}
+Il comando \textbf{head} permette di stampare le prime righe di un file su terminale.
+\begin{lstlisting}
+    $ head [nomeFile]
+    $ head hello.txt
+\end{lstlisting}
+Possiamo specificare quante righe stampare:
+\begin{lstlisting}
+    $ head -n [righeDaStampare] [nomeFile]
+    $ head -n 5 hello.txt
+\end{lstlisting}
+Questo esempio stampa le prime 5 righe del file "hello.txt".
+\subsubsection{tail}
+Il comando \textbf{tail} permette di stampare le ultime righe di un file su terminale.
+\begin{lstlisting}
+    $ tail [nomeFile]
+    $ tail hello.txt
+\end{lstlisting}
+Possiamo specificare quante righe stampare:
+\begin{lstlisting}
+    $ tail -n [righeDaStampare] [nomeFile]
+    $ tail -n 5 hello.txt
+\end{lstlisting}
+Questo esempio stampa le ultime 5 righe del file "hello.txt".
+\subsubsection{wc}
+Il comando \textbf{wc}, ovvero "word count", serve per contare delle specifiche informazioni in un file.
+\begin{lstlisting}
+    $ wc [nomeFile]
+    $ wc file.txt
+\end{lstlisting}
+Il comando restituisce 3 valori in questo ordine:
+\begin{itemize}
+    \item Numero di righe
+    \item Numero di parole
+    \item Numero di byte
+\end{itemize}
+Il comando può essere eseguito con un filtro passato come attributo:
+\begin{itemize}
+    \item \textbf{-l} per le righe
+    \item \textbf{-w} per le parole
+    \item \textbf{-c} per i byte
+\end{itemize}
+
+\subsection{Wildcards}
+Le wildcard permettono di mantenere un aspetto generico di alcuni dati per lavorare su più entità in contemporanea.\\
+Le wildcard quindi funzionano da veri e propri \textbf{placeholder}.
+Questa è una funzionalità della shell, la quale \textbf{espande} le wildcard una volta che gli arrivano: sostituisce le wildcard e genera un elenco di tutte le unità che soddisfano la wildcard.\\
+Per esempio:
+\begin{lstlisting}
+    $ ls *.c
+    "espansione shell"
+    $ ls file1.c file2.c file3.c
+\end{lstlisting}
+Ai comandi non viene mai passata la shell, bensì gli argomenti precisi su cui lavorare.
+\subsubsection{Asterisco (*)}
+L'asterisco (*) usato come wildcard permette di specificare una \textbf{stringa} \textbf{qualsiasi} di lunghezza qualsiasi, per esempio:
+\begin{lstlisting}
+    $ ls *.c
+\end{lstlisting}
+Questo comando stampa tutti i file con estensione ".c", ovvero i file con nome qualsiasi che hanno estensione ".c".
+\subsubsection{Punto Interrogativo (?)}
+Il punto interrogativo (?) usato come wildcard indica un \textbf{carattere} qualsiasi.
+\begin{lstlisting}
+    $ ls prova?.c
+\end{lstlisting}
+Questo comando stampa tutti i file con prefisso "prova", suffisso ".c" e un carattere qualsiasi che divide suffisso e prefisso specificati, in questo caso utile per stampare tutte le prove / test possibilmente nominati "prova1", "prova2" e cosi via.
+\subsection{Reindirizzazione}
+\subsubsection{Reindirizzare l'output}
+Si può reindirizzare lo \textbf{standard output} di un comando in questo modo:
+\begin{lstlisting}
+    $ [comando] > [destinazione]
+    $ ls > lsLog.txt
+\end{lstlisting}
+Questo comando scrive in "lsLog.txt" quello che sarebe dovuto essere stampato sul terminale dal comando "ls".
+\paragraph{Attenzione:} questo tipo di reindirizzazione \textbf{sovrascrive} ogni volta il file intero, se si desidera eseguire un'aggiunta in fondo al file senza perdere i dati precedenti allora bisogna usare l'\textbf{append}:
+\begin{lstlisting}
+    $ [comando] >> [destinazione]
+    $ ls >> lsLog.txt
+\end{lstlisting}
+\subsubsection{Reindirizzare l'input}
+Come l'output, si può reindirizzare lo \textbf{standard input}:
+\begin{lstlisting}
+    $ [destinazione] < [sorgente]
+    $ sort < dati.txt
+\end{lstlisting}
+In questo esempio, si stampa in ordine alfabetico il contenuto di "dati.txt"
+\subsubsection{Reindirizzare gli errori}
+Anche il flusso \textbf{standard error} può essere reindirizzato:
+\begin{lstlisting}
+    $ [comando] 2> [destinazione]
+    $ ls 2> lsLog.txt
+\end{lstlisting}
+\subsection{Pipe}
+La \textbf{pipe} collega più comandi in questo modo:
+\begin{center}
+    stdout del primo comando $\rightarrow$ stdin del secondo comando
+\end{center}
+Ecco il template e un esempio:
+\begin{lstlisting}
+    $ [comando1] | [comando2]
+    $ ls | less
+\end{lstlisting}
+In questo esempio viene eseguito "ls" e viene poi stampato secondo il comando "less".\\
+La pipe evita di creare file intermedi che sarebbero necessari per realizzare il solito effetto.
+\subsection{Virgolette}
+Per evitare che non ci sia ambiguità negli argomenti, dato che la shell utilizza gli spazi per separare argomenti, comandi e opzioni, bisogna utilizzare le \textbf{virgolette}:
+\begin{lstlisting}
+    $ mkdir "nuova cartellozza"
+\end{lstlisting}
+
+\section{Filesystem UNIX}
+Il \textbf{filesystem} è un albero che ha come radice la \textbf{root}, indicata da un "/"
+\subsection{Path}
+Il filesystem localizza ogni file e directory tramite un \textbf{path}, il quale può essere:
+\begin{itemize}
+    \item \textbf{Assoluto:} parte dalla root.
+    \item \textbf{Relativo:} parte dalla directory corrente.
+\end{itemize}
+\subsection{Marcature temporali}
+tenere traccia del tempo in UNIX è importante: i timestamp sono spesso utilizzati per prendere decisioni importanti, come la ricompilazione di un file con un timestamp vecchio.\\
+In UNIX ogni file ha 3 marcature temporali:
+\begin{itemize}
+    \item \textbf{atime}: access time, ultimo accesso.
+    \item \textbf{mtime}: modification time, ultima modifica del contenuto.
+    \item \textbf{ctime}: change time, ultima modifica dei metadati.
+\end{itemize}
+\subsection{File nascosti}
+I \textbf{file nascosti} sono i file il cui nome solitamente inizia con il punto.
+\begin{center}
+    .txt
+    .config
+    .bashrc
+\end{center}
+
+\section{Programmi UNIX}
+\subsection{Flussi standard}
+Ogni programma ha 3 flussi standard:
+\begin{itemize}
+    \item \textbf{standard input}
+    \item \textbf{standard output}
+    \item \textbf{standard error}
+\end{itemize}
+Questi flussi possono essere reindirizzati altrove dal terminale.
+
 \section{Linguaggio C}
 Il linguaggio \textbf{C} è un linguaggio compilato, pertanto, prima di eseguire un file bisogna convertirlo in binario.\\
 Esistono diversi standard C: C89, C95, C99, C11, C17, C23.\\
