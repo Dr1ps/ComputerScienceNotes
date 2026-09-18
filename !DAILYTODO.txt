@@ -1,2 +1,4 @@
-15/09/2026 -------
-Separate course info from introduction (All courses)
+18/09/2026 ---------
+
+Operational research: describe decisional process (section 2)
+OPTIONAL = Operational research: insert proper graphic and solution to first example (section 3)
