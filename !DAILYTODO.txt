@@ -1,4 +1,5 @@
 18/09/2026 ---------
 PARADIGMS: lambda calculus and paradigms description notes, check out elearning slides for that
 PARADIGMS: slides also on calcolability history and alan turing
-TRY HASTE DEMO ON STEAM
+
+ABOVE ONLY WHEN SLIDES ARE PUBLISHED
