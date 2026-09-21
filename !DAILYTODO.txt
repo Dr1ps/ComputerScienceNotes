@@ -1,5 +1,4 @@
-18/09/2026 ---------
-PARADIGMS: lambda calculus and paradigms description notes, check out elearning slides for that
-PARADIGMS: slides also on calcolability history and alan turing
-
-ABOVE ONLY WHEN SLIDES ARE PUBLISHED
+21/09/2026 -----------
+PARADIGMS: divide in subsections all lambda calculus signatures/expressions examples
+PARADIGMS: (OPTIONAL) check out lambda expression trees
+AESO: check out lesson's book pages (both)

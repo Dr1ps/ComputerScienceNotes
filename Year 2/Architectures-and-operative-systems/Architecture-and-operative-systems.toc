@@ -5,3 +5,7 @@
 \contentsline {subsection}{\numberline {2.1}Processore}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Memoria}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Tipi di istruzioni}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Livelli di astrazione dei calcolatori}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Principi importanti}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Circuiti Digitali}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Sistema binario}{7}{subsection.4.1}%

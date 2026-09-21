@@ -37,14 +37,6 @@
 Il Teams è privato, non si può entrare. (Future notice)\\\\
 Lo scopo del corso è di facilitare l'apprendimento di nuovi linguaggi di programmazione attraverso lo studio dei paradigmi.\\
 
-\section{I primi paradigmi}
-Una volta i linguaggi di programmazione si programmavano in modo molto diverso dall'altro, ma oggi seguono appunto delle regole e design pattern comuni.\\\textbf{}
-Per esempio:
-\begin{itemize}
-  \item mancano altri
-  \item \textbf{Fortran} utilizzava un paradigma \textbf{imperativo} (verb-oriented): il programma è una successione di comandi di assegnamento, si basa su uno \textbf{stato} rappresentato da un insieme di variabili che si aggiornano fino ad uno stato finale in cui viene generato il risultato.
-\end{itemize}
-
 \section{Descrizione dei paradigmi}
 Non esiste un paradigma migliore degli altri: la scelta dipende dalla situazione e dal problema da risolvere.\\
 Molti programmi possono utilizzare, per sottoproblemi diversi, approcci differenti (\textbf{multiparadigma}).
@@ -180,24 +172,142 @@ Questo metodo viene applicato in tutti i campi della scienza e ricerca e lo appl
   \item \textbf{Modello:} semantica.
   \item \textbf{Ragionamento:} comprensione e studio di proprietà.
 \end{enumerate}
+
 \section{Lambda Calculus}
-Il \textbf{lambda calcolo} può essere considerato il primo linguaggio di programmazione funzionale, utilizza questa segnatura:
+\subsection{Definizione}
+Il \textbf{lambda calcolo} è stato introdotto nel 1935 da \textbf{Church} e può essere considerato il primo linguaggio di programmazione funzionale e setta proprio una base per studiare tale paradigma.
+\subsection{Lambda espressioni}
+Il lambda calculus utilizza questa segnatura:
 \[
 \lambda x.x
 \]
 \begin{itemize}
   \item $\lambda$ = introduce la funzionale
-  \item $x$ = parametro formale (1); corpo (2)???
+  \item $x$ = parametro formale (1); corpo (2) la cui valutazione applicata all'input da il valore in output.
+  \item . = separa la variabile dal corpo
 \end{itemize}
-\subsection{Storia della calcolabilità}
-\subsection{Macchina di Turing}
-Con la macchina di Turing si possono rappresentare tutti gli algoritmi in esistenza.
-Modelli di calcolo meno potenti:
+La legge di corrispondenza corrisponde a:
+\[
+f(x) = x
+\]
+Ovvero la funzione identità.\\
+Per attualizzare questa segnatura si fa cosi:
+\[
+(\lambda x.x)z = z
+\]
+Con "z" come \textbf{parametro attuale}.\\
+Vediamo adesso un esempio di \textbf{funzione costante}:
+\[
+\lambda x.y
+\]
+\[
+(\lambda x.y)z = y
+\]
+L'output non dipende dall'input (parametro formale).\\
+Addirittura, esistono annidamenti di funzioni:
+\[
+\lambda x.\lambda y.x
+\]
+Questo aspetta due parametri in input e restituisce sempre il primo, corrisponde a:
+\[
+f(x,y) = x
+\]
+\[
+((\lambda x.\lambda y.x)z)w = (\lambda y.z)w = z
+\]
+La prima funzione non ritorna un valore, bensì un'espressione (o una funzione) che può essere usata a sua volta.\\
+La parte dell'espressione che si riduce si chiama \textbf{redex}, si effettuano le sostituzioni in ordine e si osserva come si evolve per determinare un risultato.\\
+Spesso si può scegliere un ordine di semplificazione:
 \begin{itemize}
-  \item Espressioni regolari
-  \item Funzioni che terminano sempre (funzioni totali)
+  \item Partendo dalla funzione più esterna
+  \item Partendo dalla funzione più interna
 \end{itemize}
-\subsection{Architettura di Von Neumann}
-
-
+Vediamo un esempio:
+\[
+(\lambda x.((\lambda y.y)x))z
+\]
+Risolvendo prima l'esterna:
+\[
+(\lambda x.((\lambda y.y)x))z = \lambda(y.y)z = z
+\]
+Risolvendo prima l'interna:
+\[
+(\lambda x.((\lambda y.y)x))z = \lambda(x.x)z = z
+\]
+Vediamo adesso un altro caso:
+\[
+(\lambda f.fz)(\lambda x.x)
+\]
+Questo usa un'intera funzione come parametro:
+\[
+(\lambda f.fz)(\lambda x.x) = (\lambda x.x)z = z
+\]
+Le espressioni possono ricostruirsi:
+\[
+(\lambda x.(xx))(\lambda y.y)
+\]
+\[
+(\lambda x.(xx))(\lambda y.y) = (\lambda y.y)(\lambda y.y) = \lambda y.y
+\]
+Adesso vediamo un esempio con una somma:
+\[
+((\lambda x.\lambda y.x+y)3)5
+\]
+\[
+((\lambda x.\lambda y.x+y)3)5 = (\lambda y.3+y)5 = 3+5 = 8
+\]
+Basta effettuare un passaggio alla volta.\\
+Vediamo una situazione di ambiguità con 3 espressioni concatenate nella forma ($e_1, e_2, e_3$):
+\[
+(\lambda x.\lambda y.xy)(\lambda x.x)z
+\]
+Per convenzione bisogna svolgere le prime due e lasciare la terza per dopo:
+\[
+(\lambda x.\lambda y.xy)(\lambda x.x)z = (\lambda y.((\lambda x.x)y))z = \lambda(x.x)z = z
+\]
+Questo conta anche per i parametri attuali:
+\[
+(\lambda x. \lambda y.xy)zk
+\]
+\[
+(\lambda x. \lambda y.zy)k = (\lambda y.zy)k
+\]
+Bisogna fare attenzione ad ambiguità tra parametri formali e attuali:
+\[
+(\lambda x. \lambda y.xy)y
+\]
+Se risolto, potrebbero esserci ambiguità, per questo conviene cambiare nome:
+\[
+y = z
+\]
+\subsection{Convenzioni sintattiche}
+Per prima cosa, la \textbf{portata} (scope) del costruttore lambda si estende il più a destra possibile.
+\begin{center}
+  $\lambda x.\lambda y.x y$ è uguale a $\lambda x.(\lambda y.(x y))$
+\end{center}
+L'\textbf{applicazione funzionale} associa a \textbf{sinistra}:
+\begin{center}
+  $e_1 e_2 e_3$ diventa $(e_1 e_2)e_3$
+\end{center}
+\subsection{Variabili libere e legate}
+Una \textbf{variabile legate} a un $\lambda$ sono quelle che fanno parte di una lambda espressione, ovvero una dichiarazione (parametri formali).\\
+Le \textbf{variabili libere} invece corrispondono al contrario, come i parametri attuali, le variabili non enunciate da un $\lambda$, queste sono definite dall'insieme:
+\[
+FV
+\]
+Per esempio, possiamo applicarlo ad un'espressione:
+\[
+FV(x) = \{x\}
+\]
+\[
+FV((\lambda x.x)z) = \{z\}
+\]
+\subsection{Definizione sintattica}
+\begin{itemize}
+\item e ::= x
+  \begin{itemize}
+    \item $\lambda x.e$ (function declaration)
+    \item e e           (function call)
+  \end{itemize}
+\end{itemize}
 \end{document}

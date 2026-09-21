@@ -130,4 +130,68 @@ Le istruzioni possono essere:
     \end{itemize}
 \end{itemize}
 
+\section{Livelli di astrazione dei calcolatori}
+Per capire come opera un computer osserviamo dei livelli di astrazione, sviluppati a "torre" nel seguente modo:
+\begin{center}
+    applicazioni\\
+    sistema operativo\\
+    architettura (set istruzioni)\\
+    $\mu$ - architettura (processore)\\
+    logica (componenti)\\
+    circuiti digitali (0/1, 5V/0V)\\
+    circuiti analogici\\
+    dispositivi\\
+    fisica
+\end{center}
+Non andremo a vedere niente delle caratteristiche hardware degli ultimi 3 livelli, non ci interessa.\\
+Per capire:
+\begin{itemize}
+    \item Noi partiamo col realizzare dei circuiti digitali che servono per creare dei componenti
+    \item Tali componenti ci servono per realizzare un processore
+    \item Al processore dovremo dare in pasto delle istruzioni
+    \item Le istruzioni servono al sistema operativo e alle applicazioni
+\end{itemize}
+Tra i livelli di "architettura" e "sistema operativo" si trova un \textbf{interfaccia}, genericamente attribuita al livello \textbf{i}. Questo significa che:
+\begin{itemize}
+    \item Il livello del sistema operativo corrisponde al livello \textbf{i} (si trova al livello dell'interfaccia)
+    \item Il livello dell'architettura corrisponde al livello \textbf{i - 1}
+\end{itemize}
+Al livello \textbf{i + 1}, tra sistema operativo e applicazioni, si trovano le \textbf{chiamate al sistema operativo}, chiamate \textbf{API}.\\\\
+Ogni livello conosce solo il \textbf{livello inferiore} a se, questo è per mantenere i livelli superiori attraverso diversi livelli inferiori; per esempio un telefono Samsung e un Motorola sono realizzati in maniera diversa, ma entrambi utilizzano Android, questo è possibile proprio grazie al fatto che i livelli non si concentrano sui livelli soprastanti.\\
+Un altro esempio: non si possono portare app iOS su Android.\\
+Spesso esistono dei traduttori che permettono di convertire istruzioni (x64,x86) per permettere compatibilità con sistemi operativi e processori differenti.
+\subsection{Principi importanti}
+I componenti che svolgono le istruzioni seguono questi concetti:
+\begin{itemize}
+    \item \textbf{Gerarchia}
+    \item \textbf{Modularità}: presenza di moduli per la specializzazione e composizione del lavoro.
+    \item \textbf{Regolarità}
+\end{itemize}
+Si usano moduli più piccoli per svolgere azioni più grandi quando combinati.
+
+\section{Circuiti Digitali}
+\subsection{Sistema binario}
+Noi utilizziamo il sistema decimale, ovvero un sistema \textbf{posizionale}, dove ogni cifra possiede un valore diverso a seconda della sua posizione.\\
+Anche il \textbf{sistema binario} è un sistema posizionale, ma le cifre sono solo 2 (0,1).\\
+\begin{itemize}
+    \item \textbf{Esempio decimale:}
+    \[
+    13_{10} = (1 \cdot 10^1) + (3 \cdot 10^0)
+    \]
+    \item \textbf{Esempio binario:}
+    \[
+    10_2 = (1 \cdot 2^1) + (0 \cdot 2^0) = 2_{10}
+    \]
+\end{itemize}
+Nei computer si utilizza il sistema binario per via della sua semplicità e della sua compatibilità con i moduli logici, per esempio una moltiplicazione è più facile da svolgere in binario tramite un modulo \textbf{AND}, invece che in decimale.\\\\
+Per rappresentare i numeri negativi in binario ci sono due modi:
+\begin{itemize}
+    \item \textbf{Modulo e segno:} si riserva il \textbf{MSB} (Most Significant Bit, più a sinistra) per il segno (1 se negativo, 0 se positivo).
+    \item \textbf{Complemento a 2:} nato perche complicate le operazioni con modulo e segno (if else); si ha un algoritmo per ottenere il binario di un numero negativo:
+    \begin{enumerate}
+        \item Si trasforma il numero in binario.
+        \item Si fa il NOT di ogni bit
+        \item si aggiunge "+1"
+    \end{enumerate}
+\end{itemize}
 \end{document}
