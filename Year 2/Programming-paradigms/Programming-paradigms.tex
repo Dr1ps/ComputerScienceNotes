@@ -332,8 +332,21 @@ Un altro tipo di rappresentazione sono gli alberi, fatti in questo modo:
 \end{itemize}
 
 \subsection{Alpha equivalenza}
-Due espressioni sono dette \textbf{alpha equivalenza} se per ogni input producono lo stesso output. Più semplicemente, si potrebbe "rinominare" qualche parametro per rendere le due espressioni identiche, questa operazione si chiama \textbf{alpha-conversione}.\\
-Questa tecnica può essere applicata anche a problemi di ambiguità legati alla similarità tra nomi di parametri formali e attuali.
+Due espressioni sono dette \textbf{alpha equivalenza} se differiscono solo per i nomi delle variabili legate. Più semplicemente, si potrebbe "rinominare" qualche parametro per rendere le due espressioni identiche, questa operazione si chiama \textbf{alpha-conversione}.\\
+Questa tecnica può essere applicata anche a problemi di ambiguità legati alla similarità tra nomi di parametri formali e attuali.\\
+Vediamo alcuni esempi:
+\paragraph{Sostituzione negata, variabile legata}
+\[
+((\lambda x.yx)w)\{x := \lambda k.kx\} = (\lambda x.yx)w
+\]
+\paragraph{Alpha equivalenza}
+\[
+((\lambda x.yx)w)\{y := \lambda k.kx\} \equiv_\alpha ((\lambda z.yz)w)\{y := \lambda k.kx\} = (\lambda z.\lambda k.kx z)w
+\]
+\paragraph{Sostituzione semplice, diretta}
+\[
+((\lambda x.yx)w)\{w := \lambda k.kx\} = (\lambda x.yx)(\lambda k.kx)
+\]
 
 \subsection{Valutazione di lambda espressioni}
 La notazione è questa per la valutazione:
@@ -363,5 +376,6 @@ Altri concetti importanti:
 \[
 (\lambda y.e_1)\{x := e\} \equiv \lambda y.(e_1 \{x := e\}), y \ne x \land y \notin FV(e)
 \]
-\paragraph{ATTENZIONE:} se nell'espressione con cui si sta effettuando la sostituzione (non la variabile da sostituire) contiene variabili con lo stesso nome di variabili legate bisogna prima effettuare l'alpha conversione per evitare ambiguità ed errori.
+\paragraph{ATTENZIONE:} se nell'espressione con cui si sta effettuando la sostituzione (non la variabile da sostituire) contiene variabili con lo stesso nome di variabili legate bisogna prima effettuare l'alpha conversione per evitare ambiguità ed errori.\\
+Infatti, la sostituzione si può effettuare solo sulle variabili non legate.
 \end{document}

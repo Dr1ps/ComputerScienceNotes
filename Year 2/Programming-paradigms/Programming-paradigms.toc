@@ -39,5 +39,8 @@
 \contentsline {subsection}{\numberline {6.5}Definizione sintattica}{13}{subsection.6.5}%
 \contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{13}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{13}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione negata, variabile legata}{13}{subsection.6.7}%
+\contentsline {paragraph}{Alpha equivalenza}{13}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione semplice, diretta}{13}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{13}{subsection.6.8}%
 \contentsline {paragraph}{ATTENZIONE:}{14}{subsection.6.8}%

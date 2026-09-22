@@ -2,3 +2,4 @@
 AESO: check out lesson's book pages (both) (on EVERYTHING till you caught up)
 LAB2: look up underflow and overflow with arithmetic expressions
 LAB2: reorder subsections of C section to make users ease in 
+PARADIGMS: forma normale, last things in slides cuz i was distracted, chiusura transitiva e beta riduzione
