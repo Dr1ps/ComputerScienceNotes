@@ -163,9 +163,9 @@ Spesso esistono dei traduttori che permettono di convertire istruzioni (x64,x86)
 \subsection{Principi importanti}
 I componenti che svolgono le istruzioni seguono questi concetti:
 \begin{itemize}
-    \item \textbf{Gerarchia}
-    \item \textbf{Modularità}: presenza di moduli per la specializzazione e composizione del lavoro.
-    \item \textbf{Regolarità}
+    \item \textbf{Gerarchia}: il principio dei livelli, ogni livello utilizza i componenti dei livelli sottostanti senza occuparsi di cosa fanno.
+    \item \textbf{Modularità}: presenza di moduli distinti per la specializzazione e composizione del lavoro.
+    \item \textbf{Regolarità}: si realizzano strutture simili e ripetibili invece di fare sempre le cose in modo diverso.
 \end{itemize}
 Si usano moduli più piccoli per svolgere azioni più grandi quando combinati.
 
@@ -183,7 +183,8 @@ Anche il \textbf{sistema binario} è un sistema posizionale, ma le cifre sono so
     10_2 = (1 \cdot 2^1) + (0 \cdot 2^0) = 2_{10}
     \]
 \end{itemize}
-Nei computer si utilizza il sistema binario per via della sua semplicità e della sua compatibilità con i moduli logici, per esempio una moltiplicazione è più facile da svolgere in binario tramite un modulo \textbf{AND}, invece che in decimale.\\\\
+Nei computer si utilizza il sistema binario per via della sua semplicità e della sua compatibilità con i moduli logici, per esempio una moltiplicazione è più facile da svolgere in binario tramite un modulo \textbf{AND}, invece che in decimale.
+\subsection{Numeri negativi}
 Per rappresentare i numeri negativi in binario ci sono due modi:
 \begin{itemize}
     \item \textbf{Modulo e segno:} si riserva il \textbf{MSB} (Most Significant Bit, più a sinistra) per il segno (1 se negativo, 0 se positivo).
@@ -194,4 +195,134 @@ Per rappresentare i numeri negativi in binario ci sono due modi:
         \item si aggiunge "+1"
     \end{enumerate}
 \end{itemize}
+Su un byte di solito si possono realizzare \textbf{256} possibili combinazioni positive, ma col complemento a 2 l'intervallo si spezza:
+\begin{itemize}
+    \item 128 valori positivi (0 - 127)
+    \item 128 valori negativi (-128 - -1)
+\end{itemize}
+Nel modulo e segno addirittura ci sono 2 rappresentazioni diverse per lo 0, altro motivo per cui è stato introdotto il complemento a 2.\\
+Ecco come funziona veramente il complemento a 2:
+\begin{itemize}
+    \item Il MSB vale un valore negativo ($-2^7$)
+    \item Tutti gli altri bit valgono valori positivi
+    \item Se si ricalcola la somma di un complemento a 2 per trovare il suo valore decimale, si ottiene il numero negativo.
+\end{itemize}
+Per esempio, calcoliamo -10:
+\[
+10_{10} = 0000 1010_2
+\]
+\[
+!(0000 1010) = 1111 0101
+\]
+\[
+1111 0101 + 1 = 1111 0110
+\]
+\[
+1111 0110_2 = (-2^7 + 2^6 + 2^5 +2^4 + 2^2 + 2)_{10} = (-128 + 64 + 32 + 16 + 4 + 2) = -10_{10}
+\]
+\paragraph{ATTENZIONE:} se si effettua una somma tra numeri in complemento a 2 che hanno segni concordi e si ottiene un risultato con segno diverso allora significa che c'è stato un \textbf{overflow}.
+\subsection{Numeri con la virgola (Floating Point)}
+Il \textbf{floating point (FP)} permette di rappresentare i numeri con cifre decimali.\\
+Ecco la sua struttura:
+\begin{center}
+    [segno][esponente][mantissa]
+\end{center}
+Questa struttura può essere lunga 32 o 64 bit.
+\begin{itemize}
+    \item \textbf{Segno}: 1 bit, segno (+/-) del numero.
+    \item \textbf{Esponente}: 8 o 11 bit, esponente per cui "10" è moltiplicato il numero decimale, per esempio:
+    \[
+    10,5 = 105 \cdot 10^(-1)
+    \]
+    \item \textbf{Mantissa}: 23 o 52 bit, contiene il numero intero da moltiplicare al "10" ().
+\end{itemize}
+\subsection{Caratteri (ASCII)}
+Per rappresentare i caratteri in binario si utilizza la \textbf{codifica ASCII}, che utilizza \textbf{ottetti} (7/8 bit) per rappresentare ogni carattere.\\
+Ogni carattere è identificato da un \textbf{ID}.
+Offre:
+\begin{itemize}
+    \item 26 lettere maiuscole
+    \item 26 lettere minuscole
+    \item 10 cifre
+    \item Punteggiatura
+    \item Caratteri speciali (invio, tab, DEL)
+\end{itemize}
+Vediamo i range di ID che ci interessano:
+\begin{itemize}
+    \item \textbf{Non stampabili:} \(0 - 31, 127\)
+    \item \textbf{Stampabili:} \(32 - 126\)
+    \item \textbf{Cifre:} \(48 - 57\)
+    \item \textbf{Lettere maiuscole:} \(65 - 90\)
+    \item \textbf{Lettere minuscole:} \(97 - 122\)
+    \item \textbf{Spazio:} \(32\)
+\end{itemize}
+Come si può notare, ogni lettera maiuscola è sempre alla stessa distanza dalla sua corrispondente minuscola: per questo basta aggiungere "\textbf{32}" ad una lettera maiuscola (o sottrarlo alla minuscola) per switchare tra lowercase e uppercase.
+
+\section{Esadecimale}
+Oltre al sistema binario, spesso viene utilizzato anche il sistema \textbf{esadecimale}, ovvero in base 16.\\
+Questo sistema è comodo, basta pensare al fatto che $16$ in binario necessita di esattamente $4$ bit (un \textbf{nibble}), questo vuol dire che ogni 4 bit si ha una cifra in esadecimale e viceversa.\\
+Ecco le cifre:
+\[
+1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+\]
+Con:
+\[
+A = 10,F = 16
+\]
+La base esadecimale viene introdotta da un "\textbf{0x}", così:
+\[
+0x5AF
+\]
+
+
+
+\section{Moduli}
+Questa sezione elenca vari esempi di moduli per le operazioni del calcolatore.
+\subsection{Sommatore}
+Semplice modulo che somma due numeri:
+\begin{itemize}
+    \item Riporto iniziale di 0
+    \item Un output unico
+\end{itemize}
+\subsection{Sottrattore (sommatore in complemento a 2)}
+Il \textbf{sottrattore} è un sommatore che:
+\begin{itemize}
+    \item Ha un riporto iniziale di 1
+    \item Effettua il not sui bit
+\end{itemize}
+\subsection{Moduli per algebra booleana}
+Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei seguenti moduli:
+\begin{itemize}
+    \item Modulo AND
+    \item Modulo OR
+    \item Modulo NOT
+    \item Modulo XOR
+\end{itemize}
+Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.\\\\
+Per rappresentare i circuiti si usano delle \textbf{espressioni}, vediamo delle notazioni di algebra booleana in tale progettazione:
+\begin{itemize}
+    \item Quando un parametro ha un "overline" come $\overline{x}$ allora significa che passa da un NOT.
+    \item La moltiplicazione tra variabili corrisponde all'AND, dato che se facciamo la moltiplicazione tra più valori booleani il risultato sarà diverso da 0 solo se tutti i membri sono settati a "1".
+    \item La somma tra variabili corrisponde all'OR, dato che il risultato è non nullo solo se almeno uno dei membri è settato a "1".
+\end{itemize}
+\paragraph{Nota bene:} un qualsiasi valore positivo, anche se diverso da "1", viene contato come \textbf{true}.
+Vediamo un esempio:
+\[
+\overline{x}yz + x\overline{y}z + xy\overline{z} + xyz
+\]
+Questo è un circuito con 4 moduli AND, 3 moduli OR e 3 moduli NOT realizzato in questo modo:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/logicalCircuit.png}
+    \caption{Circuito logico}
+    \label{fig:logicalCircuit}
+\end{figure}
+\subsection{Modulo di scelta}
+Alcune volte è necessario effettuare delle scelte a seconda di un parametro, esiste un modulo fatto su misura che:
+\begin{itemize}
+    \item Prende in input 2 scelte
+    \item Analizza un terzo input come "condizione"
+    \item Sceglie in base all'analisi effettuata
+\end{itemize}
+Questo modulo è strettamente collegato ai moduli dell'algebra booleana.
 \end{document}

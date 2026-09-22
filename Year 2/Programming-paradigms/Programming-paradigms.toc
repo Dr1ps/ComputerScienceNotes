@@ -25,6 +25,18 @@
 \contentsline {section}{\numberline {6}Lambda Calculus}{10}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Definizione}{10}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Lambda espressioni}{10}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Segnatura e funzione identità}{10}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Applicazione}{10}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Funzione costante}{10}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}Funzioni annidate}{11}{subsubsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.5}Ordine di semplificazione}{11}{subsubsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.6}Funzioni come parametro}{11}{subsubsection.6.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.7}Prolungamento di espressione}{11}{subsubsection.6.2.7}%
+\contentsline {subsubsection}{\numberline {6.2.8}Parametri attuali numerici}{12}{subsubsection.6.2.8}%
+\contentsline {subsubsection}{\numberline {6.2.9}Ambiguità}{12}{subsubsection.6.2.9}%
 \contentsline {subsection}{\numberline {6.3}Convenzioni sintattiche}{12}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Variabili libere e legate}{12}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{12}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{13}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{13}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{13}{subsection.6.8}%

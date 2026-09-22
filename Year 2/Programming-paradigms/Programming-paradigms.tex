@@ -177,6 +177,7 @@ Questo metodo viene applicato in tutti i campi della scienza e ricerca e lo appl
 \subsection{Definizione}
 Il \textbf{lambda calcolo} è stato introdotto nel 1935 da \textbf{Church} e può essere considerato il primo linguaggio di programmazione funzionale e setta proprio una base per studiare tale paradigma.
 \subsection{Lambda espressioni}
+\subsubsection{Segnatura e funzione identità}
 Il lambda calculus utilizza questa segnatura:
 \[
 \lambda x.x
@@ -191,11 +192,13 @@ La legge di corrispondenza corrisponde a:
 f(x) = x
 \]
 Ovvero la funzione identità.\\
-Per attualizzare questa segnatura si fa cosi:
+\subsubsection{Applicazione}
+Per attualizzare questa segnatura si fa cosi e si chiama \textbf{applicazione}:
 \[
 (\lambda x.x)z = z
 \]
-Con "z" come \textbf{parametro attuale}.\\
+Con "z" come \textbf{parametro attuale}.
+\subsubsection{Funzione costante}
 Vediamo adesso un esempio di \textbf{funzione costante}:
 \[
 \lambda x.y
@@ -203,7 +206,8 @@ Vediamo adesso un esempio di \textbf{funzione costante}:
 \[
 (\lambda x.y)z = y
 \]
-L'output non dipende dall'input (parametro formale).\\
+L'output non dipende dall'input (parametro formale).
+\subsubsection{Funzioni annidate}
 Addirittura, esistono annidamenti di funzioni:
 \[
 \lambda x.\lambda y.x
@@ -216,7 +220,8 @@ f(x,y) = x
 ((\lambda x.\lambda y.x)z)w = (\lambda y.z)w = z
 \]
 La prima funzione non ritorna un valore, bensì un'espressione (o una funzione) che può essere usata a sua volta.\\
-La parte dell'espressione che si riduce si chiama \textbf{redex}, si effettuano le sostituzioni in ordine e si osserva come si evolve per determinare un risultato.\\
+La parte dell'espressione che si riduce si chiama \textbf{redex}, si effettuano le sostituzioni in ordine e si osserva come si evolve per determinare un risultato.
+\subsubsection{Ordine di semplificazione}
 Spesso si può scegliere un ordine di semplificazione:
 \begin{itemize}
   \item Partendo dalla funzione più esterna
@@ -234,6 +239,7 @@ Risolvendo prima l'interna:
 \[
 (\lambda x.((\lambda y.y)x))z = \lambda(x.x)z = z
 \]
+\subsubsection{Funzioni come parametro}
 Vediamo adesso un altro caso:
 \[
 (\lambda f.fz)(\lambda x.x)
@@ -242,6 +248,7 @@ Questo usa un'intera funzione come parametro:
 \[
 (\lambda f.fz)(\lambda x.x) = (\lambda x.x)z = z
 \]
+\subsubsection{Prolungamento di espressione}
 Le espressioni possono ricostruirsi:
 \[
 (\lambda x.(xx))(\lambda y.y)
@@ -249,6 +256,7 @@ Le espressioni possono ricostruirsi:
 \[
 (\lambda x.(xx))(\lambda y.y) = (\lambda y.y)(\lambda y.y) = \lambda y.y
 \]
+\subsubsection{Parametri attuali numerici}
 Adesso vediamo un esempio con una somma:
 \[
 ((\lambda x.\lambda y.x+y)3)5
@@ -256,7 +264,8 @@ Adesso vediamo un esempio con una somma:
 \[
 ((\lambda x.\lambda y.x+y)3)5 = (\lambda y.3+y)5 = 3+5 = 8
 \]
-Basta effettuare un passaggio alla volta.\\
+Basta effettuare un passaggio alla volta.
+\subsubsection{Ambiguità}
 Vediamo una situazione di ambiguità con 3 espressioni concatenate nella forma ($e_1, e_2, e_3$):
 \[
 (\lambda x.\lambda y.xy)(\lambda x.x)z
@@ -270,7 +279,7 @@ Questo conta anche per i parametri attuali:
 (\lambda x. \lambda y.xy)zk
 \]
 \[
-(\lambda x. \lambda y.zy)k = (\lambda y.zy)k
+(\lambda x. \lambda y.xy)zk = (\lambda y.zy)k
 \]
 Bisogna fare attenzione ad ambiguità tra parametri formali e attuali:
 \[
@@ -290,8 +299,8 @@ L'\textbf{applicazione funzionale} associa a \textbf{sinistra}:
   $e_1 e_2 e_3$ diventa $(e_1 e_2)e_3$
 \end{center}
 \subsection{Variabili libere e legate}
-Una \textbf{variabile legate} a un $\lambda$ sono quelle che fanno parte di una lambda espressione, ovvero una dichiarazione (parametri formali).\\
-Le \textbf{variabili libere} invece corrispondono al contrario, come i parametri attuali, le variabili non enunciate da un $\lambda$, queste sono definite dall'insieme:
+Una \textbf{variabile legate (bound)} a un $\lambda$ sono quelle che fanno parte di una lambda espressione, ovvero una dichiarazione (parametri formali).\\
+Le \textbf{variabili libere (unbound)} invece corrispondono al contrario, come i parametri attuali, le variabili non enunciate da un $\lambda$, queste sono definite dall'insieme:
 \[
 FV
 \]
@@ -302,6 +311,10 @@ FV(x) = \{x\}
 \[
 FV((\lambda x.x)z) = \{z\}
 \]
+Un termine si dice \textbf{chiuso} se:
+\[
+Fv(E) = \emptyset
+\]
 \subsection{Definizione sintattica}
 \begin{itemize}
 \item e ::= x
@@ -310,4 +323,40 @@ FV((\lambda x.x)z) = \{z\}
     \item e e           (function call)
   \end{itemize}
 \end{itemize}
+\subsection{Alberi per lambda espressioni}
+Un altro tipo di rappresentazione sono gli alberi, fatti in questo modo:
+\begin{itemize}
+  \item Il costruttore $\lambda$ è la radice.
+  \item Sul ramo sinistro si trova il parametro formale.
+  \item Sul ramo destro si trova il corpo, il quale può ricominciare con un $\lambda$.
+\end{itemize}
+
+\subsection{Alpha equivalenza}
+Due espressioni sono dette \textbf{alpha equivalenza} se per ogni input producono lo stesso output. Più semplicemente, si potrebbe "rinominare" qualche parametro per rendere le due espressioni identiche, questa operazione si chiama \textbf{alpha-conversione}.\\
+Questa tecnica può essere applicata anche a problemi di ambiguità legati alla similarità tra nomi di parametri formali e attuali.
+
+\subsection{Valutazione di lambda espressioni}
+La notazione è questa per la valutazione:
+\[
+eval(espressione)
+\]
+Semplicemente, la valutazione corrisponde a:
+\begin{itemize}
+  \item Osservare se bisogna effettuare un'alpha-conversione per risolvere ambiguità.
+  \item Sostituire i parametri formali coi parametri attuali.
+  \item Svolgere la funzione (equivalente di effettuare una chiamata ad una funzione, per capire).
+  \item Valutare il risultato e restituirlo.
+\end{itemize}
+La notazione per la sostituzione è questa:
+\[
+e_1\{x := e_2\}
+\]
+Nozione alternativa:
+\[
+e_1\{e_2 / x\}
+\]
+La sostituzione può essere distribuita:
+\[
+(e_1 e_2)\{x := e\} \equiv (e_1 \{x := e\})(e_2 \{x := e\})
+\]
 \end{document}

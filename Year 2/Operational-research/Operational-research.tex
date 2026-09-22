@@ -137,7 +137,7 @@ Un problema di ottimizzazione può avere diversi tipi di soluzione, tra cui:
     \item \textbf{Nessuna soluzione:} lo spazio soluzione è vuoto.
 \end{itemize}
 
-\section{Tecniche di modellazione dei problemi}
+\section{Tecnica di modellazione di problemi}
 Alcuni problemi possono essere molto complessi, è quindi necessario sapere come modellarli per renderli risolvibili.
 \subsection{Il problema della fonderia (esempio)}
 \subsubsection{Descrizione del problema}
@@ -235,7 +235,7 @@ Spiegando riga per riga:
 
 
 \section{Variabili binarie}
-\subsection{Problema dello zaino (Esempio)}
+\subsection{Problema dello zaino (esempio)}
 \subsubsection{Descrizione del problema}
 Un investitore dispone di un capitale limitato B da destinare a una serie di $n \in N$ progetti di investimento.\\
 Ogni progetto è caratterizzato da:
@@ -285,7 +285,7 @@ Ecco come si rappresentano:
 Adesso, consideriamo che se si investe in A, allora si investe in B, ma se non si investe in A non è necessario investire in C.\\
 Ecco come si rappresenta:
 \[
-X_A \leq X_C
+X_A \leq X_B
 \]
 Infine:
 \begin{itemize}
@@ -295,12 +295,177 @@ Infine:
 Si ha una doppia implicazione:
 \[
 \begin{cases}
-    \frac{X_A + X_B}{2} \leq X_C\\
-    X_C = \frac{X_A + X_B}{2}
+    X_C \geq X_A + X_B - 1\\
+    X_C \leq \frac{X_A + X_B}{2}
 \end{cases}
 \]
-La prima condizione si annulla e quindi:
+Vediamo adesso altri vincoli:
+\begin{itemize}
+    \item Si deve finanziare il progetto C se si finanzia almeno uno tra A o B
+    \item Si può finanziare il progetto C se si finanzia almeno uno tra A o B
+\end{itemize}
+Qui c'è una ridondanza, si considera solo la prima condizione dato che è più \textbf{rilevante}, vediamo comunque entrambi i vincoli:
 \[
-X_C \geq X_A + X_B - 1
+\begin{cases}
+    X_C \geq \frac{X_A + X_B}{2}\\
+    X_C \leq X_A + X_B
+\end{cases}
 \]
+Vediamo adesso ancora altri vincoli:
+\begin{itemize}
+    \item Si deve finanziare il progetto C se si finanzia esattamente uno tra A o B
+    \item Si può finanziare il progetto C se si finanzia esattamente uno tra A o B
+\end{itemize}
+Ecco i vincoli:
+\[
+\begin{cases}
+    X_C \geq X_A - X_B\\
+    X_C \geq X_B - X_A
+\end{cases}
+\]
+\[
+\begin{cases}
+    X_C \leq 2 - X_A - X_B\\
+    X_C \leq X_A + X_B
+\end{cases}
+\]
+Nel caso appena svolto si sarebbe potuto solitamente usare un valore assoluto, ma non in ricerca operativa.
+\subsection{Albero di copertura di costo minimo (esempio applicativo)}
+Vediamo un'applicazione interessante delle variabili binarie.\\
+Dato un grafo connesso:
+\[
+G = (V,E)
+\]
+Dove i vertici rappresentano delle città e gli archi delle possibili connessioni tra esse.\\
+Ciascun arco ha un costo:
+\[
+c_{ij} > 0
+\]
+Vogliamo fare in modo che ogni città sia raggiungibile da ogni altra città attraverso la rete, con il minor costo.\\
+\subsubsection{Inizializzazione}
+Variabili:
+\[
+X_{ij} = \begin{cases}
+    1, \text{lato in percorso soluzione}\\
+    0, altrimento
+\end{cases}
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{ij \in E}^{}c_{ij} \cdot X_{ij}
+\]
+Vincoli:
+\[
+\begin{cases}
+    X_{ij} = \{0,1\}\\
+    \{ij\} \in E | i \in S, j \in V \setminus S, \sum_{}^{} X_{ij} \geq 1, \forall S,V; S \ne \emptyset
+\end{cases}
+\]
+Il secondo vincolo garantisce che il grafo sia \textbf{connesso}.\\
+Non procederemo alla realizzazione del modello di questo problema dato che è servito solo per dimostrare come usare le variabili logiche in questo contesto.\\\\
+\subsubsection{Problema del commesso viaggiatore (applicato al grafo)}
+Vediamo adesso un'altra situazione: il commesso viaggiatore deve effettuare un \textbf{ciclo hamiltoniano di costo minimo}, ovvero un ciclo che visita una volta sola ogni città, torna alla città di partena e ha un costo minimo.\\
+Prepariamo tutto, prima le variabili:
+\[
+X_{ij} = \begin{cases}
+    1, \{ij\} \in E \text{ e in soluzione}\\
+    0
+\end{cases}
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{\{ij\} \in E}^{} C_{ij} \cdot X_{ij}
+\]
+Vincoli:
+\[
+\begin{cases}
+    \sum_{ij \in E}^{} X_{ij} = |V|\\
+    \{ij\} \in E | i \in S, j \in V \setminus S, \sum_{}^{} X_{ij} \geq 1, \forall S,V; S \ne \emptyset\\
+    \sum_{ij \in E}^{} X_{ij} = 2
+\end{cases}
+\]
+In realtà non è necessario che siano precisamente 2 gli archi di ogni nodo, bensì devono essere semplicemente un numero pari.
+\subsection{Problema di assegnamento (esempio applicativo)}
+Un'azienda deve assegnare alcune attività da svolgere ad un insieme di lavoratori. I lavoratori e le attività sono due insiemi:
+\begin{itemize}
+    \item L = lavoratori
+    \item A = attività
+\end{itemize}
+Supponiamo che $i \in L$ e $j \in A$.\\
+Ogni attività ha un costo:
+\[
+c_{ij}
+\]
+Si vogliono assegnare tutte le attività ai lavoratori e che ogni lavoratore abbia una ed una sola attività assegnata, minimizzando il costo.
+\subsubsection{Inizializzazione}
+Dato che c'è una biiezione sappiamo che:
+\[
+|L| = |A|
+\]
+Sviluppiamo un grafo:
+\[
+G = (L \cup A, E)
+\]
+Variabili:
+\[
+X_{ij} = \begin{cases}
+    1, \text{se assegno attività j al lavoratore i}\\
+    0
+\end{cases}
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{E}^{} c_{ij} \cdot X_{ij}
+\]
+Vincoli:
+\[
+\begin{cases}
+    \forall j \in A, \sum_{i \in L}^{} X_{ij} = 1\\
+    \forall i \in L, \sum_{j \in A}^{} X_{ij} = 1\\
+    X_{ij} \in \{ij\}
+\end{cases}
+\]
+\subsection{Assegnamento di frequenze (esempio applicativo)}
+Una compagnia di telecomunicazioni deve decidere come coprire la cottà attraverso un insieme di stazioni radio.\\
+Ogni città ha una stazione radio, ma le città vicine devono avere frequenze diverse tra esse per non avere interferenze.\\
+Ogni frequenza ha un costo:
+\[
+c_{if}
+\]
+con:
+\[
+i \in S = \text{citta / antenne}
+\]
+\[
+f \in F = frequenze
+\]
+Si vuole coprire la città con il numero minore di frequenze.
+\subsubsection{Inizializzazione}
+Variabili:
+\[
+y_f = \begin{cases}
+    1, \text{se uso } f \in F\\
+    0 
+\end{cases}
+\]
+\[
+X_{if} = \begin{cases}
+    1, \text{se associo f a i}\\
+    0
+\end{cases}
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{f \in F}^{} y_f
+\]
+Vincoli:
+\[
+\begin{cases}
+    \sum_{f \in F}^{} X_{if} = 1, \forall i \in S\\
+    X_{if} \in \{0,1\}\\
+    y_f \in \{0,1\}\\
+    X_{if} + X_{jf} \leq 1, (i,j) \in E 
+\end{cases}
+\]
+L'ultima condizione indica che le frequenze sono diverse tra vicini.
 \end{document}

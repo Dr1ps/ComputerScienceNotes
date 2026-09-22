@@ -1,4 +1,4 @@
-21/09/2026 -----------
-PARADIGMS: divide in subsections all lambda calculus signatures/expressions examples
-PARADIGMS: (OPTIONAL) check out lambda expression trees
-AESO: check out lesson's book pages (both)
+22/09/2026 -----------
+AESO: check out lesson's book pages (both) (on EVERYTHING till you caught up)
+LAB2: look up underflow and overflow with arithmetic expressions
+LAB2: reorder subsections of C section to make users ease in 

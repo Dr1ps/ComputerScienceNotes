@@ -211,7 +211,47 @@ Il comando \textbf{less}, opera simile al comando \textbf{cat}, ma non carica tu
     $ less [nomeFile]
     $ less hello.txt
 \end{lstlisting}
+Si possono aprire anche più file insieme:
+\begin{lstlisting}
+    $ less [nomeFile1] [nomeFile2]
+    $ less file1.txt file2.txt
+\end{lstlisting}
+Per passare al prossimo file o al precedente si fa rispettivamente:
+\begin{lstlisting}
+    $ :n
+    $ :p
+\end{lstlisting}
+Per scorrere in avanti si può premere:
+\begin{itemize}
+    \item \textbf{Spazio}: pagina successiva.
+    \item \textbf{$\downarrow$}: riga successiva.
+    \item \textbf{Invio/Enter}: riga successiva.
+    \item \textbf{G}: fine del file.
+\end{itemize}
+Questo comando permette anche di scorrere indietro:
+\begin{itemize}
+    \item \textbf{b}: pagina precedente
+    \item \textbf{Freccia in su}: riga precedente
+    \item \textbf{g}: inizio del file
+\end{itemize}
+e di cercare parole, vediamo un esempio (una volta attivato less):
+\begin{lstlisting}
+    $ /ciao (cerca in avanti)
+    $ ?ciao (cerca indietro)
+\end{lstlisting}
+Per scorrere le occorrenze si fa cosi:
+\begin{lstlisting}
+    $ n (occorrenza successiva)
+    $ N (occorrenza precedente)
+\end{lstlisting}
 Per uscire bisogna premere \textbf{Q}.
+\subsubsection{more}
+Il comando \textbf{more} funziona come il comando \textbf{less}, ma non permette di scorrere indietro, nè di cercare parole.
+\begin{lstlisting}
+    $ more [nomeFile]
+    $ more file.txt
+\end{lstlisting}
+Per uscire bisogna premere \textbf{Q}.\\
 \subsubsection{head}
 Il comando \textbf{head} permette di stampare le prime righe di un file su terminale.
 \begin{lstlisting}
@@ -358,7 +398,17 @@ Questi flussi possono essere reindirizzati altrove dal terminale.
 
 \section{Linguaggio C}
 Il linguaggio \textbf{C} è un linguaggio compilato, pertanto, prima di eseguire un file bisogna convertirlo in binario.\\
-Esistono diversi standard C: C89, C95, C99, C11, C17, C23.\\
+C è un linguaggio \textbf{strongly typed}, c'è un forte controllo dei tipi.\\
+Necessita ";" (semicolon) alla fine di ogni istruzione.\\
+Esistono diversi standard C: C89, C95, C99, C11, C17, C23.
+\subsection{Struttura generica}
+Un programma C solitamente è composto da questi elementi in questo ordine:
+\begin{enumerate}
+    \item Direttive pre-processore
+    \item Dichiarazioni globali
+    \item Funzioni (incluso main)
+\end{enumerate}
+\paragraph{ATTENZIONE:} un programma C può avere \textbf{un solo main}.
 \subsection{Compilatore}
 Il compilatore più conosciuto e usato per C è \textbf{gcc}, ovvero "GNU C Compiler", anche se adesso viene definito come "GNU Compiler Collection" perche diventato un progetto più ampio che include anche altri compilatori come quello di Fortran e C++. 
 \begin{lstlisting}
@@ -382,17 +432,76 @@ I \textbf{warnings} sono importanti e non vanno ignorati, per compilare e stampa
     $ gcc -Wall hello.c
 \end{lstlisting}
 Ogni warning contiene un messaggio e la location (riga e carattere) di esso.
+\subsection{Fasi di pre-esecuzione}
+Ecco cosa succede dall'avvio del programma:
+\begin{itemize}
+    \item \textbf{Preprocessing}: vengono eseguite le direttive pre-processore.
+    \item \textbf{Compilazione}: il sorgente .c viene trasformato in codice oggetto .o.
+    \item \textbf{Linking}: i file oggetto vengono collegati in un unico eseguibile.
+    \item \textbf{Caricamento}: l'eseguibile viene caricato in memoria per essere eseguito, viene diviso in 4 \textbf{zone} diverse:
+    \begin{itemize}
+        \item \textbf{Codice}: contiene le istruzioni e le funzioni.
+        \item \textbf{Dati statici}: variabili globali, dati che rimangono per tutta la durata dell'esecuzione.
+        \item \textbf{Heap}: zona dinamica, mantiene i dati temporanei come variabili ed oggetti.
+        \item \textbf{Stack}: zona dinamica, quando una funzione entra in esecuzione viene generato un \textbf{record di attivazione}, il quale contiene varie informazioni legate a tale chiamata. Uno stack viene eliminato al terminare di un blocco di funzione.
+    \end{itemize}
+\end{itemize}
+Vediamo come svolgere queste fasi manualmente invece che compilare tutto insieme direttamente:
+\begin{itemize}
+    \item Preprocessing: con "-E" ci si ferma alle direttive di preprocessing, "-o" invece salva l'output in un file secondario.
+    \begin{lstlisting}
+        $ gcc -E [nomeSorgente] -o [nuovoNome]
+        $ gcc -E codice.c -o codiceP.c
+    \end{lstlisting}
+    \item Compilazione: si accettano solo file ".o", qui con "-c" si compila ma ci si ferma prima del Linking.
+    \begin{lstlisting}
+        $ gcc -c [nomeFile] -o [nuovoNome]
+        $ gcc -c codiceP.c -o codice.o
+    \end{lstlisting}
+    \item Linking:
+    \begin{lstlisting}
+        $ gcc [nomeFile] -o [nuovoNome]
+        $ gcc codice.o -o eseguibile.out
+    \end{lstlisting}
+\end{itemize}
+
 \subsection{Librerie}
 Nei programmi in C è possibile utilizzare delle \textbf{direttive di preprocessazione} (o del preprocessore) che permettono di importare funzioni e strumenti utili allo svolgimento del programma:
 \begin{lstlisting}
     #include <stdio.h>
 \end{lstlisting}
 \subsection{Variabili}
-In C possiamo usare le \textbf{variabili}. Si possono inizializzare ad un valore di un tipo specifico, assegnato al momento della \textbf{dichiarazione}.
+In C possiamo usare le \textbf{variabili}. Sono celle di memoria a cui si può associare un valore di un tipo specifico, assegnato al momento della \textbf{dichiarazione}.
 \begin{lstlisting}
-    int x;
-    x = 32;
+    int x; //Dichiarazione
+    x = 32; //Assegnamento
 \end{lstlisting}
+La dichiarazioni servono al compilatore per capire quanta memoria riservare.\\
+Le variabili possono essere di molti tipi:
+\begin{itemize}
+    \item \texttt{char}: carattere, 1 byte
+    \item \texttt{short}: numero intero, almeno 2 byte (piu corto di int comunque)
+    \item \texttt{int}: numero intero, almeno 2 byte
+    \item \texttt{long}: numero intero, almeno 4 byte
+    \item \texttt{long long}: numero intero, almeno 8 byte
+    \item \texttt{float}: numero reale a precisione singola, almeno 4 byte
+    \item \texttt{double}: numero reale a precisione doppia, almeno 8 byte
+    \item \texttt{long double}: numero reale a precisione estesa, almeno 10 byte
+    \item \texttt{void}: assenza di tipo, 0 byte
+\end{itemize}
+La presenza della parola "almeno" consiste nel fatto che non si sa mai quanto veramente sia grande una variabile e in quanti bit consista, però alcune parole chiave garantiscono una lunghezza minima.\\
+I char possono essere assegnati a numeri corrispondenti a caratteri ASCII.\\
+Come si può vedere non esiste nessun tipo \textbf{string}, bensì sono rappresentate come array di char:
+\begin{lstlisting}
+    char y [8] = "Gabriele";
+\end{lstlisting}
+L'insieme dei valori delle variabili di un programma C in un determinato momento rappresenta lo \textbf{stato} del programma.
+\subsubsection{Scoping}
+Quando dichiariamo una variabile dobbiamo sapere quando inizia ad essere visibile e quando non lo è più, per questo si deve studiare lo \textbf{scoping}. Ci sono due tipi di scoping:
+\begin{itemize}
+    \item \textbf{Scoping globale}: tutte le variabili dichiarate fuori dalle funzioni (anche main)
+    \item \textbf{Scoping locale}: le variabili definite dentro un blocco sono visibili solo nel blocco stesso.
+\end{itemize}
 \subsection{printf}
 Questo è un comando base per stampare qualcosa su console:
 \begin{lstlisting}
@@ -421,13 +530,100 @@ Bisogna scegliere il placeholder corretto per riuscire a stampare una variabile;
     \item \textbf{\%u}: numeri interi senza segno (unsigned int)
     \item \textbf{\%x}: numero intero in esadecimale
     \item \textbf{\%p}: indirizzo di memoria, puntatore
+    \item \textbf{\%z}: tipo di sizeof (size\_t)
 \end{itemize}
+\subsection{Costanti}
+In C non esistono le variabili costanti, possono essere sempre modificate!
 \subsection{Commenti}
 I commenti in C possono essere inseriti in vari modi:
 \begin{itemize}
     \item Commenti su una riga: aperti da "//", non vengono chiusi
     \item Commenti su più righe: delimitati da "/*" e da "*/".
 \end{itemize}
+I commenti sono fondamentali e spariscono al momento di compilazione.\\
+Sarebbe preferibile utilizzare sempre i commenti con "/*" perchè quelli con "//" sono più idonei per C++.
+\subsection{Operatori in C}
+\textbf{Operatori aritmetici}
+\begin{itemize}
+    \item \texttt{+}: addizione
+    \item \texttt{-}: sottrazione
+    \item \texttt{*}: moltiplicazione
+    \item \texttt{/}: divisione
+    \item \texttt{\%}: resto della divisione (modulo)
+\end{itemize}
+Bisogna stare attenti perchè alcune operazioni possono ritornare errori pratici di \textbf{overflow} o \textbf{underflow}.
+\textbf{Operatori logici}
+\begin{itemize}
+    \item \texttt{\&\&}: AND logico
+    \item \texttt{||}: OR logico
+    \item \texttt{!}: NOT logico
+\end{itemize}
+\textbf{Operatori di assegnamento}
+\begin{itemize}
+    \item \texttt{=}: assegnamento
+    \item \texttt{+=}: somma e assegnamento
+    \item \texttt{-=}: sottrazione e assegnamento
+    \item \texttt{*=}: moltiplicazione e assegnamento
+    \item \texttt{/=}: divisione e assegnamento
+    \item \texttt{\%=}: modulo e assegnamento
+\end{itemize}
+L'assegnamento avviene da destra verso sinistra:
+\begin{lstlisting}
+    a = b = c; ---> a = (b = c)
+\end{lstlisting}
+\textbf{Operatori di incremento e decremento}
+\begin{itemize}
+    \item \texttt{++}: incremento di 1
+    \item \texttt{--}: decremento di 1
+    \item \texttt{++x}: pre-incremento (incrementa e poi assegna)
+    \item \texttt{x++}: post-incremento (assegna e poi incrementa)
+    \item \texttt{--x}: pre-decremento (decrementa e poi assegna)
+    \item \texttt{x--}: post-decremento (assegna e poi decrementa)
+\end{itemize}
+\textbf{Operatori di confronto}
+\begin{itemize}
+    \item \texttt{==}: uguale
+    \item \texttt{!=}: diverso
+    \item \texttt{>}: maggiore
+    \item \texttt{<}: minore
+    \item \texttt{>=}: maggiore o uguale
+    \item \texttt{<=}: minore o uguale
+\end{itemize}
+\subsection{sizeof}
+La keyword \textbf{sizeof} restituisce quanti byte occupa in memoria un tipo di dato o una variabile:
+\begin{lstlisting}
+    int x = 10;
+    printf("%zu\n",sizeof(x))
+\end{lstlisting}
+Il placeholder utilizzato (z) è specificato in una sottosezione precedente.
+\subsection{If-Else}
+Per prendere decisioni si usano i costrutti \textbf{if-else}:
+\begin{lstlisting}
+    if (condizione) {
+        comando;
+        ...
+    } else {
+        comando;
+        ...
+    }
+\end{lstlisting}
+La condizione deve essere paragonabile con un valore \textbf{booleano} per determinare la decisione.\\
+Questi costrutti si possono annidare e addirittura si può omettere l'else.
+\subsection{While e do-while}
+Questo costrutto permette di eseguire più volte le stesse istruzioni fino ad un certo \textbf{break point}, ovvero fino a che una condizione non ferma il while.
+\begin{lstlisting}
+    while (condizione) {
+        comando;
+        ...
+    }
+\end{lstlisting}
+C'è un'opzione alternativa che garantisce una prima esecuzione e avvia il ciclo solo se la condizione è soddisfatta:
+\begin{lstlisting}
+    do {
+        comando;
+        ...
+    } while (condizione)
+\end{lstlisting}
 
 \section{Esercizi}
 \subsection{Esercizio 1}
