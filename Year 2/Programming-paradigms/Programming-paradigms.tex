@@ -359,4 +359,9 @@ La sostituzione può essere distribuita:
 \[
 (e_1 e_2)\{x := e\} \equiv (e_1 \{x := e\})(e_2 \{x := e\})
 \] 
+Altri concetti importanti:
+\[
+(\lambda y.e_1)\{x := e\} \equiv \lambda y.(e_1 \{x := e\}), y \ne x \land y \notin FV(e)
+\]
+\paragraph{ATTENZIONE:} se nell'espressione con cui si sta effettuando la sostituzione (non la variabile da sostituire) contiene variabili con lo stesso nome di variabili legate bisogna prima effettuare l'alpha conversione per evitare ambiguità ed errori.
 \end{document}
