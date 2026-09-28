@@ -8,6 +8,7 @@
 \usepackage{fancyhdr}
 \usepackage{listing}
 \usepackage{listings}
+\usepackage{float}
 \usepackage{titlesec}
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
@@ -258,6 +259,36 @@ Vediamo i range di ID che ci interessano:
 \end{itemize}
 Come si può notare, ogni lettera maiuscola è sempre alla stessa distanza dalla sua corrispondente minuscola: per questo basta aggiungere "\textbf{32}" ad una lettera maiuscola (o sottrarlo alla minuscola) per switchare tra lowercase e uppercase.
 
+\subsection{Notazione per grandezza input/output}
+Per indicare quanti bit è grande un input o output, si usa questa notazione:
+\[
+n
+\]
+\[
+\nrightarrow 
+\]
+
+\subsection{Tempi per calcolare risultati}
+Quando realizziamo circuiti digitali bisogna tenere di conto quanto ci mettono le porte a inizializzarsi e quanto ci mette il risultato a essere emesso.\\
+Indichiamo il ritardo di una porta da massimo \textbf{8 ingressi} con:
+\[
+\Delta t
+\]
+Si considera il ritardo per le porte di AND e OR, il tempo della porta NOT è talmente insignificante che non viene considerato (= 0).\\
+Nei nostri circuiti si usano sempre porte da 8.\\
+Per realizzare porte da 9 o più è necessario collegare più porte insieme e farle congiungere ad una porta unica.\\
+Quando bisogna realizzare circuiti con tanti ingressi si tende a realizzare una struttura ad albero.\\
+Ecco come si trova il tempo di impiego di un modulo:
+\begin{enumerate}
+    \item Si crea la tabella di verità con a sinistra gli input e a destra gli output
+    \item Si scrivono tutte le righe possibili degli input (combinazioni, $2^n$, $n =$ numero di input diversi)
+    \item Si calcola il risultato a seconda del modulo e si scrive per ogni combinazione
+    \item Ripetere l'istruzione precedente per ogni output
+    \item Una volta trovata la tabella completa, si trova l'espressione per calcolare ogni output: si eguaglia un output alla somma dei prodotti dei vari input delle combinazioni che hanno risultato un output = "1" (espressione logica, i bit = 0 sono "negati", ovvero con la overline (NOT))
+    \item Si contano termini (OR) e variabili (AND), spesso ogni modulo li usa entrambi, arrivando al minimo a $2\Delta t$, però se uno tra i due supera il numero 8 allora si conta un tempo in più.
+\end{enumerate}
+Spesso le formule si possono semplificare, ma ciò non influisce il tempo impiegato dai moduli, bensì ci può permettere di risparmiare materiale e spazio.
+
 \section{Esadecimale}
 Oltre al sistema binario, spesso viene utilizzato anche il sistema \textbf{esadecimale}, ovvero in base 16.\\
 Questo sistema è comodo, basta pensare al fatto che $16$ in binario necessita di esattamente $4$ bit (un \textbf{nibble}), questo vuol dire che ogni 4 bit si ha una cifra in esadecimale e viceversa.\\
@@ -325,4 +356,108 @@ Alcune volte è necessario effettuare delle scelte a seconda di un parametro, es
     \item Sceglie in base all'analisi effettuata
 \end{itemize}
 Questo modulo è strettamente collegato ai moduli dell'algebra booleana.
+
+\subsection{Full Adder}
+Sommatore speciale che:
+\begin{itemize}
+    \item Ha 2 input
+    \item Ha 1 output risultato
+    \item Ha 1 output di riporto (che va al prossimo FA)
+    \item Ha 1 riporto iniziale (anche nullo)
+\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+        \hline
+        X & Y & $C_{in}$ & Ris & Rip \\
+        \hline
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 1 & 0 \\
+        0 & 1 & 1 & 0 & 1 \\
+        1 & 0 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 0 & 1 \\
+        1 & 1 & 0 & 0 & 1 \\
+        1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \caption{Tabella di verità del Full Adder}
+    \label{tab:full_adder}
+\end{table}
+\[
+Ris =
+X\cdot\overline{Y}\cdot\overline{C_{in}}
++
+\overline{X}\cdot Y\cdot\overline{C_{in}}
++
+\overline{X}\cdot\overline{Y}\cdot C_{in}
++
+X\cdot Y\cdot C_{in}
+\]
+
+\[
+Rip =
+X\cdot Y
++
+X\cdot C_{in}
++
+Y\cdot C_{in}
+\]
+Il suo tempo di impiego corrisponde a $4\Delta t$.
+\subsection{Multiplexer}
+Il \textbf{multiplexer} racchiude un circuito, ha solo input e output visibili dall'esterno.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+        \hline
+        $I_0$ & $I_1$ & S & Y \\
+        \hline
+        0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        1 & 0 & 0 & 1 \\
+        1 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 0 \\
+        0 & 1 & 1 & 1 \\
+        1 & 0 & 1 & 0 \\
+        1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \caption{Tabella di verità del Multiplexer 2:1}
+    \label{tab:mux}
+\end{table}
+\[
+Y =
+\overline{S}\cdot I_0
++
+S\cdot I_1
+\]
+
+\subsection{Demultiplexer}
+Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
+Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo} in input e azzera la porta in uscita non utilizzata.\\
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+        \hline
+        C & X & $z_1$ & $z_0$ \\
+        \hline
+        0 & 0 & 0 & 0 \\
+        0 & 1 & 1 & 0 \\
+        1 & 0 & 0 & 0 \\
+        1 & 1 & 0 & 1 \\
+        \hline
+    \end{tabular}
+    \caption{Tabella di verità del Demultiplexer 1:2}
+    \label{tab:demux}
+\end{table}
+\[
+z_1 =
+C\cdot\overline{X}
+\]
+
+\[
+z_0 =
+C\cdot X
+\]
+Impiega un tempo di $\Delta t$ (fa solo AND).
 \end{document}
