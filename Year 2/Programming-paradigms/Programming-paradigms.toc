@@ -1,46 +1,55 @@
-\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {paragraph}{Email Docente:}{3}{section.1}%
-\contentsline {paragraph}{E-Learning:}{3}{section.1}%
-\contentsline {section}{\numberline {2}Descrizione dei paradigmi}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Paradigma imperativo}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Paradigma object-oriented}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Paradigma funzionale}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Programmazione concorrente}{4}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Programmazione parallela}{4}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Il ruolo chiave dei tipi}{5}{section.3}%
-\contentsline {section}{\numberline {4}Linguaggi}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Fortran}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}ALGOL 60}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}LISP}{6}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}SIMULA 67}{6}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}C}{7}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Pascal}{7}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Smalltalk}{7}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}PROLOG}{7}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}C++}{7}{subsection.4.9}%
-\contentsline {subsection}{\numberline {4.10}Java}{7}{subsection.4.10}%
-\contentsline {subsection}{\numberline {4.11}Altri linguaggi popolari}{8}{subsection.4.11}%
-\contentsline {subsection}{\numberline {4.12}Come crescono i linguaggi?}{8}{subsection.4.12}%
-\contentsline {section}{\numberline {5}Approccio scientifico}{9}{section.5}%
-\contentsline {section}{\numberline {6}Lambda Calculus}{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Definizione}{10}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Lambda espressioni}{10}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Segnatura e funzione identità}{10}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Applicazione}{10}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Funzione costante}{10}{subsubsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.4}Funzioni annidate}{11}{subsubsection.6.2.4}%
-\contentsline {subsubsection}{\numberline {6.2.5}Ordine di semplificazione}{11}{subsubsection.6.2.5}%
-\contentsline {subsubsection}{\numberline {6.2.6}Funzioni come parametro}{11}{subsubsection.6.2.6}%
-\contentsline {subsubsection}{\numberline {6.2.7}Prolungamento di espressione}{11}{subsubsection.6.2.7}%
-\contentsline {subsubsection}{\numberline {6.2.8}Parametri attuali numerici}{12}{subsubsection.6.2.8}%
-\contentsline {subsubsection}{\numberline {6.2.9}Ambiguità}{12}{subsubsection.6.2.9}%
-\contentsline {subsection}{\numberline {6.3}Convenzioni sintattiche}{12}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Variabili libere e legate}{12}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{13}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{13}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{13}{subsection.6.7}%
-\contentsline {paragraph}{Sostituzione negata, variabile legata}{13}{subsection.6.7}%
-\contentsline {paragraph}{Alpha equivalenza}{13}{subsection.6.7}%
-\contentsline {paragraph}{Sostituzione semplice, diretta}{13}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{13}{subsection.6.8}%
-\contentsline {paragraph}{ATTENZIONE:}{14}{subsection.6.8}%
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}%
+\contentsline {paragraph}{Email Docente:}{4}{section.1}%
+\contentsline {paragraph}{E-Learning:}{4}{section.1}%
+\contentsline {section}{\numberline {2}Descrizione dei paradigmi}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Paradigma imperativo}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Paradigma object-oriented}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Paradigma funzionale}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Programmazione concorrente}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Programmazione parallela}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Il ruolo chiave dei tipi}{6}{section.3}%
+\contentsline {section}{\numberline {4}Linguaggi}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Fortran}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}ALGOL 60}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}LISP}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}SIMULA 67}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}C}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Pascal}{8}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Smalltalk}{8}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}PROLOG}{8}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}C++}{8}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Java}{8}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Altri linguaggi popolari}{9}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Come crescono i linguaggi?}{9}{subsection.4.12}%
+\contentsline {section}{\numberline {5}Approccio scientifico}{10}{section.5}%
+\contentsline {section}{\numberline {6}Lambda Calculus}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Definizione}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Lambda espressioni}{11}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Segnatura e funzione identità}{11}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Applicazione}{11}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Funzione costante}{11}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}Funzioni annidate}{12}{subsubsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.5}Ordine di semplificazione}{12}{subsubsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.6}Funzioni come parametro}{12}{subsubsection.6.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.7}Prolungamento di espressione}{12}{subsubsection.6.2.7}%
+\contentsline {subsubsection}{\numberline {6.2.8}Parametri attuali numerici}{13}{subsubsection.6.2.8}%
+\contentsline {subsubsection}{\numberline {6.2.9}Ambiguità}{13}{subsubsection.6.2.9}%
+\contentsline {subsection}{\numberline {6.3}Convenzioni sintattiche}{13}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Variabili libere e legate}{13}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{14}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{14}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{14}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione negata, variabile legata}{14}{subsection.6.7}%
+\contentsline {paragraph}{Alpha equivalenza}{14}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione semplice, diretta}{14}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{14}{subsection.6.8}%
+\contentsline {paragraph}{ATTENZIONE:}{15}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Beta reduction e beta equivalenza}{15}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Non terminazione}{16}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Forma normale}{16}{subsection.6.11}%
+\contentsline {subsection}{\numberline {6.12}Teorema di Church Rosser}{16}{subsection.6.12}%
+\contentsline {subsection}{\numberline {6.13}Funzioni di ordine superiore e currying}{16}{subsection.6.13}%
+\contentsline {subsection}{\numberline {6.14}Valutazione dell'applicazione di funzione}{17}{subsection.6.14}%
+\contentsline {section}{\numberline {7}Esercizi}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Esercizio 1}{18}{subsection.7.1}%
+\contentsline {paragraph}{Soluzione:}{18}{subsection.7.1}%

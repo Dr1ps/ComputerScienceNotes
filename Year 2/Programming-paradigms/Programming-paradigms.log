@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  22 SEP 2026 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  28 SEP 2026 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,7 +627,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Programming-paradigms.toc)
+{C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Programming-paradigms.toc
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2
+
+])
 \tf@toc=\write5
 \openout5 = `Programming-paradigms.toc'.
 
@@ -640,9 +651,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2
-
-]
+[3]
 Overfull \hbox (0.34633pt too wide) in paragraph at lines 36--39
 [] []\OT1/cmr/bx/n/12 E-Learn-ing:[] []\OT1/cmr/m/n/12 https://elearning.di.unipi.it/course/view.php?id=1167[] Il Teams ^^Re pri-vato,
  []
@@ -666,7 +675,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3
+[4
 
 ]
 Overfull \hbox (61.60706pt too wide) in paragraph at lines 41--43
@@ -674,17 +683,6 @@ Overfull \hbox (61.60706pt too wide) in paragraph at lines 41--43
  []
 
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[4
-
-]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -715,7 +713,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7]
+[7
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
 Overfull \hbox (26.05162pt too wide) in paragraph at lines 159--160
 []\OT1/cmr/bx/n/12 Community\OT1/cmr/m/n/12 : il con-trib-uto degli ap-pas-sion-ati tramite nu-mero-sis-sime li-brerie (JavaScript,
  []
@@ -729,7 +738,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8]
+[9]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -738,7 +747,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9
+[10
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 193--195
@@ -754,18 +763,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10
+[11
 
 ]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[11]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -792,26 +792,64 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14] (Programming-paradigms.aux)
+[14]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18
+
+] (Programming-paradigms.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: 2E859230D4EA120DD4094730093A366E;5924.
+(rerunfilecheck)             Checksum: DA521A769099BCC6B29190353DE132B2;7358.
  ) 
 Here is how much of TeX's memory you used:
- 32676 strings out of 468081
- 755076 string characters out of 5425788
- 1267624 words of memory out of 5000000
- 60801 multiletter control sequences out of 15000+600000
+ 32699 strings out of 468081
+ 755362 string characters out of 5425788
+ 1268624 words of memory out of 5000000
+ 60809 multiletter control sequences out of 15000+600000
  636821 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,105p,820b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,105p,820b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Programming-paradigms.pdf (14 pages, 152493 bytes).
+Output written on Programming-paradigms.pdf (18 pages, 167463 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

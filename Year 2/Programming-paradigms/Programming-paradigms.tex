@@ -378,4 +378,94 @@ Altri concetti importanti:
 \]
 \paragraph{ATTENZIONE:} se nell'espressione con cui si sta effettuando la sostituzione (non la variabile da sostituire) contiene variabili con lo stesso nome di variabili legate bisogna prima effettuare l'alpha conversione per evitare ambiguità ed errori.\\
 Infatti, la sostituzione si può effettuare solo sulle variabili non legate.
+
+\subsection{Beta reduction e beta equivalenza}
+La \textbf{beta reduction} consiste nella chiusura transitiva e riflessiva (stella di Finy).\\
+Consiste semplicemente nell'applicazione dei parametri attuali per eseguire sostituzioni:
+\[
+(\lambda x.xy)z
+\]
+\[
+e_1 \{x := e_2\}
+\]
+\[
+(\lambda x.xy)z \{x := z\} \rightarrow zy
+\]
+\begin{itemize}
+  \item $e_1 \rightarrow e_2$ se si ottiene $e_2$ da $e_1$ in \textbf{un passo} di riduzione.
+  \item $e_1 \implies e_2$ se si ottiene $e_2$ da $e_1$ in \textbf{zero o più passi} di riduzione. 
+\end{itemize}
+Con $\implies$ indichiamo la chiusura riflessiva e transitiva.\\
+Una espressione $e_1$ è \textbf{beta-riducibile} se:
+\[
+e_1 \implies e_2
+\]
+Due espressioni $e_1$ ed $e_2$ sono \textbf{beta equivalenti} ($e_1 \equiv_\beta e_2$) quando:
+\begin{itemize}
+  \item Sono identiche (modulo alpha-conversione)
+  \item $e_1 \implies e_2$ oppure $e_2 \implies e_1$
+  \item $e_1 \implies e$ e anche $e_2 \implies e$
+\end{itemize} 
+
+\subsection{Non terminazione}
+Durante lo svolgimento di un espressione si possono incontrare loop, questo concetto si chiama \textbf{non terminazione}.\\
+Vediamo un esempio:
+\[
+(\lambda x.(xx))(\lambda x.(xx))
+\]
+Svolgendo l'espressione, si ricrea sempre.\\
+In realtà, tali espressioni possono:
+\begin{itemize}
+  \item Terminare in "alcuni casi" (facendo specifiche scelte di riduzione)
+  \item Non terminare in "altri casi" (con scelte diverse)
+\end{itemize}
+
+\subsection{Forma normale}
+Esistono delle procedure di valutazione delle espressioni.\\
+Quando una lambda espressione non può essere più ridotta si dice che è in \textbf{forma normale beta}, ovvero quando non si può più applicare la beta riduzione.\\
+Una lambda espressione ridotta in forma normale rappresenta quindi il \textbf{valore calcolato}, il vero e proprio risultato.
+
+\subsection{Teorema di Church Rosser}
+Il teorema afferma che il risultato non cambia al cambiare dell'ordine delle scelte da eseguire durante la semplificazione di un'espressione di lambda calcolo, in particolare:\\
+Se esistono più percorsi di scelte, allora essi convergono necessariamente in una singola e comune espressione.
+
+\subsection{Funzioni di ordine superiore e currying}
+In lambda calculus le funzioni hanno un solo parametro, quindi per rappresentare le funzioni con più parametri è necessario effettuare un \textbf{annidamento} di $\lambda$.\\
+Equivale a trasformare una funzione $f(X\times Y) \rightarrow Z$ in una funzione $g: X \rightarrow (Y \rightarrow Z)$. Questa trasformazione si chiama \textbf{currying}.\\
+Vantaggi del currying:
+\begin{itemize}
+  \item \textbf{Uniformità}: ogni funzione prende un solo argomento (più semplice)
+  \item \textbf{Applicazione parziale}: possibilità di utilizzare subito funzioni specializzate senza costrutti aggiuntivi.
+  \item \textbf{Eleganza e minimalità}: bastano astrazione e applicazione per esprimere qualsiasi espressione.
+\end{itemize}
+In pratica semplifica il tutto e rende il lambda calculus molto più potente.
+
+\subsection{Valutazione dell'applicazione di funzione}
+Ecco i passi:
+\begin{enumerate}
+  \item \textbf{Primo passo:} valutazione dell'espressione che definisce la funzione.
+  \item \textbf{Secondo passo:} due casi:
+  \begin{itemize}
+    \item Si può calcolare un parametro prima di applicarlo (\textbf{Valutazione eager, Call by value})
+    \item Si può applicare un parametro prima di calcolarlo (\textbf{Valutazione lazy, Call by name})
+  \end{itemize}
+  \item Valutazione del corpo della funzione
+\end{enumerate}
+\textbf{Haskell} utiizza lo stile lazy, mentre \textbf{OCaml} utilizza lo stile eager.
+Ecco alcune differenze tra call by name e call by value:
+\begin{itemize}
+  \item \textbf{call by value:} argomenti valutati una sola volta, potrebbe non terminare.
+  \item \textbf{call by name:} argomenti valutati anche più volte o anche mai, termina sempre.
+\end{itemize}
+
+
+\section{Esercizi}
+\subsection{Esercizio 1}
+Sottolineare le variabili libere nelle seguenti espressioni:
+\begin{itemize}
+  \item $(\lambda x.x)(\lambda y.xx)(\lambda y.y)y$
+  \item $(\lambda x.xk)((\lambda x. \lambda y.xy)(\lambda z.(\lambda x.z)y))$
+  \item $x(\lambda x(\lambda y.yy)x)y$
+\end{itemize}
+\paragraph{Soluzione:}
 \end{document}
