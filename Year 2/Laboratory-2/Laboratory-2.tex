@@ -624,6 +624,42 @@ C'è un'opzione alternativa che garantisce una prima esecuzione e avvia il ciclo
         ...
     } while (condizione)
 \end{lstlisting}
+\subsubsection{Break e continue}
+Il \textbf{break} serve per interrompere un ciclo:
+\begin{lstlisting}
+    while(condizione) {
+        comando;
+        if(condizione) {
+            break;
+        }
+    }
+\end{lstlisting} 
+Il \textbf{continue} invece interrompe solo un iterazione e passa alla prossima:
+\begin{lstlisting}
+    while(condizione) {
+        comando;
+        if(condizione) {
+            continue;
+        }
+    }
+\end{lstlisting} 
+\subsection{Switch}
+Lo \textbf{switch} è un costrutto decisionale alternativo a if-else per scegliere tra più di 2 scelte:
+\begin{lstlisting}
+    switch (espressione) {
+        case valoreCostante1:
+            comando1;
+            comando2;
+            break;
+        case valoreCostante2:
+            comando3;
+            comando4;
+            break;
+        default:
+            break;
+    }
+\end{lstlisting}
+Il break è necessario per evitare errori.
 
 \section{Esercizi}
 \subsection{Esercizio 1}

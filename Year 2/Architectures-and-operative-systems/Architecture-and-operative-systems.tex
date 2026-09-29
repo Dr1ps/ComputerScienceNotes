@@ -304,8 +304,42 @@ La base esadecimale viene introdotta da un "\textbf{0x}", così:
 \[
 0x5AF
 \]
+\subsection{Processo di progettazione dei circuiti digitali}
+Ecco il procedimento:
+\begin{enumerate}
+    \item Descrizione a parole della richiesta
+    \item Realizzazione pseudo codice
+    \item Approccio strutturale, composizione componenti
+    \item Tabella di verità
+    \item Somma di prodotti (espressione)
+    \item Rete di porte
+    \item Tempo di stabilizzazione
+\end{enumerate}
+\paragraph{Esempio}: dato $x$ da $n$ bit:
+\begin{lstlisting}
+    if(pari(x)) {
+        x++;
+    } else {
+        x--;
+    }
+\end{lstlisting}
+Per trovare i pari basta notare che tutti i numeri pari in binario hanno il LSB (Least Significant Bit) segnato a "0".\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/evenOdd.png}
+    \caption{Circuito Pari-Dispari}
+    \label{fig:evenOdd}
+\end{figure}
 
-
+\subsection{Mappe di Karnaugh}
+Modo alternativo alle tabelle di verità:
+\[
+\begin{array}{c|c|c}
+ & x=0 & x=1 \\ \hline
+y=0 & 0 & 0 \\ \hline
+y=1 & 0 & 0
+\end{array}
+\]
 
 \section{Moduli}
 Questa sezione elenca vari esempi di moduli per le operazioni del calcolatore.
@@ -321,6 +355,10 @@ Il \textbf{sottrattore} è un sommatore che:
     \item Ha un riporto iniziale di 1
     \item Effettua il not sui bit
 \end{itemize}
+\subsection{Comparatore}
+Ha due numeri in input e restituisce un valore booleano a seconda dell'uguaglianza dei due numeri immessi. Denotato da una scatola con "=" scritto dentro.
+\subsection{Codificatore}
+Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
 \subsection{Moduli per algebra booleana}
 Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei seguenti moduli:
 \begin{itemize}
@@ -328,6 +366,7 @@ Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei se
     \item Modulo OR
     \item Modulo NOT
     \item Modulo XOR
+    \item Modulo NAND
 \end{itemize}
 Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.\\\\
 Per rappresentare i circuiti si usano delle \textbf{espressioni}, vediamo delle notazioni di algebra booleana in tale progettazione:
@@ -403,6 +442,7 @@ X\cdot C_{in}
 +
 Y\cdot C_{in}
 \]
+Il Full Adder può sommare anche numeri in base 2 se combinato con un multiplexer.
 Il suo tempo di impiego corrisponde a $4\Delta t$.
 \subsection{Multiplexer}
 Il \textbf{multiplexer} racchiude un circuito, ha solo input e output visibili dall'esterno.
