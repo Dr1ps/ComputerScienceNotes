@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  22 SEP 2026 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  29 SEP 2026 10:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -490,26 +490,33 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip67
 \f@nch@widthR=\skip68
 \@temptokenb=\toks45
+) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count338
+\float@exts=\toks46
+\float@box=\box67
+\@float@everytoks=\toks47
+\@floatcapt=\box68
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count338
-\lst@gtempboxa=\box67
-\lst@token=\toks46
-\lst@length=\count339
+\lst@mode=\count339
+\lst@gtempboxa=\box69
+\lst@token=\toks48
+\lst@length=\count340
 \lst@currlwidth=\dimen292
-\lst@column=\count340
-\lst@pos=\count341
+\lst@column=\count341
+\lst@pos=\count342
 \lst@lostspace=\dimen293
 \lst@width=\dimen294
-\lst@newlines=\count342
-\lst@lineno=\count343
+\lst@newlines=\count343
+\lst@lineno=\count344
 \lst@maxwidth=\dimen295
  (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count344
-\lst@skipnumbers=\count345
-\lst@framebox=\box68
+\c@lstnumber=\count345
+\lst@skipnumbers=\count346
+\lst@framebox=\box70
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
@@ -518,42 +525,42 @@ Package: listings 2024/09/23 1.10c (Carsten Heinz)
 Package: listing 1999/05/25
 
 Package `listing', V1.2, <1999/05/25>
-\c@listing=\count346
+\c@listing=\count347
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box69
+\ttl@box=\box71
 \beforetitleunit=\skip69
 \aftertitleunit=\skip70
 \ttl@plus=\dimen296
 \ttl@minus=\dimen297
-\ttl@toksa=\toks47
+\ttl@toksa=\toks49
 \titlewidth=\dimen298
 \titlewidthlast=\dimen299
 \titlewidthfirst=\dimen300
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count347
+\l__color_backend_stack_int=\count348
 ) (Operational-research.aux)
 \openout1 = `Operational-research.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -589,24 +596,24 @@ LaTeX Font Info:    ... okay on input line 30.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 31.
 (Operational-research.out) (Operational-research.out)
 \@outlinefile=\write4
 \openout4 = `Operational-research.out'.
 
  (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
+\scratchcounter=\count349
 \scratchdimen=\dimen301
-\scratchbox=\box70
-\nofMPsegments=\count349
-\nofMParguments=\count350
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count351
+\scratchbox=\box72
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count352
 \MPscratchDim=\dimen302
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
-\everyMPtoPDFconversion=\toks49
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks51
 ) (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -615,12 +622,12 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count354
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+\c@lstlisting=\count355
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
  (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -643,12 +650,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 37--40
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
@@ -664,10 +671,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [3
 
 ]
-<images/Diagram.png, id=154, 1780.6525pt x 890.32625pt>
+<images/Diagram.png, id=199, 1780.6525pt x 890.32625pt>
 File: images/Diagram.png Graphic file (type png)
 <use images/Diagram.png>
-Package pdftex.def Info: images/Diagram.png  used on input line 52.
+Package pdftex.def Info: images/Diagram.png  used on input line 53.
 (pdftex.def)             Requested size: 455.24411pt x 227.62114pt.
 
 
@@ -680,8 +687,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4
 
- <./images/Diagram.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.66 \section
+             {Modelli di ottimizzazione} <./images/Diagram.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
@@ -707,14 +719,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 
-LaTeX Warning: Command \textsterling invalid in math mode on input line 145.
+LaTeX Warning: Command \textsterling invalid in math mode on input line 146.
 
 
-LaTeX Warning: Command \textsterling invalid in math mode on input line 145.
+LaTeX Warning: Command \textsterling invalid in math mode on input line 146.
 
 Missing character: There is no £ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--161
+Underfull \hbox (badness 10000) in paragraph at lines 145--162
 
  []
 
@@ -729,7 +741,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7
 
-]
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.187 \]
+        ]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -759,7 +776,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
 
  []
 
@@ -773,12 +790,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 363--366
+Underfull \hbox (badness 10000) in paragraph at lines 364--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--366
+Underfull \hbox (badness 10000) in paragraph at lines 364--367
 
  []
 
@@ -809,26 +826,108 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14] (Operational-research.aux)
+[14]
+<images/boats.png, id=267, 196.23312pt x 209.78375pt>
+File: images/boats.png Graphic file (type png)
+<use images/boats.png>
+Package pdftex.def Info: images/boats.png  used on input line 514.
+(pdftex.def)             Requested size: 364.19667pt x 389.37103pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15
+
+]
+<images/boatTable.png, id=273, 280.04625pt x 221.82875pt>
+File: images/boatTable.png Graphic file (type png)
+<use images/boatTable.png>
+Package pdftex.def Info: images/boatTable.png  used on input line 521.
+(pdftex.def)             Requested size: 364.19667pt x 288.49916pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.525 \subsection{Problema di instradamento}
+                                             <./images/boats.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.542     \item O
+                 ccorre formulare come PLI il problema che la TP deve risolv... <./images/boatTable.png>]
+<images/instradamento.png, id=286, 684.05562pt x 254.9525pt>
+File: images/instradamento.png Graphic file (type png)
+<use images/instradamento.png>
+Package pdftex.def Info: images/instradamento.png  used on input line 548.
+(pdftex.def)             Requested size: 364.19667pt x 135.74272pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.562 \section
+              {Problemi su reti: problemi di flusso e di cammino} <./images/instradamento.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19
+
+] (Operational-research.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `Operational-research.out' has not changed.
-(rerunfilecheck)             Checksum: 19D478CE4849308C6A302633291BF04A;5700.
+(rerunfilecheck)             Checksum: A0CBA4D2A9B01646E90939A5887212D8;7483.
  ) 
 Here is how much of TeX's memory you used:
- 32669 strings out of 468081
- 755082 string characters out of 5425788
- 1264623 words of memory out of 5000000
- 60801 multiletter control sequences out of 15000+600000
+ 32787 strings out of 468081
+ 757114 string characters out of 5425788
+ 1266623 words of memory out of 5000000
+ 60898 multiletter control sequences out of 15000+600000
  636821 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,105p,818b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Operational-research.pdf (14 pages, 1039415 bytes).
+Output written on Operational-research.pdf (19 pages, 1225734 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790067309.11711 "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" "Operational-research.pdf" "Operational-research" 1790067312.0193 0
+["pdflatex"] 1790671467.92785 "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" "Operational-research.pdf" "Operational-research" 1790671470.94026 0
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789460908 159092 d2123be17b83f8fb14e421f617bfafc7 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1760648050 14064 824555557124c7b2487513215f046b60 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760607885 13321623 bffe24b1a8ba5eb2b92a28adecd901aa ""
@@ -157,6 +157,7 @@
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1759409308 46885 8953c67ffba03252c6090aa19568b8ba ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty" 1740138435 31715 19e60610b63819fe670dfa1cd84a4e94 ""
+  "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty" 1469023953 6916 16d2656a1984957e674b149555f1ea1d ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg" 1465894292 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -197,12 +198,15 @@
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty" 1736608268 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Operational-research.aux" 1790067311 4823 a74023fe0eb0c0a6bef39029e54e3545 "pdflatex"
-  "Operational-research.out" 1790067311 5700 19d478ce4849308c6a302633291bf04a "pdflatex"
-  "Operational-research.tex" 1790067307 18844 b9bef2937fd5c1961022f05f5c505993 ""
-  "Operational-research.toc" 1790067311 2916 daf42cd96bc7165679c534e2c73c5a17 "pdflatex"
-  "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" 1790067307 18844 b9bef2937fd5c1961022f05f5c505993 ""
+  "Operational-research.aux" 1790671470 6663 3702396d36b3f231711889754b876c10 "pdflatex"
+  "Operational-research.out" 1790671470 7483 a0cba4d2a9b01646e90939a5887212d8 "pdflatex"
+  "Operational-research.tex" 1790671466 24243 d22210c2689c65abad9e4ab3419d95e9 ""
+  "Operational-research.toc" 1790671470 3775 c6d84b0cd03b73ae59de27920e69a839 "pdflatex"
+  "c:/Users/gabri/Desktop/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" 1790671466 24243 d22210c2689c65abad9e4ab3419d95e9 ""
   "images/Diagram.png" 1789461669 871750 24e98898812aa591327c196edbe676c1 ""
+  "images/boatTable.png" 1790671399 67346 eed8b8d24ae498980eec50760171e8c7 ""
+  "images/boats.png" 1790671357 11507 937375daa1552e4b56238831f08f4f1f ""
+  "images/instradamento.png" 1790671287 162632 e3939a14511967cbac110c9d15d54d3f ""
   (generated)
   "Operational-research.aux"
   "Operational-research.log"

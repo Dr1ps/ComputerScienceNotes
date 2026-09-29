@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{listing}
@@ -468,4 +469,110 @@ Vincoli:
 \end{cases}
 \]
 L'ultima condizione indica che le frequenze sono diverse tra vicini.
+
+\section{Partizione di sottoinsiemi}
+\subsection{Problema di partizione}
+\subsubsection{Descrizione del problema}
+Sia $B = \{1,\ldots,n\}$ l'insieme delle barche.\\
+Definiamo $F$ come la famiglia di tutti i sottoinsiemi $S \subseteq B$ tali che:
+\begin{itemize}
+    \item Le barche non si sovrappongono fra loro per questioni di orario (possono essere assegnate allo stesso molo)
+\end{itemize}
+Ogni sottoinsieme rappresenta un possibile \textbf{turno} occupato da un singolo molo.\\
+Per ogni S, introduciamo la variabile binaria:
+\[
+y_s = \begin{cases}
+    1, \text{ se apriamo/usiamo un molo con il gruppo di barche S}
+    0
+\end{cases}
+\]
+Bisogna trovare la famiglia ottimale di sottoinsiemi compatibili.
+\subsubsection{Inizializzazione}
+Variabili:
+\begin{itemize}
+    \item P = insieme degli indici degli insiemi di turni compatibili.
+    \item $a_{ip} \in \{0,1\}$ parametro binario, 1 se la barca $i \in B$ è contenuta nel turno $p \in P$.
+    \item $y_p \in \{0,1\}$, 1 se si usa $p$.
+\end{itemize}
+Funzione obiettivo, andiamo a formulare la partizione dei sottoinsiemi:
+\[
+minZ = \sum_{S \in F}^{} y_s
+\]
+Vincoli:
+\begin{itemize}
+    \item Ogni barca è associata a un molo solo:
+    \[
+    \sum_{S \in F: i \in S}^{} y_s = 1
+    \]
+    \item Variabile binaria:
+    \[
+    y_s \in \{0,1\} \forall S \in F
+    \]
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/boats.png}
+    \caption{Partizioni delle barche}
+    \label{fig:boats}
+\end{figure}
+A questo punto si potrebbe sviluppare una matrice per capire le partizioni:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/boatTable.png}
+    \caption{Tabella delle partizioni}
+    \label{fig:boatTable}
+\end{figure}
+\subsection{Problema di instradamento}
+\subsubsection{Descrizione del problema}
+In molti casi la famiglia di interesse non è direttamente fornita in input, ma deve essere calcolata a partire da
+condizioni logiche sui sottoinsiemi ammissibili, come nell’esempio seguente.
+La Trans-Port (TP), azienda logistica che lavora all’Interporto di Guasticce, deve pianificare i viaggi dei suoi
+camion.
+\begin{itemize}
+    \item Ciascun camion parte dal \textbf{deposito} ($d$) e deve consegnare containers pieni provenienti dal porto agli
+    \textbf{importatori} ($I$) e/o ritirare containers vuoti dagli \textbf{esportatori} ($E$) per riportarli a $d$, da dove vengono poi
+    trasportati al porto per essere riutilizzati; le tratte tra il porto e $d$ sono ovviamente fisse e comunque
+    organizzate indipendentemente, quindi non devono essere considerate.
+    \item Ciascun camion porta fino a due container, e può essere usato sia per la consegna che per il ritiro; per
+    motivazioni organizzative, però, deve prima consegnare (a meno che non parta vuoto) e poi ritirare (a meno
+    che non rientri vuoto).
+    \item È nota la \textbf{distanza} $c_{hk}$ tra tutte le coppie ${h,k}$ di punti rilevanti ($d$, tutti gli $i \in I$ e tutti gli $e \in E$), che può essere assunta simmetrica.
+    \item È anche nota la \textbf{domanda} $q_i$, $i \in I$, e $q_e$, $e \in E$, di containers da consegnare/ritirare per ogni esportatore/importatore; si noti che un certo esportatore $i$ potrebbe anche essere un importatore $e$, ma questo si modella semplicemente considerandoli diversi e ponendo $c_{ie}=0$.
+    \item Si può assumere che la TP disponga di un numero illimitato di camion (una volta rientrato al deposito un camion può iniziare un altro viaggio, e la durata dei viaggi è tale per cui i camion effettivamente disponibili sicuramente riusciranno a fare tutti i viaggi necessari entro la giornata lavorativa).
+    \item Occorre formulare come PLI il problema che la TP deve risolvere per soddisfare le domande di tutti gli esportatori/importatori minimizzando la distanza totale percorsa dai suoi camion, e quindi il costo di trasporto.
+\end{itemize}
+\subsubsection{Inizializzazione}
+Per modellare il problema definiamo, a partire dai dati in input, quattro insiemi di cammini:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/instradamento.png}
+    \caption{Tabella descrittiva}
+    \label{fig:instradamento}
+\end{figure}
+Definiamo:
+\begin{itemize}
+    \item L'insieme dei cammini: $P = P1 \cup P2 \cup P3 \cup P4$
+    \item Il costo del cammino $p$: $p \in P$
+\end{itemize}
+Funzione obiettivo:
+\[
+minZ = \sum_{p \in P}^{} C_p \cdot y_p
+\]
+
+\section{Problemi su reti: problemi di flusso e di cammino}
+Finora abbiamo utilizzato variabili logiche e intere, ma anche le variabili \textbf{continue} possono assumere un valore logico, basta che si rappresentino cosi:
+\[
+k = \begin{cases}
+    0, \text{ falso}\\
+    > 0, \text{ vero, indicandone allo stesso tempo l'intensità}
+\end{cases}
+\]
+Queste variabili sono fondamentali per analizzare i problemi di \textbf{flusso della rete}.\\
+Vediamo anche le variabili \textbf{quantitative}:
+\begin{itemize}
+    \item Descrivono quanto viene trasportato lungo gli archi di un grafo.
+    \item Stabiliscono implicitamente il collegamento effettuato.
+\end{itemize}
+I problemi di flusso sono applicabili a situazioni reali, come la ditribuzione di gas, elettricità, acqua e altri impianti.
+\subsection{Problema delle fognature (esempio)}
 \end{document}
