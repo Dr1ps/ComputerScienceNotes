@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  29 SEP 2026 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.16)  29 SEP 2026 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,9 +800,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.344 \section
+l.353 \section
               {Moduli} <./images/evenOdd.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 371--373
+Underfull \hbox (badness 10000) in paragraph at lines 380--382
 
  []
 
@@ -821,7 +821,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/logicalCircuit.png, id=247, 1541.76pt x 1027.84pt>
 File: images/logicalCircuit.png Graphic file (type png)
 <use images/logicalCircuit.png>
-Package pdftex.def Info: images/logicalCircuit.png  used on input line 386.
+Package pdftex.def Info: images/logicalCircuit.png  used on input line 395.
 (pdftex.def)             Requested size: 318.66948pt x 212.43375pt.
 
 
@@ -836,7 +836,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.406 \end{itemize}
+l.415 \end{itemize}
                     <./images/logicalCircuit.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -854,12 +854,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.501 \]
+l.510 \]
         
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.501 \]
+l.510 \]
         ]
 
 
@@ -873,7 +873,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.503 \end{document}
+l.512 \end{document}
                     ] (Architecture-and-operative-systems.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
@@ -891,7 +891,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,12n,105p,847b,1395s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Architecture-and-operative-systems.pdf (16 pages, 2461026 bytes).
+Output written on Architecture-and-operative-systems.pdf (16 pages, 2461761 bytes).
 PDF statistics:
  325 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
