@@ -332,7 +332,7 @@ Per trovare i pari basta notare che tutti i numeri pari in binario hanno il LSB 
 \end{figure}
 
 \subsection{Mappe di Karnaugh}
-Modo alternativo alle tabelle di verità:
+Modo alternativo alle tabelle di verità, permette di semplificare notevolemnte le espressioni logiche, si rappresentano cosi:
 \[
 \begin{array}{c|c|c}
  & x=0 & x=1 \\ \hline
@@ -349,7 +349,49 @@ y_1y_0=11 & 0 & 0 & 0 & 0 \\ \hline
 y_1y_0=10 & 0 & 0 & 0 & 0
 \end{array}
 \]
-Come si può vedere viene prima "11" che di "10" perche si usa il \textbf{codice Gray}, il quale indica che ad ogni passaggio (celle adiacenti) può cambiare un solo bit.
+Come si può vedere viene prima "11" che di "10" perche si usa il \textbf{codice Gray}, il quale indica che ad ogni passaggio (celle adiacenti) può cambiare un solo bit.\\\\
+Una volta che abbiamo fatto la tabella, si \textbf{raggruppano gli 1} adiacenti che formano un gruppo di grandezza pari ad una potenza di $2$, scegliendo quello più grande (aiuta a ridurre di più).\\
+Per esempio:
+\[
+\begin{array}{c|cccc}
+ & x_1x_0=00 & x_1x_0=01 & x_1x_0=11 & x_1x_0=10 \\ \hline
+y_1y_0=00 & 1 & 1 & 0 & 0 \\ \hline
+y_1y_0=01 & 1 & 1 & 0 & 0 \\ \hline
+y_1y_0=11 & 0 & 0 & 0 & 0 \\ \hline
+y_1y_0=10 & 0 & 0 & 0 & 0
+\end{array}
+\]
+L'espressione in questo caso sarebbe:
+\[
+F =
+\overline{x_1}\,\overline{x_0}\,\overline{y_1}\,\overline{y_0}
++
+\overline{x_1}\,x_0\,\overline{y_1}\,\overline{y_0}
++
+\overline{x_1}\,\overline{x_0}\,\overline{y_1}\,y_0
++
+\overline{x_1}\,x_0\,\overline{y_1}\,y_0
+\]
+Le prime 4 celle possono essere raggruppate.
+\paragraph{ATTENZIONE:} anche le celle opposte sono considerate adiacenti, come se la tabella fosse arrotolata.\\
+Una volta trovato il gruppo, costruiamo l'espressione semplificata seguendo queste regole:
+\begin{itemize}
+    \item Se nell'analisi degli "1" una variabile \textbf{cambia}, allora viene \textbf{esclusa}.
+    \item Se invece rimane costante, viene \textbf{tenuta}.
+\end{itemize}
+Nell'esempio precedente:
+\begin{itemize}
+    \item $x_1$ non cambia, rimane.
+    \item $x_0$ cambia, viene scartata.
+    \item $y_1$ non cambia, rimane.
+    \item $y_0$ cambia, viene scartata.
+\end{itemize}
+L'espressione adesso è quindi:
+\[
+F = \overline{y_1}\overline{x_1}
+\]
+
+
 \section{Moduli}
 Questa sezione elenca vari esempi di moduli per le operazioni del calcolatore.
 \subsection{Sommatore}

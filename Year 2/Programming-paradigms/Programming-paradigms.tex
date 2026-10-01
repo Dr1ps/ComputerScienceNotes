@@ -458,7 +458,43 @@ Ecco alcune differenze tra call by name e call by value:
   \item \textbf{call by name:} argomenti valutati anche più volte o anche mai, termina sempre.
 \end{itemize}
 
+\subsection{Implementazione della ricorsione}
+Per rappresentare la ricorsione si usa il \textbf{combinatore} "$Y$", il quale è una funzione di ordine superiore.\\
+Essa è una funzione speciale che, data una funzione generica $F$, costruisce un punto fisso di $F$.\\
+\begin{itemize}
+  \item \textbf{Combinatore:} espressione che non ha variabili libere.
+  \item \textbf{Punto fisso:} simile al concetto di caso base della ricorsione.
+\end{itemize}
+Vale questo:
+\[
+YF \equiv_\beta F(YF)
+\]
+Vediamo un esempio di implementazione della ricorsione con il concetto del fattoriale:\\
+\[
+Y = \lambda f.(\lambda x.f(xx))(\lambda x.f(xx)) 
+\]
+\[
+G = \lambda f. \lambda n.if(n=0) then 1 else n \cdot f(n-1)
+\]
+\[
+F = YG = \lambda f.(\lambda x.f(xx))(\lambda x.f(xx))G
+\]
+\[
+= (\lambda x.G(xx))(\lambda x.G(xx)) = G((\lambda x.G(xx))(\lambda x.G(xx)))
+\]
+Come si può notare si sta effettuano una ricorsione, al quale si potrà poi applicare un parametro attuale per calcolarne il risultato.
 
+\subsection{Variabili booleane}
+Ecco i valori principali in lambda calcolo dei valori booleani:
+\begin{itemize}
+  \item \textbf{TRUE:} $\lambda t.\lambda f.t$
+  \item \textbf{FALSE:} $\lambda t.\lambda f.f$
+\end{itemize}
+Vediamo adesso invece come funziona il \textbf{NOT}:
+\[
+NOT = \lambda b.b TRUE FALSE
+\]
+Se si applica TRUE o FALSE al NOT si ottiene il corrispettivo risultato.
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:

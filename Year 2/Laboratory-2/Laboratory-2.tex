@@ -9,6 +9,34 @@
 \usepackage{listing}
 \usepackage{listings}
 \usepackage{titlesec}
+\usepackage{xcolor}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeborder}{RGB}{210,210,210}
+\definecolor{codecomment}{RGB}{90,120,90}
+\definecolor{codekeyword}{RGB}{0,70,140}
+\definecolor{codestring}{RGB}{160,80,20}
+
+\lstset{
+backgroundcolor=\color{codebg},
+basicstyle=\ttfamily\small,
+breaklines=true,
+frame=single,
+rulecolor=\color{codeborder},
+framerule=0.5pt,
+numbers=left,
+numberstyle=\tiny\color{gray},
+numbersep=8pt,
+xleftmargin=2em,
+framexleftmargin=1.5em,
+keywordstyle=\color{codekeyword}\bfseries,
+commentstyle=\color{codecomment}\itshape,
+stringstyle=\color{codestring},
+showstringspaces=false,
+tabsize=4,
+keepspaces=true,
+columns=fullflexible
+}
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
   {\thesection}{1em}{}
@@ -660,7 +688,35 @@ Lo \textbf{switch} è un costrutto decisionale alternativo a if-else per sceglie
     }
 \end{lstlisting}
 Il break è necessario per evitare errori.
-
+\subsection{Array}
+L'\textbf{array} è la prima struttura non banale che vediamo, corrisponde ad una \textbf{sequenza} di valori dello stesso tipo, in memoria corrisponde ad una sequenza di celle.\\
+L'array è una struttura dati di lunghezza fissa (non può essere modificata) ed è ad \textbf{accesso diretto} tramite gli \textbf{indici (index)}, i quali partono da "0".\\
+\textbf{Definizione array:}
+\begin{lstlisting}
+    [tipo] [nomeArray][lunghezza]
+    double reali[10]
+\end{lstlisting}
+\textbf{Accesso ad un elemento:}
+\begin{lstlisting}
+    [nomeArray][index]
+    reali[0]
+\end{lstlisting}
+\subsection{Struct}
+Lo \textbf{struct} permette di definire \textbf{tipi custom}, strutture dati non omogenee (non con membri tutti dello stesso tipo).\\
+Crea nuovi tipi, non variabile. Utilizzato per creare gli oggetti.\\
+\textbf{Definizione oggetto tramite struct:}
+\begin{lstlisting}
+    struct Studente {
+        char nome[10];
+        int eta;
+    }
+\end{lstlisting}
+\textbf{Accesso a un membro:}
+\begin{lstlisting}
+    [nomeStruct].[membro]
+    studente.[eta]
+\end{lstlisting}
+L'ordine dei membri influisce sull'ordine in memoria.
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:
