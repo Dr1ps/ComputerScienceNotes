@@ -38,3 +38,5 @@
 \contentsline {subsubsection}{\numberline {6.2.2}Inizializzazione}{18}{subsubsection.6.2.2}%
 \contentsline {section}{\numberline {7}Problemi su reti: problemi di flusso e di cammino}{19}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Problema delle fognature (esempio)}{19}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Descrizione del problema}{19}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Inizializzazione}{20}{subsubsection.7.1.2}%

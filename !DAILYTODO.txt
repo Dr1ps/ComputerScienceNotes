@@ -8,6 +8,11 @@
 
 ## OPERATIONAL RESEARCH ##
 
-- add missing problems (configurazione, instradamento e fognature)
+- add missing problems (configurazione, instradamento)
 
 ## LABORATORY 2 ##
+
+
+------------------------------------------------
+
+STATUS = GOOD!

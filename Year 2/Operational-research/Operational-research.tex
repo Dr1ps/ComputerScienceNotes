@@ -575,4 +575,47 @@ Vediamo anche le variabili \textbf{quantitative}:
 \end{itemize}
 I problemi di flusso sono applicabili a situazioni reali, come la ditribuzione di gas, elettricità, acqua e altri impianti.
 \subsection{Problema delle fognature (esempio)}
+\subsubsection{Descrizione del problema}
+In una città suddivisa in 4 quartieri, identificati dai vertici
+\[
+V = \{1,2,3,4\},
+\]
+Ogni quartiere \(i \in V\) produce una quantità nota di acque reflue (nell'immagine accanto al nodo), espressa in \(\mathrm{m^3/h}\).
+Le acque reflue devono essere convogliate a un unico depuratore, rappresentato dal nodo \(5\). Per realizzare la rete fognaria, disponiamo di un insieme di condotte candidate, rappresentate dagli archi orientati del grafo:
+\[
+A = \{(1,5), (2,1), (2,3), (2,5), (3,5), (4,3)\}.
+\]
+Il costo associato a ciascun arco \((i,j) \in A\) è proporzionale al flusso di acque reflue trasportato e viene indicato con
+\[
+c_{ij} \quad [\text{costo per } \mathrm{m^3/h}].
+\]
+L'obiettivo è determinare quali condotte attivare e come dimensionarle, ossia quali flussi assegnare agli archi, in modo da trasportare l'intera produzione dei quartieri al depuratore, minimizzando il costo complessivo.
+Il problema può essere formulato come un problema di flusso, noto come \textit{Problema di Disegno di Rete}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/graph.png}
+    \caption{Grafo associato}
+    \label{fig:graph}
+\end{figure}
+\subsubsection{Inizializzazione}
+Variabili:
+\begin{itemize}
+    \item $x_{ij}$: flusso su un arco $(i,j) \in A$ (dimensione condotta)
+\end{itemize}
+Funzione obiettivo:
+\[
+minZ = 6x_{15}+3x_{12}+7x_{23}+12x_{25}+3x_{35}+12x_{43}
+\]
+\[
+minZ = \sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij}
+\]
+Per i vincoli bisogna tenere di conto che ogni flusso che entra è uguale a quello che esce:\
+\begin{itemize}
+    \item Nodo1: $x_{21} + 1 = x_{15}$
+    \item Nodo2: $1 = x_{21} + x_{23} + x_{25}$
+    \item Nodo3: $x_{23} + x_{43} + 1 = x_{35}$
+    \item Nodo4: $0,5 = x_{43}$
+    \item Dominio: $x_{ij} \geq 0, \forall (ij) \in A$
+\end{itemize}
+Per il quinto nodo non serve dato che sarebbe ridondante.
 \end{document}
