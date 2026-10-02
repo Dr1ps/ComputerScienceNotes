@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  1 OCT 2026 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  2 OCT 2026 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,6 +803,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -826,20 +830,20 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: 46EFE57B6F4E0E1295EA4CA29625E591;7735.
+(rerunfilecheck)             Checksum: 857C17A8DC375AD48C9C00EFEB47C57F;7943.
  ) 
 Here is how much of TeX's memory you used:
- 32953 strings out of 467392
- 755889 string characters out of 5415745
+ 32957 strings out of 467392
+ 755953 string characters out of 5415745
  1285882 words of memory out of 5000000
- 61746 multiletter control sequences out of 15000+600000
+ 61748 multiletter control sequences out of 15000+600000
  635288 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,800b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Programming-paradigms.pdf (19 pages, 173906 bytes).
+Output written on Programming-paradigms.pdf (19 pages, 177916 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 500000)
- 413 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 429 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -494,7 +494,64 @@ Vediamo adesso invece come funziona il \textbf{NOT}:
 \[
 NOT = \lambda b.b TRUE FALSE
 \]
-Se si applica TRUE o FALSE al NOT si ottiene il corrispettivo risultato.
+Se si applica TRUE o FALSE al NOT si ottiene il corrispettivo risultato.\\
+Diamo un occhiata a \textbf{AND} e \textbf{OR}:
+\[
+AND = \lambda b.\lambda c.bc FALSE
+\]
+\[
+OR = \lambda b.\lambda c.b TRUE c
+\]
+
+\subsection{Condizionale}
+La struttura corrisponde a questo:
+\[
+[espressione][then][else]
+\]
+Ecco come viene rappresentata:
+\[
+IF = \lambda c.\lambda then.\lambda else.c then else
+\]
+Ecco un esempio con TRUE:
+\[
+IF TRUE e_1 e_2 = (\lambda c.\lambda then.\lambda else.c then else) TRUE e_1 e_2
+\]
+\[
+= (\lambda then.\lambda else.TRUE then else)e_1 e_2 = (\lambda else.TRUE e_1 else)e_2 = TRUE e_1 e_2
+\]
+\[
+= (\lambda t.\lambda f.t)e_1 e_2
+\]
+\[
+= (\lambda f.e_1)e_2
+\]
+\[
+= e_1
+\]
+L'esempio è analogo su FALSE.
+
+\subsection{Numeri}
+Possiamo codificare i numeri naturali con una funziona che, data una funzione $s$ (successore), viene applicata $n$ volte ad una funzione $z$ (lo 0), con $n = $numero desiderato.\\
+\[
+C_0 = \lambda s.\lambda z.z
+\]
+\[
+C_1 = \lambda s.\lambda z.sz
+\]
+\[
+C_2 = \lambda s.\lambda z.s(sz)
+\]
+\[
+C_3 = \lambda s.\lambda z.s(s(sz))
+\]
+\[
+\dots
+\]
+\[
+C_n = \lambda s.\lambda z.s^n z
+\]
+
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:

@@ -52,6 +52,8 @@
 \contentsline {subsection}{\numberline {6.14}Valutazione dell'applicazione di funzione}{17}{subsection.6.14}%
 \contentsline {subsection}{\numberline {6.15}Implementazione della ricorsione}{17}{subsection.6.15}%
 \contentsline {subsection}{\numberline {6.16}Variabili booleane}{18}{subsection.6.16}%
+\contentsline {subsection}{\numberline {6.17}Condizionale}{18}{subsection.6.17}%
+\contentsline {subsection}{\numberline {6.18}Numeri}{18}{subsection.6.18}%
 \contentsline {section}{\numberline {7}Esercizi}{19}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Esercizio 1}{19}{subsection.7.1}%
 \contentsline {paragraph}{Soluzione:}{19}{subsection.7.1}%

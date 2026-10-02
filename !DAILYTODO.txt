@@ -1,6 +1,7 @@
 ## PARADIGMS ##
 
 -do paper test, put solutions in file
+- examples of AND & OR (lambda calculus)
 
 ## AESO ##
 
@@ -12,6 +13,7 @@
 
 ## LABORATORY 2 ##
 
+- add missing lab exercise (n.1)
 
 ------------------------------------------------
 

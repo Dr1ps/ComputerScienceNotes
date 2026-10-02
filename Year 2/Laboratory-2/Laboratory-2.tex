@@ -550,7 +550,7 @@ Bisogna scegliere il placeholder corretto per riuscire a stampare una variabile;
         \item Per stampare uno specifico numero di cifre decimali si aggiunge un "." dopo "\%" e poi si specifica il numero:
         \begin{lstlisting}
             printf(%.2f,x)
-        \end{lstlisting}
+         \end{lstlisting}
         Questa stampa mostrerà per esempio solo 2 cifre decimali. Usato sugli altri placeholder questo provoca l'ingrandimento di padding a destra (numero negativo) o sinistra (numero positivo) di ciò che viene stampato.
     \end{itemize}
     \item \textbf{\%c}: caratteri (char)
@@ -560,6 +560,13 @@ Bisogna scegliere il placeholder corretto per riuscire a stampare una variabile;
     \item \textbf{\%p}: indirizzo di memoria, puntatore
     \item \textbf{\%z}: tipo di sizeof (size\_t)
 \end{itemize}
+\subsection{scanf}
+Questo comando serve per l'input da tastiera:
+\begin{lstlisting}
+    scanf("Numero: %d",&intero)
+\end{lstlisting}
+In questo caso, legge un intero e lo salva nella variabile $intero$.\\
+La \& serve per passare la variabile come indirizzo e non valore (per array non si usa, sono gia riferimenti).
 \subsection{Costanti}
 In C non esistono le variabili costanti, possono essere sempre modificate!
 \subsection{Commenti}

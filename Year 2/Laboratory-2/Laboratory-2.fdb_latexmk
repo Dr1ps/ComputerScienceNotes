@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790847136.25961 "c:/VSCode/ComputerScienceNotes/Year 2/Laboratory-2/Laboratory-2.tex" "Laboratory-2.pdf" "Laboratory-2" 1790847139.64628 0
+["pdflatex"] 1790932976.31116 "c:/VSCode/ComputerScienceNotes/Year 2/Laboratory-2/Laboratory-2.tex" "Laboratory-2.pdf" "Laboratory-2" 1790932980.47949 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tctt1095.tfm" 993062564 1288 9de43f6f9fa5c50dd019bdac984121de ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -24,6 +24,7 @@
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136765053 768 1321e9409b4137d6fb428ac9dc956269 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmtt12.tfm" 1136765053 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
@@ -198,11 +199,11 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt1095.pk" 1790847048 10392 df697cdf3f7682f66db26cd512686cd8 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "Laboratory-2.aux" 1790847139 7517 3d5adf04d003f88e9c1be5e00004e1be "pdflatex"
-  "Laboratory-2.out" 1790847139 6533 e504bf907d7d6d773efbe3e3156ae1ea "pdflatex"
-  "Laboratory-2.tex" 1790847135 29086 dce4d2aed90baeffdd482abf3f9693fb ""
-  "Laboratory-2.toc" 1790847139 4853 f38e9de7ddf5dfb40b3becd240d2adac "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/Year 2/Laboratory-2/Laboratory-2.tex" 1790847135 29086 dce4d2aed90baeffdd482abf3f9693fb ""
+  "Laboratory-2.aux" 1790932980 7632 8c57ab1b0a94474cdbad67e19b874215 "pdflatex"
+  "Laboratory-2.out" 1790932980 6617 daaf93dbe9467ed2ddc63f4d89159509 "pdflatex"
+  "Laboratory-2.tex" 1790932974 29402 17351a17c42ca9275014f8d818dce66a ""
+  "Laboratory-2.toc" 1790932980 4927 9f7c841862bc7f927419373795e21551 "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/Year 2/Laboratory-2/Laboratory-2.tex" 1790932974 29402 17351a17c42ca9275014f8d818dce66a ""
   (generated)
   "Laboratory-2.aux"
   "Laboratory-2.log"
