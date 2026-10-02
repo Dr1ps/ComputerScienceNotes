@@ -550,6 +550,44 @@ C_3 = \lambda s.\lambda z.s(s(sz))
 \[
 C_n = \lambda s.\lambda z.s^n z
 \]
+Vediamo adesso come svolgere varie operazioni:
+\[
+SUCC = \lambda n.\lambda s.\lambda z.s(nsz)
+\]
+\[
+PLUS = \lambda m.\lambda n.\lambda s.\lambda z.m s(nsz) = \lambda m.\lambda n.m SUCC n
+\]
+\[
+TIMES = \lambda m.\lambda n.m(PLUS n)C_0
+\]
+In "SUCC" la $n$ segna quante volte svolgere $s$ su $z$ (quindi potrebbe anche essere $s^n$?).
+
+\section{Lambda Calculus Tipato}
+\subsection{L'introduzione dei tipi}
+Nel linguaggio del lambda calcolo appena visto possono crearsi errori di semantica tipo:
+\[
+IF 0 e_1 e_2 = TRUE 0
+\]
+In questo caso si può applicare TRUE a 0 e creerebbe un risultato insensato.\\
+Per questo sono necessarie delle \textbf{regole} e l'integrazione dei \textbf{tipi}.
+\paragraph{Tipo:} raggruppamento di valori in base al comportamento che vorremmo avessero. Descrive come il programma deve utilizzare il tipo stesso.\\
+Per esempio:
+\[
+3+2: Int
+\]
+Indica che ci si aspetta che il risultato sia un intero e che l'operatore binario "+" funzioni correttamente prendendo in input 2 interi.\\
+\subsection{Sistema di controllo dei tipi}
+In pratica andiamo ad applicare un vero e proprio \textbf{sistema dei tipi}, il quale è un \textbf{metodo sintattico}, \textbf{effettivo} e \textbf{strutturale} per dimostrare l'assenza di comportamenti anomali.
+\begin{itemize}
+  \item Sintattico:
+  \item Effettivo:
+  \item Strutturale:
+\end{itemize}
+Il controllo dei tipi può essere:
+\begin{itemize}
+  \item \textbf{Statico:} compile-time
+  \item \textbf{Dinamico:} run-time
+\end{itemize}
 
 
 \section{Esercizi}

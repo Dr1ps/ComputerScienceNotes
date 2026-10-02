@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790852964.24338 "c:/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" "Operational-research.pdf" "Operational-research" 1790852967.75616 0
+["pdflatex"] 1790954424.90373 "c:/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" "Operational-research.pdf" "Operational-research" 1790954428.80119 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -32,6 +32,7 @@
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Program Files/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Program Files/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
   "C:/Program Files/MiKTeX/tex/generic/bitset/bitset.sty" 1575926576 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -200,11 +201,11 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "Operational-research.aux" 1790852967 7125 a6d94871559c517d4849ab6a8a3e9861 "pdflatex"
-  "Operational-research.out" 1790852967 7825 4860ff4a11e8fa82168c59da49678d95 "pdflatex"
-  "Operational-research.tex" 1790852961 25569 08b17b0c2e2e63b7076790cce0974583 ""
-  "Operational-research.toc" 1790852967 3969 6269c9ecc36ba56c23364e01e623be24 "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" 1790852961 25569 08b17b0c2e2e63b7076790cce0974583 ""
+  "Operational-research.aux" 1790954427 8731 ae92449fa6a0c5b1f7116727151ddabd "pdflatex"
+  "Operational-research.out" 1790954427 9999 ba85e3fc316d79341fba66e58d281b24 "pdflatex"
+  "Operational-research.tex" 1790954421 29937 bbc6eef8d8854114aa83eed5ae54f465 ""
+  "Operational-research.toc" 1790954428 5083 5cdebabc1d97044c5b336c07eefba8c7 "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/Year 2/Operational-research/Operational-research.tex" 1790954421 29937 bbc6eef8d8854114aa83eed5ae54f465 ""
   "images/Diagram.png" 1790782129 871750 24e98898812aa591327c196edbe676c1 ""
   "images/boatTable.png" 1790782129 67346 eed8b8d24ae498980eec50760171e8c7 ""
   "images/boats.png" 1790782129 11507 937375daa1552e4b56238831f08f4f1f ""

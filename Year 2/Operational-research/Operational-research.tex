@@ -617,5 +617,133 @@ Per i vincoli bisogna tenere di conto che ogni flusso che entra è uguale a quel
     \item Nodo4: $0,5 = x_{43}$
     \item Dominio: $x_{ij} \geq 0, \forall (ij) \in A$
 \end{itemize}
-Per il quinto nodo non serve dato che sarebbe ridondante.
+Per il quinto nodo non serve dato che sarebbe ridondante.\\
+Inoltre, ecco un altro vincolo importante, ovvero quello di \textbf{bilancio di flusso:}
+\[
+\sum_{j:(j,i)}^{} x_{ji} - \sum_{j:(i,j)}^{} X_{ij} = b_{i} \forall i \in V
+\]
+Questo fa la sottrazione tra i flussi che entrano ed escono dal nodo $i$:
+\begin{itemize}
+    \item $b_i < 0$: il nodo è sorgente.
+    \item $b_i > 0$: il nodo è pozzo.
+    \item $b_i = 0$: il nodo è di trasferimento.
+\end{itemize}
+\subsection{Problema del flusso di costo minimo}
+\subsubsection{Descrizione del problema}
+Gneneralizziamo un problema di flusso: il problema è definito su un grafo orientato $G = (V,A)$.\\
+A ciascun nodo $i \in V$ è associato un valore $b_i$ che rappresenta il \textbf{bilancio di flusso}.\\
+\begin{itemize}
+    \item $b_i < 0$: il nodo è sorgente.
+    \item $b_i > 0$: il nodo è pozzo.
+    \item $b_i = 0$: il nodo è di trasferimento.
+\end{itemize}
+Per ogni arco $(i,j) \in A$ è dato un costo $c_{ij}$ che rappresenta il costo per unità di flusso che transita sull'arco.\\
+Per ogni arco è data anche una capacità $\mu_{ij} \in \mathbb{R}^+$ che rappresenta il massimo flusso ammissibile sull'arco.\\
+Determinare i flussi in modo da:
+\begin{itemize}
+    \item Soddisfare i bilanci di flusso in ogni nodo
+    \item Rispettare i vincoli di capacità su ogni nodo
+    \item Minimizzare il costo totale
+\end{itemize}
+\subsubsection{Inizializzazione}
+Variabili:
+\[
+x_{ij} = \text{flusso sull'arco } (i,j) \in A
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{(i,j)\in A}^{} c_{ij} \cdot x_{ij}
+\]
+Vincoli:
+\begin{itemize}
+    \item Vincoli di bilancio di flusso:
+    \[
+    \sum_{j:(j,i)}^{} x_{ji} - \sum_{j:(i,j)}^{} X_{ij} = b_{i} \forall i \in V
+    \]
+    \item Vincoli di capacità
+    \[
+    0 \leq x_{ij} \leq \mu_{ij} \forall (i,j) \in A
+    \]
+\end{itemize}
+\subsection{Problema del cammino minimo}
+\subsubsection{Descrizione del problema}
+Abbiamo un grafo $G = (V,A)$, per ogni arco $(i,j) \in A$ è dato un costo $c_{ij}$.\\
+Esiste un singolo nodo sorgente e un singolo pozzo. Trovare il cammino minimo dalla sorgente (s) al pozzo (p).\\
+\subsubsection{Inizializzazione}
+Il cammino minimo è un particolare problema di flusso, ma bisogna settare i flussi a valori binari\\
+Variabili:
+\[
+x_{ij}: \text{flusso che scorre sull'arco } (i,j) \in A
+\]
+
+\section{Variabili a valori discreti}
+\subsection{Problema delle fognature ampliato}
+\subsubsection{Descrizione del problema}
+Torniamo al problema della fognatura.\\
+In realtà, le tubature fognarie possono avere solo valori specifici di portate.\\
+La portata della condotta non può essere supposta di essere uguale al flusso, potrebbe infatti essere necessario installare condotte piu grosse.\\
+Supponiamo che questi siano i soli 3 valori delle dimensioni:
+\begin{itemize}
+    \item 0,7
+    \item 1,4
+    \item 3
+\end{itemize}
+Come facciamo a modellarlo?
+\subsubsection{Inizializzazione}
+Partiamo dalle variabili:
+\[
+x_{ij}: \text{flusso che scorre sull'arco } (i,j) \in A
+\]
+\[
+y_{ij}: \text{dimensione della condotta sull'arco } (i,j) \in A
+\]
+La variabile $y_{ij}$ è detta \textbf{discreta}, ovvero che assume solo specifici valori e non tutti i valori reali.\\
+Funzione obiettivo:
+\[
+\sum_{(i,j)\in A}^{} c_{ij} \cdot y_{ij}
+\]
+Associamo, come vincoli, delle espressioni binarie:
+\[
+y_{ij} = 0,7z^1 + 1,4z^2 + 3z^3
+\]
+\[
+z^1 + z^2 + z^3 \leq 1
+\]
+\[
+z^h \in \{0,1\}
+\]
+Una condotta posso non utilizzarla, ma se la uso solo una dimensione può essere scelta.
+
+\section{Variabili semicontinue}
+Ricordiamo il problema della fognatura ampliato.\\
+Immaginiamo che, se decido di costruire la condotta $(i,j) \in A$, la sua dimensione dovrà essere in un intervallo $[l_{ij},u_{ij}]$.\\
+Adesso i vincoli diventano:
+\[
+\begin{cases}
+    z^h \in \{0,1\}\\
+    y_{ij} \in \{0\} \cup [i_{ij},u_{ij}]
+\end{cases}
+\]
+In questo caso $y_{ij}$ è una variabile \textbf{semicontinua}.\\
+Queste vengono utilizzate spesso in problemi di produzione dove i prodotti devono mantenere certi intervalli.
+
+\section{Costi di setup}
+In un problema di produzione è tipico avere dei costi di produzione (c) e dei \textbf{costi di setup} (k).\\
+I costi di setup dipendono dall'attivazione della produzione.\\
+Inoltre, esiste una capacità minima (l) e massima (u) di produzione.\\
+Vediamo la funzione obiettivo:
+\[
+minZ = cx + ky
+\]
+Vincoli:
+\[
+ly \leq x \leq uy
+\]
+\[
+x \geq 0
+\]
+\[
+y \in \{0,1\} (\text{se produco o meno})
+\]
+Nel primo vincolo è gia inclusa la condizione della legatura tra x e y (se produco, y = 1).
 \end{document}

@@ -2,6 +2,7 @@
 
 -do paper test, put solutions in file
 - examples of AND & OR (lambda calculus)
+- itemize (sintattico, effettivo e strutturale) missing item description (look at slides or chatgpt)
 
 ## AESO ##
 
@@ -9,7 +10,7 @@
 
 ## OPERATIONAL RESEARCH ##
 
-- add missing problems (configurazione, instradamento)
+- add missing problems (configurazione, instradamento, shortest path) chiedi a chat fai prima
 
 ## LABORATORY 2 ##
 
@@ -17,4 +18,4 @@
 
 ------------------------------------------------
 
-STATUS = GOOD!
+STATUS = OKAY!
