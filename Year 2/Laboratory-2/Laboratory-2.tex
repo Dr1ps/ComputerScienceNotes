@@ -708,6 +708,12 @@ L'array è una struttura dati di lunghezza fissa (non può essere modificata) ed
     [nomeArray][index]
     reali[0]
 \end{lstlisting}
+\subsection{Matrici}
+Le \textbf{matrici} non sono altro che \textbf{array di array}:
+\begin{lstlisting}
+    int mat[10][10];
+\end{lstlisting}
+Questo crea una matrice $10x10$ e la metodologia di accesso è la medesima degli array.
 \subsection{Struct}
 Lo \textbf{struct} permette di definire \textbf{tipi custom}, strutture dati non omogenee (non con membri tutti dello stesso tipo).\\
 Crea nuovi tipi, non variabile. Utilizzato per creare gli oggetti.\\
@@ -724,6 +730,28 @@ Crea nuovi tipi, non variabile. Utilizzato per creare gli oggetti.\\
     studente.[eta]
 \end{lstlisting}
 L'ordine dei membri influisce sull'ordine in memoria.
+\subsection{Enum}
+\textbf{Enum} definisce un tipo enumerativo, rende il codice più autodocumentante.\\
+Ogni identificatore è una variabile costante intera che di default parte da 0 e aumenta di 1 per ogni chiave.\\
+I valori assegnati agli identificatori sono custom.
+\begin{lstlisting}
+    enum giorni {lunedi, martedi, mercoledi, giovedi, venerdi, sabato, domenica};
+    enum giorni giorno = "lunedi";
+    enum giorni {lunedi = 1, martedi, mercoledi = 4, giovedi, venerdi, sabato, domenica};
+\end{lstlisting}
+\subsection{typedef}
+\textbf{typedef} serve per creare un \textbf{alias} per un tipo già esistente:
+\begin{lstlisting}
+    typedef [tipo] [nuovoNome]
+    typedef int Intero
+\end{lstlisting}
+Attenzione, \textbf{struct} non necessita typedef:
+\begin{lstlisting}
+    struct Persona {
+        ...
+    }
+\end{lstlisting}
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

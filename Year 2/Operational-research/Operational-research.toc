@@ -52,3 +52,12 @@
 \contentsline {subsubsection}{\numberline {8.1.2}Inizializzazione}{24}{subsubsection.8.1.2}%
 \contentsline {section}{\numberline {9}Variabili semicontinue}{25}{section.9}%
 \contentsline {section}{\numberline {10}Costi di setup}{26}{section.10}%
+\contentsline {section}{\numberline {11}Massimizzare minimi e minimizzare massimi}{27}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Tempi di completamento delle barche (esempio)}{27}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Descrizione del problema}{27}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Inizializzazione}{27}{subsubsection.11.1.2}%
+\contentsline {section}{\numberline {12}Linearizzazione valore assoluto}{28}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Equipartizione (esempio)}{28}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Descrizione del problema}{28}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Inizializzazione}{28}{subsubsection.12.1.2}%
+\contentsline {section}{\numberline {13}Vincoli disgiuntivi}{29}{section.13}%

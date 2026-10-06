@@ -9,7 +9,46 @@
 \usepackage{listing}
 \usepackage{listings}
 \usepackage{float}
+\usepackage{circuitikz}
 \usepackage{titlesec}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeborder}{RGB}{210,210,210}
+\definecolor{codecomment}{RGB}{90,120,90}
+\definecolor{codekeyword}{RGB}{0,70,140}
+\definecolor{codestring}{RGB}{160,80,20}
+
+\tikzset{
+    sr/.style={
+        draw,
+        rectangle,
+        minimum width=2.5cm,
+        minimum height=2cm,
+        align=center
+    }
+}
+
+\lstset{
+backgroundcolor=\color{codebg},
+basicstyle=\ttfamily\small,
+breaklines=true,
+frame=single,
+rulecolor=\color{codeborder},
+framerule=0.5pt,
+numbers=left,
+numberstyle=\tiny\color{gray},
+numbersep=8pt,
+xleftmargin=2em,
+framexleftmargin=1.5em,
+keywordstyle=\color{codekeyword}\bfseries,
+commentstyle=\color{codecomment}\itshape,
+stringstyle=\color{codestring},
+showstringspaces=false,
+tabsize=4,
+keepspaces=true,
+columns=fullflexible
+}
+
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
   {\thesection}{1em}{}
@@ -288,8 +327,7 @@ Ecco come si trova il tempo di impiego di un modulo:
     \item Si contano termini (OR) e variabili (AND), spesso ogni modulo li usa entrambi, arrivando al minimo a $2\Delta t$, però se uno tra i due supera il numero 8 allora si conta un tempo in più.
 \end{enumerate}
 Spesso le formule si possono semplificare, ma ciò non influisce il tempo impiegato dai moduli, bensì ci può permettere di risparmiare materiale e spazio.
-
-\section{Esadecimale}
+\subsection{Esadecimale}
 Oltre al sistema binario, spesso viene utilizzato anche il sistema \textbf{esadecimale}, ovvero in base 16.\\
 Questo sistema è comodo, basta pensare al fatto che $16$ in binario necessita di esattamente $4$ bit (un \textbf{nibble}), questo vuol dire che ogni 4 bit si ha una cifra in esadecimale e viceversa.\\
 Ecco le cifre:
@@ -391,6 +429,96 @@ L'espressione adesso è quindi:
 F = \overline{y_1}\overline{x_1}
 \]
 
+\section{Verilog}
+\textbf{Verilog} è un \textbf{HLD (Hardware Descritpion Language)}, ovvero un linguaggio di programmazione che descrive i circuiti logici.\\
+Utilizzeremo:
+\begin{itemize}
+    \item iverilog: compilatore Verilog.
+    \item vvn: interprete (genera dumptest).
+    \item gtkwave: mostra le onde grafiche (GUI).
+\end{itemize}
+Questi comandi vanno utilizzati in sequenza su un file Verilog per testarlo ed eseguirlo.
+\subsection{Dichiarazione moduli}
+Si ha in input uno schema di un circuito scritto con Verilog (.v), il quale viene testato da un altro file / funzione "test"(.v).\\
+Viene generato un file di estensione ".vcd" che contiene i risultati.\\
+Ogni pezzo di circuito deve essere rappresentato come \textbf{modulo}, vediamo come creare un MUX:
+\begin{lstlisting}
+    primitive mux(output z, input x, input y, input c);
+    table
+        1 ? 0 : 1;
+        ? 1 1 : 1;
+        0 ? 0 : 0;
+        ? 0 1 : 0;
+    endtable
+    endprimitive
+\end{lstlisting}
+Per convenzione, si mettono prima gli output e poi gli input.\\
+Da standard, input e output specificati nel modo soprastante sono di \textbf{1 bit}.\\
+Dopo è stata specificata una \textbf{tabella}, la quale corrisponde proprio alla tabella di verità (sintetizzata in questo caso). I "?" indicano un valore qualsiasi.\\
+Giustamente, la tabella e il primitive vanno chiusi.\\
+\textbf{Primitive} però non si usa mai, si usa \textbf{module}:
+\begin{lstlisting}
+    module mux (...)
+\end{lstlisting}
+Per calcolare l'\textbf{espressione logica} si dichiara un modulo con \textbf{module} e poi si fa cosi:
+\begin{lstlisting}
+    module mux(output z, input a, input b, input c);
+    assign 
+        z = b && c || a && !c
+\end{lstlisting}
+Si può utilizzare il bit di controllo per scegliere l'output:
+\begin{lstlisting}
+    module mux(output z, input a, input b, input c);
+    assign 
+        z = (c == 0 ? a : b)
+\end{lstlisting}
+\subsection{Modulo tester}
+Ecco come si testa (esegue) il circuito progettato:
+\begin{lstlisting}
+    (circuito)
+    \dots
+    module test():
+
+        reg ix, iy, ic;
+        wire out;
+
+        mux istanzaMux(out, ix, iy, ic);
+
+        integer i;
+        
+        initial
+            begin
+                $dumpfile("test.vcd");
+                $dumpvars
+                for(i=0;i<8;i=i+1)
+
+
+\end{lstlisting}
+Si apre la funzione "test" che contiene le istruzioni del run-time.\\
+Si istanziano le variabili necessarie e i moduli necessari.\\
+
+\subsection{Monitor}
+Questo comando restituisce i risultati specificati ogni volta che viene passato un input e stampa un messaggio custom:
+\begin{lstlisting}
+    (tester)
+    \dots
+    $monitor($time," in = %b %b controllo = %b ===> z = %b", ina, inb, inc, outz);
+    ...
+\end{lstlisting}
+
+\subsection{Full Adder}
+\begin{lstlisting}
+    module far(output c, output z, input x, input y, input r);
+        far ris(z,x,y,r)
+        far car(c,x,y,r)
+
+\end{lstlisting}
+
+\subsection{Tools}
+Ecco alcuni strumenti importanti per lavorare con Verilog:
+\begin{itemize}
+    \item \textbf{Quartus Prime Lite Edition:} rappresentazione grafica dei moduli utilizzati in un file Verilog.
+\end{itemize}
 
 \section{Moduli}
 Questa sezione elenca vari esempi di moduli per le operazioni del calcolatore.
@@ -551,4 +679,124 @@ z_0 =
 C\cdot X
 \]
 Impiega un tempo di $\Delta t$ (fa solo AND).
+
+\section{Funzionamento dei registri}
+\subsection{Registri}
+Il registro funziona cosi:
+\begin{itemize}
+    \item Input $x$ di $n$ bit
+    \item Output $y$ di $n$ bit
+    \item Clock in input
+    \item \textbf{Write Enable} in input (dice se scrivere o meno)
+\end{itemize}
+\[
+\begin{cases}
+    clock == 1 \&\& we = 1 \implies \text{ricordati }x\\
+    \text{altrimenti ricordati il valore precedente}
+\end{cases}
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/register.png}
+    \caption{Registro}
+    \label{fig:register}
+\end{figure}
+\subsection{Flip Flop RS}
+Abbiamo un modulo che ha:
+\begin{itemize}
+    \item Input \textbf{SET}
+    \item Input \textbf{RESET}
+    \item Output su 1 porta tra 2 (Q)
+\end{itemize}
+\[
+\begin{cases}
+    SET == 1 \implies \text{ricordati }1\\
+    RESET == 1 \implies \text{ricordati }0
+\end{cases}
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/flipflopDsemplice.png}
+    \caption{Flip Flop RS}
+    \label{fig:flipfloprs}
+\end{figure}
+Per realizzare questa cosa bisogna:
+\begin{itemize}
+    \item Collegare una porta OR Negata a ogni input (1 ciascuno)
+    \item L'output di ognuno ritorna alla porta OR Negata come secondo input di tale porta dell'altro.
+\end{itemize}
+Si crea un problema se entrambi SET e RESET sono settati a 1 perche si crea questo:
+\[
+Q = 0 = \overline{Q}
+\]
+Per risolvere, si introducono due input:
+\begin{itemize}
+    \item \textbf{Clock}: dice quando scrivere.
+    \item \textbf{D}: dice cosa scrivere.
+\end{itemize}
+Ecco come si procede:
+\begin{itemize}
+    \item Si collega il clock ad una porta AND, la quale a sua volta a RESET.
+    \item Si collega D ad una porta AND, la quale a sua volta a SET.+
+    \item Il secondo ingresso della porta AND del clock è D negato.
+    \item Il secondo ingresso della porta AND di D è il clock.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/CircuitoSR.png}
+    \caption{Circuito SR}
+    \label{fig:SRcircuit}
+\end{figure}
+\subsection{Flip Flop D}
+Questo ha:
+\begin{itemize}
+    \item Clock in input
+    \item D in input
+    \item Q in usita su due porte (negato e non)
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/flipflopD.png}
+    \caption{Flip Flop D}
+    \label{fig:flipflopD}
+\end{figure}
+Sembra uguale a prima, ma adesso:
+\begin{itemize}
+    \item $\overline{Q}$ diventa D di un secondo D-latch.
+    \item Il clock arriva prima al secondo modulo, al primo invece arriva solo dopo una negazione (NOT)
+\end{itemize}
+In questo modo i due componenti scrivono alternativamente.
+
+\subsection{Segnale di reset}
+Per riportare a "0" un valore di un registro si usa un segnale di \textbf{reset}.
+
+\subsection{Reti sequenziali}
+Con i registri si possono sviluppare le \textbf{reti sequenziali} per rappresentare \textbf{automi}.\\
+Supponiamo di avere una sequenza di bit qualsiasi, bisogna svolgere una sequenza di bit risultante che immette:
+\[
+\begin{cases}
+    1: \text{\#1 = pari}\\
+    0: \text{altrimenti}
+\end{cases}
+\]
+Si realizza prima un automa:
+\begin{itemize}
+    \item S0: "1" Dispari
+    \item S1: "1" pari
+\end{itemize}
+\[
+\begin{cases}
+    S0 \rightarrow 0 \implies S0\\
+    S0 \rightarrow 1 \implies S1\\
+    S1 \rightarrow 0 \implies S1\\
+    S1 \rightarrow 1 \implies S0
+\end{cases}
+\]
+Ecco lo schema:
+
+\section{Esercizi}
+\subsection{Esercizio 1}
+\subsubsection{Descrizione}
+Sviluppare una rete che sa calcolare la parità (di "1") in una sequenza di bit con un automa di Mealy.
+\subsubsection{Soluzione}
 \end{document}

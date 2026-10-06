@@ -746,4 +746,122 @@ x \geq 0
 y \in \{0,1\} (\text{se produco o meno})
 \]
 Nel primo vincolo è gia inclusa la condizione della legatura tra x e y (se produco, y = 1).
+
+
+\section{Massimizzare minimi e minimizzare massimi}
+\subsection{Tempi di completamento delle barche (esempio)}
+\subsubsection{Descrizione del problema}
+Una compagnia logistica ha $n$ barche $B = \{1,\ldots,n\}$ (tutte immediatamente pronte in rada) che devono essere assegnate ai moli disponibili $M = \{1,\ldots,m\}$ per essere scaricate.\\
+Ogni barca $i \in B$ richiede un tempo di servizio $p_i$ per lo scarico. Una volta che una barca è attraccata al molo deve restarvi fino al completamento dello scarico. Un molo può servire una sola barca alla volta.\\
+Le barche attendono fino a che non vengono impegnate. L'obiettivo è minimizzare il \textbf{tempo di completamento} (makespan), ovvero il tempo in cui tutte le barche finiscono di scaricare.
+\subsubsection{Inizializzazione}
+Insiemi:
+\[
+\begin{aligned}
+    B &= \{1,\ldots,n\}\\
+    M &= \{1,\ldots,m\}
+\end{aligned}
+\]
+Variabili:
+\[
+\begin{aligned}
+    p_i &= \text{tempo di impiego della barca } i \in B\\
+    a_{bm} &= \text{binaria, assegnazione barca-molo}
+\end{aligned}
+\]
+Funzione obiettivo:
+\[
+\sum_{i \in B}^{} p_i \cdot a_{bm}
+\]
+Vincoli:
+\[
+\begin{cases}
+    p_i \geq 0\\
+    a_{bm} = \{0,1\}\\
+    \sum_{b \in B}^{} a_{bm} \leq 1, \forall m \in M\\
+    \sum_{m \in M}^{} a_{bm} \leq 1, \forall b \in B
+\end{cases}
+\]
+Mettiamo in atto questo per aiutarci:
+\[
+t_m = \text{tempo completamento di un molo}
+\]
+\[
+\sum_{i \in B}^{} p_i \cdot a_{bm} = t_m, \forall m \in M
+\]
+Dobbiamo minimizzare il massimo:
+\[
+min(max(t_m1, t_m2, \ldots, t_mm))
+\]
+Si minimizza il massimo della funzione obiettivo.\\
+Se avessimo dovuto invece fare il contrario, ovvero massimizzare il minimo, il processo era analogo:
+\[
+max(min(t_m1, t_m2, \ldots, t_mm))
+\]
+
+\section{Linearizzazione valore assoluto}
+\subsection{Equipartizione (esempio)}
+\subsubsection{Descrizione del problema}
+Due fratelli devono spartirsi equamente l'eredità composta da $n \in N$ beni indivisibili. Ogni bene ha un valore $a_i \in \mathbb{R}$.\\
+Vogliamo suddividere i beni in due insiemi diversi minimizzando la differenza di valore.
+\subsubsection{Inizializzazione}
+Insiemi:
+\[
+N = \{1,\ldots,n\}
+A = \text{Insieme primo fratello}
+\]
+Variabili:
+\[
+a_i \in R
+\]
+\[
+x_i = \begin{cases}
+    1, \text{assegnato al fratello 1}
+    0, \text{assegnato al fratello 2}
+\end{cases}
+\]
+Funzione obiettivo, valori dei beni del primo fratello meno quelli del secondo:
+\[
+minZ = |\sum_{i \in N}^{} a_i \cdot x_i - \sum_{i \in N}^{} a_i \cdot (1-x_i)|
+\]
+Vincoli:
+\[
+\begin{cases}
+    x_i = \{0,1\}
+\end{cases}
+\]
+Come possiamo vedere la funzione obiettivo non è lineare, per risolvere consideriamo che:
+\[
+|x| = max(x,-x)
+\]
+Per minimizzarlo, facciamo:
+\[
+min(max(x,-x))
+\]
+Usiamo una variabile "v" ausiliaria e scriviamo il modello lineare:\\
+Prendiamo il minimo tra i vari $v$ che:
+\[
+v \geq \sum_{i \in N}^{} a_i \cdot x_i - \sum_{i \in N}^{} a_i \cdot (1-x_i)
+\]
+\[
+v \geq \sum_{i \in N}^{} a_i \cdot (1-x_i) - \sum_{i \in N}^{} a_i \cdot x_i 
+\]
+
+\section{Vincoli disgiuntivi}
+Solitamente, in Programmazione Lineare, l'insieme ammissibile è descritto dall'intersezione di sotto-piani legati a \textbf{vincoli}.\\
+Questo piano risultante si chiama \textbf{poliedro convesso}.\\
+In altri casi ci può essere richiesto di realizzare \textbf{casi distinti} e quindi non bisogna trovare un'intersezione, in quanto la soluzione potrebbe essere in un piano o in un altro.\\
+Si introducono variabili binarie per specificare se un vincolo può essere violato o meno, garantendo che non tutti i vincoli (o uno specifico numero di vincoli) non siano violati contemporaneamente.\\
+Per farlo, si usa un valore speciale:
+\[
+M = \text{Valore reale molto grande}
+\]
+Considerando due variabili binarie $a$ e $b$, i vincoli di maggioranza e minoranza diventano cosi:
+\[
+expression \leq k \cdot Ma
+\]
+\[
+expression \geq k \cdot -Mb
+\]
+Se un vincolo viene negato (e quindi la variabile binaria = 1) allora viene reso inutile dal valore M.
 \end{document}

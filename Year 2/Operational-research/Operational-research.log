@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  2 OCT 2026 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  6 OCT 2026 10:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,7 +670,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-<images/Diagram.png, id=273, 1780.6525pt x 890.32625pt>
+<images/Diagram.png, id=318, 1780.6525pt x 890.32625pt>
 File: images/Diagram.png Graphic file (type png)
 <use images/Diagram.png>
 Package pdftex.def Info: images/Diagram.png  used on input line 53.
@@ -811,7 +811,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-<images/boats.png, id=341, 196.23312pt x 209.78375pt>
+<images/boats.png, id=386, 196.23312pt x 209.78375pt>
 File: images/boats.png Graphic file (type png)
 <use images/boats.png>
 Package pdftex.def Info: images/boats.png  used on input line 514.
@@ -827,7 +827,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16
 
 ]
-<images/boatTable.png, id=347, 280.04625pt x 221.82875pt>
+<images/boatTable.png, id=392, 280.04625pt x 221.82875pt>
 File: images/boatTable.png Graphic file (type png)
 <use images/boatTable.png>
 Package pdftex.def Info: images/boatTable.png  used on input line 521.
@@ -859,7 +859,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has
                                                   \__shipout_drop_firstpage_...
 l.542     \item O
                  ccorre formulare come PLI il problema che la TP deve risolv... <./images/boatTable.png>]
-<images/instradamento.png, id=360, 684.05562pt x 254.9525pt>
+<images/instradamento.png, id=405, 684.05562pt x 254.9525pt>
 File: images/instradamento.png Graphic file (type png)
 <use images/instradamento.png>
 Package pdftex.def Info: images/instradamento.png  used on input line 548.
@@ -878,7 +878,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has
                                                   \__shipout_drop_firstpage_...
 l.562 \section
               {Problemi su reti: problemi di flusso e di cammino} <./images/instradamento.png>]
-<images/graph.png, id=368, 215.00325pt x 261.97874pt>
+<images/graph.png, id=413, 215.00325pt x 261.97874pt>
 File: images/graph.png Graphic file (type png)
 <use images/graph.png>
 Package pdftex.def Info: images/graph.png  used on input line 596.
@@ -960,26 +960,60 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26
 
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28
+
+]
+Overfull \hbox (2.86642pt too wide) in paragraph at lines 851--856
+\OT1/cmr/m/n/12 Solitamente, in Pro-gram-mazione Lin-eare, l'insieme am-mis-si-bile ^^Re de-scritto dall'intersezione
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29
+
 ] (Operational-research.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Operational-research.out' has not changed.
-(rerunfilecheck)             Checksum: BA85E3FC316D79341FBA66E58D281B24;9999.
+(rerunfilecheck)             Checksum: AEDD6789F79A85DFB80051A31F16C7B0;11797.
  ) 
 Here is how much of TeX's memory you used:
- 33082 strings out of 467392
- 758230 string characters out of 5415745
+ 33105 strings out of 467392
+ 758607 string characters out of 5415745
  1285881 words of memory out of 5000000
- 61856 multiletter control sequences out of 15000+600000
+ 61867 multiletter control sequences out of 15000+600000
  635635 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,798b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Operational-research.pdf (26 pages, 1279291 bytes).
+Output written on Operational-research.pdf (29 pages, 1293936 bytes).
 PDF statistics:
- 483 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 430 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
+ 502 words of extra memory for PDF output out of 10000 (max. 10000000)
 

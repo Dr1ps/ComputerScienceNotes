@@ -502,6 +502,81 @@ AND = \lambda b.\lambda c.bc FALSE
 \[
 OR = \lambda b.\lambda c.b TRUE c
 \]
+Vediamo come si applica l'AND:
+
+\[
+\begin{aligned}
+AND\ TRUE\ TRUE
+&= (\lambda b.\lambda c.\,bc\,FALSE)\ TRUE\ TRUE\\
+&\rightarrow TRUE\ TRUE\ FALSE\\
+&\rightarrow TRUE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+AND\ TRUE\ FALSE
+&= (\lambda b.\lambda c.\,bc\,FALSE)\ TRUE\ FALSE\\
+&\rightarrow TRUE\ FALSE\ FALSE\\
+&\rightarrow FALSE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+AND\ FALSE\ TRUE
+&= (\lambda b.\lambda c.\,bc\,FALSE)\ FALSE\ TRUE\\
+&\rightarrow FALSE\ TRUE\ FALSE\\
+&\rightarrow FALSE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+AND\ FALSE\ FALSE
+&= (\lambda b.\lambda c.\,bc\,FALSE)\ FALSE\ FALSE\\
+&\rightarrow FALSE\ FALSE\ FALSE\\
+&\rightarrow FALSE
+\end{aligned}
+\]
+
+E adesso l'OR:
+
+\[
+\begin{aligned}
+OR\ TRUE\ TRUE
+&= (\lambda b.\lambda c.\,b\,TRUE\,c)\ TRUE\ TRUE\\
+&\rightarrow TRUE\ TRUE\ TRUE\\
+&\rightarrow TRUE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+OR\ TRUE\ FALSE
+&= (\lambda b.\lambda c.\,b\,TRUE\,c)\ TRUE\ FALSE\\
+&\rightarrow TRUE\ TRUE\ FALSE\\
+&\rightarrow TRUE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+OR\ FALSE\ TRUE
+&= (\lambda b.\lambda c.\,b\,TRUE\,c)\ FALSE\ TRUE\\
+&\rightarrow FALSE\ TRUE\ TRUE\\
+&\rightarrow TRUE
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+OR\ FALSE\ FALSE
+&= (\lambda b.\lambda c.\,b\,TRUE\,c)\ FALSE\ FALSE\\
+&\rightarrow FALSE\ TRUE\ FALSE\\
+&\rightarrow FALSE
+\end{aligned}
+\]
 
 \subsection{Condizionale}
 La struttura corrisponde a questo:
@@ -531,7 +606,7 @@ IF TRUE e_1 e_2 = (\lambda c.\lambda then.\lambda else.c then else) TRUE e_1 e_2
 L'esempio è analogo su FALSE.
 
 \subsection{Numeri}
-Possiamo codificare i numeri naturali con una funziona che, data una funzione $s$ (successore), viene applicata $n$ volte ad una funzione $z$ (lo 0), con $n = $numero desiderato.\\
+Possiamo codificare i numeri naturali con una funziona che, data una funzione $s$ (successore), viene applicata $n$ volte ad una funzione $z$ (lo 0), con $n = $numero desiderato.
 \[
 C_0 = \lambda s.\lambda z.z
 \]
@@ -562,6 +637,121 @@ TIMES = \lambda m.\lambda n.m(PLUS n)C_0
 \]
 In "SUCC" la $n$ segna quante volte svolgere $s$ su $z$ (quindi potrebbe anche essere $s^n$?).
 
+\section{Regole di inferenza}
+\subsection{Sintassi}
+\[
+\begin{aligned}
+  E &= 
+\end{aligned}
+\]
+\[
+\begin{aligned}
+  E &= TRUE
+    &= FALSE
+    &= NV
+    &= if\ E\ then\ E\ else\ E
+    &= succ\ E
+    &= pred\ E
+    &= isZero\ E
+\end{aligned}
+\]
+\[
+\begin{aligned}
+  V &= TRUE
+    &= FALSE
+    &= NV
+\end{aligned}
+\]
+\[
+\begin{aligned}
+  NV &= 0
+     &= 1
+     &= 2
+     &= \dots
+\end{aligned}
+\]
+\subsection{Successore}
+\[
+\frac{E \rightarrow E^I}{succ(E) \rightarrow succ(E^I)}
+\]
+\[
+\frac{m = n + 1}{succ(n) \rightarrow m}
+\]
+\subsection{Predecessore}
+\[
+\frac{E \rightarrow E^I}{pred(E) \rightarrow pred(E^I)}
+\]
+\[
+\frac{n > 0, m = n - 1}{pred(n) \rightarrow m}
+\]
+\subsection{IsZero}
+\[
+\frac{E \rightarrow E^I}{isZero(E) \rightarrow isZero(E^I)}
+\]
+\[
+\frac{n = 0}{isZero(n) \rightarrow TRUE}
+\]
+\[
+\frac{n > 0}{isZero(n) \rightarrow FALSE}
+\]
+\subsection{If-Else}
+\[
+if\ TRUE\ then\ E_1\ else\ E_2 \rightarrow E_1
+\]
+\[
+if\ FALSE\ then\ E_1\ else\ E_2 \rightarrow E_2
+\]
+\[
+\frac{E \rightarrow E^I}{if\ E\ then\ E_1\ else\ E_2 \rightarrow if\ E^I\ then\ E_1\ else\ E_2}
+\]
+
+\section{Controllo dei tipi}
+Il controllo dei tipi nella grammatica corrisponde ad un'associazione binaria tra \textbf{espressione} e \textbf{tipo}.
+\[
+E:T
+\]
+\subsection{Tipi}
+Ecco i tipi usati nel type checking:
+\begin{itemize}
+  \item \textbf{Nat:} numeri naturali
+  \item \textbf{Bool:} valori booleani
+\end{itemize}
+Type Checking dei valori sintattici:
+\[
+false: Bool
+\]
+\[
+true: Bool
+\]
+\[
+NV: Nat
+\]
+\subsection{Well-typed e ill-typed}
+Un'espressione E è \textbf{well-typed} se è ben tipata. Il contrario (debolmente tipato) indica che E è un'espressione \textbf{ill-typed}.
+\subsection{Type Safety: Correttezza}
+La \textbf{correttezza} (type safety o soundness) 
+del sistema di tipo è espressa formalmente da queste proprietà:
+\begin{itemize}
+  \item \textbf{Progresso:} se $E:T$ allora $E$ è un valore oppure $E \rightarrow E^I$ per una quache espressione $E^I$.
+  \item \textbf{Conservazione:} se $E:T$ e $E \rightarrow E^I$ allora $E^I:T$.
+\end{itemize}
+\subsection{Controllo su successore}
+\[
+\frac{E: Nat}{succ(E): Nat}
+\]
+\subsection{Controllo su predecessore}
+\[
+\frac{E: Nat}{pred(E): Nat}
+\]
+\subsection{Controllo su isZero}
+\[
+\frac{E:Nat}{isZero(E): Bool}
+\]
+\subsection{Controllo su if-else}
+\[
+\frac{E: Bool, E_1:T, E_2:T}{if\ E then\ E_1\ else\ E_2:T}
+\]
+
 \section{Lambda Calculus Tipato}
 \subsection{L'introduzione dei tipi}
 Nel linguaggio del lambda calcolo appena visto possono crearsi errori di semantica tipo:
@@ -579,16 +769,15 @@ Indica che ci si aspetta che il risultato sia un intero e che l'operatore binari
 \subsection{Sistema di controllo dei tipi}
 In pratica andiamo ad applicare un vero e proprio \textbf{sistema dei tipi}, il quale è un \textbf{metodo sintattico}, \textbf{effettivo} e \textbf{strutturale} per dimostrare l'assenza di comportamenti anomali.
 \begin{itemize}
-  \item Sintattico:
-  \item Effettivo:
-  \item Strutturale:
+  \item Sintattico: la struttura sintattica guida il metodo di analisi del comportamento dei programmi.
+  \item Effettivo: si può definire un \textbf{algoritmo} che controlla i vincoli sui tipi e implementarlo in un compilatore o interprete.
+  \item Strutturale: i tipi assegnati alle componenti del programma è definito da quello delle sue sotto-componenti.
 \end{itemize}
 Il controllo dei tipi può essere:
 \begin{itemize}
   \item \textbf{Statico:} compile-time
   \item \textbf{Dinamico:} run-time
 \end{itemize}
-
 
 \section{Esercizi}
 \subsection{Esercizio 1}

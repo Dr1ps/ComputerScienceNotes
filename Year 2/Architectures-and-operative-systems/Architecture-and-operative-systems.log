@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  1 OCT 2026 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  6 OCT 2026 13:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -521,41 +521,90 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box69
 \@float@everytoks=\toks45
 \@floatcapt=\box70
-) (C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty
+) (C:\Program Files\MiKTeX\tex/latex/circuitikz\circuitikz.sty
+Package: circuitikz 2026/09/12{} The CircuiTikz circuit drawing package version 1.8.7
+ (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2026-08-01 v3.1.12 (3.1.12)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfarrowinset=\dimen298
+\pgfarrowlength=\dimen299
+\pgfarrowwidth=\dimen300
+\pgfarrowlinewidth=\dimen301
+) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2026-08-01 v3.1.12 (3.1.12)
+ (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2026-08-01 v3.1.12 (3.1.12)
+ (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgftransformnonlinearflatness=\dimen302
+) (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@curvilinear@time@a=\dimen303
+\pgf@curvilinear@length@a=\dimen304
+\pgf@curvilinear@length@b=\dimen305
+\pgf@curvilinear@length@c=\dimen306
+\pgf@curvilinear@length@d=\dimen307
+)
+\pgf@arrows@the@rigidity=\dimen308
+)) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfpu.code.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcirc.defines.tex
+\pgf@circ@count@a=\count349
+\pgf@circ@count@b=\count350
+\pgf@circ@count@c=\count351
+\pgf@circ@res@up=\dimen309
+\pgf@circ@res@down=\dimen310
+\pgf@circ@res@zero=\dimen311
+\pgf@circ@res@left=\dimen312
+\pgf@circ@res@right=\dimen313
+\pgf@circ@res@other=\dimen314
+\pgf@circ@res@step=\dimen315
+\pgf@circ@res@temp=\dimen316
+\pgf@circ@Rlen=\dimen317
+\pgf@circ@scaled@Rlen=\dimen318
+\pgfstartlinewidth=\dimen319
+) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircutils.tex
+\ctikz@scratchbox=\box71
+) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircpath.tex
+\ctikz@vif@count=\count352
+) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircshapes.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircmonopoles.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircbipoles.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcirctripoles.tex
+\pgf@circ@res@count=\count353
+) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircquadpoles.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircmultipoles.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcirclabel.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircvoltage.tex
+\pgfcirc@labelshift=\dimen320
+) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcirccurrent.tex) (C:\Program Files\MiKTeX\tex/generic/circuitikz\pgfcircflow.tex)) (C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box71
+\ttl@box=\box72
 \beforetitleunit=\skip69
 \aftertitleunit=\skip70
-\ttl@plus=\dimen298
-\ttl@minus=\dimen299
+\ttl@plus=\dimen321
+\ttl@minus=\dimen322
 \ttl@toksa=\toks46
-\titlewidth=\dimen300
-\titlewidthlast=\dimen301
-\titlewidthfirst=\dimen302
+\titlewidth=\dimen323
+\titlewidthlast=\dimen324
+\titlewidthfirst=\dimen325
 ) (C:\Program Files\MiKTeX\tex/latex/l3kernel\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count349
+\l__color_backend_stack_int=\count354
 ) (Architecture-and-operative-systems.aux)
 \openout1 = `Architecture-and-operative-systems.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -591,23 +640,23 @@ LaTeX Font Info:    ... okay on input line 30.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 69.
 (Architecture-and-operative-systems.out) (Architecture-and-operative-systems.out)
 \@outlinefile=\write4
 \openout4 = `Architecture-and-operative-systems.out'.
 
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count350
-\scratchdimen=\dimen303
-\scratchbox=\box72
-\nofMPsegments=\count351
-\nofMParguments=\count352
+\scratchcounter=\count355
+\scratchdimen=\dimen326
+\scratchbox=\box73
+\nofMPsegments=\count356
+\nofMParguments=\count357
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count353
-\MPscratchDim=\dimen304
-\MPnumerator=\count354
-\makeMPintoPDFobject=\count355
+\MPscratchCnt=\count358
+\MPscratchDim=\dimen327
+\MPnumerator=\count359
+\makeMPintoPDFobject=\count360
 \everyMPtoPDFconversion=\toks48
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -617,7 +666,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count356
+\c@lstlisting=\count361
 [1
 
 {C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Architecture-and-operative-systems.toc
@@ -628,7 +677,17 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2
+
+])
 \tf@toc=\write5
 \openout5 = `Architecture-and-operative-systems.toc'.
 
@@ -640,19 +699,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[3
-
-]
+[3]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -663,26 +710,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
-
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 126.
-(C:\Program Files\MiKTeX\tex/latex/base\omscmr.fd
-File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -691,13 +741,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
-Overfull \hbox (5.37614pt too wide) in paragraph at lines 157--158
+[6]
+Overfull \hbox (5.37614pt too wide) in paragraph at lines 196--197
 []\OT1/cmr/m/n/12 Il liv-ello del sis-tema op-er-a-tivo cor-risponde al liv-ello \OT1/cmr/bx/n/12 i \OT1/cmr/m/n/12 (si trova al liv-ello dell'interfaccia) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--164
+Underfull \hbox (badness 10000) in paragraph at lines 199--203
 
  []
 
@@ -708,7 +758,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6
+[7
 
 ]
 
@@ -718,8 +768,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
@@ -730,17 +780,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8
+[9
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -749,13 +791,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-<images/evenOdd.png, id=219, 1541.76pt x 1027.84pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+<images/evenOdd.png, id=308, 1541.76pt x 1027.84pt>
 File: images/evenOdd.png Graphic file (type png)
 <use images/evenOdd.png>
-Package pdftex.def Info: images/evenOdd.png  used on input line 329.
+Package pdftex.def Info: images/evenOdd.png  used on input line 367.
 (pdftex.def)             Requested size: 455.24411pt x 303.49248pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--332
+Underfull \hbox (badness 10000) in paragraph at lines 364--370
 
  []
 
@@ -766,10 +816,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 351--355
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 389--393
 
  []
 
@@ -780,11 +828,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12
+[13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.363 \]
+l.401 \]
          <./images/evenOdd.png (PNG copy)>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -793,8 +841,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 422--424
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
 
  []
 
@@ -805,13 +863,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 550--552
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17
 
 ]
-<images/logicalCircuit.png, id=251, 1541.76pt x 1027.84pt>
+<images/logicalCircuit.png, id=394, 1541.76pt x 1027.84pt>
 File: images/logicalCircuit.png Graphic file (type png)
 <use images/logicalCircuit.png>
-Package pdftex.def Info: images/logicalCircuit.png  used on input line 437.
+Package pdftex.def Info: images/logicalCircuit.png  used on input line 565.
 (pdftex.def)             Requested size: 318.66948pt x 212.43375pt.
 
 
@@ -821,11 +891,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15
+[18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.457 \end{itemize}
+l.585 \end{itemize}
                     <./images/logicalCircuit.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -837,16 +907,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16
+[19
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.552 \]
+l.680 \]
         
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.552 \]
+l.680 \]
         ]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -855,31 +925,109 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17
+[20
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.554 \end{document}
-                    ] (Architecture-and-operative-systems.aux)
+l.683 \section
+              {Funzionamento dei registri}]
+<images/register.png, id=412, 72.27pt x 90.3375pt>
+File: images/register.png Graphic file (type png)
+<use images/register.png>
+Package pdftex.def Info: images/register.png  used on input line 700.
+(pdftex.def)             Requested size: 113.81102pt x 142.27126pt.
+<images/flipflopDsemplice.png, id=414, 72.27pt x 70.2625pt>
+File: images/flipflopDsemplice.png Graphic file (type png)
+<use images/flipflopDsemplice.png>
+Package pdftex.def Info: images/flipflopDsemplice.png  used on input line 719.
+(pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.725     \item C
+                 ollegare una porta OR Negata a ogni input (1 ciascuno)
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.725     \item C
+                 ollegare una porta OR Negata a ogni input (1 ciascuno) <./images/register.png> <./images/flipflopDsemplice.png>]
+<images/CircuitoSR.png, id=424, 739.76375pt x 248.93pt>
+File: images/CircuitoSR.png Graphic file (type png)
+<use images/CircuitoSR.png>
+Package pdftex.def Info: images/CircuitoSR.png  used on input line 746.
+(pdftex.def)             Requested size: 227.62206pt x 76.59393pt.
+<images/flipflopD.png, id=425, 72.27pt x 70.2625pt>
+File: images/flipflopD.png Graphic file (type png)
+<use images/flipflopD.png>
+Package pdftex.def Info: images/flipflopD.png  used on input line 759.
+(pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.766     \item I
+                 l clock arriva prima al secondo modulo, al primo invece arr...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.766     \item I
+                 l clock arriva prima al secondo modulo, al primo invece arr... <./images/CircuitoSR.png> <./images/flipflopD.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24
+
+] (Architecture-and-operative-systems.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Architecture-and-operative-systems.out' has not changed.
-(rerunfilecheck)             Checksum: 895E2D9A9F0D98D7F6C85292356D321C;4290.
+(rerunfilecheck)             Checksum: 49B65FA3B683A4CE78F485F59206C2EC;6199.
  ) 
 Here is how much of TeX's memory you used:
- 33314 strings out of 467392
- 759950 string characters out of 5415745
- 1284895 words of memory out of 5000000
- 62090 multiletter control sequences out of 15000+600000
- 635288 words of font info for 65 fonts, out of 8000000 for 9000
+ 51905 strings out of 467392
+ 1320713 string characters out of 5415745
+ 2288463 words of memory out of 5000000
+ 80541 multiletter control sequences out of 15000+600000
+ 636223 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,12n,118p,827b,1418s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Architecture-and-operative-systems.pdf (17 pages, 2464063 bytes).
+ 107i,12n,118p,827b,1951s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Architecture-and-operative-systems.pdf (24 pages, 2550328 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 533 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 500000)
+ 387 words of extra memory for PDF output out of 10000 (max. 10000000)
 

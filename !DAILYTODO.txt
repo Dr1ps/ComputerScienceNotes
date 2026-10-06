@@ -1,21 +1,26 @@
 ## PARADIGMS ##
 
--do paper test, put solutions in file
-- examples of AND & OR (lambda calculus)
-- itemize (sintattico, effettivo e strutturale) missing item description (look at slides or chatgpt)
+- do paper test, put solutions in file
 
 ## AESO ##
 
-- add pics to modules and circuits
+- add pictures of circuits and modules everywhere
+- add tester code to Verilog test, monitor (do better)
+FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
+(download or redo)
+- setup verilog env (install iverilog & gtk wave)
+- understand better about flip flops (and registers) and include circuits (digital app)
+- esempio di automa in fondo
 
 ## OPERATIONAL RESEARCH ##
 
-- add missing problems (configurazione, instradamento, shortest path) chiedi a chat fai prima
+- add missing problems (configurazione, instradamento, shortest path, fonderia 2 & 3) chiedi a chat fai prima
 
 ## LABORATORY 2 ##
 
-- add missing lab exercise (n.1)
+- add missing info on unix commands (if you want and can!)
+- add missing excercise (n.8)
 
 ------------------------------------------------
 
-STATUS = OKAY!
+STATUS = AESO critical
