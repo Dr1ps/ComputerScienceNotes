@@ -835,6 +835,23 @@ E ancora per la chiamata di funzione:
 \[
 \frac{\Gamma \vdash e:\tau_1 \rightarrow \tau_2 \text{ } \text{ } \text{ } \Gamma \vdash e_2:\tau_1}{\Gamma \vdash Apply(e_1,e_2):\tau_2}
 \]
+\subsection{Substitution Lemma}
+Il lemma dice:
+\begin{center}
+  "I tipi sono preservati dall'operazione di sostituzione"
+\end{center}
+Se:
+\[
+\Gamma, x:\tau_1 \vdash e: \tau
+\]
+\[
+\Gamma \vdash e_1:\tau_1
+\]
+Allora:
+\[
+\Gamma \vdash e\{x:=e_1\}: \tau
+\]
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:
