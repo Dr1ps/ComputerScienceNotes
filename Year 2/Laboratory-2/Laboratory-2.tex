@@ -751,7 +751,59 @@ Attenzione, \textbf{struct} non necessita typedef:
         ...
     }
 \end{lstlisting}
+\subsection{Funzioni}
+Le \textbf{funzioni} in C sono astrazioni di blocchi di codice con un \textbf{nome}.\\
+Ogni programma è costituito da uno o più file che contengono funzioni.\\
+Le funzioni sono tutte \textbf{globali}.\\
+La prima ad essere eseguita in un programma è sempre \textbf{main}.\\
+Una funzione è fatta da 3 componenti:
+\begin{itemize}
+    \item \textbf{Tipo}: specifica il tipo del risultato.
+    \item \textbf{Nome}: serve da identificativo per richiamare la funzione.
+    \item \textbf{Parametri formali}: generici.
+\end{itemize}
+Una funzione ha:
+\begin{itemize}
+    \item Una \textbf{dichiarazione} (prima del main), realizzabile solo con la \textbf{firma} della funzione (tipo, nome e tipo dei parametri)
+    \item Una \textbf{definizione} (dopo il main), realizzabile ripetendo la firma e includendo il blocco di codice da svolgere della funzione.
+    \item Eventuali \textbf{chiamate} (nel main), quando la funzione deve essere eseguita specificando solo nome e \textbf{parametri attuali}.
+\end{itemize}
+\begin{lstlisting}
+    #include <stdio.h>
 
+    int somma(int, int);
+
+    int main(void) {
+        int a = 2;
+        int b = 3;
+        int res;
+
+        res = somma(2,3);
+        printf("%d",res);
+    }
+
+    int somma(int a, int b) {
+        return a + b;
+    }
+\end{lstlisting}
+Se desideriamo, possiamo omettere di ritornare un valore con una funzione tramite il tipo \textbf{void}.
+\begin{lstlisting}
+    void somma(int a, int b) {
+        int c = a + b;
+        printf("%d",c);
+        return;
+    }
+\end{lstlisting}
+Addirittura, una funzione può non necessitare parametri:
+\begin{lstlisting}
+    void stampaCiao() {
+        printf("Ciao :D");
+        return;
+    }
+\end{lstlisting}
+Il tipo di ritorno deve essere compatibile, ma non precisamente uguale, con il tipo specificato nella firma. Questo perchè si possono utilizzare cast impliciti.\\
+In C tutti i parametri sono passati per \textbf{valore}.\\
+La chiamata è un'espressione e corrisponde al valore ritornato, il quale può essere riusato in altre funzioni come quella di stampa.
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

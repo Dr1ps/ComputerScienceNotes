@@ -778,7 +778,63 @@ Il controllo dei tipi può essere:
   \item \textbf{Statico:} compile-time
   \item \textbf{Dinamico:} run-time
 \end{itemize}
-
+\subsection{Sintassi dei tipi}
+Ecco la sintassi:
+\[
+\begin{aligned}
+  &\tau ::= \text{ (Tipi)}\\
+  &Bool \text{ (Tipi dei booleani)}\\
+  &\tau \rightarrow \tau \text{ (Tipo delle funzioni)}
+\end{aligned}
+\]
+Inoltre, vediamole espressioni e i valori:
+\[
+\begin{aligned}
+  e &::=\\
+    &= x\\
+    &= fun x: \tau = e\\
+    &= e\ e\\
+    &= Apply(e,e)\\
+    &= true\\
+    &= false\\
+    &= if\ e\ then\ e\ else\ e
+\end{aligned}
+\]
+\[
+\begin{aligned}
+  V &::=\\
+    &= false\\
+    &= true
+\end{aligned}
+\]
+\subsection{Ambiente di tipo}
+L'\textbf{ambiente di tipo} (Type Enviroment) è fondamentale per effettuare il type-checking sulle \textbf{variabili}.\\
+Si indica con $\Gamma$ ed è una \textbf{funzione} (di dominio finito) che associa nomi a tipi:
+\[
+\Gamma = \{(x_1: \tau_1),\ldots,(x_k: \tau_k)\}
+\]
+Per indicare la funzione:
+\[
+\Gamma(x_i): \tau_i
+\]
+Se la funzione viene applicata su una variabile che non si trova nell'ambiente, la funzione restituisce \textbf{undefined}.\\
+Il controllo effettivo di tipo si chiama \textbf{giudizio di tipo} e si indica così:
+\[
+\Gamma \vdash e: \tau
+\]
+Queste regole sono applicate dal compilatore tramite analisi statica.\\
+Vediamo una regola di inferenza molto importante sul giudizio di tipo:
+\[
+\frac{\Gamma(x): \tau}{\Gamma \vdash x: \tau}
+\]
+Vediamone un altra per le funzioni:
+\[
+\frac{\Gamma,x: \tau_1 \vdash e: \tau_2}{\Gamma \vdash fun x: \tau_1 = e: \tau_1 \rightarrow \tau_2}
+\]
+E ancora per la chiamata di funzione:
+\[
+\frac{\Gamma \vdash e:\tau_1 \rightarrow \tau_2 \text{ } \text{ } \text{ } \Gamma \vdash e_2:\tau_1}{\Gamma \vdash Apply(e_1,e_2):\tau_2}
+\]
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:

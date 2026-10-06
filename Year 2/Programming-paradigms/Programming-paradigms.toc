@@ -72,6 +72,8 @@
 \contentsline {subsection}{\numberline {9.1}L'introduzione dei tipi}{23}{subsection.9.1}%
 \contentsline {paragraph}{Tipo:}{23}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Sistema di controllo dei tipi}{23}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Esercizi}{24}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Esercizio 1}{24}{subsection.10.1}%
-\contentsline {paragraph}{Soluzione:}{24}{subsection.10.1}%
+\contentsline {subsection}{\numberline {9.3}Sintassi dei tipi}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Ambiente di tipo}{24}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Esercizi}{25}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Esercizio 1}{25}{subsection.10.1}%
+\contentsline {paragraph}{Soluzione:}{25}{subsection.10.1}%

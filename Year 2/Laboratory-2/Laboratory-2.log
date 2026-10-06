@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  6 OCT 2026 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  6 OCT 2026 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -829,7 +829,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24
+[24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
 
 ] (Laboratory-2.aux)
  ***********
@@ -837,20 +845,20 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Laboratory-2.out' has not changed.
-(rerunfilecheck)             Checksum: 97F3CCA0E4FDC5EBF75E8916EFF0ED97;6884.
+(rerunfilecheck)             Checksum: FB26B7071B0AFE9996ABDA6CC816BBDD;6983.
  ) 
 Here is how much of TeX's memory you used:
- 33495 strings out of 467392
- 761843 string characters out of 5415745
+ 33526 strings out of 467392
+ 762306 string characters out of 5415745
  1510873 words of memory out of 5000000
- 62026 multiletter control sequences out of 15000+600000
+ 62027 multiletter control sequences out of 15000+600000
  636223 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,782b,2009s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Laboratory-2.pdf (24 pages, 244373 bytes).
+Output written on Laboratory-2.pdf (25 pages, 252641 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
- 338 named destinations out of 1000 (max. 500000)
- 509 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 368 named destinations out of 1000 (max. 500000)
+ 517 words of extra memory for PDF output out of 10000 (max. 10000000)
 

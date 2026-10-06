@@ -1,6 +1,8 @@
 ## PARADIGMS ##
 
 - do paper test, put solutions in file
+- lambda tipato sintassi valori
+- add whatever was in the pic taken in class
 
 ## AESO ##
 
@@ -20,6 +22,7 @@ FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 
 - add missing info on unix commands (if you want and can!)
 - add missing excercise (n.8)
+- add cast subsection
 
 ------------------------------------------------
 
