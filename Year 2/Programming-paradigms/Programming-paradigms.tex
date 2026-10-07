@@ -805,7 +805,27 @@ Inoltre, vediamole espressioni e i valori:
   V &::=\\
     &= false\\
     &= true
+    &= fun\ x:\tau = e
 \end{aligned}
+\]
+Data questo nuovo alfabeto, vediamo la sintassi come viene ridefinita:
+\[
+Apply(fun\ x:\tau = e_1,v_2) \rightarrow e_1 \{x:=v_2\}
+\]
+\[
+\frac{e_1 \rightarrow e^I}{Apply(e_1,e_2) \rightarrow Apply(e^I,e_2)}
+\]
+\[
+\frac{e_2 \rightarrow e^I}{Apply(e_1,e_2) \rightarrow Apply(e_1,e^I)}
+\]
+\[
+\frac{e \rightarrow e_4}{if\ e_1\ then\ e_2\ else\ e_3 \rightarrow if\ e_4\ then\ e_2\ else\ e_3}
+\]
+\[
+if\ true\ then\ e_2\ else\ e_3 \rightarrow e_2
+\]
+\[
+if\ false\ then\ e_2\ else\ e_3 \rightarrow e_3
 \]
 \subsection{Ambiente di tipo}
 L'\textbf{ambiente di tipo} (Type Enviroment) è fondamentale per effettuare il type-checking sulle \textbf{variabili}.\\
@@ -855,10 +875,96 @@ Allora:
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:
-\begin{itemize}
+\begin{enumerate}
   \item $(\lambda x.x)(\lambda y.xx)(\lambda y.y)y$
   \item $(\lambda x.xk)((\lambda x. \lambda y.xy)(\lambda z.(\lambda x.z)y))$
-  \item $x(\lambda x(\lambda y.yy)x)y$
-\end{itemize}
-\paragraph{Soluzione:}
+  \item $x(\lambda x.(\lambda y.yy)x)y$
+\end{enumerate}
+\paragraph{Soluzione (non controllata):}
+\begin{enumerate}
+  \item $(\lambda x.x)(\lambda y.\underline{xx})(\lambda y.y)\underline{y}$
+  \item $(\lambda x.x\underline{k})((\lambda x. \lambda y.xy)(\lambda z.(\lambda x.z)\underline{y}))$
+  \item $\underline{x}(\lambda x.(\lambda y.yy)x)\underline{y}$
+\end{enumerate}
+\subsection{Esercizio 2}
+Date le seguenti $\lambda$-espressioni, individuare le sottoespressioni riducibili tramite la $\beta$-riduzione (i ``redex''):
+\begin{enumerate}
+    \item
+    $(\lambda x.x)((\lambda x.x)(\lambda z.(\lambda x.x)z))$
+
+    \item
+    $(\lambda x.x)(\lambda x.xx)(\lambda y.y)$
+
+    \item
+    $x((\lambda x.(\lambda y.yy)x)y)$
+\end{enumerate}
+\paragraph{Soluzione}
+Soluzione non presente, complicata da rappresentare in LaTeX.
+\subsection{Esercizio 3}
+Calcolare il risultato delle seguenti sostituzioni (capture avoiding):
+\begin{enumerate}
+    \item
+    $(\lambda y.xy)\{x := y\}$
+
+    \item
+    $(\lambda y.xy)\{x := \lambda y.y\}$
+
+    \item
+    $(\lambda y.xy)\{x := \lambda x.xy\}$
+\end{enumerate}
+\paragraph{Soluzione}
+\begin{enumerate}
+    \item
+    $(\lambda y.xy)\{x := y\} \equiv_\alpha (\lambda z.xz)\{x := y\} = \lambda z.yz$
+
+    \item
+    $(\lambda y.xy)\{x := \lambda y.y\} = \lambda y.(\lambda y.y)y$
+
+    \item
+    $(\lambda y.xy)\{x := \lambda x.xy\} \equiv_\alpha (\lambda z.xz)\{x := \lambda x.xy\} = \lambda z.(\lambda x.xy)z$
+\end{enumerate}
+\subsection{Esercizio 4}
+Applicare la $\beta$-riduzione alle seguenti espressioni fino a raggiungere un'espressione in forma normale (cioè, non ulteriormente riducibile) o ad accorgersi che la $\beta$-riduzione non termina. Ad ogni passo, sottolineare il ``redex'' considerato per l'applicazione della $\beta$-riduzione. In caso di possibili soluzioni alternative, svolgere l'esercizio più volte esplorando tutte le possibilità.
+\begin{enumerate}
+    \item
+    $(\lambda x.\lambda y.xy)(\lambda z.zy)y$
+
+    \item
+    $(\lambda x.\lambda y.xy)(\lambda x.yy)k$
+
+    \item
+    $(\lambda x.(\lambda y.xy)(\lambda k.k))(xy)$
+
+    \item
+    $(\lambda x.y)((\lambda y.yyy)(\lambda x.xxx))$
+
+    \item
+    $(\lambda z.((\lambda x.\lambda y.xy)z)z)(\lambda z.zz)$
+\end{enumerate}
+\paragraph{Soluzione}
+
+\subsection{Esercizio 5}
+Ripetere l'esercizio 1.4 applicando le strategie di riduzione Call-by-value e Call-by-name.
+\paragraph{Soluzione}
+
+\subsection{Esercizio 6}
+Dimostrare la $\beta$-equivalenza delle seguenti coppie di $\lambda$-espressioni. La $\beta$-equivalenza vale per ogni coppia ed è richiesto di dimostrarlo. Nella dimostrazione, cercare di svolgere il numero minore possibile di passi di $\beta$-riduzione:
+\begin{enumerate}
+    \item
+    $(\lambda x.x)(\lambda y.y)z
+    \equiv_\beta
+    (\lambda x.(\lambda k.k))wz$
+
+    \item
+    $(\lambda x.x)(\lambda y.y)
+    \equiv_\beta
+    (\lambda y.y)(\lambda x.x)$
+
+    \item
+    $(\lambda x.\lambda y.xy)y
+    \equiv_\beta
+    (\lambda x.(\lambda x.x)(\lambda z.yz))k$
+\end{enumerate}
+\paragraph{Soluzione}
+
 \end{document}

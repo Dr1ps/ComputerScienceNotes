@@ -33,31 +33,33 @@
 \contentsline {subsection}{\numberline {6.1}Problema di partizione}{16}{subsection.6.1}%
 \contentsline {subsubsection}{\numberline {6.1.1}Descrizione del problema}{16}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Inizializzazione}{16}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Problema di instradamento}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Problema di configurazione}{18}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Descrizione del problema}{18}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Inizializzazione}{19}{subsubsection.6.2.2}%
-\contentsline {section}{\numberline {7}Problemi su reti: problemi di flusso e di cammino}{20}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Problema delle fognature (esempio)}{20}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Descrizione del problema}{20}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Inizializzazione}{21}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Problema del flusso di costo minimo}{22}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Descrizione del problema}{22}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Inizializzazione}{23}{subsubsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.3}Problema del cammino minimo}{23}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}Descrizione del problema}{23}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Inizializzazione}{23}{subsubsection.7.3.2}%
-\contentsline {section}{\numberline {8}Variabili a valori discreti}{24}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Problema delle fognature ampliato}{24}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Descrizione del problema}{24}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Inizializzazione}{24}{subsubsection.8.1.2}%
-\contentsline {section}{\numberline {9}Variabili semicontinue}{25}{section.9}%
-\contentsline {section}{\numberline {10}Costi di setup}{26}{section.10}%
-\contentsline {section}{\numberline {11}Massimizzare minimi e minimizzare massimi}{27}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Tempi di completamento delle barche (esempio)}{27}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Descrizione del problema}{27}{subsubsection.11.1.1}%
-\contentsline {subsubsection}{\numberline {11.1.2}Inizializzazione}{27}{subsubsection.11.1.2}%
-\contentsline {section}{\numberline {12}Linearizzazione valore assoluto}{28}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Equipartizione (esempio)}{28}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.1.1}Descrizione del problema}{28}{subsubsection.12.1.1}%
-\contentsline {subsubsection}{\numberline {12.1.2}Inizializzazione}{28}{subsubsection.12.1.2}%
-\contentsline {section}{\numberline {13}Vincoli disgiuntivi}{29}{section.13}%
+\contentsline {subsection}{\numberline {6.3}Problema di instradamento}{20}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Descrizione del problema}{20}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Inizializzazione}{20}{subsubsection.6.3.2}%
+\contentsline {section}{\numberline {7}Problemi su reti: problemi di flusso e di cammino}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Problema delle fognature (esempio)}{22}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Descrizione del problema}{22}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Inizializzazione}{23}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Problema del flusso di costo minimo}{24}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Descrizione del problema}{24}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Inizializzazione}{25}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Problema del cammino minimo}{25}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Descrizione del problema}{25}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Inizializzazione}{25}{subsubsection.7.3.2}%
+\contentsline {section}{\numberline {8}Variabili a valori discreti}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Problema delle fognature ampliato}{26}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Descrizione del problema}{26}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Inizializzazione}{26}{subsubsection.8.1.2}%
+\contentsline {section}{\numberline {9}Variabili semicontinue}{27}{section.9}%
+\contentsline {section}{\numberline {10}Costi di setup}{28}{section.10}%
+\contentsline {section}{\numberline {11}Massimizzare minimi e minimizzare massimi}{29}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Tempi di completamento delle barche (esempio)}{29}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Descrizione del problema}{29}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Inizializzazione}{29}{subsubsection.11.1.2}%
+\contentsline {section}{\numberline {12}Linearizzazione valore assoluto}{30}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Equipartizione (esempio)}{30}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Descrizione del problema}{30}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Inizializzazione}{30}{subsubsection.12.1.2}%
+\contentsline {section}{\numberline {13}Vincoli disgiuntivi}{31}{section.13}%

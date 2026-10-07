@@ -77,4 +77,14 @@
 \contentsline {subsection}{\numberline {9.5}Substitution Lemma}{25}{subsection.9.5}%
 \contentsline {section}{\numberline {10}Esercizi}{26}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Esercizio 1}{26}{subsection.10.1}%
-\contentsline {paragraph}{Soluzione:}{26}{subsection.10.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{26}{Item.12}%
+\contentsline {subsection}{\numberline {10.2}Esercizio 2}{26}{subsection.10.2}%
+\contentsline {paragraph}{Soluzione}{26}{Item.18}%
+\contentsline {subsection}{\numberline {10.3}Esercizio 3}{26}{subsection.10.3}%
+\contentsline {paragraph}{Soluzione}{26}{Item.21}%
+\contentsline {subsection}{\numberline {10.4}Esercizio 4}{27}{subsection.10.4}%
+\contentsline {paragraph}{Soluzione}{27}{Item.29}%
+\contentsline {subsection}{\numberline {10.5}Esercizio 5}{27}{subsection.10.5}%
+\contentsline {paragraph}{Soluzione}{27}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Esercizio 6}{27}{subsection.10.6}%
+\contentsline {paragraph}{Soluzione}{27}{Item.32}%
