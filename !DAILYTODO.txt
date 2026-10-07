@@ -1,6 +1,6 @@
 ## PARADIGMS ##
 
-- do last excercises in pdf
+- do last exercises in pdf
 
 ## AESO ##
 
@@ -22,4 +22,4 @@ FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 
 ------------------------------------------------
 
-STATUS = AESO critical
+STATUS = AESO critical, RO critical
