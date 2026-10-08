@@ -4,17 +4,14 @@
 
 ## AESO ##
 
-- add pictures of circuits and modules everywhere
 - add tester code to Verilog test, monitor (do better)
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 (download or redo)
-- setup verilog env (install iverilog & gtk wave)
-- understand better about flip flops (and registers) and include circuits (digital app)
+- setup verilog env (install iverilog & gtk wave) (TEAMS FILE)
 - esempio di automa in fondo
 
 ## OPERATIONAL RESEARCH ##
 
-- add missing problems (instradamento, shortest path, fonderia 2 & 3) chiedi a chat fai prima
 
 ## LABORATORY 2 ##
 

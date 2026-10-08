@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  7 OCT 2026 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  8 OCT 2026 09:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -926,7 +926,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <images/graph.png, id=438, 215.00325pt x 261.97874pt>
 File: images/graph.png Graphic file (type png)
 <use images/graph.png>
-Package pdftex.def Info: images/graph.png  used on input line 659.
+Package pdftex.def Info: images/graph.png  used on input line 679.
 (pdftex.def)             Requested size: 364.19667pt x 443.77098pt.
 
 
@@ -950,12 +950,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.681     \item D
+l.701     \item D
                  ominio: $x_{ij} \geq 0, \forall (ij) \in A$ <./images/graph.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 696--698
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -964,10 +960,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 733--735
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -986,7 +978,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 789--793
+Underfull \hbox (badness 10000) in paragraph at lines 823--827
 
  []
 
@@ -1030,7 +1022,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [30
 
 ]
-Overfull \hbox (2.86642pt too wide) in paragraph at lines 925--930
+Overfull \hbox (2.86642pt too wide) in paragraph at lines 959--964
 \OT1/cmr/m/n/12 Solitamente, in Pro-gram-mazione Lin-eare, l'insieme am-mis-si-bile ^^Re de-scritto dall'intersezione
  []
 
@@ -1060,7 +1052,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,798b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Operational-research.pdf (31 pages, 1415228 bytes).
+Output written on Operational-research.pdf (31 pages, 1416321 bytes).
 PDF statistics:
  569 PDF objects out of 1000 (max. 8388607)
  111 named destinations out of 1000 (max. 500000)

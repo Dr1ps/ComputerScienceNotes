@@ -615,13 +615,33 @@ Per modellare il problema definiamo, a partire dai dati in input, quattro insiem
 Definiamo:
 \begin{itemize}
     \item L'insieme dei cammini: $P = P1 \cup P2 \cup P3 \cup P4$
-    \item Il costo del cammino $p$: $p \in P$
+    \item Il costo del cammino $c_p$: $p \in P$
 \end{itemize}
+Si nota che nulla impone che $i_1 \ne i_2$ o che $e_1 \ne e_2$, un camion può effettuare entrambi le operazioni di carico/scarico allo stesso operatore. Stabiliamo quindi:
+\[
+a_{ip} = \{0,1,2\}\text{ numero di volte che il cammino p visita
+l'importatore i}
+\]
+\[
+a_{ep} = \{0,1,2\}\text{ numero di volte che il cammino p visita
+l'esportatore e}
+\]
+Come ultima variabile introduciamo una contatore:
+\[
+y_p = \text{ numero di camion che effettua il cammino } p \in P
+\]
 Funzione obiettivo:
 \[
 minZ = \sum_{p \in P}^{} C_p \cdot y_p
 \]
-
+Vincoli:
+\[
+\begin{cases}
+    y_p \in \mathbb{N}, \forall p \in P\\
+    \sum_{p \in P}^{} a_{ip} \cdot y_p = q_i, \forall i \in I\\
+    \sum_{p \in P}^{} a_{ep} \cdot y_p = q_e, \forall e \in E
+\end{cases}
+\]
 \section{Problemi su reti: problemi di flusso e di cammino}
 Finora abbiamo utilizzato variabili logiche e intere, ma anche le variabili \textbf{continue} possono assumere un valore logico, basta che si rappresentino cosi:
 \[
@@ -694,7 +714,7 @@ Questo fa la sottrazione tra i flussi che entrano ed escono dal nodo $i$:
 \subsection{Problema del flusso di costo minimo}
 \subsubsection{Descrizione del problema}
 Gneneralizziamo un problema di flusso: il problema è definito su un grafo orientato $G = (V,A)$.\\
-A ciascun nodo $i \in V$ è associato un valore $b_i$ che rappresenta il \textbf{bilancio di flusso}.\\
+A ciascun nodo $i \in V$ è associato un valore $b_i$ che rappresenta il \textbf{bilancio di flusso}.
 \begin{itemize}
     \item $b_i < 0$: il nodo è sorgente.
     \item $b_i > 0$: il nodo è pozzo.
@@ -731,14 +751,28 @@ Vincoli:
 \subsection{Problema del cammino minimo}
 \subsubsection{Descrizione del problema}
 Abbiamo un grafo $G = (V,A)$, per ogni arco $(i,j) \in A$ è dato un costo $c_{ij}$.\\
-Esiste un singolo nodo sorgente e un singolo pozzo. Trovare il cammino minimo dalla sorgente (s) al pozzo (p).\\
+Esiste un singolo nodo sorgente e un singolo pozzo. Trovare il cammino minimo dalla sorgente (s) al pozzo (p).
 \subsubsection{Inizializzazione}
 Il cammino minimo è un particolare problema di flusso, ma bisogna settare i flussi a valori binari\\
 Variabili:
 \[
 x_{ij}: \text{flusso che scorre sull'arco } (i,j) \in A
 \]
-
+\[
+c_{ij}: \text{costo del flusso sull'arco } (i,j) \in A
+\]
+Funzione obiettivo:
+\[
+\sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij}
+\]
+Vincoli:
+\[
+\begin{cases}
+    \sum_{j:(j,i)}^{} x_{ji} - \sum_{j:(i,j)}^{} x_{ij} = b_{i} \forall i \in V\\
+    0 \leq x_{ij} \leq \mu_{ij}, \forall (i,j) \in A\\
+    
+\end{cases}
+\]
 \section{Variabili a valori discreti}
 \subsection{Problema delle fognature ampliato}
 \subsubsection{Descrizione del problema}

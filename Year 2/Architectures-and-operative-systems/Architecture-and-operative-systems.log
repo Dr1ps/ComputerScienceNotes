@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  6 OCT 2026 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  8 OCT 2026 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -799,7 +799,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-<images/evenOdd.png, id=308, 1541.76pt x 1027.84pt>
+<images/evenOdd.png, id=313, 1541.76pt x 1027.84pt>
 File: images/evenOdd.png Graphic file (type png)
 <use images/evenOdd.png>
 Package pdftex.def Info: images/evenOdd.png  used on input line 367.
@@ -878,7 +878,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [17
 
 ]
-<images/logicalCircuit.png, id=394, 1541.76pt x 1027.84pt>
+<images/logicalCircuit.png, id=399, 1541.76pt x 1027.84pt>
 File: images/logicalCircuit.png Graphic file (type png)
 <use images/logicalCircuit.png>
 Package pdftex.def Info: images/logicalCircuit.png  used on input line 565.
@@ -931,15 +931,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has 
                                                   \__shipout_drop_firstpage_...
 l.683 \section
               {Funzionamento dei registri}]
-<images/register.png, id=412, 72.27pt x 90.3375pt>
+<images/register.png, id=417, 72.27pt x 90.3375pt>
 File: images/register.png Graphic file (type png)
 <use images/register.png>
-Package pdftex.def Info: images/register.png  used on input line 700.
+Package pdftex.def Info: images/register.png  used on input line 701.
 (pdftex.def)             Requested size: 113.81102pt x 142.27126pt.
-<images/flipflopDsemplice.png, id=414, 72.27pt x 70.2625pt>
-File: images/flipflopDsemplice.png Graphic file (type png)
-<use images/flipflopDsemplice.png>
-Package pdftex.def Info: images/flipflopDsemplice.png  used on input line 719.
+<images/SRLatch.png, id=419, 72.27pt x 70.2625pt>
+File: images/SRLatch.png Graphic file (type png)
+<use images/SRLatch.png>
+Package pdftex.def Info: images/SRLatch.png  used on input line 721.
 (pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
 
 
@@ -955,23 +955,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.725     \item C
-                 ollegare una porta OR Negata a ogni input (1 ciascuno)
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.725     \item C
-                 ollegare una porta OR Negata a ogni input (1 ciascuno) <./images/register.png> <./images/flipflopDsemplice.png>]
-<images/CircuitoSR.png, id=424, 739.76375pt x 248.93pt>
+l.725 P
+       er realizzare questa cosa bisogna: <./images/register.png>]
+<images/CircuitoSR.png, id=427, 739.76375pt x 248.93pt>
 File: images/CircuitoSR.png Graphic file (type png)
 <use images/CircuitoSR.png>
-Package pdftex.def Info: images/CircuitoSR.png  used on input line 746.
+Package pdftex.def Info: images/CircuitoSR.png  used on input line 732.
 (pdftex.def)             Requested size: 227.62206pt x 76.59393pt.
-<images/flipflopD.png, id=425, 72.27pt x 70.2625pt>
-File: images/flipflopD.png Graphic file (type png)
-<use images/flipflopD.png>
-Package pdftex.def Info: images/flipflopD.png  used on input line 759.
-(pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
+<images/internalDlatch.png, id=428, 605.26125pt x 218.8175pt>
+File: images/internalDlatch.png Graphic file (type png)
+<use images/internalDlatch.png>
+Package pdftex.def Info: images/internalDlatch.png  used on input line 765.
+(pdftex.def)             Requested size: 227.62206pt x 82.29007pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -981,16 +976,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.769 D
+       i solito però viene rappresentato in questo modo:
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.766     \item I
-                 l clock arriva prima al secondo modulo, al primo invece arr...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+l.769 D
+       i solito però viene rappresentato in questo modo:
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.766     \item I
-                 l clock arriva prima al secondo modulo, al primo invece arr... <./images/CircuitoSR.png> <./images/flipflopD.png>]
+l.769 D
+       i solito però viene rappresentato in questo modo: <./images/SRLatch.png> <./images/CircuitoSR.png>]
+<images/DLatch.png, id=438, 72.27pt x 70.2625pt>
+File: images/DLatch.png Graphic file (type png)
+<use images/DLatch.png>
+Package pdftex.def Info: images/DLatch.png  used on input line 772.
+(pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
+<images/MasterSlaveD.png, id=439, 454.69875pt x 139.52126pt>
+File: images/MasterSlaveD.png Graphic file (type png)
+<use images/MasterSlaveD.png>
+Package pdftex.def Info: images/MasterSlaveD.png  used on input line 782.
+(pdftex.def)             Requested size: 227.62206pt x 69.8456pt.
+<images/WEFlipFlopD.png, id=440, 374.39874pt x 139.52126pt>
+File: images/WEFlipFlopD.png Graphic file (type png)
+<use images/WEFlipFlopD.png>
+Package pdftex.def Info: images/WEFlipFlopD.png  used on input line 792.
+(pdftex.def)             Requested size: 227.62206pt x 84.82468pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -998,7 +1014,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23]
+[23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.796 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.796 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.796 
+       <./images/internalDlatch.png> <./images/DLatch.png> <./images/MasterSlaveD.png>]
+<images/automa1.png, id=451, 1541.76pt x 1027.84pt>
+File: images/automa1.png Graphic file (type png)
+<use images/automa1.png>
+Package pdftex.def Info: images/automa1.png  used on input line 827.
+(pdftex.def)             Requested size: 227.62206pt x 151.73839pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1007,6 +1044,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.840 \]
+        
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.840 \]
+         <./images/WEFlipFlopD.png> <./images/automa1.png (PNG copy)>]
+<images/circuitoDigitaleAutoma.png, id=459, 865.2325pt x 390.45876pt>
+File: images/circuitoDigitaleAutoma.png Graphic file (type png)
+<use images/circuitoDigitaleAutoma.png>
+Package pdftex.def Info: images/circuitoDigitaleAutoma.png  used on input line 859.
+(pdftex.def)             Requested size: 341.43307pt x 154.07759pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.878 \section
+              {Esercizi} <./images/circuitoDigitaleAutoma.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26
 
 ] (Architecture-and-operative-systems.aux)
  ***********
@@ -1014,20 +1088,20 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Architecture-and-operative-systems.out' has not changed.
-(rerunfilecheck)             Checksum: 49B65FA3B683A4CE78F485F59206C2EC;6199.
+(rerunfilecheck)             Checksum: 36869325F4C71A31C9212F07910A6734;6272.
  ) 
 Here is how much of TeX's memory you used:
- 51905 strings out of 467392
- 1320713 string characters out of 5415745
- 2288463 words of memory out of 5000000
- 80541 multiletter control sequences out of 15000+600000
- 636223 words of font info for 69 fonts, out of 8000000 for 9000
+ 51966 strings out of 467392
+ 1321980 string characters out of 5415745
+ 2288710 words of memory out of 5000000
+ 80585 multiletter control sequences out of 15000+600000
+ 636868 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,827b,1951s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Architecture-and-operative-systems.pdf (24 pages, 2550328 bytes).
+Output written on Architecture-and-operative-systems.pdf (26 pages, 3595553 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 164 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 570 PDF objects out of 1000 (max. 8388607)
+ 179 named destinations out of 1000 (max. 500000)
+ 420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

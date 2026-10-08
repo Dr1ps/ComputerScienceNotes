@@ -39,11 +39,12 @@
 \contentsline {subsection}{\numberline {6.9}Demultiplexer}{19}{subsection.6.9}%
 \contentsline {section}{\numberline {7}Funzionamento dei registri}{21}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Registri}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Flip Flop RS}{21}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Flip Flop D}{22}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Segnale di reset}{23}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Reti sequenziali}{23}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Esercizi}{24}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Esercizio 1}{24}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Descrizione}{24}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Soluzione}{24}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {7.2}SR Latch}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}D Latch}{22}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Flip Flop D}{23}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Segnale di reset}{24}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Reti sequenziali}{24}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Esercizi}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Esercizio 1}{26}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Descrizione}{26}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Soluzione}{26}{subsubsection.8.1.2}%

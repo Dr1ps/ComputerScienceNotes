@@ -687,6 +687,7 @@ Il registro funziona cosi:
     \item Input $x$ di $n$ bit
     \item Output $y$ di $n$ bit
     \item Clock in input
+    \item Reset in input (Per quando bisogna fare il RESET) (non presente in figura)
     \item \textbf{Write Enable} in input (dice se scrivere o meno)
 \end{itemize}
 \[
@@ -701,11 +702,12 @@ Il registro funziona cosi:
     \caption{Registro}
     \label{fig:register}
 \end{figure}
-\subsection{Flip Flop RS}
+\subsection{SR Latch}
 Abbiamo un modulo che ha:
 \begin{itemize}
     \item Input \textbf{SET}
     \item Input \textbf{RESET}
+    \item Write Enable in input (Non presente in figura)
     \item Output su 1 porta tra 2 (Q)
 \end{itemize}
 \[
@@ -716,59 +718,86 @@ Abbiamo un modulo che ha:
 \]
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.25\textwidth]{images/flipflopDsemplice.png}
-    \caption{Flip Flop RS}
-    \label{fig:flipfloprs}
+    \includegraphics[width=0.25\textwidth]{images/SRLatch.png}
+    \caption{SR Latch}
+    \label{fig:latchrs}
 \end{figure}
 Per realizzare questa cosa bisogna:
 \begin{itemize}
     \item Collegare una porta OR Negata a ogni input (1 ciascuno)
     \item L'output di ognuno ritorna alla porta OR Negata come secondo input di tale porta dell'altro.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/CircuitoSR.png}
+    \caption{Circuito SR Latch}
+    \label{fig:SRcircuit}
+\end{figure}
+Ecco la tabella di verità:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c c c c}
+    \hline
+    $S$ & $R$ & $Q$ & $\overline{Q}$ & Stato \\
+    \hline
+    0 & 0 & $Q(t)$ & $\overline{Q}(t)$ & Mantiene \\
+    0 & 1 & 0 & 1 & Reset \\
+    1 & 0 & 1 & 0 & Set \\
+    1 & 1 & 0 & 0 & Vietato \\
+    \hline
+    \end{tabular}
+    \caption{Tabella di verità del latch SR con porte NOR}
+\end{table}
 Si crea un problema se entrambi SET e RESET sono settati a 1 perche si crea questo:
 \[
 Q = 0 = \overline{Q}
 \]
-Per risolvere, si introducono due input:
+
+\subsection{D Latch}
+Per risolvere il problema di SR latch, si introducono due input:
 \begin{itemize}
-    \item \textbf{Clock}: dice quando scrivere.
+    \item \textbf{EN}: dice quando scrivere (sensibile al livello), talvolta viene scritto \textbf{CLK}.
     \item \textbf{D}: dice cosa scrivere.
 \end{itemize}
-Ecco come si procede:
-\begin{itemize}
-    \item Si collega il clock ad una porta AND, la quale a sua volta a RESET.
-    \item Si collega D ad una porta AND, la quale a sua volta a SET.+
-    \item Il secondo ingresso della porta AND del clock è D negato.
-    \item Il secondo ingresso della porta AND di D è il clock.
-\end{itemize}
+Ecco lo schema interno di tale modulo:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/CircuitoSR.png}
-    \caption{Circuito SR}
-    \label{fig:SRcircuit}
+    \includegraphics[width=0.5\textwidth]{images/internalDlatch.png}
+    \caption{Circuito interno di D Latch}
+    \label{fig:internalDLatch}
 \end{figure}
+Di solito però viene rappresentato in questo modo:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/DLatch.png}
+    \caption{D Latch}
+    \label{fig:D Latch}
+\end{figure}
+Sembra simile all'SR Latch, ma utilizzando un paio di questi possiamo realizzare un \textbf{Flip Flop D}.
+
 \subsection{Flip Flop D}
-Questo ha:
-\begin{itemize}
-    \item Clock in input
-    \item D in input
-    \item Q in usita su due porte (negato e non)
-\end{itemize}
+Un \textbf{Flip Flop D} può essere realizzato mettendo in sequenza due D Latch in questo modo:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.25\textwidth]{images/flipflopD.png}
-    \caption{Flip Flop D}
-    \label{fig:flipflopD}
+    \includegraphics[width=0.5\textwidth]{images/MasterSlaveD.png}
+    \caption{Flip Flop D: modello Master-Slave}
+    \label{fig:MasterSlaveD}
 \end{figure}
-Sembra uguale a prima, ma adesso:
-\begin{itemize}
-    \item $\overline{Q}$ diventa D di un secondo D-latch.
-    \item Il clock arriva prima al secondo modulo, al primo invece arriva solo dopo una negazione (NOT)
-\end{itemize}
-In questo modo i due componenti scrivono alternativamente.
+Il primo D Latch si chiama \textbf{master} (prepara il dato) e il secondo \textbf{slave} (trasferisce all'uscita).\\
+I due D Latch sono sensibili al livello, ad uno stato scrive il master, all'altro scrive lo slave.\\
+Tutto il circuito intero, ovvero il \textbf{flip flop}, è invece sensibile al fronte del clock, ovvero quando si deve effettuare il cambio tra master e slave.\\
+Se vogliamo, possiamo includere un Write Enable che gestisce i tempi di attivazione:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/WEFlipFlopD.png}
+    \caption{Flip Flop D: Write Enable integrato}
+    \label{fig:WEFlipFlopD}
+\end{figure}
 
 \subsection{Segnale di reset}
-Per riportare a "0" un valore di un registro si usa un segnale di \textbf{reset}.
+Per riportare a "0" un valore di un registro si usa un segnale di \textbf{reset}.\\
+Esso viene portato in input in un registro.\\
+La sua versione sincrona è dipendente dal fronte del clock.
 
 \subsection{Reti sequenziali}
 Con i registri si possono sviluppare le \textbf{reti sequenziali} per rappresentare \textbf{automi}.\\
@@ -779,7 +808,7 @@ Supponiamo di avere una sequenza di bit qualsiasi, bisogna svolgere una sequenza
     0: \text{altrimenti}
 \end{cases}
 \]
-Si realizza prima un automa:
+Si realizza prima un automa, in questo caso di \textbf{Moore}, ovvero che l'output è associato allo stato:
 \begin{itemize}
     \item S0: "1" Dispari
     \item S1: "1" pari
@@ -792,8 +821,60 @@ Si realizza prima un automa:
     S1 \rightarrow 1 \implies S0
 \end{cases}
 \]
-Ecco lo schema:
-
+Ecco il diagramma dell'automa:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/automa1.png}
+    \caption{Automa}
+    \label{fig:automa}
+\end{figure}
+La tabella di verità è quindi:
+\[
+\begin{array}{c|c|c}
+\text{Stato attuale ($S$)} & \text{Input}(I) & \text{Stato successivo ($S^I$)} \\ \hline
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0
+\end{array}
+\]
+Vediamo ora l'espressione logica associata:
+\[
+S^I = \overline{S}I + S\overline{I}
+\]
+Facciamo lo stesso per gli output:
+\[
+\begin{array}{c|c}
+\text{Stato attuale ($S$)} & \text{Output}(O) \\ \hline
+0 & 1 \\
+1 & 0
+\end{array}
+\]
+\[
+O = \overline{S}
+\]
+Se dovessimo realizzare un circuito che fa questo, ecco cosa dovremmo creare:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/circuitoDigitaleAutoma.png}
+    \caption{Circuito digitale dell'automa}
+    \label{fig:circuitoDigitaleAutoma}
+\end{figure}
+I tempi legati al circuito sono:
+\begin{itemize}
+    \item $S^I:$ $2\Delta t$
+    \item $Z: 0$ 
+\end{itemize}
+Il tempo totale è quindi $2\Delta t$.\\
+Riassumendo, per arrivare a capire come sviluppare una rete sequenziale tale, bisogna:
+\begin{enumerate}
+    \item Capire il problema
+    \item Modellare un automa (Mealy o Moore)
+    \item Creare le tabelle di verità
+    \item Scrivere l'espressione logica annessa
+    \item Modellare il circuito digitale
+    \item Calcolare i tempi
+\end{enumerate}
 \section{Esercizi}
 \subsection{Esercizio 1}
 \subsubsection{Descrizione}
