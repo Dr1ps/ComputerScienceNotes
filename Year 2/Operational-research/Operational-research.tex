@@ -972,4 +972,69 @@ expression \leq k \cdot Ma
 expression \geq k \cdot -Mb
 \]
 Se un vincolo viene negato (e quindi la variabile binaria = 1) allora viene reso inutile dal valore M.
+\subsection{Grafo spazio temp e probabilità (esempio)}
+\subsubsection{Descrizione del problema}
+Il prof. Viaggioni (PV) alla fine di un'importante conferenza si trova bloccato a causa di uno sciopero che coinvolge tutti i mezzi di trasporto. PV deve quindi trovare un modo per tornare a casa ed applica le sue conoscenze:
+Utilizziamo un grafo \textbf{spazio-tempo} $G = (N,A)$.
+\begin{itemize}
+    \item I \textbf{nodi} sono coppie (luogo,orario), a partire da quelli della forma (Conf, t) per tutti i momenti $t$ in cui un mezzo dovrebbe partire dalla città sede della conferenza.
+    \item Gli \textbf{archi} "viaggio" $(i,j) = ((s_i,t_i),(s_j,t_j)) \in A$ rappresentano le corse previste in partenza da $s_i$ al tempo $t_i$ ed in arrivo al luogo $s_j \ne s_i$ al tempo $t_j > t_i$.
+    \item Sono presenti anche archi \textbf{attesa}, in cui $s_i = s_j$ (e $t_j > t_j$), che rappresentano lo stare fermi in attesa di una coincidenza.
+    \item A ciascun arco è associato:
+    \begin{itemize}
+        \item Il costo monetario $c_{ij} > 0$ (tipicamente sugli archi attesa, tranne quelli dove bisogna sostare in albergo)
+        \item La probabilità $p_{ij}$ che l'arco sia effettivamente percorribile ($< 1$ sugli archi attesa se la coincidenza è "stretta" o gli alberghi in $s_i$ sono "pieni").
+    \end{itemize}
+\end{itemize}
+Il PV ha un budget monetario $C > 0$ per pagarsi il viaggio e vuole che la probabilità di successo del viaggio sia almeno del $90\%$ complessivamente.\\
+Si aiuti il PV a tornare a casa (probabilmente) scrivendo come PLI il problema di determinare gli spostamenti da fare, minimizzando il tempo totale del viaggio.
+\subsubsection{Modellazione}
+Variabili (oltre a quelle definite gia):
+\[
+x_{ij} = \begin{cases}
+    1, \text{ se uso arco } (i,j) \in A\\
+    0
+\end{cases}
+\]
+Funzione obiettivo:
+\[
+minZ = \sum_{(i,j) \in A : j = (casa, t)}^{} t \cdot x_{ij} - \sum_{(i,j) \in A : t = (Conf,t)}^{} t \cdot x_{ij}
+\]
+Vincoli:
+\[
+\begin{cases}
+    \sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij}\\
+    x_{ij} \in \{0,1\}, (i,j) \in A\\
+    \sum_{j:(j,i) \in A}^{} x_{ji} - \sum_{j:(i,j) \in A}^{} x_{ij} = \begin{cases}
+        -1, i = s\\
+        1, i = d\\
+        0, i \ne s,d
+    \end{cases}
+\end{cases}
+\]
+Vogliamo scrivere il vincolo sulle probabilità:
+\[
+\prod_{(i,j) \in A: x_{ij} = 1}^{} p_{ij} \geq 0,9
+\]
+\[
+\log(\prod_{(i,j) \in A: x_{ij} = 1}^{} p_{ij}) \geq \log(0,9)
+\]
+\[
+\sum_{(i,j) \in A: x_{ij} = 1}^{} \log(p_{ij}) \geq \log(0,9)
+\]
+\[
+\sum_{(i,j) \in A}^{} x_{ij} \cdot \log(p_{ij}) \geq \log(0,9)
+\]
+
+\section{Grafi e reti di flusso}
+\subsection{Definizioni iniziali}
+Una \textbf{rete} è un grafo orientato pesato $G = (N,A)$.\\
+Gli archi sono canali di flusso.\\
+Ad ogni nodo è associato un \textbf{valore reale} $b_i$ detto \textbf{deficit}.
+
+\subsection{Trasformazioni equivalenti}
+Alcuni problemi possono essere risolti riconducendoli a problemi di Flusso di Costo Minimo (MCF).
+
+\subsection{Il problema del cammino di costo minimo}
+
 \end{document}

@@ -719,6 +719,7 @@ L'array è una struttura dati di lunghezza fissa (non può essere modificata) ed
     [nomeArray][index]
     reali[0]
 \end{lstlisting}
+Un array è passato per riferimento alle funzioni, in quanto il suo nominativo è proprio un indirizzo al primo elemento. Se si modifica l'array in una funzione quindi, viene modificato anche al di fuori.
 \subsection{Matrici}
 Le \textbf{matrici} non sono altro che \textbf{array di array}:
 \begin{lstlisting}[language=C]
@@ -815,6 +816,41 @@ Addirittura, una funzione può non necessitare parametri:
 Il tipo di ritorno deve essere compatibile, ma non precisamente uguale, con il tipo specificato nella firma. Questo perchè si possono utilizzare cast impliciti.\\
 In C tutti i parametri sono passati per \textbf{valore}.\\
 La chiamata è un'espressione e corrisponde al valore ritornato, il quale può essere riusato in altre funzioni come quella di stampa.
+\subsection{Gestione della memoria}
+Un qualsiasi dato/istruzione che sia in memoria ha:
+\begin{itemize}
+    \item Un valore.
+    \item Un indirizzo di memoria.
+\end{itemize}
+\subsubsection{Puntatori}
+Un \textbf{puntatore} è una variabile che contiene un indirizzo di memoria:
+\begin{lstlisting} [language=C]
+    int a = 3;
+    int *addr = &a;
+\end{lstlisting}
+Come valore ha un indirizzo di memoria, ma ha a sua volta un suo indirizzo di memoria.\\
+Il tipo del puntatore corrisponde al tipo del valore salvato nell'indirizzo di memoria specificato dal puntatore.\\
+Deveono sempre essere inizializzati a \textbf{null} se non ad un indirizzo di una variabile.\\
+I puntatori possono essere dichiarati in sequenza:
+\begin{lstlisting}[language=C]
+    int a = 3;
+    int *addr = &a;
+    int **a = &addr;
+\end{lstlisting}
+Per leggere i dati annessi ad un puntatore si fa cosi:
+\begin{lstlisting}[language=C]
+    int a = 3;
+    int *addr = &a;
+
+    printf("%p\n",(void *)addr); /*stampa indirizzo della variabile*/
+    printf("%d\n",*addr); /*stampa il valore della variabile puntata*/
+    printf("%p\n",&p); /*stampa l'indirizzo del puntatore*/
+
+    *addr = 25; /*modifica il valore della variabile puntata*/
+\end{lstlisting}
+\paragraph{Attenzione:} se si tenta di stampare il valore della variabile puntata (con *addr) e il puntatore non è stato inizializzato oppure ha valore NULL allora avverrà un \textbf{Runtime Error}.\\
+I puntatori sono rappresentati come numeri interi, ma C non li tratta come tali: si possono usare in espressioni con altri puntatori, ma non con variabili intere.\\
+Per poter cambiare il valore di una variabile nell'ambiente del chiamante di una funzione dall'interno di una funzione si possono usare proprio i puntatori, passandoli come parametro.
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

@@ -63,5 +63,8 @@
 \contentsline {subsection}{\numberline {5.19}Enum}{23}{subsection.5.19}%
 \contentsline {subsection}{\numberline {5.20}typedef}{23}{subsection.5.20}%
 \contentsline {subsection}{\numberline {5.21}Funzioni}{23}{subsection.5.21}%
-\contentsline {section}{\numberline {6}Esercizi}{25}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Esercizio 1}{25}{subsection.6.1}%
+\contentsline {subsection}{\numberline {5.22}Gestione della memoria}{24}{subsection.5.22}%
+\contentsline {subsubsection}{\numberline {5.22.1}Puntatori}{25}{subsubsection.5.22.1}%
+\contentsline {paragraph}{Attenzione:}{25}{lstnumber.-76.8}%
+\contentsline {section}{\numberline {6}Esercizi}{26}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Esercizio 1}{26}{subsection.6.1}%

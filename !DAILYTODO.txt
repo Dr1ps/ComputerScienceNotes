@@ -1,6 +1,9 @@
 ## PARADIGMS ##
 
 - do last exercises in pdf
+- scaricarsi OCaml (con/anche docker) (istruzioni su moodle?)
+- esercizi: https://elearning.di.unipi.it/pluginfile.php/91861/course/section/7453/EsercizioLambdaEsploso.html
+(Copia esercizi su file)
 
 ## AESO ##
 
@@ -12,6 +15,10 @@ FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 
 ## OPERATIONAL RESEARCH ##
 
+Controlla ultimo problema di modellazione
+ Grafi e reti di flusso introduzione e definizioni iniziali
+Se riesci diminuisci TUTTE le section di 1 (section -> sub, subsub -> paragraph) per fare section solo le vere sezioni del programma
+FINO AD ALBERI, ETICHETTE E CONDIZIONI DI OTTIMO
 
 ## LABORATORY 2 ##
 

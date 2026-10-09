@@ -778,6 +778,11 @@ Il controllo dei tipi può essere:
   \item \textbf{Statico:} compile-time
   \item \textbf{Dinamico:} run-time
 \end{itemize}
+Il controllo dei tipi è fondamentale perchè è in grado di verificare alcune proprietà del programma:
+\begin{itemize}
+  \item \textbf{Segretezza e autenticità} dei protocolli di sicurezza.
+  \item \textbf{Assenza di deadlock} in sistemi concorrenti.
+\end{itemize}
 \subsection{Sintassi dei tipi}
 Ecco la sintassi:
 \[
@@ -797,6 +802,8 @@ Inoltre, vediamole espressioni e i valori:
     &= Apply(e,e)\\
     &= true\\
     &= false\\
+    & = n = 0,1,2...\\
+    & = e \oplus e = \text{operazioni binarie (+,-,*,/)}\\
     &= if\ e\ then\ e\ else\ e
 \end{aligned}
 \]
@@ -871,7 +878,65 @@ Allora:
 \[
 \Gamma \vdash e\{x:=e_1\}: \tau
 \]
+\subsection{Dichiarazioni locali}
+Stabiliamo che:
+\[
+e :: = let\ x = e_1\ in\ e_2: \tau_2
+\]
+Significa che l'associazione "$x = e_1$ vale in $e_2$.\\
+Regola di inferenza:
+\[
+\frac{\Gamma \vdash e_1:\tau_1 \qquad \Gamma ,x:\tau_1 \vdash e_2:\tau_2}{\Gamma \vdash let\ x = e_1\ in\ e_2: \tau_2}
+\]
+Questo significa che il valore della variabile locale rimane nel blocco $e_2$ e non sovrascrive il tipo ritornato da tale espressione (non esce).
+\subsection{Ricorsione}
+L'autoapplicazione non è tipabile:
+\[
+e ::= fix\ e
+\]
+\[
+\frac{e \rightarrow e^I}{fix\ e \rightarrow e^I}
+\]
+\[
+\frac{}{fix(fun\ f:\tau = e) \rightarrow e[f:=(fix(fun\ f:=e:\tau))]}
+\]
 
+\section{OCaml}
+\subsection{ML, un antenato}
+\textbf{ML (Meta Language)} fu proposto da Robin Milner nel 1972 e sviluppato negli anni '80.\\
+Era un linguaggio fortemente tipato.\\
+\textbf{Caml} era una versione
+\subsection{Come mai NON studiare OCaml (Ma invece si)}
+OCaml non è:
+\begin{itemize}
+  \item Tra i linguaggi più popolari.
+  \item Semplice.
+  \item Il linguaggio del futuro.
+\end{itemize}
+Nonostante questo, è utile studiarlo perche molti linguaggi hanno preso concetti da OCaml e perchè è un linguaggio che mostra una programmazione funzionale realizzata al meglio.\\
+Lo useremo per implementare in modo naturale semantica statica e dinamica, ma anche per realizzare \textbf{interpreti}.
+\subsection{Esecutore di OCaml}
+Per utilizzare OCaml useremo:
+\begin{itemize}
+  \item ocaml: interprete standard eseguibela da terminale.
+  \item utop: interprete con interfaccia avanzata.
+  \item \href{https://try.ocamlpro.com/:}{Interprete online}.
+\end{itemize}
+L'esecutore si chiama anche \textbf{interactive toplevel} e funziona cosi:
+\begin{itemize}
+  \item Esegue un REPL (Read-Eval-Print Loop).
+  \item Compila e valuta immediatamente ogni espressione, fornendo il risultato e il suo tipo.
+  \item Il risultato può essere legato ad un nome, ottenendo una \textbf{dichiarazione}.
+  \item Un'espressione può usare risorse precedentemente definite (variabili, funzioni...)
+\end{itemize}
+Vediamo un esempio di dichiarazione:
+\begin{lstlisting}
+  In [ ]: let x = 12.0 ;;
+\end{lstlisting}
+Adesso un'espressione:
+\begin{lstlisting}
+  In [ ]: x + 5 ;;
+\end{lstlisting}
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:
@@ -898,6 +963,8 @@ Date le seguenti $\lambda$-espressioni, individuare le sottoespressioni riducibi
     \item
     $x((\lambda x.(\lambda y.yy)x)y)$
 \end{enumerate}
+
+
 \paragraph{Soluzione}
 Soluzione non presente, complicata da rappresentare in LaTeX.
 \subsection{Esercizio 3}

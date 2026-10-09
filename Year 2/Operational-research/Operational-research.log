@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  8 OCT 2026 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  9 OCT 2026 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,7 +670,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-<images/Diagram.png, id=328, 1780.6525pt x 890.32625pt>
+<images/Diagram.png, id=363, 1780.6525pt x 890.32625pt>
 File: images/Diagram.png Graphic file (type png)
 <use images/Diagram.png>
 Package pdftex.def Info: images/Diagram.png  used on input line 53.
@@ -811,7 +811,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-<images/boats.png, id=396, 196.23312pt x 209.78375pt>
+<images/boats.png, id=431, 196.23312pt x 209.78375pt>
 File: images/boats.png Graphic file (type png)
 <use images/boats.png>
 Package pdftex.def Info: images/boats.png  used on input line 514.
@@ -827,7 +827,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16
 
 ]
-<images/boatTable.png, id=402, 280.04625pt x 221.82875pt>
+<images/boatTable.png, id=437, 280.04625pt x 221.82875pt>
 File: images/boatTable.png Graphic file (type png)
 <use images/boatTable.png>
 Package pdftex.def Info: images/boatTable.png  used on input line 521.
@@ -846,7 +846,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.525 \subsection{Problema di configurazione}
                                               <./images/boats.png>]
-<images/tabellaRistorante.png, id=409, 693.792pt x 169.8345pt>
+<images/tabellaRistorante.png, id=444, 693.792pt x 169.8345pt>
 File: images/tabellaRistorante.png Graphic file (type png)
 <use images/tabellaRistorante.png>
 Package pdftex.def Info: images/tabellaRistorante.png  used on input line 530.
@@ -856,7 +856,7 @@ Overfull \hbox (15.20795pt too wide) in paragraph at lines 527--533
 \OT1/cmr/m/n/12 Tommaso ha un ris-torante e va al mer-cato per com-prare dal ma-cel-laio e dall'ortofruttivendolo. 
  []
 
-<images/tabellaPiatti.png, id=410, 385.44pt x 205.9695pt>
+<images/tabellaPiatti.png, id=445, 385.44pt x 205.9695pt>
 File: images/tabellaPiatti.png Graphic file (type png)
 <use images/tabellaPiatti.png>
 Package pdftex.def Info: images/tabellaPiatti.png  used on input line 540.
@@ -896,7 +896,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has
                                                   \__shipout_drop_firstpage_...
 l.594 \begin{itemize}
                       <./images/tabellaPiatti.png>]
-<images/instradamento.png, id=427, 684.05562pt x 254.9525pt>
+<images/instradamento.png, id=462, 684.05562pt x 254.9525pt>
 File: images/instradamento.png Graphic file (type png)
 <use images/instradamento.png>
 Package pdftex.def Info: images/instradamento.png  used on input line 611.
@@ -923,7 +923,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-<images/graph.png, id=438, 215.00325pt x 261.97874pt>
+<images/graph.png, id=473, 215.00325pt x 261.97874pt>
 File: images/graph.png Graphic file (type png)
 <use images/graph.png>
 Package pdftex.def Info: images/graph.png  used on input line 679.
@@ -1035,26 +1035,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [31
 
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33
+
 ] (Operational-research.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Operational-research.out' has not changed.
-(rerunfilecheck)             Checksum: 4CED068F64944CB90CCB575073DA413B;12185.
+(rerunfilecheck)             Checksum: 4A9098351340B79E3CE1BA0DA00D506F;13596.
  ) 
 Here is how much of TeX's memory you used:
- 33129 strings out of 467392
- 759204 string characters out of 5415745
+ 33145 strings out of 467392
+ 759452 string characters out of 5415745
  1285881 words of memory out of 5000000
- 61885 multiletter control sequences out of 15000+600000
+ 61892 multiletter control sequences out of 15000+600000
  635635 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,12n,118p,798b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,13n,118p,798b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Operational-research.pdf (31 pages, 1416321 bytes).
+Output written on Operational-research.pdf (33 pages, 1428125 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 528 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
+ 584 words of extra memory for PDF output out of 10000 (max. 10000000)
 
