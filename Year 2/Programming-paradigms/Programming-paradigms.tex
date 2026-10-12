@@ -9,6 +9,43 @@
 \usepackage{listing}
 \usepackage{listings}
 \usepackage{titlesec}
+
+\lstdefinelanguage{OCaml}{
+  keywords={let, rec, in, fun, function, match, with, type,
+            of, if, then, else, begin, end, module, open},
+  sensitive=true,
+  comment=[s]{\(*}{*\)},
+  string=[b]"
+}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeborder}{RGB}{210,210,210}
+\definecolor{codecomment}{RGB}{90,120,90}
+\definecolor{codekeyword}{RGB}{0,70,140}
+\definecolor{codestring}{RGB}{160,80,20}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{codeborder},
+  framerule=0.5pt,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numberblanklines=false,
+  numbersep=8pt,
+  xleftmargin=2em,
+  framexleftmargin=1.5em,
+  keywordstyle=\color{codekeyword}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestring},
+  showstringspaces=false,
+  tabsize=4,
+  keepspaces=true,
+  columns=fullflexible
+}
+
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
   {\thesection}{1em}{}
@@ -902,10 +939,11 @@ e ::= fix\ e
 \]
 
 \section{OCaml}
-\subsection{ML, un antenato}
+\subsection{Antenati}
 \textbf{ML (Meta Language)} fu proposto da Robin Milner nel 1972 e sviluppato negli anni '80.\\
-Era un linguaggio fortemente tipato.\\
-\textbf{Caml} era una versione
+Era un linguaggio funzionale fortemente tipato, ha influenzato i linguaggi successivi introducendo concetti come il polimorfismo, pattern matching e altro.\\
+\textbf{Caml} era una versione di ML che introduce moduli e fornisce una serie di librerie di programmazione.\\
+\textbf{OCaml} è la versione che implementa la programmazione a oggetti.
 \subsection{Come mai NON studiare OCaml (Ma invece si)}
 OCaml non è:
 \begin{itemize}
@@ -930,13 +968,173 @@ L'esecutore si chiama anche \textbf{interactive toplevel} e funziona cosi:
   \item Un'espressione può usare risorse precedentemente definite (variabili, funzioni...)
 \end{itemize}
 Vediamo un esempio di dichiarazione:
-\begin{lstlisting}
-  In [ ]: let x = 12.0 ;;
+\begin{lstlisting}[language=OCaml]
+  let x = 12.0 ;;
 \end{lstlisting}
 Adesso un'espressione:
-\begin{lstlisting}
-  In [ ]: x + 5 ;;
+\begin{lstlisting}[language=OCaml]
+  x + 5 ;;
 \end{lstlisting}
+\subsection{Overloading degli operatori e cast}
+OCaml non supporta l'overloading degli operatori, le operazioni devono essere \textbf{coerenti}.\\
+Per esempio per sommare un elemento float con qualcos'altro bisogna usare questo operatore (altrimenti da errore):
+\begin{lstlisting}[language=OCaml]
+  x +. 10.5 ;;
+\end{lstlisting}
+Non esistono quindi cast impliciti, ma solo \textbf{cast espliciti}:
+\begin{lstlisting}[language=OCaml]
+  float_of_int 3 ;; (*Restituisce 3.0*)
+  int_of_float 3.0 ;; (*Restituisce 3*)
+\end{lstlisting}
+Ecco altri cast:
+\begin{itemize}
+  \item int\_of\_char
+  \item int\_of\_string
+\end{itemize}
+\subsection{Tipi di OCaml}
+Tipi di base:
+\begin{itemize}
+  \item int 
+  \item float
+  \item bool
+  \item char
+  \item string
+  \item unit: usato in casi particolari (simile a \textbf{void})
+\end{itemize}
+Tipi complessi:
+\begin{itemize}
+  \item Tupla
+  \begin{lstlisting}[language=OCaml]
+    let t = [10,"ten",10.0] ;;
+    let (x,y,z) = t ;; (*Destrutturazione della tupla*)
+  \end{lstlisting}
+  \item \textbf{Whatever}: simile ad "any"
+  \begin{lstlisting}[language=Ocaml]
+    fun x -> x ;; (*Restituisce: - : 'a -> 'a = <fun>*)
+  \end{lstlisting}
+\end{itemize}
+\subsection{Operazioni logiche}
+Ecco come si eseguono le operazioni logiche in OCaml:
+\begin{itemize}
+  \item And:
+  \begin{lstlisting}
+    x && y ;;
+  \end{lstlisting}
+  \item Or:
+  \begin{lstlisting}
+    x || y ;;
+  \end{lstlisting}
+  \item Not:
+  \begin{lstlisting}
+    not x ;;
+  \end{lstlisting}
+  \item Diverso:
+  \begin{lstlisting}
+    x <> y ;;
+  \end{lstlisting}
+\end{itemize}
+\subsection{Operazioni sulle stringhe}
+Ecco un esempio di concatenazione:
+\begin{lstlisting}[language=OCaml]
+  let h = "hello " ;;
+  let hw = h ^ "world" ;;
+\end{lstlisting}
+\subsection{Funzioni e lambda calcolo}
+In OCaml le funzioni sono \textbf{valori}.\\
+Vediamo come definire una funzione in lambda calcolo:
+\[
+\lambda x.x + 1
+\]
+\begin{lstlisting}
+  fun x -> x + 1 ;;
+  (fun x -> x + 1) 10 ;; (*Restituisce 11*)
+\end{lstlisting}
+\[
+\lambda x.\lambda y.x+y
+\]
+\begin{lstlisting}[language=OCaml]
+  fun x -> fun y -> x + y ;;
+  (*Oppure (Currying):*)
+  fun x y -> x + y ;;
+  (*Oppure:*)
+  fun (x, y) -> x + y ;;
+\end{lstlisting}
+\[
+\lambda f.\lambda y.fy
+\]
+\begin{lstlisting}[language=OCaml]
+  fun f -> fun n -> f n + 1 ;;
+  (*Restituisce: ('a -> int) -> int -> int*)
+\end{lstlisting}
+Vediamo adesso anche funzioni di ordine superiore:
+\[
+(\lambda f.\lambda y. fy)(\lambda x.x)10
+\]
+Le funzioni possono anche essere dichiarate con \textbf{let} e essere memorizzate:
+\begin{lstlisting}[language=OCaml]
+  let somma = fun x y -> x + y ;;
+  (*Oppure*)
+  let somma x y = x + y ;;
+\end{lstlisting}
+Addirittura esiste un altra keyword per dichiarare funzioni, ovvero \textbf{function}, ma questa accetta 1 solo parametro:
+\begin{lstlisting}[language=OCaml]
+  function x -> x + 1 ;;
+\end{lstlisting}
+\begin{lstlisting}[language=OCaml]
+  (fun f -> fun y -> f y + 1)(fun x -> x)10 ;;
+\end{lstlisting}
+\subsubsection{Applicazione parziale}
+Se abbiamo una funzione:
+\begin{lstlisting}[language=OCaml]
+  let somma x y -> x + y ;;
+\end{lstlisting}
+E si applica un solo parametro, ci ritroviamo una nuova funzione:
+\begin{lstlisting}[language=OCaml]
+  somma 10 ;; (*Restituisce: somma y = 10 + y*)
+\end{lstlisting}
+\subsubsection{Encoding}
+In realtà esiste una trasformazione formale per convertire le espressioni di lambda calcolo in espressioni OCaml, ecco le regole:
+\subsection{Scope}
+Per dichiarare che un assegnamento vale solo in un'espressione particolare si usa la keyword "in", che fa valere l'assegnamento nell'espressione che la segue:
+\begin{lstlisting}[language=OCaml]
+  let x = 4 in ;;
+  let y = x + 2 ;; (*Qui vale*)
+  let z = x + 2 ;; (*Qui no!*)
+\end{lstlisting}
+Si può usare con le funzioni:
+\begin{lstlisting}[language=OCaml]
+  let sol a b c = 
+      let delta =
+          b*.b -. 4.*.a*.c
+      in
+          (-.b +. sqrt delta) /. (2.*.a) , (-.b -. sqrt delta) /. (2.*.a) ;;
+\end{lstlisting}
+\subsection{Costrutti}
+Siccome le variabili sono immutabili, è insensato svolgere cicli.\\
+Per svolgere decisioni si usa il costrutto \textbf{if-then-else}:
+\begin{lstlisting}[language=OCaml]
+  let x = 5;;
+  let y = if x>10 then 1 else 0 ;;
+\end{lstlisting}
+\subsection{Ricorsione}
+Per realizzare la ricorsione si usa la keyword "rec":
+\begin{lstlisting}[language=OCaml]
+  let rec fact n = if n<=0 then 1 else n * fact(n-1) ;;
+\end{lstlisting}
+Se non si usa la keyword si crea un errore, altrimenti le chiamate ricorsive non vengono interpretate come tali, bensì come valori \textbf{unbounded}.
+\paragraph{Mutua ricorsione:} queste due funzioni si richiamano a vicenda:
+\begin{lstlisting}
+  let rec parti n =
+      match n with
+          | 0 -> true
+          | x -> dispari (x-1)
+  
+  and dispari n =
+      match n with
+          | 0 -> false
+          | x -> pari (x-1) ;;
+\end{lstlisting}
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:

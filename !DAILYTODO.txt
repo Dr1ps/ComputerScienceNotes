@@ -4,6 +4,7 @@
 - scaricarsi OCaml (con/anche docker) (istruzioni su moodle?)
 - esercizi: https://elearning.di.unipi.it/pluginfile.php/91861/course/section/7453/EsercizioLambdaEsploso.html
 (Copia esercizi su file)
+- Encoding lambda calcolo -> Ocaml
 
 ## AESO ##
 
@@ -11,7 +12,8 @@
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 (download or redo)
 - setup verilog env (install iverilog & gtk wave) (TEAMS FILE)
-- esempio di automa in fondo
+- esercizio in fondo
+- roba su quaderno
 
 ## OPERATIONAL RESEARCH ##
 
