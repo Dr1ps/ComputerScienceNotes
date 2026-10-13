@@ -66,5 +66,8 @@
 \contentsline {subsection}{\numberline {5.22}Gestione della memoria}{24}{subsection.5.22}%
 \contentsline {subsubsection}{\numberline {5.22.1}Puntatori}{25}{subsubsection.5.22.1}%
 \contentsline {paragraph}{Attenzione:}{25}{lstnumber.-76.8}%
-\contentsline {section}{\numberline {6}Esercizi}{26}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Esercizio 1}{26}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {5.22.2}Allocazione dinamica}{25}{subsubsection.5.22.2}%
+\contentsline {subsubsection}{\numberline {5.22.3}Liberare memoria}{26}{subsubsection.5.22.3}%
+\contentsline {paragraph}{Errori tipici:}{26}{lstnumber.-80.1}%
+\contentsline {section}{\numberline {6}Esercizi}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Esercizio 1}{27}{subsection.6.1}%

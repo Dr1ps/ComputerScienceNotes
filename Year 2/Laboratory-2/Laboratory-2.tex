@@ -18,24 +18,24 @@
 \definecolor{codestring}{RGB}{160,80,20}
 
 \lstset{
-backgroundcolor=\color{codebg},
-basicstyle=\ttfamily\small,
-breaklines=true,
-frame=single,
-rulecolor=\color{codeborder},
-framerule=0.5pt,
-numbers=left,
-numberstyle=\tiny\color{gray},
-numbersep=8pt,
-xleftmargin=2em,
-framexleftmargin=1.5em,
-keywordstyle=\color{codekeyword}\bfseries,
-commentstyle=\color{codecomment}\itshape,
-stringstyle=\color{codestring},
-showstringspaces=false,
-tabsize=4,
-keepspaces=true,
-columns=fullflexible
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{codeborder},
+    framerule=0.5pt,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    xleftmargin=2em,
+    framexleftmargin=1.5em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    showstringspaces=false,
+    tabsize=4,
+    keepspaces=true,
+    columns=fullflexible
 }
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
@@ -851,6 +851,48 @@ Per leggere i dati annessi ad un puntatore si fa cosi:
 \paragraph{Attenzione:} se si tenta di stampare il valore della variabile puntata (con *addr) e il puntatore non è stato inizializzato oppure ha valore NULL allora avverrà un \textbf{Runtime Error}.\\
 I puntatori sono rappresentati come numeri interi, ma C non li tratta come tali: si possono usare in espressioni con altri puntatori, ma non con variabili intere.\\
 Per poter cambiare il valore di una variabile nell'ambiente del chiamante di una funzione dall'interno di una funzione si possono usare proprio i puntatori, passandoli come parametro.
+\subsubsection{Allocazione dinamica}
+Ricordiamo come i vari tipi di dati vengono salvati in varie zone:
+\begin{itemize}
+    \item \textbf{Stack:} record di attivazione, variabili locali
+    \item \textbf{Heap:} dati dinamici (runtime), frammentati, memoria allocata dinamicamente.
+\end{itemize}
+Per eseguire un'allocazione dinamica della memoria, si utilizzano i \textbf{puntatori}.\\
+Ogni puntatore che punta ad un allocazione dinamica può essere visto come un array, solo che si evita di stabilire la memoria allocata prima del runtime.\\
+Una prima opzione è usare \textbf{malloc}. 
+\begin{lstlisting}
+    malloc(grandezzaArrayAssociato * sizeof(tipo));
+
+    int *aPtr;
+    aPtr = (*int)malloc(sizeof(int));
+\end{lstlisting}
+\begin{lstlisting}
+    int arr[5];
+    /*con malloc sarebbe:*/
+    int *p = (int*)malloc(5 * sizeof(int));
+\end{lstlisting}
+Si accede nel solito modo in cui si accede un array comune, ovvero con gli indici ad accesso diretto.\\
+Un altro modo è usare \textbf{calloc}, il quale inizializza tutti gli elementi a 0:
+\begin{lstlisting}
+    calloc(grandezzaArrayAssociato,sizeof(tipo));
+
+    int *aPtr;
+    aPtr = (*int)calloc(1,sizeof(int));
+\end{lstlisting}
+
+\subsubsection{Liberare memoria}
+Per liberare la memoria allocata si usa la keyword \textbf{free} (usabile solo sui puntatori).\\
+\begin{lstlisting}
+    free(aPtr);
+\end{lstlisting}
+Una volta che qualcosa non ci serve più, bisogna eliminarlo.\\
+\paragraph{Errori tipici:}
+\begin{itemize}
+    \item Liberare uno spazio già vuoto (genera errore).
+    \item Consumare memoria non liberandola e perdendo gli indirizzi dei puntatori (\textbf{memory leak}).
+    \item Liberare memoria allocata in modo statico.
+    \item Utilizzare un puntatore dopo aver liberato la memoria (può essere stata anche un altrà entità attraverso un puntatore secondario).
+\end{itemize}
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

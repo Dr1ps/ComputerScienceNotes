@@ -875,9 +875,56 @@ Riassumendo, per arrivare a capire come sviluppare una rete sequenziale tale, bi
     \item Modellare il circuito digitale
     \item Calcolare i tempi
 \end{enumerate}
+
+
 \section{Esercizi}
-\subsection{Esercizio 1}
+\subsection{Cosa calcola una rete}
 \subsubsection{Descrizione}
-Sviluppare una rete che sa calcolare la parità (di "1") in una sequenza di bit con un automa di Mealy.
+Dato una rete:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/esercizio1rete.png}
+    \caption{Rete sequenziale | Esercizio 1}
+    \label{fig:es1}
+\end{figure}
+Trovare:
+\begin{enumerate}
+    \item Cosa calcola la rete.
+    \item Se è possibile un modo più efficiente di calcolarla.
+\end{enumerate}
 \subsubsection{Soluzione}
+Per trovare cosa calcola la rete, bisogna trovare l'\textbf{espressione} logica:
+\[
+z = \overline{a}bc + ab\overline{c} + abc
+\]
+Per capire invece se si può semplificare, bisogna provare in diversi modi:
+\paragraph{Algebra booleana}: si procede con l'effettuare raccoglimenti e semplificazioni.\\
+In questo caso, si può aggiungere un quarto termine "abc" perche fare l'OR tra due valori uguali non cambia il risultato.
+\[
+z = \overline{a}bc + ab\overline{c} + abc + abc
+\]
+Adesso possiamo raccogliere:
+\[
+z = (\overline{a} + a)bc + (\overline{c} + c)ab
+\]
+\[
+z = bc + ab
+\]
+\[
+(a + c)b
+\]
+Come si può vedere si è semplificato molto.
+\paragraph{Mappe di Kernaugh}: si crea la tabella associata:
+\[
+\begin{array}{c|cccc}
+a\backslash bc & 00 & 01 & 11 & 10\\
+\hline
+0 & 0 & 0 & 1 & 0\\
+1 & 0 & 0 & 1 & 1
+\end{array}
+\]
+Si calcola l'espressione tramite i gruppi presi:
+\[
+z = bc + ab = (a + c)b
+\]
 \end{document}
