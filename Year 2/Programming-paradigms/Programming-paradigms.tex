@@ -1168,6 +1168,16 @@ Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
   ...
   | P_N -> EXP_N
 \end{lstlisting}
+\subsection{Wildcard}
+Una wildcard è come un placeholder e si indica con "\_"
+\begin{lstlisting}
+  let rec fibonacci n = 
+    match n with
+      | 0 -> 0
+      | 1 -> 1
+      | _ -> fibonacci (n-1) + fibonacci (n-2) ;;
+\end{lstlisting}
+In questo caso è stato usato per il caso default del match.
 
 \section{Esercizi}
 \subsection{Esercizio 1}

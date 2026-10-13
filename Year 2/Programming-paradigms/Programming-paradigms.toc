@@ -96,6 +96,7 @@
 \contentsline {subsection}{\numberline {10.13}Type inference e polimorfismo}{31}{subsection.10.13}%
 \contentsline {subsection}{\numberline {10.14}Liste}{31}{subsection.10.14}%
 \contentsline {subsection}{\numberline {10.15}Pattern matching}{32}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Wildcard}{32}{subsection.10.16}%
 \contentsline {section}{\numberline {11}Esercizi}{33}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Esercizio 1}{33}{subsection.11.1}%
 \contentsline {paragraph}{Soluzione (non controllata):}{33}{Item.12}%
