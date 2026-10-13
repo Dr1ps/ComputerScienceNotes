@@ -1134,6 +1134,40 @@ Se non si usa la keyword si crea un errore, altrimenti le chiamate ricorsive non
           | 0 -> false
           | x -> pari (x-1) ;;
 \end{lstlisting}
+\subsection{Sum if true}
+Somma in base a condizione, vediamo un esempio applicativo:
+\begin{lstlisting}[language=OCaml]
+  sum_if_true (fun x -> x>0) 3 (-4) ;;
+\end{lstlisting}
+\subsection{Type inference e polimorfismo}
+OCaml utilizza un type inference per stabilire il tipo delle variabili:
+\begin{lstlisting}[language=OCaml]
+  let x = 3 ;; (*Tipo inferito int*)
+  let id x = x ;; (*La funzione id = polimorfa*)
+\end{lstlisting}
+Volendo però possiamo specificarlo manualmente se vogliamo:
+\begin{lstlisting}[language=OCaml]
+  let maggiore_int (x: int) (y: int) : int = if x > y then 1 else 0 ;;
+\end{lstlisting}
+\subsection{Liste}
+Vediamo come crearne una:
+\begin{lstlisting}
+  let lista = [] ;; (*Lista vuota*)
+  let lista2 = [1,2,3] ;;
+\end{lstlisting}
+Rovesciamola (invert):
+\begin{lstlisting}
+  List.rev [1,2,3] ;;
+\end{lstlisting}
+\subsection{Pattern matching}
+Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
+\begin{lstlisting}
+  match EXP with
+  | P_1 -> EXP_1
+  | P_2 -> EXP_2
+  ...
+  | P_N -> EXP_N
+\end{lstlisting}
 
 \section{Esercizi}
 \subsection{Esercizio 1}

@@ -92,16 +92,20 @@
 \contentsline {subsection}{\numberline {10.10}Costrutti}{31}{subsection.10.10}%
 \contentsline {subsection}{\numberline {10.11}Ricorsione}{31}{subsection.10.11}%
 \contentsline {paragraph}{Mutua ricorsione:}{31}{lstnumber.-23.1}%
-\contentsline {section}{\numberline {11}Esercizi}{32}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Esercizio 1}{32}{subsection.11.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{32}{Item.12}%
-\contentsline {subsection}{\numberline {11.2}Esercizio 2}{32}{subsection.11.2}%
-\contentsline {paragraph}{Soluzione}{32}{Item.18}%
-\contentsline {subsection}{\numberline {11.3}Esercizio 3}{32}{subsection.11.3}%
-\contentsline {paragraph}{Soluzione}{32}{Item.21}%
-\contentsline {subsection}{\numberline {11.4}Esercizio 4}{33}{subsection.11.4}%
-\contentsline {paragraph}{Soluzione}{33}{Item.29}%
-\contentsline {subsection}{\numberline {11.5}Esercizio 5}{33}{subsection.11.5}%
-\contentsline {paragraph}{Soluzione}{33}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Esercizio 6}{33}{subsection.11.6}%
-\contentsline {paragraph}{Soluzione}{33}{Item.32}%
+\contentsline {subsection}{\numberline {10.12}Sum if true}{31}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13}Type inference e polimorfismo}{31}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Liste}{31}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15}Pattern matching}{32}{subsection.10.15}%
+\contentsline {section}{\numberline {11}Esercizi}{33}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Esercizio 1}{33}{subsection.11.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{33}{Item.12}%
+\contentsline {subsection}{\numberline {11.2}Esercizio 2}{33}{subsection.11.2}%
+\contentsline {paragraph}{Soluzione}{33}{Item.18}%
+\contentsline {subsection}{\numberline {11.3}Esercizio 3}{33}{subsection.11.3}%
+\contentsline {paragraph}{Soluzione}{33}{Item.21}%
+\contentsline {subsection}{\numberline {11.4}Esercizio 4}{34}{subsection.11.4}%
+\contentsline {paragraph}{Soluzione}{34}{Item.29}%
+\contentsline {subsection}{\numberline {11.5}Esercizio 5}{34}{subsection.11.5}%
+\contentsline {paragraph}{Soluzione}{34}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Esercizio 6}{34}{subsection.11.6}%
+\contentsline {paragraph}{Soluzione}{34}{Item.32}%
