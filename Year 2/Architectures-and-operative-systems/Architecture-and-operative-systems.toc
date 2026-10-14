@@ -14,39 +14,43 @@
 \contentsline {subsection}{\numberline {4.3}Numeri con la virgola (Floating Point)}{10}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Caratteri (ASCII)}{10}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Notazione per grandezza input/output}{11}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Tempi per calcolare risultati}{11}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Esadecimale}{12}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Processo di progettazione dei circuiti digitali}{12}{subsection.4.8}%
-\contentsline {paragraph}{Esempio}{12}{Item.16}%
-\contentsline {subsection}{\numberline {4.9}Mappe di Karnaugh}{13}{subsection.4.9}%
-\contentsline {paragraph}{ATTENZIONE:}{14}{subsection.4.9}%
-\contentsline {section}{\numberline {5}Verilog}{15}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Dichiarazione moduli}{15}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Modulo tester}{16}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Monitor}{16}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Full Adder}{16}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Tools}{16}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Moduli}{17}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Sommatore}{17}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Sottrattore (sommatore in complemento a 2)}{17}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Comparatore}{17}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Codificatore}{17}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Moduli per algebra booleana}{17}{subsection.6.5}%
-\contentsline {paragraph}{Nota bene:}{18}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Modulo di scelta}{18}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Full Adder}{18}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Multiplexer}{19}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Demultiplexer}{19}{subsection.6.9}%
-\contentsline {section}{\numberline {7}Funzionamento dei registri}{21}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Registri}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}SR Latch}{21}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}D Latch}{22}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Flip Flop D}{23}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Segnale di reset}{24}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Reti sequenziali}{24}{subsection.7.6}%
-\contentsline {section}{\numberline {8}Esercizi}{26}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Cosa calcola una rete}{26}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Descrizione}{26}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Soluzione}{26}{subsubsection.8.1.2}%
-\contentsline {paragraph}{Algebra booleana}{26}{subsubsection.8.1.2}%
-\contentsline {paragraph}{Mappe di Kernaugh}{27}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {4.6}Espressioni dei circuiti}{11}{subsection.4.6}%
+\contentsline {paragraph}{Nota bene:}{11}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Tempi per calcolare risultati}{11}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Esadecimale}{12}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Processo di progettazione dei circuiti digitali}{13}{subsection.4.9}%
+\contentsline {paragraph}{Esempio}{13}{Item.16}%
+\contentsline {subsection}{\numberline {4.10}Mappe di Karnaugh}{14}{subsection.4.10}%
+\contentsline {paragraph}{ATTENZIONE:}{14}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Disturbi aleatori (ALEA)}{15}{subsection.4.11}%
+\contentsline {section}{\numberline {5}Verilog}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Dichiarazione moduli}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Modulo tester}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Monitor}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Full Adder}{17}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Tools}{17}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Moduli}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Sommatore}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Comparatore}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Codificatore}{18}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Moduli per algebra booleana}{18}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Full Adder}{20}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Full Adder in complemento a 2}{21}{subsubsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.6}Multiplexer}{21}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Demultiplexer}{22}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Memoria}{23}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Registri}{23}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}SR Latch}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}D Latch}{24}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Flip Flop D}{25}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Segnale di reset}{26}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Reti sequenziali}{26}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Esercizi}{28}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Cosa calcola una rete}{28}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Descrizione}{28}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Soluzione}{28}{subsubsection.8.1.2}%
+\contentsline {paragraph}{Algebra booleana}{28}{subsubsection.8.1.2}%
+\contentsline {paragraph}{Mappe di Kernaugh}{29}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}Circuito di una sveglia}{29}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Descrizione}{29}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Soluzione}{29}{subsubsection.8.2.2}%

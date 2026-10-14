@@ -307,6 +307,26 @@ n
 \nrightarrow 
 \]
 
+\subsection{Espressioni dei circuiti}
+Per rappresentare i circuiti si usano delle \textbf{espressioni}, vediamo delle notazioni di algebra booleana in tale progettazione:
+\begin{itemize}
+    \item Quando un parametro ha un "overline" come $\overline{x}$ allora significa che passa da un NOT.
+    \item La moltiplicazione tra variabili corrisponde all'AND, dato che se facciamo la moltiplicazione tra più valori booleani il risultato sarà diverso da 0 solo se tutti i membri sono settati a "1".
+    \item La somma tra variabili corrisponde all'OR, dato che il risultato è non nullo solo se almeno uno dei membri è settato a "1".
+\end{itemize}
+\paragraph{Nota bene:} un qualsiasi valore positivo, anche se diverso da "1", viene contato come \textbf{true}.
+Vediamo un esempio:
+\[
+\overline{x}yz + x\overline{y}z + xy\overline{z} + xyz
+\]
+Questo è un circuito con 4 moduli AND, 3 moduli OR e 3 moduli NOT realizzato in questo modo:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/logicalCircuit.png}
+    \caption{Circuito logico}
+    \label{fig:logicalCircuit}
+\end{figure}
+
 \subsection{Tempi per calcolare risultati}
 Quando realizziamo circuiti digitali bisogna tenere di conto quanto ci mettono le porte a inizializzarsi e quanto ci mette il risultato a essere emesso.\\
 Indichiamo il ritardo di una porta da massimo \textbf{8 ingressi} con:
@@ -428,6 +448,16 @@ L'espressione adesso è quindi:
 \[
 F = \overline{y_1}\overline{x_1}
 \]
+\subsection{Disturbi aleatori (ALEA)}
+Quando si effettuano le transizioni da un valore all'altro tramite delle porte logiche, le quali hanno dei ritardi, possono crearsi delle variazioni indesiderate temporanee, ovvero sbalzi di valore spontanei che possono provocare glitch.\\
+Per esempio, se abbiamo:
+\[
+F = AB + \overline{A}C
+\]
+Se il valore di A cambia da $0$ a $1$, il ritardo delle porte potrebbe non propagare il cambiamento di valore al secondo modulo dell'espressione in tempo, generando un calcolo errato.\\
+Per risolverli, si modifica la rete logica e si introducono termini ridondanti, i quali nella mappa di Kernaugh "allacciano" insiemi separati.\\
+Più formalmente, ogni coppia di gruppi adiacenti nella tabella di Kernaugh devono essere collegati da un terzo gruppo, come un "ponte".\\\\
+Applicare queste modifiche di rete sicuramente aumenta la complessità e il tempo impiegato, ma in questo modo ci assicuriamo che la rete funzioni senza errori.
 
 \section{Verilog}
 \textbf{Verilog} è un \textbf{HLD (Hardware Descritpion Language)}, ovvero un linguaggio di programmazione che descrive i circuiti logici.\\
@@ -523,66 +553,105 @@ Ecco alcuni strumenti importanti per lavorare con Verilog:
 \section{Moduli}
 Questa sezione elenca vari esempi di moduli per le operazioni del calcolatore.
 \subsection{Sommatore}
-Semplice modulo che somma due numeri:
+Semplice modulo che:
 \begin{itemize}
-    \item Riporto iniziale di 0
-    \item Un output unico
+    \item Prende in input due numeri (1 bit) ed un riporto iniziale di "0" (non lo considera).
+    \item Li somma e restituisce il risultato in output.
+    \item Se c'è overflow, setta a "$1$" il secondo output che indica il riporto.
 \end{itemize}
-\subsection{Sottrattore (sommatore in complemento a 2)}
-Il \textbf{sottrattore} è un sommatore che:
-\begin{itemize}
-    \item Ha un riporto iniziale di 1
-    \item Effettua il not sui bit
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/sommatore.png}
+    \caption{Sommatore}
+    \label{fig:sommatore}
+\end{figure}
+Un sommatore a più bit è costruito nel solito modo.
 \subsection{Comparatore}
-Ha due numeri in input e restituisce un valore booleano a seconda dell'uguaglianza dei due numeri immessi. Denotato da una scatola con "=" scritto dentro.
+Modulo che prende due numeri in input $(a,b)$ e restituise 3 output:
+\begin{itemize}
+    \item $G = \begin{cases}
+        1, a \> b\\
+        0, \text{ altrimenti}
+    \end{cases}$
+    \item $E = \begin{cases}
+        1, a == b\\
+        0, \text{ altrimenti}
+    \end{cases}$
+    \item $L = \begin{cases}
+        1, a \le b\\
+        0, \text{ altrimenti}
+    \end{cases}$
+\end{itemize}
 \subsection{Codificatore}
 Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
 \subsection{Moduli per algebra booleana}
 Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei seguenti moduli:
 \begin{itemize}
-    \item Modulo AND
-    \item Modulo OR
     \item Modulo NOT
-    \item Modulo XOR
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/Not.png}
+        \caption{Modulo NOT}
+        \label{fig:not}
+    \end{figure}
+    \item Modulo AND
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/and.png}
+        \caption{Modulo AND}
+        \label{fig:and}
+    \end{figure}
     \item Modulo NAND
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/NAnd.png}
+        \caption{Modulo NAND}
+        \label{fig:nand}
+    \end{figure}
+    \item Modulo OR
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/Or.png}
+        \caption{Modulo OR}
+        \label{fig:or}
+    \end{figure}
+    \item Modulo NOR
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/NOr.png}
+        \caption{Modulo NOR}
+        \label{fig:nor}
+    \end{figure}
+    \item Modulo XOR
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/XOr.png}
+        \caption{Modulo XOR}
+        \label{fig:xor}
+    \end{figure}
+    \item Modulo XNOR
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/XNOr.png}
+        \caption{Modulo XNOR}
+        \label{fig:xnor}
+    \end{figure}
 \end{itemize}
-Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.\\\\
-Per rappresentare i circuiti si usano delle \textbf{espressioni}, vediamo delle notazioni di algebra booleana in tale progettazione:
-\begin{itemize}
-    \item Quando un parametro ha un "overline" come $\overline{x}$ allora significa che passa da un NOT.
-    \item La moltiplicazione tra variabili corrisponde all'AND, dato che se facciamo la moltiplicazione tra più valori booleani il risultato sarà diverso da 0 solo se tutti i membri sono settati a "1".
-    \item La somma tra variabili corrisponde all'OR, dato che il risultato è non nullo solo se almeno uno dei membri è settato a "1".
-\end{itemize}
-\paragraph{Nota bene:} un qualsiasi valore positivo, anche se diverso da "1", viene contato come \textbf{true}.
-Vediamo un esempio:
-\[
-\overline{x}yz + x\overline{y}z + xy\overline{z} + xyz
-\]
-Questo è un circuito con 4 moduli AND, 3 moduli OR e 3 moduli NOT realizzato in questo modo:
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/logicalCircuit.png}
-    \caption{Circuito logico}
-    \label{fig:logicalCircuit}
-\end{figure}
-\subsection{Modulo di scelta}
-Alcune volte è necessario effettuare delle scelte a seconda di un parametro, esiste un modulo fatto su misura che:
-\begin{itemize}
-    \item Prende in input 2 scelte
-    \item Analizza un terzo input come "condizione"
-    \item Sceglie in base all'analisi effettuata
-\end{itemize}
-Questo modulo è strettamente collegato ai moduli dell'algebra booleana.
-
+Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.
 \subsection{Full Adder}
 Sommatore speciale che:
 \begin{itemize}
     \item Ha 2 input
     \item Ha 1 output risultato
-    \item Ha 1 output di riporto (che va al prossimo FA)
+    \item Ha 1 output di riporto (che va al prossimo FA, messi in sequenza per sommare piu numeri)
     \item Ha 1 riporto iniziale (anche nullo)
 \end{itemize}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{images/FullAdder.png}
+        \caption{Full Adder}
+        \label{fig:fa}
+    \end{figure}
 \begin{table}[H]
     \centering
     \begin{tabular}{ccccc}
@@ -621,10 +690,26 @@ X\cdot C_{in}
 +
 Y\cdot C_{in}
 \]
-Il Full Adder può sommare anche numeri in base 2 se combinato con un multiplexer.
-Il suo tempo di impiego corrisponde a $4\Delta t$.
+\subsubsection{Full Adder in complemento a 2}
+Un Full Adder può sommare numeri in complemento a 2 (negativi) con queste particolari modifiche:
+\begin{itemize}
+    \item L'input da portare in complemento a 2 viene negato
+    \item Il riporto iniziale è necessariamente uguale a $1$
+\end{itemize}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/FullAdderC2.png}
+        \caption{Full Adder (C2)}
+        \label{fig:fac2}
+    \end{figure}
 \subsection{Multiplexer}
-Il \textbf{multiplexer} racchiude un circuito, ha solo input e output visibili dall'esterno.
+Il \textbf{multiplexer} è un modulo molto importante che sceglie uno tra due input in base ad un input di controllo che indica la porta dell'input da restituire.
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/Multiplexer.png}
+        \caption{Multiplexer}
+        \label{fig:mux}
+    \end{figure}
 \begin{table}[h]
     \centering
     \begin{tabular}{cccc}
@@ -650,15 +735,21 @@ Y =
 +
 S\cdot I_1
 \]
-
+In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.
 \subsection{Demultiplexer}
 Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
 Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo} in input e azzera la porta in uscita non utilizzata.\\
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/Demultiplexer.png}
+        \caption{Demultiplexer}
+        \label{fig:demux}
+\end{figure}
 \begin{table}[h]
     \centering
     \begin{tabular}{cccc}
         \hline
-        C & X & $z_1$ & $z_0$ \\
+        C & S & $z_1$ & $z_0$ \\
         \hline
         0 & 0 & 0 & 0 \\
         0 & 1 & 1 & 0 \\
@@ -671,16 +762,17 @@ Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo}
 \end{table}
 \[
 z_1 =
-C\cdot\overline{X}
+C\cdot\overline{S}
 \]
 
 \[
 z_0 =
-C\cdot X
+C\cdot S
 \]
-Impiega un tempo di $\Delta t$ (fa solo AND).
+Impiega un tempo di $\Delta t$ (fa solo AND).\\
+Anche questo, come il multiplexer, può avere più porte in uscita, ma prevedono appunto l'espansione dell'input di controllo.
 
-\section{Funzionamento dei registri}
+\section{Memoria}
 \subsection{Registri}
 Il registro funziona cosi:
 \begin{itemize}
@@ -927,4 +1019,102 @@ Si calcola l'espressione tramite i gruppi presi:
 \[
 z = bc + ab = (a + c)b
 \]
+\subsection{Circuito di una sveglia}
+\subsubsection{Descrizione}
+Un orologio digitale rappresenta le cifre necessarie per segnare il tempo con un totale di 7 segmenti che possono essere accesi o spenti a seconda della cifra rappresentata, di solito si nominano in questo ordine:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/timer.png}
+    \caption{Segmenti orologio}
+    \label{fig:orologio}
+\end{figure}
+Trovare l'espressione logica associata ai segmenti dell'orologio.
+\subsubsection{Soluzione}
+Iniziamo col dire che le cifre vanno da $0$ a $9$ e per rappresentare questi numeri in binario ci servono $4$ bit.\\
+Poi diciamo che ogni segmento (lettera):
+\[
+segmento = \begin{cases}
+    1, \text{ segmento utilizzato}\\
+    0, \text{ altrimenti}
+\end{cases}
+\]
+Adesso si svolge la tabella di verità, la quale è molto grande:
+\[
+\begin{array}{c|cccc|ccccccc}
+\text{Cifra} & x_3 & x_2 & x_1 & x_0 & a & b & c & d & e & f & g \\
+\hline
+0  & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+1  & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+2  & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\
+3  & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\
+4  & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+5  & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\
+6  & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+7  & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+8  & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+9  & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+10 & 1 & 0 & 1 & 0 & X & X & X & X & X & X & X \\
+11 & 1 & 0 & 1 & 1 & X & X & X & X & X & X & X \\
+12 & 1 & 1 & 0 & 0 & X & X & X & X & X & X & X \\
+13 & 1 & 1 & 0 & 1 & X & X & X & X & X & X & X \\
+14 & 1 & 1 & 1 & 0 & X & X & X & X & X & X & X \\
+15 & 1 & 1 & 1 & 1 & X & X & X & X & X & X & X
+\end{array}
+\]
+Come si può vedere molti casi sono nulli, infatti andrebbe fatto in modo che il circuito non accetti input con risultati nulli.\\
+Per calcolare l'espressione (di ogni output(segmento)), si fa come al solito:
+\[
+\begin{aligned}
+    a &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,x_1\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,\overline{x_2}\,x_1\,x_0
+    + \overline{x_3}\,x_2\,\overline{x_1}\,x_0 \\
+    &\quad + \overline{x_3}\,x_2\,x_1\,\overline{x_0}
+    + \overline{x_3}\,x_2\,x_1\,x_0 \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,x_0 \\[4pt]
+    b &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,x_0 \\
+    &\quad + \overline{x_3}\,\overline{x_2}\,x_1\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,x_1\,x_0 \\
+    &\quad + \overline{x_3}\,x_2\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,x_2\,x_1\,x_0 \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,x_0 \\[4pt]
+    c &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,x_0 \\
+    &\quad + \overline{x_3}\,\overline{x_2}\,x_1\,x_0
+    + \overline{x_3}\,x_2\,\overline{x_1}\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,x_2\,\overline{x_1}\,x_0
+    + \overline{x_3}\,x_2\,x_1\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,x_2\,x_1\,x_0
+    + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0} \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,x_0 \\[4pt]
+    d &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,x_1\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,\overline{x_2}\,x_1\,x_0
+    + \overline{x_3}\,x_2\,x_1\,x_0 \\
+    &\quad + \overline{x_3}\,x_2\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,x_2\,x_1\,\overline{x_0} \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,x_0 \\[4pt]
+    e &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,x_1\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,x_2\,x_1\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0} \\[4pt]
+    f &= \overline{x_3}\,\overline{x_2}\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,x_2\,\overline{x_1}\,\overline{x_0} \\
+    &\quad + \overline{x_3}\,x_2\,x_1\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0} \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,x_0 \\[4pt]
+    g &= \overline{x_3}\,\overline{x_2}\,x_1\,\overline{x_0}
+    + \overline{x_3}\,\overline{x_2}\,x_1\,x_0 \\
+    &\quad + \overline{x_3}\,x_2\,\overline{x_1}\,\overline{x_0}
+    + \overline{x_3}\,x_2\,\overline{x_1}\,x_0 \\
+    &\quad + \overline{x_3}\,x_2\,x_1\,\overline{x_0}
+    + x_3\,\overline{x_2}\,\overline{x_1}\,\overline{x_0} \\
+    &\quad + x_3\,\overline{x_2}\,\overline{x_1}\,x_0
+\end{aligned}
+\]
+L'esercizio è simile al precedente, ovviamente più ampio e complesso.\\
 \end{document}

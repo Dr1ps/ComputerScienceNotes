@@ -1155,9 +1155,19 @@ Vediamo come crearne una:
   let lista = [] ;; (*Lista vuota*)
   let lista2 = [1,2,3] ;;
 \end{lstlisting}
-Rovesciamola (invert):
+Vediamo adesso delle operazioni sulle liste:
 \begin{lstlisting}
-  List.rev [1,2,3] ;;
+  let lista1 = ["hi"] ;;
+  let lista2= ["ciao"] ;;
+  (*Concatenazione liste*)
+  let lista3 = lista1 @ lista2 ;;
+  (*Ritorno della lunghezza*)
+  List.length lista3 ;;
+  (*Ritorno della testa e della coda*)
+  List.hd lista3 ;;
+  List.tl lista3 ;;
+  (*Ordine inverso*)
+  List.rev lista3 ;;
 \end{lstlisting}
 \subsection{Pattern matching}
 Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
@@ -1178,7 +1188,18 @@ Una wildcard è come un placeholder e si indica con "\_"
       | _ -> fibonacci (n-1) + fibonacci (n-2) ;;
 \end{lstlisting}
 In questo caso è stato usato per il caso default del match.
-
+\subsection{Encoding da lambda calcolo a OCaml}
+Ecco le regole sintattiche di trasformazione:
+\[
+\begin{aligned}
+[[n]] &= n
+[[x]] &= x
+[[T^I op T^{II}]] &= [[T^I]] op [[T^{II}]]
+[[\lambda x.T^I]] &= fun\ x\ ->\ [[T^I]]
+[[T^I T^{II}]] &= [[T^I]] [[T^{II}]]
+\end{aligned}
+\]
+In pratica è molto semplice, queste trasformazioni lasciano tutto inalterato e sostituiscono la denotazione con $\lambda$.
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:
