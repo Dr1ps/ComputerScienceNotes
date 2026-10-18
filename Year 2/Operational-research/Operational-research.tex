@@ -1009,7 +1009,8 @@ Vincoli:
         -1, i = s\\
         1, i = d\\
         0, i \ne s,d
-    \end{cases}
+    \end{cases}\\
+    \sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij} \leq c\\
 \end{cases}
 \]
 Vogliamo scrivere il vincolo sulle probabilità:
@@ -1028,15 +1029,151 @@ Vogliamo scrivere il vincolo sulle probabilità:
 
 \section{Grafi e reti di flusso}
 \subsection{Definizioni iniziali}
-Una \textbf{rete} è un grafo orientato pesato $G = (N,A)$.\\
-Gli archi sono canali di flusso.\\
-Ad ogni nodo è associato un \textbf{valore reale} $b_i$ detto \textbf{deficit}.
-
+Una \textbf{rete} è un grafo orientato pesato $G = (N,A)$ con:
+\[
+n = |N|
+\]
+\[
+m = |A|
+\]
+Gli archi sono canali di flusso e possono essere:
+\begin{itemize}
+    \item \textbf{Discreti}: numero di auto.
+    \item \textbf{Continui}: quantità di petrolio in un oleodotto.
+\end{itemize}
+Ad ogni nodo è associato un \textbf{valore reale} $b_i$ detto \textbf{deficit}:
+\[
+b_i > 0, \text{ Quantità di bene che esce dalla rete, nodo di destinazione, pozzo o output}
+\] 
+\[
+b_i < 0, \text{Quantità di bene che entra nella rete, nodo di origine, sorgente o input}
+\]
+\[
+b_i = 0, \text{Nodo di trasferimento}
+\]
+Nei problemi di flusso di solito:
+\[
+\text{Domanda globale} = \text{Offerta globale} 
+\]
+Quindi:
+\[
+\begin{aligned}
+    D &= \{i \in N: b_i > 0\}\\
+    O &= \{i \in N: b_i < 0\}\\
+    \sum_{i \in D}^{} b_i &= - \sum_{i \in O}^{b_i}\\
+    \sum_{i \in N}^{} b_i &= 0
+\end{aligned}
+\]
+Ad ogni arco $a_k = (i,j)$ sono associati:
+\begin{itemize}
+    \item \textbf{Costo:} $c_k$ o $c_{ij}$, costo per unità di bene che attraversa l'arco.
+    \item \textbf{Capacità inferiore:} $l_k$ o $l_{ij}$, minimo numero di unità trasportabili.
+    \item\textbf{Capacità superiore:} $u_k$ o $u_{ij}$, massimo numero di unità trasportabili.
+\end{itemize}
+Spesso $l_k = 0$ e viene considerata solo la capacità superiore.\\
+Un vettore $x = [x_{ij}]_{(i,j) \in A}$ rappresenta un \textbf{flusso su G} se soddisfa i vincoli di conservazione del flusso:
+\[
+\sum_{(j,i) \in BS(i)}^{} x_{ji} - \sum_{(i,j) \in FS(i)}^{} x_{ij} = b_i, \forall i \in N
+\]
+Con:
+\[
+BS = \text{archi entranti in i}
+\]
+\[
+FS = \text{archi uscenti da i}
+\]
+Un \textbf{flusso ammissibile} rispetta i vincoli di ammissibilità:
+\[
+l_{ij} \leq x_{ij} \leq u_{ij}, (i,j) \in A
+\]
+Ad ogni flusso $x$ è associato un \textbf{costo totale}:
+\[
+c(x) = \sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij}
+\]
 \subsection{Trasformazioni equivalenti}
 Alcuni problemi possono essere risolti riconducendoli a problemi di Flusso di Costo Minimo (MCF).
 
-\subsection{Il problema del cammino di costo minimo}
-
+\subsection{schedulazione della produzione (esempio)}
+\subsubsection{Descrizione}
+L'industria dolciaria PereCani, nota produttrice di panettoni, deve decidere come utilizzare al meglio, 
+nel corso dell'anno, la sua linea di produzione per tali dolci. La PereCani conosce una stima $b_i,i = 1,\ldots,12$, del numero di panettoni che venderà ogni mese dell'anno.
+Il costo unitario di produzione e la massima quantità di panettoni producibile in un mese variano anch'esse, a secibda du akcybu fattori quali il prezzo delle materie prime e la disponibilità
+di personale impegnato anche su altre linee di produzione, e anche di esse si hanno le stime, rispettivamente $c_i$ e $u_i$ con $i = 1,\ldots,12$. I panettoni prodotti al mese $i$ possono essere venduti immediatamente,
+oppure immagazzinati per essere poi venduti nei mesi successivi: il magazzino ha una capacità massima di $U$, ed un costo unitario di immagazzinamento pari a $C$. All'inizio il magazzino contiene $b_0$ panettoni, e si desidera che alla fine dell'anno ne contenga $b_13$.
+\subsubsection{Inizializzazione}
+Variabili:
+\begin{itemize}
+    \item $x_i$: quantità di panettoni prodotti nel mese $i$
+    \item $s_i$: quantità di panettoni immagazzinati alla fine del mese $i$
+\end{itemize}
+Funzione obiettivo, minimizzare il costo totale di produzione e magazzino:
+\[
+minZ = \sum_{i = 1}^{12} (c_i \cdot x_i + C \cdot s_i)
+\]
+Vincoli:
+\[
+\begin{cases}
+    i = 1,\ldots,12\\
+    s_{i-1} + x_i - s_i = b_i, \text{Bilancio del magazzino}\\
+    0 \leq x_i \leq u_i, \text{capacità di produzione}\\
+    0 \leq s_i \leq U, \text{capacità del magazzino}
+\end{cases}
+\]
+Un problema del genere può essere definito come un problema di \textbf{flusso di costo minimo}:
+\[
+minC(x) | Ex = b,l \leq x \leq u
+\]
+Dove:
+\[
+Ex = b: \text{ vincoli di conservazione del flusso in forma vettoriale}
+\]
+\[
+l \leq x \leq u: \text{ vincoli di capacità degli archi}
+\]
+Ecco come si imposta questo problema, definito anche come \textbf{Lot Sizing}, trasformandolo in un problema tale:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/LotSizing.png}
+    \caption{Lot Sizing Problem}
+    \label{fig:lotsizing}
+\end{figure}
+\begin{itemize}
+    \item Gli archi dal nodo fittizio 0 agli altri nodi rappresentano la produzione.
+    \item Gli archi di tipo $(i,i+1)$ rappresentano il magazzino.
+    \item Al nodo 1 sono sottratti i panettoni gia presenti in magazzino.
+    \item Al nodo 12 sono sottratti i panettoni che dovranno essere lasciati in magazzino.
+    \item Il bilancio al nodo 0 è la produzione totale di panettoni durante l'anno.
+\end{itemize}
+\subsection{Trasformazioni equivalenti}
+Molti problemi in realtà possono essere definiti nel solito modo, ovvero come \textbf{problemi di flusso di costo minimo (MCF)}.\\
+Su tali problemi si possono fare alcune assunzioni che ne semplificano la descrizione e l'analisi.\\
+Se l'istanza originale non li rispetta, si possono effettuare delle trasformazioni equivalenti.\\
+Iniziamo con il vedere le assunzioni:
+\begin{itemize}
+    \item Singola sorgente - singolo pozzo
+    \item Capacità inferiori nulle
+    \item Nessuna capacità associata ai nodi
+    \item Nessun eccesso di domanda o di offerta
+\end{itemize}
+\subsubsection{Sorgenti e pozzi multipli}
+Per trasformare un'istanza dall'avere sorgenti e pozzi multipli ad un problema che ha una sola sorgente e un solo pozzo si introduce una \textbf{rete ampliata} $G^I = (N^I,A^I)$.\\
+\paragraph{Nodi fittizi}: $N^I = N \cup \{s,t\}$ con:
+\begin{itemize}
+    \item \textbf{s:} super sorgente con offerta $b_s = \sum_{j \in O}^{} b_j$
+    \item \textbf{t:} super pozzo con domanda $b_t = \sum_{i \in D}^{} b_i$
+    \item Tutti gli altri nodi sono di trasferimento
+\end{itemize}
+\paragraph{Archi fittizi}:
+\begin{itemize}
+    \item $(s,j)$ per $j \in O$, con capacità $u_{sj} = -b_j$ e costo 0
+    \item $(i,t)$ per $i \in D$, con capacità $u_{it} = b_i$ e costo 0 
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/esempioSorgentiPozzi.png}
+    \caption{Esempio di trasformazione: sorgenti e pozzi}
+    \label{fig:sorgentiPozzi}
+\end{figure}
 \end{document}
 
 
