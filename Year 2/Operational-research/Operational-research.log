@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  18 OCT 2026 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.16)  18 OCT 2026 23:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,7 +681,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-<images/Diagram.png, id=383, 1780.6525pt x 890.32625pt>
+<images/Diagram.png, id=388, 1780.6525pt x 890.32625pt>
 File: images/Diagram.png Graphic file (type png)
 <use images/Diagram.png>
 Package pdftex.def Info: images/Diagram.png  used on input line 53.
@@ -822,7 +822,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-<images/boats.png, id=451, 196.23312pt x 209.78375pt>
+<images/boats.png, id=456, 196.23312pt x 209.78375pt>
 File: images/boats.png Graphic file (type png)
 <use images/boats.png>
 Package pdftex.def Info: images/boats.png  used on input line 514.
@@ -838,7 +838,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16
 
 ]
-<images/boatTable.png, id=457, 280.04625pt x 221.82875pt>
+<images/boatTable.png, id=462, 280.04625pt x 221.82875pt>
 File: images/boatTable.png Graphic file (type png)
 <use images/boatTable.png>
 Package pdftex.def Info: images/boatTable.png  used on input line 521.
@@ -857,7 +857,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.525 \subsection{Problema di configurazione}
                                               <./images/boats.png>]
-<images/tabellaRistorante.png, id=464, 693.792pt x 169.8345pt>
+<images/tabellaRistorante.png, id=469, 693.792pt x 169.8345pt>
 File: images/tabellaRistorante.png Graphic file (type png)
 <use images/tabellaRistorante.png>
 Package pdftex.def Info: images/tabellaRistorante.png  used on input line 530.
@@ -867,7 +867,7 @@ Overfull \hbox (15.20795pt too wide) in paragraph at lines 527--533
 \OT1/cmr/m/n/12 Tommaso ha un ris-torante e va al mer-cato per com-prare dal ma-cel-laio e dall'ortofruttivendolo. 
  []
 
-<images/tabellaPiatti.png, id=465, 385.44pt x 205.9695pt>
+<images/tabellaPiatti.png, id=470, 385.44pt x 205.9695pt>
 File: images/tabellaPiatti.png Graphic file (type png)
 <use images/tabellaPiatti.png>
 Package pdftex.def Info: images/tabellaPiatti.png  used on input line 540.
@@ -907,7 +907,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has
                                                   \__shipout_drop_firstpage_...
 l.594 \begin{itemize}
                       <./images/tabellaPiatti.png>]
-<images/instradamento.png, id=482, 684.05562pt x 254.9525pt>
+<images/instradamento.png, id=487, 684.05562pt x 254.9525pt>
 File: images/instradamento.png Graphic file (type png)
 <use images/instradamento.png>
 Package pdftex.def Info: images/instradamento.png  used on input line 611.
@@ -934,7 +934,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-<images/graph.png, id=493, 215.00325pt x 261.97874pt>
+<images/graph.png, id=498, 215.00325pt x 261.97874pt>
 File: images/graph.png Graphic file (type png)
 <use images/graph.png>
 Package pdftex.def Info: images/graph.png  used on input line 679.
@@ -1073,7 +1073,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34]
-<images/LotSizing.png, id=551, 347.04657pt x 172.39406pt>
+<images/LotSizing.png, id=556, 347.04657pt x 172.39406pt>
 File: images/LotSizing.png Graphic file (type png)
 <use images/LotSizing.png>
 Package pdftex.def Info: images/LotSizing.png  used on input line 1136.
@@ -1096,7 +1096,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has
                                                   \__shipout_drop_firstpage_...
 l.1162     \item \textbf
                         {s:} super sorgente con offerta $b_s = \sum_{j \in O... <./images/LotSizing.png>]
-<images/esempioSorgentiPozzi.png, id=558, 616.55344pt x 201.00093pt>
+<images/esempioSorgentiPozzi.png, id=563, 616.55344pt x 201.00093pt>
 File: images/esempioSorgentiPozzi.png Graphic file (type png)
 <use images/esempioSorgentiPozzi.png>
 Package pdftex.def Info: images/esempioSorgentiPozzi.png  used on input line 1173.
@@ -1113,27 +1113,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1177 \end{document}
+l.1181 \end{document}
                       <./images/esempioSorgentiPozzi.png>] (Operational-research.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Operational-research.out' has not changed.
-(rerunfilecheck)             Checksum: 9E598A70D83CD9D96C1768E5FFD4A097;14270.
+(rerunfilecheck)             Checksum: DA81F2A5499AD963B3BBA71A25741767;14482.
  ) 
 Here is how much of TeX's memory you used:
- 32912 strings out of 467867
- 759732 string characters out of 5418334
+ 32914 strings out of 467867
+ 759764 string characters out of 5418334
  1271880 words of memory out of 5000000
- 61178 multiletter control sequences out of 15000+600000
+ 61179 multiletter control sequences out of 15000+600000
  637168 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,118p,837b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Perna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Perna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Operational-research.pdf (36 pages, 1483869 bytes).
+Output written on Operational-research.pdf (36 pages, 1484835 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 626 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
+ 634 words of extra memory for PDF output out of 10000 (max. 10000000)
 
