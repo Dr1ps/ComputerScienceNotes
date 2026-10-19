@@ -530,22 +530,38 @@ Semplice modulo che:
 \end{figure}
 Un sommatore a più bit è costruito nel solito modo.
 \subsection{Comparatore}
-Modulo che prende due numeri in input $(a,b)$ e restituise 3 output:
-\begin{itemize}
-    \item $G = \begin{cases}
-        1, a \> b\\
-        0, \text{ altrimenti}
-    \end{cases}$
-    \item $E = \begin{cases}
-        1, a == b\\
-        0, \text{ altrimenti}
-    \end{cases}$
-    \item $L = \begin{cases}
-        1, a \le b\\
-        0, \text{ altrimenti}
-    \end{cases}$
-\end{itemize}
-\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri, però non può scendere sotto $3\Delta t$.
+Modulo che prende due numeri in input $(a,b)$ e restituise 1 output:
+\[
+out = \begin{cases}
+    1, a == b\\
+    0, a\ != b
+\end{cases}
+\]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        A & B & Out \\
+        \hline
+        0 & 0 & 1\\
+        0 & 1 & 0\\
+        1 & 0 & 0\\
+        1 & 1 & 1\\
+        \hline
+    \end{tabular}
+    \caption{Tabella di verità del comparatore}
+    \label{tab:full_adder}
+\end{table}
+\textbf{Formula (con XNOR):}
+\[
+A \odot B
+\]
+Si trasforma in:
+\[
+(A \cdot B) + (\overline{A} + \overline{B})
+\]
+\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri, perche si mettono tanti di questi in parallelo collegati finalmente da un AND con $N$ porte.
+
 \subsection{Codificatore}
 Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
 \subsection{Moduli per algebra booleana}
@@ -601,7 +617,8 @@ Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei se
         \label{fig:xnor}
     \end{figure}
 \end{itemize}
-Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.
+Tutti prendono due o più input in entrata e restituiscono un output ad eccezione del NOT, che prende un solo input.\\
+Inoltre, tutti questi (tranne il NOT che per convenzione non viene considerato) hanno un ritardo di $1\Delta t$.
 \subsection{Full Adder}
 Sommatore speciale che:
 \begin{itemize}
@@ -654,6 +671,7 @@ X\cdot C_{in}
 +
 Y\cdot C_{in}
 \]
+Un Full Adder a $N$ consiste in più FA messi in sequenza che sommano a coppie di bit alla volta e portano il riporto in uscita al riporto in ingresso del prossimo FA.
 \paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri.
 \subsubsection{Full Adder in complemento a 2}
 Un Full Adder può sommare numeri in complemento a 2 (negativi) con queste particolari modifiche:
@@ -701,7 +719,7 @@ Y =
 +
 S\cdot I_1
 \]
-In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.\\
+In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.
 \paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t \cdot \log_{8} N$ se usiamo MUX con ingressi multipli.
 \subsection{Demultiplexer}
 Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
@@ -736,7 +754,7 @@ C\cdot\overline{S}
 z_0 =
 C\cdot S
 \]
-Impiega un tempo di $\Delta t$ (fa solo AND).\\
+\paragraph{Tempo d'esecuzione:} $\Delta t$ (fa solo AND).\\
 Anche questo, come il multiplexer, può avere più porte in uscita, ma prevedono appunto l'espansione dell'input di controllo.
 
 \section{Memoria}

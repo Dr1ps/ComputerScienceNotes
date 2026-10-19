@@ -32,16 +32,17 @@
 \contentsline {section}{\numberline {6}Moduli}{18}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Sommatore}{18}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Comparatore}{18}{subsection.6.2}%
-\contentsline {paragraph}{Tempo d'esecuzione:}{18}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Codificatore}{18}{subsection.6.3}%
+\contentsline {paragraph}{Tempo d'esecuzione:}{18}{table.1}%
+\contentsline {subsection}{\numberline {6.3}Codificatore}{19}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Moduli per algebra booleana}{19}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Full Adder}{20}{subsection.6.5}%
-\contentsline {paragraph}{Tempo d'esecuzione:}{21}{table.1}%
+\contentsline {paragraph}{Tempo d'esecuzione:}{21}{table.2}%
 \contentsline {subsubsection}{\numberline {6.5.1}Full Adder in complemento a 2}{21}{subsubsection.6.5.1}%
 \contentsline {paragraph}{Tempo d'esecuzione:}{21}{figure.12}%
-\contentsline {subsection}{\numberline {6.6}Multiplexer}{21}{subsection.6.6}%
-\contentsline {paragraph}{Tempo d'esecuzione:}{22}{table.2}%
+\contentsline {subsection}{\numberline {6.6}Multiplexer}{22}{subsection.6.6}%
+\contentsline {paragraph}{Tempo d'esecuzione:}{22}{table.3}%
 \contentsline {subsection}{\numberline {6.7}Demultiplexer}{22}{subsection.6.7}%
+\contentsline {paragraph}{Tempo d'esecuzione:}{23}{table.4}%
 \contentsline {section}{\numberline {7}Memoria}{24}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Registri}{24}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}SR Latch}{24}{subsection.7.2}%
