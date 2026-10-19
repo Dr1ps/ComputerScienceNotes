@@ -8,46 +8,9 @@
 \usepackage{fancyhdr}
 \usepackage{listing}
 \usepackage{listings}
+\usepackage{titling}
 \usepackage{float}
-\usepackage{circuitikz}
 \usepackage{titlesec}
-
-\definecolor{codebg}{RGB}{248,248,248}
-\definecolor{codeborder}{RGB}{210,210,210}
-\definecolor{codecomment}{RGB}{90,120,90}
-\definecolor{codekeyword}{RGB}{0,70,140}
-\definecolor{codestring}{RGB}{160,80,20}
-
-\tikzset{
-    sr/.style={
-        draw,
-        rectangle,
-        minimum width=2.5cm,
-        minimum height=2cm,
-        align=center
-    }
-}
-
-\lstset{
-backgroundcolor=\color{codebg},
-basicstyle=\ttfamily\small,
-breaklines=true,
-frame=single,
-rulecolor=\color{codeborder},
-framerule=0.5pt,
-numbers=left,
-numberstyle=\tiny\color{gray},
-numbersep=8pt,
-xleftmargin=2em,
-framexleftmargin=1.5em,
-keywordstyle=\color{codekeyword}\bfseries,
-commentstyle=\color{codecomment}\itshape,
-stringstyle=\color{codestring},
-showstringspaces=false,
-tabsize=4,
-keepspaces=true,
-columns=fullflexible
-}
 
 \titleformat{\section}
   {\normalfont\Large\bfseries\centering}  % Format: font size, bold, centered
@@ -56,11 +19,11 @@ columns=fullflexible
 \pgfplotsset{compat=1.18}
 \fancyhead{}
 \fancyfoot{}
-\title{Architetture e Sistemi Operativi}
+\title{Architetture e sistemi operativi}
 \author{}
 \date{}
 \fancyhead[L]{Gabriele Perna}          % Left side
-\fancyhead[C]{Architetture e Sistemi Operativi}     % Center
+\fancyhead[C]{Architetture e sistemi operativi}     % Center
 \fancyhead[R]{2026/2027}             % Right side
 \fancyfoot[C]{\thepage}           % Page number in the center of footer
 \let\oldsection\section
@@ -582,6 +545,7 @@ Modulo che prende due numeri in input $(a,b)$ e restituise 3 output:
         0, \text{ altrimenti}
     \end{cases}$
 \end{itemize}
+\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri, però non può scendere sotto $3\Delta t$.
 \subsection{Codificatore}
 Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
 \subsection{Moduli per algebra booleana}
@@ -690,6 +654,7 @@ X\cdot C_{in}
 +
 Y\cdot C_{in}
 \]
+\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri.
 \subsubsection{Full Adder in complemento a 2}
 Un Full Adder può sommare numeri in complemento a 2 (negativi) con queste particolari modifiche:
 \begin{itemize}
@@ -702,6 +667,7 @@ Un Full Adder può sommare numeri in complemento a 2 (negativi) con queste parti
         \caption{Full Adder (C2)}
         \label{fig:fac2}
     \end{figure}
+\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N + \Delta t$ con $N =$ numero di bit dei numeri.
 \subsection{Multiplexer}
 Il \textbf{multiplexer} è un modulo molto importante che sceglie uno tra due input in base ad un input di controllo che indica la porta dell'input da restituire.
 \begin{figure}[H]
@@ -735,7 +701,8 @@ Y =
 +
 S\cdot I_1
 \]
-In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.
+In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.\\
+\paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t \cdot \log_{8} N$ se usiamo MUX con ingressi multipli.
 \subsection{Demultiplexer}
 Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
 Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo} in input e azzera la porta in uscita non utilizzata.\\

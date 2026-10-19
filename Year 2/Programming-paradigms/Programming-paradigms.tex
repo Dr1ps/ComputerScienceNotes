@@ -1169,6 +1169,67 @@ Vediamo adesso delle operazioni sulle liste:
   (*Ordine inverso*)
   List.rev lista3 ;;
 \end{lstlisting}
+\subsubsection{Funzioni ricorsive su liste}
+\begin{itemize}
+  \item [] -> caso base
+  \item x::lis' -> caso induttivo
+\end{itemize}
+\paragraph{Length}:
+\begin{lstlisting}[language=OCaml]
+  let rec length lis =
+    match lis with
+    | [] -> 0
+    | x::lis' -> 1 + length lis' ;;
+\end{lstlisting}
+\paragraph{Contains:}
+\begin{lstlisting}
+  let rec contains x lis = 
+    match lis with
+    | [] -> false
+    | x::lis' -> true
+    | y::lis' -> contains x lis' ;;
+\end{lstlisting}
+\paragraph{Contains:}
+\begin{lstlisting}
+  let rec append l1 l2 = 
+    match l1 with
+    | [] -> l2
+    | x::l1' -> x :: (append l1' l2) ;;
+\end{lstlisting}
+\paragraph{Inversione:}
+\begin{lstlisting}
+  let rec invert lis = 
+    match lis with
+    | [] -> lis
+    | x::lis' ->  (invert lis') @ [x] ;;
+\end{lstlisting}
+\subsubsection{Funzioni higher-order su liste}
+Si possono utilizzare le funzioni higher-order anche sulle liste:\\
+Vediamo un esempio e trasformiamolo con funzioni higher-order. Vediamo prima la forma iniziale:
+\begin{lstlisting}[language=OCaml] 
+  let rec contiene_zero lis = 
+    match lis with
+    | [] -> false
+    | x::lis' -> if x=0 then true
+                 else contiene_zero lis' ;;
+\end{lstlisting}
+Generalizziamola e rendiamola una funzione higher-order:
+\begin{lstlisting}[language=OCaml] 
+  let rec exist p lis = 
+    match lis with
+    | [] -> false
+    | x::lis' -> if p x then true
+                 else exist p lis' ;;
+\end{lstlisting}
+Si immette quindi il controllo come parametro.\\
+Vediamo adesso un esempio di applicazione \textbf{forall}:
+\begin{lstlisting}[language=OCaml] 
+  let rec forall p lis = 
+    match lis with
+    | [] -> false
+    | x::lis' -> if p x then forall p lis'
+                 else false ;;
+\end{lstlisting}
 \subsection{Pattern matching}
 Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
 \begin{lstlisting}
@@ -1187,6 +1248,7 @@ Una wildcard è come un placeholder e si indica con "\_"
       | 1 -> 1
       | _ -> fibonacci (n-1) + fibonacci (n-2) ;;
 \end{lstlisting}
+
 In questo caso è stato usato per il caso default del match.
 \subsection{Encoding da lambda calcolo a OCaml}
 Ecco le regole sintattiche di trasformazione:
@@ -1200,6 +1262,8 @@ Ecco le regole sintattiche di trasformazione:
 \end{aligned}
 \]
 In pratica è molto semplice, queste trasformazioni lasciano tutto inalterato e sostituiscono la denotazione con $\lambda$.
+
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Sottolineare le variabili libere nelle seguenti espressioni:
