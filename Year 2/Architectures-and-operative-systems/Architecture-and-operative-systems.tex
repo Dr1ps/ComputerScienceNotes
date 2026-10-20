@@ -560,7 +560,7 @@ Si trasforma in:
 \[
 (A \cdot B) + (\overline{A} + \overline{B})
 \]
-\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri, perche si mettono tanti di questi in parallelo collegati finalmente da un AND con $N$ porte.
+\paragraph{Tempo d'esecuzione:} $2\Delta t + \log_8 N$ con $N =$ numero di bit dei numeri, perche si mettono tanti di questi in parallelo collegati finalmente da un AND con $N$ porte.
 
 \subsection{Codificatore}
 Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
@@ -720,7 +720,7 @@ Y =
 S\cdot I_1
 \]
 In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.
-\paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t \cdot \log_{8} N$ se usiamo MUX con ingressi multipli.
+\paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t + \log_{8} N$ se usiamo MUX con ingressi multipli.
 \subsection{Demultiplexer}
 Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
 Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo} in input e azzera la porta in uscita non utilizzata.\\

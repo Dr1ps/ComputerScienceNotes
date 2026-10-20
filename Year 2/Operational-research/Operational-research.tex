@@ -1090,7 +1090,6 @@ Ad ogni flusso $x$ è associato un \textbf{costo totale}:
 \[
 c(x) = \sum_{(i,j) \in A}^{} c_{ij} \cdot x_{ij}
 \]
-\subsection{Trasformazioni equivalenti}
 Alcuni problemi possono essere risolti riconducendoli a problemi di Flusso di Costo Minimo (MCF).
 
 \subsection{schedulazione della produzione (esempio)}
@@ -1174,9 +1173,80 @@ Per trasformare un'istanza dall'avere sorgenti e pozzi multipli ad un problema c
     \caption{Esempio di trasformazione: sorgenti e pozzi}
     \label{fig:sorgentiPozzi}
 \end{figure}
-\subsection{Capacità inferiore non nulle}
+\subsubsection{Capacità inferiore non nulle}
 Se un arco $(i,j)$ ha capacità minima $l_{ij} \ne 0$, il flusso $x_{ij}$ deve soddisfare $x_{ij} \geq l_{ij}$.\\
 Per eliminare $l_{ij}$ si procede cosi:
+\paragraph{Denominazione del nuovo flusso}:
+\[
+x_{ij}^I = x_{ij} - l_{ij}
+\]
+\paragraph{Aggiornamento dei parametri}:
+\[
+b_i^I = b_i + l_{ij}
+\]
+\[
+b_j^I = b_i - l_{ij}
+\]
+\[
+u_{ij}^I = u_{ij} - l_{ij}
+\]
+Inoltre, la funzione obiettivo viene integrata con un costo fisso:
+\[
+obj + c_{ij} \cdot l_{ij}
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/inferiorinonnulle.png}
+    \caption{Esempio di trasformazione: capacità inferiori}
+    \label{fig:capacitainferiorinonnulle}
+\end{figure}
+\subsubsection{Limiti di capacità sui nodi}
+In molti casi un nodo $i$ può avere \textbf{capacità massima} e \textbf{minima}. Questi non sono gestibili dal modello del flusso di costo minimo e vanno eliminati.\\
+Si eliminano introducendo due nodi e un arco fittizio:
+\begin{itemize}
+    \item Il nodo $i$ viene sostituito con due nodi $i^I$ di ingresso e $i^{II}$ di uscita.
+    \item Gli archi entranti in $i$ diventano $(j,i^I)$.
+    \item Gli archi uscenti da $i$ diventano $(i^{II},j)$.
+    \item Si aggiunge un arco fittizio $(i^I,i^{II})$ con:
+    \subitem costo $c_{i^I i^{II}} = 0$.
+    \subitem capacità $[l_i,u_i]$.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/rimozionelimiti.png}
+    \caption{Esempio di trasformazione: rimozione limiti di capacità}
+    \label{fig:rimozionelimiti}
+\end{figure}
+\subsubsection{Eccesso di domanda o offerta}
+Spesso la quantità disponibile nei nodi $i \in O$ rappresenta una \textbf{massima offerta possibile} che non necessariamente va immessa tutta nella rete.\\
+Il vincolo di conservazione del flusso diventa quindi una disuguaglianza:
+\[
+\sum_{(j,i) \in BS(i)}^{} x_{ji} - \sum_{(i,j) \in FS(i)}^{} x_{ij} \geq b_i, i \in O
+\]
+dove $b_i < 0$ rappresenta l'offerta massima del nodo $i$.\\
+Per risolvere, si costruisce una rete ampliata $G^I = (N^I,A^I)$ con una sorgente fittizia:
+\[
+N^I = N \cup \{s\}
+\]
+Nuovi bilanci:
+\[
+b_s = - \sum_{j \in D}^{} b_j
+\]
+\[
+b_i = 0, i \in O
+\]
+Nuovi archi:
+\[
+(s,i),i \in O
+\]
+con costo $c_{si} = 0$ e capacita $u_si = -b_i$.\\
+Per la domanda la soluzione è analoga ma con un pozzo fittizio.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/eccesso.png}
+    \caption{Esempio di trasformazione: eccesso di domanda}
+    \label{fig:eccesso}
+\end{figure}
 
 \end{document}
 

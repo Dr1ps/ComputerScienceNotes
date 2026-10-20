@@ -1151,54 +1151,58 @@ Volendo però possiamo specificarlo manualmente se vogliamo:
 \end{lstlisting}
 \subsection{Liste}
 Vediamo come crearne una:
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   let lista = [] ;; (*Lista vuota*)
   let lista2 = [1,2,3] ;;
 \end{lstlisting}
 Vediamo adesso delle operazioni sulle liste:
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   let lista1 = ["hi"] ;;
   let lista2= ["ciao"] ;;
+
   (*Concatenazione liste*)
   let lista3 = lista1 @ lista2 ;;
+
   (*Ritorno della lunghezza*)
   List.length lista3 ;;
+
   (*Ritorno della testa e della coda*)
   List.hd lista3 ;;
   List.tl lista3 ;;
+
   (*Ordine inverso*)
   List.rev lista3 ;;
 \end{lstlisting}
 \subsubsection{Funzioni ricorsive su liste}
 \begin{itemize}
-  \item [] -> caso base
-  \item x::lis' -> caso induttivo
+  \item $[]$ $->$ caso base
+  \item $x::lis'$ $->$ caso induttivo
 \end{itemize}
-\paragraph{Length}:
+\textbf{Length:}
 \begin{lstlisting}[language=OCaml]
   let rec length lis =
     match lis with
     | [] -> 0
     | x::lis' -> 1 + length lis' ;;
 \end{lstlisting}
-\paragraph{Contains:}
-\begin{lstlisting}
+\textbf{Contains:}
+\begin{lstlisting}[language=OCaml]
   let rec contains x lis = 
     match lis with
     | [] -> false
     | x::lis' -> true
     | y::lis' -> contains x lis' ;;
 \end{lstlisting}
-\paragraph{Contains:}
-\begin{lstlisting}
+\textbf{Append:}
+\begin{lstlisting}[language=OCaml]
   let rec append l1 l2 = 
     match l1 with
     | [] -> l2
     | x::l1' -> x :: (append l1' l2) ;;
 \end{lstlisting}
-\paragraph{Inversione:}
-\begin{lstlisting}
-  let rec invert lis = 
+\textbf{Inversione:}
+\begin{lstlisting}[language=OCaml]
+  let rec rev lis = 
     match lis with
     | [] -> lis
     | x::lis' ->  (invert lis') @ [x] ;;
@@ -1230,6 +1234,37 @@ Vediamo adesso un esempio di applicazione \textbf{forall}:
     | x::lis' -> if p x then forall p lis'
                  else false ;;
 \end{lstlisting}
+\subsubsection{Accumulatore}
+Una funzione ricorsiva sulle liste può appoggiarsi su una funzione secondaria, chiamata \textbf{accumulatore} per costruire man mano il risultato:
+\begin{lstlisting}[language=OCaml]
+  let rec rev lis =
+    let rec rev_accum lis1 lis2 =
+      match lis1 with
+      | [] -> lis2
+      | x::lis1' ->  rev_accum lis1' (x::lis2) (*Si mette x su lis2, dopo rev_accum lis1*);;
+    in
+      rev_accum lis [] ;;
+\end{lstlisting}
+\subsubsection{Filter}
+Filtra gli elementi di una lista secondo una condizione:
+\begin{lstlisting}
+  let nums = [1, 2 ,3, 4, 5] ;;
+  let evens = List.filter (fun x -> x mod 2 = 0) nums ;;
+\end{lstlisting}
+\subsubsection{Map}
+Applica una funzione ad ogni elemento della lista:
+\begin{lstlisting}[language=OCaml]
+  let nums = [1, 2 ,3, 4, 5] ;;
+  let result = List.map (fun x -> x * 2) nums ;;
+\end{lstlisting}
+\subsubsection{Reduce (fold)}
+Permette di convergere piu valori in un valore solo evitando stack overflow:
+\begin{lstlisting}[language=OCaml]
+  let nums [1, 2, 3, 4, 5] ;;
+  let sum = List.fold_left (fun acc x -> acc + x) 0 nums ;;
+\end{lstlisting}
+"acc" sta per accumulator, somma tutti i numeri partendo da sinistra. Lo "$0$" che si vede è il \textbf{valore iniziale} da cui partire.\\
+Ovviamente esiste anche \textbf{fold\_right} oltre che \textbf{fold\_left}.
 \subsection{Pattern matching}
 Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
 \begin{lstlisting}
@@ -1254,10 +1289,10 @@ In questo caso è stato usato per il caso default del match.
 Ecco le regole sintattiche di trasformazione:
 \[
 \begin{aligned}
-[[n]] &= n
-[[x]] &= x
-[[T^I op T^{II}]] &= [[T^I]] op [[T^{II}]]
-[[\lambda x.T^I]] &= fun\ x\ ->\ [[T^I]]
+[[n]] &= n\\
+[[x]] &= x\\
+[[T^I op T^{II}]] &= [[T^I]] op [[T^{II}]]\\
+[[\lambda x.T^I]] &= fun\ x\ ->\ [[T^I]]\\
 [[T^I T^{II}]] &= [[T^I]] [[T^{II}]]
 \end{aligned}
 \]

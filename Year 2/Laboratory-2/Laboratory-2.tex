@@ -893,8 +893,222 @@ Una volta che qualcosa non ci serve più, bisogna eliminarlo.\\
     \item Liberare memoria allocata in modo statico.
     \item Utilizzare un puntatore dopo aver liberato la memoria (può essere stata anche un altrà entità attraverso un puntatore secondario).
 \end{itemize}
+\subsubsection{Gestione di tipi complessi}
+Vediamo un puntatore ad una struct:
+\begin{lstlisting}[language=C]
+    typedef struct {
+        int elements[N];
+        int n;
+    } Stack;
+    Stack* s = (Stack*)malloc(sizeof(Stack));
+    /*Per richiamare un campo si fa cosi:*/
+    s -> n;
+\end{lstlisting}
+I puntatori possono essere usati anche per \textbf{liste concatenate}:
+\begin{lstlisting}[language=C]
+    /*Definizione nodo*/
+    typedef struct {
+        int val;
+        /*Variabile di tipo puntatore a struct n*/
+        struct n * next;
+    } Node;
+    Node* head = NULL; /*Lista vuota*/
+    
+    Node elem;
+    elem.val = 10;
+    elem.next = NULL;
+
+    head = &elem; /*Lista con 1 elemento*/
+
+    Node elem1;
+    elem1.val = 20;
+    elem1.next = NULL; 
+    
+    elem.next = &elem1; /*Aggiungo in coda*/
+
+    Node elem2;
+    elem2.val = 5;
+    elem2.next = head; /*Aggiungo in testa*/
+    head = &elem2;
+
+    /*Iterazione su lista*/
+    Node* l=head;
+    while(l!=NULL) {
+        printf("%d ", l->val);
+        l = l -> next;
+    }
+\end{lstlisting}
+I puntatori addirittura permettono di gestire le \textbf{funzioni} come se fossero variabili:
+\begin{lstlisting}[language=C]
+    int sum(int,int);
+    int mul(int,int);
+
+    int main() {
+        /*f = un puntatore ad una funzione che prende
+        due variabili intere e restituisce un intero*/
+        int (*f)(int,int);
+
+        f = sum;
+        printf("3+6=%d\n",(*f)(3,6));
+
+        f = mul;
+        printf("3*6=%d\n",(*f)(3,6));
+    }
+
+    int sum (int x, int y) {
+        return x + y;
+    }
+
+    int mul (int x, int y) {
+        return x * y;
+    }
+\end{lstlisting}
+\subsubsection{Puntatore generico}
+Per realizzare un puntatore che accetta un qualsiasi tipo, si fa cosi:
+\begin{lstlisting}[language=C]
+    void* p;
+\end{lstlisting}
+
+\subsection{Stringhe}
+C non ha un tipo specifico per le stringhe, si realizzano con array di \textbf{char}:
+\begin{lstlisting}[language=C]
+    char stringa[] = "hello";
+\end{lstlisting}
+Per modificare o accedere ad un carattere, si tratta la stringa come l'array che è:
+\begin{lstlisting}[language=C]
+    stringa[2] = 'L';
+\end{lstlisting}
+\subsubsection{Copia di una stringa}
+\begin{lstlisting}[language=C]
+    char s1[] = "ciao";
+    char s2[5];
+
+    int i=0;
+    while(s1[i]!='\0') {
+        s2[i] = s1[i];
+        i++;
+    }
+    s2[i] = '\0';
+\end{lstlisting}
+\subsubsection{Operazioni sulle stringe}
+La libreria \textbf{string.h} offre:
+\begin{lstlisting}[language=C]
+    /*Lunghezza della stringa*/
+    strlen(s);
+
+    /*Copia src stringa in dest, restituisce dest*/
+    strcpy(dest, src);
+
+    /*Confronto lessicografico, restituisce un valore:
+    < 0 se str1 < str2,
+    0 se str1 == str2,
+    > 0 se str1 > str2 */
+    strcmp(str1, str2);
+
+    /*Concatena una copia di src a dest*/
+    strcat(dest, src)
+
+    /*Tokenizza una stringa, delimitatore = delim*/
+    strtok(str, delim)
+\end{lstlisting}
+Vediamo in particolare un esempio di \textbf{strtok}:
+\begin{lstlisting}[language=C]
+    char s[100];
+    char* tok;
+
+    /*Leggi la stringa fino a quando non vai a capo*/
+    scanf("%[\n]",s);
+
+    /*Suddivide la stringa in due parti, prima e dopo la prima virgola (primo elemento)*/
+    tok = strtok(s,",");
+
+    /*Stampa il primo elemento*/
+    printf("%s\n",tok);
+
+    /*Iterazione su tutti gli elementi separati da delim*/
+    /*strok(NULL,",") permette di prendere il prossimo elemento*/
+    /*In particolare, continua dall'ultimo stato dell'ultima stringa analizzata, ovvero s*/
+    while((tok = strtok(NULL,","))!=NULL) {
+        printf("%s\n",tok);
+    }
 
 
+\end{lstlisting}
+\subsubsection{Operazioni su caratteri}
+La libreria \textbf{ctype.h} offre:
+\begin{lstlisting}[language=C]
+    /*Controlla se il carattere e' una lettera*/
+    isalpha(c);
+
+    /*Controlla se la lettera e' maiuscola*/
+    isupper(c);
+
+    /*Controlla se la lettera e' minuscola*/
+    islower(c);
+
+    /*Controlla se il carattere e' numerico*/
+    isdigit(c);
+
+    /*Controlla se il carattere e' una cifra o un numero (alfanumerico)*/
+    isalnum(c);
+
+    /*Controlla se il caratter e' uno spazio*/
+    isspace(c);
+
+    /*Converte il carattere in maiuscolo se possibile, altrimenti lo ritorna invariato*/
+    toupper(c);
+
+    /*Converte il carattere in minuscolo se possibile, altrimenti lo ritorna invariato*/
+    tolower(c);
+\end{lstlisting}
+
+\subsection{Debgging}
+Un primo approccio al debugging consiste nella stampa dei valori delle variabili.
+stdout è \textbf{buffered}: la stringa non viene necessariamente mostrata subito, ma può essere accumulata nel buffer.\\\\
+Il metodo più classico è aggiungere stampe di variabili in punti cruciali del programma in modo da verificare l'esattezza dei valori.\\\\
+In alternativa, is può usare lo stream \textbf{stderr} (standard error).\\
+La funzione seguente permette di scegliere esplicitamente lo stream sul quale scrivere:
+\begin{lstlisting}[language=C]
+    fprintf(stderr, "Messaggio");
+\end{lstlisting}
+Possiamo scegliere anche un file se vogliamo come stream alternativo.
+\subsubsection{Assert}
+In fase di sviluppo possiamo utilizzare la \textbf{macro assert} per assicurarci che lo stato del programma sia corretto.\\
+\textbf{Libreria:} assert.h\\
+Assert riceve un'espressione intera, se è vera, l'esecuzione continua, altrimenti il programma stampa un messaggio di errore su stderr e termina subito l'esecuzione.\\
+Per disabilitare assert possiamo definire la macro NDEBUG.\\
+Ecco un esempio dell'utilizzo di assert:
+\begin{lstlisting}[language=C]
+    #include <stdio.h>
+    #include <assert.h>
+
+    int main() {
+        int x;
+        printf("Inserisci un numero positivo");
+        scanf("%d",&x);
+        assert(x>0);
+        printf("Hai inserito %d\n", x);
+    }
+\end{lstlisting}
+\subsubsection{GDB e Valgrind}
+Il debugging tramite la stampa dello stato delle variabili è poco efficiente e poco scalabile.\\
+Possiamo utilizzare tool esistenti:
+\begin{itemize}
+    \item \textbf{gdb}: permette di eseguire il programma passo per passo e verificare i valori delle variabili.
+    \item \textbf{valgrind}: permette di analizzare la memoria allocata, identifiando le istruzioni illegali.
+\end{itemize}
+Non possiamo fare debug su librerie: occorre testare prima di creare la libreria.\\
+Per abilitare il debugging, da terminale si fa cosi con "-g":
+\begin{lstlisting}[language=bash]
+    gcc -g -Wall -pedantic main.c -o main
+    gdb main
+\end{lstlisting}
+Normalmente, il debug si ferma alla prima istruzione eseguibile, ma possiamo modificare questo comportamento tramite:
+\begin{itemize}
+    \item \textbf{Breakpoint:} un punto nel codice dove fermarsi
+    \item \textbf{Watchpoint:} variabile da monitorare; il programma si ferma quando la variabile viene cambiata.
+\end{itemize}
+ 
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

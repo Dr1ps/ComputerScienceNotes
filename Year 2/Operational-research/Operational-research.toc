@@ -68,12 +68,15 @@
 \contentsline {subsubsection}{\numberline {13.1.2}Modellazione}{32}{subsubsection.13.1.2}%
 \contentsline {section}{\numberline {14}Grafi e reti di flusso}{33}{section.14}%
 \contentsline {subsection}{\numberline {14.1}Definizioni iniziali}{33}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Trasformazioni equivalenti}{34}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}schedulazione della produzione (esempio)}{34}{subsection.14.3}%
-\contentsline {subsubsection}{\numberline {14.3.1}Descrizione}{34}{subsubsection.14.3.1}%
-\contentsline {subsubsection}{\numberline {14.3.2}Inizializzazione}{34}{subsubsection.14.3.2}%
-\contentsline {subsection}{\numberline {14.4}Trasformazioni equivalenti}{35}{subsection.14.4}%
-\contentsline {subsubsection}{\numberline {14.4.1}Sorgenti e pozzi multipli}{36}{subsubsection.14.4.1}%
-\contentsline {paragraph}{Nodi fittizi}{36}{subsubsection.14.4.1}%
-\contentsline {paragraph}{Archi fittizi}{36}{subsubsection.14.4.1}%
-\contentsline {subsection}{\numberline {14.5}Capacità inferiore non nulle}{36}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.2}schedulazione della produzione (esempio)}{34}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Descrizione}{34}{subsubsection.14.2.1}%
+\contentsline {subsubsection}{\numberline {14.2.2}Inizializzazione}{34}{subsubsection.14.2.2}%
+\contentsline {subsection}{\numberline {14.3}Trasformazioni equivalenti}{35}{subsection.14.3}%
+\contentsline {subsubsection}{\numberline {14.3.1}Sorgenti e pozzi multipli}{36}{subsubsection.14.3.1}%
+\contentsline {paragraph}{Nodi fittizi}{36}{subsubsection.14.3.1}%
+\contentsline {paragraph}{Archi fittizi}{36}{subsubsection.14.3.1}%
+\contentsline {subsubsection}{\numberline {14.3.2}Capacità inferiore non nulle}{36}{subsubsection.14.3.2}%
+\contentsline {paragraph}{Denominazione del nuovo flusso}{36}{subsubsection.14.3.2}%
+\contentsline {paragraph}{Aggiornamento dei parametri}{36}{subsubsection.14.3.2}%
+\contentsline {subsubsection}{\numberline {14.3.3}Limiti di capacità sui nodi}{37}{subsubsection.14.3.3}%
+\contentsline {subsubsection}{\numberline {14.3.4}Eccesso di domanda o offerta}{37}{subsubsection.14.3.4}%
