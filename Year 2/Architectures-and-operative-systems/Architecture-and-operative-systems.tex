@@ -560,10 +560,15 @@ Si trasforma in:
 \[
 (A \cdot B) + (\overline{A} + \overline{B})
 \]
-\paragraph{Tempo d'esecuzione:} $2\Delta t + \log_8 N$ con $N =$ numero di bit dei numeri, perche si mettono tanti di questi in parallelo collegati finalmente da un AND con $N$ porte.
+\paragraph{Tempo d'esecuzione:} $2\Delta t \cdot N$ con $N =$ numero di bit dei numeri, perche si mettono tanti di questi in parallelo collegati finalmente da un AND con $N$ porte.
 
 \subsection{Codificatore}
 Ha un input e un output, restituisce la posizione dell'1 nell'input. Denotato da una scatola con "COD" scritto dentro.
+
+\subsection{Decoder}
+Un decoder prende in input un numero e attiva una porta in uscita in base a tale ingresso.\\
+\paragraph{Tempo d'esecuzione:} $\Delta t$ (1 solo AND per ogni output)
+
 \subsection{Moduli per algebra booleana}
 Per svolgere i controlli booleani si utilizza una combinazione (circuito) dei seguenti moduli:
 \begin{itemize}
@@ -720,7 +725,7 @@ Y =
 S\cdot I_1
 \]
 In realtà il multiplexer può avere più input, ma questo prevede l'espansione della grandezza dell'input di controllo.
-\paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t + \log_{8} N$ se usiamo MUX con ingressi multipli.
+\paragraph{Tempo d'esecuzione:} $2\Delta t$ se usiamo MUX 2:1 e li mettiamo paralleli, $2\Delta t \cdot \log_{8} N$ se usiamo MUX con ingressi multipli.
 \subsection{Demultiplexer}
 Contrario del multiplexer, ha 1 input e 2 porte in uscita.\\
 Trasmette l'input in una porta in uscita a seconda del \textbf{bit di controllo} in input e azzera la porta in uscita non utilizzata.\\
@@ -779,6 +784,7 @@ Il registro funziona cosi:
     \caption{Registro}
     \label{fig:register}
 \end{figure}
+
 \subsection{SR Latch}
 Abbiamo un modulo che ha:
 \begin{itemize}
@@ -952,7 +958,134 @@ Riassumendo, per arrivare a capire come sviluppare una rete sequenziale tale, bi
     \item Modellare il circuito digitale
     \item Calcolare i tempi
 \end{enumerate}
+\subsection{RAM}
+La \textbf{RAM} (Random Access Memory) è una memoria che può essere scritta e letta.\\
+Mantiene i dati sono in presenza di alimentazione.\\
+Ha:
+\begin{itemize}
+    \item \textbf{WE} in input.
+    \item Numero in input (da $n$ bit).
+    \item Un indirizzo in input (da $k$ bit), seleziona una tra le $2^k$ poisizioni.
+    \item Un output che può essere:
+    \[
+    out = \begin{cases}
+        in, WE == 1\\
+        0, WE == 0
+    \end{cases}
+    \]
+\end{itemize}
+Se il WE è settato a 1, allora l'indirizzo di memoria viene aggiornato con l'input immesso e si restituisce in uscita, altrimenti si mantiene il dato precedente.
+\[
+M[ind] == In
+\]
+\[
+out = M[ind]
+\]
+Vediamo per esempio un circuito di memoria, ovvero il \textbf{Register File} (banco di registri) che sceglie quale registro utilizzare in base all'indirizzo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/registerfile.png}
+    \caption{Register File}
+    \label{fig:rf}
+\end{figure}
+\subsubsection{RAM Dinamica}
+In una RAM dinamica, un valore deve essere riletto periodicamente perche piano piano perde valore e potrebbe cancellarsi.
+\begin{itemize}
+    \item Il valore "1" dopo un po' inizia a perdere potenza (elettrica) e si avvicina allo 0, fino a che non supera la soglia che distingue i due valori, diventando ambiguo.
+    \item Lo stesso succede per lo "0", che piano piano si "sporca" se non riletto periodicamente.
+\end{itemize}
+Per risolvere, si introduce un'operazione di \textbf{Refresh} che sistema i valori.\\
+Una RAM dinamica costa poco, però ha un tempo di accesso elevato.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/ramDinamica.png}
+    \caption{Ram dinamica}
+    \label{fig:ramDinamica}
+\end{figure}
+Il \textbf{sistema di memorizzazione} funziona in questo modo:
+\begin{itemize}
+    \item Nel cavo di una porta aperta ("1") viene aperto un gate (transistor).
+    \item Il gate fa andare la corrente verso la \textbf{terra}.
+    \item La corrente incontra un \textbf{condensatore}, il quale conserva la carica elettrica (e quindi anche il valore).
+    \item Quando viene immesso un altro "1", il gate si richiude e la corrente salvata nel condensatore viene emessa verso l'uscita (o la sua assenza per il valore 0).
+\end{itemize}
+Ovviamente il condensatore non tiene la carica per sempre ed è quindi per questo che i valori iniziano a sporcarsi dopo un po'.
+\subsubsection{RAM Statica}
+La RAM statica garantisce, finchè c'è alimentazione, la persistenza di un valore in una cella (non si sporca).\\
+Una RAM del genere costa molto, però almeno garantisce che i valori rimangano puliti ed ha un tempo di accesso basso.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/RAMStatica.png}
+    \caption{Ram statica}
+    \label{fig:ramStatica}
+\end{figure}
+Il funzionamento è simile a quello della RAM dinamica, ci sono dei gate che vengono aperti e chiusi, ma il valore è memorizzato in dei \textbf{latch} che memorizzano anche il suo negato.\\
+Il valore come si può vedere viene sempre ricalcolato dal NOT e non è salvato in un condensatore, quindi rimane stabile.
 
+\subsection{ROM}
+La \textbf{ROM} (Ready Only Memory), il vettore di valori è fisso, fatto in fabbrica, non si può modificare.\\
+La ROM, al contrario della RAM, mantiene le informazioni anche in assenza di alimentazione.
+\paragraph{Programmable ROM:} modello di ROM che può essere scritta poche volte (come Flash USB).
+
+\subsection{Memorie associative}
+Esistono delle memorie che associano \textbf{chiavi} a \textbf{valori} $(k,v)$.\\
+Ha:
+\begin{itemize}
+    \item WE in input.
+    \item Valore in input (se si vuole scrivere)
+    \item Chiave in input
+    \item \textbf{HIT} in output (1 se si trova la chiave specificata)
+    \item Valore trovato in uscita
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/memass.png}
+    \caption{Memoria associativa}
+    \label{fig:memass}
+\end{figure}
+
+\subsection{Memorie modulari}
+Spesso si compongono moduli di memoria più piccoli per crearne una composta, più grande, per avere dei vantaggi:
+\begin{itemize}
+    \item Maggiore memoria
+    \item Facile manutenzione
+    \item Scalabilità
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/memMod.png}
+    \caption{Memoria modulare d'esempio}
+    \label{fig:modmem}
+\end{figure}
+L'indirizzo come sappiamo sceglie un indirizzo fra molti da utilizzare, i quali nelle memorie modulari sono suddivisi tra i moduli utilizzati.\\
+La suddivisione degli indirizzi tra i vari moduli varia a seconda dell'\textbf{organizzazione} utilizzata.
+\subsubsection{Organizzazione sequenziale}
+Gli indirizzi sono suddivisi in modo da creare regioni contigue di indirizzi pari al numero dei moduli utilizzati.\\
+Per esempio, se abbiamo $2048$ indirizzi, questi saranno gli intervalli assegnati ai moduli:
+\begin{itemize}
+    \item \textbf{M1:} 0 - 1023
+    \item \textbf{M2:} 1024 - 2047
+\end{itemize}
+L'indirizzo sceglie quale modulo utilizzare tramite il MSB (o piu di 1 MSB se ci sono piu moduli) come in questo esempio (l'indirizzo in questo caso è da $11$ bit):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/frammentata.png}
+    \caption{Memoria con organizzazione sequenziale}
+    \label{fig:memseq}
+\end{figure}
+\subsubsection{Organizzazione interlacciata}
+Con questo metodo, gli indirizzi sono suddivisi alternativamente, uno ad uno.\\
+Si capisce subito che in questo modo un modulo ha gli indirizzi pari e l'altro quelli dispari, quindi la decisione spetta al LSB dell'indirizzo:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/interlacciata.png}
+    \caption{Organizzazione con memoria interlacciata}
+    \label{fig:memint}
+\end{figure}
+
+\section{Altro}
+\paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
+\paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.
 
 \section{Esercizi}
 \subsection{Cosa calcola una rete}
