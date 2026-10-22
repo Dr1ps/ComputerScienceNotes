@@ -80,3 +80,12 @@
 \contentsline {paragraph}{Aggiornamento dei parametri}{36}{subsubsection.14.3.2}%
 \contentsline {subsubsection}{\numberline {14.3.3}Limiti di capacità sui nodi}{37}{subsubsection.14.3.3}%
 \contentsline {subsubsection}{\numberline {14.3.4}Eccesso di domanda o offerta}{37}{subsubsection.14.3.4}%
+\contentsline {subsubsection}{\numberline {14.3.5}Ispezioni su una linea di produzione (esempio)}{38}{subsubsection.14.3.5}%
+\contentsline {paragraph}{Descrizione:}{38}{subsubsection.14.3.5}%
+\contentsline {paragraph}{Modellazione:}{38}{subsubsection.14.3.5}%
+\contentsline {section}{\numberline {15}Cammini di costo minimo}{40}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Definizione del problema generico}{40}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Particolarità e proprietà}{40}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Shortest Path Tree (SPT)}{41}{subsection.15.3}%
+\contentsline {subsubsection}{\numberline {15.3.1}Albero ottimo}{41}{subsubsection.15.3.1}%
+\contentsline {subsubsection}{\numberline {15.3.2}Teorema di ottimalità}{41}{subsubsection.15.3.2}%

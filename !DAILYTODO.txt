@@ -9,8 +9,6 @@
 - add tester code to Verilog test, monitor (do better)
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
 (download or redo)
-check 19/10 lesson (last hour)
-roba su quaderno
 
 ## OPERATIONAL RESEARCH ##
 
@@ -22,7 +20,5 @@ NO DIJKSTRA SU GRAFI ACICLICI
 
 ## LABORATORY 2 ##
 
-Finisci es 9
-installa gdb
 
 check 19/10 lesson

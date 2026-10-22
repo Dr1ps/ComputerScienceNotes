@@ -1247,7 +1247,131 @@ Per la domanda la soluzione è analoga ma con un pozzo fittizio.
     \caption{Esempio di trasformazione: eccesso di domanda}
     \label{fig:eccesso}
 \end{figure}
+\subsubsection{Ispezioni su una linea di produzione (esempio)}
+\paragraph{Descrizione:} una linea di produzione ha $n$ celle di lavorazione. Ogni lotto ha $B$ pezzi che passano in sequenza nelle celle.\\
+In ciascuna cella $i$ un pezzo può diventare \textbf{difettoso} con probabilità $p_i$.\\
+Lotti con difetti non possono essere inviati ai clienti.\\
+Alla fine di ogni lavorazione può avvenire un'ispezione, se vengono trovati pezzi difettosi vengono scartati.\\
+Un ispezione finale è obbligatoria, ma le ispezioni intermedie possono ridurre costi.\\
+L'obiettivo è evitare lavorazioni superflue su pezzi destinati a essere scartati.\\
+Ecco i costi:
+\begin{itemize}
+    \item \textbf{Costo unitario di lavorazione} alla cella $i$: $q_i$
+    \item \textbf{Costo fisso di ispezione} di un lotto all'uscita della cella $j$, supponendo che la precedente ispezione sia stata effettuata ad una cella $i < j$: $f_{ij}$
+    \item \textbf{Costo unitario} per pezzo ispezionato: $h_{ij}$
+\end{itemize}
+\paragraph{Modellazione:} partiamo col rappresentare il numero di pezzi non difettosi alla fine della lavorazione $i$:
+\[
+B_i = B \cdot \prod_{k=1}^{i} (1 - p_k)
+\]
+Costo totale (produzione e ispezione) alla cella $j > i$:
+\[
+c_{ij} = f_{ij} + B_i \cdot h_{ij} + B_i \cdot \sum_{k = i+1}^{j} q_k
+\]
+Per trasformare il problema, facciamo un passo alla volta; introduciamo una \textbf{cella fittizia}, la cella $0$.\\
+Poniamo il grafo $G = (N,A)$ con:
+\[
+N = \{0,1,2,...,n\}
+\]
+\[
+A = \{(i,j): i \in N \setminus \{n\}, j > i\}
+\]
+Ad ogni arco è associato un costo $c_{ij}$, ovvero i costi totali calcolati prima.\\
+La soluzione ottimale è quindi il cammino minimo dalla sorgente fittizia al nodo $n$.
 
+\section{Cammini di costo minimo}
+Il problema del cammino di costo minimo è uno dei più semplici ma più importanti su reti.\\
+\subsection{Definizione del problema generico}
+Definiamo un grafo \textbf{orientato} e \textbf{pesato} $G = (N,A)$:
+\begin{itemize}
+    \item $N = \{1,...,n\}$
+    \item Ogni arco ha un costo $c_{ij} \in \mathbb{R}$
+\end{itemize}
+\textbf{Cammino P:} sequenza di archi che connette due nodi.\\
+\textbf{Costo di un cammino:}
+\[
+C(P) = \sum_{(i,j) \in P}^{c_{ij}}
+\] 
+Dati $r$ (origine) e $t$ (destinazione), $P_{rt}$ è l'insieme dei cammini da $r$ a $t$.\\
+Il problema del cammino minimo consiste nel trovare lo \textbf{shortest path} fra $r$ e $t$:
+\[
+(SP) min{C(P): P \in P_{rt}}
+\]
+\subsection{Particolarità e proprietà}
+La soluzione ottima può essere non unica, per questo dobbiamo includere un vincolo di interezza:
+\[
+x \in \{0,1\}^m
+\]
+Inoltre, la soluzione potrebbe non esistere in quanto non esiste un cammino da $r$ a $t$.\\
+Per controllare l'inesistenza, si usa \textbf{BFS} o \textbf{DFS}, o addirittura \textbf{Dijkstra}.\\\\
+Se esiste invece un ciclo orientato di costo \textbf{negativo} in modo che:
+\begin{itemize}
+    \item Percorrendo il ciclo più volte, il costo totale diminuisce indefinitivamente
+    \item Il problema è inferiormente limitato
+\end{itemize}
+Bisogna verificare che non esistano questi cicli, si può fare in tempo polinomiale.\\
+Se invece un grafo NON ha questi cicli negativi, allora la soluzione ottimale è un \textbf{cammino semplice}.\\
+Infatti, il problema del cammino di costo minimo coincide con il problema del cammino semplice di costo minimo.\\
+Bisogna ovviamente accertarsi che il ciclo negativo faccia parte del cammino tra $r$ e $t$, altrimenti non ha senso considerarlo per rendere il problema non semplice.\\
+Esiste una condizione \textbf{sufficiente e non necessaria} per non avere cicli negativi: basta che tutti i costi siano \textbf{non negativi}.\\\\
+Se abbiamo un cammino minimo tra due nodi, allora significa che abbiamo trovato anche il cammino minimo di ogni sotto-cammino.
+
+\subsection{Shortest Path Tree (SPT)}
+Si vuole trovare il cammino minimo di ogni cammino dalla sorgente a ogni nodo.\\
+Si realizza un \textbf{albero} radicato nella sorgente e con $n-1$ archi (uno per nodo raggiungibile).\\
+In questo modo bastano solo $n-1$ informazioni per descrivere tutti i cammini minimi da un nodo.\\
+Considerando come sorgente $r$ e ogni altro nodo come $i$ allora possiamo formulare il problema cosi:
+\[
+min(\sum_{i\ne r}^{} C(P_i): P_i \in P_{ri}, i \ne r)
+\]
+Il problema può essere formulato anche come un Minimum Cost Flow:
+\[
+b_i = \begin{cases}
+    -(n-1), i = r\\
+    1
+\end{cases}
+\]
+La radice è la sorgente di $n-1$ unità di flusso.\\
+Ciascun nodo $i \ne r$ è un pozzo con domanda 1.\\
+Ogni arco può essere visitato più volte se compare in più cammini, $x_{ij}$ rappresenta quante volte.\\\\
+Se il grafo a un nodo non raggiungibile dalla sorgente, si aggiunge un arco fittizio:
+\[
+(r,i) \text{ con costo M} = (n-1)c_{max} + 1
+\]
+\subsubsection{Albero ottimo}
+Vogliamo verificare che un albero $T = (N,A_T)$ sia \textbf{ottimo} per il problema SPT.
+\begin{itemize}
+    \item $T$ è un $SPT$
+    \item $T$ è ottimo se non esiste un cammino da $r$ a $i$ con costo inferiore a $C(P_i^T)$
+\end{itemize}
+Definiamo un vettore di \textbf{etichette} $d$ per cui:
+\[
+d_i = C(P_i^T)
+\]
+\[
+d_r = 0
+\]
+Le etichette si possono calcolare, se per esempio abbiamo un arco $(i,j) \in A_T$ allora:
+\[
+d_i + c_{ij} = d_j
+\]
+Per ogni arco controlliamo se:
+\[
+d_i + c_{ij} < d_j
+\]
+\begin{itemize}
+    \item Se \textbf{si}, esiste un cammino migliore di $P_j^T$ e quindi $T$ non è ottimo.
+    \item Se \textbf{no}, $T$ è ottimo.
+\end{itemize}
+\subsubsection{Teorema di ottimalità}
+Se un albero soddisfa queste condizioni (condizioni di \textbf{Bellman}):
+\[
+\begin{cases}
+    d_i + c_{ij} \geq d_j, \forall (i,j) \in A\\
+    d_r = 0
+\end{cases}
+\]
+Allora $T = (N,A_T)$ è un SPT radicato in $r$.
 \end{document}
 
 
