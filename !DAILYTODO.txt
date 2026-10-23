@@ -19,6 +19,6 @@ FINO A PAG 150 CIRCA
 NO DIJKSTRA SU GRAFI ACICLICI
 
 ## LABORATORY 2 ##
-
+es9 & es10 copy paste solution from teams (specify it's been copied) for studying purpose
 
 check 19/10 lesson

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  20 OCT 2026 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  23 OCT 2026 11:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -931,7 +931,7 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Laboratory-2.out' has not changed.
-(rerunfilecheck)             Checksum: 5992870E7AD9E74840AFB1E8D69C99A2;9075.
+(rerunfilecheck)             Checksum: AD6108DECD3EB9C56F44C498ABE24EA5;9080.
  ) 
 Here is how much of TeX's memory you used:
  34244 strings out of 467392
@@ -942,7 +942,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,782b,2062s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Laboratory-2.pdf (32 pages, 325070 bytes).
+Output written on Laboratory-2.pdf (32 pages, 325073 bytes).
 PDF statistics:
  1173 PDF objects out of 1200 (max. 8388607)
  581 named destinations out of 1000 (max. 500000)
