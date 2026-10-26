@@ -1,6 +1,6 @@
-PWD c:\VSCode\ComputerScienceNotes\Year 2\Architectures-and-operative-systems\JobInterview
+PWD c:\VSCode\ComputerScienceNotes\CareerLabs\JobInterview
 INPUT C:\Users\Utente\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\VSCode\ComputerScienceNotes\Year 2\Architectures-and-operative-systems\JobInterview\JobInterview.tex
+INPUT c:\VSCode\ComputerScienceNotes\CareerLabs\JobInterview\JobInterview.tex
 OUTPUT JobInterview.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls

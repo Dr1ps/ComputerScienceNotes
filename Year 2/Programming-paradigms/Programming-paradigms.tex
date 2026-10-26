@@ -992,7 +992,7 @@ Ecco altri cast:
   \item int\_of\_string
 \end{itemize}
 \subsection{Tipi di OCaml}
-Tipi di base:
+\subsubsection{Tipi di base}
 \begin{itemize}
   \item int 
   \item float
@@ -1001,7 +1001,7 @@ Tipi di base:
   \item string
   \item unit: usato in casi particolari (simile a \textbf{void})
 \end{itemize}
-Tipi complessi:
+\subsubsection{Tipi complessi}
 \begin{itemize}
   \item Tupla
   \begin{lstlisting}[language=OCaml]
@@ -1013,6 +1013,23 @@ Tipi complessi:
     fun x -> x ;; (*Restituisce: - : 'a -> 'a = <fun>*)
   \end{lstlisting}
 \end{itemize}
+\subsubsection{Tipi custom}
+In OCaml possiamo definire nuovi tipi di dato usando il costrutto \textbf{type}.\\
+Per esempio, possiamo assegnare dei nuovi nomi a tipi complessi:
+\begin{lstlisting}
+  type data = int*int*int ;;
+\end{lstlisting}
+Addirittura, possiamo definire degli \textbf{alias} per specificare un formato:
+\begin{lstlisting}
+  let controlla_data (d:data) =
+    match d with
+    | gg,mm,aaaa -> gg > 0 && gg <= 31
+                 && mm > 0 && mm <= 12
+                 && aaaa > 1980 && aaaa <= 2030 ;;
+\end{lstlisting}
+Nel codice sopra non sono gestiti alcuni casi che sarebbero incorretti, come il 31esimo giorno di Febbraio, ma non ci interessa, dato che doveva funzionare esclusivamente come esempio di alias.\\
+In OCaml quindi per definire tipi nuovi si può comporre altri tipi.
+
 \subsection{Operazioni logiche}
 Ecco come si eseguono le operazioni logiche in OCaml:
 \begin{itemize}
@@ -1247,7 +1264,7 @@ Una funzione ricorsiva sulle liste può appoggiarsi su una funzione secondaria, 
 \end{lstlisting}
 \subsubsection{Filter}
 Filtra gli elementi di una lista secondo una condizione:
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   let nums = [1, 2 ,3, 4, 5] ;;
   let evens = List.filter (fun x -> x mod 2 = 0) nums ;;
 \end{lstlisting}
@@ -1265,9 +1282,10 @@ Permette di convergere piu valori in un valore solo evitando stack overflow:
 \end{lstlisting}
 "acc" sta per accumulator, somma tutti i numeri partendo da sinistra. Lo "$0$" che si vede è il \textbf{valore iniziale} da cui partire.\\
 Ovviamente esiste anche \textbf{fold\_right} oltre che \textbf{fold\_left}.
+
 \subsection{Pattern matching}
 Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   match EXP with
   | P_1 -> EXP_1
   | P_2 -> EXP_2
@@ -1276,15 +1294,81 @@ Presa un'espressione EXP, possiamo usare un costrutto simile allo switch:
 \end{lstlisting}
 \subsection{Wildcard}
 Una wildcard è come un placeholder e si indica con "\_"
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   let rec fibonacci n = 
     match n with
       | 0 -> 0
       | 1 -> 1
       | _ -> fibonacci (n-1) + fibonacci (n-2) ;;
 \end{lstlisting}
-
 In questo caso è stato usato per il caso default del match.
+
+\subsection{Record}
+I \textbf{record} sono composti da più elementi, ciascuno con un proprio tipo.\\
+Sono simili a tuple, ma possiamo dare un nome agli elementi detti \textbf{campi}.\\
+\begin{lstlisting}[language=OCaml]
+  type persona = {nominativo: string; eta: int} ;;
+\end{lstlisting}
+\subsubsection{Dot notation}
+Per accedere ad un campo di un record si può usare la \textbf{dot notation}:
+\begin{lstlisting}[language=OCaml]
+  persona.nominativo ;;
+\end{lstlisting}
+\subsubsection{Copia di record}
+Per creare un nuovo record a partire dai campi forniti da un altro record si usa \textbf{with}:
+\begin{lstlisting}[language=OCaml]
+  (*Campi di mario WITH altri nuovi campi*)
+  let bianca = {mario with nome = "Bianca"; eta = 13} ;;
+\end{lstlisting}
+\subsubsection{immutabilità}
+Purtroppo i valori dei record non possono essere modificati.
+\begin{lstlisting}[language=OCaml]
+  persona.nominativo = "Mirco Rossi" ;;
+\end{lstlisting}
+Questo da errore.
+
+\subsection{Variant}
+Un tipo \textbf{variant} (o tipo \textbf{unione}) prende solo uno tra i valori specificati.
+\begin{lstlisting}[language=OCaml]
+  let numero_testo = 
+      | Txt of string
+      | Num of int ;;
+  
+  let x = Txt "34" ;;
+  let y = Num 26 ;;
+\end{lstlisting}
+In questo caso, la variant può assumere un valore di stringa o un valore numerico.\\
+I variant possono essere usati per controllare il tipo di una variabile:
+\begin{lstlisting}[language=OCaml]
+  match x with
+  |  Txt s -> int_of_string s
+  |  Num n -> n ;;
+\end{lstlisting}
+\subsubsection{Enum}
+L'enum in OCaml è rappresentao come un tipo particolare di variant:
+\begin{lstlisting}[language=OCaml]
+  type giorno = Lun | Mar | Mer | Gio | Ven | Sab | Dom ;;
+\end{lstlisting}
+\subsubsection{Numeri naturali estesi}
+Il variant può rappresentare un estensione del tipo dei valori interi:
+\begin{lstlisting}[language=OCaml]
+  type int_ext =
+  | Num of int
+  | Nan
+  | Plus_inf
+  | Minus_inf ;;
+
+  let sum (x: int_ext) (y: int_ext) =
+    match x y with
+    | NaN,_ | _,NaN -> NaN
+    | Plus_inf,Minus_inf | Minus_inf,Plus_inf -> NaN
+    | Num,Plus_inf | Plus_inf,Num -> Plus_inf
+    | Num,Minus_inf | Minus_inf,Num -> Minus_inf
+    | Plus_inf,Plus_inf -> Plus_inf
+    | Minus_inf,Minus_inf -> Minus_inf
+    | Num, Num -> x + y ;;
+
+\end{lstlisting}
 \subsection{Encoding da lambda calcolo a OCaml}
 Ecco le regole sintattiche di trasformazione:
 \[

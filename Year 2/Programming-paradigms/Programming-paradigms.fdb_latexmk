@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792509093.14024 "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" "Programming-paradigms.pdf" "Programming-paradigms" 1792509097.12151 0
+["pdflatex"] 1793010040.86477 "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" "Programming-paradigms.pdf" "Programming-paradigms" 1793010044.66379 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -201,11 +201,11 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "Programming-paradigms.aux" 1792509096 14901 8655d723023bac706353ae99a9ec8d09 "pdflatex"
-  "Programming-paradigms.out" 1792509096 15678 53e2cd79298e1534837102a70584429f "pdflatex"
-  "Programming-paradigms.tex" 1792509084 48531 961392b90f5fbbfbe2f511187b6a9bc8 ""
-  "Programming-paradigms.toc" 1792509096 9859 2fb183a0d605dfbac46103d660d04ada "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" 1792509084 48531 961392b90f5fbbfbe2f511187b6a9bc8 ""
+  "Programming-paradigms.aux" 1793010044 16211 3a673c7c414dae8e6cf6ac8b4f197879 "pdflatex"
+  "Programming-paradigms.out" 1793010044 16985 5be2c53262aa9c109938ccbe54fff020 "pdflatex"
+  "Programming-paradigms.tex" 1793010039 51687 74a5057dd869f2d682ec496dbf2d6874 ""
+  "Programming-paradigms.toc" 1793010044 10759 c9e438335a36577cf6b1e5d513570e87 "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" 1793010039 51687 74a5057dd869f2d682ec496dbf2d6874 ""
   (generated)
   "Programming-paradigms.aux"
   "Programming-paradigms.log"

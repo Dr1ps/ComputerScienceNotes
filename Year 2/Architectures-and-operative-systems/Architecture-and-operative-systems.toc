@@ -61,15 +61,15 @@
 \contentsline {subsection}{\numberline {7.10}Memorie modulari}{32}{subsection.7.10}%
 \contentsline {subsubsection}{\numberline {7.10.1}Organizzazione sequenziale}{33}{subsubsection.7.10.1}%
 \contentsline {subsubsection}{\numberline {7.10.2}Organizzazione interlacciata}{34}{subsubsection.7.10.2}%
-\contentsline {section}{\numberline {8}Altro}{36}{section.8}%
-\contentsline {paragraph}{Rete combinatoria:}{36}{section.8}%
-\contentsline {paragraph}{Rete sequenziale:}{36}{section.8}%
-\contentsline {section}{\numberline {9}Esercizi}{37}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Cosa calcola una rete}{37}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Descrizione}{37}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}Soluzione}{37}{subsubsection.9.1.2}%
-\contentsline {paragraph}{Algebra booleana}{37}{subsubsection.9.1.2}%
-\contentsline {paragraph}{Mappe di Kernaugh}{38}{subsubsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.2}Circuito di una sveglia}{38}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Descrizione}{38}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}Soluzione}{38}{subsubsection.9.2.2}%
+\contentsline {section}{\numberline {8}Altro}{35}{section.8}%
+\contentsline {paragraph}{Rete combinatoria:}{35}{section.8}%
+\contentsline {paragraph}{Rete sequenziale:}{35}{section.8}%
+\contentsline {section}{\numberline {9}Esercizi}{36}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Cosa calcola una rete}{36}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Descrizione}{36}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Soluzione}{36}{subsubsection.9.1.2}%
+\contentsline {paragraph}{Algebra booleana}{36}{subsubsection.9.1.2}%
+\contentsline {paragraph}{Mappe di Kernaugh}{37}{subsubsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.2}Circuito di una sveglia}{37}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Descrizione}{37}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Soluzione}{37}{subsubsection.9.2.2}%

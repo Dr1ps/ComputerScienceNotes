@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  19 OCT 2026 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  26 OCT 2026 13:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/JobInterview/JobInterview.tex"
-(c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/JobInterview/JobInterview.tex
+**c:/VSCode/ComputerScienceNotes/CareerLabs/JobInterview/JobInterview.tex
+(c:/VSCode/ComputerScienceNotes/CareerLabs/JobInterview/JobInterview.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
 (C:\Program Files\MiKTeX\tex/latex/base\article.cls
@@ -648,12 +648,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 40--43
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
  []
 
 
-Overfull \hbox (14.42761pt too wide) in paragraph at lines 40--43
+Overfull \hbox (14.42761pt too wide) in paragraph at lines 40--45
 \OT1/cmr/bx/n/12 Consulenza on-line (gra-tuita) sui col-lo-qui di la-voro: []\OT1/cmr/m/n/12 https://alumni.unipi.it/mentoring[] 
  []
 
@@ -677,12 +677,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 65--69
+Underfull \hbox (badness 10000) in paragraph at lines 67--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
@@ -724,15 +724,15 @@ Package rerunfilecheck Info: File `JobInterview.out' has not changed.
 (rerunfilecheck)             Checksum: 18415E7D9557752DC4AC6476D6118D95;1522.
  ) 
 Here is how much of TeX's memory you used:
- 32979 strings out of 467392
- 756456 string characters out of 5415745
+ 32980 strings out of 467392
+ 756148 string characters out of 5415745
  1275873 words of memory out of 5000000
- 61825 multiletter control sequences out of 15000+600000
+ 61826 multiletter control sequences out of 15000+600000
  635288 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,11n,118p,818b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,11n,118p,784b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on JobInterview.pdf (7 pages, 63574 bytes).
+Output written on JobInterview.pdf (7 pages, 64052 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)

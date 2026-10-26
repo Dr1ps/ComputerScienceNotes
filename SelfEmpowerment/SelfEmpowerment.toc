@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Informazioni e risorse}{3}{section.1}%
+\contentsline {section}{\numberline {2}Come mai questo laboratorio?}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Cosa è il talento?}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Combattere i pensieri negativi}{5}{section.3}%
+\contentsline {section}{\numberline {4}Intelligenza emotiva}{6}{section.4}%
+\contentsline {section}{\numberline {5}Esercizio: descriviti con 3 aggettivi}{7}{section.5}%
+\contentsline {section}{\numberline {6}Matrice SWOT e domande personali}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Valori}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Interessi}{8}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}}{8}{subsection.6.3}%
