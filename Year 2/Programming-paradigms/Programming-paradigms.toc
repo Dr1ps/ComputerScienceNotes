@@ -113,17 +113,20 @@
 \contentsline {subsection}{\numberline {10.18}Variant}{35}{subsection.10.18}%
 \contentsline {subsubsection}{\numberline {10.18.1}Enum}{35}{subsubsection.10.18.1}%
 \contentsline {subsubsection}{\numberline {10.18.2}Numeri naturali estesi}{36}{subsubsection.10.18.2}%
-\contentsline {subsection}{\numberline {10.19}Encoding da lambda calcolo a OCaml}{36}{subsection.10.19}%
-\contentsline {section}{\numberline {11}Esercizi}{37}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Esercizio 1}{37}{subsection.11.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{37}{Item.12}%
-\contentsline {subsection}{\numberline {11.2}Esercizio 2}{37}{subsection.11.2}%
-\contentsline {paragraph}{Soluzione}{37}{Item.18}%
-\contentsline {subsection}{\numberline {11.3}Esercizio 3}{37}{subsection.11.3}%
-\contentsline {paragraph}{Soluzione}{37}{Item.21}%
-\contentsline {subsection}{\numberline {11.4}Esercizio 4}{38}{subsection.11.4}%
-\contentsline {paragraph}{Soluzione}{38}{Item.29}%
-\contentsline {subsection}{\numberline {11.5}Esercizio 5}{38}{subsection.11.5}%
-\contentsline {paragraph}{Soluzione}{38}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Esercizio 6}{38}{subsection.11.6}%
-\contentsline {paragraph}{Soluzione}{38}{Item.32}%
+\contentsline {subsection}{\numberline {10.19}Tipi ricorsivi}{36}{subsection.10.19}%
+\contentsline {subsubsection}{\numberline {10.19.1}Alberi}{36}{subsubsection.10.19.1}%
+\contentsline {subsubsection}{\numberline {10.19.2}Abstract Syntax Tree}{37}{subsubsection.10.19.2}%
+\contentsline {subsection}{\numberline {10.20}Encoding da lambda calcolo a OCaml}{37}{subsection.10.20}%
+\contentsline {section}{\numberline {11}Esercizi}{38}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Esercizio 1}{38}{subsection.11.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{38}{Item.12}%
+\contentsline {subsection}{\numberline {11.2}Esercizio 2}{38}{subsection.11.2}%
+\contentsline {paragraph}{Soluzione}{38}{Item.18}%
+\contentsline {subsection}{\numberline {11.3}Esercizio 3}{38}{subsection.11.3}%
+\contentsline {paragraph}{Soluzione}{38}{Item.21}%
+\contentsline {subsection}{\numberline {11.4}Esercizio 4}{39}{subsection.11.4}%
+\contentsline {paragraph}{Soluzione}{39}{Item.29}%
+\contentsline {subsection}{\numberline {11.5}Esercizio 5}{39}{subsection.11.5}%
+\contentsline {paragraph}{Soluzione}{39}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Esercizio 6}{39}{subsection.11.6}%
+\contentsline {paragraph}{Soluzione}{39}{Item.32}%
