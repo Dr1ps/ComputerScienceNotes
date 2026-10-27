@@ -428,16 +428,16 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT Architecture-and-operative-systems.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
+INPUT .\images\logicalCircuit.png
 INPUT C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
-INPUT .\images\logicalCircuit.png
 INPUT .\images\evenOdd.png
 INPUT .\images\evenOdd.png
 INPUT .\images\evenOdd.png
@@ -647,6 +647,13 @@ INPUT .\images\interlacciata.png
 INPUT .\images\interlacciata.png
 INPUT .\images\interlacciata.png
 INPUT .\images\interlacciata.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
+INPUT .\images\assembler.png
 INPUT .\images\esercizio1rete.png
 INPUT .\images\esercizio1rete.png
 INPUT .\images\esercizio1rete.png

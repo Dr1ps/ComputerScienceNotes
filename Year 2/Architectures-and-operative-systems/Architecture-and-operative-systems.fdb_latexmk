@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1793002306.58758 "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" "Architecture-and-operative-systems.pdf" "Architecture-and-operative-systems" 1793002311.40453 0
-  "Architecture-and-operative-systems.aux" 1793002310 16364 2372b6cc274b3703f976896bfdafd137 "pdflatex"
-  "Architecture-and-operative-systems.out" 1793002310 8095 f65d9dc0a8d52ee021e87a5ac69033e4 "pdflatex"
-  "Architecture-and-operative-systems.tex" 1793002298 47524 b171b2f4b31912879a720fb410f500f5 ""
-  "Architecture-and-operative-systems.toc" 1793002310 5835 c6401da161fff627efdcaa8fa0d924bc "pdflatex"
+["pdflatex"] 1793098111.42465 "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" "Architecture-and-operative-systems.pdf" "Architecture-and-operative-systems" 1793098116.01025 0
+  "Architecture-and-operative-systems.aux" 1793098115 17553 9ae7233c2ec941da172a42574ccbe01f "pdflatex"
+  "Architecture-and-operative-systems.out" 1793098115 9212 896d880cadc8c8348faa5a65bf5587e4 "pdflatex"
+  "Architecture-and-operative-systems.tex" 1793098103 50779 9649ba68d1202c7150b0ce518f6981aa ""
+  "Architecture-and-operative-systems.toc" 1793098115 6514 5b6dda72648ef1f154166ae3b32f6bdc "pdflatex"
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -205,7 +205,7 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" 1793002298 47524 b171b2f4b31912879a720fb410f500f5 ""
+  "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" 1793098103 50779 9649ba68d1202c7150b0ce518f6981aa ""
   "images/CircuitoSR.png" 1791283638 8707 6ece15150812faf03ae34a57144f4b45 ""
   "images/DLatch.png" 1791281791 1119 1310d7a2b190c826f8d0366e87b2a79b ""
   "images/Demultiplexer.png" 1791987963 4705 c5353a4e1acc41606c2bc1e2acf84de5 ""
@@ -223,6 +223,7 @@
   "images/XNOr.png" 1791981474 4040 60b4883bd3fd9eba5695ce1151b3a978 ""
   "images/XOr.png" 1791981500 3994 e9e55c82fe5cbaf98fced3da4a4b991d ""
   "images/and.png" 1791981379 3266 917f1834159190935931ed441bd4bedf ""
+  "images/assembler.png" 1793093510 10879 855ba2d8ac42880a94bc8c57a8158c09 ""
   "images/automa1.png" 1791452614 1032948 7a3131cc73c2ac2ea7ff26498e8966ea ""
   "images/circuitoDigitaleAutoma.png" 1791454233 13668 c98d6ced669586208d35bd49c26db654 ""
   "images/esercizio1rete.png" 1791896562 11193 7584a5109644e7cb7ecd45968f62e4f3 ""

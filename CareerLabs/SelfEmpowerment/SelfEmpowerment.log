@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  26 OCT 2026 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  27 OCT 2026 09:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,20 +735,20 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `SelfEmpowerment.out' has not changed.
-(rerunfilecheck)             Checksum: AD55CA3632AFBD4A797956E913E4BC6A;1552.
+(rerunfilecheck)             Checksum: 1358E1F18372FDA6CDB8672756D487ED;1502.
  ) 
 Here is how much of TeX's memory you used:
- 32987 strings out of 467392
- 756222 string characters out of 5415745
+ 32985 strings out of 467392
+ 756192 string characters out of 5415745
  1275876 words of memory out of 5000000
- 61827 multiletter control sequences out of 15000+600000
+ 61826 multiletter control sequences out of 15000+600000
  635288 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,11n,118p,779b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SelfEmpowerment.pdf (8 pages, 67941 bytes).
+Output written on SelfEmpowerment.pdf (8 pages, 67410 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

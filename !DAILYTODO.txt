@@ -7,16 +7,17 @@
 ## AESO ##
 
 - add tester code to Verilog test, monitor (do better)
-FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG)
+FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG) 
 (download or redo)
+26/10 su teams
+anche 27/10 per sicurezza
 
 ## OPERATIONAL RESEARCH ##
 
-Controlla ultimo problema di modellazione
- Grafi e reti di flusso introduzione e definizioni iniziali
-FINO A PAG 150 CIRCA
+FINO A PAG 210 CIRCA grafi e reti di flusso
 
 NO DIJKSTRA SU GRAFI ACICLICI
+
 
 ## LABORATORY 2 ##
 es9 & es10 copy paste solution from teams (specify it's been copied) for studying purpose

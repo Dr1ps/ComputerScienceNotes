@@ -29,6 +29,7 @@
 \let\oldsection\section
 \renewcommand{\section}{\clearpage\oldsection}
 
+\setlength{\headheight}{15pt}
 \begin{document}
 
 \maketitle
@@ -76,61 +77,6 @@ Il processore quindi:
     \item Le decodifica
     \item Le esegue
     \item Calcola i risultati
-\end{itemize}
-
-\subsection{Tipi di istruzioni}
-Le istruzioni possono essere:
-\begin{itemize}
-    \item Operative
-    \begin{itemize}
-        \item Aritmetiche
-        \begin{itemize}
-            \item ADD
-            \item SUB
-            \item MUL
-            \item DIV
-        \end{itemize}
-        \item Logiche
-        \begin{itemize}
-            \item AND
-            \item OR
-            \item NOT
-        \end{itemize}
-        \item Shift / rotazione
-        \begin{itemize}
-            \item SHIFT
-            \item ROT
-        \end{itemize}
-        \item \dots
-    \end{itemize}
-    \item Di Memoria
-    \begin{itemize}
-        \item LOAD
-        \begin{itemize}
-            \item Restituisce un valore da un indirizzo:\\
-            \begin{lstlisting}
-                LOAD val,addr
-            \end{lstlisting}
-        \end{itemize}
-        \item STORE
-        \begin{itemize}
-            \item Salva un valore in un indirizzo:\\
-            \begin{lstlisting}
-                STORE val,addr
-            \end{lstlisting}
-        \end{itemize}
-    \end{itemize}
-    \item di Salto
-    \begin{itemize}
-        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni, aggiornando il PC alla corrispondente istruzione.\\
-        \begin{lstlisting}
-            inizio:
-            \dots
-            jmp fine:
-            -skipped code-
-            fine:
-        \end{lstlisting}
-    \end{itemize}
 \end{itemize}
 
 \section{Livelli di astrazione dei calcolatori}
@@ -1082,6 +1028,125 @@ Si capisce subito che in questo modo un modulo ha gli indirizzi pari e l'altro q
     \caption{Organizzazione con memoria interlacciata}
     \label{fig:memint}
 \end{figure}
+
+\section{Assembler}
+\subsection{Definizione assembler}
+L'\textbf{assembler} traduce il linguaggio \textbf{Assembly} in linguaggio macchina e consiste in un livello base di astrazione: le istruzioni fanno riferimento all'\textbf{architettura}, che può essere:
+\begin{itemize}
+    \item x86
+    \item ARMv7
+    \item RISC-V
+\end{itemize}
+Noi andremo principalmente ad analizzare e utilizzare ARMv7, il quale utilizza $32$ bit per registro per un totale di \textbf{16 registri}, andiamoli a vedere:
+\begin{itemize}
+    \item \textbf{R0 - R12:} registri usati per memorizzare i dati necessari all'esecuzione.
+    \item \textbf{R13 (Stack Pointer):} contiene l'indirizzo della cima dello stack.
+    \item \textbf{R14 (Link Register):} contiene l'indirizzo a cui tornare una volta terminata una chiamata di funzione.
+    \item \textbf{R15 (Program Counter):} contiene l'indirizzo dell'operazione da eseguire o della prossima.
+\end{itemize}
+
+\subsection{Parola di stato (CPSR)}
+La \textbf{parola di stato}, chiamata così da "word", ovvero una stringa di $4$ bit, è un registro speciale che contiene informazioni sul risultato delle operazioni e sullo stato del processore.\\
+Nel caso di ARMv7, è chiamata \textbf{CPSR} (Current Program Status Register).\\
+Ogni bit di questa word è un \textbf{flag} e ognuno indica una cosa diversa:
+\begin{center}
+    [Z | N | C | V]
+\end{center}
+\begin{itemize}
+    \item \textbf{Z:} $1$ se il risultato è uguale a $0$, $0$ altrimenti.
+    \item \textbf{N:} $1$ se il risultato è negativo, $0$ altrimenti.
+    \item \textbf{C:} $1$ se il risultato è uguale a $1$, $0$ altrimenti.
+    \item \textbf{V:} $1$ se si è verificato overflow.
+\end{itemize}
+Questo è molto utile per quando si fanno blocchi \textbf{condizionali}, in quanto si analizzano proprio questi flag per determinare una decisione.
+
+\subsection{Codice assembler (Assembly)}
+\subsection{Introduzione}
+Per usare l'assembler e capirlo meglio, andremo a creare programmi in \textbf{Assembly}, il quale viene svolto sequenzialmente dall'alto verso il basso, senza tornare indietro.\\
+Anche questo codice necessita compilazione, viene tradotto in un altro file che contiene solo \textbf{operazioni binarie} (linguaggio macchina).
+\subsection{Schema interno}
+Ogni istruzione è salvata come una stringa binaria suddivisa in diversi frammenti che indicano gli argomenti, tra cui:
+\begin{itemize}
+    \item Operatore (o funzione)
+    \item Registri parametro
+\end{itemize}
+Vediamo un esempio con $ADD\ R_0, R_1, R_2$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/assembler.png}
+    \caption{Assembler}
+    \label{fig:assembler}
+\end{figure}
+\subsection{Sommario dei comandi}
+Ecco le istruzioni principali:
+\begin{itemize}
+    \item Operative
+    \begin{itemize}
+        \item Aritmetiche
+        \begin{itemize}
+            \item ADD
+            \item SUB
+            \item MUL
+            \item DIV
+        \end{itemize}
+        \item Logiche
+        \begin{itemize}
+            \item AND
+            \item OR
+            \item NOT
+        \end{itemize}
+        \item Shift / rotazione
+        \begin{itemize}
+            \item SHIFT
+            \item ROT
+        \end{itemize}
+        \item \dots
+    \end{itemize}
+    \item Di Memoria
+    \begin{itemize}
+        \item LOAD
+        \begin{itemize}
+            \item Restituisce un valore da un indirizzo:\\
+            \begin{lstlisting}
+                LOAD val,addr
+            \end{lstlisting}
+        \end{itemize}
+        \item STORE
+        \begin{itemize}
+            \item Salva un valore in un indirizzo:\\
+            \begin{lstlisting}
+                STORE val,addr
+            \end{lstlisting}
+        \end{itemize}
+    \end{itemize}
+    \item di Salto
+    \begin{itemize}
+        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni, aggiornando il PC alla corrispondente istruzione.\\
+        \begin{lstlisting}
+            inizio:
+            \dots
+            jmp fine:
+            -skipped code-
+            fine:
+        \end{lstlisting}
+    \end{itemize}
+\end{itemize}
+\subsubsection{ADD}
+Il comando ADD svolge la somma tra due valori e lo salva in un registro terziario, richiede $3$ parametri:
+\begin{lstlisting}
+    ADD [destinazione], [addendo1], [addendo2]
+    ADD R0, R1, R2
+\end{lstlisting}
+\subsubsection{LSR e LSL}
+Questi comandi eseguono una \textbf{Logical Shift}, rispettivamente a destra (\textbf{Right}) o a sinistra (\textbf{Left}).\\
+Ecco la loro struttura:
+\begin{lstlisting}
+    LSR [dest], [src], [quantiBit]
+    LSL [dest], [src], [quantiBit]
+
+    LSR R0, R1, #1
+    LSL R0, R2, #3
+\end{lstlisting}
 
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.

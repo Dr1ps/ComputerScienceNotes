@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1793023231.59391 "c:/VSCode/ComputerScienceNotes/SelfEmpowerment/SelfEmpowerment.tex" "SelfEmpowerment.pdf" "SelfEmpowerment" 1793023237.3529 0
+["pdflatex"] 1793090907.86086 "c:/VSCode/ComputerScienceNotes/SelfEmpowerment/SelfEmpowerment.tex" "SelfEmpowerment.pdf" "SelfEmpowerment" 1793090913.02237 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -191,11 +191,11 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "SelfEmpowerment.aux" 1793023236 1375 e5a98a68a99e0863a7bff11dcff2f17a "pdflatex"
-  "SelfEmpowerment.out" 1793023236 1552 ad55ca3632afbd4a797956e913e4bc6a "pdflatex"
-  "SelfEmpowerment.tex" 1793023215 5606 d6799df79b1965921322854b60388292 ""
-  "SelfEmpowerment.toc" 1793023236 803 64d7f5f600a703d34380eea2ddfed437 "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/SelfEmpowerment/SelfEmpowerment.tex" 1793023215 5606 d6799df79b1965921322854b60388292 ""
+  "SelfEmpowerment.aux" 1793090912 1268 eff161ea5f70614838299606cdcf77e2 "pdflatex"
+  "SelfEmpowerment.out" 1793090912 1502 1358e1f18372fda6cdb8672756d487ed "pdflatex"
+  "SelfEmpowerment.tex" 1793090895 5591 5b98e4c47b4a2d00e819a3393b5d147f ""
+  "SelfEmpowerment.toc" 1793090912 737 f7a3121f544f6993260d4499d2b02219 "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/SelfEmpowerment/SelfEmpowerment.tex" 1793090895 5591 5b98e4c47b4a2d00e819a3393b5d147f ""
   (generated)
   "SelfEmpowerment.aux"
   "SelfEmpowerment.log"
