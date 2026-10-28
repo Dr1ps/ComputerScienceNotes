@@ -1044,9 +1044,23 @@ Noi andremo principalmente ad analizzare e utilizzare ARMv7, il quale utilizza $
     \item \textbf{R14 (Link Register):} contiene l'indirizzo a cui tornare una volta terminata una chiamata di funzione.
     \item \textbf{R15 (Program Counter):} contiene l'indirizzo dell'operazione da eseguire o della prossima.
 \end{itemize}
+\subsection{PC e il suo valore}
+In particolare, il PC ogni volta che avanza non aumenta di $1$, bensì di $4$:
+\[
+PC = PC + 4
+\]
+Questo perche ogni istruzione corrisponde ad una \textbf{word}, ovvero 4 byte.\\
+Questo varia però con le istruzioni dei salti:
+\[
+PC = PC + [passi\ per\ il\ salto]
+\]
+E per le guardie dei salti condizionali e aggiornamento della parola di stato:
+\[
+PC = PC + 1
+\]
 
 \subsection{Parola di stato (CPSR)}
-La \textbf{parola di stato}, chiamata così da "word", ovvero una stringa di $4$ bit, è un registro speciale che contiene informazioni sul risultato delle operazioni e sullo stato del processore.\\
+La \textbf{parola di stato}, ovvero una stringa di $4$ bit, è un registro speciale che contiene informazioni sul risultato delle operazioni e sullo stato del processore.\\
 Nel caso di ARMv7, è chiamata \textbf{CPSR} (Current Program Status Register).\\
 Ogni bit di questa word è un \textbf{flag} e ognuno indica una cosa diversa:
 \begin{center}
@@ -1061,10 +1075,10 @@ Ogni bit di questa word è un \textbf{flag} e ognuno indica una cosa diversa:
 Questo è molto utile per quando si fanno blocchi \textbf{condizionali}, in quanto si analizzano proprio questi flag per determinare una decisione.
 
 \subsection{Codice assembler (Assembly)}
-\subsection{Introduzione}
+\subsubsection{Introduzione}
 Per usare l'assembler e capirlo meglio, andremo a creare programmi in \textbf{Assembly}, il quale viene svolto sequenzialmente dall'alto verso il basso, senza tornare indietro.\\
 Anche questo codice necessita compilazione, viene tradotto in un altro file che contiene solo \textbf{operazioni binarie} (linguaggio macchina).
-\subsection{Schema interno}
+\subsubsection{Schema interno}
 Ogni istruzione è salvata come una stringa binaria suddivisa in diversi frammenti che indicano gli argomenti, tra cui:
 \begin{itemize}
     \item Operatore (o funzione)
@@ -1077,7 +1091,7 @@ Vediamo un esempio con $ADD\ R_0, R_1, R_2$:
     \caption{Assembler}
     \label{fig:assembler}
 \end{figure}
-\subsection{Sommario dei comandi}
+\subsubsection{Sommario dei comandi}
 Ecco le istruzioni principali:
 \begin{itemize}
     \item Operative
@@ -1094,6 +1108,7 @@ Ecco le istruzioni principali:
             \item AND
             \item OR
             \item NOT
+            \item XOR
         \end{itemize}
         \item Shift / rotazione
         \begin{itemize}
@@ -1106,14 +1121,14 @@ Ecco le istruzioni principali:
     \begin{itemize}
         \item LOAD
         \begin{itemize}
-            \item Restituisce un valore da un indirizzo:\\
+            \item Restituisce un valore da un indirizzo:
             \begin{lstlisting}
                 LOAD val,addr
             \end{lstlisting}
         \end{itemize}
         \item STORE
         \begin{itemize}
-            \item Salva un valore in un indirizzo:\\
+            \item Salva un valore in un indirizzo:
             \begin{lstlisting}
                 STORE val,addr
             \end{lstlisting}
@@ -1121,11 +1136,11 @@ Ecco le istruzioni principali:
     \end{itemize}
     \item di Salto
     \begin{itemize}
-        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni, aggiornando il PC alla corrispondente istruzione.\\
+        \item "Saltano" pezzi di codice, volendo anche secondo istruzioni, aggiornando il PC alla corrispondente istruzione.
         \begin{lstlisting}
             inizio:
             \dots
-            jmp fine:
+            B fine:
             -skipped code-
             fine:
         \end{lstlisting}
@@ -1146,6 +1161,60 @@ Ecco la loro struttura:
 
     LSR R0, R1, #1
     LSL R0, R2, #3
+\end{lstlisting}
+\subsubsection{CMP}
+Questo comando va utilizzato per effettuare il confronto tra due registri prima di controllare una guardia:
+\begin{lstlisting}
+    CMP [registro1], [registro2]
+    CMP R0, R1
+\end{lstlisting}
+Se viene omesso, il salto condizionato fallisce
+\subsubsection{Salti}
+I salti generici sono denotati dalla lettera "B", permettono di saltare pezzi di codice per riprendere da un' \textbf{etichetta}:
+\begin{lstlisting}
+    ...
+    B [etichetta]
+    B fine
+    ...
+    fine:
+\end{lstlisting}
+Esistono anche salti che agiscono in base ad una condizione:
+\[
+cmp\  [reg1], [reg2]
+\]
+\[
+B[condizione]\ [etichetta]
+\]
+\begin{itemize}
+    \item \textbf{BLT}: $reg1 < reg2$
+    \item \textbf{BGT}: $reg1 > reg2$
+    \item \textbf{BEQ}: $reg1 == reg2$
+    \item \textbf{BLE}: $reg1 \leq reg2$
+    \item \textbf{BGE}: $reg1 \geq reg2$
+    \item \textbf{BNE}: $reg1 \ne reg2$
+\end{itemize}
+Esiste anche un altro tipo di salto che permette di simulare l'utilizzo di \textbf{funzioni}, salvando l'indirizzo di ritorno in LR:
+\begin{lstlisting}
+    BL [etichetta]
+\end{lstlisting}
+Quest'ultimo può essere combinato con una guardia se vogliamo.
+
+\subsubsection{LDR} 
+Tale comando carica un valore dalla memoria del registro e lo salva in un altro:
+\begin{lstlisting}
+    LDR [dest], [[src]]
+    LDR R0, [R1]
+\end{lstlisting}
+Ci sono delle varianti:
+\begin{lstlisting}
+    
+    LDR R0, =100 @ Carica un valore costante (pseudo istruzione)
+    
+    LDR R0, [R1, #4] @ Carica R1 + 4
+
+    LDR R0, [R1], #4 @ Legge da R1, poi lo incrementa di 4
+    
+    LDR R0, [R1, #4]! @ R1 += 4, poi legge dal nuovo indirizzo
 \end{lstlisting}
 
 \section{Altro}

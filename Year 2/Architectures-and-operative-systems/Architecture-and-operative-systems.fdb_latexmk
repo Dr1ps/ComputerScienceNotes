@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1793098111.42465 "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" "Architecture-and-operative-systems.pdf" "Architecture-and-operative-systems" 1793098116.01025 0
-  "Architecture-and-operative-systems.aux" 1793098115 17553 9ae7233c2ec941da172a42574ccbe01f "pdflatex"
-  "Architecture-and-operative-systems.out" 1793098115 9212 896d880cadc8c8348faa5a65bf5587e4 "pdflatex"
-  "Architecture-and-operative-systems.tex" 1793098103 50779 9649ba68d1202c7150b0ce518f6981aa ""
-  "Architecture-and-operative-systems.toc" 1793098115 6514 5b6dda72648ef1f154166ae3b32f6bdc "pdflatex"
+["pdflatex"] 1793201542.27476 "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" "Architecture-and-operative-systems.pdf" "Architecture-and-operative-systems" 1793201549.52125 0
+  "Architecture-and-operative-systems.aux" 1793201548 18074 3c2d250299b771ff7e6819d17e47a145 "pdflatex"
+  "Architecture-and-operative-systems.out" 1793201548 9661 eebbbe6e2ebee8a6aa842b2c45af5fcf "pdflatex"
+  "Architecture-and-operative-systems.tex" 1793201540 52794 cd3a1647bf751d448637971716771b82 ""
+  "Architecture-and-operative-systems.toc" 1793201548 6871 cb77d9044fbe4812e87554146d61261c "pdflatex"
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -205,7 +205,7 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" 1793098103 50779 9649ba68d1202c7150b0ce518f6981aa ""
+  "c:/VSCode/ComputerScienceNotes/Year 2/Architectures-and-operative-systems/Architecture-and-operative-systems.tex" 1793201540 52794 cd3a1647bf751d448637971716771b82 ""
   "images/CircuitoSR.png" 1791283638 8707 6ece15150812faf03ae34a57144f4b45 ""
   "images/DLatch.png" 1791281791 1119 1310d7a2b190c826f8d0366e87b2a79b ""
   "images/Demultiplexer.png" 1791987963 4705 c5353a4e1acc41606c2bc1e2acf84de5 ""

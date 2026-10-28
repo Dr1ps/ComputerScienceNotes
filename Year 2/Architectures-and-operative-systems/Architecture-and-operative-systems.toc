@@ -62,22 +62,26 @@
 \contentsline {subsubsection}{\numberline {7.10.2}Organizzazione interlacciata}{33}{subsubsection.7.10.2}%
 \contentsline {section}{\numberline {8}Assembler}{34}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Definizione assembler}{34}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Parola di stato (CPSR)}{34}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Codice assembler (Assembly)}{34}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Introduzione}{34}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Schema interno}{35}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Sommario dei comandi}{35}{subsection.8.6}%
-\contentsline {subsubsection}{\numberline {8.6.1}ADD}{36}{subsubsection.8.6.1}%
-\contentsline {subsubsection}{\numberline {8.6.2}LSR e LSL}{36}{subsubsection.8.6.2}%
-\contentsline {section}{\numberline {9}Altro}{37}{section.9}%
-\contentsline {paragraph}{Rete combinatoria:}{37}{section.9}%
-\contentsline {paragraph}{Rete sequenziale:}{37}{section.9}%
-\contentsline {section}{\numberline {10}Esercizi}{38}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Cosa calcola una rete}{38}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Descrizione}{38}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {10.1.2}Soluzione}{38}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Algebra booleana}{38}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Mappe di Kernaugh}{39}{subsubsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.2}Circuito di una sveglia}{39}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Descrizione}{39}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}Soluzione}{39}{subsubsection.10.2.2}%
+\contentsline {subsection}{\numberline {8.2}PC e il suo valore}{34}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Parola di stato (CPSR)}{34}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Codice assembler (Assembly)}{35}{subsection.8.4}%
+\contentsline {subsubsection}{\numberline {8.4.1}Introduzione}{35}{subsubsection.8.4.1}%
+\contentsline {subsubsection}{\numberline {8.4.2}Schema interno}{35}{subsubsection.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.4.3}Sommario dei comandi}{35}{subsubsection.8.4.3}%
+\contentsline {subsubsection}{\numberline {8.4.4}ADD}{36}{subsubsection.8.4.4}%
+\contentsline {subsubsection}{\numberline {8.4.5}LSR e LSL}{36}{subsubsection.8.4.5}%
+\contentsline {subsubsection}{\numberline {8.4.6}CMP}{37}{subsubsection.8.4.6}%
+\contentsline {subsubsection}{\numberline {8.4.7}Salti}{37}{subsubsection.8.4.7}%
+\contentsline {subsubsection}{\numberline {8.4.8}LDR}{37}{subsubsection.8.4.8}%
+\contentsline {section}{\numberline {9}Altro}{39}{section.9}%
+\contentsline {paragraph}{Rete combinatoria:}{39}{section.9}%
+\contentsline {paragraph}{Rete sequenziale:}{39}{section.9}%
+\contentsline {section}{\numberline {10}Esercizi}{40}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Cosa calcola una rete}{40}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Descrizione}{40}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}Soluzione}{40}{subsubsection.10.1.2}%
+\contentsline {paragraph}{Algebra booleana}{40}{subsubsection.10.1.2}%
+\contentsline {paragraph}{Mappe di Kernaugh}{41}{subsubsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.2}Circuito di una sveglia}{41}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Descrizione}{41}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Soluzione}{41}{subsubsection.10.2.2}%
