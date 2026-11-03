@@ -7,6 +7,7 @@ Stampare la somma*/
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int sum_submatrix(int **, int);
 
@@ -25,6 +26,7 @@ int main() {
     int **matrix = (int**)malloc(m * sizeof(int *));
     if (matrix == NULL) {
         printf("Memory allocation failed.\n");
+        free(matrix);
         return 1;
     }
 
@@ -43,27 +45,18 @@ int main() {
     }
 
     /*Riempimento effettivo matrice*/
-    printf("Now, insert the matrix line by line separating values by comma (,):\n");
-    for(int i = 0; i < m; i ++) {
-        char s[1024];
-        scanf("%[\n]",s);
-        int* tok;
-        tok = (int) strtok(s,",");
-        printf(tok);
-        int* temp[m];
-        int j = 0;
-        temp[j] = *tok;
-        while((tok = strtok(NULL,",") != NULL) && j < m) {
-            j++;
-            temp[j];
+    printf("Now, insert the matrix number by number:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &matrix[i][j]);
         }
-        matrix[i] = temp;
     }
+
 
     /*Inserimento variabile n*/
     printf("How big would you like the submatrix to be (N X N):\n");
     scanf("%d",&n);
-    while (!(n > 0) && !(n < m)) {
+    while (!((n >= 0) && (n <= m))) {
         printf("Invalid size, input that again.\n");
         scanf("%d",&n);
     }
@@ -71,6 +64,12 @@ int main() {
     /*Calcolo della somma della sottomatrice*/
     int somma = sum_submatrix(matrix,n);
     printf("Sum of the submatrix: %d\n",somma);
+
+    /*Deallocazione*/
+    for (int i = 0; i < m; i++) {
+        free(matrix[i]);
+    }
+    free(matrix);
     
 }
 

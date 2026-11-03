@@ -563,7 +563,7 @@ Bisogna scegliere il placeholder corretto per riuscire a stampare una variabile;
 \subsection{scanf}
 Questo comando serve per l'input da tastiera:
 \begin{lstlisting}[language=C]
-    scanf("Numero: %d",&intero)
+    scanf("%d",&intero)
 \end{lstlisting}
 In questo caso, legge un intero e lo salva nella variabile $intero$.\\
 La \& serve per passare la variabile come indirizzo e non valore (per array non si usa, sono gia riferimenti).
@@ -844,7 +844,7 @@ Per leggere i dati annessi ad un puntatore si fa cosi:
 
     printf("%p\n",(void *)addr); /*stampa indirizzo della variabile*/
     printf("%d\n",*addr); /*stampa il valore della variabile puntata*/
-    printf("%p\n",&p); /*stampa l'indirizzo del puntatore*/
+    printf("%p\n",&addr); /*stampa l'indirizzo del puntatore*/
 
     *addr = 25; /*modifica il valore della variabile puntata*/
 \end{lstlisting}
@@ -907,10 +907,10 @@ Vediamo un puntatore ad una struct:
 I puntatori possono essere usati anche per \textbf{liste concatenate}:
 \begin{lstlisting}[language=C]
     /*Definizione nodo*/
-    typedef struct {
+    typedef struct n {
         int val;
         /*Variabile di tipo puntatore a struct n*/
-        struct n * next;
+        struct Node * next;
     } Node;
     Node* head = NULL; /*Lista vuota*/
     
