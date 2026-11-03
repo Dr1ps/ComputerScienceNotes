@@ -116,17 +116,23 @@
 \contentsline {subsection}{\numberline {10.19}Tipi ricorsivi}{36}{subsection.10.19}%
 \contentsline {subsubsection}{\numberline {10.19.1}Alberi}{36}{subsubsection.10.19.1}%
 \contentsline {subsubsection}{\numberline {10.19.2}Abstract Syntax Tree}{37}{subsubsection.10.19.2}%
-\contentsline {subsection}{\numberline {10.20}Encoding da lambda calcolo a OCaml}{37}{subsection.10.20}%
-\contentsline {section}{\numberline {11}Esercizi}{38}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Esercizio 1}{38}{subsection.11.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{38}{Item.12}%
-\contentsline {subsection}{\numberline {11.2}Esercizio 2}{38}{subsection.11.2}%
-\contentsline {paragraph}{Soluzione}{38}{Item.18}%
-\contentsline {subsection}{\numberline {11.3}Esercizio 3}{38}{subsection.11.3}%
-\contentsline {paragraph}{Soluzione}{38}{Item.21}%
-\contentsline {subsection}{\numberline {11.4}Esercizio 4}{39}{subsection.11.4}%
-\contentsline {paragraph}{Soluzione}{39}{Item.29}%
-\contentsline {subsection}{\numberline {11.5}Esercizio 5}{39}{subsection.11.5}%
-\contentsline {paragraph}{Soluzione}{39}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Esercizio 6}{39}{subsection.11.6}%
-\contentsline {paragraph}{Soluzione}{39}{Item.32}%
+\contentsline {subsection}{\numberline {10.20}Programmazione imperativa (introduzione)}{37}{subsection.10.20}%
+\contentsline {subsubsection}{\numberline {10.20.1}Nuova sintassi degli array}{37}{subsubsection.10.20.1}%
+\contentsline {subsubsection}{\numberline {10.20.2}Record mutabili}{38}{subsubsection.10.20.2}%
+\contentsline {subsubsection}{\numberline {10.20.3}Riferimenti (refs)}{38}{subsubsection.10.20.3}%
+\contentsline {subsubsection}{\numberline {10.20.4}Sequenze di espressioni e cicli}{38}{subsubsection.10.20.4}%
+\contentsline {subsection}{\numberline {10.21}Encoding da lambda calcolo a OCaml}{39}{subsection.10.21}%
+\contentsline {section}{\numberline {11}Altro}{40}{section.11}%
+\contentsline {section}{\numberline {12}Esercizi}{41}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Esercizio 1}{41}{subsection.12.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{41}{Item.12}%
+\contentsline {subsection}{\numberline {12.2}Esercizio 2}{41}{subsection.12.2}%
+\contentsline {paragraph}{Soluzione}{41}{Item.18}%
+\contentsline {subsection}{\numberline {12.3}Esercizio 3}{41}{subsection.12.3}%
+\contentsline {paragraph}{Soluzione}{41}{Item.21}%
+\contentsline {subsection}{\numberline {12.4}Esercizio 4}{42}{subsection.12.4}%
+\contentsline {paragraph}{Soluzione}{42}{Item.29}%
+\contentsline {subsection}{\numberline {12.5}Esercizio 5}{42}{subsection.12.5}%
+\contentsline {paragraph}{Soluzione}{42}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Esercizio 6}{42}{subsection.12.6}%
+\contentsline {paragraph}{Soluzione}{42}{Item.32}%

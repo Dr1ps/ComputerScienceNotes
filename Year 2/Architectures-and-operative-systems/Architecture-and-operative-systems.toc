@@ -73,6 +73,7 @@
 \contentsline {subsubsection}{\numberline {8.4.6}CMP}{37}{subsubsection.8.4.6}%
 \contentsline {subsubsection}{\numberline {8.4.7}Salti}{37}{subsubsection.8.4.7}%
 \contentsline {subsubsection}{\numberline {8.4.8}LDR}{37}{subsubsection.8.4.8}%
+\contentsline {subsubsection}{\numberline {8.4.9}Loop}{38}{subsubsection.8.4.9}%
 \contentsline {section}{\numberline {9}Altro}{39}{section.9}%
 \contentsline {paragraph}{Rete combinatoria:}{39}{section.9}%
 \contentsline {paragraph}{Rete sequenziale:}{39}{section.9}%

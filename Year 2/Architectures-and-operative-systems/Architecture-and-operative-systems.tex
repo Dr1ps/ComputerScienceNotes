@@ -1217,6 +1217,18 @@ Ci sono delle varianti:
     LDR R0, [R1, #4]! @ R1 += 4, poi legge dal nuovo indirizzo
 \end{lstlisting}
 
+\subsubsection{Loop}
+Per realizzare loop bisogna utilizzare un salto all'indietro e un CMP appena si entra nel loop per simulare la guardia:
+\begin{lstlisting}
+    loop:   cmp R1,R2
+            be fine:
+            ...
+            b loop
+    
+    fine:
+            ...
+\end{lstlisting}
+
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
 \paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.

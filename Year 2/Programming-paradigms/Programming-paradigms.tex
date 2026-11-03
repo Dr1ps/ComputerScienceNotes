@@ -1418,13 +1418,78 @@ Prendiamo per esempio:
 \end{center}
 Questo può essere rappresentato da un albero radicato in if con figli uguali agli operatori, i quali come figli hanno i termini delle operazioni.\\
 Vediamo come realizzare per esempio un AST delle operazioni aritmetiche base:
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   let op = Add | Sub | Mul | Div ;;
   let exp = 
     | Val of int
     | Op of op * exp * exp
     | UMin of exp ;;
 \end{lstlisting}
+
+\subsection{Programmazione imperativa (introduzione)}
+Abbiamo lavorato fin'ora con la programmazione funzionale, andiamo adesso a vedere la programmazione imperativa.\\
+Adesso tutto ha una causa e un effetto, le funzioni non servono piu solo a calcolare, ma possono essere influenzate da membri esterni.
+\subsubsection{Nuova sintassi degli array}
+\textbf{Definizione:}
+\begin{lstlisting}[language=OCaml]
+  let a = [|3,2,1|] ;;
+  (*Oppure*)
+  let a = Array.make 3 None ;;
+\end{lstlisting}
+\textbf{Lunghezza:}
+\begin{lstlisting}[language=OCaml]
+  let n = Array.length a ;;
+\end{lstlisting}
+\textbf{Accedere ad un elemento:}
+\begin{lstlisting}[language=OCaml]
+  let e = a.(i) ;;
+\end{lstlisting}
+\textbf{Modifica di un elemento:}
+\begin{lstlisting}[language=OCaml]
+  a.(i) <- 6 ;;
+\end{lstlisting}
+Questa è la prima volta in OCaml che possiamo modificare qualcosa!
+\subsubsection{Record mutabili}
+Normalmente non si potrebbe, ma adesso i record sono mutabili!\\
+Per farlo, bisogna rendere un record mutabile tramite la keyword \textbf{mutable}, il quale rende possibile la modifica di un campo senza dover creare un record secondario:
+\begin{lstlisting}[language=OCaml]
+  type Persona = {
+    nominativo: string;
+    mutable eta: int
+  } ;;
+\end{lstlisting}
+
+\subsubsection{Riferimenti (refs)}
+Si possono definire anche singole variabili mutabili:
+\begin{lstlisting}[language=OCaml]
+  let x = ref 12 ;;
+\end{lstlisting}
+Questa variabile contiene un \textbf{riferimento} al valore in memoria, accedibile e modificabile tramite "contents":
+\begin{lstlisting}[language=OCaml]
+  x.contents ;;
+  x.contents <- 14 ;;
+\end{lstlisting}
+Esiste una sintassi più semplice:
+\begin{lstlisting}[language=OCaml]
+  (*Equivale a x.contents*)
+  !x ;;
+  (*Equivale a x.contents <- 14*)
+  x := 14 ;;
+  (*Equivale a x.contents <- x.contents + 1*)
+  x := !x + 1 ;;
+\end{lstlisting}
+\subsubsection{Sequenze di espressioni e cicli}
+Una sequenza di espressioni si crea cosi:
+\begin{lstlisting}
+  x := !x+1 ; y := !y+1 ; (!x,!y) ;;
+\end{lstlisting}
+Vediamo adesso il ciclo \textbf{for:}
+\begin{lstlisting}
+  for i = 0 to (Array.length arr)-1 do
+    ...
+  done ;
+\end{lstlisting}
+
 
 \subsection{Encoding da lambda calcolo a OCaml}
 Ecco le regole sintattiche di trasformazione:
@@ -1439,6 +1504,8 @@ Ecco le regole sintattiche di trasformazione:
 \]
 In pratica è molto semplice, queste trasformazioni lasciano tutto inalterato e sostituiscono la denotazione con $\lambda$.
 
+\section{Altro}
+Il tipo dei comandi in OCaml è \textbf{unit}.
 
 \section{Esercizi}
 \subsection{Esercizio 1}
