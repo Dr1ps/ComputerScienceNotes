@@ -1070,10 +1070,15 @@ Ogni bit di questa word è un \textbf{flag} e ognuno indica una cosa diversa:
     \item \textbf{Z:} $1$ se il risultato è uguale a $0$, $0$ altrimenti.
     \item \textbf{N:} $1$ se il risultato è negativo, $0$ altrimenti.
     \item \textbf{C:} $1$ se il risultato è uguale a $1$, $0$ altrimenti (carry finale).
-    \item \textbf{V:} $1$ se si è verificato overflow.
+    \item \textbf{V:} $1$ se si è verificato overflow ($c \ne 0$), $0$ altrimenti ($c = 0$).
 \end{itemize}
-Questo è molto utile per quando si fanno blocchi \textbf{condizionali}, in quanto si analizzano proprio questi flag per determinare una decisione.
-
+Questo è molto utile per quando si fanno blocchi \textbf{condizionali}, in quanto si analizzano proprio questi flag per determinare una decisione.\\
+In particolare:
+\begin{itemize}
+    \item \textbf{N} e \textbf{Z} servono per condizioni logiche e aritmetiche.
+    \item \textbf{C} serve solo per condizioni aritmetiche.
+    \item \textbf{V} è a se' per l'overflow.
+\end{itemize}
 \subsection{Codice assembler (Assembly)}
 \subsubsection{Introduzione}
 Per usare l'assembler e capirlo meglio, andremo a creare programmi in \textbf{Assembly}, il quale viene svolto sequenzialmente dall'alto verso il basso, senza tornare indietro.\\
@@ -1091,6 +1096,14 @@ Vediamo un esempio con $ADD\ R_0, R_1, R_2$:
     \caption{Assembler}
     \label{fig:assembler}
 \end{figure}
+\subsubsection{Convenzioni nell'utilizzo dei registri}
+In Assembly esistono delle convenzioni per come bisogna utilizzare i diversi registri:
+\begin{enumerate}
+    \item \textbf{R0 - R3} sono registri temporanei, ovvero registri in cui non serve mantenere i valori, mentre \textbf{R4 - R15} sono registri non temporanei, i valori vanno mantenuti.
+    \item I parametri attuali delle operazioni vanno salvati in \textbf{R0 - R3}
+    \item I valori di ritorno si salvano in \textbf{R0}
+    \item I valori non temporanei vanno mantenuti (ritrovati alla fine)
+\end{enumerate}
 \subsubsection{Sommario dei comandi}
 Ecco le istruzioni principali:
 \begin{itemize}
@@ -1197,7 +1210,11 @@ Esiste anche un altro tipo di salto che permette di simulare l'utilizzo di \text
 \begin{lstlisting}
     BL [etichetta]
 \end{lstlisting}
-Quest'ultimo può essere combinato con una guardia se vogliamo.
+Il valore di ritorno è salvato nel registro \textbf{LR}, quindi per tornare indietro bisogna settare \textbf{PC} a \textbf{LR}:
+\begin{lstlisting}
+    MOV PC, LR
+\end{lstlisting}
+BL può essere combinato con una guardia se vogliamo.
 
 \subsubsection{LDR} 
 Tale comando carica un valore dalla memoria del registro e lo salva in un altro:
@@ -1229,6 +1246,47 @@ Per realizzare loop bisogna utilizzare un salto all'indietro e un CMP appena si 
             ...
 \end{lstlisting}
 
+\subsubsection{Operazioni condizionali}
+Esistono versioni di comandi base che collaborano con delle condizioni:
+\begin{lstlisting}
+    ADDEQ R1,R2,R3
+\end{lstlisting}
+Questo svolge $R2-R3$, se il flag \textbf{Z} è $1$ allora sono uguali e la condizione è vera e svolge quindi l'operazione.\\
+Questo tipo di comandi permette di evitare l'utilizzo di salti, i quali possono provocare rallentamenti in codici eseguiti con pipeline, in quanto il programma si era preparato a svolgere certe operazioni e invece abbiamo deciso di saltarle.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/mnemonics.png}
+    \caption{Mnemonics}
+    \label{fig:mnemonics}
+\end{figure}
+
+\subsubsection{Comandi che settano flag}
+Per fare in modo che dopo un'operazione lo stato del risultato venga mantenuto nei flag bisogna aggiungere una "S":
+\begin{lstlisting}
+    ADDS R0, R1, R2
+\end{lstlisting}
+Questa operazione esegue l'operazione base normalmente e poi setta i flag in base al risultato dell'operazione associata.\\
+I flag non vengono normalmente settati, ci vogliono questi comandi.
+
+\subsubsection{Prelevare registri dallo stack}
+Se abbiamo bisogno di piu registri di quelli temporanei, bisogna utilizzare quelli seguenti, ma per farlo bisogna prima toglierli dallo stack e poi, una volta utilizzati, vanno rimessi nello stack:
+\begin{lstlisting}
+    PUSH {R4, R5}
+    ...
+    POP {R4, R5}
+\end{lstlisting}
+Qui si salvano i valori di R4 e R5 per operare su di essi con altri valori, poi alla fine si riprendono i valori iniziali (si prendono i valori e si salvano nei registri specificati come parametri).\\
+Questo è molto importante per realizzare delle \textbf{funzioni} in assembly:
+\begin{lstlisting}
+    BL func
+
+    func:
+        PUSH {LR}
+        ...
+        POP {PC}
+
+\end{lstlisting}
+In questo codice, si chiama la funzione salvandoci l'indirizzo di ritorno che viene poi salvato nello stack. Man mano il PC aumenta e siccome ci siamo salvati l'indirizzo di ritorno prima, lo estraiamo di nuovo e lo salviamo in PC, in modo da tornare nel programma principale.
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
 \paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.
