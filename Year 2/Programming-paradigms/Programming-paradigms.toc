@@ -121,6 +121,7 @@
 \contentsline {subsubsection}{\numberline {10.20.2}Record mutabili}{38}{subsubsection.10.20.2}%
 \contentsline {subsubsection}{\numberline {10.20.3}Riferimenti (refs)}{38}{subsubsection.10.20.3}%
 \contentsline {subsubsection}{\numberline {10.20.4}Sequenze di espressioni e cicli}{38}{subsubsection.10.20.4}%
+\contentsline {subsubsection}{\numberline {10.20.5}Eccezioni}{39}{subsubsection.10.20.5}%
 \contentsline {subsection}{\numberline {10.21}Encoding da lambda calcolo a OCaml}{39}{subsection.10.21}%
 \contentsline {section}{\numberline {11}Altro}{40}{section.11}%
 \contentsline {section}{\numberline {12}Esercizi}{41}{section.12}%

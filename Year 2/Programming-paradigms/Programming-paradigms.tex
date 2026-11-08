@@ -1478,17 +1478,49 @@ Esiste una sintassi più semplice:
   (*Equivale a x.contents <- x.contents + 1*)
   x := !x + 1 ;;
 \end{lstlisting}
+
 \subsubsection{Sequenze di espressioni e cicli}
 Una sequenza di espressioni si crea cosi:
 \begin{lstlisting}
   x := !x+1 ; y := !y+1 ; (!x,!y) ;;
 \end{lstlisting}
 Vediamo adesso il ciclo \textbf{for:}
-\begin{lstlisting}
+\begin{lstlisting}[language=OCaml]
   for i = 0 to (Array.length arr)-1 do
     ...
   done ;
 \end{lstlisting}
+Adesso il ciclo \textbf{while}:
+\begin{lstlisting}[language=OCaml]
+  let x = ref 10 in
+  while !x > 0 do
+    ...
+  done ;
+\end{lstlisting}
+
+\subsubsection{Eccezioni}
+Ecco come si creano eccezioni custom:
+\begin{lstlisting}[language=OCaml]
+  exception Lista_Vuota ;;
+  exception Stringa_Errata of string ;;
+\end{lstlisting}
+Ecco come si lanciano:
+\begin{lstlisting}[language=OCaml]
+  raise Lista_Vuota ;;
+  raise (Stringa_Errata "test") ;;
+\end{lstlisting}
+Esiste un costrutto che permette di svolgere delle funzioni in modo che si attribuisca un risultato anche alle eccezioni:
+\begin{lstlisting}[language=OCaml]
+  try
+    tutti_pos lis
+  with
+  | Lista_Vuota -> true ;;
+\end{lstlisting}
+In particolare, esiste un'eccezione astratta chiamata \textbf{Failure} che possiamo sollevare senza usare "raise":
+\begin{lstlisting}[language=OCaml]
+  failwith("Messaggio di errore") ;;
+\end{lstlisting}
+Un'altra eccezione viene sollevata quando \textbf{assert} non viene soddisfatta.
 
 
 \subsection{Encoding da lambda calcolo a OCaml}
