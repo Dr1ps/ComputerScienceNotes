@@ -9,7 +9,7 @@
 - add tester code to Verilog test, monitor (do better)
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG) 
 (download or redo)
-controlla ultime 2 lezioni su teams
+
 
 ## OPERATIONAL RESEARCH ##
 

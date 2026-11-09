@@ -1,139 +1,145 @@
-\contentsline {section}{\numberline {1}Introduzione}{5}{section.1}%
-\contentsline {paragraph}{Email Docente:}{5}{section.1}%
-\contentsline {paragraph}{E-Learning:}{5}{section.1}%
-\contentsline {section}{\numberline {2}Descrizione dei paradigmi}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Paradigma imperativo}{6}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Paradigma object-oriented}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Paradigma funzionale}{6}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Programmazione concorrente}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Programmazione parallela}{6}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Il ruolo chiave dei tipi}{7}{section.3}%
-\contentsline {section}{\numberline {4}Linguaggi}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Fortran}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}ALGOL 60}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}LISP}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}SIMULA 67}{8}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}C}{9}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Pascal}{9}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Smalltalk}{9}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}PROLOG}{9}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}C++}{9}{subsection.4.9}%
-\contentsline {subsection}{\numberline {4.10}Java}{9}{subsection.4.10}%
-\contentsline {subsection}{\numberline {4.11}Altri linguaggi popolari}{10}{subsection.4.11}%
-\contentsline {subsection}{\numberline {4.12}Come crescono i linguaggi?}{10}{subsection.4.12}%
-\contentsline {section}{\numberline {5}Approccio scientifico}{11}{section.5}%
-\contentsline {section}{\numberline {6}Lambda Calculus}{12}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Definizione}{12}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Lambda espressioni}{12}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Segnatura e funzione identità}{12}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Applicazione}{12}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Funzione costante}{12}{subsubsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.4}Funzioni annidate}{13}{subsubsection.6.2.4}%
-\contentsline {subsubsection}{\numberline {6.2.5}Ordine di semplificazione}{13}{subsubsection.6.2.5}%
-\contentsline {subsubsection}{\numberline {6.2.6}Funzioni come parametro}{13}{subsubsection.6.2.6}%
-\contentsline {subsubsection}{\numberline {6.2.7}Prolungamento di espressione}{13}{subsubsection.6.2.7}%
-\contentsline {subsubsection}{\numberline {6.2.8}Parametri attuali numerici}{14}{subsubsection.6.2.8}%
-\contentsline {subsubsection}{\numberline {6.2.9}Ambiguità}{14}{subsubsection.6.2.9}%
-\contentsline {subsection}{\numberline {6.3}Convenzioni sintattiche}{14}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Variabili libere e legate}{14}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{15}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{15}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{15}{subsection.6.7}%
-\contentsline {paragraph}{Sostituzione negata, variabile legata}{15}{subsection.6.7}%
-\contentsline {paragraph}{Alpha equivalenza}{15}{subsection.6.7}%
-\contentsline {paragraph}{Sostituzione semplice, diretta}{15}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{15}{subsection.6.8}%
-\contentsline {paragraph}{ATTENZIONE:}{16}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Beta reduction e beta equivalenza}{16}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}Non terminazione}{17}{subsection.6.10}%
-\contentsline {subsection}{\numberline {6.11}Forma normale}{17}{subsection.6.11}%
-\contentsline {subsection}{\numberline {6.12}Teorema di Church Rosser}{17}{subsection.6.12}%
-\contentsline {subsection}{\numberline {6.13}Funzioni di ordine superiore e currying}{17}{subsection.6.13}%
-\contentsline {subsection}{\numberline {6.14}Valutazione dell'applicazione di funzione}{18}{subsection.6.14}%
-\contentsline {subsection}{\numberline {6.15}Implementazione della ricorsione}{18}{subsection.6.15}%
-\contentsline {subsection}{\numberline {6.16}Variabili booleane}{19}{subsection.6.16}%
-\contentsline {subsection}{\numberline {6.17}Condizionale}{20}{subsection.6.17}%
-\contentsline {subsection}{\numberline {6.18}Numeri}{20}{subsection.6.18}%
-\contentsline {section}{\numberline {7}Regole di inferenza}{21}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Sintassi}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Successore}{21}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Predecessore}{21}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}IsZero}{21}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}If-Else}{21}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Controllo dei tipi}{22}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Tipi}{22}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Well-typed e ill-typed}{22}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Type Safety: Correttezza}{22}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Controllo su successore}{22}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Controllo su predecessore}{22}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Controllo su isZero}{22}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Controllo su if-else}{23}{subsection.8.7}%
-\contentsline {section}{\numberline {9}Lambda Calculus Tipato}{24}{section.9}%
-\contentsline {subsection}{\numberline {9.1}L'introduzione dei tipi}{24}{subsection.9.1}%
-\contentsline {paragraph}{Tipo:}{24}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Sistema di controllo dei tipi}{24}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Sintassi dei tipi}{25}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Ambiente di tipo}{25}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Substitution Lemma}{26}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Dichiarazioni locali}{26}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Ricorsione}{26}{subsection.9.7}%
-\contentsline {section}{\numberline {10}OCaml}{27}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Antenati}{27}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Come mai NON studiare OCaml (Ma invece si)}{27}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Esecutore di OCaml}{27}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Overloading degli operatori e cast}{28}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Tipi di OCaml}{28}{subsection.10.5}%
-\contentsline {subsubsection}{\numberline {10.5.1}Tipi di base}{28}{subsubsection.10.5.1}%
-\contentsline {subsubsection}{\numberline {10.5.2}Tipi complessi}{28}{subsubsection.10.5.2}%
-\contentsline {subsubsection}{\numberline {10.5.3}Tipi custom}{29}{subsubsection.10.5.3}%
-\contentsline {subsection}{\numberline {10.6}Operazioni logiche}{29}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}Operazioni sulle stringhe}{29}{subsection.10.7}%
-\contentsline {subsection}{\numberline {10.8}Funzioni e lambda calcolo}{30}{subsection.10.8}%
-\contentsline {subsubsection}{\numberline {10.8.1}Applicazione parziale}{30}{subsubsection.10.8.1}%
-\contentsline {subsubsection}{\numberline {10.8.2}Encoding}{30}{subsubsection.10.8.2}%
-\contentsline {subsection}{\numberline {10.9}Scope}{31}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10}Costrutti}{31}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11}Ricorsione}{31}{subsection.10.11}%
-\contentsline {paragraph}{Mutua ricorsione:}{31}{lstnumber.-25.1}%
-\contentsline {subsection}{\numberline {10.12}Sum if true}{31}{subsection.10.12}%
-\contentsline {subsection}{\numberline {10.13}Type inference e polimorfismo}{32}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14}Liste}{32}{subsection.10.14}%
-\contentsline {subsubsection}{\numberline {10.14.1}Funzioni ricorsive su liste}{32}{subsubsection.10.14.1}%
-\contentsline {subsubsection}{\numberline {10.14.2}Funzioni higher-order su liste}{33}{subsubsection.10.14.2}%
-\contentsline {subsubsection}{\numberline {10.14.3}Accumulatore}{33}{subsubsection.10.14.3}%
-\contentsline {subsubsection}{\numberline {10.14.4}Filter}{34}{subsubsection.10.14.4}%
-\contentsline {subsubsection}{\numberline {10.14.5}Map}{34}{subsubsection.10.14.5}%
-\contentsline {subsubsection}{\numberline {10.14.6}Reduce (fold)}{34}{subsubsection.10.14.6}%
-\contentsline {subsection}{\numberline {10.15}Pattern matching}{34}{subsection.10.15}%
-\contentsline {subsection}{\numberline {10.16}Wildcard}{34}{subsection.10.16}%
-\contentsline {subsection}{\numberline {10.17}Record}{35}{subsection.10.17}%
-\contentsline {subsubsection}{\numberline {10.17.1}Dot notation}{35}{subsubsection.10.17.1}%
-\contentsline {subsubsection}{\numberline {10.17.2}Copia di record}{35}{subsubsection.10.17.2}%
-\contentsline {subsubsection}{\numberline {10.17.3}immutabilità}{35}{subsubsection.10.17.3}%
-\contentsline {subsection}{\numberline {10.18}Variant}{35}{subsection.10.18}%
-\contentsline {subsubsection}{\numberline {10.18.1}Enum}{35}{subsubsection.10.18.1}%
-\contentsline {subsubsection}{\numberline {10.18.2}Numeri naturali estesi}{36}{subsubsection.10.18.2}%
-\contentsline {subsection}{\numberline {10.19}Tipi ricorsivi}{36}{subsection.10.19}%
-\contentsline {subsubsection}{\numberline {10.19.1}Alberi}{36}{subsubsection.10.19.1}%
-\contentsline {subsubsection}{\numberline {10.19.2}Abstract Syntax Tree}{37}{subsubsection.10.19.2}%
-\contentsline {subsection}{\numberline {10.20}Programmazione imperativa (introduzione)}{37}{subsection.10.20}%
-\contentsline {subsubsection}{\numberline {10.20.1}Nuova sintassi degli array}{37}{subsubsection.10.20.1}%
-\contentsline {subsubsection}{\numberline {10.20.2}Record mutabili}{38}{subsubsection.10.20.2}%
-\contentsline {subsubsection}{\numberline {10.20.3}Riferimenti (refs)}{38}{subsubsection.10.20.3}%
-\contentsline {subsubsection}{\numberline {10.20.4}Sequenze di espressioni e cicli}{38}{subsubsection.10.20.4}%
-\contentsline {subsubsection}{\numberline {10.20.5}Eccezioni}{39}{subsubsection.10.20.5}%
-\contentsline {subsection}{\numberline {10.21}Encoding da lambda calcolo a OCaml}{39}{subsection.10.21}%
-\contentsline {section}{\numberline {11}Altro}{40}{section.11}%
-\contentsline {section}{\numberline {12}Esercizi}{41}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Esercizio 1}{41}{subsection.12.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{41}{Item.12}%
-\contentsline {subsection}{\numberline {12.2}Esercizio 2}{41}{subsection.12.2}%
-\contentsline {paragraph}{Soluzione}{41}{Item.18}%
-\contentsline {subsection}{\numberline {12.3}Esercizio 3}{41}{subsection.12.3}%
-\contentsline {paragraph}{Soluzione}{41}{Item.21}%
-\contentsline {subsection}{\numberline {12.4}Esercizio 4}{42}{subsection.12.4}%
-\contentsline {paragraph}{Soluzione}{42}{Item.29}%
-\contentsline {subsection}{\numberline {12.5}Esercizio 5}{42}{subsection.12.5}%
-\contentsline {paragraph}{Soluzione}{42}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Esercizio 6}{42}{subsection.12.6}%
-\contentsline {paragraph}{Soluzione}{42}{Item.32}%
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {paragraph}{Email Docente:}{3}{section.1}%
+\contentsline {paragraph}{E-Learning:}{3}{section.1}%
+\contentsline {section}{\numberline {2}Descrizione dei paradigmi}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Paradigma imperativo}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Paradigma object-oriented}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Paradigma funzionale}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Programmazione concorrente}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Programmazione parallela}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Il ruolo chiave dei tipi}{5}{section.3}%
+\contentsline {section}{\numberline {4}Linguaggi}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Fortran}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}ALGOL 60}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}LISP}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}SIMULA 67}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}C}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Pascal}{7}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Smalltalk}{7}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}PROLOG}{7}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}C++}{7}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Java}{7}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Altri linguaggi popolari}{8}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Come crescono i linguaggi?}{8}{subsection.4.12}%
+\contentsline {section}{\numberline {5}Approccio scientifico}{9}{section.5}%
+\contentsline {section}{\numberline {6}Lambda Calculus}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Definizione}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Lambda espressioni}{10}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Segnatura e funzione identità}{10}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Applicazione}{10}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Funzione costante}{10}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}Funzioni annidate}{11}{subsubsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.5}Ordine di semplificazione}{11}{subsubsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.6}Funzioni come parametro}{11}{subsubsection.6.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.7}Prolungamento di espressione}{11}{subsubsection.6.2.7}%
+\contentsline {subsubsection}{\numberline {6.2.8}Parametri attuali numerici}{12}{subsubsection.6.2.8}%
+\contentsline {subsubsection}{\numberline {6.2.9}Ambiguità}{12}{subsubsection.6.2.9}%
+\contentsline {subsection}{\numberline {6.3}Convenzioni sintattiche}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Variabili libere e legate}{12}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Definizione sintattica}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Alberi per lambda espressioni}{13}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Alpha equivalenza}{13}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione negata, variabile legata}{13}{subsection.6.7}%
+\contentsline {paragraph}{Alpha equivalenza}{13}{subsection.6.7}%
+\contentsline {paragraph}{Sostituzione semplice, diretta}{13}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Valutazione di lambda espressioni}{13}{subsection.6.8}%
+\contentsline {paragraph}{ATTENZIONE:}{14}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Beta reduction e beta equivalenza}{14}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Non terminazione}{15}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Forma normale}{15}{subsection.6.11}%
+\contentsline {subsection}{\numberline {6.12}Teorema di Church Rosser}{15}{subsection.6.12}%
+\contentsline {subsection}{\numberline {6.13}Funzioni di ordine superiore e currying}{15}{subsection.6.13}%
+\contentsline {subsection}{\numberline {6.14}Valutazione dell'applicazione di funzione}{16}{subsection.6.14}%
+\contentsline {subsection}{\numberline {6.15}Implementazione della ricorsione}{16}{subsection.6.15}%
+\contentsline {subsection}{\numberline {6.16}Variabili booleane}{17}{subsection.6.16}%
+\contentsline {subsection}{\numberline {6.17}Condizionale}{18}{subsection.6.17}%
+\contentsline {subsection}{\numberline {6.18}Numeri}{18}{subsection.6.18}%
+\contentsline {section}{\numberline {7}Regole di inferenza}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Sintassi}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Successore}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Predecessore}{19}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}IsZero}{19}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}If-Else}{19}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Controllo dei tipi}{20}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Tipi}{20}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Well-typed e ill-typed}{20}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Type Safety: Correttezza}{20}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Controllo su successore}{20}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Controllo su predecessore}{20}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Controllo su isZero}{20}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Controllo su if-else}{21}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Lambda Calculus Tipato}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}L'introduzione dei tipi}{22}{subsection.9.1}%
+\contentsline {paragraph}{Tipo:}{22}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Sistema di controllo dei tipi}{22}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Sintassi dei tipi}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Ambiente di tipo}{23}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Substitution Lemma}{24}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Dichiarazioni locali}{24}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Ricorsione}{24}{subsection.9.7}%
+\contentsline {section}{\numberline {10}OCaml}{25}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Antenati}{25}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Come mai NON studiare OCaml (Ma invece si)}{25}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Esecutore di OCaml}{25}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Overloading degli operatori e cast}{26}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Tipi di OCaml}{26}{subsection.10.5}%
+\contentsline {subsubsection}{\numberline {10.5.1}Tipi di base}{26}{subsubsection.10.5.1}%
+\contentsline {subsubsection}{\numberline {10.5.2}Tipi complessi}{26}{subsubsection.10.5.2}%
+\contentsline {subsubsection}{\numberline {10.5.3}Tipi custom}{27}{subsubsection.10.5.3}%
+\contentsline {subsection}{\numberline {10.6}Operazioni logiche}{27}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Operazioni sulle stringhe}{27}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Funzioni e lambda calcolo}{28}{subsection.10.8}%
+\contentsline {subsubsection}{\numberline {10.8.1}Applicazione parziale}{28}{subsubsection.10.8.1}%
+\contentsline {subsubsection}{\numberline {10.8.2}Encoding}{28}{subsubsection.10.8.2}%
+\contentsline {subsection}{\numberline {10.9}Scope}{29}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}Costrutti}{29}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}Ricorsione}{29}{subsection.10.11}%
+\contentsline {paragraph}{Mutua ricorsione:}{29}{lstnumber.-25.1}%
+\contentsline {subsection}{\numberline {10.12}Sum if true}{29}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13}Type inference e polimorfismo}{30}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Liste}{30}{subsection.10.14}%
+\contentsline {subsubsection}{\numberline {10.14.1}Funzioni ricorsive su liste}{30}{subsubsection.10.14.1}%
+\contentsline {subsubsection}{\numberline {10.14.2}Funzioni higher-order su liste}{31}{subsubsection.10.14.2}%
+\contentsline {subsubsection}{\numberline {10.14.3}Accumulatore}{31}{subsubsection.10.14.3}%
+\contentsline {subsubsection}{\numberline {10.14.4}Filter}{32}{subsubsection.10.14.4}%
+\contentsline {subsubsection}{\numberline {10.14.5}Map}{32}{subsubsection.10.14.5}%
+\contentsline {subsubsection}{\numberline {10.14.6}Reduce (fold)}{32}{subsubsection.10.14.6}%
+\contentsline {subsection}{\numberline {10.15}Pattern matching}{32}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Wildcard}{32}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17}Record}{33}{subsection.10.17}%
+\contentsline {subsubsection}{\numberline {10.17.1}Dot notation}{33}{subsubsection.10.17.1}%
+\contentsline {subsubsection}{\numberline {10.17.2}Copia di record}{33}{subsubsection.10.17.2}%
+\contentsline {subsubsection}{\numberline {10.17.3}immutabilità}{33}{subsubsection.10.17.3}%
+\contentsline {subsection}{\numberline {10.18}Variant}{33}{subsection.10.18}%
+\contentsline {subsubsection}{\numberline {10.18.1}Enum}{33}{subsubsection.10.18.1}%
+\contentsline {subsubsection}{\numberline {10.18.2}Numeri naturali estesi}{34}{subsubsection.10.18.2}%
+\contentsline {subsection}{\numberline {10.19}Tipi ricorsivi}{34}{subsection.10.19}%
+\contentsline {subsubsection}{\numberline {10.19.1}Alberi}{34}{subsubsection.10.19.1}%
+\contentsline {subsubsection}{\numberline {10.19.2}Abstract Syntax Tree}{35}{subsubsection.10.19.2}%
+\contentsline {subsection}{\numberline {10.20}Programmazione imperativa (introduzione)}{35}{subsection.10.20}%
+\contentsline {subsubsection}{\numberline {10.20.1}Nuova sintassi degli array}{35}{subsubsection.10.20.1}%
+\contentsline {subsubsection}{\numberline {10.20.2}Record mutabili}{36}{subsubsection.10.20.2}%
+\contentsline {subsubsection}{\numberline {10.20.3}Riferimenti (refs)}{36}{subsubsection.10.20.3}%
+\contentsline {subsubsection}{\numberline {10.20.4}Sequenze di espressioni e cicli}{36}{subsubsection.10.20.4}%
+\contentsline {subsubsection}{\numberline {10.20.5}Eccezioni}{37}{subsubsection.10.20.5}%
+\contentsline {subsection}{\numberline {10.21}Encoding da lambda calcolo a OCaml}{37}{subsection.10.21}%
+\contentsline {section}{\numberline {11}Interpreti}{38}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Macchine astratte}{38}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Interprete}{38}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Componente di controllo}{39}{subsubsection.11.1.2}%
+\contentsline {subsubsection}{\numberline {11.1.3}Memoria}{39}{subsubsection.11.1.3}%
+\contentsline {subsubsection}{\numberline {11.1.4}Operazioni primitive}{39}{subsubsection.11.1.4}%
+\contentsline {section}{\numberline {12}Altro}{41}{section.12}%
+\contentsline {section}{\numberline {13}Esercizi}{42}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Esercizio 1}{42}{subsection.13.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{42}{Item.12}%
+\contentsline {subsection}{\numberline {13.2}Esercizio 2}{42}{subsection.13.2}%
+\contentsline {paragraph}{Soluzione}{42}{Item.18}%
+\contentsline {subsection}{\numberline {13.3}Esercizio 3}{42}{subsection.13.3}%
+\contentsline {paragraph}{Soluzione}{42}{Item.21}%
+\contentsline {subsection}{\numberline {13.4}Esercizio 4}{43}{subsection.13.4}%
+\contentsline {paragraph}{Soluzione}{43}{Item.29}%
+\contentsline {subsection}{\numberline {13.5}Esercizio 5}{43}{subsection.13.5}%
+\contentsline {paragraph}{Soluzione}{43}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.6}Esercizio 6}{43}{subsection.13.6}%
+\contentsline {paragraph}{Soluzione}{43}{Item.32}%

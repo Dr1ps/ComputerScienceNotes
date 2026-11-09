@@ -1522,7 +1522,6 @@ In particolare, esiste un'eccezione astratta chiamata \textbf{Failure} che possi
 \end{lstlisting}
 Un'altra eccezione viene sollevata quando \textbf{assert} non viene soddisfatta.
 
-
 \subsection{Encoding da lambda calcolo a OCaml}
 Ecco le regole sintattiche di trasformazione:
 \[
@@ -1535,6 +1534,66 @@ Ecco le regole sintattiche di trasformazione:
 \end{aligned}
 \]
 In pratica è molto semplice, queste trasformazioni lasciano tutto inalterato e sostituiscono la denotazione con $\lambda$.
+
+\section{Interpreti}
+Per eseguire dei programmi scritti in un certo linguaggio, bisogna convertirlo in linguaggio macchina, per farlo esistono 3 approcci:
+\begin{itemize}
+  \item \textbf{Compilazione:} traduzione dell'intero codice e creazione di un file eseguibile.
+  \item \textbf{Interpretazione:} usa un procedimento stile fetch-decode-execute, riga per riga.
+  \item \textbf{Misto}: si compila e poi si interpreta l'eseguibile (che si chiama \textbf{bytecode}) (Java, Python, Typescript (che viene compilato in JS)).
+\end{itemize}
+\subsection{Macchine astratte}
+Una \textbf{macchina astratta} è un sistema virtuale che rappresenta il comportamento di una macchina fisica individuando:
+\begin{itemize}
+  \item L'insieme delle risorse necessarie per l'esecuzione di programmi
+  \item Un insieme di istruzioni specificatamente progettato per operare con queste risorse
+\end{itemize}
+In pratica è una collezione di \textbf{algoritmi e strutture dati} in grado di memorizzare ed eseguire programmi.\\
+Della macchina astratta fanno parte:
+\begin{itemize}
+  \item Interprete
+  \item Memoria
+  \item Controllo
+  \item Operazioni "primitive"
+\end{itemize}
+Una macchina astratta, se implementata, diventa una macchina fisica, in cui si hanno:
+\begin{itemize}
+  \item \textbf{CPU:} contiene interprete, controllo e operazioni primitive
+  \item \textbf{RAM:} contiene la memoria.
+\end{itemize}
+Nel lato software (di programmazione) ci sono invece altre corrispondenze:
+\begin{itemize}
+  \item \textbf{Interprete:} converte istruzioni in un formato diverso, come la funzione \textbf{eval}.
+  \item \textbf{Controllo:} istruzioni di controllo della memoria per esempio.
+  \item \textbf{Memoria:} definizioni di strutture dati.
+  \item \textbf{Operazioni primitive:} funzioni.
+\end{itemize}
+\subsubsection{Interprete}
+L'interprete prende in input un programma da eseguire, tipicamente l'albero di sintassi astratta del programma, e lo esegue ispezionandone la struttura per vedere cosa va fatto.\\
+In particolare, questo è il ciclo di operazioni che l'interprete svolge:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{images/interprete.png}
+  \caption{Interprete - ciclo fetch-decode-execute}
+  \label{fig:fde}
+\end{figure}
+\subsubsection{Componente di controllo}
+Il componente di controllo della macchina astratta è una collezione di strutture dati e algoritmi che serve per:
+\begin{itemize}
+  \item acquisire la prossima istruzione
+  \item acquisire gli operandi e memorizzare i risultati
+  \item gestire le chiamate e ritorni da sottoprogrammi
+  \item gestire i thread
+  \item gestire dinamicamente la memoria
+  \item ...
+\end{itemize}
+
+\subsubsection{Memoria}
+Il componente di memoria si occupa della memorizzazione dei dati necessari allo svolgimento del programma.
+
+\subsubsection{Operazioni primitive}
+Una collezione di strutture dati e algoritmi per svolgere ogni singola operazione prevista dal linguaggio.\\
+Lo svolgimento di tali operazioni è preceduto dal type checking.
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.
