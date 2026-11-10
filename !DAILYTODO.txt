@@ -10,14 +10,11 @@
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG) 
 (download or redo)
 
-
 ## OPERATIONAL RESEARCH ##
 
-grafi e reti di flusso
-
+tutto...
 NO DIJKSTRA SU GRAFI ACICLICI
 
 
 ## LABORATORY 2 ##
-es9 & es10 copy paste solution from teams (specify it's been copied) for studying purpose
-es11 as well and all the others
+

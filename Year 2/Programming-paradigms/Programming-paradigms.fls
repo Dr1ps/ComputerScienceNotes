@@ -367,6 +367,8 @@ INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3kernel\l3backend-pdftex.def
 INPUT .\Programming-paradigms.aux
@@ -426,6 +428,20 @@ INPUT .\images\interprete.png
 INPUT .\images\interprete.png
 INPUT .\images\interprete.png
 INPUT .\images\interprete.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\Compilatore.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
+INPUT .\images\ParserTree.png
 INPUT Programming-paradigms.aux
 INPUT .\Programming-paradigms.out
 INPUT .\Programming-paradigms.out

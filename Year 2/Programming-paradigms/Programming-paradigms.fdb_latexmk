@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794223416.79949 "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" "Programming-paradigms.pdf" "Programming-paradigms" 1794223421.69263 2
+["pdflatex"] 1794320311.59949 "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" "Programming-paradigms.pdf" "Programming-paradigms" 1794320323.43315 2
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -158,6 +158,7 @@
   "C:/Program Files/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Program Files/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1759409308 46885 8953c67ffba03252c6090aa19568b8ba ""
   "C:/Program Files/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty" 1740138435 31715 19e60610b63819fe670dfa1cd84a4e94 ""
+  "C:/Program Files/MiKTeX/tex/latex/float/float.sty" 1469023953 6916 16d2656a1984957e674b149555f1ea1d ""
   "C:/Program Files/MiKTeX/tex/latex/geometry/geometry.cfg" 1773583286 1083 f69f5eb2d8e249286c59dd1340122e59 ""
   "C:/Program Files/MiKTeX/tex/latex/geometry/geometry.sty" 1773583286 41904 7711079366884e0d15963c9d40019853 ""
   "C:/Program Files/MiKTeX/tex/latex/graphics-cfg/color.cfg" 1465894292 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -201,11 +202,13 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "Programming-paradigms.aux" 1794223420 18579 2393bb7a40f29f65a848e5240f0f4e55 "pdflatex"
-  "Programming-paradigms.out" 1794223420 19478 66e49edee024c8bd46dea87a9cd55945 "pdflatex"
-  "Programming-paradigms.tex" 1794223396 60114 7522fd58dca22caff331f8cd45479cfb ""
-  "Programming-paradigms.toc" 1794223420 12239 b05068c9829bf54940faabec50746322 "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" 1794223396 60114 7522fd58dca22caff331f8cd45479cfb ""
+  "Programming-paradigms.aux" 1794320321 20019 96a94853b96e320d05cc4782f517c17e "pdflatex"
+  "Programming-paradigms.out" 1794320321 20807 aa2ac00c4df653e45b63ebe8e86c2668 "pdflatex"
+  "Programming-paradigms.tex" 1794320274 70071 357944d3c40a00293ddade7520d8c6c8 ""
+  "Programming-paradigms.toc" 1794320321 12969 f89a0015121b1c666b9b3ef3b291561f "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/Year 2/Programming-paradigms/Programming-paradigms.tex" 1794320274 70071 357944d3c40a00293ddade7520d8c6c8 ""
+  "images/Compilatore.png" 1794300076 196306 f15753767947d9adaeeed9665edb1ff0 ""
+  "images/ParserTree.png" 1794300664 77763 560df24e40c3d6eb8b858c7a39949f7b ""
   "images/interprete.png" 1794222635 80346 b2cd3c3456e9a966b3309c0f483cf17e ""
   (generated)
   "Programming-paradigms.aux"

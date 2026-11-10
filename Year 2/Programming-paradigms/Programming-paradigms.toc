@@ -123,23 +123,31 @@
 \contentsline {subsubsection}{\numberline {10.20.4}Sequenze di espressioni e cicli}{36}{subsubsection.10.20.4}%
 \contentsline {subsubsection}{\numberline {10.20.5}Eccezioni}{37}{subsubsection.10.20.5}%
 \contentsline {subsection}{\numberline {10.21}Encoding da lambda calcolo a OCaml}{37}{subsection.10.21}%
-\contentsline {section}{\numberline {11}Interpreti}{38}{section.11}%
+\contentsline {section}{\numberline {11}Macchine astratte e interpreti}{38}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Macchine astratte}{38}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Interprete}{38}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Interprete}{39}{subsubsection.11.1.1}%
 \contentsline {subsubsection}{\numberline {11.1.2}Componente di controllo}{39}{subsubsection.11.1.2}%
 \contentsline {subsubsection}{\numberline {11.1.3}Memoria}{39}{subsubsection.11.1.3}%
 \contentsline {subsubsection}{\numberline {11.1.4}Operazioni primitive}{39}{subsubsection.11.1.4}%
-\contentsline {section}{\numberline {12}Altro}{41}{section.12}%
-\contentsline {section}{\numberline {13}Esercizi}{42}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Esercizio 1}{42}{subsection.13.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{42}{Item.12}%
-\contentsline {subsection}{\numberline {13.2}Esercizio 2}{42}{subsection.13.2}%
-\contentsline {paragraph}{Soluzione}{42}{Item.18}%
-\contentsline {subsection}{\numberline {13.3}Esercizio 3}{42}{subsection.13.3}%
-\contentsline {paragraph}{Soluzione}{42}{Item.21}%
-\contentsline {subsection}{\numberline {13.4}Esercizio 4}{43}{subsection.13.4}%
-\contentsline {paragraph}{Soluzione}{43}{Item.29}%
-\contentsline {subsection}{\numberline {13.5}Esercizio 5}{43}{subsection.13.5}%
-\contentsline {paragraph}{Soluzione}{43}{subsection.13.5}%
-\contentsline {subsection}{\numberline {13.6}Esercizio 6}{43}{subsection.13.6}%
-\contentsline {paragraph}{Soluzione}{43}{Item.32}%
+\contentsline {subsection}{\numberline {11.2}Run-Time Support}{40}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Compilatore}{40}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Struttura del compilatore}{40}{subsubsection.11.3.1}%
+\contentsline {section}{\numberline {12}Sviluppo di interpreti}{42}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Realizzazione d'esempio}{42}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Sintassi}{42}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Definizione scanner e token}{42}{subsubsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.2}Parser}{44}{subsection.12.2}%
+\contentsline {section}{\numberline {13}Altro}{47}{section.13}%
+\contentsline {section}{\numberline {14}Esercizi}{48}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Esercizio 1}{48}{subsection.14.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{48}{Item.12}%
+\contentsline {subsection}{\numberline {14.2}Esercizio 2}{48}{subsection.14.2}%
+\contentsline {paragraph}{Soluzione}{48}{Item.18}%
+\contentsline {subsection}{\numberline {14.3}Esercizio 3}{48}{subsection.14.3}%
+\contentsline {paragraph}{Soluzione}{48}{Item.21}%
+\contentsline {subsection}{\numberline {14.4}Esercizio 4}{49}{subsection.14.4}%
+\contentsline {paragraph}{Soluzione}{49}{Item.29}%
+\contentsline {subsection}{\numberline {14.5}Esercizio 5}{49}{subsection.14.5}%
+\contentsline {paragraph}{Soluzione}{49}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Esercizio 6}{49}{subsection.14.6}%
+\contentsline {paragraph}{Soluzione}{49}{Item.32}%

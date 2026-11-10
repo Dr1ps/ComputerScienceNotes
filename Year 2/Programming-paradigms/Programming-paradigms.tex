@@ -9,6 +9,7 @@
 \usepackage{listing}
 \usepackage{listings}
 \usepackage{titlesec}
+\usepackage{float}
 
 \lstdefinelanguage{OCaml}{
   keywords={let, rec, in, fun, function, match, with, type,
@@ -1535,7 +1536,7 @@ Ecco le regole sintattiche di trasformazione:
 \]
 In pratica è molto semplice, queste trasformazioni lasciano tutto inalterato e sostituiscono la denotazione con $\lambda$.
 
-\section{Interpreti}
+\section{Macchine astratte e interpreti}
 Per eseguire dei programmi scritti in un certo linguaggio, bisogna convertirlo in linguaggio macchina, per farlo esistono 3 approcci:
 \begin{itemize}
   \item \textbf{Compilazione:} traduzione dell'intero codice e creazione di un file eseguibile.
@@ -1574,7 +1575,7 @@ In particolare, questo è il ciclo di operazioni che l'interprete svolge:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{images/interprete.png}
-  \caption{Interprete - ciclo fetch-decode-execute}
+  \caption{Interprete: ciclo fetch-decode-execute}
   \label{fig:fde}
 \end{figure}
 \subsubsection{Componente di controllo}
@@ -1587,13 +1588,273 @@ Il componente di controllo della macchina astratta è una collezione di struttur
   \item gestire dinamicamente la memoria
   \item ...
 \end{itemize}
-
 \subsubsection{Memoria}
 Il componente di memoria si occupa della memorizzazione dei dati necessari allo svolgimento del programma.
-
 \subsubsection{Operazioni primitive}
 Una collezione di strutture dati e algoritmi per svolgere ogni singola operazione prevista dal linguaggio.\\
 Lo svolgimento di tali operazioni è preceduto dal type checking.
+\subsection{Run-Time Support}
+Il \textbf{Run-Time Support} offre dei riferimenti ai servizi del \textbf{Run-Time Enviroment} fornito dal linguaggio di programmazione con cui abbiamo scritto il codice sorgente, e serve per diverse cose al momento di esecuzione:
+\begin{itemize}
+  \item Allocazione e liberazione della memoria
+  \item Garbage collection
+  \item Gestire eccezioni ed errori
+  \item Type checking
+  \item I/O (file, tastiera...)
+  \item Chiamate di funzione e stack
+\end{itemize}
+La \textbf{macchina opsite} da sola possiede solo le istruzioni e non si può considerare come esecutore assoluto del programma, va incluso anche il \textbf{RTS}:
+\[
+M_O = \text{ macchina opsite}
+\]
+\[
+M_I = \text{ macchina intermedia}
+\]
+\[
+M_I = M_O + RTS
+\]
+Il codice prodotto dalla compilazione di un programma quindi è una sequenza di istruzioni macchina con eventuali chiamate all'RTS.
+\subsection{Compilatore}
+Il compilatore prende in input il codice sorgente, analizza la sintassi e la semantica e poi genera il codice in linguaggio macchina.\\
+Le responsabilità del compilatore sono quindi quelle di garantire una valida struttura sintattica e generare un codice compatibile con il SO della macchina ospite.
+\subsubsection{Struttura del compilatore}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{images/Compilatore.png}
+  \caption{Struttura del compilatore}
+  \label{fig:compilatore}
+\end{figure}
+\textbf{Frontend:}
+\begin{itemize}
+  \item \textbf{Scanner:} trasforma il programma sorgente nel lessico (token).
+  Per esempio:
+  \begin{lstlisting}
+    if (x >= y) y = 42 ;
+  \end{lstlisting}
+  Se dato in pasto allo scanner, il token risultante è:
+  \begin{lstlisting}
+    [IF][LPAREN][ID(x)][GEQ][ID(y)][RPAREN][ID(y)]
+    [BECOMES][INT(42)][SCOLON]
+  \end{lstlisting}
+  \item \textbf{Parser:} legge il token e genera il codice intermedio (Intermediate Representation - IR).
+  Tale risultato si trova solitamente nel formato di albero di sintassi astratta.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/ParserTree.png}
+    \caption{Parsing}
+    \label{fig:parsing}
+  \end{figure}
+\end{itemize}
+Dopo tali operazioni vengono effettuate queste operazioni:
+\begin{itemize}
+  \item \textbf{Type Checking}
+  \item \textbf{Analisi statiche}
+  \item \textbf{Eventuali ottimizzazioni}
+\end{itemize}
+Come fa l'interprete a capire di che tipo sono i dati? Dati di tipo diverso potrebbero avere la stessa rappresentazione binaria, per questo esistono dei campi aggiuntivi chiamati \textbf{descrittori} che indicano il tipo di una variabile in memoria.\\
+Questo problema avviene solo nei linguaggi con type checking dinamico e provoca un maggiore consumo di memoria e maggiore tempo di controllo.\\
+\textbf{Backend:}
+\begin{itemize}
+  \item \textbf{Traduzione in linguaggio macchina}: o della macchina intermedia (Assembly per esempio).
+\end{itemize}
+
+\section{Sviluppo di interpreti}
+I componenti principali dell'interprete sono:
+\begin{itemize}
+  \item Scanner
+  \item Parser
+  \item Type Checker
+  \item Interpreter / Executor
+\end{itemize}
+L'interprete funziona come il frontend del compilatore, ma l'interprete esegue le operazioni una dopo l'altra, non tutte insieme.
+\subsection{Realizzazione d'esempio}
+Adesso cercheremo di realizzare un interprete per le espressioni aritmetiche.\\
+\subsubsection{Sintassi}
+\[
+Exp ::= n | Exp\ op\ Exp | (Exp)
+\]
+\[
+op ::= + | - | * | /
+\]
+Per trasformarlo in codice, si usano i tipi variant e unione:
+\begin{lstlisting}
+  type op = Add | Sub | Mul | Div ;;
+  type exp =
+    | Val of int
+    | Op of op*exp*exp ;;
+\end{lstlisting}
+Proponiamo la funzione che ritrasforma l'albero delle espressioni in formato testuale:
+\begin{lstlisting}
+  let rec to_string e =
+    let symbol o =
+      match o with | Add -> "+" | Sub -> "-" | Mul -> "*" | Div -> "/"
+    in
+    match e with
+    | Val n -> string_of_int n
+    | Op (o,e1,e2) -> "("^ (to_string e1) ^ (symbol o) ^ (to_string e2) ^")" ;;
+\end{lstlisting}
+\subsubsection{Definizione scanner e token}
+Definiamo ogni simbolo che può apparire con un token:\
+\begin{lstlisting}
+type token =
+  | Tkn_NUM of int (* numero n *)
+  | Tkn_OP of string (* operatore + - * / *)
+  | Tkn_LPAR (* simbolo ( *)
+  | Tkn_RPAR (* simbolo ) *)
+  | Tkn_END;; (* fine dell'espressione *)
+\end{lstlisting}
+Lo scanner effettua la prima trasformazione, controllando che non ci siano simboli non previsti.\\
+Lo scanner non effettua ancora un controllo grammaticale, per esempio l'ordine corretto delle parentesi.\\
+Facciamo in modo che i simboli non previsti fanno lanciare un'eccezione.
+\begin{lstlisting}
+  exception ParseError of string*string ;;
+\end{lstlisting}
+Vediamo la funzione scanner:
+\begin{lstlisting}
+  (* scanner *)
+let tokenize s =
+  (* funzione che scandisce ricorsivamente s,
+  dove pos è la posizione del carattere corrente *)
+  let rec tokenize_rec s pos =
+    if pos=String.length s then [Tkn_END] (* caso base: fine lista *)
+    else 
+      let c = String.sub s pos 1 (* estrae il carattere corrente *)
+      in
+      (* si richiama ricorsivamente prima di gestire il carattere corrente,
+      per avere la lista dei token successivi, da completare
+      con il token corrispondente al carattere corrente *)
+      let tokens = tokenize_rec s (pos+1)
+      in
+        (* trasforma il carattere corrente in un token *)
+        match c with
+        | " " -> tokens
+        | "(" -> Tkn_LPAR::tokens
+        | ")" -> Tkn_RPAR::tokens
+        | "+" | "-" | "*" | "/" -> (Tkn_OP c)::tokens
+        | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ->
+          (* accorpa cifre consecutive *)
+          (match tokens with
+          | Tkn_NUM n::tokens' ->
+          Tkn_NUM (int_of_string (c^(string_of_int n)))::tokens'
+          | _ -> Tkn_NUM (int_of_string c)::tokens
+          )
+        | _ -> raise (ParseError ("Tokenizer","unknown symbol: "^c))
+in
+  tokenize_rec s 0 ;;
+\end{lstlisting}
+Esempio d'uso:
+\begin{lstlisting}
+  let t1 = tokenize "(34 + 41) - (2223 * 2)" ;;
+\end{lstlisting}
+Ecco altre funzioni di utilità:
+\begin{lstlisting}
+  let string_of_token t =
+    match t with
+    | Tkn_NUM n -> "Tkn_NUM "^(string_of_int n)
+    | Tkn_OP s -> "Tkn_OP "^s
+    | Tkn_LPAR -> "Tkn_LPAR"
+    | Tkn_RPAR -> "Tkn_RPAR"
+    | Tkn_END -> "Tkn_END" ;;
+
+let print_token t =
+  print_endline (string_of_token t);;
+
+let print_tokenlist tl =
+  List.iter (fun t -> (print_token t)) tl;;
+\end{lstlisting}
+\subsection{Parser}
+Il parser controlla che l'espressione sia sintatticamente corretta e che appartenga al linguaggio e genera l'AST.\\
+Come realizzare un parser:
+\begin{itemize}
+  \item La grammatica non deve essere ambigua
+  \item se il linguaggio è molto semplice, si usa un parser a \textbf{discesa ricorsiva}
+  \item se il linguaggio non è molto semplice, si usa un \textbf{parser generator} (software che genera il parser a partire dalla grammatica).
+  \subitem Flex/Bison per C
+  \subitem PEG.js, ATNLS per JS
+  \subitem ocamllex/ocamlyacc o Menhir per OCaml
+  \subitem ATNLR4 o JavaCC per Java
+\end{itemize}
+Trasformiamo quindi la grammatica di prima, che era ambigua e poteva presentare errori semantici, in una grammatica non ambigua:
+\[
+Exp ::= Term + Exp | Term - Exp | Term
+\]
+\[
+Term ::= Factor * Term | Factor / Term | Factor
+\]
+\[
+Factor ::= n | (Exp)
+\]
+Questa sintassi raggruppa a destra le ambiguità.\\\\
+Implementiamo un parser a discesa ricorsiva:
+\begin{itemize}
+  \item Una funzione per ogni categoria sintattica
+  \item Le funzioni sono mutuamente ricorsive
+  \item La scelta della regola da applicare avviene tramite l'analisi del token successivo (lookahead)
+  \item Ogni chiamata restituisce un nodo dell'AST
+\end{itemize}
+\begin{lstlisting}[language=OCaml]
+(* parser *)
+let parse s =
+  (* usiamo un riferimento mutabile per scandire la lista dei token ottenuta da␣
+  ,→tokenize *)
+  let tokens = ref (tokenize s) in
+
+  (* restituisce il primo token senza rimuoverlo *)
+  let lookahead () = match !tokens with
+    | [] -> raise (ParseError ("Parser","lookahead error"))
+    | t::_ -> t
+  in
+
+  (* elimina il primo token *)
+  let consume () = match !tokens with
+    | [] -> raise (ParseError ("Parser","consume error"))
+    | t::tkns -> tokens := tkns
+  in
+
+  (* funzioni mutuamente ricorsive che seguono dalla grammatica *)
+  (* Exp ::= Term [ + Exp | - Exp ] *)
+  let rec exp () =
+    let t1 = term() in
+    match lookahead () with
+    | Tkn_OP "+" -> consume(); Op (Add,t1,exp())
+    | Tkn_OP "-" -> consume(); Op (Sub,t1,exp())
+    | _ -> t1
+
+  (* Term ::= Factor [ * Term | / Term ] *)
+  and term () =
+    let f1 = factor() in
+    match lookahead() with
+    | Tkn_OP "*" -> consume(); Op (Mul,f1,term())
+    | Tkn_OP "/" -> consume(); Op (Div,f1,term())
+    | _ -> f1
+
+  (* Factor ::= n | ( Exp ) *)
+  and factor () =
+    match lookahead() with
+    | Tkn_NUM n -> consume(); Val n
+    | Tkn_LPAR -> consume(); let e = exp() in
+      (match lookahead() with
+      | Tkn_RPAR -> consume(); e
+      | _ -> raise (ParseError ("Parser","RPAR error"))
+      )
+  | _ -> raise (ParseError ("Parser","NUM/LPAR error"))
+  
+  (* Si comincia chiamando exp che fa tutto il lavoro e restituisce la radice
+  dell'AST *)
+  in
+    let ast = exp() in
+    (* controlliamo che al termine sia rimasto solo Tkn_END *)
+    match lookahead() with
+    | Tkn_END -> ast
+    | x -> print_tokenlist !tokens; raise (ParseError ("Parser","parse error"));;
+\end{lstlisting}
+L'implementazione dei parser non è semplice:
+\begin{itemize}
+  \item Può essere difficile realizzare una grammatica non ambigua
+  \item Con la discesa ricorsiva è facile imbattersi in ricorsioni infinite
+  \subitem con la grammatica usata adesso non ci sono problemi perche una funzione richiama se stessa se trova un simbolo, altrimenti no, se fosse venuta prima la chiamata ricorsiva che la chiamata mutuamente ricorsiva allora si sarebbe creata una ricorsione infinita.
+\end{itemize}
+
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.

@@ -904,40 +904,6 @@ Vediamo un puntatore ad una struct:
     /*Per richiamare un campo si fa cosi:*/
     s -> n;
 \end{lstlisting}
-I puntatori possono essere usati anche per \textbf{liste concatenate}:
-\begin{lstlisting}[language=C]
-    /*Definizione nodo*/
-    typedef struct n {
-        int val;
-        /*Variabile di tipo puntatore a struct n*/
-        struct Node * next;
-    } Node;
-    Node* head = NULL; /*Lista vuota*/
-    
-    Node elem;
-    elem.val = 10;
-    elem.next = NULL;
-
-    head = &elem; /*Lista con 1 elemento*/
-
-    Node elem1;
-    elem1.val = 20;
-    elem1.next = NULL; 
-    
-    elem.next = &elem1; /*Aggiungo in coda*/
-
-    Node elem2;
-    elem2.val = 5;
-    elem2.next = head; /*Aggiungo in testa*/
-    head = &elem2;
-
-    /*Iterazione su lista*/
-    Node* l=head;
-    while(l!=NULL) {
-        printf("%d ", l->val);
-        l = l -> next;
-    }
-\end{lstlisting}
 I puntatori addirittura permettono di gestire le \textbf{funzioni} come se fossero variabili:
 \begin{lstlisting}[language=C]
     int sum(int,int);
@@ -1108,7 +1074,102 @@ Normalmente, il debug si ferma alla prima istruzione eseguibile, ma possiamo mod
     \item \textbf{Breakpoint:} un punto nel codice dove fermarsi
     \item \textbf{Watchpoint:} variabile da monitorare; il programma si ferma quando la variabile viene cambiata.
 \end{itemize}
- 
+\subsection{Liste}
+C non ha un tipo specifico per realizzare liste, ci appoggiamo quindi all'utilizzo di \textbf{struct} e \textbf{puntatori}:
+\begin{lstlisting}[language=C]
+    /*Definizione nodo*/
+    typedef struct n {
+        int val;
+        /*Variabile di tipo puntatore a struct n*/
+        struct Node * next;
+    } Node;
+    Node* head = NULL; /*Lista vuota*/
+    
+    Node elem;
+    elem.val = 10;
+    elem.next = NULL;
+
+    head = &elem; /*Lista con 1 elemento*/
+
+    Node elem1;
+    elem1.val = 20;
+    elem1.next = NULL; 
+    
+    elem.next = &elem1; /*Aggiungo in coda*/
+
+    Node elem2;
+    elem2.val = 5;
+    elem2.next = head; /*Aggiungo in testa*/
+    head = &elem2;
+
+    /*Iterazione su lista*/
+    Node* l=head;
+    while(l!=NULL) {
+        printf("%d ", l->val);
+        l = l -> next;
+    }
+\end{lstlisting}
+
+\section{Assembler ARMv7}
+\subsection{Tools}
+Per installare il compilatore per codice C che produce istruzioni assembler ARM:
+\begin{lstlisting}
+    arm-linux-gnueabihg-gcc -static -ggdb3 file.c file.s
+\end{lstlisting}
+Questa istruzione va svolta dalla WSL.\\
+Simulatore online:
+\href{https://cpulator.0ixz.net/?sys=arm}{https://cpulator.0ixz.net/?sys=arm}
+\subsection{Traduzione C to Assembly}
+Immaginiamo di avere una funzione "sumodds":
+\begin{lstlisting}[language=C]
+    int sumodds(int *V, int n) {
+        int sum = 0;
+        for(size_t i = 0, i<n, i++) {
+            /*AND bitwise, true se il numero e' dispari*/
+            if(V[i] & 1) sum+= V[i];
+        return sum
+        }
+    }
+
+    int main() {
+        bla bla
+    }
+
+\end{lstlisting}
+Vediamolo in assembler:
+\begin{lstlisting}
+    .data
+V:  .word 1, 34, 5, 43 -7, 89, 9 ,26
+    .test
+    -global sumodds
+    .type sumodds, %function
+    .global _start
+    .type _start, %function
+
+    @r0 = *V, r1 = n
+sumodds:
+    push {r4}
+    mov r3, #0  @sum
+    mov r4, #0  @i
+
+for: cmp r4, r1     @i = n
+     beq end
+     ldr r2, [r0, r4, lsl #2]   @ carica in r2 V[i]
+     andS r12, r2, #1
+
+     addne r3, r3, r2 
+     add r4, r4, #1
+     b for
+
+end: pop {r4}
+     mov r0, r3
+     mov pc, lr
+
+_start:
+    push {lr}
+...
+\end{lstlisting}
+
 \section{Esercizi}
 \subsection{Esercizio 1}
 Partendo dalla propria home, svolgere queste operazioni dal terminale LINUX:

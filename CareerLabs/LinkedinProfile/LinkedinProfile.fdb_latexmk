@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794231918.64776 "c:/VSCode/ComputerScienceNotes/CareerLabs/LinkedinProfile/LinkedinProfile.tex" "LinkedinProfile.pdf" "LinkedinProfile" 1794231921.51347 0
+["pdflatex"] 1794303128.22743 "c:/VSCode/ComputerScienceNotes/CareerLabs/LinkedinProfile/LinkedinProfile.tex" "LinkedinProfile.pdf" "LinkedinProfile" 1794303131.98604 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -191,11 +191,11 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1790844141 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1790844292 14064 392e3adc7376d7867a6a3e64a5e2ffb9 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1790844159 13392607 04ee86f1c833b1a95773e16c677a8616 ""
-  "LinkedinProfile.aux" 1794231921 1112 60c006360d52638292686e28c1d6bd8e "pdflatex"
-  "LinkedinProfile.out" 1794231921 1145 be92793d01bae1dc0b4ab775a2880943 "pdflatex"
-  "LinkedinProfile.tex" 1794231914 5135 e359100cb1b003b5df5189a03091a3f4 ""
-  "LinkedinProfile.toc" 1794231921 622 5f7276d7e58c899bd8aed42f584aa21b "pdflatex"
-  "c:/VSCode/ComputerScienceNotes/CareerLabs/LinkedinProfile/LinkedinProfile.tex" 1794231914 5135 e359100cb1b003b5df5189a03091a3f4 ""
+  "LinkedinProfile.aux" 1794303131 1112 60c006360d52638292686e28c1d6bd8e "pdflatex"
+  "LinkedinProfile.out" 1794303131 1145 be92793d01bae1dc0b4ab775a2880943 "pdflatex"
+  "LinkedinProfile.tex" 1794303126 5135 e359100cb1b003b5df5189a03091a3f4 ""
+  "LinkedinProfile.toc" 1794303131 622 5f7276d7e58c899bd8aed42f584aa21b "pdflatex"
+  "c:/VSCode/ComputerScienceNotes/CareerLabs/LinkedinProfile/LinkedinProfile.tex" 1794303126 5135 e359100cb1b003b5df5189a03091a3f4 ""
   (generated)
   "LinkedinProfile.aux"
   "LinkedinProfile.log"
