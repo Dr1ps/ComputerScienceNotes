@@ -1714,7 +1714,7 @@ Vediamo la funzione scanner:
   (* scanner *)
 let tokenize s =
   (* funzione che scandisce ricorsivamente s,
-  dove pos è la posizione del carattere corrente *)
+  dove pos e' la posizione del carattere corrente *)
   let rec tokenize_rec s pos =
     if pos=String.length s then [Tkn_END] (* caso base: fine lista *)
     else 
@@ -1762,7 +1762,7 @@ let print_token t =
 let print_tokenlist tl =
   List.iter (fun t -> (print_token t)) tl;;
 \end{lstlisting}
-\subsection{Parser}
+\subsection{Definizione parser}
 Il parser controlla che l'espressione sia sintatticamente corretta e che appartenga al linguaggio e genera l'AST.\\
 Come realizzare un parser:
 \begin{itemize}
@@ -1795,8 +1795,7 @@ Implementiamo un parser a discesa ricorsiva:
 \begin{lstlisting}[language=OCaml]
 (* parser *)
 let parse s =
-  (* usiamo un riferimento mutabile per scandire la lista dei token ottenuta da␣
-  ,→tokenize *)
+  (* usiamo un riferimento mutabile per scandire la lista dei token ottenuta da tokenize *)
   let tokens = ref (tokenize s) in
 
   (* restituisce il primo token senza rimuoverlo *)
@@ -1854,7 +1853,89 @@ L'implementazione dei parser non è semplice:
   \item Con la discesa ricorsiva è facile imbattersi in ricorsioni infinite
   \subitem con la grammatica usata adesso non ci sono problemi perche una funzione richiama se stessa se trova un simbolo, altrimenti no, se fosse venuta prima la chiamata ricorsiva che la chiamata mutuamente ricorsiva allora si sarebbe creata una ricorsione infinita.
 \end{itemize}
+\subsection{Definizione interpreter}
+Per definire l'interprete, partiamo dalle definizioni della semantica.
+\subsubsection{Structural Operational Semantics (SOS)}
+La definizione di una relazione di transizione per descrivere il comportamento dei programmi (o espressioni) scritti in un certo linguaggio segue solitamente l'approccio della Structural Operational Semantics (SOS), o Semantica Strutturale Oprazionale:
+\begin{itemize}
+  \item \textbf{Semantics:} è una descrizione del significato del linguaggio, nei linguaggi di programmazione tale significato è dato dal comportamento del programma.
+  \item \textbf{Operational:} descrive il comportamento dei programmi tramite una relazione di transizione che cattura le operazioni che vengono svolte passo-passo.
+  \item \textbf{Structural:} la relazione di transizione è definita usando regole di inferenza basate sulla struttura sintattica.
+\end{itemize}
+Esistono due approcci per realizzare una semantica nello stile SOS:
+\begin{itemize}
+  \item \textbf{Approccio small-step:} specifica la valutazione delle espressioni un passo alla volta, ogni regola descrive una singola transizione che riduce l'espressione di un passo.
+  \item \textbf{Approccio big-step:} specifica la valutazione in passi piuttosto grandi: data un'espressione, le sue regole di valutazione producono direttamente un valore.
+\end{itemize}
+Per esempio, se abbiamo un'espressione aritmetica, una semantica small-step svolge passo passo la semplificazione, una semantica big-step invece restituisce direttamente il valore appoggiandosi su regole di inferenza per effettuare il calcolo.\\
+\subsubsection{Realizzazione interprete big-step}
+Procediamo con l'approccio big-step (più facile):
+\[
+n \rightarrow_{bs} n
+\]
+\[
+\frac{E_1 \rightarrow_{bs} n_1, E_2 \rightarrow_{bs} n_2, n_1\ op\ n_2 = n}{E_1\ op\ E_2 \rightarrow_{bs} n}
+\]
+\begin{lstlisting}[language=OCaml]
+  (* interprete big-step *)
+let rec eval e =
+  match e with
+  | Val n -> Val n
+  | Op (op,e1,e2) ->
+    (* chiamate ricorsive che calcolano le derivazioni per e1 ed e2 *)
+    match (eval e1, eval e2) with
+    | (Val n1, Val n2) -> (match op with (* calcola n1 op n2 *)
+                          | Add -> Val (n1+n2)
+                          | Sub -> Val (n1-n2)
+                          | Mul -> Val (n1*n2)
+                          | Div -> Val (n1/n2)
+                          )
+    (* caso ( inutile ) aggiunto solo per rendere esaustivo il pattern matching!*)
+    | _ -> failwith "Errore impossibile che si verifichi" ;;
+\end{lstlisting}
+\subsubsection{Realizzazione interprete small-step}
+Vediamo adesso lo stesso interprete ma in small-step:
+\begin{lstlisting}[language=OCaml]
+  (* interprete small-step *)
+  let rec eval_ss e =
+    match e with
+    | Val n -> Val n
+    | Op (op,e1,e2) ->
+      (match (e1,e2) with
+      (* se gli operandi sono entrambi valori, calcola n1 op n2 *)
+      | (Val n1,Val n2) -> Val (match op with
+                                | Add -> n1 + n2 | Sub -> n1 - n2
+                                | Mul -> n1 * n2 | Div -> n1 / n2 )
+      (* se e1 puo' fare un passo ( cioe' se e' un Op e non un valore ) *)
+      | (Op (_,_,_),_) -> Op (op,(eval_ss e1),e2)
+      (* altrimenti, se e1 e' un valore ma e2 puo' fare un passo *)
+      | (Val _,Op (_,_,_)) -> Op (op,e1,(eval_ss e2))
+      ) ;;
+\end{lstlisting}
+\subsubsection{Dalla SOS al codice}
+Sistematicamente, ecco come tradurre la SOS a codice:
+\begin{itemize}
+  \item SI usa il pattern matching per considerare i vari tipi di nodo AST
+  \item Ogni tipo di nodo corrisponde ad un costrutto sintattico definito dalla grammatica
+  \item Per ogni caso del pattern matching si identificano le regole della semantica che descrivono quel costrutto.
+  \item Si verificano le precondizioni delle varie regole tramite chiamate ricorsive all'interprete stesso (per regole che non sono assiomi)
+  \item Quando si trova una regola le cui precondizioni sono verificate, si calcola il risultato della transizione.
+\end{itemize}
+\subsection{Interprete risultante}
+Mettiamo adesso tutto insieme, Scanner, Parser e Interpreter:
+\begin{lstlisting}[language=OCaml]
+  (* con inteprete big-step *)
+  let exec1 s = eval (parse s) ;;
 
+  (* con inteprete small-step *)
+  let exec2 s =
+    let rec eval_rec ast = (* chiusura transitiva *)
+      match ast with
+      | Val n -> Val n
+      | _ -> eval_rec ( eval_ss ast )
+  in
+    eval_rec (parse s) ;;
+\end{lstlisting}
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.

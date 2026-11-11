@@ -1287,6 +1287,42 @@ Questo è molto importante per realizzare delle \textbf{funzioni} in assembly:
 
 \end{lstlisting}
 In questo codice, si chiama la funzione salvandoci l'indirizzo di ritorno che viene poi salvato nello stack. Man mano il PC aumenta e siccome ci siamo salvati l'indirizzo di ritorno prima, lo estraiamo di nuovo e lo salviamo in PC, in modo da tornare nel programma principale.
+\subsubsection{Malloc}
+Come in C possiamo usare la funzione \textbf{malloc} per allocare memoria dinamicamente con puntatori, si può fare anche in Assembly:
+\begin{lstlisting}
+    MOV [registro], [bitDaAllocare]
+    BL MALLOC
+
+    MOV R0, #8
+    BL MALLOC
+\end{lstlisting}
+In questo pezzo di codice, prima $R_0$ viene impostato al valore corrispondente alla grandezza dell'allocazione desiderata e poi viene chiamata la funzione \textbf{malloc} (usa come parametro standard $R_0$), che alloca dinamicamente tanti bit quanti quelli specificati e salva l'indirizzo di tale blocco di memoria in $R_0$.\\
+Per \textbf{accedere} al valore, si usa un semplice:
+\begin{lstlisting}
+    LDR R1, [R0]
+\end{lstlisting}
+Per invece \textbf{modificare} un valore allocato, si usa la keyword \textbf{STR}:
+\begin{lstlisting}
+    STR [registroConNuovoValore],[[registroPuntatore]]
+
+    MOV R1, #2
+    STR R1,[R0]
+\end{lstlisting}
+Infine, un'allocazione dinamica va liberata, si richiama la funzione \textbf{free} che da standard utilizza come parametro $R_0$:
+\begin{lstlisting}
+    BL free
+\end{lstlisting}
+\subsubsection{atoi}
+La funzione \textbf{atoi} sta per "ASCII to Integer" e serve per convertire stringhe e caratteri in valori interi:
+\begin{lstlisting}
+    .data
+        my_string: .asciz "123"
+
+    .text
+        LDR R0, =my_string
+        BL atoi
+\end{lstlisting}
+
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
 \paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.

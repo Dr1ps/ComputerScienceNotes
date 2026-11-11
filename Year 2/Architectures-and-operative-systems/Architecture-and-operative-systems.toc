@@ -78,15 +78,17 @@
 \contentsline {subsubsection}{\numberline {8.4.11}Operazioni condizionali}{39}{subsubsection.8.4.11}%
 \contentsline {subsubsection}{\numberline {8.4.12}Comandi che settano flag}{39}{subsubsection.8.4.12}%
 \contentsline {subsubsection}{\numberline {8.4.13}Prelevare registri dallo stack}{39}{subsubsection.8.4.13}%
-\contentsline {section}{\numberline {9}Altro}{41}{section.9}%
-\contentsline {paragraph}{Rete combinatoria:}{41}{section.9}%
-\contentsline {paragraph}{Rete sequenziale:}{41}{section.9}%
-\contentsline {section}{\numberline {10}Esercizi}{42}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Cosa calcola una rete}{42}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Descrizione}{42}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {10.1.2}Soluzione}{42}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Algebra booleana}{42}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Mappe di Kernaugh}{43}{subsubsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.2}Circuito di una sveglia}{43}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Descrizione}{43}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}Soluzione}{43}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {8.4.14}Malloc}{40}{subsubsection.8.4.14}%
+\contentsline {subsubsection}{\numberline {8.4.15}atoi}{41}{subsubsection.8.4.15}%
+\contentsline {section}{\numberline {9}Altro}{42}{section.9}%
+\contentsline {paragraph}{Rete combinatoria:}{42}{section.9}%
+\contentsline {paragraph}{Rete sequenziale:}{42}{section.9}%
+\contentsline {section}{\numberline {10}Esercizi}{43}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Cosa calcola una rete}{43}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Descrizione}{43}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}Soluzione}{43}{subsubsection.10.1.2}%
+\contentsline {paragraph}{Algebra booleana}{43}{subsubsection.10.1.2}%
+\contentsline {paragraph}{Mappe di Kernaugh}{44}{subsubsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.2}Circuito di una sveglia}{44}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Descrizione}{44}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Soluzione}{44}{subsubsection.10.2.2}%
