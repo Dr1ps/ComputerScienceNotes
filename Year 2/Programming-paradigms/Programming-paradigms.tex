@@ -1921,7 +1921,7 @@ Sistematicamente, ecco come tradurre la SOS a codice:
   \item Si verificano le precondizioni delle varie regole tramite chiamate ricorsive all'interprete stesso (per regole che non sono assiomi)
   \item Quando si trova una regola le cui precondizioni sono verificate, si calcola il risultato della transizione.
 \end{itemize}
-\subsection{Interprete risultante}
+\subsubsection{Interprete risultante}
 Mettiamo adesso tutto insieme, Scanner, Parser e Interpreter:
 \begin{lstlisting}[language=OCaml]
   (* con inteprete big-step *)
@@ -1935,6 +1935,78 @@ Mettiamo adesso tutto insieme, Scanner, Parser e Interpreter:
       | _ -> eval_rec ( eval_ss ast )
   in
     eval_rec (parse s) ;;
+\end{lstlisting}
+\subsection{Interprete per lamba calcolo}
+\subsubsection{Sintassi del lambda calcolo}
+\[
+e ::= x | \lambda x.e | e\ e
+\]
+Definiamo il tipo degli identificatori e dell'AST delle espressioni:
+\begin{lstlisting}[language=OCaml]
+  type id = string
+
+  type exp =
+  | Var of int
+  | Lam of id * exp
+  | App of exp * exp
+\end{lstlisting}
+\subsubsection{Semantica del lambda calcolo}
+\[
+(\lambda x.e_1)e_2 \rightarrow e_1{x := e_2}
+\]
+\[
+\frac{e_1 \rightarrow e^I_1}{e_1 e_2 \rightarrow e^I_1 e_2}
+\]
+\[
+\frac{e_2 \rightarrow e^I_2}{e_1 e_2 \rightarrow e_1 e^I_2}
+\]
+\[
+\frac{e \rightarrow e^I}{\lambda x.e \rightarrow \lambda x.e^I}
+\]
+L'implementazione della capture-avoiding substitution:
+\[
+x\{x := e\} \equiv e
+\]
+\[
+y\{x := e\} \equiv y \quad \text{se } y \neq x
+\]
+\[
+(e_1e_2)\{x := e\} \equiv (e_1\{x := e\})(e_2\{x := e\})
+\]
+\[
+(\lambda x.e_1)\{x := e\} \equiv (\lambda x.e_1)
+\]
+\[
+(\lambda y.e_1)\{x := e\} \equiv \lambda y.(e_1\{x := e\})
+\]
+\[
+(SE\ y \neq x \text{ e } y \notin FV(e))
+\]
+\[
+(\lambda y.e_1)\{x := e\} \equiv \lambda z.((e_1\{y := z\})\{x := e\})
+\]
+\[
+(SE\ y \neq x \text{ e } y \in FV(e) \text{ e } z \text{ fresca})
+\]
+\subsubsection{Implementazione di FV(e)}
+\[
+FV(x) = {x}
+\]
+\[
+FV(\lambda x.e) = FV(e) \ {x}
+\]
+\[
+FV(e_1 e_2) = FV(e_1) \cup FV(e_2)
+\]
+Ecco un esempio di funzione che calcola ricorsivamente l'insieme delle variabili libere dell'espressione:
+\begin{lstlisting}[language=OCaml]
+  (* calcola le variabili libere ( non legate ) in e *)
+  let rec fvs e =
+    match e with
+    |  Var x -> [x]
+    | Lam (x,e) -> List.filter (fun y -> x <> y) (fvs e)
+    | App (e1,e2) -> (fvs e1) @ (fvs e2)
+;;
 \end{lstlisting}
 
 \section{Altro}

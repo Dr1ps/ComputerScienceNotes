@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  11 NOV 2026 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  13 NOV 2026 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1027,7 +1027,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-<images/interprete.png, id=1225, 593.21625pt x 392.667pt>
+<images/interprete.png, id=1245, 593.21625pt x 392.667pt>
 File: images/interprete.png Graphic file (type png)
 <use images/interprete.png>
 Package pdftex.def Info: images/interprete.png  used on input line 1577.
@@ -1056,7 +1056,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has
                                                   \__shipout_drop_firstpage_...
 l.1598 \begin{itemize}
                        <./images/interprete.png>]
-<images/Compilatore.png, id=1237, 536.0025pt x 289.08pt>
+<images/Compilatore.png, id=1257, 536.0025pt x 289.08pt>
 File: images/Compilatore.png Graphic file (type png)
 <use images/Compilatore.png>
 Package pdftex.def Info: images/Compilatore.png  used on input line 1623.
@@ -1075,7 +1075,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.1629   \item \textbf
                       {Scanner:} trasforma il programma sorgente nel lessico... <./images/Compilatore.png>]
-<images/ParserTree.png, id=1245, 536.0025pt x 308.352pt>
+<images/ParserTree.png, id=1265, 536.0025pt x 308.352pt>
 File: images/ParserTree.png Graphic file (type png)
 <use images/ParserTree.png>
 Package pdftex.def Info: images/ParserTree.png  used on input line 1643.
@@ -1175,9 +1175,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52
-
-]
+[52]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1195,26 +1193,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54] (Programming-paradigms.aux)
+[54
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55] (Programming-paradigms.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: 6AC687480154758C8957A0BD8F43D6E2;22163.
+(rerunfilecheck)             Checksum: 9A087BC5A19BCC0DE7B7B8FEDDCE8C0B;23021.
  ) 
 Here is how much of TeX's memory you used:
- 34323 strings out of 467392
- 773556 string characters out of 5415745
+ 34351 strings out of 467392
+ 773986 string characters out of 5415745
  1777882 words of memory out of 5000000
- 62476 multiletter control sequences out of 15000+600000
+ 62484 multiletter control sequences out of 15000+600000
  636093 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,800b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Programming-paradigms.pdf (54 pages, 735274 bytes).
+Output written on Programming-paradigms.pdf (55 pages, 744211 bytes).
 PDF statistics:
- 1688 PDF objects out of 1728 (max. 8388607)
- 712 named destinations out of 1000 (max. 500000)
- 1188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1732 PDF objects out of 2073 (max. 8388607)
+ 732 named destinations out of 1000 (max. 500000)
+ 1220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
