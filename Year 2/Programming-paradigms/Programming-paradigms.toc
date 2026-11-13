@@ -147,6 +147,8 @@
 \contentsline {subsubsection}{\numberline {12.4.1}Sintassi del lambda calcolo}{51}{subsubsection.12.4.1}%
 \contentsline {subsubsection}{\numberline {12.4.2}Semantica del lambda calcolo}{51}{subsubsection.12.4.2}%
 \contentsline {subsubsection}{\numberline {12.4.3}Implementazione di FV(e)}{52}{subsubsection.12.4.3}%
+\contentsline {subsection}{\numberline {12.5}Implementazione dell'interprete di un nucleo di linguaggio funzionale}{52}{subsection.12.5}%
+\contentsline {paragraph}{Ambiente di un interprete:}{52}{subsection.12.5}%
 \contentsline {section}{\numberline {13}Altro}{53}{section.13}%
 \contentsline {section}{\numberline {14}Esercizi}{54}{section.14}%
 \contentsline {subsection}{\numberline {14.1}Esercizio 1}{54}{subsection.14.1}%

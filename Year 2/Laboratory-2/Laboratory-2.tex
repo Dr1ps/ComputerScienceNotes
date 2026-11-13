@@ -1167,7 +1167,9 @@ end: pop {r4}
 
 _start:
     push {lr}
-...
+    ldr r0, =V
+    bl sumodds
+    pop {pc}
 \end{lstlisting}
 
 \section{Esercizi}

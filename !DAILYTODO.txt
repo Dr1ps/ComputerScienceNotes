@@ -3,6 +3,8 @@
 - do last exercises in pdf
 - esercizi: https://elearning.di.unipi.it/pluginfile.php/91861/course/section/7453/EsercizioLambdaEsploso.html
 (Copia esercizi su file)
+Ambiente e dichiarazioni (interprete linguaggio funzionale)
+
 
 ## AESO ##
 
