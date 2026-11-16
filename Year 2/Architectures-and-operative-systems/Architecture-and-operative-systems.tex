@@ -1159,11 +1159,57 @@ Ecco le istruzioni principali:
         \end{lstlisting}
     \end{itemize}
 \end{itemize}
+\subsubsection{Template}
+\begin{lstlisting}
+    .start
+    .data
+                 @ variabili globali
+        
+    .bss
+                 @ variabili non inizializzate
+
+    .text        @ Blocco per operazioni come ADD,SUB...
+    .global main @ Inizio main
+
+    main:
+\end{lstlisting}
+\subsubsection{MOV}
+Il comando MOV copia un valore in un registro:
+\begin{lstlisting}
+    MOV [regDest][regSrc]
+    MOV R0, R1
+\end{lstlisting}
 \subsubsection{ADD}
 Il comando ADD svolge la somma tra due valori e lo salva in un registro terziario, richiede $3$ parametri:
 \begin{lstlisting}
     ADD [destinazione], [addendo1], [addendo2]
     ADD R0, R1, R2
+    ADD [destinazioneEAddendo1], [addendo2]
+    ADD R0, R1
+\end{lstlisting}
+\subsubsection{SUB}
+Il comando SUB svolge la sottrazione tra due valori e lo salva in un registro terziario, richiede $3$ parametri:
+\begin{lstlisting}
+    SUB [destinazione], [minuendo], [sottraendo]
+    SUB R0, R1, R2
+    SUB [destinazioneEMinuendo], [sottraendo]
+    SUB R0, R1
+\end{lstlisting}
+\subsubsection{MUL}
+Il comando MUL svolge la moltiplicazione tra due valori e lo salva in un registro terziario, richiede $3$ parametri:
+\begin{lstlisting}
+    MUL [destinazione], [fattore1], [fattore2]
+    MUL R0, R1, R2
+    MUL [destinazioneEFattore1], [fattore2]
+    MUL R0, R1    
+\end{lstlisting}
+\subsubsection{DIV}
+Il comando DIV svolge la moltiplicazione tra due valori e lo salva in un registro terziario, richiede $3$ parametri:
+\begin{lstlisting}
+    DIV [destinazione], [dividendo], [divisore]
+    DIV R0, R1, R2
+    DIV [destinazioneEDividendo], [divisore]
+    DIV R0, R1    
 \end{lstlisting}
 \subsubsection{LSR e LSL}
 Questi comandi eseguono una \textbf{Logical Shift}, rispettivamente a destra (\textbf{Right}) o a sinistra (\textbf{Left}).\\
@@ -1175,13 +1221,16 @@ Ecco la loro struttura:
     LSR R0, R1, #1
     LSL R0, R2, #3
 \end{lstlisting}
+Durante una LSL, gli spazi vuoti a destra vengono riempiti con $0$, lo stesso avviene con gli spazi vuoti lasciati a sinistra durante una LSR.\\
+Svolgere una LSL corrisponde a moltiplicare il numero per una potenza di $2$ corrispondente al numero di bit shiftati, mentre la LSR corrisponde al dividere per tale potenza.
 \subsubsection{CMP}
 Questo comando va utilizzato per effettuare il confronto tra due registri prima di controllare una guardia:
 \begin{lstlisting}
     CMP [registro1], [registro2]
     CMP R0, R1
 \end{lstlisting}
-Se viene omesso, il salto condizionato fallisce
+Il comando effettua una sottrazione tra i due registri per effettuare il confronto e setta i flag senza restituire un risultato.\\
+Eventuali guardie successive andranno a controllare tali flag per effettuare delle decisioni.
 \subsubsection{Salti}
 I salti generici sono denotati dalla lettera "B", permettono di saltare pezzi di codice per riprendere da un' \textbf{etichetta}:
 \begin{lstlisting}
@@ -1193,7 +1242,7 @@ I salti generici sono denotati dalla lettera "B", permettono di saltare pezzi di
 \end{lstlisting}
 Esistono anche salti che agiscono in base ad una condizione:
 \[
-cmp\  [reg1], [reg2]
+CMP\ [reg1], [reg2]
 \]
 \[
 B[condizione]\ [etichetta]
@@ -1206,11 +1255,11 @@ B[condizione]\ [etichetta]
     \item \textbf{BGE}: $reg1 \geq reg2$
     \item \textbf{BNE}: $reg1 \ne reg2$
 \end{itemize}
-Esiste anche un altro tipo di salto che permette di simulare l'utilizzo di \textbf{funzioni}, salvando l'indirizzo di ritorno in LR:
+Esiste anche un altro tipo di salto che permette di simulare l'utilizzo di \textbf{funzioni}, salvando l'indirizzo di ritorno in \textbf{LR}:
 \begin{lstlisting}
     BL [etichetta]
 \end{lstlisting}
-Il valore di ritorno è salvato nel registro \textbf{LR}, quindi per tornare indietro bisogna settare \textbf{PC} a \textbf{LR}:
+Il valore di ritorno è salvato nel registro \textbf{LR}, quindi per tornare indietro bisogna settare \textbf{PC} a \textbf{LR} all'interno della funzione (return):
 \begin{lstlisting}
     MOV PC, LR
 \end{lstlisting}
@@ -1224,14 +1273,27 @@ Tale comando carica un valore dalla memoria del registro e lo salva in un altro:
 \end{lstlisting}
 Ci sono delle varianti:
 \begin{lstlisting}
-    
     LDR R0, =100 @ Carica un valore costante (pseudo istruzione)
     
+    LDR R0, [R1] @ Carica il valore salvato in R1
+
     LDR R0, [R1, #4] @ Carica R1 + 4
 
     LDR R0, [R1], #4 @ Legge da R1, poi lo incrementa di 4
     
     LDR R0, [R1, #4]! @ R1 += 4, poi legge dal nuovo indirizzo
+\end{lstlisting}
+
+\subsubsection{STR}
+Tale comando memorizza un valore in un registro:
+\begin{lstlisting}
+    STR R0, [R1] @ Salva il valore di R0 all'indirizzo contenuto in R1
+
+    STR R0, [R1, #4] @ Salva R0 all'indirizzo R1 + 4
+
+    STR R0, [R1], #4 @ Salva in R1, poi incrementa R1 di 4
+
+    STR R0, [R1, #4]! @ Incrementa R1 di 4, poi salva al nuovo indirizzo
 \end{lstlisting}
 
 \subsubsection{Loop}
@@ -1251,7 +1313,7 @@ Esistono versioni di comandi base che collaborano con delle condizioni:
 \begin{lstlisting}
     ADDEQ R1,R2,R3
 \end{lstlisting}
-Questo svolge $R2-R3$, se il flag \textbf{Z} è $1$ allora sono uguali e la condizione è vera e svolge quindi l'operazione.\\
+Se il flag \textbf{Z} è $1$ da un precedente CMP allora la condizione è vera e svolge quindi l'operazione.\\
 Questo tipo di comandi permette di evitare l'utilizzo di salti, i quali possono provocare rallentamenti in codici eseguiti con pipeline, in quanto il programma si era preparato a svolgere certe operazioni e invece abbiamo deciso di saltarle.\\
 \begin{figure}[H]
     \centering
@@ -1266,7 +1328,22 @@ Per fare in modo che dopo un'operazione lo stato del risultato venga mantenuto n
     ADDS R0, R1, R2
 \end{lstlisting}
 Questa operazione esegue l'operazione base normalmente e poi setta i flag in base al risultato dell'operazione associata.\\
-I flag non vengono normalmente settati, ci vogliono questi comandi.
+I flag non vengono normalmente settati, ci vogliono questi comandi.\\
+Ecco una lista di comandi che supportano questa modalità:
+\begin{itemize}
+    \item ADD
+    \item SUB
+    \item SBCS
+    \item RSBS
+    \item RSCS
+    \item AND
+    \item ORR
+    \item EOR
+    \item MOV
+    \item LSL
+    \item LSR
+    \item CMP
+\end{itemize}
 
 \subsubsection{Prelevare registri dallo stack}
 Se abbiamo bisogno di piu registri di quelli temporanei, bisogna utilizzare quelli seguenti, ma per farlo bisogna prima toglierli dallo stack e poi, una volta utilizzati, vanno rimessi nello stack:
@@ -1283,10 +1360,11 @@ Questo è molto importante per realizzare delle \textbf{funzioni} in assembly:
     func:
         PUSH {LR}
         ...
-        POP {PC}
+        POP {PC} @ Oppure POP{LR}, MOV PC, LR
 
 \end{lstlisting}
 In questo codice, si chiama la funzione salvandoci l'indirizzo di ritorno che viene poi salvato nello stack. Man mano il PC aumenta e siccome ci siamo salvati l'indirizzo di ritorno prima, lo estraiamo di nuovo e lo salviamo in PC, in modo da tornare nel programma principale.
+
 \subsubsection{Malloc}
 Come in C possiamo usare la funzione \textbf{malloc} per allocare memoria dinamicamente con puntatori, si può fare anche in Assembly:
 \begin{lstlisting}
@@ -1301,10 +1379,8 @@ Per \textbf{accedere} al valore, si usa un semplice:
 \begin{lstlisting}
     LDR R1, [R0]
 \end{lstlisting}
-Per invece \textbf{modificare} un valore allocato, si usa la keyword \textbf{STR}:
+Per invece \textbf{modificare} un valore allocato, si usa \textbf{STR}:
 \begin{lstlisting}
-    STR [registroConNuovoValore],[[registroPuntatore]]
-
     MOV R1, #2
     STR R1,[R0]
 \end{lstlisting}
@@ -1312,6 +1388,7 @@ Infine, un'allocazione dinamica va liberata, si richiama la funzione \textbf{fre
 \begin{lstlisting}
     BL free
 \end{lstlisting}
+Bisogna essere sicuri che l'indirizzo è salvato in $R_0$ al momento della chiamata a "free".
 \subsubsection{atoi}
 La funzione \textbf{atoi} sta per "ASCII to Integer" e serve per convertire stringhe e caratteri in valori interi:
 \begin{lstlisting}
@@ -1321,8 +1398,50 @@ La funzione \textbf{atoi} sta per "ASCII to Integer" e serve per convertire stri
     .text
         LDR R0, =my_string
         BL atoi
-\end{lstlisting}
 
+        @ R0 = 1234
+\end{lstlisting}
+\subsubsection{Vettori (word)}
+Per simulare vettori in Assembly, bisogna utilizzare le \textbf{word}:
+\begin{lstlisting}
+    .data
+        vector: .word 10, 20, 30, 40, 50
+\end{lstlisting}
+Una word è un vettore di elementi da $4$ bit ciascuno, con offset tra loro appunto di $4$ bit.\\
+Per accedere ad un elemento, si usa la \textbf{LDR} con il giusto offset:
+\begin{lstlisting}
+    LDR R0, =vector @ copia il vettore in R0
+    LDR R1, [R0, #8] @ carica l'elemento con offset = 8 (terzo elemento) e lo salva in R1
+\end{lstlisting}
+Altrimenti, possiamo accedere tramite \textbf{indice}:
+\begin{lstlisting}
+    LDR R0, =vector @ copia il vettore in R0
+    MOV R1, #2 @ indice = 2
+
+    LSL R1, R1, #2     @ Indice * 4 (offset)
+    LDR R2, [R0, R1]   @ R2 = vector[2]
+\end{lstlisting}
+La modifica di un elemento è analoga:
+\begin{lstlisting}
+    LDR R0, =vector 
+    MOV R1, #2 
+    LSL R1, R1, #2  
+
+    MOV R2, #10   
+    STR R2, [R0, R1]   
+\end{lstlisting}
+Ecco come scorrerlo in un loop:
+\begin{lstlisting}
+    LDR R0, =vector    @ Indirizzo del vettore
+    MOV R1, #5         @ Numero di elementi
+
+loop:
+    LDR R2, [R0], #4   @ Carica elemento e incrementa indirizzo
+    SUBS R1, R1, #1    @ Decrementa contatore
+    BNE loop
+    B fine
+\end{lstlisting}
+Qui, BNE controlla il flag $Z$, il quale è "1" se la contatore arriva a 0.
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
 \paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.
