@@ -148,18 +148,28 @@
 \contentsline {subsubsection}{\numberline {12.4.2}Semantica del lambda calcolo}{51}{subsubsection.12.4.2}%
 \contentsline {subsubsection}{\numberline {12.4.3}Implementazione di FV(e)}{52}{subsubsection.12.4.3}%
 \contentsline {subsection}{\numberline {12.5}Implementazione dell'interprete di un nucleo di linguaggio funzionale}{52}{subsection.12.5}%
-\contentsline {paragraph}{Ambiente di un interprete:}{52}{subsection.12.5}%
-\contentsline {section}{\numberline {13}Altro}{53}{section.13}%
-\contentsline {section}{\numberline {14}Esercizi}{54}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Esercizio 1}{54}{subsection.14.1}%
-\contentsline {paragraph}{Soluzione (non controllata):}{54}{Item.12}%
-\contentsline {subsection}{\numberline {14.2}Esercizio 2}{54}{subsection.14.2}%
-\contentsline {paragraph}{Soluzione}{54}{Item.18}%
-\contentsline {subsection}{\numberline {14.3}Esercizio 3}{54}{subsection.14.3}%
-\contentsline {paragraph}{Soluzione}{54}{Item.21}%
-\contentsline {subsection}{\numberline {14.4}Esercizio 4}{55}{subsection.14.4}%
-\contentsline {paragraph}{Soluzione}{55}{Item.29}%
-\contentsline {subsection}{\numberline {14.5}Esercizio 5}{55}{subsection.14.5}%
-\contentsline {paragraph}{Soluzione}{55}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Esercizio 6}{55}{subsection.14.6}%
-\contentsline {paragraph}{Soluzione}{55}{Item.32}%
+\contentsline {subsubsection}{\numberline {12.5.1}Definizioni importanti}{52}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Binding:}{52}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Scope (o ambito di visibilita):}{52}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Ambiente di un interprete:}{53}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Entita denotabili}{53}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Dichiarazioni:}{53}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Shadowing:}{53}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Aliasing:}{53}{subsubsection.12.5.1}%
+\contentsline {paragraph}{Stack:}{53}{subsubsection.12.5.1}%
+\contentsline {subsubsection}{\numberline {12.5.2}Implementazione di un ambiente in OCaml}{54}{subsubsection.12.5.2}%
+\contentsline {section}{\numberline {13}MiniCaml}{55}{section.13}%
+\contentsline {section}{\numberline {14}Altro}{56}{section.14}%
+\contentsline {section}{\numberline {15}Esercizi}{57}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Esercizio 1}{57}{subsection.15.1}%
+\contentsline {paragraph}{Soluzione (non controllata):}{57}{Item.12}%
+\contentsline {subsection}{\numberline {15.2}Esercizio 2}{57}{subsection.15.2}%
+\contentsline {paragraph}{Soluzione}{57}{Item.18}%
+\contentsline {subsection}{\numberline {15.3}Esercizio 3}{57}{subsection.15.3}%
+\contentsline {paragraph}{Soluzione}{57}{Item.21}%
+\contentsline {subsection}{\numberline {15.4}Esercizio 4}{58}{subsection.15.4}%
+\contentsline {paragraph}{Soluzione}{58}{Item.29}%
+\contentsline {subsection}{\numberline {15.5}Esercizio 5}{58}{subsection.15.5}%
+\contentsline {paragraph}{Soluzione}{58}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Esercizio 6}{58}{subsection.15.6}%
+\contentsline {paragraph}{Soluzione}{58}{Item.32}%

@@ -2010,14 +2010,96 @@ Ecco un esempio di funzione che calcola ricorsivamente l'insieme delle variabili
 \end{lstlisting}
 
 \subsection{Implementazione dell'interprete di un nucleo di linguaggio funzionale}
+\subsubsection{Definizioni importanti}
 Finora abbiamo valutato espressioni come:
 \[
 3 + 5 * 2
 \]
 Per le quali l'interprete può calcolarne il valore tramite AST.\\
+Cosa succede però se introduciamo le variabili?
+\paragraph{Binding:} legame, associazione tra nome e entità
+\paragraph{Scope (o ambito di visibilita):} parte del programma in cui un binding è valido, può essere:
+\begin{itemize}
+  \item \textbf{Statico o lessicale:} determinato dalla struttura sintattica del programma.
+  \item \textbf{Dinamico:} determinato dalla struttura a tempo di esecuzione.
+\end{itemize}
 \paragraph{Ambiente di un interprete:} permette all'interprete di determinare a cosa si riferiscono i nomi presenti in un programma.\\
-In ogni momento dell'eseczuone mantiene le associazioni tra 
-nomi e entità a cui sono legati.\\
+In ogni momento dell'esecuzione mantiene le associazioni tra 
+nomi e entità a cui sono legati (binding).\\
+L'ambiente è quindi l'insieme di associazioni (binding) esistenti a run-time in uno specifico punto del programma e in uno specifico momento dell'esecuzione.\\
+L'ambiente può essere:
+\begin{itemize}
+  \item \textbf{Locale:} associazioni dichiarate localmente al blocco.
+  \item \textbf{Non locale:} associazioni visibili nel blocco corrente ma non dichiarati nel blocco stesso.
+  \item \textbf{Globale:} associazioni visibili e utilizzabili da tutte le componenti che costituiscono il programma.
+\end{itemize}
+\paragraph{Entita denotabili}: elementi del linguaggio a cui si può dare un nome, si distinguono in:
+\begin{itemize}
+  \item Entita con nomi definiti dal linguaggio (primitivi)
+  \item Entita con nomi definiti dall'utente (variabili, tipi, classi, oggetti...)
+\end{itemize}
+\paragraph{Dichiarazioni:} sono il costrutto linguistico che permette di introdurre nuove associazioni (binding) nell'ambiente.
+\paragraph{Shadowing:} se dichiariamo una variabile con un identificatore gia definito si sovrascrive lo scope per il blocco corrente.
+\paragraph{Aliasing:} questo si verifica quando due identificatori puntano alla stessa variabile.
+\paragraph{Stack:} esso è una struttura dati utilizzata nel run-time support ed  è una pila di record di attivazione, uno per ogni blocco o funzione attiva.\\
+Ogni record di attivazione rappresenta l'ambiente locale del blocco corrispondente e contiene le informazioni necessarie per riprendere l'esecuzione al termine della chiamata di funzione.\\
+Ecco cosa contiene ogni record di attivazione:
+\begin{itemize}
+  \item \textbf{Local variables:} variabili locali del blocco.
+  \item \textbf{Parameters}: parametri di funzione
+  \item \textbf{Dynamic Link}: link al record di attivazione del chiamante
+  \item \textbf{Static Link} link al record di attivazione del blocco piu esterno
+  \item \textbf{Return address:} punto nel codice del chiamante in cui tornare al termine della chiamata
+\end{itemize}
+\subsubsection{Implementazione di un ambiente in OCaml}
+Vediamo come implementare in OCaml un ambiente minimale:
+\begin{itemize}
+  \item Senza blocchi
+  \item Senza record di attivazione
+  \item Solo una "pila" di binding
+\end{itemize}
+Un ambiente $\sum$ è una collezione di binding.
+\[
+\sum = \{x \rightarrow 25, y \rightarrow 7\}
+\]
+Astrattamente, l'ambiente è una funzione di tipo:
+\[
+\sum: Ide\ \rightarrow Value\ + UnBound
+\]
+L'uso della costante UnBound permette di rendere la funzione totale. (per identificatori inutilizzati)\\
+Un ambiente \textbf{esteso} si crea quando si aggiorna un ambiente con una nuova dichiarazione:
+\[
+\sum^I = \sum[x=v](y) = \begin{cases}
+  v,\ y = x\\
+  \sum(y), y \ne x
+\end{cases}
+\]
+L'ambiente può essere implementato come funzione polimorfa che associa identificatori con valori di tipo \'t, ovvero valori \textbf{esprimibili} nel linguaggio.
+\begin{lstlisting}
+  type 't env = ide -> 't
+\end{lstlisting}
+Serve anche un \textbf{ambiente vuoto} che restituisce UnBound per ogni identificatore:
+\begin{lstlisting}
+  let emptyenv = fun x -> UnBound
+\end{lstlisting}
+Per controllare che valore ha una variabile, si accede all'ambiente cosi:
+\begin{lstlisting}
+  env x
+\end{lstlisting}
+La funzione \textbf{bind} crea una nuova associazione da mettere nell'ambiente. In pratica, crea un nuovo ambiente che:
+\[
+\sum^I = \sum[x=v](y) = \begin{cases}
+  v,\ y = x\\
+  \sum(y), y \ne x
+\end{cases}
+\]
+\begin{lstlisting}
+  let bind env x v = 
+    fun i -> if (i = x) then v else (env i)
+\end{lstlisting}
+
+\section{MiniCaml}
+
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.
