@@ -1442,6 +1442,78 @@ loop:
     B fine
 \end{lstlisting}
 Qui, BNE controlla il flag $Z$, il quale è "1" se la contatore arriva a 0.
+
+\subsection{Formato delle istruzioni}
+Tutti questi comandi hanno delle strutture comuni tra loro per essere eseguiti, andiamole a vedere.\\
+\subsubsection{Istruzione operativa}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/istruzioneOperativa.png}
+    \caption{Istruzione Operativa}
+    \label{fig:istruzioneOperativa}
+\end{figure}
+\begin{itemize}
+    \item \textbf{cond:} condizione per operazioni condizionali.
+    \item \textbf{op:} tipo di istruzione:
+    \begin{itemize}
+        \item \textbf{00:} istruzione operativa
+        \item \textbf{01:} istruzione di memoria
+        \item \textbf{10:} istruzione di salto
+    \end{itemize}
+    In questo caso, ha valore "00".
+    \item \textbf{func:} corrisponde ai blocchi seguenti:
+    \begin{itemize}
+        \item \textbf{I:} immediato ($\#k$), settato a "$1$" se bisogna considerare il campo "cmd" come valore costante.
+        \item \textbf{cmd:} comando, come ADD, SUB, MUL ecc...
+        \item \textbf{S:} settato a "$1$" se bisogna settare i flag
+    \end{itemize}
+    \item \textbf{Rn:} registro sorgente.
+    \item \textbf{Rd:} registro destinazione.
+    \item \textbf{Src2:} può assumere valori diversi.
+    \begin{itemize}
+        \item \textbf{Rot:} valore intero (moltiplicato per 2) di quanti bit va ruotato a destra Imm8, si possono rappresentare in questo modo immediati da 32 bit con un Imm8 di soli 8 bit.
+        \item \textbf{Imm8:} valore dell'immediato.
+        \item \textbf{Shamt5:} Quantità di posizioni di shift (5 bit)
+        \item \textbf{Sh:} Tipo di shift (LSL, LSR, ASR, ROR)
+        \item \textbf{Rm:} Registro sorgente su cui effettuare lo shift
+        \item \textbf{Bit 4:} se è "$0$", allora abbiamo un register, altrimenti uno shifted register con bit7 = 0.
+    \end{itemize}
+\end{itemize}
+\subsubsection{Istruzione di salto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/IstruzioneDiSalto.png}
+    \caption{Istruzione Di Salto}
+    \label{fig:IstruzioneDiSalto}
+\end{figure}
+\begin{itemize}
+    \item \textbf{cond:} condizione del salto
+    \item \textbf{op:} tipo di istruzione:
+    \begin{itemize}
+        \item \textbf{00:} istruzione operativa
+        \item \textbf{01:} istruzione di memoria
+        \item \textbf{10:} istruzione di salto
+    \end{itemize}
+    In questo caso ha valore "10".
+    \item \textbf{1L:} due bit:
+    \begin{itemize}
+        \item \textbf{1:} fisso a 1, serve per aiutare a identificare l'istruzione di salto.
+        \item \textbf{L:} indica se il salto è un Branch with Link (BL)
+    \end{itemize}
+    \item \textbf{Imm24:} etichetta rappresentata in numero di istruzioni da saltare a partire da $PC + 8$, memorizzato in C2 in quanto può essere negativo per effettuare salti all'indietro.
+\end{itemize}
+\subsubsection{Opcode}
+L'opcode in assembly si trova accanto ad un'operazione ed indica varie cose:
+\[
+e0821003\ ADD\ R_1,\ R_2,\ R_3
+\]
+\begin{itemize}
+    \item \textbf{e:} condizione, in questo caso è ALWAYS (E = 1110 = always (cond)).
+    \item \textbf{08:} op
+    \item \textbf{2:} $R_N$
+    \item \textbf{1:} $R_D$
+    \item \textbf{3:} $R_M$ 
+\end{itemize}
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
 \paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.

@@ -1109,6 +1109,157 @@ C non ha un tipo specifico per realizzare liste, ci appoggiamo quindi all'utiliz
         l = l -> next;
     }
 \end{lstlisting}
+\subsection{Gestione dei file}
+I file permettono di riutilizzare dati in una successiva esecuzione.\\
+La libreria standard C offre funzioni per trasferire dati tra programma e file.\\
+Per riutilizzare le informazioni memorizzate in un file bisogna conoscerne il formato.\\
+Il formato binario di un file non è necessariamente portabile tra compilatori diversi.\\
+\subsubsection{Apertura file}
+Per aprire un file, si fa cosi:
+\begin{lstlisting}[language=C]
+    //Apertura file
+    FILE *fp = fopen("misure.txt")
+
+    //Controllo errori
+    if (fp == NULL) {
+        printf("Errore nell'apertura del file!\n");
+        perror("Dettagli");
+        return 1;
+    }
+\end{lstlisting}
+Eventuali errori nell'apertura dei file:
+\begin{itemize}
+    \item File assente (in modalità lettura).
+    \item Nome del file o percorso errato.
+    \item Permessi insufficienti (mancanza dei
+    permessi di lettura o scrittura).
+    \item File non accessibile.
+    \item Risorse di sistema insufficienti.
+    \item Numero massimo di file aperti raggiunto.
+    \item Dispositivo o supporto di memorizzazione
+    non disponibile.
+\end{itemize}
+\textbf{Modalità di apertura file:}
+\begin{itemize}
+    \item \textbf{r}: solo lettura
+    \item \textbf{w}: solo scrittura (tronca il file)
+    \item \textbf{a}: solo scrittura in coda
+    \item \textbf{r+}: lettura e scrittura
+    \item \textbf{w+}: lettura e scrittura (tronca il file)
+    \item \textbf{a+}: lettura e scrittura
+\end{itemize}
+\begin{lstlisting}[language=C]
+    //Apre un file solo in scrittura
+    FILE *fp = fopen("misure.txt", "w")
+\end{lstlisting}
+\subsubsection{Leggere file}
+Inanzitutto, per leggere un file bisogna aprirlo almeno in modalità di lettura.\\
+Per leggere una riga, si fa cosi:
+\begin{lstlisting}[language=C]
+    /*Buffer*/
+    char riga[128];
+
+    /*fgets legge una stringa da file*/
+    while (fgets(riga, sizeof riga, fp) != NULL) {
+        fputs(riga, stdout);
+    }
+\end{lstlisting}
+Durante la lettura dobbiamo tenere conto che anche questi sono considerati caratteri:
+\begin{itemize}
+    \item "$\backslash$0" terminatore
+    \item "$\backslash$n" a capo
+\end{itemize}
+Se abbiamo un buffer di dimensione $k$, si ottengono solo $k-1$ caratteri effettivi, perche l'ultima posizione è riservata al terminatore nullo.\\
+Se vogliamo leggere un \textbf{carattere} per volta:
+\begin{lstlisting}[language=C]
+    /*Si usa int peche almeno puo assumere valori di errore di fgetc*/
+    int c;
+
+    /*fgetc legge un carattere da file*/
+    while((c = fgetc(fp)) != EOF) {
+        /*Stampa a schermo il carattere*/
+        putchar(c);
+    }
+\end{lstlisting} 
+Per eseguire una lettura \textbf{formattata} si fa cosi:
+\begin{lstlisting}[language=C]
+    int id;
+    double valore;
+
+    /*n viene settato a quante conversioni sono riuscite*/
+    int n = fscanf(fp, "%d %if", &id, &valore);
+    if(n==2) {
+        /* Due conversioni riuscite */
+    }
+\end{lstlisting}
+\subsubsection{Scrittura su file}
+La funzione \textbf{fprintf} permette di scrivere qualcosa su file:
+\begin{lstlisting}[language=C]
+    fprintf([file],[stringa],[parametro1],[parametro2],...);
+    fprintf(fp, "%d %.2f\n", 102, 19.8);
+\end{lstlisting}
+Se la scrittura fallisce, questa ritorna un valore negativo (<0).\\
+La funzione \textbf{fputs} invece scrive direttamente una stringa:
+\begin{lstlisting}[language=C]
+    fputs([stringa],[file]);
+    fputs("riga\n",fp);
+\end{lstlisting} 
+Se la scrittura fallisce, ritorna una \textbf{EndOfFileException} (EOF) in caso di errore, un valore non negativo altrimenti.
+\subsubsection{Chiusura file}
+Una cosa molto importante da ricordarsi è di chiudere sempre i file con:
+\begin{lstlisting}[language=C]
+    /*Se la chiusura fallisce, restituisce EOF, altrimenti 0*/
+    if(fclose(fp) == EOF) {
+        /*Comando "print error" (perror)*/
+        perror("fclose")
+        return 1;
+    }
+    fp = NULL;
+\end{lstlisting}
+Dopo la chiusura, non si deve più usare il vecchio puntatore.
+\subsubsection{EOF e errori}
+Quando è che il file è finito?
+\begin{itemize}
+    \item Il programma legge l'ultimo carattere disponibile
+    \item La lettura successiva non ottiene un carattere e restituisce EOF
+\end{itemize}
+Come si capisce se EOF è la semplice fine del file oppure un errore?
+\begin{lstlisting}
+    int c;
+    while((c = fgetc(fp)) != EOF) {
+        putchar(c);
+    }
+
+    if (ferror(fp)) {
+        /*Gestione dell'errore*/
+    }
+\end{lstlisting}
+\subsubsection{Altre funzioni per file}
+La funzione \textbf{fwrite} restituisce il numero di entità che sono state scritte, ovvero entità di una specifica grandezza:
+\begin{lstlisting}
+    int numeri[3] = {10,20,30};
+
+    size_t n = fwrite(numeri, sizeof numeri [0], 3, fp);
+
+    if (n != 3) { 
+        /*Scrittura incompleta*/
+    }
+\end{lstlisting}
+La funzione \textbf{fread} è analoga:
+\begin{lstlisting}
+    int numeri[3];
+
+    size_t n = fread(numeri, sizeof numeri [0], 3, fp);
+
+    if (n != 3) {
+        /*Lettura incompleta*/
+    }
+\end{lstlisting}
+La funzione \textbf{rewind} sposta di nuovo la lettura all'inizio del file:
+\begin{lstlisting}
+    rewind(fp);
+\end{lstlisting}
+I comandi \textbf{fseek} e \textbf{ftell} permettono di manipolare la posizione.
 
 \section{Assembler ARMv7}
 \subsection{Tools}
