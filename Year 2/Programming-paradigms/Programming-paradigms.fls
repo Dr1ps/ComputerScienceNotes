@@ -430,6 +430,13 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmitt10.tfm
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
+INPUT .\images\macchinaAstratta.png
 INPUT .\images\interprete.png
 INPUT .\images\interprete.png
 INPUT .\images\interprete.png
@@ -451,6 +458,13 @@ INPUT .\images\ParserTree.png
 INPUT .\images\ParserTree.png
 INPUT .\images\ParserTree.png
 INPUT .\images\ParserTree.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
+INPUT .\images\MiniCamlStructure.png
 INPUT Programming-paradigms.aux
 INPUT .\Programming-paradigms.out
 INPUT .\Programming-paradigms.out

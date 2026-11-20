@@ -1569,6 +1569,12 @@ Nel lato software (di programmazione) ci sono invece altre corrispondenze:
   \item \textbf{Memoria:} definizioni di strutture dati.
   \item \textbf{Operazioni primitive:} funzioni.
 \end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{images/macchinaAstratta.png}
+  \caption{Struttura Macchina Astratta}
+  \label{fig:macchinaAstratta}
+\end{figure}
 \subsubsection{Interprete}
 L'interprete prende in input un programma da eseguire, tipicamente l'albero di sintassi astratta del programma, e lo esegue ispezionandone la struttura per vedere cosa va fatto.\\
 In particolare, questo è il ciclo di operazioni che l'interprete svolge:
@@ -2099,7 +2105,199 @@ La funzione \textbf{bind} crea una nuova associazione da mettere nell'ambiente. 
 \end{lstlisting}
 
 \section{MiniCaml}
-
+\subsection{Struttura}
+Con l'analisi lessicale e il parsin sappiamo già costruire l'albero di sintassi astratta di un programma.\\
+Andiamo adesso a definire in OCaml il tipo \textbf{exp} che rappresenta i nodi di tale albero, usando gli opportuni costruttori.\\
+L'interprete avrà il compito di valutare le espressioni rappresentate da questi alberi, applicando le corrispondenti regole semantiche.\\
+Questo linguaggio contiene il \textbf{nucleo di un linguaggio funzionale}; è nato con l'obiettivo di esaminare al meglio gli aspetti relativi all'implementazione dell'interprete e del RTS.\\
+Ricordiamoci la struttura generale delle macchine astratte:
+\begin{itemize}
+  \item Memoria
+  \item Interprete
+  \item Operazioni primitive
+  \item Controllo
+\end{itemize}
+Adesso, esplicitiamo anche il type checking, collegato alle operazioni primitive.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{images/MiniCamlStructure.png}
+  \caption{Struttura MiniCaml}
+  \label{fig:minicamlStructure}
+\end{figure}
+\subsection{Linguaggio funzionale didattico}
+\begin{lstlisting}[language=OCaml]
+  type ide = string ;;
+  type exp =
+    | EInt of Int                     (*Letterale n*)
+    | CstTrue                         (*Letterale true*)
+    | CstFalse                        (*Letterale false*)
+    | Sum of exp * exp                (*Somma*)
+    | Diff of exp * exp               (*Sottrazione*)
+    | Prod of exp * exp               (*Prodotto*)
+    | Div of exp * exp                (*Divisione*)
+    | Eq of exp * exp                 (*Uguale*)
+    | IsZero of exp                   (*Controlla se uguale a zero*)
+    | Or of exp * exp                 (*Or logico*)
+    | And of exp * exp                (*And logico*)
+    | Not of exp                      (*Not logico*)
+    | ifthenelse of exp * exp * exp   (*Espressione condizionale*)
+    | Den of ide                      (*Entita' denotabile (variabile)*)
+    | Let of ide * exp * exp          (*Dichiarazione di ide: modifica ambiente*)
+    | Fun of ide * exp                (*Astrazione di funzione (non ricorsiva, singolo parametro)*)
+    | Apply of exp * exp              (*Applicazione di funzione*)
+    | Letrec of ide * ide * exp * exp (*Dichiarazione di funzione ricorsiva (singolo parametro)*)
+\end{lstlisting}
+\subsection{Ciclo interprete}
+\begin{lstlisting}[language=OCaml]
+  let rec eval(e:exp) = 
+    match e with
+    | EInt(n) -> Int(n)
+    | CstTrue -> Bool(true)
+    | CstFalse -> Bool(false)
+    | IsZero(e) -> is_zero(eval e s)
+    | Eq(e1, e2) -> int_eq((eval e1 s), (eval e2 s))
+    | Sum(e1, e2) -> int_plus ((eval e1 s), (eval e2 s))
+    | Diff(e1, e2) -> int_sub ((eval e1 s), (eval e2 s))
+    | Prod(e1,e2) -> int_times((eval e1 s), (eval e2 s))
+    | Div(e1,e2) -> int_div((eval e1 s), (eval e2 s))
+    | And(e1, e2) -> bool_and((eval e1 s), (eval e2 s))
+    | Or(e1, e2) -> bool_or ((eval e1 s), (eval e2 s))
+    | Not(e) -> bool_not((eval e s))
+\end{lstlisting}
+Come si vede, il risultato di tale pattern matching può avere tipi diversi, per questo utilizzeremo un tipo variant \textbf{evT}(evaluation type) che li racchiude:
+\begin{lstlisting}[language=OCaml]
+  type evT = 
+    | Int of int
+    | Bool of bool
+    | UnBound
+    | Closure of ide * exp * evT env  (*Dichiarazione di funzione con parametro (ide), corpo(exp) e ambiente al momento della dichiarazione*)
+\end{lstlisting}
+\subsection{Ambiente}
+L'ambiente è una \textbf{funzione} che, dato un'ide, restituisce un evT:
+\[
+ide \rightarrow evT
+\]
+Nell'ambiente di un interprete i valori devono avere anche l'informazione sul tipo per consentire il type checking dinamico:
+\[
+valore\ = [tname | valore]
+\]
+Con:
+\begin{lstlisting}[language=OCaml]
+  type tname = 
+  | TInt
+  | TBool
+  | ...
+\end{lstlisting}
+Per determinare il tipo di un valore, si usa:
+\begin{lstlisting}
+  let getType (x: evT):
+    tname = match x with
+            | Int(n) -> TInt
+            | Bool(b) -> TBool
+            | ...
+\end{lstlisting}
+Questa funzione associa ogni evT and un tname.\\
+\subsubsection{TypeChecking Dinamico}
+Per effettuare il type checking dinamico, si usa una funzione \textbf{typecheck} che prende una coppia $(x, y)$ in cui:
+\begin{itemize}
+  \item x è un valore di tipo \textbf{tname}, ovvero il tipo atteso del valore per l'operazione primitiva.
+  \item y è un valore di tipo \textbf{evT}, il valore esprimibile da verificare, quello da controllare.
+\end{itemize}
+\begin{lstlisting}
+  let typecheck((x,y): (tname * evT)) =
+    match x with
+    | TInt -> 
+      (match y with
+      | Int(u) -> true
+      | _ -> false
+      )
+    | TBool ->
+      (match y with
+      | Bool(u) -> true
+      | _ -> false
+      )
+    | ...
+\end{lstlisting}
+Per estendere l'ambiente in punti arbitrari all'interno di un'espressione si usa \textbf{let}.\\
+Principalmente, si può estendere temporaneamente l'ambiente (all'interno di un blocco).
+\subsection{Valutazione delle espressioni}
+Per valutare un'espressione composta, l'interprete ne valuta le sottoespressioni, e passa i valori ottenuti alle operazioni primitive corrispondenti.\\
+Le operazioni primitive controllano che il tipo sia corretto per poi calcolare il risultato.\\
+Per esempio:
+\begin{lstlisting}
+  let is_zero x = match(typecheck(Tint,x), x) with
+                  | (true, Int(y)) -> Bool(y=0)
+                  | (_,_) -> raise (RuntimeError "Wrong type");;
+\end{lstlisting}
+Tutte le operazioni sono implementate secondo la regola della \textbf{valutazione eager}, ovvero che prima di applicare un operatore bisogna aver svolto tutti i sottoalberi.\\
+L'unica operazione che non segue questa tecnica è \textbf{ifthenelse}, in quanto lavora in base alle guardie.
+\subsection{Funzioni}
+Per completare il linguaggio, introduciamo le funzioni:
+\begin{itemize}
+  \item Astrazione funzionale(dichiarazione):
+  \[
+  Fun\ of\ ide\ *\ exp
+  \]
+  \item Applicazione di funzione(chiamata):
+  \[
+  Apply\ of\ exp\ *\ exp
+  \]
+\end{itemize}
+Le funzioni si scrivono cosi:
+\[
+Fun(arg, ebody)
+\]
+Con:
+\begin{itemize}
+  \item \textbf{arg:} parametro formale
+  \item \textbf{ebody:} corpo della funzione
+\end{itemize}
+Per esempio, la funzione in OCaml:
+\begin{lstlisting}
+  let f x = x+7 in f 2
+\end{lstlisting}
+In MiniCaml diventa:
+\begin{lstlisting}
+  Let("f", Fun("x", Sum(Den("x"), EInt(7))), 
+  Apply(Den("f"),EInt(2)))
+\end{lstlisting}
+\subsection{Regole in semantica operazionale big step}
+Ecco alcune delle regole appena viste in semantica operazionale big step:
+\[
+\frac{\sum \triangleright e \implies Int(0)}{\sum \triangleright IsZero(e) \implies Bool(true)}
+\]
+\[
+\frac{\sum \triangleright e \implies Int(n), n \ne 0}{\sum \triangleright IsZero(e) \implies Bool(false)}
+\]
+\[
+\frac{\sum \triangleright e_1 \implies Bool(true), \sum \triangleright e_2 \implies v_2}{\sum \triangleright ifthenelse(e_1,e_2,e_3) \implies v_2}
+\]
+\[
+\frac{\sum \triangleright e_1 \implies Bool(false), \sum \triangleright e_3 \implies v_3}{\sum \triangleright ifthenelse(e_1,e_2,e_3) \implies v_3}
+\]
+\[
+\sum \triangleright Den(i) \implies \sum(i)
+\]
+\[
+\frac{\sum \triangleright Den("x") \implies Int(2), \sum \triangleright Eint(1) \implies Int(1)}{\sum \triangleright Sum(Den("x"), EInt(1)) \implies Int(3)}
+\]
+\[
+\frac{\sum \triangleright e \implies v, \sum[i=v] \triangleright e_{body} \implies v^I}{\sum \triangleright Let(i,e,e_{body}) \implies v^I}
+\]
+\textbf{Applicazione di funzione (scoping statico):}
+\[
+\sum \triangleright e_f \implies Closure(arg,f_{body}, \sum_{fDecEnv})
+\]
+\[
+\frac{\sum \triangleright e_{arg} \implies a_{Val}, \sum_{fDecEnv}[arg = a_{val}] \triangleright f_{body} \implies v}{\sum \triangleright Apply(e_f, e_{arg}) \implies v}
+\]
+\textbf{Dichiarazione di una funzione (scoping statico):}
+\[
+\sum \triangleright Fun(arg, f_{body}) \implies Closure(arg, f_{body}, \sum)
+\]
+\[
+\frac{\sum[f = Closure(arg,f_{body},\sum)] \triangleright e_{body} \implies v^I}{\sum \triangleright Let(f,Fun(arg,f_{body}), e_{body}) \implies v^I}
+\]
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.
