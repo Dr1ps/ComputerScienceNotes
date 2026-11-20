@@ -1479,6 +1479,36 @@ Tutti questi comandi hanno delle strutture comuni tra loro per essere eseguiti, 
         \item \textbf{Bit 4:} se è "$0$", allora abbiamo un register, altrimenti uno shifted register con bit7 = 0.
     \end{itemize}
 \end{itemize}
+\subsubsection{Istruzione di Memoria}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/IstruzioneDiMemoria.png}
+    \caption{Istruzione Di Memoria}
+    \label{fig:IstruzioneDiMemoria}
+\end{figure}
+\begin{itemize}
+    \item \textbf{cond:} condizione del comando di memoria
+    \item \textbf{op:} tipo di istruzione:
+    \begin{itemize}
+        \item \textbf{00:} istruzione operativa
+        \item \textbf{01:} istruzione di memoria
+        \item \textbf{10:} istruzione di salto
+    \end{itemize}
+    In questo caso, ha valore "01".
+    \item \textbf{I:} immediate
+    \item \textbf{P:} pre-indexing
+    \item \textbf{U:} direzione dello spostamento dell'indirizzo (0 = sub offset, 1 = add offset)
+    \item \textbf{B:} indica se leggere un byte (LDRB per esempio)
+    \item \textbf{W:} 
+    \item \textbf{L:} indica se l'istruzione è LDR (1) o STR (0)
+    \item \textbf{Rn:} registro sorgente.
+    \item \textbf{Rd:} registro destinazione.
+    \item \textbf{Src2:} può variare:
+    \begin{itemize}
+        \item Se $I = 1$, allora è un immediate da 12 bit (no rot come in istruzione operativa)
+        \item Se $I = 0$, allora è register.
+    \end{itemize}
+\end{itemize}
 \subsubsection{Istruzione di salto}
 \begin{figure}[H]
     \centering
@@ -1514,9 +1544,77 @@ e0821003\ ADD\ R_1,\ R_2,\ R_3
     \item \textbf{1:} $R_D$
     \item \textbf{3:} $R_M$ 
 \end{itemize}
+
+\section{Parallelismo}
+Nelle sezioni precedenti siamo andati a definire dei moduli per modellare delle reti combinatorie o logiche sequenziali.\\
+In entrambi questi tipi di rete, gli ingressi variano un po' all'inizio e dopo un po' diventano stabili. Dopo un po' che gli ingressi sono diventati stabili, precisamente dopo un tempo di $k\Delta t$, anche le uscite diventano stabili.\\
+Molto spesso capita che questi tempi devono essere sommati tra i diversi moduli, per esempio un FA che riceve in input un valore da un FA precedente può iniziare a calcolare solo una volta che le uscite del FA precedente si sono stabilizzate.\\
+Esiste un modo però per fare in modo che alcuni moduli lavorino in \textbf{parallelo}, ovvero garantire che gli input siano stabili allo stesso momento a moduli diversi in modo che possano agire contemporaneamente.\\
+Per esempio, se mettiamo $2$ multiplexer in parallelo, il tempo impiegato dal circuito è solo quello legato a 1 multiplexer (assumendo che siano stati progettati per tempi uguali).\\
+Più formalmente, il tempo totale della parte di circuito con moduli messi in parallelo è:
+\[
+max{\Delta tMod1, \Delta tMod2, ..., \Delta tModk}
+\]
+Esistono due tipi di parallelismo.
+
+\subsection{Parallelismo spaziale}
+Il \textbf{parallelismo spaziale} consiste nel replicare dei componenti e farli lavorare tutti insieme.
+\paragraph{Esempio:} "Se cucino un certo numero di torte e un solo forno, dovrei cuocerne una alla volta, ma se avessi due forni potrei cuocerne due alla volta".
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/parallelismoSpaziale.png}
+    \caption{Parallelismo Spaziale: Multiplexer}
+    \label{fig:parallelismoSpaziale}
+\end{figure}
+Il tempo totale corrisponde a:
+\[
+max{\Delta tMod1, \Delta tMod2, ..., \Delta tModk}
+\]
+Con questo parallelismo riduciamo il tempo per cui un'istruzione singola è eseguita a partire dalla richiesta alla finalizzazione.
+\subsection{Parallelismo temporale (pipeline)}
+Il \textbf{parallelismo temporale} utilizza componenti in "fila" per calcolare più task.
+\paragraph{Esempio:} si devono cuocere delle torte con un forno, ma siamo in due cuochi, uno prepara l'impasto e l'altro cuoce la torta; nel mentre che uno cuoce la torta, l'altro prepara un nuovo impasto.\\
+Gli output dei moduli vanno in pasto ad altri moduli, rendendo il procedimento sequenziale, per svolgere il parallelismo bisogna fare in modo che un modulo non debba necessariamente aspettare che i moduli successivi abbiano finito di svolgere il proprio compito, può già iniziare a lavorare su un input successivo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/parallelismoTemporale.png}
+    \caption{Parallelismo Temporale: Calcolo di funzioni composte}
+    \label{fig:parallelismoTemporale}
+\end{figure}
+I dispositivi di oggi utilizzano praticamente tutti la \textbf{pipeline} nel loro ciclo \textbf{fetch-decode-execute} con tanto di stampa, quindi 4 stadi di elaborazione.\\
+Mentre faccio la stampa di un risultato, faccio l'execute dell'operazione successiva, la decode dell'operazione successiva a quella in execute e la fetch dell'operazione successiva a quella in decode.\\
+Spesso si hanno più stadi, ma questo era solo un semplice esempio.\\
+Il tempo totale impiegato da un parallelismo temporale corrisponde a:
+\[
+\begin{cases}
+    m(t_g) + t_f,\ t_f <= t_g\\
+    m(t_f) + t_g, t_f > t_g\\
+\end{cases}
+\]
+Con $m = $task da svolgere.\\
+Questo ovviamente si può semplificare in \textbf{circa}:
+\[
+m(max{t_f, t_g})
+\]
+Questo tipo di parallelismo migliora il \textbf{rate} in cui riesco a finalizzare una richiesta, non il tempo in cui una richiesta viene finalizzata, migliora solo il rapporto \textbf{istruzioni per unità di tempo}.
+\subsubsection{Speedup}
+Andiamo a definire lo \textbf{speedup} come:
+\[
+Speedup(m) = \frac{T_{seq}}{T_{par}(m)}
+\]
+Ovvero il rapporto tra il miglior tempo che ci metterebbe una rete sequenziale a completare tutte le task e il tempo che ci mette una rete con parallelismo con $m$ entità che lavorano insieme a svolgere le task.\\
+Se procediamo con la semplificazione ($m = 2$):
+\[
+Speedup(m) = \frac{(t_g + t_f)m}{m(max{t_f, t_g})} \begin{cases}
+    \approx 2, t_g == t_f\\
+    < 2, t_g \ne t_f
+\end{cases}
+\]
+In pratica lo speedup calcola quanto è grande il miglioramento temporale, spesso pari alla quantità di entità utilizzate.
+
 \section{Altro}
 \paragraph{Rete combinatoria:} il comportamento dipende solo dagli ingressi attuali.
-\paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente.
+\paragraph{Rete sequenziale:} memorizza dati e il comportamento è influenzato dallo stato precedente, spesso il risultato torna in input o viene rimandato ai dati in input per essere elaborato e formare quindi un input composto.
 
 \section{Esercizi}
 \subsection{Cosa calcola una rete}

@@ -89,17 +89,24 @@
 \contentsline {subsubsection}{\numberline {8.4.22}Vettori (word)}{44}{subsubsection.8.4.22}%
 \contentsline {subsection}{\numberline {8.5}Formato delle istruzioni}{45}{subsection.8.5}%
 \contentsline {subsubsection}{\numberline {8.5.1}Istruzione operativa}{45}{subsubsection.8.5.1}%
-\contentsline {subsubsection}{\numberline {8.5.2}Istruzione di salto}{46}{subsubsection.8.5.2}%
-\contentsline {subsubsection}{\numberline {8.5.3}Opcode}{46}{subsubsection.8.5.3}%
-\contentsline {section}{\numberline {9}Altro}{48}{section.9}%
-\contentsline {paragraph}{Rete combinatoria:}{48}{section.9}%
-\contentsline {paragraph}{Rete sequenziale:}{48}{section.9}%
-\contentsline {section}{\numberline {10}Esercizi}{49}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Cosa calcola una rete}{49}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Descrizione}{49}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {10.1.2}Soluzione}{49}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Algebra booleana}{49}{subsubsection.10.1.2}%
-\contentsline {paragraph}{Mappe di Kernaugh}{50}{subsubsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.2}Circuito di una sveglia}{50}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Descrizione}{50}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}Soluzione}{50}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {8.5.2}Istruzione di Memoria}{46}{subsubsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.3}Istruzione di salto}{47}{subsubsection.8.5.3}%
+\contentsline {subsubsection}{\numberline {8.5.4}Opcode}{47}{subsubsection.8.5.4}%
+\contentsline {section}{\numberline {9}Parallelismo}{48}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Parallelismo spaziale}{48}{subsection.9.1}%
+\contentsline {paragraph}{Esempio:}{48}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Parallelismo temporale (pipeline)}{49}{subsection.9.2}%
+\contentsline {paragraph}{Esempio:}{49}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Speedup}{50}{subsubsection.9.2.1}%
+\contentsline {section}{\numberline {10}Altro}{51}{section.10}%
+\contentsline {paragraph}{Rete combinatoria:}{51}{section.10}%
+\contentsline {paragraph}{Rete sequenziale:}{51}{section.10}%
+\contentsline {section}{\numberline {11}Esercizi}{52}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Cosa calcola una rete}{52}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Descrizione}{52}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Soluzione}{52}{subsubsection.11.1.2}%
+\contentsline {paragraph}{Algebra booleana}{52}{subsubsection.11.1.2}%
+\contentsline {paragraph}{Mappe di Kernaugh}{53}{subsubsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.2}Circuito di una sveglia}{53}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Descrizione}{53}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Soluzione}{53}{subsubsection.11.2.2}%

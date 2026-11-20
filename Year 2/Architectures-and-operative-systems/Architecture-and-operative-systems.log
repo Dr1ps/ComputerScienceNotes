@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  18 NOV 2026 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  20 NOV 2026 10:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,7 +667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--125
 [9
 
 ] [10]
-<images/logicalCircuit.png, id=506, 1541.76pt x 1027.84pt>
+<images/logicalCircuit.png, id=531, 1541.76pt x 1027.84pt>
 File: images/logicalCircuit.png Graphic file (type png)
 <use images/logicalCircuit.png>
 Package pdftex.def Info: images/logicalCircuit.png  used on input line 234.
@@ -688,7 +688,7 @@ File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 287.
-<images/evenOdd.png, id=524, 1541.76pt x 1027.84pt>
+<images/evenOdd.png, id=549, 1541.76pt x 1027.84pt>
 File: images/evenOdd.png Graphic file (type png)
 <use images/evenOdd.png>
 Package pdftex.def Info: images/evenOdd.png  used on input line 296.
@@ -733,7 +733,7 @@ Overfull \hbox (122.85489pt too wide) in paragraph at lines 444--445
  []
 
 [17]
-<images/sommatore.png, id=605, 896.34875pt x 128.48pt>
+<images/sommatore.png, id=630, 896.34875pt x 128.48pt>
 File: images/sommatore.png Graphic file (type png)
 <use images/sommatore.png>
 Package pdftex.def Info: images/sommatore.png  used on input line 473.
@@ -756,22 +756,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has 
                                                   \__shipout_drop_firstpage_...
 l.516 \paragraph{Tempo d'esecuzione:}
                                       $\Delta t$ (1 solo AND per ogni output) <./images/sommatore.png>]
-<images/Not.png, id=615, 362.35374pt x 38.1425pt>
+<images/Not.png, id=640, 362.35374pt x 38.1425pt>
 File: images/Not.png Graphic file (type png)
 <use images/Not.png>
 Package pdftex.def Info: images/Not.png  used on input line 524.
 (pdftex.def)             Requested size: 227.62206pt x 23.96063pt.
-<images/and.png, id=616, 362.35374pt x 118.4425pt>
+<images/and.png, id=641, 362.35374pt x 118.4425pt>
 File: images/and.png Graphic file (type png)
 <use images/and.png>
 Package pdftex.def Info: images/and.png  used on input line 531.
 (pdftex.def)             Requested size: 227.62206pt x 74.40408pt.
-<images/NAnd.png, id=617, 362.35374pt x 118.4425pt>
+<images/NAnd.png, id=642, 362.35374pt x 118.4425pt>
 File: images/NAnd.png Graphic file (type png)
 <use images/NAnd.png>
 Package pdftex.def Info: images/NAnd.png  used on input line 538.
 (pdftex.def)             Requested size: 227.62206pt x 74.40408pt.
-<images/Or.png, id=618, 362.35374pt x 118.4425pt>
+<images/Or.png, id=643, 362.35374pt x 118.4425pt>
 File: images/Or.png Graphic file (type png)
 <use images/Or.png>
 Package pdftex.def Info: images/Or.png  used on input line 545.
@@ -792,17 +792,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has
                                                   \__shipout_drop_firstpage_...
 l.549     \item M
                  odulo NOR <./images/Not.png> <./images/and.png> <./images/NAnd.png>]
-<images/NOr.png, id=630, 362.35374pt x 118.4425pt>
+<images/NOr.png, id=655, 362.35374pt x 118.4425pt>
 File: images/NOr.png Graphic file (type png)
 <use images/NOr.png>
 Package pdftex.def Info: images/NOr.png  used on input line 552.
 (pdftex.def)             Requested size: 227.62206pt x 74.40408pt.
-<images/XOr.png, id=631, 362.35374pt x 118.4425pt>
+<images/XOr.png, id=656, 362.35374pt x 118.4425pt>
 File: images/XOr.png Graphic file (type png)
 <use images/XOr.png>
 Package pdftex.def Info: images/XOr.png  used on input line 559.
 (pdftex.def)             Requested size: 227.62206pt x 74.40408pt.
-<images/XNOr.png, id=632, 362.35374pt x 118.4425pt>
+<images/XNOr.png, id=657, 362.35374pt x 118.4425pt>
 File: images/XNOr.png Graphic file (type png)
 <use images/XNOr.png>
 Package pdftex.def Info: images/XNOr.png  used on input line 566.
@@ -828,17 +828,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) ha
                                                   \__shipout_drop_firstpage_...
 l.579     \item H
                  a 1 riporto iniziale (anche nullo) <./images/Or.png> <./images/NOr.png> <./images/XOr.png> <./images/XNOr.png>]
-<images/FullAdder.png, id=645, 896.34875pt x 119.44624pt>
+<images/FullAdder.png, id=670, 896.34875pt x 119.44624pt>
 File: images/FullAdder.png Graphic file (type png)
 <use images/FullAdder.png>
 Package pdftex.def Info: images/FullAdder.png  used on input line 583.
 (pdftex.def)             Requested size: 341.43307pt x 45.49756pt.
-<images/FullAdderC2.png, id=646, 604.2575pt x 119.44624pt>
+<images/FullAdderC2.png, id=671, 604.2575pt x 119.44624pt>
 File: images/FullAdderC2.png Graphic file (type png)
 <use images/FullAdderC2.png>
 Package pdftex.def Info: images/FullAdderC2.png  used on input line 635.
 (pdftex.def)             Requested size: 227.62206pt x 44.99452pt.
-<images/Multiplexer.png, id=647, 434.62375pt x 178.6675pt>
+<images/Multiplexer.png, id=672, 434.62375pt x 178.6675pt>
 File: images/Multiplexer.png Graphic file (type png)
 <use images/Multiplexer.png>
 Package pdftex.def Info: images/Multiplexer.png  used on input line 644.
@@ -859,7 +859,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) ha
                                                   \__shipout_drop_firstpage_...
 l.647     \end{figure}
                        <./images/FullAdder.png> <./images/FullAdderC2.png>]
-<images/Demultiplexer.png, id=657, 420.57124pt x 158.5925pt>
+<images/Demultiplexer.png, id=682, 420.57124pt x 158.5925pt>
 File: images/Demultiplexer.png Graphic file (type png)
 <use images/Demultiplexer.png>
 Package pdftex.def Info: images/Demultiplexer.png  used on input line 680.
@@ -890,12 +890,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has 
                                                   \__shipout_drop_firstpage_...
 l.711 \section
               {Memoria} <./images/Demultiplexer.png>]
-<images/register.png, id=672, 72.27pt x 90.3375pt>
+<images/register.png, id=697, 72.27pt x 90.3375pt>
 File: images/register.png Graphic file (type png)
 <use images/register.png>
 Package pdftex.def Info: images/register.png  used on input line 729.
 (pdftex.def)             Requested size: 113.81102pt x 142.27126pt.
-<images/SRLatch.png, id=673, 72.27pt x 70.2625pt>
+<images/SRLatch.png, id=698, 72.27pt x 70.2625pt>
 File: images/SRLatch.png Graphic file (type png)
 <use images/SRLatch.png>
 Package pdftex.def Info: images/SRLatch.png  used on input line 750.
@@ -908,12 +908,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) ha
                                                   \__shipout_drop_firstpage_...
 l.754 P
        er realizzare questa cosa bisogna: <./images/register.png>]
-<images/CircuitoSR.png, id=680, 739.76375pt x 248.93pt>
+<images/CircuitoSR.png, id=705, 739.76375pt x 248.93pt>
 File: images/CircuitoSR.png Graphic file (type png)
 <use images/CircuitoSR.png>
 Package pdftex.def Info: images/CircuitoSR.png  used on input line 761.
 (pdftex.def)             Requested size: 227.62206pt x 76.59393pt.
-<images/internalDlatch.png, id=681, 605.26125pt x 218.8175pt>
+<images/internalDlatch.png, id=706, 605.26125pt x 218.8175pt>
 File: images/internalDlatch.png Graphic file (type png)
 <use images/internalDlatch.png>
 Package pdftex.def Info: images/internalDlatch.png  used on input line 794.
@@ -934,17 +934,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has 
                                                   \__shipout_drop_firstpage_...
 l.798 D
        i solito però viene rappresentato in questo modo: <./images/SRLatch.png> <./images/CircuitoSR.png>]
-<images/DLatch.png, id=692, 72.27pt x 70.2625pt>
+<images/DLatch.png, id=717, 72.27pt x 70.2625pt>
 File: images/DLatch.png Graphic file (type png)
 <use images/DLatch.png>
 Package pdftex.def Info: images/DLatch.png  used on input line 801.
 (pdftex.def)             Requested size: 113.81102pt x 110.65541pt.
-<images/MasterSlaveD.png, id=693, 454.69875pt x 139.52126pt>
+<images/MasterSlaveD.png, id=718, 454.69875pt x 139.52126pt>
 File: images/MasterSlaveD.png Graphic file (type png)
 <use images/MasterSlaveD.png>
 Package pdftex.def Info: images/MasterSlaveD.png  used on input line 811.
 (pdftex.def)             Requested size: 227.62206pt x 69.8456pt.
-<images/WEFlipFlopD.png, id=694, 374.39874pt x 139.52126pt>
+<images/WEFlipFlopD.png, id=719, 374.39874pt x 139.52126pt>
 File: images/WEFlipFlopD.png Graphic file (type png)
 <use images/WEFlipFlopD.png>
 Package pdftex.def Info: images/WEFlipFlopD.png  used on input line 821.
@@ -965,7 +965,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) ha
                                                   \__shipout_drop_firstpage_...
 l.825 
        <./images/internalDlatch.png> <./images/DLatch.png> <./images/MasterSlaveD.png>]
-<images/automa1.png, id=705, 1541.76pt x 1027.84pt>
+<images/automa1.png, id=730, 1541.76pt x 1027.84pt>
 File: images/automa1.png Graphic file (type png)
 <use images/automa1.png>
 Package pdftex.def Info: images/automa1.png  used on input line 856.
@@ -981,7 +981,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) ha
                                                   \__shipout_drop_firstpage_...
 l.869 \]
          <./images/WEFlipFlopD.png> <./images/automa1.png (PNG copy)>]
-<images/circuitoDigitaleAutoma.png, id=713, 865.2325pt x 390.45876pt>
+<images/circuitoDigitaleAutoma.png, id=738, 865.2325pt x 390.45876pt>
 File: images/circuitoDigitaleAutoma.png Graphic file (type png)
 <use images/circuitoDigitaleAutoma.png>
 Package pdftex.def Info: images/circuitoDigitaleAutoma.png  used on input line 888.
@@ -992,12 +992,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) ha
                                                   \__shipout_drop_firstpage_...
 l.911 \begin{itemize}
                       <./images/circuitoDigitaleAutoma.png>]
-<images/registerfile.png, id=726, 771.88374pt x 424.58624pt>
+<images/registerfile.png, id=751, 771.88374pt x 424.58624pt>
 File: images/registerfile.png Graphic file (type png)
 <use images/registerfile.png>
 Package pdftex.def Info: images/registerfile.png  used on input line 933.
 (pdftex.def)             Requested size: 341.43307pt x 187.80975pt.
-<images/ramDinamica.png, id=727, 533.995pt x 565.11125pt>
+<images/ramDinamica.png, id=752, 533.995pt x 565.11125pt>
 File: images/ramDinamica.png Graphic file (type png)
 <use images/ramDinamica.png>
 Package pdftex.def Info: images/ramDinamica.png  used on input line 947.
@@ -1013,7 +1013,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) ha
                                                   \__shipout_drop_firstpage_...
 l.950 \end{figure}
                    <./images/registerfile.png>]
-<images/RAMStatica.png, id=734, 533.995pt x 565.11125pt>
+<images/RAMStatica.png, id=759, 533.995pt x 565.11125pt>
 File: images/RAMStatica.png Graphic file (type png)
 <use images/RAMStatica.png>
 Package pdftex.def Info: images/RAMStatica.png  used on input line 964.
@@ -1029,12 +1029,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) ha
                                                   \__shipout_drop_firstpage_...
 l.980     \item W
                  E in input. <./images/RAMStatica.png>]
-<images/memass.png, id=748, 777.90625pt x 519.9425pt>
+<images/memass.png, id=773, 777.90625pt x 519.9425pt>
 File: images/memass.png Graphic file (type png)
 <use images/memass.png>
 Package pdftex.def Info: images/memass.png  used on input line 988.
 (pdftex.def)             Requested size: 341.43307pt x 228.21211pt.
-<images/memMod.png, id=749, 486.81876pt x 399.4925pt>
+<images/memMod.png, id=774, 486.81876pt x 399.4925pt>
 File: images/memMod.png Graphic file (type png)
 <use images/memMod.png>
 Package pdftex.def Info: images/memMod.png  used on input line 1002.
@@ -1045,7 +1045,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) ha
                                                   \__shipout_drop_firstpage_...
 l.1006 L
         'indirizzo come sappiamo sceglie un indirizzo fra molti da utilizzar... <./images/memass.png>]
-<images/frammentata.png, id=756, 531.9875pt x 519.9425pt>
+<images/frammentata.png, id=781, 531.9875pt x 519.9425pt>
 File: images/frammentata.png Graphic file (type png)
 <use images/frammentata.png>
 Package pdftex.def Info: images/frammentata.png  used on input line 1018.
@@ -1056,7 +1056,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) ha
                                                   \__shipout_drop_firstpage_...
 l.1022 ...subsection{Organizzazione interlacciata}
                                                    <./images/memMod.png>]
-<images/interlacciata.png, id=763, 592.2125pt x 519.9425pt>
+<images/interlacciata.png, id=788, 592.2125pt x 519.9425pt>
 File: images/interlacciata.png Graphic file (type png)
 <use images/interlacciata.png>
 Package pdftex.def Info: images/interlacciata.png  used on input line 1027.
@@ -1074,7 +1074,7 @@ l.1032 \section
                {Assembler} <./images/frammentata.png> <./images/interlacciata.png>] [35
 
 ]
-<images/assembler.png, id=776, 717.68124pt x 409.53pt>
+<images/assembler.png, id=801, 717.68124pt x 409.53pt>
 File: images/assembler.png Graphic file (type png)
 <use images/assembler.png>
 Package pdftex.def Info: images/assembler.png  used on input line 1095.
@@ -1094,7 +1094,7 @@ Overfull \hbox (52.35501pt too wide) in paragraph at lines 1296--1297
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<images/mnemonics.png, id=881, 492.84125pt x 408.52625pt>
+<images/mnemonics.png, id=906, 492.84125pt x 408.52625pt>
 File: images/mnemonics.png Graphic file (type png)
 <use images/mnemonics.png>
 Package pdftex.def Info: images/mnemonics.png  used on input line 1320.
@@ -1124,7 +1124,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1447--1448
 
  []
 
-<images/istruzioneOperativa.png, id=977, 1092.08pt x 510.90875pt>
+<images/istruzioneOperativa.png, id=1002, 1092.08pt x 510.90875pt>
 File: images/istruzioneOperativa.png Graphic file (type png)
 <use images/istruzioneOperativa.png>
 Package pdftex.def Info: images/istruzioneOperativa.png  used on input line 1451.
@@ -1135,48 +1135,82 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.33}) ha
                                                   \__shipout_drop_firstpage_...
 l.1474         \item \textbf
                             {Rot:} valore intero (moltiplicato per 2) di qua... <./images/istruzioneOperativa.png>]
-<images/IstruzioneDiSalto.png, id=989, 318.18875pt x 52.195pt>
+<images/IstruzioneDiMemoria.png, id=1014, 636.3775pt x 52.195pt>
+File: images/IstruzioneDiMemoria.png Graphic file (type png)
+<use images/IstruzioneDiMemoria.png>
+Package pdftex.def Info: images/IstruzioneDiMemoria.png  used on input line 1485.
+(pdftex.def)             Requested size: 386.96027pt x 31.73775pt.
+<images/IstruzioneDiSalto.png, id=1015, 318.18875pt x 52.195pt>
 File: images/IstruzioneDiSalto.png Graphic file (type png)
 <use images/IstruzioneDiSalto.png>
-Package pdftex.def Info: images/IstruzioneDiSalto.png  used on input line 1485.
+Package pdftex.def Info: images/IstruzioneDiSalto.png  used on input line 1515.
 (pdftex.def)             Requested size: 386.96027pt x 63.47551pt.
  [46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.34}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1515     \item \textbf
-                        {3:} $R_M$ <./images/IstruzioneDiSalto.png>] [47] [48
-
-]
-<images/esercizio1rete.png, id=1004, 885.3075pt x 424.58624pt>
-File: images/esercizio1rete.png Graphic file (type png)
-<use images/esercizio1rete.png>
-Package pdftex.def Info: images/esercizio1rete.png  used on input line 1527.
-(pdftex.def)             Requested size: 341.43307pt x 163.74803pt.
- [49
-
-
+l.1520     \item \textbf{cond:}
+                                condizione del salto <./images/IstruzioneDiMemoria.png>] [47
 pdfTeX warning (ext4): destination with the same identifier (name{figure.35}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1570 \]
-          <./images/esercizio1rete.png>]
-<images/timer.png, id=1014, 228.855pt x 365.365pt>
-File: images/timer.png Graphic file (type png)
-<use images/timer.png>
-Package pdftex.def Info: images/timer.png  used on input line 1576.
-(pdftex.def)             Requested size: 113.81102pt x 181.69527pt.
- [50
+l.1548 \section
+               {Parallelismo} <./images/IstruzioneDiSalto.png>]
+<images/parallelismoSpaziale.png, id=1028, 387.4475pt x 207.77625pt>
+File: images/parallelismoSpaziale.png Graphic file (type png)
+<use images/parallelismoSpaziale.png>
+Package pdftex.def Info: images/parallelismoSpaziale.png  used on input line 1565.
+(pdftex.def)             Requested size: 341.43307pt x 183.10362pt.
+ [48
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{figure.36}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1612 \]
-          <./images/timer.png>] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1667--1669
+l.1576 \paragraph{Esempio:}
+                            si devono cuocere delle torte con un forno, ma s... <./images/parallelismoSpaziale.png>]
+<images/parallelismoTemporale.png, id=1035, 483.8075pt x 310.15875pt>
+File: images/parallelismoTemporale.png Graphic file (type png)
+<use images/parallelismoTemporale.png>
+Package pdftex.def Info: images/parallelismoTemporale.png  used on input line 1580.
+(pdftex.def)             Requested size: 341.43307pt x 218.89384pt.
+ [49
+pdfTeX warning (ext4): destination with the same identifier (name{figure.37}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1604 \]
+          <./images/parallelismoTemporale.png>] [50] [51
+
+]
+<images/esercizio1rete.png, id=1051, 885.3075pt x 424.58624pt>
+File: images/esercizio1rete.png Graphic file (type png)
+<use images/esercizio1rete.png>
+Package pdftex.def Info: images/esercizio1rete.png  used on input line 1625.
+(pdftex.def)             Requested size: 341.43307pt x 163.74803pt.
+ [52
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.38}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1668 \]
+          <./images/esercizio1rete.png>]
+<images/timer.png, id=1060, 228.855pt x 365.365pt>
+File: images/timer.png Graphic file (type png)
+<use images/timer.png>
+Package pdftex.def Info: images/timer.png  used on input line 1674.
+(pdftex.def)             Requested size: 113.81102pt x 181.69527pt.
+ [53
+pdfTeX warning (ext4): destination with the same identifier (name{figure.39}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1710 \]
+          <./images/timer.png>] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 1765--1767
 
  []
 
-[52] (Architecture-and-operative-systems.aux)
+[55] (Architecture-and-operative-systems.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -1186,20 +1220,20 @@ L3 programming layer <2026-09-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Architecture-and-operative-systems.out' has not changed.
-(rerunfilecheck)             Checksum: 97A94733D1FAA7C3685B62930E85C1D3;12117.
+(rerunfilecheck)             Checksum: 0AB9EAFD62F81CD6CBD395D16F9D2C10;12905.
  ) 
 Here is how much of TeX's memory you used:
- 34092 strings out of 467392
- 774306 string characters out of 5415745
- 1309895 words of memory out of 5000000
- 62522 multiletter control sequences out of 15000+600000
+ 34132 strings out of 467392
+ 775389 string characters out of 5415745
+ 1308895 words of memory out of 5000000
+ 62551 multiletter control sequences out of 15000+600000
  635933 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,827b,2049s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Architecture-and-operative-systems.pdf (52 pages, 3860049 bytes).
+Output written on Architecture-and-operative-systems.pdf (55 pages, 3886018 bytes).
 PDF statistics:
- 1164 PDF objects out of 1200 (max. 8388607)
- 426 named destinations out of 1000 (max. 500000)
- 897 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1215 PDF objects out of 1440 (max. 8388607)
+ 437 named destinations out of 1000 (max. 500000)
+ 952 words of extra memory for PDF output out of 10000 (max. 10000000)
 
