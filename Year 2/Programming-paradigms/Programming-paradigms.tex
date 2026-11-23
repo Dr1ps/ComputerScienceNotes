@@ -2300,6 +2300,92 @@ Ecco alcune delle regole appena viste in semantica operazionale big step:
 \]
 
 \section{Programmazione a oggetti}
+\subsection{Modularità}
+\paragraph{Modularità:} principio di progettazione del software che permette di suddividere un programma complesso in componenti più piccoli e gestibili chiamati \textbf{moduli}.\\
+Questo concetto è realizzato nei linguaggi di programmazione in vari modi:
+\begin{itemize}
+  \item Tramite il paradigma di programmazione funzionale con l'astrazione procedurale.\\
+  \item Tramite i tipi (tipi di dato astratto che nascondono le implementazioni)
+  \item Tramite l'organizzazione della compilazione con la \textbf{compilazione separata} (compilando i moduli indipendentemente gestendo le dipendenze) e il \textbf{linking}, il quale unisce i vari file oggetto generati dalla compilazione separata in un unico eseguibile.
+  \item Alcuni programmi addirittura definiscono dei propri \textbf{moduli}
+\end{itemize}
+Vediamo un esempio:
+\begin{lstlisting}
+  (*segnatura del tipo astratto*)
+  module type BOOL = sig
+    type t
+    val yes: t
+    val no: t
+    val choose: t -> 'a -> 'a -> 'a
+
+  (*Implementazione*)
+  module M1 type BOOL = struct
+    type t = unit option
+    let yes = Some()
+    let no = None
+    let choose v ifyes ifno
+      match v with
+      | Some() -> ifyes
+      | None -> ifno
+  end ;;
+
+  (*Utilizzo*)
+  let x = M1.yes ;;
+  let y = M1.no ;;
+  M1.choose x 3 4 ;;
+\end{lstlisting}
+Per una segnatura ci possono essere più implementazioni.\\
+\subsection{Livelli di astrazione}
+La modularizzazione dei programmi consente di progettare e sviluppare un programma per \textbf{livelli di astrazione}, affrontando i problemi gradualmente e in modo strutturato.\\
+Ad esempio: la \textbf{libreria standard} consente di scrivere programmi che operano su stringhe astraendo da come le operazioni su stringhe siano implementate.\\
+Tutti i sistemi informatici complessi sono organizzati per livelli di astrazione, in cui ogni livello nasconde i dettagli del livello sottostante e offre servizi a quello superiore.\\
+Ad esempio:
+\begin{itemize}
+  \item Applicazione -$>$ Sistema Operativo -> Hardware
+  \item HTTP -$>$ TCP -$>$ IP -$>$ Ethernet
+  \item Codice Sorgente -$>$ Bytecode -$>$ Assembler
+\end{itemize}
+\subsection{Il paradigma a oggetti}
+Il \textbf{sistema software} è un insieme di \textbf{oggetti} che cooperano tra loro.\\
+Questi oggetti sono caratterizzati da:
+\begin{itemize}
+  \item uno \textbf{stato}, che rappresenta la struttura interna dell'oggetto (cosa usa)
+  \item un insieme di \textbf{funzionalita} (o \textbf{metodi}) che definiscono le operazioni che l'oggetto può eseguire (cosa sa fare)
+\end{itemize}
+Gli oggetti cooperano scambiandosi \textbf{messaggi}.\\
+Rispetto al paradigma funzionale, questo paradigma ha una struttura diversa (con classi) e un modello di esecuzione differente (memoria organizzata diversamente).
+\subsubsection{Lo stato di un oggetto}
+Lo \textbf{stato} di un oggetto è solitamente rappresentato da un insieme di \textbf{attributi/proprieta/variabili}.
+\subsubsection{Le funzionalità di un oggetto}
+Le \textbf{funzionalità} di un oggetto sono solitamente rappresentate dai suoi \textbf{metodi / funzioni} che l'oggetto mette a disposizione degli altri oggetti come interfaccia di interazione.\\
+Essi descrivono il comportamento dell'oggetto, ovvero il modo in cui interagisce con gli altri oggetti con i messaggi.
+\begin{itemize}
+  \item L'invio di un messaggio è codificato come \textbf{chiamata di metodo}
+  \item La ricezione di un messaggio è codificata come \textbf{restituzione del risultato}
+\end{itemize} 
+\subsubsection{Altre caratteristiche degli oggetti}
+Oltre a stato e funzionalità, gli oggetti hanno:
+\begin{itemize}
+  \item \textbf{Identità:} nome
+  \item \textbf{Ciclo di vita:} vengono creati, riferiti, disattivati
+  \item \textbf{Locazione:} di memoria
+\end{itemize}
+\subsection{Concetti chiave dell'OOP}
+\begin{itemize}
+  \item \textbf{Incapsulamento (information hiding)}: un oggetto non dovrebbe essere in grado di accedere direttamente agli attributi che descrivono lo stato di un altro oggetto.
+  \item \textbf{Interfaccia:} quali funzionalità un oggetto mette a disposizione degli altri
+  \item \textbf{Ereditarietà:} come un oggetto acquisisce le funzionalità di un altro oggetto, ad esempio estendendolo o implementandolo
+  \item \textbf{Principio di sostituzione:} quando un oggetto può essere usato al posto di un altro in maniera trasparente, senza alterare il funzionamento del programma
+  \item \textbf{Polimorfismo:} come un oggetto può elaborare altri oggetti di tipi diversi in modo uniforme, adattandosi in base al tipo dell'oggetto con cui stanno interagendo.
+\end{itemize}
+\subsection{Approcci dell'OOP}
+I linguaggi di programmazione che supportano i concetti dell'OOP seguono due approcci principali:
+\begin{itemize}
+  \item \textbf{Object-Based} (JavaScript $<$2015, VisualBasic $<$2008, Self, Lua, ...)
+  \item \textbf{Class-Based} (Smalltalk, C++, Java, Scala, ...)
+\end{itemize}
+JavaScript dal 2016 segue entrambi gli approcci.\\
+Anche OCaml si trova a cavallo tra i due approcci.
 
 \section{Programmazione a oggetti in OCaml}
 Vediamo come realizzare il paradigma della programmazione a oggetti in \textbf{OCaml}.\\
