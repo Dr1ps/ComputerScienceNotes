@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  20 NOV 2026 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  23 NOV 2026 11:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1027,7 +1027,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-<images/macchinaAstratta.png, id=1305, 449.88075pt x 154.77824pt>
+<images/macchinaAstratta.png, id=1325, 449.88075pt x 154.77824pt>
 File: images/macchinaAstratta.png Graphic file (type png)
 <use images/macchinaAstratta.png>
 Package pdftex.def Info: images/macchinaAstratta.png  used on input line 1574.
@@ -1043,7 +1043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [41
 
 ]
-<images/interprete.png, id=1311, 593.21625pt x 392.667pt>
+<images/interprete.png, id=1331, 593.21625pt x 392.667pt>
 File: images/interprete.png Graphic file (type png)
 <use images/interprete.png>
 Package pdftex.def Info: images/interprete.png  used on input line 1583.
@@ -1067,7 +1067,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.1599 \subsubsection{Operazioni primitive}
                                             <./images/macchinaAstratta.png> <./images/interprete.png>]
-<images/Compilatore.png, id=1320, 536.0025pt x 289.08pt>
+<images/Compilatore.png, id=1340, 536.0025pt x 289.08pt>
 File: images/Compilatore.png Graphic file (type png)
 <use images/Compilatore.png>
 Package pdftex.def Info: images/Compilatore.png  used on input line 1629.
@@ -1081,7 +1081,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
-<images/ParserTree.png, id=1326, 536.0025pt x 308.352pt>
+<images/ParserTree.png, id=1346, 536.0025pt x 308.352pt>
 File: images/ParserTree.png Graphic file (type png)
 <use images/ParserTree.png>
 Package pdftex.def Info: images/ParserTree.png  used on input line 1649.
@@ -1211,7 +1211,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [55]
-<images/MiniCamlStructure.png, id=1580, 502.87875pt x 223.43475pt>
+<images/MiniCamlStructure.png, id=1600, 502.87875pt x 223.43475pt>
 File: images/MiniCamlStructure.png Graphic file (type png)
 <use images/MiniCamlStructure.png>
 Package pdftex.def Info: images/MiniCamlStructure.png  used on input line 2123.
@@ -1288,6 +1288,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [62
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 2369--2371
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1295,26 +1299,54 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63] (Programming-paradigms.aux)
+[63]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[65
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[66] (Programming-paradigms.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: 87F1EDAAF2E6D565874709159457766B;25345.
+(rerunfilecheck)             Checksum: 0E898EE88ECC6AF655990A92CBD45BF2;26066.
  ) 
 Here is how much of TeX's memory you used:
- 34534 strings out of 467392
- 776801 string characters out of 5415745
+ 34623 strings out of 467392
+ 778026 string characters out of 5415745
  1777882 words of memory out of 5000000
- 62560 multiletter control sequences out of 15000+600000
+ 62591 multiletter control sequences out of 15000+600000
  636093 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,800b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Programming-paradigms.pdf (63 pages, 855548 bytes).
+Output written on Programming-paradigms.pdf (66 pages, 874315 bytes).
 PDF statistics:
- 1942 PDF objects out of 2073 (max. 8388607)
- 839 named destinations out of 1000 (max. 500000)
- 1326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2037 PDF objects out of 2073 (max. 8388607)
+ 897 named destinations out of 1000 (max. 500000)
+ 1358 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2299,6 +2299,97 @@ Ecco alcune delle regole appena viste in semantica operazionale big step:
 \frac{\sum[f = Closure(arg,f_{body},\sum)] \triangleright e_{body} \implies v^I}{\sum \triangleright Let(f,Fun(arg,f_{body}), e_{body}) \implies v^I}
 \]
 
+\section{Programmazione a oggetti}
+
+\section{Programmazione a oggetti in OCaml}
+Vediamo come realizzare il paradigma della programmazione a oggetti in \textbf{OCaml}.\\
+Un \textbf{oggetto} in OCaml è un valore costituito da campi e metodi che rappresentano rispettivamente lo stato e il comportamento dell'oggetto.\\
+Nonostante esista il costrutto per creare \textbf{classi}, si possono anche istanziare oggetti indipendentemente con metodi pubblici.\\
+Vediamo per esempio un oggetto che realizza una pila:
+\begin{lstlisting}[language=OCaml]
+  let s = object
+
+    (*Campo mutabile che contiene la rappresentazione dello stack*)
+    val mutable v = [0; 2]
+
+    method pop = 
+      match v with
+      | hd :: tl ->
+        v <- tl;
+        Some hd
+      | [] -> None
+
+    method push hd = 
+      v <- hd :: v
+
+  end ;;
+\end{lstlisting}
+Non c'è bisogno di specificare \textbf{this} come in Java, è già noto.\\
+Per accedere ad un oggetto c'è una regola importante:
+\begin{center}
+I campi di solito non sono accessibili direttamente (\textbf{information hiding})
+\end{center}
+Per accedere ad un campo o metodo si usa:
+\begin{lstlisting}[language=OCaml]
+  [objectName]#[fieldOrMethod]
+
+  s#push 9 ;;
+  s#pop ;;
+\end{lstlisting}
+\paragraph{Type weakening:} se $v$ fosse inizializzata a lista vuota, il programma non potrebbe capire il tipo degli elementi della lista e quindi assegna \textbf{\'\_weak1}, un tipo che non indica polimorfismo, ma un tipo che diventerà un altro tipo al momento della prima inizializzazione non nulla.
+\subsection{Tramite funzioni}
+\begin{lstlisting}
+  let stack init = object
+    val mutable v = [0; 2]
+
+    method pop = 
+      match v with
+      | hd :: tl ->
+        v <- tl;
+        Some hd
+      | [] -> None
+
+    method push hd = 
+      v <- hd :: v
+  end ;;
+\end{lstlisting}
+\subsection{Polimorfismo di oggetti}
+Quando si definisce una funzione che prende
+\begin{lstlisting}
+  let area sq = sq#width * sq#width ;;
+  let minimize sq = sq#resize 1 ;; (*Resize non ancora definito*)
+  let limit sq = if (area sq) > 100 then minimize sq ;;
+\end{lstlisting}
+\begin{center}
+  val area : $<$width : int; .. $>$ -$>$ int = $<$fun$>$\\
+  val minimize : $<$resize : int -$>$ 'a; .. $>$ -$>$ 'a = $<$fun$>$\\
+  val limit : $<$resize : int -$>$ unit; width : int; .. $>$ -$>$ unit = $<$fun$>$
+\end{center}
+
+La notazione <width : int; .. > indica che l'oggetto atteso deve avere almeno un metodo "width" che restituisce un valore di tipo int ed \textbf{eventualmente} altro (espresso con "..", ovvero una \textbf{row variable})\\\\
+Vedendo sq\#resize 1 si deduce che:
+\begin{itemize}
+  \item sq deve avere un metodo resize applicabile a int, il cui risultato ha inizialmente un tipo generico.
+  \item Minimize accetta qualunque oggetto che abbia almeno un metodo resize applicabile a un int.
+\end{itemize}
+Il seguente oggetto "quadrato" può essere passato a tutte le funzioni viste, poichè soddisfa i requisiti di tipo richiesti da ciascuna di queste funzioni. Infatti impementa i metod with e resize:
+\begin{lstlisting}
+  let quadrato = object
+    val w = ref 30
+    method with = !w
+    method color = "red"
+    method resize n = w := n
+  end ;;
+\end{lstlisting}
+\paragraph{Structural subtyping}: il sottotipaggio si basa sulla regola di inferenza seguente:\\
+Il sottotipo è più esteso, ha più vincoli, è un estensione del supertipo.\\
+Per esempio:
+\begin{lstlisting}
+  area quadrato ;; (*calcola l'area del quadrato*) 
+  limit quadrato ;; (**)
+  area quadrato ;;
+\end{lstlisting}
+
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.
 
