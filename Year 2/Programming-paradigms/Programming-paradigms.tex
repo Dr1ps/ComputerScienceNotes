@@ -2386,6 +2386,52 @@ I linguaggi di programmazione che supportano i concetti dell'OOP seguono due app
 \end{itemize}
 JavaScript dal 2016 segue entrambi gli approcci.\\
 Anche OCaml si trova a cavallo tra i due approcci.
+\subsubsection{Approccio object-based}
+In un linguaggio \textbf{object-based}, gli oggetti vengono trattati dal linguaggio in maniera simile ai \textbf{record}.\\
+Gli attributi rappresentano i dati interni dell'oggetto e possono essere associati a funzioni.\\
+Una funzione in un oggetto (un metodo quindi) può accedere ai campi dell'oggetto stesso tramite il riferimento \textbf{this}, che rappresenta l'istanza corrente.\\
+Alcuni linguaggi come JavaScript addirittura permettono di modificare la struttura di un oggetto dinamicamente, aggiungendo attributi per esempio.\\
+Questo aumenta la flessibilità e si possono creare subito gli oggetti senza definire nient'altro, ma riduce la robustezza del codice e ostacola il type checking.
+\subsubsection{Approccio class-based}
+In un linguaggio \textbf{class-based} il concetto di \textbf{classe} è fondamentale.\\
+Una \textbf{classe} definisce la struttura e il comportamento di un insieme di oggetti di un determinato tipo, specificando attributi e metodi di tali oggetti.\\
+Gli oggetti vengono poi creati come \textbf{istanze} di una certa classe: ciascuno ha il proprio stato ma condividono le stesse funzionalità definite dalla classe di apparteneza.\\
+Questo approccio richiede una maggiore disciplina di progettazione, in quanto prima di implementare le classi bisogna progettare lo schema delle relazioni.\\
+Inoltre, garantisce il type checking statico sugli oggetti, al contrario di object-based.
+\subsection{Ereditarietà}
+L'\textbf{ereditarietà (inheritance)} è una funzionalità che permette di definire una classe sulla base di un'altra esistente, in particolare abbiamo:
+\begin{itemize}
+  \item \textbf{Prototype-based inheritance:} ogni oggetto può fungere da prototipo per altri oggetti che ereditano da esso attributi e metodi. La relazione quindi passa direttamente tra oggetti. Questa è utilizzata nell'approccio \textbf{object-based}.
+  \item \textbf{Class-based inheritance:} le classi definiscono gerarchie e relazioni (per esempio una classe Studente che deriva dalla classe Persona). La classe figlia eredita dalla classe padre attributi e metodi. Questa è utilizzata nell'approccio \textbf{class-based}.
+\end{itemize}
+\subsection{Subtyping}
+In un linguaggio object-based, un oggetto si dice \textbf{subtype} di un altro oggetto quando contiene tutti i suoi metodi e attributi, possibilmente estendendolo.
+\begin{lstlisting}
+  Animal = { speak()};
+
+  Dog = { speak() -> "Woof!", breed: String}
+\end{lstlisting}
+In questo caso, "Dog" è un sottotipo di "Animal".\\
+Questo tipo di subtyping viene definito \textbf{structural subtyping}.\\\\
+Nei linguaggi \textbf{class-based} invece il subtyping si reaalizza quando una classe o oggetto sono esplicitamente estesi dalle keyword \textbf{inherits} (class-class) e \textbf{implements} (object-class).\\
+Anche in questo caso, una classe può estendere la classe padre con ulteriori metodi e attributi o addirittura fare l'\textbf{overriding} di altri.\\
+Questo tipo di subtyping si chiama \textbf{nominal subtyping}.\\\\
+
+La structural subtyping offre maggiore flessibilità, non c'è bisogno che si definisca esplicitamente chi estende chi e permette il polimorfismo, in quanto piu oggetti possono essere l'uno sottotipo dell'altro (strutture compatibili per le interfaccie utilizzate)\\
+Per esempio:
+\begin{lstlisting}
+  Dog = { speak() -> "Woof!"};
+  Cat = { speak() -> "Meow!"};
+
+  def make_sound(animal) {
+    print(animal.speak())
+  }
+\end{lstlisting}
+In questo caso possiamo utilizzare più tipi diversi in una sola interfaccia per via della struttura condivisa.\\
+La nominal subtyping invece offre maggiore rigore e semplicità nella verifica dell'interprete (deve solo controllare se è dichiarata l'ereditarietà)
+\subsubsection{Sostituibilità}
+Il concetto di \textbf{sostituibilità} indica che se un oggetto B eredita da un oggetto A (o classi), allora l'oggetto B si dovrebbe poter usare ovunque si possa usare l'oggetto A.\\
+Un oggetto "studente" dovrebbe poter essere usato ovunque sia richiesto un oggetto di tipo "persona".
 
 \section{Programmazione a oggetti in OCaml}
 Vediamo come realizzare il paradigma della programmazione a oggetti in \textbf{OCaml}.\\
@@ -2451,8 +2497,7 @@ Quando si definisce una funzione che prende
   val minimize : $<$resize : int -$>$ 'a; .. $>$ -$>$ 'a = $<$fun$>$\\
   val limit : $<$resize : int -$>$ unit; width : int; .. $>$ -$>$ unit = $<$fun$>$
 \end{center}
-
-La notazione <width : int; .. > indica che l'oggetto atteso deve avere almeno un metodo "width" che restituisce un valore di tipo int ed \textbf{eventualmente} altro (espresso con "..", ovvero una \textbf{row variable})\\\\
+La notazione $<$width : int; .. $>$ indica che l'oggetto atteso deve avere almeno un metodo "width" che restituisce un valore di tipo int ed \textbf{eventualmente} altro (espresso con "..", ovvero una \textbf{row variable})\\\\
 Vedendo sq\#resize 1 si deduce che:
 \begin{itemize}
   \item sq deve avere un metodo resize applicabile a int, il cui risultato ha inizialmente un tipo generico.
@@ -2475,6 +2520,8 @@ Per esempio:
   limit quadrato ;; (**)
   area quadrato ;;
 \end{lstlisting}
+
+\section{Programmazione a oggetti in Java}
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.
