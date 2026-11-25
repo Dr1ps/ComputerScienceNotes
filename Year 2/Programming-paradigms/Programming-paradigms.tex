@@ -2149,7 +2149,7 @@ Adesso, esplicitiamo anche il type checking, collegato alle operazioni primitive
 \end{lstlisting}
 \subsection{Ciclo interprete}
 \begin{lstlisting}[language=OCaml]
-  let rec eval(e:exp) = 
+  let rec eval(e:exp) (s: evt env) : evT = 
     match e with
     | EInt(n) -> Int(n)
     | CstTrue -> Bool(true)
@@ -2170,8 +2170,13 @@ Come si vede, il risultato di tale pattern matching può avere tipi diversi, per
     | Int of int
     | Bool of bool
     | UnBound
-    | Closure of ide * exp * evT env  (*Dichiarazione di funzione con parametro (ide), corpo(exp) e ambiente al momento della dichiarazione*)
+    | Closure of ide * exp * evT env  (*Astrazione (dichiarazione) di funzione con parametro (ide), corpo(exp) e ambiente al momento della dichiarazione (scoping statico*))
+    | Funval of efun (*stessa cosa ma con scoping dinamico, contiene solo il corpo della funzione dichiarata e il parametro formale*)
 \end{lstlisting}
+Nel caso di scoping dinamico:
+\[
+efun = ide * exp
+\]
 \subsection{Ambiente}
 L'ambiente è una \textbf{funzione} che, dato un'ide, restituisce un evT:
 \[
@@ -2262,35 +2267,37 @@ In MiniCaml diventa:
   Apply(Den("f"),EInt(2)))
 \end{lstlisting}
 \subsection{Regole in semantica operazionale big step}
-Ecco alcune delle regole appena viste in semantica operazionale big step:
-\[
+Ecco alcune delle regole appena viste in semantica operazionale big step:\\
+\textbf{Funzione IsZero:}\[
 \frac{\sum \triangleright e \implies Int(0)}{\sum \triangleright IsZero(e) \implies Bool(true)}
 \]
 \[
 \frac{\sum \triangleright e \implies Int(n), n \ne 0}{\sum \triangleright IsZero(e) \implies Bool(false)}
 \]
+\textbf{Costrutti decisionali:}
 \[
 \frac{\sum \triangleright e_1 \implies Bool(true), \sum \triangleright e_2 \implies v_2}{\sum \triangleright ifthenelse(e_1,e_2,e_3) \implies v_2}
 \]
 \[
 \frac{\sum \triangleright e_1 \implies Bool(false), \sum \triangleright e_3 \implies v_3}{\sum \triangleright ifthenelse(e_1,e_2,e_3) \implies v_3}
 \]
+\textbf{Valutazione identificatori:}
 \[
 \sum \triangleright Den(i) \implies \sum(i)
 \]
 \[
 \frac{\sum \triangleright Den("x") \implies Int(2), \sum \triangleright Eint(1) \implies Int(1)}{\sum \triangleright Sum(Den("x"), EInt(1)) \implies Int(3)}
 \]
+\textbf{Let e i suoi blocchi:}
 \[
 \frac{\sum \triangleright e \implies v, \sum[i=v] \triangleright e_{body} \implies v^I}{\sum \triangleright Let(i,e,e_{body}) \implies v^I}
 \]
-\textbf{Applicazione di funzione (scoping statico):}
-\[
-\sum \triangleright e_f \implies Closure(arg,f_{body}, \sum_{fDecEnv})
-\]
-\[
-\frac{\sum \triangleright e_{arg} \implies a_{Val}, \sum_{fDecEnv}[arg = a_{val}] \triangleright f_{body} \implies v}{\sum \triangleright Apply(e_f, e_{arg}) \implies v}
-\]
+Questo in pratica:
+\begin{itemize}
+  \item Valuta "e" nell'ambiente corrente
+  \item Estende l'ambiente con una nuova associazione
+  \item Valuta il corpo del blocco ($e_{body}$) nell'ambiente esteso 
+\end{itemize}
 \textbf{Dichiarazione di una funzione (scoping statico):}
 \[
 \sum \triangleright Fun(arg, f_{body}) \implies Closure(arg, f_{body}, \sum)
@@ -2298,6 +2305,45 @@ Ecco alcune delle regole appena viste in semantica operazionale big step:
 \[
 \frac{\sum[f = Closure(arg,f_{body},\sum)] \triangleright e_{body} \implies v^I}{\sum \triangleright Let(f,Fun(arg,f_{body}), e_{body}) \implies v^I}
 \]
+In pratica:
+\begin{itemize}
+  \item La valutazione dell'astrazione funzionale restituisce una chiusura che include il nome formale del parametro "arg", il corpo della funzione dichiarata "$e_{body}$" e l'ambiente al momento della dichiarazione.
+  \item La valutazione di un'astrazione con il "Let" necessita un ambiente esteso con una dichiarazione di funzione per poi utilizzare tale nuovo ambiente per applicare la funzione.
+\end{itemize}
+\textbf{Applicazione di funzione (scoping statico):}
+\[
+\sum \triangleright e_f \implies Closure(arg,f_{body}, \sum_{fDecEnv})
+\]
+\[
+\frac{\sum \triangleright e_{arg} \implies a_{Val}, \sum_{fDecEnv}[arg = a_{val}] \triangleright f_{body} \implies v}{\sum \triangleright Apply(e_f, e_{arg}) \implies v}
+\]
+\begin{itemize}
+  \item Si valuta l'espressione della funzione ottenendo una chiusura
+  \item Si valuta l'espressione che corrisponde al parametro attuale
+  \item Si estende l'ambiente di dichiarazione della funzione con il legame tra il parametro formale e il valore attuale.
+  \item Si valuta il corpo della funzione nell'ambiente ottenuto
+\end{itemize}
+\textbf{Dichiarazione di funzione (scopind dinamico):}
+\[
+\sum \triangleright Fun(arg, e_{body}) \implies Funval(arg, e_{body})
+\]
+Il valore esprimibile non include l'ambiente corrente (verrà incluso durante l'applicazione)\\\\
+\textbf{Applicazione di funzione (scoping dinamico)}
+\[
+\sum \triangleright e_f \implies Funval(arg, e_{body})
+\]
+Questa sopra è la regola della dichiarazione ma scritta in modo diverso:
+\[
+e_f = Fun(arg, e_{body})
+\]
+\[
+\frac{\sum \triangleright e_{arg} \implies a_{val}, \sum[arg = a_{val}] \triangleright f_{body} \implies v}{\sum \triangleright Apply_sd(e_f, e_{arg}) \implies v}
+\]
+\begin{itemize}
+  \item Il parametro formale viene legato a quello attuale creando un nuovo ambiente, ovvero quello di applicazione.
+  \item Il corpo della funzione viene valutato nell'ambiente nel quale avviene l'applicazione.
+\end{itemize}
+
 
 \section{Programmazione a oggetti}
 \subsection{Modularità}
