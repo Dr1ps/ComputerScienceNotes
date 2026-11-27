@@ -465,6 +465,9 @@ INPUT .\images\MiniCamlStructure.png
 INPUT .\images\MiniCamlStructure.png
 INPUT .\images\MiniCamlStructure.png
 INPUT .\images\MiniCamlStructure.png
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT Programming-paradigms.aux
 INPUT .\Programming-paradigms.out
 INPUT .\Programming-paradigms.out

@@ -2385,6 +2385,15 @@ e_f = Fun(arg, e_{body})
 \[
 \frac{\sum_{fDecEnv}[f = RecClosure(f, arg, f_{body}, \sum_{fDecEnv})][arg = a_{val}] \triangleright f_{body} \implies v}{\sum \triangleright Apply(e_f, e_{arg}) \implies v}
 \]
+\subsection{Estendere l'interprete}
+Ora che abbiamo finito di creare l'interprete, nel caso volessimo estenderlo con altre cose bisogna seguire il solito metodo:
+\begin{enumerate}
+  \item \textbf{Sintassi astratta:} quali nuovi costruttori servono?
+  \item \textbf{Valori esprimibili:} Occorrono nuovi valori?
+  \item \textbf{Semantica operazionale:} Come si valutano i nuovi costrutti?
+  \item \textbf{Interprete:} come modificare eval?
+\end{enumerate}
+
 \section{Programmazione a oggetti}
 \subsection{Modularità}
 \paragraph{Modularità:} principio di progettazione del software che permette di suddividere un programma complesso in componenti più piccoli e gestibili chiamati \textbf{moduli}.\\
@@ -2608,6 +2617,321 @@ Per esempio:
 \end{lstlisting}
 
 \section{Programmazione a oggetti in Java}
+\subsection{Introduzione a Java}
+\subsubsection{Nascita e struttura}
+\textbf{Java} è un linguaggio di programmazione nato negli anni '90 da un gruppo di lavoro della \textbf{Sun Microsystems} (acquisita poi da Oracle), guidato da \textbf{James Gosling}.\\
+Nasce nel periodo in cui i linguaggi più utilizzati erano C e C++.\\
+Gli obiettivi nello sviluppo di Java erano:
+\begin{itemize}
+  \item \textbf{Semplificazione della programmazione:} rispetto a C e C++ (introduzione del garbage collection)
+  \item \textbf{Indipendenza della piattaforma e portabilità:} lo stesso codice compilato eseguibile su qualunque hardware supportato senza ricompilare.
+  \item \textbf{Modularità:} per favorire lo sviluppo collaborativo (OOP)
+  \item \textbf{Robustezza e sicurezza:} controlli statici e dinamici per prevenire e controllare comportamenti anomali dei programmi.
+\end{itemize}
+Una delle scelte più significanti effettuate in Java fu la combinazione di \textbf{compilazione} e \textbf{interpretazione}, introducendo un \textbf{linguaggio intermedio} chiamato \textbf{bytecode} per una macchina intermedia, ovvero la JVM (Java Virtual Machine), la quale poi interpreta tale bytecode.
+\begin{center}
+  "Write once, run anywhere."
+\end{center}
+Il bytecode è eseguibile su ogni architettura per la quale sia disponibile un interprete JVM, senza bisogno di ricompilare.\\
+Consente controlli statici e dinamici.\\
+\subsubsection{Utilizzo di Java negli anni}
+Alla fine degli anni '90 Java veniva usato per programmare componenti interattive delle pagine web come videogiochi e interfacce interattive.\\
+Al tempo la JVM era un plugin del browser e il bytecode era inviato dal sito e interpretato localmente (problemi di sicurezza).\\\\
+Dagli anni 2000 ha iniziato ad essere usato per sviluppare grandi applicazioni in team ed eseguibili su sistemi operativi diversi.\\\\
+Da dopo gli anni 2010 venne introdotto il suo uso per applicazioni Android, diventando il linguaggio di riferimento per lo sviluppo di app native Android (problemi di sicurezza).
+\subsubsection{Ambiente di sviluppo}
+L'ambiente di sviluppo di Java necessita due elementi:
+\begin{itemize}
+  \item \textbf{Java Development Kit (JDK):} compilatore + interprete (JVM) + API + tool di supporto allo sviluppo
+  \item \textbf{IDE:} tra cui:
+  \begin{itemize}
+    \item Eclipse
+    \item IntelliJ IDEA
+    \item NetBeans
+    \item VSCode
+  \end{itemize}
+\end{itemize}
+\subsection{Struttura dei programmi}
+Un programma in Java è composto da un insieme di \textbf{classi}.\\
+Principalmente, ogni classe viene salvata in un proprio file rinominato:
+\[
+[NomeClasse].java
+\]
+Una delle classi deve includere un metodo \textbf{main} da cui parte l'esecuzione del programma.\\
+Convenzialmente, i nomi delle classi hanno sempre l'iniziale maiuscola.\\
+\begin{lstlisting}[language=Java]
+  public class HelloWorld {
+    public static void main (String [] args) {
+      // Visualizza un messaggio di saluto
+      System.out.println("Hello World!");
+    }
+  }
+\end{lstlisting}
+In questo caso, il file si chiamerà:
+\[
+HelloWorld.java
+\]
+Per compilarlo da linea di comando, utilizziamo:
+\[
+javac\ HelloWorld.java
+\]
+Quando verrà compilato, verrà creato un bytecode del file chiamato:
+\[
+HelloWorld.class
+\]
+Per eseguirlo utilizziamo:
+\[
+java\ HelloWorld
+\]
+Il corpo dei metodi è \textbf{codice imperativo} con sintassi molto simile a quella del C.
+\subsection{Tipi primitivi}
+Ecco quali sono i tipi primitivi di Java:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Nome del tipo} & \textbf{Rappresentazione} & \textbf{Memoria usata} \\
+        \hline
+        byte & Interi in complemento a 2 & 1 byte \\
+        \hline
+        short & Interi in complemento a 2 & 2 byte \\
+        \hline
+        int & Interi in complemento a 2 & 4 byte \\
+        \hline
+        long & Interi in complemento a 2 & 8 byte \\
+        \hline
+        float & Virgola mobile (singola precisione) & 4 byte \\
+        \hline
+        double & Virgola mobile (doppia precisione) & 8 byte \\
+        \hline
+        char & Codifica Unicode & 2 byte \\
+        \hline
+        boolean & Valore di verità (true/false) & 1 bit* \\
+        \hline
+    \end{tabular}
+    \caption{Tipi primitivi di Java}
+    \label{tab:tipi-java}
+\end{table}
+*In realtà le implementazioni note della JVM utilizzano \textbf{1 byte} per questioni di indirizzamento.\\
+\paragraph{ATTENZIONE:} esiste anche un tipo \textbf{String}, il quale non è primitivo in quanto è una classe di libreria, però sotto alcuni aspetti è trattato come primitivo, per esempio nella concatenazione tra stringhe che si può semplicemente eseguire con:
+\begin{lstlisting}
+  [stringa1] + [stringa2];
+\end{lstlisting}
+\subsection{Espressioni}
+Le espressioni sono realizzate come in C, ma con l'aggiunta dei valori booleani:
+\[
+(3+4.0) * 7 / 2.0
+\]
+\[
+(x > 0) \&\& (x <= 100)
+\]
+\[
+(x == 0) || (x != 0) || true
+\]
+\subsection{Comandi e costrutti}
+Anche i vari costrutti sono simili a quelli di C:
+\begin{lstlisting}[language=Java]
+  // Assegnamento
+  x = 6;
+
+  // If-else
+  if(x > 0) {
+    ...
+  } else {
+    ...
+  }
+
+  // Ciclo while
+  while(x > 0) {
+    ...
+  }
+
+  // Ciclo do-while
+  do {
+    ...
+  } while(x > 0)
+
+  // Ciclo for
+  for(int i=0; i<10; i++) {
+    ...
+  }
+
+  // Return
+  return 10;
+\end{lstlisting}
+\subsection{Dichiarazione e utilizzo delle variabili}
+Le variabili devono essere dichiarate e inizializzate prima di poterle usare (controllo statico).\\
+Non è possibile ridichiarare, in un blocco, una variabile già dichiarata in un blocco più esterno (no shadowing).\\
+Non esistono variabili globali (visibili a tutta una classe si, ma non l'intero programma).
+\begin{lstlisting}[language=Java]
+  int x;
+  int y = 0;
+  int z;
+  if(x > 0) { // La guardia da errore (x non inizializzata)
+    z = 10;
+    int k = z;
+    char y = 'c'; // Errore, y e' gia definita
+  }
+\end{lstlisting}
+\subsection{Array}
+Gli array sono simili a quelli di C, ma non troppo:
+\begin{lstlisting}
+  // Template di dichiarazione 
+  [tipo][] [nomeArray];
+
+  // Dichiarazione
+  int[] numeri;
+
+  // Dichiarazione sbagliata (le parentesi non possono muoversi)
+  int numeri[];
+
+  // Inizializzazione (dimensione 10, valori di default 0)
+  numeri = new int[10];
+
+  // Inizializzazione (dimensione 4)
+  numeri = {5,3,2,6};
+  
+  // Dichiarazione + Inizializzazione
+  int[] numeri = new int[10];
+  int[] numeri = {5,3,2,6};
+\end{lstlisting}
+In C, il controllo dell'indice di un array spettava al programmatore, infatti c'erano problemi di sicurezza e possibilità per attaccanti di abusare del buffer overflow per modificare altri campi importanti, come il \textbf{return address}, in modo che potessero accedere a parti di codice non previste.\\
+Addirittura, tale parte inaccessibile potrebbe essere proprio del codice malevolo (code injection).\\
+In Java, questa cosa viene prevenuta tramite controlli a run-time.
+\subsection{For each}
+Una variazione importante di ciclo for è il \textbf{for each}, utile per iterare su array quando non ci serve l'indice:
+\begin{lstlisting}[language=Java]
+  // Template
+  for ([tipoArray] [nomeVariabileIteratore]: [nomeArray]) {
+    ...
+  }
+
+  public int somma(int[] numeri) {
+    int somma = 0;
+    for (int n: numeri) somma+=n;
+    return somma;
+  }
+\end{lstlisting}
+\subsection{Funzioni}
+Per implementare delle funzioni si utilizzano i metodi delle classi:
+\begin{lstlisting}[language=Java]
+  // Template firma di funzione
+  [modificatoreDiVisibilita] [tipoDelRisultato] [nomeFunzione]([parametri formali]) {
+    ...
+  }
+
+  public int fattoriale(int n) {
+    int res = 1;
+    if(n == 0)
+      return res;
+    else
+      return n * fattoriale(n - 1);
+  }
+\end{lstlisting}
+Esiste un'unica eccezione per il quale non bisogna utilizzare metodi di classi, ovvero le \textbf{funzioni anonime} (lambda-expressions).
+\begin{lstlisting}[language=Java]
+  x -> espressione
+
+  (x, y, ...) -> espressione 
+
+  x -> {blocco}
+
+  (x, y, ...) -> {blocco}
+\end{lstlisting}
+\subsection{Classi}
+Una classe consiste di \textbf{variabili} e \textbf{metodi} e può prevedere uno o più \textbf{costruttori} per inizializzare le variabili.
+\begin{lstlisting}[language=Java]
+  // Template
+  [modificatoreDiVisibilita] class [NomeClasse] {
+    ...
+  }
+
+  public class ContoCorrente {
+    // Attributi
+    public double saldo;
+
+    // Costruttore
+    public ContoCorrente(double saldoIniziale) {
+      saldo = saldoIniziale;
+    }
+
+    // Metodi
+    public void versa(double somma) {
+      saldo += somma;
+    }
+
+    public void preleva(double somma) {
+      saldo -= somma;
+    }
+  }
+\end{lstlisting}
+Vediamo adesso un esempio di classe che implementa il metodo \textbf{main} per accedere ai servizi della classe ContoCorrente:
+\begin{lstlisting}
+  public class Banca {
+    public static void main(String[] args) {
+      // Crea un conto inizializzato con 1000 euro
+      ContoCorrente conto1 = new ContoCorrente(1000);
+
+      // Crea un conto inizializzato con 200 euro
+      ContoCorrente conto2 = new ContoCorrente(200);
+
+      // Si assicura che ci siano 700 euro nel primo conto
+      if(conto1.saldo >= 700) {
+        // Preleva 700 euro dal primo conto
+        conto1.preleva(700);
+        // Buttali nel secondo conto
+        conto2.versa(700);
+      }
+
+      System.out.println("Saldo primo conto: " + conto1.saldo);
+      System.out.println("Saldo secondo conto: " + conto2.saldo);
+    }
+  }
+\end{lstlisting}
+\paragraph{ATTENZIONE:} generalmente gli attributi NON sono public per via dell'information hiding, di solito ogni classe ha dei metodi \textbf{getter} e dei metodi \textbf{setter}.
+\begin{lstlisting}[language=Java]
+  public class ContoCorrente {
+    // Attributi
+    private double saldo;
+
+    // Costruttore
+    public ContoCorrente(double saldoIniziale) {
+      saldo = saldoIniziale;
+    }
+
+    // Getter e Setter 
+
+    public double getSaldo() {
+      return saldo;
+    }
+
+    private void setSaldo(double saldo) {
+      this.saldo = saldo;
+    }
+
+    // Altri metodi
+    public void versa(double somma) {
+      setSaldo(saldo + somma);
+    }
+
+    public void preleva(double somma) {
+      setSaldo(saldo - somma);
+    }
+  }
+\end{lstlisting}
+Per convenzione, i getter sono pubblici e i setter sono privati.\\
+Spesso si possono generare automaticamente una volta definiti gli attributi.
+\subsubsection{Principio di astrazione} 
+"Each significant piece of
+functionality in a program should be implemented in just one
+place in the source code. Where similar functions are carried
+out by distinct pieces of code, it is generally beneficial to
+combine them into one by abstracting out the varying parts".\\\\
+Questo significa che ogni "entità" deve essere implementata in una classe (o parte) distinta del programma e quando diverse parti del programma offrono gli stessi servizi, è bene unirli seguendo una logica di astrazione.
+
+
+
+
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.

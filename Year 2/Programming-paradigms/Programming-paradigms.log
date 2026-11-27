@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  25 NOV 2026 15:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.1)  27 NOV 2026 10:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1035,7 +1035,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-<images/macchinaAstratta.png, id=1449, 449.88075pt x 154.77824pt>
+<images/macchinaAstratta.png, id=1524, 449.88075pt x 154.77824pt>
 File: images/macchinaAstratta.png Graphic file (type png)
 <use images/macchinaAstratta.png>
 Package pdftex.def Info: images/macchinaAstratta.png  used on input line 1574.
@@ -1051,7 +1051,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [42
 
 ]
-<images/interprete.png, id=1455, 593.21625pt x 392.667pt>
+<images/interprete.png, id=1530, 593.21625pt x 392.667pt>
 File: images/interprete.png Graphic file (type png)
 <use images/interprete.png>
 Package pdftex.def Info: images/interprete.png  used on input line 1583.
@@ -1075,7 +1075,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.1599 \subsubsection{Operazioni primitive}
                                             <./images/macchinaAstratta.png> <./images/interprete.png>]
-<images/Compilatore.png, id=1465, 536.0025pt x 289.08pt>
+<images/Compilatore.png, id=1540, 536.0025pt x 289.08pt>
 File: images/Compilatore.png Graphic file (type png)
 <use images/Compilatore.png>
 Package pdftex.def Info: images/Compilatore.png  used on input line 1629.
@@ -1089,7 +1089,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
-<images/ParserTree.png, id=1470, 536.0025pt x 308.352pt>
+<images/ParserTree.png, id=1545, 536.0025pt x 308.352pt>
 File: images/ParserTree.png Graphic file (type png)
 <use images/ParserTree.png>
 Package pdftex.def Info: images/ParserTree.png  used on input line 1649.
@@ -1219,7 +1219,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56]
-<images/MiniCamlStructure.png, id=1724, 502.87875pt x 223.43475pt>
+<images/MiniCamlStructure.png, id=1799, 502.87875pt x 223.43475pt>
 File: images/MiniCamlStructure.png Graphic file (type png)
 <use images/MiniCamlStructure.png>
 Package pdftex.def Info: images/MiniCamlStructure.png  used on input line 2123.
@@ -1310,12 +1310,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 2393--2394
+Underfull \hbox (badness 10000) in paragraph at lines 2402--2403
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2423--2424
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2433
 
  []
 
@@ -1329,7 +1329,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [64
 
 ]
-Overfull \hbox (55.37906pt too wide) in paragraph at lines 2444--2445
+Overfull \hbox (55.37906pt too wide) in paragraph at lines 2453--2454
 \OT1/cmr/m/n/12 Lo \OT1/cmr/bx/n/12 stato \OT1/cmr/m/n/12 di un oggetto ^^Re soli-ta-mente rap-p-re-sen-tato da un in-sieme di \OT1/cmr/bx/n/12 at-tributi/proprieta/variabili\OT1/cmr/m/n/12 . 
  []
 
@@ -1341,7 +1341,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-Overfull \hbox (3.84973pt too wide) in paragraph at lines 2476--2481
+Overfull \hbox (3.84973pt too wide) in paragraph at lines 2485--2490
 \OT1/cmr/m/n/12 Questo au-menta la flessibilit^^Ra e si pos-sono creare subito gli oggetti senza definire nient'altro,
  []
 
@@ -1353,17 +1353,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [66]
-Underfull \hbox (badness 10000) in paragraph at lines 2500--2505
+Underfull \hbox (badness 10000) in paragraph at lines 2509--2514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2500--2505
+Underfull \hbox (badness 10000) in paragraph at lines 2509--2514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2500--2505
+Underfull \hbox (badness 10000) in paragraph at lines 2509--2514
 
  []
 
@@ -1393,7 +1393,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [69
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2586--2588
+Underfull \hbox (badness 10000) in paragraph at lines 2595--2597
 
  []
 
@@ -1405,6 +1405,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [70]
+Underfull \hbox (badness 10000) in paragraph at lines 2635--2637
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2638--2642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2638--2642
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1414,7 +1428,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [71
 
-]
+] (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 2659--2662
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1422,9 +1442,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 2715--2716
 
-]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1433,6 +1455,55 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [73
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2752  
+         } while(x > 0)]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[74]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[75]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 2925--2931
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[77]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[78
 
 ]
 
@@ -1442,26 +1513,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74] (Programming-paradigms.aux)
+[79
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[80] (Programming-paradigms.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `Programming-paradigms.out' has not changed.
-(rerunfilecheck)             Checksum: AC8B8D7A8BE85B7C58845490B114679A;30826.
+(rerunfilecheck)             Checksum: B1E0797E241728D03F6AA4F49107A5F9;33173.
  ) 
 Here is how much of TeX's memory you used:
- 34755 strings out of 467392
- 780047 string characters out of 5415745
- 1833882 words of memory out of 5000000
- 62647 multiletter control sequences out of 15000+600000
+ 35088 strings out of 467392
+ 785052 string characters out of 5415745
+ 1989879 words of memory out of 5000000
+ 62780 multiletter control sequences out of 15000+600000
  636093 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,118p,800b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Programming-paradigms.pdf (74 pages, 918278 bytes).
+Output written on Programming-paradigms.pdf (80 pages, 977393 bytes).
 PDF statistics:
- 2252 PDF objects out of 2487 (max. 8388607)
- 973 named destinations out of 1000 (max. 500000)
- 1550 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2566 PDF objects out of 2984 (max. 8388607)
+ 1170 named destinations out of 1200 (max. 500000)
+ 1670 words of extra memory for PDF output out of 10000 (max. 10000000)
 
