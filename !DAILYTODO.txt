@@ -3,19 +3,22 @@
 - do last exercises in pdf
 - esercizi: https://elearning.di.unipi.it/pluginfile.php/91861/course/section/7453/EsercizioLambdaEsploso.html
 (Copia esercizi su file)
-Ambiente e dichiarazioni (interprete linguaggio funzionale)
-
+Aggiungere tutti i tipi di OCaml (sezione)
+Aggiungere codice delle funzioni di eval dell'interprete in MiniCaml
+Controllare che la sezione MiniCaml abbia tutto (regole e tipi)
+Programmazione in OCaml a oggetti (cenni) = tutto (appunti da riguardare anche)
+Finire OOP in Java (da Interfacce)
 
 ## AESO ##
 
 - add tester code to Verilog test, monitor (do better)
 FOR CODE REFERENCE CHECK SLIDES ON TEAMS (VERILOG) 
 (download or redo)
+Pagine quaderno e relative slide
 
 ## OPERATIONAL RESEARCH ##
 
-tutto...
-NO DIJKSTRA SU GRAFI ACICLICI
+Tutto da grafi e reti di flusso
 
 
 ## LABORATORY 2 ##
