@@ -2928,10 +2928,109 @@ place in the source code. Where similar functions are carried
 out by distinct pieces of code, it is generally beneficial to
 combine them into one by abstracting out the varying parts".\\\\
 Questo significa che ogni "entità" deve essere implementata in una classe (o parte) distinta del programma e quando diverse parti del programma offrono gli stessi servizi, è bene unirli seguendo una logica di astrazione.
+\subsection{Modificatori di visibilità}
+Esistono 4 modificatori di visibilità che definiscono a chi è visibile (quali parti del programma) un certo attributo, metodo o classe:
+\begin{itemize}
+  \item \textbf{public:} visibile a tutti
+  \item \textbf{private:} visibile solo alla classe stessa
+  \item \textbf{protected:} visibile solo alla classe stessa e sottoclassi
+  \item \textbf{package:} visibile solo al pacchetto in cui si trova
+\end{itemize}
+Se non specificato, il default è \textbf{package}.
+\subsection{instanceof}
+Questo operatore serve a verificare a runtime se un riferimento punta a un oggetto di un certo tipo:
+\begin{lstlisting}[language=Java]
+  // Template
+  [nomeVariabile] instanceof [tipoNonPrimitivo]
+
+  ContoCorrente conto;
+  if(conto instanceof ContoCorrente) {...}
+\end{lstlisting}
+\subsection{Interfacce}
+Un'interfaccia in Java contiene una specifica astratta della classe: indica quali membri pubblici la classe deve contenere.\\
+Rende le classi una sorta di \textbf{Abstract Data Type (ADT)}: si definisce quali operazioni sono possibili, non come sono realizzate.\\
+Una classe che implementa un'interfaccia si impegna a implementare tutti i metodi dell'interfaccia.
+\begin{lstlisting}[language=Java]
+  // Template
+  [modificatoreDiVisibilita] interface [nomeInterfaccia] {...}
+
+  public interface BankAccount {
+    public void versa(double somma);
+    public void preleva(double somma);
+  }
+
+  // Implements
+  public class ContoCorrente implements BankAccount {...}
+
+  // Istanziamento di un oggetto tramite l'interfaccia
+  BankAccount conto = new ContoCorrente(1000);
+\end{lstlisting}
+Si dice che:
+\begin{itemize}
+  \item \textbf{BankAccount} (interfaccia) sia il tipo \textbf{apparente} (o statico) dell'oggetto "conto", stabilisce cosa si può fare con tale oggetto.
+  \item \textbf{ContoCorrente} (classe) sia il tipo \textbf{effettivo} (o dinamico) di "conto", stabilisce come si possono fare le operazioni specificate dal tipo apparente.
+\end{itemize}
+Il tipo apparente è quello usato dal compilatore per fare i suoi controlli (controllare che un metodo si possa chiamare), mentre il tipo effettivo è quello che l'oggetto avrà a run-time e determina quale versione del metodo dovrà essere eseguita (tra i vari override delle varie classi che implementano a sua volta l'interfaccia) (\textbf{dynamic dispatch}).\\
+Possiamo effettuare \textbf{downcasting} per evitare errori a runtime (magari il compilatore si lamenta che non trova un metodo di una sottoclasse perche il tipo apparente è l'interfaccia)
+\begin{lstlisting}[language=Java]
+  BankAccount conto;
+  ...
+  // Conversione totale
+  if(conto instanceof ContoCorrente)
+    ((ContoCorrente) conto).getMov();
+\end{lstlisting}
+Una classe può implementare più interfacce:
+\begin{lstlisting}[language=Java]
+  // Intefacce separate da virgola
+  public class ContoCorrente implements BankAccount, DepositAccount {...}
+\end{lstlisting}
+
+\subsection{Casting tra classi e interfacce}
+Il \textbf{cast} (coercion) tra classi, interfacce o classe/interfaccia si può fare se tra le due esiste una relazione di sottotipo, ovvero se una esplicitamente implementa / estende l'altra.\\
+La conversione da sottotipo a supertipo (\textbf{upcast}) è implicita, ma l'opposto (\textbf{downcast}) richiede un cast esplicito.
+\begin{lstlisting}[language=Java]
+  ContoCorrente cc1 = new ContoCorrente(1000);
+  BankAccount ba = cc1; // Upcast (implicito)
+  ContoCorrente cc2 = (ContoCorrente) ba; // Downcast (esplicito)
+\end{lstlisting}
+
+\subsection{Membri statici e d'istanza}
+Attributi e metodi possono essere:
+\begin{itemize}
+  \item \textbf{Statici:} codificano informazioni e servizi della classe, ovvero attributi condivisi fra le istanze di tale classe e metodi che non operano sullo stato dei singoli oggetti.
+  \item \textbf{D'istanza:} codificano lo stato di ogni singolo oggetto e implementano operazioni che alterano lo stato dell'oggetto.
+\end{itemize}
+Un'attributo d'istanza è presente tante volte in memoria quanti sono gli oggetti, mentre un attributo d'istanza è presente una volta sola ancora prima che venga creata una qualsiasi istanza.\\
+Un metodo d'istanza è richiamato su un oggetto e può accedere sia alle variabili d'istanza che quelle statiche, mentre i metodi statici possono solo accedere alle variabili e metodi statici.
+
+\subsection{Ereditarietà}
+In Java si può realizzare un sistema gerarchico tra classi e interfacce tramite le keywords:
+\begin{itemize}
+  \item \textbf{extends:} indica che una classe è figlia (specializzazione) di un'altra (generalizzazione).
+  \item \textbf{implements:} indica che una classe implementa le caratteristiche di una classe astratta o interfaccia.
+\end{itemize}
+Come possiamo intuire, questi sono casi di \textbf{Nominal Subtyping}.\\
+La struttura è:
+\begin{lstlisting}[language=Java]
+  public class [nomeFiglia] extends [nomePadre] {...}
+
+  public class [nomeFiglia] implements [nomeInterfaccia] {...}
+\end{lstlisting}
+Ogni classe estende implicitamente la classe \textbf{Object}, ricevendo metodi come:
+\begin{itemize}
+  \item toString(): rappresentazione testuale
+  \item equals(Object obj): restituisce vero se i due oggetti sono "uguali" (deciso dall'implementazione del metodo sovrascritto, il quale di default ritorna vero se i due oggetti puntano allo stesso spazio di memoria)
+\end{itemize}
+\paragraph{ATTENZIONE:} il metodo equals default non controlla i puntatori sulle stringhe, in quanto sono immutabili e ogni volta che le modifichiamo ci riferiamo ad un oggetto diverso.
 
 
-
-
+\subsection{Modello di memoria}
+Vediamo cosa succede nella memoria durante un'esecuzione di un programma, abbiamo:
+\begin{itemize}
+  \item \textbf{Ambiente delle classi:} contiene il codice delle classi, inclusi attributi statici e metodi
+  \item \textbf{Stack:} contiene i record di attivazione e le variabili locali
+  \item \textbf{Heap:} contiene gli oggetti e le loro variabili d'istanza
+\end{itemize}
 
 \section{Altro}
 Il tipo dei comandi in OCaml è \textbf{unit}.

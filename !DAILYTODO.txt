@@ -7,7 +7,7 @@ Aggiungere tutti i tipi di OCaml (sezione)
 Aggiungere codice delle funzioni di eval dell'interprete in MiniCaml
 Controllare che la sezione MiniCaml abbia tutto (regole e tipi)
 Programmazione in OCaml a oggetti (cenni) = tutto (appunti da riguardare anche)
-Finire OOP in Java (da Interfacce)
+Finire Ereditarietà e dynamic dispatch (controllare se quello che ho scritto è vero)
 
 ## AESO ##
 
